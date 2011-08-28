@@ -1,0 +1,3436 @@
+BACKUP ~aranw/backup~
+AUTHOR ~cmorgan~
+
+VERSION ~pre-alpha 4.10.2011~
+
+BEGIN ~Install Aran Whitehand alpha, 4.10.2011, for Ajnos.~
+
+/* extra regexp vars */
+INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
+  
+/* .ids patching */
+INCLUDE ~aranw/lib/ids_patching.tph~
+  
+OUTER_FOR( aran_timer_choice = 0 ; ~%aran_timer_choice%~ STRING_COMPARE_REGEXP ~^[12]$~ ; )BEGIN
+	PRINT ~Set Talk and Flirt Timers
+  [1] Install Default Timers
+  [2] Customize Timers
+Please type 1 or 2 and press enter.~
+  ACTION_READLN aran_timer_choice
+END // of O_F
+
+ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
+  /* .ids patching with player choice: set talk timers  */
+	APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
+	PRINT ~Friendship Speed: minimum 1 hour real time between dialogues~
+	APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
+	PRINT ~Lovetalk Speed: minimum 1 hour real time between dialogues~
+	APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
+	PRINT ~Flirt Speed: minimum 45 minutes real time between Aran-initiated flirts~	
+END
+
+ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
+  PRINT ~Select Aran's Friendship Talk timer:~
+
+  PRINT ~Please choose one of the following:
+[1] 15 minutes real time minimum between dialogues
+[2] 30 minutes real time minimum between dialogues
+[3] 45 minutes real time minimum between dialogues
+[4] 1 hour real time minimum between dialogues (recommended)
+[5] 1 hour 30 minutes real time minimum between dialogues
+[6] 2 hours real time minimum between dialogues
+[7] TESTING (1 minute)~
+
+	OUTER_SPRINT ~friendshiptimer~ ~placeholder_value~
+	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x7) OR (~friendshiptimer~ < 0x1)) BEGIN
+		PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
+		ACTION_READLN ~friendshiptimer~
+	END
+	ACTION_IF ("friendshiptimer" = 1) THEN BEGIN
+		APPEND ~gtimes.ids~ ~900 ARAN_FTT~
+		PRINT ~Speed: minimum 15 minutes real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
+		APPEND ~gtimes.ids~ ~1800 ARAN_FTT~
+		PRINT ~Speed: minimum 30 minutes real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
+		APPEND ~gtimes.ids~ ~2700 ARAN_FTT~
+		PRINT ~Speed: minimum 45 minutes real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
+		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
+		PRINT ~Speed: minimum 1 hour real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
+		APPEND ~gtimes.ids~ ~5400 ARAN_FTT~
+		PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
+		APPEND ~gtimes.ids~ ~7200 ARAN_FTT~
+		PRINT ~Speed: minimum 2 hours real time between dialogues~
+	END
+	ACTION_IF ("friendshiptimer" = 7) THEN BEGIN
+		APPEND ~gtimes.ids~ ~60 ARAN_FTT~
+		PRINT ~TESTING SPEED: wicked googly fast~
+	END
+
+  PRINT ~Select Aran's LoveTalk timer:~
+
+  PRINT ~Please choose one of the following:
+[1] 15 minutes real time minimum between dialogues
+[2] 30 minutes real time minimum between dialogues
+[3] 45 minutes real time minimum between dialogues
+[4] 1 hour real time minimum between dialogues (recommended)
+[5] 1 hour 30 minutes real time minimum between dialogues
+[6] 2 hours real time minimum between dialogues
+[7] TESTING (1 minute)~
+OUTER_SPRINT ~lovetalktimer~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~lovetalktimer~) OR (~lovetalktimer~ > 0x7) OR (~lovetalktimer~ < 0x1)) BEGIN
+  PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
+  ACTION_READLN ~lovetalktimer~
+END
+  ACTION_IF ("lovetalktimer" = 1) THEN BEGIN
+    APPEND ~gtimes.ids~ ~900 ARAN_LTT~
+    PRINT ~Speed: minimum 15 minutes real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 2) THEN BEGIN
+    APPEND ~gtimes.ids~ ~1800 ARAN_LTT~
+    PRINT ~Speed: minimum 30 minutes real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 3) THEN BEGIN
+    APPEND ~gtimes.ids~ ~2700 ARAN_LTT~
+    PRINT ~Speed: minimum 45 minutes real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 4) THEN BEGIN
+    APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
+    PRINT ~Speed: minimum 1 hour real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 5) THEN BEGIN
+    APPEND ~gtimes.ids~ ~5400 ARAN_LTT~
+    PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 6) THEN BEGIN
+    APPEND ~gtimes.ids~ ~7200 ARAN_LTT~
+    PRINT ~Speed: minimum 2 hours real time between dialogues~
+  END
+  ACTION_IF ("lovetalktimer" = 7) THEN BEGIN
+    APPEND ~gtimes.ids~ ~60 ARAN_LTT~
+    PRINT ~TESTING SPEED: wicked googly fast, baby.~
+  END
+
+  PRINT ~Select Aran's NPC-initiated Flirt timer:~
+
+  PRINT ~Please choose one of the following:
+[1] 15 minutes real time minimum between dialogues
+[2] 30 minutes real time minimum between dialogues
+[3] 45 minutes real time minimum between dialogues
+[4] 1 hour real time minimum between dialogues (recommended)
+[5] 1 hour 30 minutes real time minimum between dialogues
+[6] 2 hours real time minimum between dialogues
+[7] TESTING (1 minute)~
+
+OUTER_SPRINT ~flirttimer~ ~placeholder_value~
+OUTER_WHILE (!(IS_AN_INT ~flirttimer~) OR (~flirttimer~ > 0x7) OR (~flirttimer~ < 0x1)) BEGIN
+  PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
+  ACTION_READLN ~flirttimer~
+END
+  ACTION_IF ("flirttimer" = 1) THEN BEGIN
+    APPEND ~gtimes.ids~ ~900 ARAN_FLIRT~
+    PRINT ~Speed: minimum 15 minutes real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 2) THEN BEGIN
+    APPEND ~gtimes.ids~ ~1800 ARAN_FLIRT~
+    PRINT ~Speed: minimum 30 minutes real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 3) THEN BEGIN
+    APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
+    PRINT ~Speed: minimum 45 minutes real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 4) THEN BEGIN
+    APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
+    PRINT ~Speed: minimum 1 hour real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 5) THEN BEGIN
+    APPEND ~gtimes.ids~ ~5400 ARAN_FLIRT~
+    PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 6) THEN BEGIN
+    APPEND ~gtimes.ids~ ~7200 ARAN_FLIRT~
+    PRINT ~Speed: minimum 2 hours real time between dialogues~
+  END
+  ACTION_IF ("flirttimer" = 7) THEN BEGIN
+    APPEND ~gtimes.ids~ ~60 ARAN_FLIRT~
+    PRINT ~TESTING SPEED: wicked googly fast~
+  END
+END // of action_if 
+
+/* .2da patching */
+
+APPEND ~pdialog.2da~
+  ~C-ARAN     C-ARANP      C-ARANJ       C-ARAND    C-ARN25P       C-ARN25J        C-ARN25D        C-ARN25~
+  UNLESS ~C-ARAN~
+
+APPEND ~interdia.2da~ ~C-ARAN    C-ARANB     C-ARN25B~
+  UNLESS ~C-ARAN~
+
+/* make sure Imoen has her banter file assigned */
+ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN /* fixes ToB version */
+  COPY_EXISTING ~interdia.2da~ ~override~
+    SET_2DA_ENTRY 17 1 2 ~BIMOEN2~
+  BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+  APPEND ~interdia.2da~ ~IMOEN     BIMOEN2~ /* fixes SoA version */
+    UNLESS ~BIMOEN2~
+END
+
+/* define all macros */
+DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
+  OUTER_SPRINT ~soundchoice~ ~placeholder_value~
+  OUTER_WHILE (!(IS_AN_INT ~soundchoice~) OR (~soundchoice~ > 0x3) OR (~soundchoice~ < 0x1)) BEGIN
+    PRINT ~Music choices:
+    [1] JSayles unaccompanied guitar, Early Music
+    [2] Renaissance brass
+    [3] Vox Vulgaris (midaevil wih a twist)
+    Please type 1, 2, or 3, and press enter.~
+    ACTION_READLN ~soundchoice~
+  END
+ACTION_IF ("soundchoice" = 1) THEN BEGIN
+  /* sound themes : default */   
+  /* Source - http://www.jsayles.com/familypages/earlymusic.htm - "All MP3 recordings listed below, may be downloaded and distributed free of charge.  The recordings may be used for any purpose whatsoever.  In fact, that's the only reason I'm doing this to promote Early Music, and especially to promote the musical selections recorded below." - J. Sayles, performer */
+  COPY ~aranw/media/wavc/set2_1_orosetta.wav~ ~override/c-arnfth.wav~ /* 1 friend, upbeat           */  
+  COPY ~aranw/media/wavc/set2_2_praetorius.wav~ ~override/c-arnfti.wav~ /* 2 friend, introspective    */
+  COPY ~aranw/media/wavc/set2_3_sweetnymphcometothylover.wav~ ~override/c-arnltu.wav~ /* 3 love, upbeat             */
+  COPY ~aranw/media/wavc/set2_4_aprilinmistressface.wav~ ~override/c-arnltl.wav~ /* 4 love, introspective      */
+  COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~ ~override/c-arandf.wav~ /* 5 drunk or in an inn, fast */
+  COPY ~aranw/media/wavc/set2_6_comeagain.wav~ ~override/c-arands.wav~ /* 6 inn, introspective       */    
+  PRINT ~Default unaccompanied guitarsoundtrack chosen~
+END 
+ACTION_IF ("soundchoice" = 2) THEN BEGIN                                       
+  /* sound themes */ 
+  /* Set 3 - Vox Vulgaris - middle ages with a twist. Source - The group. Selections clipped from three of their online materials, Cantiga 166, Rokatanc, and Saltarello. Copyrighted, so again, if an official someone objects for use in a free mod, I'll just use it on my own install. I have to thank the husband and wife team that developed mount & Blade, because I didn't know there was such great midaevil re-covers from groups like Vox Vulgaris and Hungary Debrecen, until modders put them into their M&B mods! */
+  COPY ~aranw/media/wavc/set3_1_vox_vulgaris_rokatanc.wav~     ~override/c-arnfth.wav~ /* 1 friend, upbeat           */
+  COPY ~aranw/media/wavc/set3_2_vox_vulgaris_rokatanc.wav~     ~override/c-arnfti.wav~ /* 2 friend, introspective    */
+  COPY ~aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav~  ~override/c-arnltu.wav~ /* 3 love, upbeat             */
+  COPY ~aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav~  ~override/c-arnltl.wav~ /* 4 love, introspective      */
+  COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~                ~override/c-arandf.wav~ /* 5 drunk or in an inn, fast */
+  COPY ~aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav~   ~override/c-arands.wav~ /* 6 inn, introspective       */       
+  PRINT ~Vox Vulgaris soundtrack chosen~
+END
+ACTION_IF ("soundchoice" = 3) THEN BEGIN
+  /* sound themes */
+  /* Set 1 - brass ensemble, Suzato, The Danseyre. Renaissance, done in a brass arrangement. Czech Brass. Source - Czech Brass album "Virtuosi Baroque Music", on the Sonnleitner Verlag label. Copyrighted, so if someone objects to the rip for a free mod, I'll take it out. But if you find one of their recordings, they are solid brass, more calm in their interpretations that the Philip Jones Brass Ensemble or Canadian Brass. */
+  /* Inn/Drunk clips: #5 Praetorius's Volte, unknown recording. #6, see Set 2 #5 */
+  COPY ~aranw/media/wavc/set1_1_suzato_danserye_mourisque.wav~ ~override/c-arnfth.wav~ /* 1 friend, upbeat           */
+  COPY ~aranw/media/wavc/set1_2_suzato_danserye_battaille.wav~ ~override/c-arnfti.wav~ /* 2 friend, introspective    */
+  COPY ~aranw/media/wavc/set1_3_suzato_danserye_bransle.wav~   ~override/c-arnltu.wav~ /* 3 love, upbeat             */
+  COPY ~aranw/media/wavc/set1_4_suzato_danserye_monamy.wav~    ~override/c-arnltl.wav~ /* 4 love, introspective      */
+  COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~          ~override/c-arandf.wav~ /* 5 drunk or in an inn, fast */
+  COPY ~aranw/media/wavc/set2_6_comeagain.wav~                 ~override/c-arands.wav~ /* 6 inn, introspective       */  
+  PRINT ~Brass soundtrack chosen~
+END 
+END // of macro
+
+
+/* Nythrun's definition */
+
+DEFINE_PATCH_FUNCTION fj_are_structure
+
+  // let's set up our variables! i++++ 4eva
+
+  INT_VAR
+
+  // these are internal variables, not to be used as input
+  is_bg2         		= ENGINE_IS ~soa tob~
+  is_pst         		= ENGINE_IS pst
+  is_id2         		= ENGINE_IS iwd2
+  fj_position    		= 0x11c
+  fj_itm_idx     		= 0
+  fj_vertex_idx  		= 0
+  off          	 		= 0
+  num          	 		= 0
+  off1         	 		= 0
+  num1         	 		= 0       
+  key          	 		= 0
+  value        	 		= 0
+  key1         	 		= 0
+  value1         		= 0
+  fj_return_offset  = 0
+  fj_deleted       	= 0
+
+  // instead of adding fj_structure_type, delete if num == fj_delete_mode
+  fj_delete_mode    = ` 0
+
+  // offsets to various structures unpointed at zero
+  fj_unzero_header_off = 0
+
+  // spams your console with psuedoinformative nonsense
+  fj_debug       		= 1
+                 		
+  // actors      		
+  fj_loc_x       				= 0
+  fj_loc_y       				= 0
+  fj_dest_x      				= 0
+  fj_dest_y      				= 0
+  fj_loading       			= 1
+  fj_spawned       			= 0              
+  fj_animation     			= 0
+  fj_orientation    		= 0
+  fj_expiry      				= ` 0
+  fj_wander_dist_actor 	= 0
+  fj_mvmt_dist_actor   	= 0
+  fj_schedule      			= ` 0
+  fj_num_talked    			= 0
+
+  // regions
+  fj_type        = 0
+  fj_box_left      = 0
+  fj_box_top       = 0
+  fj_box_right     = 0
+  fj_box_bottom    = 0
+  fj_cursor_idx    = 0
+  fj_flags       = 0
+  fj_info_point_strref = ` 0
+  fj_trap_detect     = 0
+  fj_trap_remove     = 0
+  fj_trap_active     = 0
+  fj_trap_status     = 0
+  fj_alt_x       = 0
+  fj_alt_y       = 0
+
+  // spawns
+  fj_spawn_num     = 0
+  fj_difficulty    = 0
+  fj_delay       = 10
+  fj_method      = 0
+  fj_duration      = 1000
+  fj_wander_dist_spawn = 1000
+  fj_mvmt_dist_spawn   = 1000
+  fj_max_num       = 0
+  fj_enable      = 1
+  fj_day_prob      = 100
+  fj_night_prob    = 100
+
+  // containers
+  fj_lock_diff     		= 100
+  fj_trap_remove_diff = 100
+  fj_trap_loc_x    		= 0
+  fj_trap_loc_y    		= 0
+  fj_lockpick_strref  = ` 0
+
+  // items
+  fj_con_itm_idx     = ` 0
+  fj_itm_expiry    = 0
+  fj_charge0       = 0
+  fj_charge1       = 0
+  fj_charge2       = 0
+
+  // ambients
+  fj_radius      = 500
+  fj_loc_z       = 0
+  fj_volume      = 80
+  fj_sound_num     = 0
+  fj_delay       = 0
+  fj_variation     = 0
+
+  // variables
+  fj_variable_value  = 0
+
+  // doors
+  fj_open_box_left   = 0
+  fj_open_box_top    = 0
+  fj_open_box_right  = 0
+  fj_open_box_bottom   = 0
+  fj_closed_box_left   = 0
+  fj_closed_box_top  = 0
+  fj_closed_box_right  = 0
+  fj_closed_box_bottom = 0
+  fj_detect_diff     = 0
+  fj_locked_diff     = 0
+  fj_open_loc_x    = 0
+  fj_open_loc_y    = 0
+  fj_closed_loc_x    = 0
+  fj_closed_loc_y    = 0
+  fj_dlg_strref    = ` 0
+
+  // animations
+  fj_bam_seq       = 0
+  fj_bam_frame     = 0
+  fj_transparent     = 0
+  fj_init_frame    = 0
+  fj_loop_chance     = 0
+  fj_skip_cycles     = 0
+
+  // songs
+  fj_song_day      = 0
+  fj_song_night    = 0
+  fj_song_victory    = 0
+  fj_song_battle     = 0
+  fj_song_defeat     = 0
+  fj_song_day_vol    = 100
+  fj_song_night_vol  = 100
+  fj_song_reverb     = 0
+
+  // rest interrupts
+  fj_cre_strref0     = ` 0
+  fj_cre_strref1     = ` 0
+  fj_cre_strref2     = ` 0
+  fj_cre_strref3     = ` 0
+  fj_cre_strref4     = ` 0
+  fj_cre_strref5     = ` 0
+  fj_cre_strref6     = ` 0
+  fj_cre_strref7     = ` 0
+  fj_cre_strref8     = ` 0
+  fj_cre_strref9     = ` 0
+
+  // map notes
+  fj_note_strref     = ` 0
+  fj_strref_loc    = 1
+  fj_color       = 0
+  fj_note_id       = 0
+
+  // embedded projectiles
+  fj_missile_num     = ` 0
+  fj_frequency     = 0
+  fj_target      = 0
+
+  STR_VAR
+
+  // variables
+  fj_structure_type  	= ~~
+  fj_name        			= ~~
+
+  // actors
+  fj_dlg_resref    = ~~     
+  fj_bcs_override  = ~~
+  fj_bcs_general   = ~~
+  fj_bcs_class     = ~~
+  fj_bcs_race      = ~~
+  fj_bcs_default   = ~~
+  fj_bcs_specific  = ~~
+  fj_cre_resref    = ~~
+  fj_cre_embedded  = ~~
+
+  // regions
+  fj_destination_area  = ~~
+  fj_destination_name  = ~~
+  fj_key_resref    = ~~
+  fj_reg_script    = ~~
+
+  // spawns
+  fj_cre_resref0  = ~~
+  fj_cre_resref1  = ~~
+  fj_cre_resref2  = ~~
+  fj_cre_resref3  = ~~
+  fj_cre_resref4  = ~~
+  fj_cre_resref5  = ~~
+  fj_cre_resref6  = ~~
+  fj_cre_resref7  = ~~
+  fj_cre_resref8  = ~~
+  fj_cre_resref9  = ~~
+                  
+  // containers   
+  fj_trap_script  = ~~
+                  
+  // ambients     
+  fj_wav_resref0  = ~~
+  fj_wav_resref1  = ~~
+  fj_wav_resref2  = ~~
+  fj_wav_resref3  = ~~
+  fj_wav_resref4  = ~~
+  fj_wav_resref5  = ~~
+  fj_wav_resref6  = ~~
+  fj_wav_resref7  = ~~
+  fj_wav_resref8  = ~~
+  fj_wav_resref9  = ~~
+
+  // doors
+  fj_door_wed_id     = ~~
+  fj_door_open_wav   = ~~
+  fj_door_close_wav  = ~~
+  fj_door_script     = ~~
+  fj_travel_trigger  = ~~
+
+  // animations
+  fj_bam_resref    = ~~
+  fj_bmp_resref    = ~~
+
+  //bitmask
+  fj_bitmask       = ~~
+
+  // songs
+  fj_song_day0     = ~~
+  fj_song_day1     = ~~                
+  fj_song_night0     = ~~
+  fj_song_night1     = ~~
+
+  // map notes
+  fj_note_text     = ~~ // only for PST
+
+  RET
+  fj_return_offset
+
+BEGIN
+
+// we must set $num(0) == num_0 when using function input
+// otherwise WeiDU won't recognize that they're synonymous
+PATCH_FOR_EACH value IN
+  vertex door_open_vert door_closed_vert cell_open_vert cell_closed_vert
+BEGIN
+  FOR( num = 0 ; VARIABLE_IS_SET EVAL ~fj_%value%_%num%~ ; ++num )BEGIN
+  	SET $EVAL ~fj_%value%~(~%num%~) = EVAL ~fj_%value%_%num%~
+  END
+END
+FOR( num = 0 ; VARIABLE_IS_SET EVAL ~fj_embedded_eff_%num%~ ; ++num )BEGIN
+  	TEXT_SPRINT $fj_embedded_eff(~%num%~) EVAL ~%fj_embedded_eff_%num%%~
+END
+
+// php over this array rather than an explicit list to reduce code length and typos
+CLEAR_ARRAY struct
+TEXT_SPRINT $struct(0x54 0x58 0x02 0x110) actor
+TEXT_SPRINT $struct(0x5c 0x5a 0x02 0x0c4) region
+TEXT_SPRINT $struct(0x60 0x64 0x04 0x0c8) spawn
+TEXT_SPRINT $struct(0x68 0x6c 0x04 0x068) entrance
+TEXT_SPRINT $struct(0x70 0x74 0x02 0x0c0) container
+TEXT_SPRINT $struct(0x78 0x76 0x02 0x014) itm
+TEXT_SPRINT $struct(0x84 0x82 0x02 0x0d4) ambient
+TEXT_SPRINT $struct(0x88 0x8c 0x02 0x054) variable
+TEXT_SPRINT $struct(0xa8 0xa4 0x04 0x0c8) door
+TEXT_SPRINT $struct(0xb8 0xb4 0x04 0x06c) tiled
+TEXT_SPRINT $struct(0x7c 0x80 0x02 0x004) vertex
+TEXT_SPRINT $struct(0xb0 0xac 0x04 0x04c) animation
+TEXT_SPRINT $struct(0xa0 0x9c 0x04 0x000) bitmask
+TEXT_SPRINT $struct(0xbc 0x00 0x00 0x090) songs
+TEXT_SPRINT $struct(0xc0 0x00 0x00 0x0e4) interrupts
+PATCH_IF is_pst BEGIN
+  TEXT_SPRINT $struct(0xc8 0xcc 0x04 0x214) note
+END ELSE BEGIN
+  TEXT_SPRINT $struct(0xc4 0xc8 0x04 0x034) note
+END
+TEXT_SPRINT $struct(0xcc 0xd0 0x02 0x01c) projectile
+PHP_EACH struct AS key => value BEGIN
+  PATCH_IF ~%value%~ STRING_EQUAL_CASE ~%fj_structure_type%~ BEGIN
+  	SET fj_structure_type = key_0
+  END
+END
+
+// Icewind Dale II decided to be uselessly special
+PATCH_IF is_id2 BEGIN
+  READ_ASCII   0x54 id2_header (0x10)
+  DELETE_BYTES 0x54 0x10
+  PATCH_FOR_EACH off IN
+  0x54 0x5c 0x60 0x68 0x70 0x78 0x7c 0x84 0x88 0xa0 0xa8 0xb0 0xb8 0xbc 0xc0
+  BEGIN
+  PATCH_IF LONG_AT off BEGIN
+    WRITE_LONG off THIS - 0x10
+  END
+  END
+END
+
+PATCH_IF fj_unzero_header_off BEGIN
+
+  // a small courtesy to fix areas missing obligatory structures
+  PATCH_IF fj_delete_mode == ` 0 BEGIN
+  PATCH_IF !LONG_AT 0xbc && fj_structure_type != 0xbc BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Offset to songlist points to 0! Adding empty songlist.~ END
+    WRITE_LONG 0xbc BUFFER_LENGTH
+    INSERT_BYTES BUFFER_LENGTH 0x90
+  END
+  PATCH_IF !LONG_AT 0xc0 && fj_structure_type != 0xc0 BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Offset to rest interrupts points to 0! Adding empty rest interrupt table.~ END
+    WRITE_LONG 0xc0 BUFFER_LENGTH
+    INSERT_BYTES BUFFER_LENGTH 0xe4
+  END
+  END
+
+  // offsets to valid structures should not point to 0
+  PATCH_FOR_EACH off IN
+  0x54 0x5c 0x60 0x68 0x70 0x78 0x7c 0x84 0x88 0xa0 0xa8 0xb0 0xb8
+  BEGIN
+  PATCH_IF !LONG_AT off BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Header offset %off% points to 0, setting to 0x11c.~ END
+    WRITE_LONG off 0x11c
+  END
+  END
+  PATCH_IF is_pst BEGIN
+  PATCH_IF !LONG_AT 0xc8 BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Header offset 0xc8 points to 0, setting to 0x11c.~ END
+    WRITE_LONG 0xc8 0x11c
+  END
+  END ELSE PATCH_IF is_bg2 BEGIN
+  PATCH_FOR_EACH off IN 0xc4 0xcc BEGIN
+    PATCH_IF !LONG_AT off BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Header offset %off% points to 0, setting to 0x11c.~ END
+    WRITE_LONG off 0x11c
+    END
+  END
+  END
+
+END
+
+// long block to read all the existing data
+PATCH_IF fj_debug BEGIN PATCH_PRINT ~Beginning unmarshalling.~ END
+PHP_EACH struct AS key => value BEGIN
+  PATCH_IF( LONG_AT key_0 )BEGIN // skip it if the header offset points at 0
+  CLEAR_ARRAY EVAL ~%value%~
+  GET_OFFSET_ARRAY EVAL ~%value%~ key_0 0x04 key_1 key_2 0x00 0x00 key_3 // e.g. $region
+  PHP_EACH ~%value%~ AS num => off BEGIN
+    CLEAR_ARRAY array
+
+    PATCH_IF( key_0 == 0x54 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading actor %num%.~ END
+    PATCH_IF!( LONG_AT (off + 0x28) & 0x01 )BEGIN
+      PATCH_IF fj_debug BEGIN PATCH_PRINT ~  Associating embedded creature.~ END
+      READ_ASCII LONG_AT (off + 0x88) $are_embedded_cre(~%num%~) (LONG_AT (off + 0x8c))
+    END
+    WRITE_LONG off + 0x88 0
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0x5c )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading region %num%.~ END
+    PATCH_IF( fj_debug && SHORT_AT ( off + 0x2a ) )BEGIN PATCH_PRINT ~  Associating vertices.~ END
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x2a) 0x02 (off + 0x2c) 0x04 0x04
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_region_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+    WRITE_LONG off + 0x2c 0x00
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0x60 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading spawn %num%~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0x68 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading entrance %num%~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0x70 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading container %num%.~ END
+
+    // load container vertices
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x54) 0x04 (off + 0x50) 0x04 0x04
+    PATCH_IF( fj_debug && LONG_AT 0x54 )BEGIN PATCH_PRINT ~  Associating vertices.~ END
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_container_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+
+    // load container items
+    GET_OFFSET_ARRAY array 0x78 0x04 (off + 0x44) 0x04 (off + 0x40) 0x04 0x14
+    PATCH_IF( fj_debug && LONG_AT 0x44 )BEGIN PATCH_PRINT ~  Associating items.~ END
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_ASCII off1 $EVAL ~are_container_%num%_itm~(~%num1%~) (0x14)
+    END
+    CLEAR_ARRAY array
+
+    // read container structure
+    WRITE_LONG off + 0x40 0x00 // wipe item index
+    WRITE_LONG off + 0x44 0x00 // wipe item count
+    WRITE_LONG off + 0x50 0x00 // wipe vertex index
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    // items are read off with their associated containers
+    PATCH_IF( key_0 == 0x78 )BEGIN
+    END ELSE
+
+    PATCH_IF( key_0 == 0x84 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading ambient %num%~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0x88 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading variable %num%~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0xa8 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading door %num% and associated vertices.~ END
+    // load door open vertices
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x30) 0x02 (off + 0x2c) 0x04 0x04
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_door_open_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+    WRITE_LONG off + 0x2c 0x00
+    // load door closed vertices
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x32) 0x02 (off + 0x34) 0x04 0x04
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_door_closed_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+    WRITE_LONG off + 0x34 0x00
+    // load cell open vertices
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x4c) 0x02 (off + 0x48) 0x04 0x04
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_cell_open_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+    WRITE_LONG off + 0x48 0x00
+    // load cell closed vertices
+    GET_OFFSET_ARRAY array 0x7c 0x04 (off + 0x4e) 0x02 (off + 0x50) 0x04 0x04
+    PHP_EACH array AS num1 => off1 BEGIN
+      READ_LONG off1 $EVAL ~are_cell_closed_%num%_vertex~(~%num1%~)
+    END
+    CLEAR_ARRAY array
+    WRITE_LONG off + 0x50 0x00
+    // read the door structure itself
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0xb8 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading tiled object %num% (something is probably very wrong).~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    // vertices, these are read off with their associated regions/containers/doors
+    PATCH_IF( key_0 == 0x78 )BEGIN
+    END ELSE
+
+    PATCH_IF( key_0 == 0xb0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading animation %num%.~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF(
+    ( key_0 == 0xc4 && is_bg2 ) ||
+    ( key_0 == 0xc8 && is_pst)
+    )BEGIN //
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading map note %num%.~ END
+    READ_ASCII off $EVAL ~are_%value%~(~%num%~) (key_3)
+    END ELSE
+
+    PATCH_IF( key_0 == 0xcc && is_bg2 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading projectile %num%.~ END
+    READ_ASCII off $are_projectile(~%num%~) (key_3)
+    PATCH_IF SHORT_AT (off + 0x0c) BEGIN
+      PATCH_IF( fj_debug )BEGIN PATCH_PRINT ~  Associating v2 embedded effects.~ END
+      READ_ASCII LONG_AT (off + 0x08) $are_embedded_eff(~%num%~) (SHORT_AT (off + 0x0c))
+    END
+    END
+
+  END // php_each ~%value%~
+  CLEAR_ARRAY array
+  CLEAR_ARRAY EVAL ~%value%~
+
+  // single structures
+
+  // bitmask
+  PATCH_IF( key_0 == 0xa0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading bitmask (should only exist in saved game areas).~ END
+    READ_ASCII LONG_AT 0xa0 $are_bitmask(0) (LONG_AT 0x9c)
+  END ELSE
+
+  // songs
+  PATCH_IF( key_0 == 0xbc )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading songs (obligatory structure).~ END
+    READ_ASCII LONG_AT 0xbc $are_songs(0) (0x90)
+  END ELSE
+
+  // rest interrupts
+  PATCH_IF( key_0 == 0xc0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reading rest interrupt table (obligatory structure).~ END
+    READ_ASCII LONG_AT 0xc0 $are_interrupts(0) (0xe4)
+  END
+
+  END // skip if key_0 points to 0
+END // end php_each $structure: all extended structures now loaded in buffer
+
+PATCH_IF fj_debug BEGIN PATCH_PRINT ~Trimming %SOURCE_FILE% down to the header.~ END
+DELETE_BYTES 0x11c BUFFER_LENGTH - 0x11c
+PHP_EACH struct AS key => value BEGIN
+  PATCH_IF( key_2 == 0x02 )BEGIN
+  WRITE_SHORT key_1 0x00
+  END ELSE
+  PATCH_IF( key_2 == 0x04 )BEGIN
+  WRITE_LONG  key_1 0x00
+  END
+END
+
+PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassembling %SOURCE_FILE%.~ END
+PHP_EACH struct AS key => value BEGIN
+  WRITE_LONG key_0 fj_position
+  PHP_EACH ~are_%value%~ AS key1 => value1 BEGIN
+  PATCH_IF( key_0 != 0xa0 && key_0 != 0xbc && key_0 != 0xc0 )BEGIN
+    PATCH_IF( key1 != fj_delete_mode || fj_structure_type != key_0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+    PATCH_IF( key_2 == 0x02 )BEGIN
+      WRITE_SHORT key_1 THIS + 0x01
+    END ELSE
+    PATCH_IF( key_2 == 0x04 )BEGIN
+      WRITE_LONG  key_1 THIS + 0x01
+    END
+    INSERT_BYTES fj_position key_3
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += key_3
+    END
+  END ELSE
+  PATCH_IF( key_0 == 0xa0 && fj_structure_type != key_0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+    TEXT_SPRINT  value1    $are_bitmask(0)
+    WRITE_LONG   0x9c    STRING_LENGTH EVAL ~%value1%~
+    INSERT_BYTES fj_position LONG_AT 0x9c
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += LONG_AT 0x9c
+  END ELSE
+  PATCH_IF( key_0 == 0xbc && fj_structure_type != key_0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+    INSERT_BYTES fj_position key_3
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += key_3
+  END ELSE
+  PATCH_IF( key_0 == 0xc0 && fj_structure_type != key_0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reinserting %value% number %key1%.~ END
+    INSERT_BYTES fj_position key_3
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += key_3
+  END
+  END // PHP_EACH $EVAL ~are_%value%~
+
+  // add new structure
+  PATCH_IF( key_0 == fj_structure_type && fj_delete_mode == ` 0 && key_0 != 0x78 )BEGIN
+  PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding new %value% structure.~ END
+  PATCH_IF( key_2 == 0x02 )BEGIN
+    WRITE_SHORT key_1 THIS + 0x01
+  END ELSE PATCH_IF( key_2 == 0x04 )BEGIN
+    WRITE_LONG  key_1 THIS + 0x01
+  END
+  SET fj_return_offset = fj_position
+  INSERT_BYTES fj_position key_3
+  SET fj_position += key_3
+
+  // actor
+  PATCH_IF( fj_structure_type == 0x54 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_SHORT  fj_return_offset + 0x24 fj_dest_x
+    WRITE_SHORT  fj_return_offset + 0x26 fj_dest_y
+    WRITE_LONG   fj_return_offset + 0x28 fj_loading
+    WRITE_LONG   fj_return_offset + 0x2c fj_spawned
+    WRITE_LONG   fj_return_offset + 0x30 fj_animation
+    WRITE_LONG   fj_return_offset + 0x34 fj_orientation
+    WRITE_LONG   fj_return_offset + 0x38 fj_expiry
+    WRITE_SHORT  fj_return_offset + 0x3c fj_wander_dist_actor
+    WRITE_SHORT  fj_return_offset + 0x3e fj_mvmt_dist_actor
+    WRITE_LONG   fj_return_offset + 0x40 fj_schedule
+    WRITE_LONG   fj_return_offset + 0x44 fj_num_talked
+    WRITE_ASCIIE fj_return_offset + 0x48 ~%fj_dlg_resref%~
+    WRITE_ASCIIE fj_return_offset + 0x50 ~%fj_bcs_override%~
+    WRITE_ASCIIE fj_return_offset + 0x58 ~%fj_bcs_general%~
+    WRITE_ASCIIE fj_return_offset + 0x60 ~%fj_bcs_class%~
+    WRITE_ASCIIE fj_return_offset + 0x68 ~%fj_bcs_race%~
+    WRITE_ASCIIE fj_return_offset + 0x70 ~%fj_bcs_default%~
+    WRITE_ASCIIE fj_return_offset + 0x78 ~%fj_bcs_specific%~
+    WRITE_ASCIIE fj_return_offset + 0x80 ~%fj_cre_resref%~
+  END ELSE
+
+  // region
+  PATCH_IF( fj_structure_type == 0x5c )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_type
+    WRITE_SHORT  fj_return_offset + 0x22 fj_box_left
+    WRITE_SHORT  fj_return_offset + 0x24 fj_box_top
+    WRITE_SHORT  fj_return_offset + 0x26 fj_box_right
+    WRITE_SHORT  fj_return_offset + 0x28 fj_box_bottom
+    WRITE_LONG   fj_return_offset + 0x34 fj_cursor_idx
+    WRITE_ASCIIE fj_return_offset + 0x38 ~%fj_destination_area%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x40 ~%fj_destination_name%~ #32
+    WRITE_LONG   fj_return_offset + 0x60 fj_flags
+    WRITE_LONG   fj_return_offset + 0x64 fj_info_point_strref
+    WRITE_SHORT  fj_return_offset + 0x68 fj_trap_detect
+    WRITE_SHORT  fj_return_offset + 0x6a fj_trap_remove
+    WRITE_SHORT  fj_return_offset + 0x6c fj_trap_active
+    WRITE_SHORT  fj_return_offset + 0x6e fj_trap_status
+    WRITE_SHORT  fj_return_offset + 0x70 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x72 fj_loc_y
+    WRITE_ASCIIE fj_return_offset + 0x74 ~%fj_key_resref%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x7c ~%fj_reg_script%~ #8
+    WRITE_SHORT  fj_return_offset + 0x84 fj_alt_x
+    WRITE_SHORT  fj_return_offset + 0x86 fj_alt_y
+    PHP_EACH fj_vertex AS key1 => value1 BEGIN
+    WRITE_SHORT fj_return_offset + 0x2a THIS + 0x01
+    END
+  END ELSE
+
+  // spawn
+  PATCH_IF( fj_structure_type == 0x60 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_ASCIIE fj_return_offset + 0x24 ~%fj_cre_resref0%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x2c ~%fj_cre_resref1%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x34 ~%fj_cre_resref2%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x3c ~%fj_cre_resref3%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x44 ~%fj_cre_resref4%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x4c ~%fj_cre_resref5%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x54 ~%fj_cre_resref6%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x5c ~%fj_cre_resref7%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x64 ~%fj_cre_resref8%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x6c ~%fj_cre_resref9%~ #8
+    WRITE_SHORT  fj_return_offset + 0x74 fj_spawn_num
+    WRITE_SHORT  fj_return_offset + 0x76 fj_difficulty
+    WRITE_SHORT  fj_return_offset + 0x78 fj_delay
+    WRITE_SHORT  fj_return_offset + 0x7a fj_method
+    WRITE_LONG   fj_return_offset + 0x7c fj_duration
+    WRITE_SHORT  fj_return_offset + 0x80 fj_wander_distance
+    WRITE_SHORT  fj_return_offset + 0x82 fj_mvmt_distance
+    WRITE_SHORT  fj_return_offset + 0x84 fj_max_num
+    WRITE_SHORT  fj_return_offset + 0x86 fj_enable
+    WRITE_LONG   fj_return_offset + 0x88 fj_schedule
+    WRITE_SHORT  fj_return_offset + 0x8c fj_day_prob
+    WRITE_SHORT  fj_return_offset + 0x8e fj_night_prob
+  END ELSE
+
+  // entrance
+  PATCH_IF( fj_structure_type == 0x68 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_SHORT  fj_return_offset + 0x24 fj_orientation
+  END ELSE
+
+  // container
+  PATCH_IF( fj_structure_type == 0x70 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_SHORT  fj_return_offset + 0x24 fj_type
+    WRITE_SHORT  fj_return_offset + 0x26 fj_lock_diff
+    WRITE_LONG   fj_return_offset + 0x28 fj_flags
+    WRITE_SHORT  fj_return_offset + 0x2c fj_trap_detect
+    WRITE_SHORT  fj_return_offset + 0x2e fj_trap_remove_diff
+    WRITE_SHORT  fj_return_offset + 0x30 fj_trap_active
+    WRITE_SHORT  fj_return_offset + 0x32 fj_trap_status
+    WRITE_SHORT  fj_return_offset + 0x34 fj_trap_loc_x
+    WRITE_SHORT  fj_return_offset + 0x36 fj_trap_loc_y
+    WRITE_SHORT  fj_return_offset + 0x38 fj_box_left
+    WRITE_SHORT  fj_return_offset + 0x3a fj_box_top
+    WRITE_SHORT  fj_return_offset + 0x3c fj_box_right
+    WRITE_SHORT  fj_return_offset + 0x3e fj_box_bottom
+    WRITE_ASCIIE fj_return_offset + 0x48 ~%fj_trap_script%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x78 ~%fj_key_resref%~ #8
+    WRITE_LONG   fj_return_offset + 0x84 fj_lockpick_strref
+    PHP_EACH fj_vertex AS key1 => value1 BEGIN
+    WRITE_LONG fj_return_offset + 0x54 THIS + 0x01
+    END
+  END ELSE
+
+  // ambient
+  PATCH_IF( fj_structure_type == 0x84 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_SHORT  fj_return_offset + 0x24 fj_radius
+    WRITE_SHORT  fj_return_offset + 0x26 fj_loc_z
+    WRITE_SHORT  fj_return_offset + 0x2e fj_volume
+    WRITE_ASCIIE fj_return_offset + 0x30 ~%fj_wav_resref0%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x38 ~%fj_wav_resref1%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x40 ~%fj_wav_resref2%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x48 ~%fj_wav_resref3%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x50 ~%fj_wav_resref4%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x58 ~%fj_wav_resref5%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x60 ~%fj_wav_resref6%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x68 ~%fj_wav_resref7%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x70 ~%fj_wav_resref8%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x78 ~%fj_wav_resref9%~ #8
+    WRITE_SHORT  fj_return_offset + 0x80 fj_sound_num
+    WRITE_LONG   fj_return_offset + 0x84 fj_delay
+    WRITE_LONG   fj_return_offset + 0x88 fj_variation
+    WRITE_LONG   fj_return_offset + 0x8c fj_schedule
+    WRITE_LONG   fj_return_offset + 0x90 fj_flags
+  END ELSE
+
+  // variable
+  PATCH_IF( fj_structure_type == 0x88 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_LONG   fj_return_offset + 0x28 fj_variable_value
+  END ELSE
+
+  // door
+  PATCH_IF( fj_structure_type == 0xa8 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_ASCIIE fj_return_offset + 0x20 ~%fj_door_wed_id%~
+    WRITE_LONG   fj_return_offset + 0x28 fj_flags
+    WRITE_SHORT  fj_return_offset + 0x38 fj_open_box_left
+    WRITE_SHORT  fj_return_offset + 0x3a fj_open_box_top
+    WRITE_SHORT  fj_return_offset + 0x3c fj_open_box_right
+    WRITE_SHORT  fj_return_offset + 0x3e fj_open_box_bottom
+    WRITE_SHORT  fj_return_offset + 0x40 fj_closed_box_left
+    WRITE_SHORT  fj_return_offset + 0x42 fj_closed_box_top
+    WRITE_SHORT  fj_return_offset + 0x44 fj_closed_box_right
+    WRITE_SHORT  fj_return_offset + 0x46 fj_closed_box_bottom
+    WRITE_ASCIIE fj_return_offset + 0x58 ~%fj_door_open_wav%~
+    WRITE_ASCIIE fj_return_offset + 0x60 ~%fj_door_close_wav%~
+    WRITE_LONG   fj_return_offset + 0x68 fj_cursor_idx
+    WRITE_SHORT  fj_return_offset + 0x6c fj_trap_detect
+    WRITE_SHORT  fj_return_offset + 0x6e fj_trap_remove
+    WRITE_SHORT  fj_return_offset + 0x70 fj_trap_active
+    WRITE_SHORT  fj_return_offset + 0x72 fj_trap_status
+    WRITE_SHORT  fj_return_offset + 0x74 fj_trap_loc_x
+    WRITE_SHORT  fj_return_offset + 0x76 fj_trap_loc_y
+    WRITE_ASCIIE fj_return_offset + 0x78 ~%fj_key_resref%~
+    WRITE_ASCIIE fj_return_offset + 0x80 ~%fj_door_script%~
+    WRITE_LONG   fj_return_offset + 0x88 fj_detect_diff
+    WRITE_LONG   fj_return_offset + 0x8c fj_locked_diff
+    WRITE_SHORT  fj_return_offset + 0x90 fj_open_loc_x
+    WRITE_SHORT  fj_return_offset + 0x92 fj_open_loc_y
+    WRITE_SHORT  fj_return_offset + 0x94 fj_closed_loc_x
+    WRITE_SHORT  fj_return_offset + 0x96 fj_closed_loc_y
+    WRITE_LONG   fj_return_offset + 0x98 fj_lockpick_strref
+    WRITE_ASCIIE fj_return_offset + 0x9c ~%fj_travel_trigger%~ #24
+    WRITE_LONG   fj_return_offset + 0xb4 fj_dlg_strref
+    WRITE_ASCIIE fj_return_offset + 0xb8 ~%fj_dlg_resref%~
+    PHP_EACH fj_door_open_vert   AS key1 => value1 BEGIN
+    WRITE_SHORT fj_return_offset + 0x30 THIS + 0x01
+    END
+    PHP_EACH fj_door_closed_vert AS key1 => value1 BEGIN
+    WRITE_SHORT fj_return_offset + 0x32 THIS + 0x01
+    END
+    PHP_EACH fj_cell_open_vert   AS key1 => value1 BEGIN
+    WRITE_SHORT fj_return_offset + 0x4c THIS + 0x01
+    END
+    PHP_EACH fj_cell_closed_vert AS key1 => value1 BEGIN
+    WRITE_SHORT fj_return_offset + 0x4e THIS + 0x01
+    END
+  END ELSE
+
+  // animation
+  PATCH_IF( fj_structure_type == 0xb0 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_SHORT  fj_return_offset + 0x20 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x22 fj_loc_y
+    WRITE_LONG   fj_return_offset + 0x24 fj_schedule
+    WRITE_ASCIIE fj_return_offset + 0x28 ~%fj_bam_resref%~ #8
+    WRITE_SHORT  fj_return_offset + 0x30 fj_bam_seq
+    WRITE_SHORT  fj_return_offset + 0x32 fj_bam_frame
+    WRITE_LONG   fj_return_offset + 0x34 fj_flags
+    WRITE_SHORT  fj_return_offset + 0x38 fj_loc_z
+    WRITE_SHORT  fj_return_offset + 0x3a fj_transparent
+    WRITE_SHORT  fj_return_offset + 0x3c fj_init_frame
+    WRITE_BYTE   fj_return_offset + 0x3e fj_loop_chance
+    WRITE_BYTE   fj_return_offset + 0x3f fj_skip_cycles
+    WRITE_ASCIIE fj_return_offset + 0x40 ~%fj_bmp_resref%~ #8
+  END ELSE
+
+  // bitmask
+  PATCH_IF( fj_structure_type == 0xa0 )BEGIN
+    PATCH_IF( FILE_EXISTS ~%fj_bitmask%~ )BEGIN
+    SET key1 = BUFFER_LENGTH
+    APPEND_FILE_EVALUATE ~%fj_bitmask%~
+    WRITE_LONG 0x9c BUFFER_LENGTH - key1
+    END ELSE BEGIN
+    WRITE_LONG 0x9c 0x00
+    END
+    SET fj_position += LONG_AT 0x9c
+  END ELSE
+
+  // songs
+  PATCH_IF( fj_structure_type == 0xbc )BEGIN
+    WRITE_LONG   fj_return_offset + 0x00 fj_song_day
+    WRITE_LONG   fj_return_offset + 0x04 fj_song_night
+    WRITE_LONG   fj_return_offset + 0x08 fj_song_victory
+    WRITE_LONG   fj_return_offset + 0x0c fj_song_battle
+    WRITE_LONG   fj_return_offset + 0x10 fj_song_defeat
+    WRITE_LONG   fj_return_offset + 0x14 0xffffffff
+    WRITE_LONG   fj_return_offset + 0x18 0xffffffff
+    WRITE_LONG   fj_return_offset + 0x1c 0xffffffff
+    WRITE_LONG   fj_return_offset + 0x20 0xffffffff
+    WRITE_LONG   fj_return_offset + 0x24 0xffffffff
+    WRITE_ASCIIE fj_return_offset + 0x28 ~%fj_song_day0%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x30 ~%fj_song_day1%~ #8
+    WRITE_LONG   fj_return_offset + 0x38 fj_song_day_vol
+    WRITE_ASCIIE fj_return_offset + 0x3c ~%fj_song_night0%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x44 ~%fj_song_night1%~ #8
+    WRITE_LONG   fj_return_offset + 0x4c fj_song_night_vol
+    WRITE_LONG   fj_return_offset + 0x50 fj_song_reverb
+  END ELSE
+
+  // rest interrupts
+  PATCH_IF( fj_structure_type == 0xc0 )BEGIN
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #32
+    WRITE_LONG   fj_return_offset + 0x20 fj_cre_strref0
+    WRITE_LONG   fj_return_offset + 0x24 fj_cre_strref1
+    WRITE_LONG   fj_return_offset + 0x28 fj_cre_strref2
+    WRITE_LONG   fj_return_offset + 0x2c fj_cre_strref3
+    WRITE_LONG   fj_return_offset + 0x30 fj_cre_strref4
+    WRITE_LONG   fj_return_offset + 0x34 fj_cre_strref5
+    WRITE_LONG   fj_return_offset + 0x38 fj_cre_strref6
+    WRITE_LONG   fj_return_offset + 0x3c fj_cre_strref7
+    WRITE_LONG   fj_return_offset + 0x40 fj_cre_strref8
+    WRITE_LONG   fj_return_offset + 0x44 fj_cre_strref9
+    WRITE_ASCIIE fj_return_offset + 0x48 ~%fj_cre_resref0%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x50 ~%fj_cre_resref1%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x58 ~%fj_cre_resref2%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x60 ~%fj_cre_resref3%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x68 ~%fj_cre_resref4%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x70 ~%fj_cre_resref5%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x78 ~%fj_cre_resref6%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x80 ~%fj_cre_resref7%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x88 ~%fj_cre_resref8%~ #8
+    WRITE_ASCIIE fj_return_offset + 0x90 ~%fj_cre_resref9%~ #8
+    WRITE_SHORT  fj_return_offset + 0x98 fj_spawn_num
+    WRITE_SHORT  fj_return_offset + 0x9a fj_difficulty
+    WRITE_LONG   fj_return_offset + 0x9c fj_duration
+    WRITE_SHORT  fj_return_offset + 0xa0 fj_wander_distance
+    WRITE_SHORT  fj_return_offset + 0xa2 fj_mvmt_distance
+    WRITE_SHORT  fj_return_offset + 0xa4 fj_max_num
+    WRITE_SHORT  fj_return_offset + 0xa6 fj_enable
+    WRITE_SHORT  fj_return_offset + 0xa8 fj_day_prob
+    WRITE_SHORT  fj_return_offset + 0xaa fj_night_prob
+  END ELSE
+
+  // map note (BGII)
+  PATCH_IF( fj_structure_type == 0xc4 )BEGIN
+    WRITE_SHORT  fj_return_offset + 0x00 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x02 fj_loc_y
+    WRITE_LONG   fj_return_offset + 0x04 fj_note_strref
+    WRITE_SHORT  fj_return_offset + 0x08 fj_strref_loc
+    WRITE_SHORT  fj_return_offset + 0x0a fj_color
+    WRITE_LONG   fj_return_offset + 0x0c fj_note_id
+  END ELSE
+
+  // map note (PST)
+  PATCH_IF( fj_structure_type == 0xc8 )BEGIN
+    WRITE_LONG   fj_return_offset + 0x000 fj_loc_x
+    WRITE_LONG   fj_return_offset + 0x004 fj_loc_y
+    WRITE_ASCIIE fj_return_offset + 0x008 ~%fj_note_text%~
+    WRITE_LONG   fj_return_offset + 0x1fc fj_color
+  END ELSE
+
+  // embedded projectile
+  PATCH_IF( fj_structure_type == 0xcc )BEGIN
+    PATCH_IF(  fj_missile_num == ` 0 )BEGIN
+    SET fj_missile_num = IDS_OF_SYMBOL ( projectl ~%fj_name%~ )
+    PATCH_IF( fj_missile_num > ` 0 )BEGIN
+      SET fj_missile_num -= 0x01
+    END
+    END
+    WRITE_ASCIIE fj_return_offset + 0x00 ~%fj_name%~ #8
+    WRITE_SHORT  fj_return_offset + 0x0e fj_missile_num
+    WRITE_SHORT  fj_return_offset + 0x10 fj_frequency
+    WRITE_SHORT  fj_return_offset + 0x12 fj_duration
+    WRITE_SHORT  fj_return_offset + 0x14 fj_loc_x
+    WRITE_SHORT  fj_return_offset + 0x16 fj_loc_y
+    WRITE_SHORT  fj_return_offset + 0x18 fj_loc_z
+    WRITE_SHORT  fj_return_offset + 0x1a fj_target
+  END
+
+  END
+
+  // add items and index to their containers
+  PATCH_IF( key_0 == 0x78 )BEGIN
+  PHP_EACH are_container AS num => structure BEGIN
+    PATCH_IF( fj_structure_type == 0x70 && num == fj_delete_mode && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    WRITE_LONG LONG_AT 0x70 + 0xc0 * ( num - fj_deleted ) + 0x40 fj_itm_idx
+    PHP_EACH ~are_container_%num%_itm~ AS num1 => value1 BEGIN
+      PATCH_IF(
+      ( fj_structure_type != 0x78 ) ||
+      ( fj_delete_mode != num1 + LONG_AT ( LONG_AT 0x70 + 0xc0 * ( num - fj_deleted ) + 0x40 ) )
+      )BEGIN
+      PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating item %num1% to container %num%.~ END
+      WRITE_LONG LONG_AT 0x70 + 0xc0 * ( num - fj_deleted ) + 0x44 THIS + 0x01
+      INSERT_BYTES fj_position 0x14
+      WRITE_ASCIIE fj_position ~%value1%~
+      WRITE_SHORT  0x76 THIS + 0x01
+      SET ++ fj_itm_idx
+      SET fj_position += key_3
+      END
+    END
+    END
+    PATCH_IF( fj_con_itm_idx == num && fj_structure_type == 0x78 )BEGIN
+    READ_LONG LONG_AT 0x70 + 0xc0 * num + 0x44 cnt
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding new item to container %num%.~ END
+    WRITE_LONG LONG_AT 0x70 + 0xc0 * num + 0x44 THIS + 0x01
+    WRITE_SHORT  0x76 THIS + 0x01
+    INSERT_BYTES fj_position key_3
+    WRITE_ASCIIE fj_position + 0x00 ~%fj_name%~ #8
+    WRITE_SHORT  fj_position + 0x08 fj_itm_expiry
+    WRITE_SHORT  fj_position + 0x0a fj_charge0
+    WRITE_SHORT  fj_position + 0x0c fj_charge1
+    WRITE_SHORT  fj_position + 0x0e fj_charge2
+    WRITE_LONG   fj_position + 0x10 fj_flags
+    SET ++ fj_itm_idx
+    SET fj_position  += key_3
+    END
+  END // php $are_container
+  SET fj_deleted = 0x00
+  PHP_EACH are_container AS key => value BEGIN
+    CLEAR_ARRAY EVAL ~are_container_%key%_itm~
+  END
+  END ELSE
+
+  // add vertices
+  PATCH_IF( key_0 == 0x7c )BEGIN
+
+  // vertices associated with regions
+  PHP_EACH are_region  AS num => structure BEGIN
+    PATCH_IF( fj_structure_type == 0x5c && num == fj_delete_mode && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating vertices to region %num%.~ END
+    WRITE_LONG LONG_AT 0x5c + 0xc4 * ( num - fj_deleted ) + 0x2c fj_vertex_idx
+    PHP_EACH ~are_region_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      WRITE_SHORT  0x80    THIS + 0x01
+      SET ++fj_vertex_idx
+      SET fj_position += key_3
+    END
+    END
+  END
+  SET fj_deleted = 0x00
+  PATCH_IF( fj_structure_type == 0x5c && fj_delete_mode == ` 0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding vertices to new region.~ END
+    WRITE_LONG fj_return_offset + 0x2c fj_vertex_idx
+    PHP_EACH fj_vertex AS num => off BEGIN
+    INSERT_BYTES fj_position 0x04
+    WRITE_SHORT  0x80    THIS + 0x01
+    SET ++fj_vertex_idx
+    END
+    PHP_EACH fj_vertex AS num => off BEGIN
+    WRITE_LONG fj_position off
+    SET fj_position += 0x04
+    END
+  END
+  PHP_EACH are_region  AS num => structure BEGIN
+    CLEAR_ARRAY EVAL ~are_region_%num%_vertex~
+  END
+
+  // vertices associated with containers
+  PHP_EACH are_container AS num => structure BEGIN
+    PATCH_IF( fj_structure_type == 0x70 && num == fj_delete_mode && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating vertices to container %num%.~ END
+    WRITE_LONG LONG_AT 0x70 + 0xc0 * ( num - fj_deleted ) + 0x50 fj_vertex_idx
+    PHP_EACH ~are_container_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      WRITE_SHORT  0x80    THIS + 0x01
+      SET ++fj_vertex_idx
+      SET fj_position += 0x04
+    END
+    END
+  END
+  SET fj_deleted = 0x00
+  PATCH_IF fj_structure_type == 0x70 && fj_delete_mode == ` 0 BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding vertices to new container.~ END
+    WRITE_LONG fj_return_offset + 0x50 fj_vertex_idx
+    PHP_EACH fj_vertex AS num => off BEGIN
+    SET ++fj_vertex_idx
+    INSERT_BYTES fj_position 0x04
+    WRITE_SHORT  0x80 THIS + 0x01
+    END
+    PHP_EACH fj_vertex AS num => off BEGIN
+    WRITE_LONG fj_position off
+    SET fj_position += 0x04
+    END
+  END
+  PHP_EACH are_container AS num => structure BEGIN
+    CLEAR_ARRAY EVAL ~are_container_%num%_vertex~
+  END
+
+  // vertices associated with doors
+  PHP_EACH are_door    AS num => structure BEGIN
+    PATCH_IF( fj_structure_type == 0xa8 && num == fj_delete_mode && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating vertices to door %num%.~ END
+    WRITE_LONG LONG_AT 0xa8 + 0xc8 * ( num - fj_deleted ) + 0x2c fj_vertex_idx
+    PHP_EACH ~are_door_open_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      SET ++fj_vertex_idx
+      SET fj_position += 0x04
+      WRITE_SHORT  0x80 THIS + 0x01
+    END
+    WRITE_LONG LONG_AT 0xa8 + 0xc8 * ( num - fj_deleted ) + 0x34 fj_vertex_idx
+    PHP_EACH ~are_door_closed_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      SET ++fj_vertex_idx
+      SET fj_position += 0x04
+      WRITE_SHORT  0x80 THIS + 0x01
+    END
+    WRITE_LONG LONG_AT 0xa8 + 0xc8 * ( num - fj_deleted ) + 0x48 fj_vertex_idx
+    PHP_EACH ~are_cell_open_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      SET ++fj_vertex_idx
+      SET fj_position += 0x04
+      WRITE_SHORT  0x80 THIS + 0x01
+    END
+    WRITE_LONG LONG_AT 0xa8 + 0xc8 * ( num - fj_deleted ) + 0x50 fj_vertex_idx
+    PHP_EACH ~are_cell_closed_%num%_vertex~ AS num1 => value1 BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_LONG   fj_position value1
+      SET ++fj_vertex_idx
+      SET fj_position += 0x04
+      WRITE_SHORT  0x80 THIS + 0x01
+    END
+    END
+  END
+  SET fj_deleted = 0x00
+  PATCH_FOR_EACH value1 IN
+    door_open door_closed cell_open cell_closed
+  BEGIN
+    CLEAR_ARRAY EVAL ~are_%value1%_%num%_vertex~
+  END
+  PATCH_IF( fj_structure_type == 0xa8 && fj_delete_mode == ` 0 )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding vertices to new door.~ END
+    WRITE_LONG fj_return_offset + 0x2c fj_vertex_idx
+    WRITE_LONG fj_return_offset + 0x34
+    LONG_AT (fj_return_offset + 0x2c) + SHORT_AT (fj_return_offset + 0x30)
+    WRITE_LONG fj_return_offset + 0x48
+    LONG_AT (fj_return_offset + 0x34) + SHORT_AT (fj_return_offset + 0x32)
+    WRITE_LONG fj_return_offset + 0x50
+    LONG_AT (fj_return_offset + 0x48) + SHORT_AT (fj_return_offset + 0x4c)
+    PATCH_FOR_EACH vertex_type IN
+    door_open door_closed cell_open cell_closed
+    BEGIN
+    PHP_EACH ~fj_%vertex_type%_vert~ AS num => off BEGIN
+      INSERT_BYTES fj_position 0x04
+      WRITE_SHORT  0x80 THIS + 0x01
+    END
+    PHP_EACH ~fj_%vertex_type%_vert~ AS num => off BEGIN
+      WRITE_LONG fj_position off
+      SET fj_position += 0x04
+    END
+    CLEAR_ARRAY EVAL ~fj_%vertex_type%_vert~
+    END
+  END
+
+  END // adding vertices
+
+  // reinsert embedded creatures
+  PATCH_IF( key_0 == 0x54 )BEGIN
+  PHP_EACH are_embedded_cre AS num => value1 BEGIN
+    PATCH_IF( fj_structure_type == 0x54 && num == fj_delete_mode && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating embedded creature to actor %num%.~ END
+    WRITE_LONG   LONG_AT 0x54 + ( num - fj_deleted ) * 0x110 + 0x88 fj_position
+    INSERT_BYTES fj_position LONG_AT ( LONG_AT 0x54 + ( num - fj_deleted ) * 0x110 + 0x8c )
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += LONG_AT (LONG_AT 0x54 + ( num - fj_deleted ) * 0x110 + 0x8c)
+    END
+  END
+  CLEAR_ARRAY are_embedded_cre
+  SET fj_deleted = 0x00
+  PATCH_IF( fj_structure_type == 0x54 && fj_delete_mode == ` 0 && !( fj_loading & 0x01 ) )BEGIN
+    PATCH_IF( FILE_EXISTS ~%fj_cre_embedded%~ )BEGIN
+    SET off = BUFFER_LENGTH // we do a stupid dance here to avoid INNER_ACTION
+    APPEND_FILE_EVALUATE ~%fj_cre_embedded%~
+    READ_ASCII   off fj_cre_embedded ( BUFFER_LENGTH - off )
+    DELETE_BYTES off STRING_LENGTH EVAL ~%fj_cre_embedded%~
+    END ELSE PATCH_IF( FILE_EXISTS_IN_GAME ~%fj_cre_resref%.cre~ ) BEGIN
+    INNER_PATCH_FILE ~%fj_cre_resref%.cre~ BEGIN
+      READ_ASCII 0x00 fj_cre_embedded ( BUFFER_LENGTH )
+    END
+    END
+    PATCH_IF( ~%fj_cre_embedded%~ STR_CMP ~~ )BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Embedding creature to new actor.~ END
+    WRITE_LONG   fj_return_offset + 0x88 fj_position
+    WRITE_LONG   fj_return_offset + 0x8c STRING_LENGTH EVAL ~%fj_cre_embedded%~
+    INSERT_BYTES fj_position       LONG_AT (fj_return_offset + 0x8c)
+    WRITE_ASCIIE fj_position       ~%fj_cre_embedded%~
+    SET fj_position += LONG_AT ( fj_return_offset + 0x8c )
+    END ELSE BEGIN
+    WRITE_LONG   fj_return_offset + 0x28 THIS | 0x01 // if we didn't find a .cre, mark it unembedded
+    END
+  END
+  END ELSE
+
+  // reinsert embedded projectile effects
+  PATCH_IF( key_0 == 0xcc )BEGIN
+  PHP_EACH are_embedded_eff AS num => value1 BEGIN
+    PATCH_IF( fj_structure_type == 0xcc && fj_delete_mode == num && fj_deleted == 0x00 )BEGIN
+    SET fj_deleted = 0x01
+    END ELSE BEGIN
+    PATCH_IF fj_debug BEGIN PATCH_PRINT ~Reassociating embedded effects to projectile %num%.~ END
+    WRITE_LONG   LONG_AT 0xcc + ( num - fj_deleted ) * 0x1c + 0x08 fj_position
+    INSERT_BYTES fj_position SHORT_AT (LONG_AT 0xcc + ( num - fj_deleted ) * 0x1c + 0x0c)
+    WRITE_ASCIIE fj_position ~%value1%~
+    SET fj_position += SHORT_AT (LONG_AT 0xcc + ( num - fj_deleted ) * 0x1c + 0x0c)
+    END
+  END
+  SET fj_deleted = 0x00
+  CLEAR_ARRAY are_embedded_eff
+  PATCH_IF( fj_structure_type == 0xcc && fj_delete_mode == ` 0 )BEGIN
+    WRITE_LONG fj_return_offset + 0x08 fj_position
+    PHP_EACH fj_embedded_eff AS num => value1 BEGIN
+    PATCH_IF( FILE_EXISTS ~%value1%~ )BEGIN
+      SET off = BUFFER_LENGTH
+      APPEND_FILE_EVALUATE ~%value1%~
+      READ_ASCII   off + 0x08 value1 (0x108)
+      DELETE_BYTES off 0x110
+    END ELSE PATCH_IF( FILE_EXISTS_IN_GAME ~%value1%.eff~ )BEGIN
+      INNER_PATCH_FILE ~%value1%.eff~ BEGIN
+      READ_ASCII 0x08 value1 (0x108)
+      END
+    END ELSE BEGIN
+      TEXT_SPRINT value1 ~~
+    END
+    PATCH_IF( ~%value1%~ STR_CMP ~~ )BEGIN
+      PATCH_IF fj_debug BEGIN PATCH_PRINT ~Adding effect %num% to new embedded projectile.~ END
+      WRITE_SHORT  fj_return_offset + 0x0c THIS + 0x108
+      INSERT_BYTES fj_position 0x108
+      WRITE_ASCIIE fj_position ~%value1%~
+      SET fj_position += 0x108
+    END
+    END
+  END
+  CLEAR_ARRAY fj_embedded_eff
+  END
+
+END // php $struct: everything added
+
+// restoring Icewind Dale II's special snowflakiness
+PATCH_IF is_id2 BEGIN
+  PATCH_FOR_EACH off IN
+  0x54 0x5c 0x60 0x68 0x70 0x78 0x7c 0x84
+  0x88 0xa0 0xa8 0xb0 0xb8 0xbc 0xc0
+  BEGIN
+  PATCH_IF LONG_AT off BEGIN
+    WRITE_LONG off THIS + 0x10
+  END
+  END
+  INSERT_BYTES 0x54 0x10
+  WRITE_ASCIIE 0x54 ~%id2_header%~
+  SET fj_return_offset += 0x10
+  GET_OFFSET_ARRAY fj_id_actor 0x64 0x04 0x58 0x02 0 0 0x110
+  PHP_EACH fj_id_actor AS key => value BEGIN
+  PATCH_IF(
+    LONG_AT( value + 0x88 ) > 0x00 &&
+    LONG_AT( value + 0x28 ) & 0x01 == 0x00
+  )BEGIN
+    WRITE_LONG value + 0x88 THIS + 0x10
+  END
+  END
+END
+
+END
+
+// EOF for nythrun's area macro
+
+DEFINE_ACTION_MACRO ~aran_report_status~ BEGIN
+	ACTION_MATCH ~%aran_wealth%~
+    WITH
+    1
+    BEGIN
+      PRINT ~Aran is down-and-out poor,~ 
+    END
+    2
+    BEGIN
+      PRINT ~Aran is of average wealth,~
+    END
+    3
+    BEGIN
+      PRINT ~Aran is successful,~
+    END
+    DEFAULT
+      PRINT ~Something has gone wrong~
+    END
+    ACTION_MATCH ~%aran_armor_choice%~
+    WITH
+    1
+    BEGIN
+    	PRINT ~has Leather Armor,~
+    END
+    2
+    BEGIN
+    	PRINT ~has Studded Leather Armor,~
+    END
+    3
+    BEGIN
+    	PRINT ~has Chain Mail,~
+    END
+    4
+    BEGIN
+    	PRINT ~has Splint Mail,~
+    END
+    5
+    BEGIN
+    	PRINT ~has Plate Armor,~
+    END
+		DEFAULT
+				PRINT ~Something has gone wrong~        
+				PRINT ~~
+		END
+	ACTION_MATCH  ~%aran_weapon_set%~ 
+		WITH 
+		1  
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Dagger~
+				PRINT ~~
+		END
+		2
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Quarterstaff~
+				PRINT ~~
+		END
+		3
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Potions of Healing~
+				PRINT ~~
+		END
+		4
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Mace~
+				PRINT ~~
+		END
+		5
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Flail~        
+				PRINT ~~        
+		END
+		6
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Long Bow~       
+				PRINT ~~        
+		END
+		7
+		BEGIN
+				PRINT ~carrying Bastard Sword, Shield, Dagger~        
+				PRINT ~~        
+		END
+		8
+		BEGIN
+				PRINT ~carrying Bastard Sword, Shield, Long Bow~
+				PRINT ~~        
+		END
+		9
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Crossbow~        
+				PRINT ~~        
+		END
+		10
+		BEGIN
+				PRINT ~carrying Short Sword, Shield, Dagger~        
+				PRINT ~~        
+		END
+		11
+		BEGIN
+				PRINT ~carrying Short Sword, Shield, Crossbow~        
+				PRINT ~~        
+		END
+		12
+		BEGIN
+				PRINT ~carrying Long Sword, Shield, Hammer~        
+				PRINT ~~        
+		END      
+		DEFAULT
+				PRINT ~Something has gone wrong.~        
+				PRINT ~~
+		END   
+
+END // of macro definition
+
+/* Installing one of the 5 forced subcomponents does OUTER_SET class_choice = 1 or 2 or 3 or 4 or 5 (5 = no player choices wanted). */
+DEFINE_ACTION_MACRO customized_cre_choice BEGIN  // define the instruction set to be called in other places
+  ACTION_MATCH ~%class_choice%~  // the thing we are checking to allow the code to "swing" to variants, the "case"
+  WITH
+  1   // the first check. If %class_choice% = 1, the next stuff will work, else check the next
+  BEGIN /* mage dual-class build */
+    OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
+    	PRINT ~Please choose from the following choices to modify starting armor and weapons available to him:
+  [1] Aran is down-and-out poor and has sold off most of his good equipment.
+  [2] Aran has kept most of his good gear.
+  [3] Aran has kept the best gear available to a successful mercenary.
+Please type 1, 2, or 3 and press enter.~
+  		ACTION_READLN aran_wealth
+  	END
+    OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN // one way of setting up for READLN
+    		PRINT ~You are probably going to Dual-Class Aran to Mage. He currently has proficiencies as follows:
+  ** Long Sword
+  ** Quarterstaff
+  ** Dagger
+Please choose from the following starting weapon choices:
+  [1] Long Sword, Shield, Dagger
+  [2] Long Sword, Shield, Quarterstaff
+  [3] Long Sword, Shield, Potions of healing
+Please type 1, 2, or 3, and press enter~
+      	ACTION_READLN weapon_choices
+    END
+    /* we are using READLN values to set a variable - the mod range of possible combos is 1 to 15 inclusive, so we can't just read it directly */
+    ACTION_MATCH  ~%weapon_choices%~   // check this value
+    WITH  // against the following 3 cases, so
+    1
+    BEGIN
+    	OUTER_SET ~aran_weapon_set~ = 1  //  Long Sword, Shield, Dagger
+    END
+    2
+    BEGIN
+      OUTER_SET ~aran_weapon_set~ = 2 // Long Sword, Shield, Quarterstaff
+    END
+    3
+    BEGIN
+    	OUTER_SET ~aran_weapon_set~ = 3 // Long Sword, Shield, Potions of healing
+    END
+    DEFAULT  // this should never run, but as an emergency fallback
+      OUTER_SET ~aran_weapon_set~ = 6 // Long Sword, Shield, Long Bow
+    END // of default
+    OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
+			PRINT ~Please choose from the following starting armor choices for Aran:
+  [1] Leather
+  [2] Studded Leather
+  [3] Chain
+  [4] Splint
+  [5] Plate
+Please type 1, 2, 3, 4, or 5 and press enter.~
+  		ACTION_READLN aran_armor_choice
+  	END // of O_F
+  	LAUNCH_ACTION_MACRO ~aran_report_status~
+  	COPY ~aranw/cre/c-arnmge.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+      PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
+      	LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
+      END ELSE BEGIN
+       PATCH_FAIL ~For some reason, %dest_res% is not valid. Please check your install.~
+      END
+   END // of dual-to-mage swing
+    
+    
+   2 // the second check. If %class_choice% = 2, the next stuff will work, else check the next
+   BEGIN /* cleric dual-class build */
+   	OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
+   	 	 PRINT ~Please choose from the following choices to modify starting armor and weapons available to him:
+  [1] Aran is down-and-out poor and has sold off most of his good equipment.
+  [2] Aran has kept most of his good gear.
+  [3] Aran has kept the best gear available to a successful mercenary.
+Please type 1, 2, or 3 and press enter.~
+  			ACTION_READLN aran_wealth
+  	END
+    OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[1234]$~ ; )BEGIN // one way of setting up for READLN
+   	 		PRINT ~You are probably going to Dual-Class Aran to Cleric. He currently has proficiencies as follows:
+  * Long Sword
+  * Hammer
+  * Mace
+  * Flail
+  ** Sword and Shield Style
+Please choose from the following starting weapon choices:
+  [1] Long Sword, Shield, Mace
+  [2] Long Sword, Shield, Quarterstaff
+  [3] Long Sword, Shield, Hammer
+  [4] Long Sword, Shield, Flail
+Please type 1, 2, or 3 and press enter.~
+      	ACTION_READLN ~weapon_choices~
+      END
+      ACTION_MATCH  ~%weapon_choices%~   // check this value
+      WITH  // against the following 3 cases, with 4 or anything else defaulting to a '"standard choice"
+      1
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 4 // Long Sword, Shield, Mace
+      END
+      2
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 2 // Long Sword, Shield, Quarterstaff
+      END
+      3
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 12 // Long Sword, Shield, Hammer
+      END
+      DEFAULT  // this will  run on 4, or as an emergency fallback
+      	OUTER_SET ~aran_weapon_set~ = 5 // Long Sword, Shield, Flail
+      END
+      OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
+      	PRINT ~Please choose from the following starting armor choices for Aran:
+  [1] Leather
+  [2] Studded Leather
+  [3] Chain
+  [4] Splint
+  [5] Plate
+Please type 1, 2, 3, 4, or 5 and press enter.~
+  			ACTION_READLN aran_armor_choice
+  		END // of O_F
+  	LAUNCH_ACTION_MACRO ~aran_report_status~
+  		COPY ~aranw/cre/c-arnmge.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+      	PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
+      		LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
+      	END ELSE BEGIN
+      		PATCH_FAIL ~For some reason, %dest_res% is not valid. Please check your install.~
+      	END
+    END // of dual-to-cleric swing
+    
+    3 // the third check. If %class_choice% = 3, the next stuff will work, else check the next
+    BEGIN /* fighter single-class build */
+    	OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
+    		PRINT ~Please choose from the following choices to modify starting armor and weapons available to him:
+  [1] Aran is down-and-out poor and has sold off most of his good equipment.
+  [2] Aran has kept most of his good gear.
+  [3] Aran has kept the best gear available to a successful mercenary.
+Please select 1, 2, or 3 and press enter.~
+  			ACTION_READLN aran_wealth
+  		END
+    	OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[123456]$~ ; )BEGIN    
+    		PRINT ~You are probably going to leave Aran as a fighter. He currently has proficiencies as follows:
+  ** Long Sword
+  ** Bastard Sword
+  * Long Bow
+  * Sword and Shield
+Please choose from the following starting weapon choices:
+    [1] Long Sword, Shield, Dagger
+    [2] Long Sword, Shield, Long Bow
+    [3] Long Sword, Shield, Potions of healing
+    [4] Bastard Sword, Shield, Dagger
+    [5] Bastard Sword, Shield, Long Bow
+    [6] Long Sword, Shield, Hammer
+Please type 1, 2, 3, 4, 5, or 6 and press enter.~
+      	ACTION_READLN ~weapon_choices~
+    	END
+    	ACTION_MATCH  ~%weapon_choices%~   // check this value
+    	WITH  // against the following 3 cases, with 4 or anything else defaulting to a '"standard choice"
+    	1
+    	BEGIN
+    		OUTER_SET ~aran_weapon_set~ = 1 // Long Sword, Shield, Dagger
+    	END
+    	2
+    	BEGIN
+    		OUTER_SET ~aran_weapon_set~ = 6 // Long Sword, Shield, Long Bow
+    	END
+    	3
+    	BEGIN
+    		OUTER_SET ~aran_weapon_set~ = 3 // Long Sword, Shield, Potions of healing
+    	END
+    	4
+    	BEGIN
+    		OUTER_SET ~aran_weapon_set~ = 7 // Bastard Sword, Shield, Dagger
+    	END
+    	5
+    	BEGIN
+    		OUTER_SET ~aran_weapon_set~ = 8 // Bastard Sword, Shield, Long Bow
+    	END
+    	DEFAULT  // this will  run on 6, or as an emergency fallback
+      	OUTER_SET ~aran_weapon_set~ = 12 // Long Sword, Shield, Hammer
+      END // of default
+    	OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
+    		PRINT ~Please choose from the following starting armor choices for Aran:
+  [1] Leather
+  [2] Studded Leather
+  [3] Chain
+  [4] Splint
+  [5] Plate
+Please select 1, 2, 3, 4, or 5 and press enter.~
+  			ACTION_READLN aran_armor_choice
+  		END // of O_F
+  		LAUNCH_ACTION_MACRO ~aran_report_status~
+  		COPY ~aranw/cre/c-arnftr.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+      	PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
+      		LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
+      	END ELSE BEGIN
+      		PATCH_FAIL ~For some reason, %dest_res% is not valid. Please check your install.~
+      	END      
+    END // of just-a-fighter swing
+    
+    4 // the second check. If %class_choice% = 4, the next stuff will work, else check the next
+    BEGIN /* thief dual-class build */
+    	OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
+    		PRINT ~Please choose from the following choices to modify starting armor and weapons available to him:
+  [1] Aran is down-and-out poor and has sold off most of his good equipment.
+  [2] Aran has kept most of his good gear.
+  [3] Aran has kept the best gear available to a successful mercenary.
+Please type 1, 2, or 3 and press enter.~
+  			ACTION_READLN aran_wealth
+  		END
+    	OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN    
+    		PRINT ~You are probably going to Dual-Class Aran as a Thief. He currently has proficiencies as follows:
+  ** Long Sword
+  ** Short Sword
+  * Dagger
+  * Crossbow
+Please choose from the following starting weapon choices:
+  [1] Long Sword, Shield, Dagger
+  [2] Long Sword, Shield, Crossbow
+  [3] Long Sword, Shield, Potions of healing
+  [4] Short Sword, Shield, Dagger
+  [5] Short Sword, Shield, Crossbow
+Please select 1, 2, 3, 4, or 5 and press enter.~
+      	ACTION_READLN ~weapon_choices~
+      END
+      ACTION_MATCH  ~%weapon_choices%~   // check this value
+      WITH  // against the following 3 cases, with 4 or anything else defaulting to a "standard choice"
+      1
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 1 // Long Sword, Shield, Dagger
+      END
+      2
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 9 // Long Sword, Shield, Crossbow
+      END
+      3
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 3 // Long Sword, Shield, Potions of healing
+      END
+      4
+      BEGIN
+      	OUTER_SET ~aran_weapon_set~ = 10 // Short Sword, Shield, Dagger
+      END
+      DEFAULT  // this will  run on 5, or as an emergency fallback
+      	OUTER_SET ~aran_weapon_set~ = 11 // Short Sword, Shield, Crossbow
+      END // of default
+    	OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
+    		PRINT ~Please choose from the following starting armor choices for Aran:
+  [1] Leather
+  [2] Studded Leather
+  [3] Chain
+  [4] Splint
+  [5] Plate
+Please select 1, 2, 3, 4, or 5 and press enter.~
+  			ACTION_READLN aran_armor_choice
+  		END // of O_F
+  		LAUNCH_ACTION_MACRO ~aran_report_status~
+  		COPY ~aranw/cre/c-arnthf.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+      	PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
+      		LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
+      	END ELSE BEGIN
+      		PATCH_FAIL ~For some reason, %dest_res% is not valid. Please check your install.~
+      	END   
+    END // of dual-to-thief swing
+    
+    DEFAULT  // the fall-through check. If %class_choice% was not 1, 2, 3, or 4, the default code will run
+    PRINT ~Installing Aran's default settings (Soldier).~
+    /* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
+    OUTER_SET ~aran_wealth~ = 2 // experienced mercenary  with some resources
+    OUTER_SET ~aran_weapon_set~ = 6 // Long Sword, Shield, Long Bow
+    OUTER_SET ~aran_armor_choice~ = 4 // splint
+  	LAUNCH_ACTION_MACRO ~aran_report_status~
+    COPY ~aranw/cre/c-arnftr.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+      PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
+      	LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
+      END ELSE BEGIN
+      	PATCH_FAIL ~For some reason, %dest_res% is not valid. Please check your install.~
+      END 
+    END // of default swing
+
+END // of define action macro
+
+
+DEFINE_PATCH_MACRO ~support_cre_cleanup~ BEGIN
+  WRITE_LONG INITIAL_MEETING (BNOT 0x0)
+  WRITE_LONG DIALOGUE_HOSTILE (BNOT 0x0)
+  WRITE_LONG MORALE (BNOT 0x0)
+  WRITE_LONG HAPPY (BNOT 0x0)
+  WRITE_LONG UNHAPPY_ANNOYED (BNOT 0x0)
+  WRITE_LONG UNHAPPY_SERIOUS (BNOT 0x0)
+  WRITE_LONG UNHAPPY_BREAKING (BNOT 0x0)
+  WRITE_LONG LEADER (BNOT 0x0)
+  WRITE_LONG TIRED (BNOT 0x0)
+  WRITE_LONG BORED (BNOT 0x0)
+  WRITE_LONG BATTLE_CRY1 (BNOT 0x0)
+  WRITE_LONG BATTLE_CRY2 (BNOT 0x0)
+  WRITE_LONG BATTLE_CRY3 (BNOT 0x0)
+  WRITE_LONG BATTLE_CRY4 (BNOT 0x0)
+  WRITE_LONG BATTLE_CRY5 (BNOT 0x0)
+  WRITE_LONG HURT (BNOT 0x0)
+  WRITE_LONG AREA_FOREST (BNOT 0x0)
+  WRITE_LONG AREA_CITY (BNOT 0x0)
+  WRITE_LONG AREA_DUNGEON (BNOT 0x0)
+  WRITE_LONG AREA_DAY (BNOT 0x0)
+  WRITE_LONG AREA_NIGHT (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON1 (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON2 (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON3 (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON4 (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON5 (BNOT 0x0)
+  WRITE_LONG SELECT_COMMON6 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION1 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION2 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION3 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION4 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION5 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION6 (BNOT 0x0)
+  WRITE_LONG SELECT_ACTION7 (BNOT 0x0)
+  WRITE_LONG SELECT_RARE1 (BNOT 0x0)
+  WRITE_LONG SELECT_RARE2 (BNOT 0x0)
+  WRITE_LONG CRITICAL_HIT (BNOT 0x0)
+  WRITE_LONG CRITICAL_MISS (BNOT 0x0)
+  WRITE_LONG TARGET_IMMUNE (BNOT 0x0)
+  WRITE_LONG INVENTORY_FULL (BNOT 0x0)
+  WRITE_LONG PICKED_POCKET (BNOT 0x0)
+  WRITE_LONG HIDDEN_IN_SHADOWS (BNOT 0x0)
+  WRITE_LONG SPELL_DISRUPTED (BNOT 0x0)
+  WRITE_LONG SET_A_TRAP (BNOT 0x0)
+  WRITE_LONG BIO (BNOT 0x0)
+  WRITE_ASCIIE 0x34  ~%DEST_RES%~ #8  /*  small portrait */
+  WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8  /* override AI script */
+  WRITE_ASCII 0x250 ~None~ #8  /* disable class AI script  */
+  WRITE_ASCII 0x258 ~None~ #8  /*  disable race AI script  */
+  WRITE_ASCII 0x260 ~None~ #8  /* disable general AI script  */
+  WRITE_ASCII 0x268 ~None~ #8  /*  disable default AI script  */
+  WRITE_ASCIIE 0x2cc ~%DEST_RES%~ #8 /* dialogue */
+  WRITE_ASCIIE 0x280 ~%DEST_RES%~ #32 /* death variable */
+END
+
+DEFINE_PATCH_MACRO ~aran_cre_setup~ BEGIN
+  SPRINT ~added_helm~ ~nothing~
+  SPRINT ~added_armor~ ~nothing~
+  SPRINT ~added_shield~ ~nothing~
+  SPRINT ~added_weapon1~ ~nothing~
+  SPRINT ~added_weapon2~ ~nothing~
+  SPRINT ~added_ammo~ ~nothing~
+  SPRINT ~added_bow~ ~nothing~
+  SPRINT ~added_item~ ~nothing~
+  SAY NAME1 ~Aran~
+  SAY NAME2 ~Aran Whitehand~
+  SAY INITIAL_MEETING ~[c-aws001] Now, there be an idea... joinin' up on an adventure.~ [c-aws001] 
+  SAY MORALE ~[c-aws002] Helm's bones - RETREAT!~ [c-aws002] 
+  SAY HAPPY ~[c-aws003] Aye, 'tis a fair group. 'Tis better than a clear day on Trade Way.~ [c-aws003] 
+  SAY UNHAPPY_ANNOYED ~[c-aws004] By Tymorra's bright coin, you make some strange decisions. I don't rightly agree.~ [c-aws004] 
+  SAY UNHAPPY_SERIOUS ~[c-aws005] I gave up some serious opportunities to travel with you. Wasn't expectin' this kind of 'adventure'. Stop this, or I'll dissolve th' contract.~ [c-aws005] 
+  SAY UNHAPPY_BREAKING_POINT ~[c-aws006] I'll see you in the hands o' Kelemvor, but not one second before.~ [c-aws006] 
+  SAY LEADER ~[c-aws007] I'll lead, but 'tisn't my strong point.~ [c-aws007] 
+  SAY TIRED ~[c-aws008] Time to make camp. This gear be startin' to chafe.~ [c-aws008] 
+  SAY BORED ~[c-aws009] By Torm's Blood, are we beggin' to be ambushed? Standin' 'round with our swords up our...~ [c-aws009] 
+  SAY BATTLE_CRY1 ~[c-aws010] Archers to th' rear!~ [c-aws010] 
+  SAY BATTLE_CRY2 ~[c-aws011] Spellcasters die first!~ [c-aws011] 
+  SAY BATTLE_CRY3 ~[c-aws012] By Tymorra's Luck!~ [c-aws012] 
+  SAY BATTLE_CRY4 ~[c-aws013] By Sune's Bottom!~ [c-aws013] 
+  SAY BATTLE_CRY5 ~[c-aws014] Send 'em to Kelemvor's Scythe!~ [c-aws014] 
+  SAY DAMAGE ~[c-aws015]~ [c-aws015] 
+  SAY DYING ~[c-aws016]~ [c-aws016] 
+  SAY HURT ~[c-aws017] Send the rest o' them to hell for me...~ [c-aws017] 
+  SAY AREA_FOREST ~[c-aws018] Need less trees, more road. Too many places for enemies to hide.~ [c-aws018] 
+  SAY AREA_CITY ~[c-aws019] Civilization! Some trade, then some drinkin', then some sleep... or more drinkin'.~ [c-aws019] 
+  SAY AREA_DUNGEON ~[c-aws020] I gave up comfortable inns an' guardin' simple caravans to poke around this dank musty place. I'm a bloody idiot.~ [c-aws020] 
+  SAY AREA_DAY ~[c-aws021] Lathander's fat arse is up at last. 'Bout time he shed some light around here.~ [c-aws021] 
+  SAY AREA_NIGHT ~[c-aws022] Bloody dark. Good for coverin' enemies an' ambushes. Someone light a torch, eh?~ [c-aws022] 
+  SAY SELECT_COMMON1 ~[c-aws023] Yep?~ [c-aws023] 
+  SAY SELECT_COMMON2 ~[c-aws024] What's to be done?~ [c-aws024] 
+  SAY SELECT_COMMON3 ~[c-aws025] Do I needs lead?~ [c-aws025] 
+  SAY SELECT_COMMON4 ~[c-aws026] Aye?~ [c-aws026] 
+  SAY SELECT_COMMON5 ~[c-aws027] Yes?~ [c-aws027] 
+  SAY SELECT_COMMON6 ~[c-aws028] I'm listenin'.~ [c-aws028] 
+  SAY SELECT_ACTION1 ~[c-aws029] Got it.~ [c-aws029] 
+  SAY SELECT_ACTION2 ~[c-aws030] Sune's sweet cheeks, I heard.~ [c-aws030] 
+  SAY SELECT_ACTION3 ~[c-aws031] On it.~ [c-aws031] 
+  SAY SELECT_ACTION4 ~[c-aws032] Understood.~ [c-aws032] 
+  SAY SELECT_ACTION5 ~[c-aws033] Sune's Bosom, I'm movin', already!.~ [c-aws033] 
+  SAY SELECT_ACTION6 ~[c-aws034] Ilmater's Blood. I said I'd do it.~ [c-aws034] 
+  SAY SELECT_ACTION7 ~[c-aws035] Less talk, more action.~ [c-aws035] 
+  SAY SELECT_RARE1 ~[c-aws036] Watch where you point that thing.~ [c-aws036] 
+  SAY SELECT_RARE2 ~[c-aws037] Aye, I'm here.~ [c-aws037] 
+  SAY CRITICAL_HIT ~[c-aws038] Good.~ [c-aws038] 
+  SAY CRITICAL_MISS ~[c-aws039] Cyric's Black Heart!~ [c-aws039] 
+  SAY TARGET_IMMUNE ~[c-aws040] Bounced off. Damn.~ [c-aws040] 
+  SAY INVENTORY_FULL ~[c-aws041] I'm already carryin' more than my share.~ [c-aws041] 
+  SAY PICKED_POCKET ~[c-aws042] Hey, look what I found.~ [c-aws042] 
+  SAY HIDDEN_IN_SHADOWS ~[c-aws043] Huntin'...~ [c-aws043] 
+  SAY SPELL_DISRUPTED ~[c-aws044] Never did get that one right...~ [c-aws044] 
+  SAY SET_A_TRAP ~[c-aws045] Try that, you bugger.~ [c-aws045]   
+  SAY BIO ~[c-aranbio] When you ask him about his past, ARAN WHITEHAND grasps at a nearby twig to chew on. He explains that he grew up in a small independent family-run Coster plying the Trade Way and Coast Way from Waterdeep both north and south. Working as both Pen and Sword (scribe and fighting guard) made him attractive as an independent, since he could balance accounts, keep inventory, and still operate as a sellsword. A few campaigns with mercenary companies, a few battles, and lots of wandering about has brought him to Amn. He hastens to note that he is not the man to send in to negotiate anything, preferring to wield weapons rather than the spoken word - but if you want a trading contract written up, he's the right man for the job.~ [c-aran44]
+  /* OK, now let's set his dialog, script name, scripts, default portrait, and hair/skin for the default portraits... */
+  WRITE_ASCII 0x2cc ~C-ARAN~ #8 /* dialogue */
+  WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+  WRITE_ASCII 0x248 ~C-ARAN~ #8 /*  override script */
+  WRITE_ASCII 0x0268 ~WTARSGT~ #8 /*  Creature script - Default  */
+  WRITE_ASCII 0x34  ~c-aranws~ #8  /* assign small portrait */
+  WRITE_ASCII 0x3c  ~c-aranwm~ #8  /* assign medium portrait */
+  WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+  WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_armor_choice% = 1)) THEN BEGIN /* down-and-out Aran leather */
+    SPRINT ~added_helm~ ~helm01~ // helmet
+    SPRINT ~added_armor~ ~leat02~ // leather armor +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_armor_choice% = 1)) THEN BEGIN /* average Aran leather */
+    SPRINT ~added_helm~ ~helm08~ // helmet
+    SPRINT ~added_armor~ ~leat11~ // leather armor +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_armor_choice% = 1)) THEN BEGIN /* successful Aran leather */
+    SPRINT ~added_helm~ ~helm09~ // helmet
+    SPRINT ~added_armor~ ~leat12~ // leather armor +3
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_armor_choice% = 2)) THEN BEGIN /* down-and-out Aran studded leather */
+    SPRINT ~added_helm~ ~helm10~ // helmet
+    SPRINT ~added_armor~ ~leat04~ // studded leather armor
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_armor_choice% = 2)) THEN BEGIN /* average Aran studded leather */
+    SPRINT ~added_helm~ ~helm11~ // helmet
+    SPRINT ~added_armor~ ~leat05~ // studded leather armor +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_armor_choice% = 2)) THEN BEGIN /* successful Aran studded leather */
+    SPRINT ~added_helm~ ~helm12~ // helmet
+    SPRINT ~added_armor~ ~leat15~ // studded leather armor +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_armor_choice% = 3)) THEN BEGIN /* down-and-out Aran chainmail */
+    SPRINT ~added_helm~ ~helm01~ // helmet
+    SPRINT ~added_armor~ ~chan01~ // chainmail
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_armor_choice% = 3)) THEN BEGIN /* average Aran chainmail */
+    SPRINT ~added_helm~ ~helm08~ // helmet
+    SPRINT ~added_armor~ ~chan02~ // chainmail +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_armor_choice% = 3)) THEN BEGIN /* successful Aran chainmail */
+    SPRINT ~added_helm~ ~helm09~ // helmet
+    SPRINT ~added_armor~ ~chan08~ // chainmail +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_armor_choice% = 4)) THEN BEGIN /* down-and-out Aran splint armor */
+    SPRINT ~added_helm~ ~helm10~ // helmet
+    SPRINT ~added_armor~ ~chan04~ // splint mail
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_armor_choice% = 4)) THEN BEGIN /* average Aran splint armor */
+    SPRINT ~added_helm~ ~helm11~ // helmet
+    SPRINT ~added_armor~ ~chan05~ // splint mail +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_armor_choice% = 4)) THEN BEGIN /* successful Aran splint armor */
+    SPRINT ~added_helm~ ~helm12~ // helmet
+    SPRINT ~added_armor~ ~chan08~ // chain mail +2 - Nythrun is right - no generic high end splint. Create custom item?
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_armor_choice% = 5)) THEN BEGIN /* down-and-out Aran  */
+    SPRINT ~added_helm~ ~helm01~ // helmet
+    SPRINT ~added_armor~ ~plat01~ // plate mail armor AC 3
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_armor_choice% = 5)) THEN BEGIN /* average Aran */
+    SPRINT ~added_helm~ ~helm08~ // helmet
+    SPRINT ~added_armor~ ~plat10~ // plate mail +1 - looks better than 02, AC 2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_armor_choice% = 5)) THEN BEGIN /* successful Aran */
+    SPRINT ~added_helm~ ~helm09~ // helmet
+    SPRINT ~added_armor~ ~plat04~ // full plate mail, AC 1
+  END // begin a new patch-if statement
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 1)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 1 // Long Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~dagg01~ // dagger
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 1)) THEN BEGIN /* average Aran */
+    /* 2 - 1 // Long Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~dagg02~ // dagger +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 1)) THEN BEGIN /* successful Aran */
+    /* 3 - 1 // Long Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~dagg15~ // dagger +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 2)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 2   Long Sword, Shield, Quarterstaff */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~staf01~ // quarterstaff
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 2)) THEN BEGIN /* average Aran */
+    /* 2 - 2  Long Sword, Shield, Quarterstaff */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~staf02~ // quarterstaff +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 2)) THEN BEGIN /* successful Aran */
+    /* 3 - 2  Long Sword, Shield, Quarterstaff */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~staf08~ // quarterstaff +3
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 3)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 3   Long Sword, Shield, Potions of healing */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_item~ ~potn52~
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 3)) THEN BEGIN /* average Aran */
+    /* 2 - 3   Long Sword, Shield, Potions of healing */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_item~ ~potn52~
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 3)) THEN BEGIN /* successful Aran */
+    /* 3 - 3  Long Sword, Shield, Potions of healing */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_item~ ~potn52~
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 4)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 4  Long Sword, Shield, Mace */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~blun04~ // mace
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 4)) THEN BEGIN /* average Aran */
+    /* 2 - 4   Long Sword, Shield, Mace */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~blun05~ // mace +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 4)) THEN BEGIN /* successful Aran */
+    /* 3 - 4   Long Sword, Shield, Mace */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~blun21~ // mace +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 5)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 5  Long Sword, Shield, Flail */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~blun02~ // flail
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 5)) THEN BEGIN /* average Aran */
+    /* 2 - 5  Long Sword, Shield, Flail */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~blun02~ // flail
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 5)) THEN BEGIN /* successful Aran */
+    /* 3 - 5  Long Sword, Shield, Flail */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~blun03~ // flail +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 6)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 6   Long Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_bow~ ~bow03~ // long bow
+    SPRINT ~added_ammo~ ~arow01~ // arrow
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 6)) THEN BEGIN /* average Aran */
+    /* 2 - 6  Long Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_bow~ ~bow04~ // long bow +1
+    SPRINT ~added_ammo~ ~arow08~ // arrow of fire
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 6)) THEN BEGIN /* successful Aran */
+    /* 3 - 6  Long Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_bow~ ~bow17~ // long bow +2
+    SPRINT ~added_ammo~ ~arow02~ // arrow +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 7)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 7   Bastard Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h01~ // bastard sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~dagg01~ // dagger
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 7)) THEN BEGIN /* average Aran */
+    /* 2 - 7  Bastard Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h02~ // bastard sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~dagg02~ // dagger +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 7)) THEN BEGIN /* successful Aran */
+    /* 3 - 7   Bastard Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h42~ // bastard sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~dagg15~ // dagger +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 8)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 8   Bastard Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h01~ // bastard sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_bow~ ~bow03~ // long bow
+    SPRINT ~added_ammo~ ~arow01~ // arrow
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 8)) THEN BEGIN /* average Aran */
+    /* 2 - 8  Bastard Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h02~ // bastard sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_bow~ ~bow04~ // long bow +1
+    SPRINT ~added_ammo~ ~arow08~ // arrow of fire
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 8)) THEN BEGIN /* successful Aran */
+    /* 3 - 8   Bastard Sword, Shield, Long Bow  */
+    SPRINT ~added_weapon1~ ~sw1h42~ // bastard sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_bow~ ~bow17~ // long bow +2
+    SPRINT ~added_ammo~ ~arow02~ // arrow +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 9)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 9   Long Sword, Shield, Crossbow  */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_bow~ ~xbow04~ // light crossbow
+    SPRINT ~added_ammo~ ~bolt02~ // +1 bolts
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 9)) THEN BEGIN /* average Aran */
+    /* 2 - 9  Long Sword, Shield, Crossbow  */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_bow~ ~xbow05~ // light crossbow +1
+    SPRINT ~added_ammo~ ~bolt03~ // bolt of lightning
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 9)) THEN BEGIN /* successful Aran */
+    /* 3 - 9  Long Sword, Shield, Crossbow  */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_bow~ ~xbow09~ // light crossbow +2
+    SPRINT ~added_ammo~ ~bolt06~ // +2 bolts
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 10)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 10   Short Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h07~ // short sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~dagg01~ // dagger
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 10)) THEN BEGIN /* average Aran */
+    /* 2 - 10   Short Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h08~ // short sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~dagg02~ // dagger +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 10)) THEN BEGIN /* successful Aran */
+    /* 3 - 10  Short Sword, Shield, Dagger */
+    SPRINT ~added_weapon1~ ~sw1h09~ // short sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~dagg15~ // dagger +2
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 11)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 11   Short Sword, Shield, Crossbow */
+    SPRINT ~added_weapon1~ ~sw1h07~ // short sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_bow~ ~xbow04~ // light crossbow
+    SPRINT ~added_ammo~ ~bolt02~ // +1 bolts
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 11)) THEN BEGIN /* average Aran */
+    /* 2 - 11  Short Sword, Shield, Crossbow */
+    SPRINT ~added_weapon1~ ~sw1h08~ // short sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_bow~ ~xbow05~ // light crossbow +1
+    SPRINT ~added_ammo~ ~bolt03~ // bolt of lightning
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 11)) THEN BEGIN /* successful Aran */
+    /* 3 - 11  Short Sword, Shield, Crossbow */
+    SPRINT ~added_weapon1~ ~sw1h09~ // short sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_bow~ ~xbow09~ // light crossbow +2
+    SPRINT ~added_ammo~ ~bolt06~ // +2 bolts
+  END
+  PATCH_IF ((%aran_wealth% = 1) AND (%aran_weapon_set% = 12)) THEN BEGIN /* down-and-out Aran */
+    /* 1 - 12   Long Sword, Shield, Hammer */
+    SPRINT ~added_weapon1~ ~sw1h04~ // long sword
+    SPRINT ~added_shield~ ~shld05~ // large shield
+    SPRINT ~added_weapon2~ ~hamm01~ // war hammer
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 2) AND (%aran_weapon_set% = 12)) THEN BEGIN /* average Aran */
+    /* 2 - 12  Long Sword, Shield, Hammer */
+    SPRINT ~added_weapon1~ ~sw1h05~ // long sword +1
+    SPRINT ~added_shield~ ~shld04~ // medium shield +1
+    SPRINT ~added_weapon2~ ~hamm02~ // war hammer +1
+  END ELSE
+  PATCH_IF ((%aran_wealth% = 3) AND (%aran_weapon_set% = 12)) THEN BEGIN /* successful Aran */
+    /* 3 - 12 Long Sword, Shield, Hammer */
+    SPRINT ~added_weapon1~ ~sw1h41~ // long sword +2
+    SPRINT ~added_shield~ ~shld06~ // large shield +1
+    SPRINT ~added_weapon2~ ~hamm08~ // war hammer +2
+  END // begin writing to the .cre file now
+  PATCH_IF (~%added_helm%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_helm%~ #0 #0 #0 IDENTIFIED HELMET
+  END
+  PATCH_IF (~%added_armor%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_armor%~ #0 #0 #0 IDENTIFIED ARMOR
+  END
+  PATCH_IF (~%added_shield%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_shield%~  #0  #0 #0 IDENTIFIED SHIELD
+  END
+  PATCH_IF (~%added_weapon1%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_weapon1%~ #0  #0 #0 IDENTIFIED WEAPON1 EQUIP
+  END
+  PATCH_IF (~%added_weapon2%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_weapon2%~ #0  #0 #0 IDENTIFIED WEAPON3
+  END
+  PATCH_IF (~%added_bow%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_bow%~  #0  #0 #0 IDENTIFIED WEAPON2
+  END
+  PATCH_IF (~%added_ammo%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_ammo%~ #20 #0 #0 IDENTIFIED QUIVER1
+  END
+  PATCH_IF (~%added_item%~ STR_CMP ~nothing~) THEN BEGIN
+    ADD_CRE_ITEM ~%added_item%~ #5 #0 #0 IDENTIFIED QITEM1
+  END
+END
+
+/* end of define all macros */
+
+PRINT ~Installing SoA dialog~
+
+COMPILE ~aranw/dialog/c-arandialog.d~ // SoA dialog file
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
+	PRINT ~Installing ToB dialog~
+  COMPILE ~aranw/dialog/c-arantobdialog.d~
+
+ 
+  /* Epilogue 1:  Low Rep, regardless of friendship or romance status */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE0.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~The years of following in <CHARNAME>'s shadow took their toll on Aran, though not a single instance of him complaining is recorded. After a time, he withdrew from <PRO_HISHER> side, claiming injury, and set out for the wild coast of Maztican. Rejoining the Flaming Fist there gave him one last brush with glory - his name still graces the List of Brotherhood in the Flaming Fist training facilities there. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers, but their persistence in trying to get Aran to speak of those days went unanswered. Of <CHARNAME> <PRO_HIMHER>self, Aran refused to speak.~
+
+  /* PC Refused Godhood, Friendship */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE1.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. As Aran tells it, the greatest moment in Aran's life came when his eldest daughter took up the way of the sword and pledged herself to <CHARNAME>'s protection. The second best moment was when his new wife finally managed to teach him to speak with correct pronunciation (though she never did erase his swearing completely).~
+
+  /* PC Became God, Friendship */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE2.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. Though he never claimed worship of <CHARNAME>, his children relate that the new oaths and blasphemies used when they did something particularly right or particularly wrong seemed to indicate he was profoundly aware of <CHARNAME>'s godhood.~
+
+  /* PC Refused Godhood, Romance */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE3.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. Though the histories never indicate precisely the nature of their romance, there is no question of his loyalty. His final act of devotion came giving up his life in order to protect her. There are no reliable sources, but bard's tales say that his last words were "Blighted hells, <CHARNAME>... did we have to come Planewalkin' here?"~
+
+  /* PC Accepted Godhood, Romance, Good or Neutral */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE4.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving as Her right hand on Faerun. His constant work furthering her causes helped develop a respectable following, and his willingness to travel anywhere in Her name led others to regard him as some sort of high priest... a notion that often was dispelled in a barrage of blasphemy and cursing. As the histories recount, his last days on this mortal plane were spent comfortably on Evermeet, attempting to arrange a joint project between the followers of <CHARNAME> and Hanali Celanil's Order of the Ruby Rose to commemorate what would have been <CHARNAME>'s eightieth mortal birth-day celebration.~
+
+  /* PC Accepted Godhood, Romance, Evil */
+
+  COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
+    REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. His constant work furthering her causes eventually corrupted him completely, though later writings indicate growing fear and desolation as his mortality left him increasingly unable to serve <CHARNAME> in the manner she wished. It is a mark of their love that when a Paladin of Helm finally ended Aran's life, <CHARNAME> herself personally blasted the woman into nothingness, causing a minor skirmish in the wars of the gods.~
+
+END /* of ToB installation */
+
+/* items */
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr1.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Broadside]Mae Govannen
+
+Mae govannen. An lema? Amin naa lle nai. I'narr en gothrim glinuva nuin I'anor. Ohtar hanwa edan yesta sii'lle vakha. Amin tengwa Naug, i'lambe tel' Eldalie. Dwarven, Elven, and Common Trade Language spoken and written, contracts translated, copywork accepted. Experienced Caravan Guard and Scrivner. Reasonable rates. Inquire at Ten Veils Public House for Whitehand.
+
+Have Sword, Will Travel. No Job Too Small. No Dragons. Experienced Caravan Guard, Scrivner, OutRider, Oarsman. Trade Contracts and Copywork Drawn. Reasonable Rates. Inquire at Public House for Whitehand.~
+  SAY DESC ~[Aran Broadside]Mae Govannen
+
+Mae govannen. An lema? Amin naa lle nai. I'narr en gothrim glinuva nuin I'anor. Ohtar hanwa edan yesta sii'lle vakha. Amin tengwa Naug, i'lambe tel' Eldalie. Dwarven, Elven, and Common Trade Language spoken and written, contracts translated, copywork accepted. Experienced Caravan Guard and Scrivner. Reasonable rates. Inquire at Ten Veils Public House for Whitehand.
+
+Have Sword, Will Travel. No Job Too Small. No Dragons. Experienced Caravan Guard, Scrivner, OutRider, Oarsman. Trade Contracts and Copywork Drawn. Reasonable Rates. Inquire at Public House for Whitehand.~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr2.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 2]My Dearest Elena,
+
+I read your message with great happiness. Congratulations on your being advanced to choice! By the time you read this there will only be a few more months and you will be in your final year of apprenticeship. And Mystra is a good Goddess to serve, I hear. I always thought you would lean towards The Wise One, Oghma, and go with the Estelmer family nobility as benefactors, but you know your own heart. If your calling is to Mystra, then I guess you couldn't do any better than to Eltorchul family. There are some stories about a few of them, but they generally get written about as good people, for nobles and wands. Good but not lockstep; some of them are pretty wild, if trail stories and news broadsides talk about the same family. The Thunderstaffs follow Mystra, but from my end - plenty of warmages from that family, that is for sure! I was pretty sure you wouldn't end up following them, anyways. I am really glad your benefactor was happy, too. I thought it was like a trade apprenticeship, and you would be with The Lady Mage all the way. I guess I didn't understand about the schools, and how you work your way up. 
+I love the emerald, and I will figure out what you mean about saying the inscriptions in private once we are on the trail. I hope this isn't one of your practical jokes, though. That is too fine a gem just to put a joke on. And the colors were beautiful. It lasted a full thirty seconds before dissolving into smoke, and it was a deep, shiny green with gold and silver and sky blue. Plus, it only erased a little bit of the parchament, so I got to read most of the message. That is so much better than the one where you tried the acid-flowers, and it burned through the whole letter. I know you want to have each message destroy itself, though I do not understand why all mages seem to need such secrecy.
+I do have some news. I have started working with a new group. There is not much to say yet, but it is not a regular mercenary group. <CHARNAME>, the one who leads, is different. I will have more to say later, I am sure. In the meantime, keep up your studies, and I will try to send you some of the spell components you asked about as best I can. Judging by the look of things, I may be able to get some very rare components for you just by keeping my eyes open and wits sharp.
+  Yours Faithfully, Aran~
+  SAY DESC ~[Aran Letter 2]My Dearest Elena,
+
+I read your message with great happiness. Congratulations on your being advanced to choice! By the time you read this there will only be a few more months and you will be in your final year of apprenticeship. And Mystra is a good Goddess to serve, I hear. I always thought you would lean towards The Wise One, Oghma, and go with the Estelmer family nobility as benefactors, but you know your own heart. If your calling is to Mystra, then I guess you couldn't do any better than to Eltorchul family. There are some stories about a few of them, but they generally get written about as good people, for nobles and wands. Good but not lockstep; some of them are pretty wild, if trail stories and news broadsides talk about the same family. The Thunderstaffs follow Mystra, but from my end - plenty of warmages from that family, that is for sure! I was pretty sure you wouldn't end up following them, anyways. I am really glad your benefactor was happy, too. I thought it was like a trade apprenticeship, and you would be with The Lady Mage all the way. I guess I didn't understand about the schools, and how you work your way up. 
+I love the emerald, and I will figure out what you mean about saying the inscriptions in private once we are on the trail. I hope this isn't one of your practical jokes, though. That is too fine a gem just to put a joke on. And the colors were beautiful. It lasted a full thirty seconds before dissolving into smoke, and it was a deep, shiny green with gold and silver and sky blue. Plus, it only erased a little bit of the parchament, so I got to read most of the message. That is so much better than the one where you tried the acid-flowers, and it burned through the whole letter. I know you want to have each message destroy itself, though I do not understand why all mages seem to need such secrecy.
+I do have some news. I have started working with a new group. There is not much to say yet, but it is not a regular mercenary group. <CHARNAME>, the one who leads, is different. I will have more to say later, I am sure. In the meantime, keep up your studies, and I will try to send you some of the spell components you asked about as best I can. Judging by the look of things, I may be able to get some very rare components for you just by keeping my eyes open and wits sharp.
+  Yours Faithfully, Aran~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr3.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 3]My Dearest Elena,
+
+I am writing from the trail, so please excuse the occasional blot or crease staining the writing. There is so much to report, but most of it is not to be trusted to letters. When I next see you, remind me to tell you about <PLAYER1>. Things are working out well enough on so far. Well as well as can be expected given our chalenges. I have not had as much combat in so short a timeframe since the pitched battles back near Baldur's Gate. Even in the Axes, there were months with no combat, and now it seems to happen every day.
+I am glad to hear that your roommate is not making your life easy. I know that sounds unsupportive, and I am sure you don't appreciate it, but from my standpoint it means you are telling me things and not hiding the challenges and problems. You are smart enough to get past this. Just don't do what you did to Kimili when she called you those names. I bet now that you have some real training, it would not be a few curls set on fire... you might accidentally incinerate her head.
+I did hear from Nathan the other day, and his letter asked after you. I told him you were away in the Dale lands, rather than the truth. I know you think that he is cute, but I know him. He is not a nice person. I may sound overprotective, but he has done some things you just do not want to know about.
+Well, I must close, as I am out of room, and low on supplies. Time to mix up some more ink, too. As always.
+  Yours Faithfully, Aran~
+  SAY DESC ~[Aran Letter 3]My Dearest Elena,
+
+I am writing from the trail, so please excuse the occasional blot or crease staining the writing. There is so much to report, but most of it is not to be trusted to letters. When I next see you, remind me to tell you about <PLAYER1>. Things are working out well enough on so far. Well as well as can be expected given our chalenges. I have not had as much combat in so short a timeframe since the pitched battles back near Baldur's Gate. Even in the Axes, there were months with no combat, and now it seems to happen every day.
+I am glad to hear that your roommate is not making your life easy. I know that sounds unsupportive, and I am sure you don't appreciate it, but from my standpoint it means you are telling me things and not hiding the challenges and problems. You are smart enough to get past this. Just don't do what you did to Kimili when she called you those names. I bet now that you have some real training, it would not be a few curls set on fire... you might accidentally incinerate her head.
+I did hear from Nathan the other day, and his letter asked after you. I told him you were away in the Dale lands, rather than the truth. I know you think that he is cute, but I know him. He is not a nice person. I may sound overprotective, but he has done some things you just do not want to know about.
+Well, I must close, as I am out of room, and low on supplies. Time to mix up some more ink, too. As always.
+  Yours Faithfully, Aran~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr4.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 4]My Dearest Elena,
+  
+I hope that all is well with you. For me, I am sorely in need of your guidance. I know we have written about this several times, but I need to clear my head and think and you are always good at helping me do that. I cannot stop thinking about her. I cannot stop watching her. It has me off balance, even worse than when I fell for that half-elven bard you warned me against. I simply do not understand how I could be pulled so far under her spell in such a short time. I know I am not an apprentice, but I certainly feel like one. I know I wrote to you of my feelings, and I know we joked about the difficulties of falling for one's employer, but now I am serious.
+I do not know if you would like her, or not. But do not believe the stories that must be floating around about what we are doing. All I can say is that she has captivated my attention in a way no other woman has. Yes, even more than SilverEyes. I just have difficulties seeing what I can offer her in return. I have no wealth or title, no real prospects, and I do not even know if she truly would have me. But that is how serious my situation seems to have become. For Sune's Blessing and for the love of your brother, help me. I need to know what a woman of power really wants.
+  Yours faithfully, Aran~
+  SAY DESC ~[Aran Letter 4]My Dearest Elena,
+  
+I hope that all is well with you. For me, I am sorely in need of your guidance. I know we have written about this several times, but I need to clear my head and think and you are always good at helping me do that. I cannot stop thinking about her. I cannot stop watching her. It has me off balance, even worse than when I fell for that half-elven bard you warned me against. I simply do not understand how I could be pulled so far under her spell in such a short time. I know I am not an apprentice, but I certainly feel like one. I know I wrote to you of my feelings, and I know we joked about the difficulties of falling for one's employer, but now I am serious.
+I do not know if you would like her, or not. But do not believe the stories that must be floating around about what we are doing. All I can say is that she has captivated my attention in a way no other woman has. Yes, even more than SilverEyes. I just have difficulties seeing what I can offer her in return. I have no wealth or title, no real prospects, and I do not even know if she truly would have me. But that is how serious my situation seems to have become. For Sune's Blessing and for the love of your brother, help me. I need to know what a woman of power really wants.
+  Yours faithfully, Aran~
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr5.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 5]My Dearest Elena,
+  
+I hope that all is well with you, and with your pet lizard (yes, I know he is a pseudodragon, but someone has to put her in her place!). I am happy your work in runescribing is coming along, but please remember about spell duration. Half of your last message burned through your last three letters to me, and nearly turned my pack into a bonfire. I know you prefer secrecy, but surely I can keep one or two of your missives?
+There are many things going on right now, and I am not at liberty to write much about them. Our goals are being met, though the victories seem very costly. Perhaps it is more that I have made a stronger committment to this quest than I have before. Your advice was appreciated. I am happy you see me that way, but I am pretty sure that you did not really mean "just kiss her and keep kissing her until she either kills you or professes her love". I understand what you are saying about power being of many kinds, and that sometimes just being yourself is what she might need. I do not know the best way to proceed right now, but I will take your advice under advisement and continue as best I can. 
+In the meantime, I will be enclosing a small packet of wildspeare flowers for your component pouch when I get a chance to send this. I hope that it helps your studies. Please try not to turn Jill into a flowerpot again. I know that the polymorph spell usually results in squirrels, berrygobblers, or chipmunks rather than inanimate objects, so study hard and next time it might go better. 
+  Yours faithfully, Aran.~ 
+  SAY DESC ~[Aran Letter 5]My Dearest Elena,
+  
+I hope that all is well with you, and with your pet lizard (yes, I know he is a pseudodragon, but someone has to put her in her place!). I am happy your work in runescribing is coming along, but please remember about spell duration. Half of your last message burned through your last three letters to me, and nearly turned my pack into a bonfire. I know you prefer secrecy, but surely I can keep one or two of your missives?
+There are many things going on right now, and I am not at liberty to write much about them. Our goals are being met, though the victories seem very costly. Perhaps it is more that I have made a stronger committment to this quest than I have before. Your advice was appreciated. I am happy you see me that way, but I am pretty sure that you did not really mean "just kiss her and keep kissing her until she either kills you or professes her love". I understand what you are saying about power being of many kinds, and that sometimes just being yourself is what she might need. I do not know the best way to proceed right now, but I will take your advice under advisement and continue as best I can. 
+In the meantime, I will be enclosing a small packet of wildspeare flowers for your component pouch when I get a chance to send this. I hope that it helps your studies. Please try not to turn Jill into a flowerpot again. I know that the polymorph spell usually results in squirrels, berrygobblers, or chipmunks rather than inanimate objects, so study hard and next time it might go better. 
+  Yours faithfully, Aran.~ 
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr6.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 6]My Dearest Elena,
+  
+Congratulations on winning your competition! I had no idea that things were so competitive at the academy, and I am very glad that the Priests of Ilmater were there when that boy got caught in the fireball. I am so happy you won, and you even gave me ideas for a new set of tactics to use. I doubt I will often be able to spread oil or grease before a battle, but the use of multiple layers of magic is not something I have studied very much. The way things are going around here, we may need all the tactical advantages I can come up with. 
+As for your enquiries, she is holding her own against the power of her blood. I do not have any real answers for you as to whether she sees me as someone who she could be with forever, or just someone she can use temporarily. I hear her words, and I see her responses, but I often am not quite sure where she really is coming from. She may be shouting her truth at me all the time, for all I know, but I am simply not sure if I am hearing reality or something I have constructed all in my head. You know as well as I do that I have done that before, and the results have been less than positive.
+There will be time enough to write more later. I will be enclosing a few odds and ends gleaned from our last few combats, but i am unsure as to how to stop them from breaking when transported to you. If the letter you are holding is a bright black on one corner, then I would seek out the Priests for healing immediately. I am never sure why you want me to send you these things, as my training has been in writing, not herbalism, but you know that I would do anything for you.
+  Yours faithfully, Aran~
+  SAY DESC ~[Aran Letter 6]My Dearest Elena,
+  
+Congratulations on winning your competition! I had no idea that things were so competitive at the academy, and I am very glad that the Priests of Ilmater were there when that boy got caught in the fireball. I am so happy you won, and you even gave me ideas for a new set of tactics to use. I doubt I will often be able to spread oil or grease before a battle, but the use of multiple layers of magic is not something I have studied very much. The way things are going around here, we may need all the tactical advantages I can come up with. 
+As for your enquiries, she is holding her own against the power of her blood. I do not have any real answers for you as to whether she sees me as someone who she could be with forever, or just someone she can use temporarily. I hear her words, and I see her responses, but I often am not quite sure where she really is coming from. She may be shouting her truth at me all the time, for all I know, but I am simply not sure if I am hearing reality or something I have constructed all in my head. You know as well as I do that I have done that before, and the results have been less than positive.
+There will be time enough to write more later. I will be enclosing a few odds and ends gleaned from our last few combats, but i am unsure as to how to stop them from breaking when transported to you. If the letter you are holding is a bright black on one corner, then I would seek out the Priests for healing immediately. I am never sure why you want me to send you these things, as my training has been in writing, not herbalism, but you know that I would do anything for you.
+  Yours faithfully, Aran~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr7.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 7]My Dearest Elena,
+  
+I hope my letter finds you in good health and spirits. I will get straight to the point and remind you that you are too special and to smart to fall into any traps. Be careful. I do not know anything about Court and have never really seen a Masked Lord or even an un-masked one, but I have been around long enough to be suspicious of anyone who makes bold passes at you. I wish I were there, so that he would know that you have a protector. I know you can take care of yourself, but it still worries me. If you need proof, remember how I have acted around Giselle and Rani, and how you had to send a spark at me to stop me from behaving badly with your friends. 
+Yes, I know I have a double standard, but I have always been very interested in all of this romantic sparking, while you have avoided it like the plague. And our situations are not as similar as you made it sound. <CHARNAME> is more complicated than what we are talking about. If it were just for fun, that would be one thing, but I seem to have developed some attachments that make things more painful for me if I do things that she might not like. I always try to fit what she seems to want, but it is hard sometimes. In fact, it seems almost impossible at times. But I trust in Tymora, and She will make the coin toss. What is meant to be, is meant to be. In your case, though, your benefactor might not take kindly to that particular young man. Do not take this the wrong way, but you have to ask yourself if he is really interested in you, or if he wants information. 
+I trust you to make the right choice for you, of course. I would send for you to join us for a little bit, so you could get away and think, but I am afraid things here have gotten very difficult. Our adversaries are the stiff of legends and folktales, only they turn out to be real. Usually, they also turn out to be able to crush me into goo. No matter what is going on there, things are worse here. Do not worry for me, though. I have allways had an eye out for trouble, and I think i enjoy feeling part of something that will make a difference.
+  Yours faithfully, Aran~
+  SAY DESC ~[Aran Letter 7]My Dearest Elena,
+  
+I hope my letter finds you in good health and spirits. I will get straight to the point and remind you that you are too special and to smart to fall into any traps. Be careful. I do not know anything about Court and have never really seen a Masked Lord or even an un-masked one, but I have been around long enough to be suspicious of anyone who makes bold passes at you. I wish I were there, so that he would know that you have a protector. I know you can take care of yourself, but it still worries me. If you need proof, remember how I have acted around Giselle and Rani, and how you had to send a spark at me to stop me from behaving badly with your friends. 
+Yes, I know I have a double standard, but I have always been very interested in all of this romantic sparking, while you have avoided it like the plague. And our situations are not as similar as you made it sound. <CHARNAME> is more complicated than what we are talking about. If it were just for fun, that would be one thing, but I seem to have developed some attachments that make things more painful for me if I do things that she might not like. I always try to fit what she seems to want, but it is hard sometimes. In fact, it seems almost impossible at times. But I trust in Tymora, and She will make the coin toss. What is meant to be, is meant to be. In your case, though, your benefactor might not take kindly to that particular young man. Do not take this the wrong way, but you have to ask yourself if he is really interested in you, or if he wants information. 
+I trust you to make the right choice for you, of course. I would send for you to join us for a little bit, so you could get away and think, but I am afraid things here have gotten very difficult. Our adversaries are the stiff of legends and folktales, only they turn out to be real. Usually, they also turn out to be able to crush me into goo. No matter what is going on there, things are worse here. Do not worry for me, though. I have allways had an eye out for trouble, and I think i enjoy feeling part of something that will make a difference.
+  Yours faithfully, Aran~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr8.itm~
+  SAY NAME1 ~A Letter~
+  SAY NAME2 ~A Letter~
+  SAY UNIDENTIFIED_DESC ~[Aran Letter 1]Dear Goodman Whitehand,
+  
+  Greetings and salutations. While I appreciated receipt of the draft copy of your work in the timely fashion requested, the nature of this particular story has run afoul of some unforseen challenges in its editorial review and publication. Due to the graphic nature of its contents, we have had to procure the services of a freelance editor and adjust our initial ideas of moarketing and publication run. 
+  We have decided that the initial twenty copy run is insufficient, and will undertake to dramatically increase the number of copies created. However, we feel that the work would be better served by mass publication on woodpulp, rather than the more expensive vellum. We esimate that the initial facination with salacious content presented in written form will not have the lasting and enduring effect of more standard novelizations, and that after the initial sales the use of this work is far more likely to be in creating bonfires than in literary review. We believe that the bardic tradition of expanding and retelling will soon make your character's trials and tribulations popular, but the retelling will likely leave the book unsellable.
+  We look forward to your second draft, with particular attention to the rewrites and edits suggested in the accompanying document.
+
+  With eager anticipation of our mutual profit, 
+  
+  Wordsmith Lourd, Bookseller and Printer, The Promenade, Athalka, Amn~
+  
+  SAY DESC ~[Aran Letter 1]Dear Goodman Whitehand,
+  
+  Greetings and salutations. While I appreciated receipt of the draft copy of your work in the timely fashion requested, the nature of this particular story has run afoul of some unforseen challenges in its editorial review and publication. Due to the graphic nature of its contents, we have had to procure the services of a freelance editor and adjust our initial ideas of moarketing and publication run. 
+  We have decided that the initial twenty copy run is insufficient, and will undertake to dramatically increase the number of copies created. However, we feel that the work would be better served by mass publication on woodpulp, rather than the more expensive vellum. We esimate that the initial facination with salacious content presented in written form will not have the lasting and enduring effect of more standard novelizations, and that after the initial sales the use of this work is far more likely to be in creating bonfires than in literary review. We believe that the bardic tradition of expanding and retelling will soon make your character's trials and tribulations popular, but the retelling will likely leave the book unsellable.
+  We look forward to your second draft, with particular attention to the rewrites and edits suggested in the accompanying document.
+
+  With eager anticipation of our mutual profit, 
+  
+  Wordsmith Lourd, Bookseller and Printer, The Promenade, Athalka, Amn~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg1.itm~
+  SAY NAME1 ~A Small Package~
+  SAY NAME2 ~A Small Package~
+  SAY UNIDENTIFIED_DESC ~[A Small Package]A Small Package
+
+This small roll of scrolls holds several sheets of vellum, each inscribed with columns of figures and an occasional subtotal.~
+  SAY DESC ~[A Small Package]A Small Package
+
+This small roll of scrolls holds several sheets of vellum, each inscribed with columns of figures and an occasional subtotal.~
+
+COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg2.itm~
+  SAY NAME1 ~Government Receipt~
+  SAY NAME2 ~Government Receipt~
+  SAY UNIDENTIFIED_DESC ~[Government Receipt]Whereas the Owner of The Broken Sword
+
+has provided an accounting of the buisnesses present and monetary exchanges made in aforesaid establishment for the first quarter of this tax year, Orrin Theris of Athlaka, resident owner of aforesaid business establishment, is hereby in receipt of an acnowledgement of official submission of tax documents. This document serves to confirm rec't of the first of four (4) required quarterly earnings statements as required under section 125, sub-paragraph 4 of the City Revenue Code.
+
+Signed,
+Ferrin DeLorea, Clerk, City Revenue Department~
+  SAY DESC  ~[Government Receipt]Wheras the Owner of The Broken Sword
+
+has provided an accounting of the buisnesses present and monetary exchanges made in aforesaid establishment for the first quarter of this tax year, Orrin Theris of Athlaka, resident owner of aforesaid business establishment, is hereby in receipt of an acnowledgement of official submission of tax documents. This document serves to confirm rec't of the first of four (4) required quarterly earnings statements as required under section 125, sub-paragraph 4 of the City Revenue Code.
+
+Signed,
+Ferrin DeLorea, Clerk, City Revenue Department~
+
+/* .cre population */
+
+/* resources */
+
+COPY ~aranw/media/portraits/nix_defaultl.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait   (Nix, default) */
+COPY ~aranw/media/portraits/nix_defaultm.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait  (Nix, default) */
+COPY ~aranw/media/portraits/nix_defaults.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait  (Nix, default) */
+
+COPY ~aranw/media/portraits/peachplums_jeremys.bmp~ 	~override/c-aw01ep.bmp~
+COPY_EXISTING ~kpgrd01.cre~   ~override/c-aw01ep.cre~   /* Area C-AW01 Entry Point - Bouncer on Promenade  */
+  SAY NAME1 ~Manson~
+  SAY NAME2 ~Manson~
+  REMOVE_CRE_ITEM ~rndtre02~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY ~aranw/media/portraits/peachplums_blaisev2s.bmp~ 	~override/c-toran.bmp~
+COPY_EXISTING ~kpgrd01.cre~   ~override/c-toran.cre~   /* Area C-AW01 fight creature  */
+  SAY NAME1 ~Toran~
+  SAY NAME2 ~Toran~
+  REMOVE_CRE_ITEM ~rndtre02~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY_EXISTING ~kpgrd01.cre~   ~override/c-aw01tk.cre~   /* Area C-AW01 Tavern Keeper Orrin  */
+  SAY NAME1 ~Orrin~
+  SAY NAME2 ~Orrin~
+  REMOVE_CRE_ITEM ~rndtre02~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY ~aranw/media/portraits/peachplums_erika.bmp~ ~override/c-aw01w1.bmp~ /* Erika's portrait (Peachplums) */
+COPY_EXISTING ~wench1.cre~   ~override/c-aw01w1.cre~  /*   server 1  - Erika */
+  SAY NAME1 ~Erika~
+  SAY NAME2 ~Erika~
+  WRITE_BYTE 0x2C 35 // metal color
+  WRITE_BYTE 0x2D 74 // minor color
+  WRITE_BYTE 0x2E 41 // major color
+  WRITE_BYTE 0x2F 108 // skin color
+  WRITE_BYTE 0x30 40 // leather color
+  WRITE_BYTE 0x31 40 // armor color
+  WRITE_BYTE 0x32 3 // hair color
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY_EXISTING ~kpgate02.cre~   ~override/c-aw01p1.cre~  /*   patron 1  - L10  male fighter */
+  SAY NAME1 ~Gerald the Strong~
+  SAY NAME2 ~Gerald the Strong~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY ~aranw/media/portraits/peachplums_halforcfemv2S.bmp~ 	~override/c-aw01p2.bmp~
+COPY_EXISTING ~kpsold02.cre~   ~override/c-aw01p2.cre~  /*   patron 2  - L3 female fighter */
+  SAY NAME1 ~Cheris Nothar~
+  SAY NAME2 ~Cheris Nothar~
+  WRITE_BYTE 0x2E 45 // major color
+  WRITE_BYTE 0x2F 37 // skin color
+  WRITE_BYTE 0x32 29 // hair color
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY ~aranw/media/portraits/peachplums_kavain.bmp~ ~override/c-aw01p3.bmp~ /* Kavain, Cleric Merc portrait (Peachplums)  */
+COPY_EXISTING ~kpchap01.cre~   ~override/c-aw01p3.cre~  /*   patron 3  - L10 male priest */
+  SAY NAME1 ~Kavain~
+  SAY NAME2 ~Kavain~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+COPY_EXISTING ~kpsold07.cre~   ~override/c-aw01tl.cre~  /*   Teldra the Recruiter */
+  SAY NAME1 ~Teldra~
+  SAY NAME2 ~Teldra~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
+/* outside-the-bar fight (females romancing him only) */
+COPY_EXISTING ~kpgate02.cre~   ~override/c-malcer.cre~  /*   thug 1  - L10  male fighter */
+  REMOVE_CRE_ITEM ~sw2h01~
+  REMOVE_CRE_ITEM ~plat01~
+  REMOVE_CRE_ITEM ~helm01~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+  SAY NAME1 ~Malcer~
+  SAY NAME2 ~Malcer~
+  WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+  WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8  /* give new override AI script */
+  WRITE_ASCII 0x268 ~WTASIGHT~ #8  /* give new default AI script  */
+  ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
+  ADD_CRE_ITEM ~shld06~ #0 #0 #0 IDENTIFIED SHIELD
+  ADD_CRE_ITEM ~sw1h41~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+  
+COPY_EXISTING ~kpgate02.cre~   ~override/c-oskut.cre~  /*   thug 2  - L10  male fighter */
+  REMOVE_CRE_ITEM ~sw2h01~
+  REMOVE_CRE_ITEM ~plat01~
+  REMOVE_CRE_ITEM ~helm01~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+  SAY NAME1 ~Oskut~
+  SAY NAME2 ~Oskut~
+  WRITE_BYTE 0x2E 45 // major color
+  WRITE_BYTE 0x2F 37 // skin color
+  WRITE_BYTE 0x32 29 // hair color
+  WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8  /* give new override AI script */
+  WRITE_ASCII 0x268 ~WTASIGHT~ #8  /* give new default AI script  */
+  ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
+  ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
+  ADD_CRE_ITEM ~sw1h05~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+  
+COPY_EXISTING ~kpgate02.cre~   ~override/c-taman.cre~  /*   thug 3  - L10  male fighter */
+  REMOVE_CRE_ITEM ~sw2h01~
+  REMOVE_CRE_ITEM ~plat01~
+  REMOVE_CRE_ITEM ~helm01~
+  LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+  SAY NAME1 ~Taman~
+  SAY NAME2 ~Taman~
+  WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
+  WRITE_BYTE 0x32 4  /* hair color (auburn) */
+  WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8  /* give new override AI script */
+  WRITE_ASCII 0x268 ~WTASIGHT~ #8  /* give new default AI script */  
+  ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
+  ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
+  ADD_CRE_ITEM ~blun21~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+  
+/* stores */
+
+COPY ~aranw/media/stores/c-awtav1.sto~ ~override~
+  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+    SAY NAME2 ~Orrin's Tavern~
+    ADD_STORE_ITEM ~MISC16~ #0 #0 #0 ~IDENTIFIED~ #5  /* Fire Agate Gem */
+    ADD_STORE_ITEM ~MISC17~ #0 #0 #0 ~IDENTIFIED~ #8  /* Lynx Eye Gem */
+    ADD_STORE_ITEM ~MISC18~ #0 #0 #0 ~IDENTIFIED~ #4  /* Sunstone Gem */
+    ADD_STORE_ITEM ~MISC19~ #0 #0 #0 ~IDENTIFIED~ #10  /* Turquoise Gem */
+    ADD_STORE_ITEM ~MISC20~ #0 #0 #0 ~IDENTIFIED~ #5  /* Bloodstone Gem */
+    ADD_STORE_ITEM ~MISC21~ #0 #0 #0 ~IDENTIFIED~ #7  /* Skydrop Gem */
+    ADD_STORE_ITEM ~MISC22~ #0 #0 #0 ~IDENTIFIED~ #5  /* Andar Gem */
+    ADD_STORE_ITEM ~MISC23~ #0 #0 #0 ~IDENTIFIED~ #12  /* Jasper Gem */
+    ADD_STORE_ITEM ~MISC24~ #0 #0 #0 ~IDENTIFIED~ #5  /* Tchazar Gem */
+    ADD_STORE_ITEM ~MISC25~ #0 #0 #0 ~IDENTIFIED~ #3  /* Zircon Gem */
+    ADD_STORE_ITEM ~MISC26~ #0 #0 #0 ~IDENTIFIED~ #5  /* Iol Gem */
+    ADD_STORE_ITEM ~MISC27~ #0 #0 #0 ~IDENTIFIED~ #6  /* Moonstone Gem */
+    ADD_STORE_ITEM ~MISC28~ #0 #0 #0 ~IDENTIFIED~ #4  /* Waterstar Gem */
+    ADD_STORE_ITEM ~MISC29~ #0 #0 #0 ~IDENTIFIED~ #2  /* Ziose Gem */
+    ADD_STORE_ITEM ~MISC30~ #0 #0 #0 ~IDENTIFIED~ #3  /* Chrysoberyl Gem */
+    ADD_STORE_ITEM ~MISC31~ #0 #0 #0 ~IDENTIFIED~ #7  /* Star Diopside Gem */
+    ADD_STORE_ITEM ~MISC32~ #0 #0 #0 ~IDENTIFIED~ #2  /* Shandon Gem */
+    ADD_STORE_ITEM ~MISC33~ #0 #0 #0 ~IDENTIFIED~ #1  /* Aquamarine Gem */
+    ADD_STORE_ITEM ~MISC34~ #0 #0 #0 ~IDENTIFIED~ #4  /* Garnet Gem */
+    ADD_STORE_ITEM ~MISC35~ #0 #0 #0 ~IDENTIFIED~ #12  /* Horn Coral Gem */
+    ADD_STORE_ITEM ~MISC36~ #0 #0 #0 ~IDENTIFIED~ #6  /* Pearl */
+    ADD_STORE_ITEM ~MISC37~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~ /* Sphene Gem */
+    ADD_STORE_ITEM ~MISC38~ #0 #0 #0 ~IDENTIFIED~ #3  /* Black Opal */
+    ADD_STORE_ITEM ~MISC39~ #0 #0 #0 ~IDENTIFIED~ #7  /* Water Opal */
+    ADD_STORE_ITEM ~MISC40~ #0 #0 #0 ~IDENTIFIED~ #12  /* Moonbar Gem */
+    ADD_STORE_ITEM ~MISC41~ #0 #0 #0 ~IDENTIFIED~ #6  /* Star Sapphire */
+    ADD_STORE_ITEM ~MISC6N~ #0 #0 #0 ~IDENTIFIED~ #5  /* Sun Gem */
+    ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Gold Ring */
+    ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Silver Ring */
+    ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Onyx Ring */
+    ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12 ~UNLIMITED~ /* Jade Ring */
+    ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20 ~UNLIMITED~ /* Greenstone Ring */
+    ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Bloodstone Ring */
+    ADD_STORE_ITEM ~RING16~ #0 #0 #0 ~IDENTIFIED~ #2  /* Angel Skin Ring */
+    ADD_STORE_ITEM ~RING17~ #0 #0 #0 ~IDENTIFIED~ #3  /* Flamedance Ring */
+    ADD_STORE_ITEM ~RING18~ #0 #0 #0 ~IDENTIFIED~ #3  /* Fire Opal Ring */
+    ADD_STORE_ITEM ~RING19~ #0 #0 #0 ~IDENTIFIED~ #2  /* Ruby Ring */
+    ADD_STORE_ITEM ~AMUL02~ #0 #0 #0 ~IDENTIFIED~ #8  /* Necklace */
+    ADD_STORE_ITEM ~AMUL04~ #0 #0 #0 ~IDENTIFIED~ #2  /* Studded Necklace with Zios Gems */
+    ADD_STORE_ITEM ~AMUL05~ #0 #0 #0 ~IDENTIFIED~ #3  /* Bluestone Necklace */
+    ADD_STORE_ITEM ~AMUL06~ #0 #0 #0 ~IDENTIFIED~ #3  /* Agni Mani Necklace */
+    ADD_STORE_ITEM ~AMUL07~ #0 #0 #0 ~IDENTIFIED~ #5  /* Rainbow Obsidian Necklace */
+    ADD_STORE_ITEM ~AMUL08~ #0 #0 #0 ~IDENTIFIED~ #5  /* Tiger Cowrie Shell Necklace */
+    ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~  /* Silver Necklace */
+    ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~  /* Gold Necklace */
+    ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~  /* Pearl Necklace */
+    ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4  /* Bloodstone Amulet */
+  END
+
+COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
+  PATCH_IF SOURCE_SIZE > 0x9b BEGIN
+    SAY NAME2 ~Orrin's Special Stock~
+    ADD_STORE_ITEM ~MISC16~ #0 #0 #0 ~IDENTIFIED~ #5  /* Fire Agate Gem */
+    ADD_STORE_ITEM ~MISC17~ #0 #0 #0 ~IDENTIFIED~ #8  /* Lynx Eye Gem */
+    ADD_STORE_ITEM ~MISC18~ #0 #0 #0 ~IDENTIFIED~ #4  /* Sunstone Gem */
+    ADD_STORE_ITEM ~MISC19~ #0 #0 #0 ~IDENTIFIED~ #10  /* Turquoise Gem */
+    ADD_STORE_ITEM ~MISC20~ #0 #0 #0 ~IDENTIFIED~ #5  /* Bloodstone Gem */
+    ADD_STORE_ITEM ~MISC21~ #0 #0 #0 ~IDENTIFIED~ #7  /* Skydrop Gem */
+    ADD_STORE_ITEM ~MISC22~ #0 #0 #0 ~IDENTIFIED~ #5  /* Andar Gem */
+    ADD_STORE_ITEM ~MISC23~ #0 #0 #0 ~IDENTIFIED~ #12  /* Jasper Gem */
+    ADD_STORE_ITEM ~MISC24~ #0 #0 #0 ~IDENTIFIED~ #5  /* Tchazar Gem */
+    ADD_STORE_ITEM ~MISC25~ #0 #0 #0 ~IDENTIFIED~ #3  /* Zircon Gem */
+    ADD_STORE_ITEM ~MISC26~ #0 #0 #0 ~IDENTIFIED~ #5  /* Iol Gem */
+    ADD_STORE_ITEM ~MISC27~ #0 #0 #0 ~IDENTIFIED~ #6  /* Moonstone Gem */
+    ADD_STORE_ITEM ~MISC28~ #0 #0 #0 ~IDENTIFIED~ #4  /* Waterstar Gem */
+    ADD_STORE_ITEM ~MISC29~ #0 #0 #0 ~IDENTIFIED~ #2  /* Ziose Gem */
+    ADD_STORE_ITEM ~MISC30~ #0 #0 #0 ~IDENTIFIED~ #3  /* Chrysoberyl Gem */
+    ADD_STORE_ITEM ~MISC31~ #0 #0 #0 ~IDENTIFIED~ #7  /* Star Diopside Gem */
+    ADD_STORE_ITEM ~MISC32~ #0 #0 #0 ~IDENTIFIED~ #2  /* Shandon Gem */
+    ADD_STORE_ITEM ~MISC33~ #0 #0 #0 ~IDENTIFIED~ #1  /* Aquamarine Gem */
+    ADD_STORE_ITEM ~MISC34~ #0 #0 #0 ~IDENTIFIED~ #4  /* Garnet Gem */
+    ADD_STORE_ITEM ~MISC35~ #0 #0 #0 ~IDENTIFIED~ #12  /* Horn Coral Gem */
+    ADD_STORE_ITEM ~MISC36~ #0 #0 #0 ~IDENTIFIED~ #6  /* Pearl */
+    ADD_STORE_ITEM ~MISC37~ #0 #0 #0 ~IDENTIFIED~ #20  /* Sphene Gem */
+    ADD_STORE_ITEM ~MISC38~ #0 #0 #0 ~IDENTIFIED~ #3  /* Black Opal */
+    ADD_STORE_ITEM ~MISC39~ #0 #0 #0 ~IDENTIFIED~ #7  /* Water Opal */
+    ADD_STORE_ITEM ~MISC40~ #0 #0 #0 ~IDENTIFIED~ #12  /* Moonbar Gem */
+    ADD_STORE_ITEM ~MISC41~ #0 #0 #0 ~IDENTIFIED~ #6  /* Star Sapphire */
+    ADD_STORE_ITEM ~MISC6N~ #0 #0 #0 ~IDENTIFIED~ #5  /* Sun Gem */
+    ADD_STORE_ITEM ~MISC42~ #0 #0 #0 ~IDENTIFIED~ #3  /* Diamond  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~MISC43~ #0 #0 #0 ~IDENTIFIED~ #2  /* Emerald  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~MISC44~ #0 #0 #0 ~IDENTIFIED~ #2  /* Kings Tears  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~MISC45~ #0 #0 #0 ~IDENTIFIED~ #1  /* Rogue Stone  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~MISC5K~ #0 #0 #0 ~IDENTIFIED~ #1  /* Illithium Ore (200 pounds)  - Special Stock (only in c-awtav2)  ?  as alternative to cheating it in for item creation? */
+    ADD_STORE_ITEM ~HELM18~ #0 #0 #0 ~IDENTIFIED~ #1  /* Pearly White Ioun Stone (regenerate HP)  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~HELM19~ #0 #0 #0 ~IDENTIFIED~ #1  /* Dusty Rose Ioun Stone (AC +1)  - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~HELM20~ #0 #0 #0 ~IDENTIFIED~ #1  /* Pale Green Ioun Stone (bonus HP and THAC0) - Special Stock (only in c-awtav2) */
+    ADD_STORE_ITEM ~RING21~ #0 #0 #0 ~IDENTIFIED~ #1  /* Ring of Infravision  - Special Stock (only in c-awtav02) */
+    ADD_STORE_ITEM ~RING05~ #0 #0 #0 ~IDENTIFIED~ #1  /* Ring of Invisibility  - Special Stock (only in c-awtav02) */
+    ADD_STORE_ITEM ~RING06~ #0 #0 #0 ~IDENTIFIED~ #1  /* Ring of Protection +1  - Special Stock (only in c-awtav02) */
+    ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Gold Ring */
+    ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Silver Ring */
+    ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Onyx Ring */
+    ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12 ~UNLIMITED~ /* Jade Ring */
+    ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20 ~UNLIMITED~ /* Greenstone Ring */
+    ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Bloodstone Ring */
+    ADD_STORE_ITEM ~RING16~ #0 #0 #0 ~IDENTIFIED~ #2  /* Angel Skin Ring */
+    ADD_STORE_ITEM ~RING17~ #0 #0 #0 ~IDENTIFIED~ #3  /* Flamedance Ring */
+    ADD_STORE_ITEM ~RING18~ #0 #0 #0 ~IDENTIFIED~ #3  /* Fire Opal Ring */
+    ADD_STORE_ITEM ~RING19~ #0 #0 #0 ~IDENTIFIED~ #2  /* Ruby Ring */
+    ADD_STORE_ITEM ~AMUL01~ #0 #0 #0 ~IDENTIFIED~ #1  /* Necklace of Missiles  - Special Stock (only in c-awtav02) */
+    ADD_STORE_ITEM ~AMUL12~ #0 #0 #0 ~IDENTIFIED~ #1  /* Laeral's Tear Necklace (3000 gp) - Special Stock (only in c-awtav02) */
+    ADD_STORE_ITEM ~AMUL02~ #0 #0 #0 ~IDENTIFIED~ #8  /* Necklace */
+    ADD_STORE_ITEM ~AMUL04~ #0 #0 #0 ~IDENTIFIED~ #2  /* Studded Necklace with Zios Gems */
+    ADD_STORE_ITEM ~AMUL05~ #0 #0 #0 ~IDENTIFIED~ #3  /* Bluestone Necklace */
+    ADD_STORE_ITEM ~AMUL06~ #0 #0 #0 ~IDENTIFIED~ #3  /* Agni Mani Necklace */
+    ADD_STORE_ITEM ~AMUL07~ #0 #0 #0 ~IDENTIFIED~ #5  /* Rainbow Obsidian Necklace */
+    ADD_STORE_ITEM ~AMUL08~ #0 #0 #0 ~IDENTIFIED~ #20  /* Tiger Cowrie Shell Necklace */
+    ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #6 ~UNLIMITED~  /* Silver Necklace */
+    ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #6 ~UNLIMITED~  /* Gold Necklace */
+    ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #7 ~UNLIMITED~  /* Pearl Necklace */
+    ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4  /* Bloodstone Amulet */
+  END
+
+/* area creation */
+COPY ~aranw/areas/c-ar01.are~ ~override~
+COPY ~aranw/areas/c-ar01.tis~ ~override~
+COPY ~aranw/areas/c-ar01.mos~ ~override~
+COPY ~aranw/areas/c-ar01.wed~ ~override~
+COPY ~aranw/areas/c-ar01ht.bmp~ ~override~
+COPY ~aranw/areas/c-ar01lm.bmp~ ~override~
+COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
+
+/* area script */
+COMPILE ~aranw/baf/c-ar01.baf~
+
+/* Existing Promenade edits */
+
+EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/spawnbouncer.baf~
+
+/* delete original info trigger */
+COPY_EXISTING ar0700.are override
+  LPF fj_are_structure
+  INT_VAR
+    fj_delete = 0 // give me feedback (not)
+    fj_delete_mode = 24 // (#25 in NI, but count starts at 0 not one...)
+  STR_VAR
+    fj_structure_type = region
+    fj_type = 1 // info
+  END
+BUT_ONLY_IF_IT_CHANGES
+
+/* add entrance target, add travel  region back to c-ar01.are matching original info trigger  */
+COPY_EXISTING ar0700.are override
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x     = 3183
+    fj_loc_y     = 983
+    fj_orientation = 0   // s
+  STR_VAR
+    fj_structure_type = entrance
+    fj_name  = Exitc-ar01
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_type     = 2  // travel
+    fj_box_left   = 3175
+    fj_box_top    = 857
+    fj_box_right  = 3261
+    fj_box_bottom   = 919
+    fj_cursor_idx   = 30   // door
+    fj_vertex_0   = 3175 + (917 << 16)
+    fj_vertex_1   = 3261 + (919 << 16)
+    fj_vertex_2   = 3260 + (882 << 16)
+    fj_vertex_3   = 3255 + (871 << 16)
+    fj_vertex_4   = 3246 + (864 << 16)
+    fj_vertex_5   = 3226 + (858 << 16)
+    fj_vertex_6   = 3213 + (857 << 16)
+    fj_vertex_7   = 3189 + (863 << 16)
+    fj_vertex_8   = 3178 + (868 << 16)
+    fj_vertex_9   = 3175 + (883 << 16)
+  STR_VAR
+    fj_structure_type   = region
+    fj_name  = Trancar01
+    fj_destination_area = c-ar01
+    fj_destination_name = Trancar01
+  END
+
+/* new area added */
+
+/* delete original travel trigger */
+COPY_EXISTING c-ar01.are override
+  LPF fj_are_structure
+  INT_VAR
+    fj_delete = 0 // give me feedback (not)
+    fj_delete_mode = 0 // (#25 in NI, but count starts at 0 not one...)
+  STR_VAR
+    fj_structure_type = region
+    fj_type = 2 // travel
+  END
+BUT_ONLY
+
+COPY_EXISTING c-ar01.are override
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x     = 1170
+    fj_loc_y     = 910
+    fj_orientation = 7
+  STR_VAR
+    fj_structure_type = entrance
+    fj_name  = Trancar01
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_type     = 2  // travel
+    fj_box_left   = 1165
+    fj_box_top    = 879
+    fj_box_right  = 1297
+    fj_box_bottom   = 984
+    fj_cursor_idx   = 34   // wheel
+    fj_alt_x = 1231
+    fj_alt_y = 931
+  STR_VAR
+    fj_structure_type   = region
+    fj_name = Tran0700
+    fj_destination_area = ar0700
+    fj_destination_name = Exitc-ar01
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 897
+    fj_loc_y      = 934
+    fj_orientation  = 15   // SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name	= c-aw01tk
+    fj_cre_resref = c-aw01tk
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 516
+    fj_loc_y      = 616
+    fj_orientation  = 11   // NEE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-aw01tl
+    fj_cre_resref   = c-aw01tl
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 1195
+    fj_loc_y      = 801
+    fj_orientation  = 15   // SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-aw01w1
+    fj_cre_resref   = c-aw01w1
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 367
+    fj_loc_y      = 729
+    fj_orientation  = 15   // SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-aw01p2
+    fj_cre_resref  = c-aw01p2
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 478
+    fj_loc_y      = 528
+    fj_orientation  = 15   // SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-aw01p1
+    fj_cre_resref  = c-aw01p1
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 713
+    fj_loc_y      = 398
+    fj_dest_x     = 1128
+    fj_dest_y     = 926
+    fj_orientation  = 15   //  SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-aw01p3
+    fj_cre_resref  = c-aw01p3
+  END
+  LPF fj_are_structure
+  INT_VAR
+    fj_loc_x      = 1014
+    fj_loc_y      = 1027
+    fj_orientation  = 15   //  SSE
+  STR_VAR
+    fj_structure_type = actor
+    fj_name = c-toran
+    fj_cre_resref  = c-toran
+  END
+
+/*
+  LPF fj_are_structure
+  INT_VAR
+  fj_loc_x      =
+  fj_loc_y      =
+  fj_dest_x     =
+  fj_dest_y     =
+  fj_orientation  = 15   //  SSE
+  STR_VAR
+  fj_structure_type = actor
+  fj_name =
+  fj_cre_resref  =
+  END
+*/
+
+EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ // sets up filter indicating drow avatar and spelunking
+
+EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~  // shuts down underdark filter
+
+EXTEND_BOTTOM ~bodhiamb.bcs~ ~aranw\baf\c-aranvampire.baf~ // bodhi disappears with aran
+
+EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ // restoring aran
+
+COMPILE ~aranw/baf/c-abvp.baf~ // vampire script
+COMPILE ~aranw/baf/c-aran.baf~ // override script
+COMPILE ~aranw/baf/c-aranx.baf~ // out-of-party combat script
+COMPILE ~aranw/baf/c-restco.baf~ // rest cutscene for camping outside
+COMPILE ~aranw/baf/c-restin.baf~ // rest cutscene for inn
+COMPILE ~aranw/baf/c-restdg.baf~ // rest cutscene for dungeon
+COMPILE ~aranw/baf/c-restpp.baf~ // rest cutscene for pocket plane
+COMPILE ~aranw/baf/c-malcer.baf~ // override script for Malcer
+COMPILE ~aranw/baf/c-oskut.baf~ // override script for Oskut
+COMPILE ~aranw/baf/c-taman.baf~ // override script for Taman
+
+/* sounds */
+                                
+BEGIN ~Install Soundset, Voiced lines, and Music~
+  FORCED_SUBCOMPONENT ~Install Audio Files~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+
+  /* replace this for .acm music later - but for now,  add the blank sound reference */
+
+  COPY ~aranw/media/g3blank.mus~ 		~music~
+  COPY_EXISTING ~songlist.2da~ 		~override~
+    SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
+    BUT_ONLY
+  
+  LAUNCH_ACTION_MACRO ~chooseasoundtrack~  
+  
+  /* set up what sounds need to be installed for this component to be covered */
+  ACTION_CLEAR_ARRAY  ~sounds~
+  ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+    ~c-aws001~
+    ~c-aws002~
+    ~c-aws003~
+    ~c-aws004~
+    ~c-aws005~
+    ~c-aws006~
+    ~c-aws007~
+    ~c-aws008~
+    ~c-aws009~
+    ~c-aws010~
+    ~c-aws011~
+    ~c-aws012~
+    ~c-aws013~
+    ~c-aws014~
+    ~c-aws015~
+    ~c-aws016~
+    ~c-aws017~
+    ~c-aws018~
+    ~c-aws019~
+    ~c-aws020~
+    ~c-aws021~
+    ~c-aws022~
+    ~c-aws023~
+    ~c-aws024~
+    ~c-aws025~
+    ~c-aws026~
+    ~c-aws027~
+    ~c-aws028~
+    ~c-aws029~
+    ~c-aws030~
+    ~c-aws031~
+    ~c-aws032~
+    ~c-aws033~
+    ~c-aws034~
+    ~c-aws035~
+    ~c-aws036~
+    ~c-aws037~
+    ~c-aws038~
+    ~c-aws039~
+    ~c-aws040~
+    ~c-aws041~
+    ~c-aws042~
+    ~c-aws043~
+    ~c-aws044~
+    ~c-aws045~
+    ~c-arnfth~         
+    ~c-arnfti~       
+    ~c-arnltl~
+    ~c-arnltl~
+    ~c-arandf~
+    ~c-arands~  
+  END  
+  
+  /* look for the resulting .wavc files and copy them into the game */
+  ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+      COPY ~aranw/media/wavc/%sound%.wav~ ~override~
+    END
+  END
+
+BEGIN ~Install Only Soundset and Music~
+  FORCED_SUBCOMPONENT ~Install Audio Files~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+
+  COPY ~aranw/media/g3blank.mus~ 		~music~
+  COPY_EXISTING ~songlist.2da~ 		~override~
+    SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
+    BUT_ONLY
+  
+  LAUNCH_ACTION_MACRO ~chooseasoundtrack~  
+  
+  /* set up what sounds need to be installed for this component to be covered */
+  ACTION_CLEAR_ARRAY  ~sounds~
+  ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+    ~c-aws001~
+    ~c-aws002~
+    ~c-aws003~
+    ~c-aws004~
+    ~c-aws005~
+    ~c-aws006~
+    ~c-aws007~
+    ~c-aws008~
+    ~c-aws009~
+    ~c-aws010~
+    ~c-aws011~
+    ~c-aws012~
+    ~c-aws013~
+    ~c-aws014~
+    ~c-aws015~
+    ~c-aws016~
+    ~c-aws017~
+    ~c-aws018~
+    ~c-aws019~
+    ~c-aws020~
+    ~c-aws021~
+    ~c-aws022~
+    ~c-aws023~
+    ~c-aws024~
+    ~c-aws025~
+    ~c-aws026~
+    ~c-aws027~
+    ~c-aws028~
+    ~c-aws029~
+    ~c-aws030~
+    ~c-aws031~
+    ~c-aws032~
+    ~c-aws033~
+    ~c-aws034~
+    ~c-aws035~
+    ~c-aws036~
+    ~c-aws037~
+    ~c-aws038~
+    ~c-aws039~
+    ~c-aws040~
+    ~c-aws041~
+    ~c-aws042~
+    ~c-aws043~
+    ~c-aws044~
+    ~c-aws045~
+    ~c-arnfth~         
+    ~c-arnfti~       
+    ~c-arnltl~
+    ~c-arnltl~
+    ~c-arandf~
+    ~c-arands~  
+  END  
+  
+  /* look for the resulting .wavc files and copy them into the game */
+  ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+      COPY ~aranw/media/wavc/%sound%.wav~ ~override~
+    END
+  END 
+
+BEGIN ~Install Only Soundset~
+  FORCED_SUBCOMPONENT ~Install Audio Files~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  COPY ~aranw/media/g3blank.mus~ 		~music~
+  COPY_EXISTING ~songlist.2da~ 		~override~
+    SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
+    BUT_ONLY
+  
+  LAUNCH_ACTION_MACRO ~chooseasoundtrack~  
+  
+  /* set up what sounds need to be installed for this component to be covered */
+  ACTION_CLEAR_ARRAY  ~sounds~
+  ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+    ~c-aws001~
+    ~c-aws002~
+    ~c-aws003~
+    ~c-aws004~
+    ~c-aws005~
+    ~c-aws006~
+    ~c-aws007~
+    ~c-aws008~
+    ~c-aws009~
+    ~c-aws010~
+    ~c-aws011~
+    ~c-aws012~
+    ~c-aws013~
+    ~c-aws014~
+    ~c-aws015~
+    ~c-aws016~
+    ~c-aws017~
+    ~c-aws018~
+    ~c-aws019~
+    ~c-aws020~
+    ~c-aws021~
+    ~c-aws022~
+    ~c-aws023~
+    ~c-aws024~
+    ~c-aws025~
+    ~c-aws026~
+    ~c-aws027~
+    ~c-aws028~
+    ~c-aws029~
+    ~c-aws030~
+    ~c-aws031~
+    ~c-aws032~
+    ~c-aws033~
+    ~c-aws034~
+    ~c-aws035~
+    ~c-aws036~
+    ~c-aws037~
+    ~c-aws038~
+    ~c-aws039~
+    ~c-aws040~
+    ~c-aws041~
+    ~c-aws042~
+    ~c-aws043~
+    ~c-aws044~
+    ~c-aws045~ 
+  END  
+  
+  /* look for the resulting .wavc files and copy them into the game */
+  ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+      COPY ~aranw/media/wavc/%sound%.wav~ ~override~
+    END
+  END 
+
+BEGIN ~Do not install any audio~
+  FORCED_SUBCOMPONENT ~Install Audio Files~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+
+  PRINT ~No soundset, music, or voiced lines files are installed.~
+
+BEGIN  ~Aran Whitehand, default configuration (Soldier)~
+  FORCED_SUBCOMPONENT ~Choose Which Aran Configuration to install...~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  /* register choice */
+  OUTER_SET class_choice = 5
+  /* Ask for choices and patch the .cre */
+  LAUNCH_ACTION_MACRO ~customized_cre_choice~
+  /* create the ToB version if ToB is installed */
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB .cre  file
+    COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+      WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+      WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+      WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+      WRITE_ASCII 0x248 ~C-ARN25~ #8 /*  override script */
+  END ELSE BEGIN
+  	PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
+  END
+
+BEGIN  ~Aran Whitehand, Mage Dual-Class stats configuration (Tinker)~
+  FORCED_SUBCOMPONENT ~Choose Which Aran Configuration to install...~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  /* register choice */
+  OUTER_SET class_choice = 1
+  /* Ask for choices and patch the .cre */
+  LAUNCH_ACTION_MACRO ~customized_cre_choice~
+  /* create the ToB version if ToB is installed */
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB .cre  file
+    COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+      WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+      WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+      WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+      WRITE_ASCII 0x248 ~C-ARN25~ #8 /*  override script */
+  END ELSE BEGIN
+  	PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
+  END
+
+BEGIN  ~Aran Whitehand, Cleric Dual-Class stats configuration (Tailor)~
+  FORCED_SUBCOMPONENT ~Choose Which Aran Configuration to install...~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  /* register choice */
+  OUTER_SET class_choice = 2
+  /* Ask for choices and patch the .cre */
+  LAUNCH_ACTION_MACRO ~customized_cre_choice~
+  /* create the ToB version if ToB is installed */
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB .cre  file
+    COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+      WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+      WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+      WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+      WRITE_ASCII 0x248 ~C-ARN25~ #8 /*  override script */
+  END ELSE BEGIN
+  	PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
+  END
+
+BEGIN  ~Aran Whitehand, Fighter stats configuration (Soldier)~
+  FORCED_SUBCOMPONENT ~Choose Which Aran Configuration to install...~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  /* register choice */
+  OUTER_SET class_choice = 3
+  /* Ask for choices and patch the .cre */
+  LAUNCH_ACTION_MACRO ~customized_cre_choice~
+  /* create the ToB version if ToB is installed */
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB .cre  file
+    COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+      WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+      WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+      WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+      WRITE_ASCII 0x248 ~C-ARN25~ #8 /*  override script */
+  END ELSE BEGIN
+  	PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
+  END
+
+BEGIN  ~Aran Whitehand, Thief Dual-Class stats configuration (Spy)~
+  FORCED_SUBCOMPONENT ~Choose Which Aran Configuration to install...~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+  /* register choice */
+  OUTER_SET class_choice = 4
+  /* Ask for choices and patch the .cre */
+  LAUNCH_ACTION_MACRO ~customized_cre_choice~
+  /* create the ToB version if ToB is installed */
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB .cre  file
+    COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+      WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+      WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+      WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+      WRITE_ASCII 0x248 ~C-ARN25~ #8 /*  override script */
+  END ELSE BEGIN
+  	PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
+  END
+
+
+BEGIN ~Choose Aran's Portrait~
+  REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
+
+OUTER_SPRINT ~arportrait~ ~There are many alternate portraits from which to choose. You may want to consult the ReadMe before choosing.~
+OUTER_WHILE (!(IS_AN_INT ~arportrait~) OR (~arportrait~ > 0xd) OR (~arportrait~ < 0x1)) BEGIN
+  PRINT ~Please enter your choice and press return:
+[1] Keep Nix's "Default" portrait set (fair hair, fair complexion)
+[2] berelinde's "Boromir" style (dark brown hair, fair complexion)
+[3] berelinde's "Dragon Age" style (dark hairr, dark complexion)
+[4] berelinde's "Scruffy" style (light brown hair, fair complexion)
+[5] McMazey's "Don Pedro" style (dark hair, dark complexion)
+[6] McMazey's "Fantasy Photo" style (long brown hair, light complexion)
+[7] McMazey's "Bearded" style (dark hair, light complexion)
+[8] McMazey's "No Beard" style (dark hair, light complexion)
+[9] McMazey's "Horatio Photo" style (dark hair, light complexion)
+[10] Peachplums' "Young Fighter" style (red hair, fair complexion)
+[11] piperb's "Stalwort Bearded Young" style (light brown hair, fair complexion)
+[12] piperb's "Mature Bearded" style (dark brown hair, medium complexion)
+[13] piperb's "Stalwort Young" style (light brown hair, fair complexion) ~
+  ACTION_READLN ~arportrait~
+END
+ACTION_IF ("arportrait" = 0x1) THEN BEGIN /* Nix's "Default" portrait set ( fair hair, fair complexion) */
+  COPY ~aranw/media/portraits/nix_defaultl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/nix_defaultm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/nix_defaults.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~Nix's "Default" portrait set (fair hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x1) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x2) THEN BEGIN /*  Berelinde's "Boromir" style (dark brown hair, fair complexion) */
+  COPY ~aranw/media/portraits/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/berelinde_borm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/berelinde_bors.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~Berelinde's "Boromir" style (dark brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x2) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x3) THEN BEGIN  /*  Berelinde's "Dragon Age" style (dark hair, dark complexion) */
+  COPY ~aranw/media/portraits/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/berelinde_dam.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/berelinde_das.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
+    WRITE_BYTE 0x32 0  /* hair color (red-tinted black) */
+  PRINT ~Berelinde's "Dragon Age" style (dark hair, dark complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x3) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
+    WRITE_BYTE 0x32 0  /* hair color (red-tinted black) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x4) THEN BEGIN /*  Berelinde's "Scruffy" style (light brown hair, fair complexion)  */
+  COPY ~aranw/media/portraits/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/berelinde_scruffym.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/berelinde_scruffys.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~Berelinde's "Scruffy" style (light brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x4) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x5) THEN BEGIN  /*  Macmazey's  "Don Pedro" style (dark hair, dark complexion) */
+  COPY ~aranw/media/portraits/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/macmazey_donpedrom.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/macmazey_donpedros.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
+    WRITE_BYTE 0x32 0  /* hair color (red-tinted black) */
+  PRINT ~Macmazey's "Don Pedro" style (dark hair, dark complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x5) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
+    WRITE_BYTE 0x32 0  /* hair color (red-tinted black) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x6) THEN BEGIN  /*  Macmazey's "Fantasy Photo" style (long brown hair, light complexion) */
+  COPY ~aranw/media/portraits/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/macmazey_longhairm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/macmazey_longhairs.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~Macmazey's "Fantasy Photo" style (long brown hair, light complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x6) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x7) THEN BEGIN /*  Macmazey's  "Bearded" style (dark hair, light complexion) */
+  COPY ~aranw/media/portraits/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/mcmazey_beardm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/mcmazey_beards.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~Macmazey's  "Bearded" style (dark hair, light complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x7) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x8) THEN BEGIN  /*  Macmazey's "No Beard" style (dark hair, light complexion) */
+  COPY ~aranw/media/portraits/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/mcmazey_nobeardm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/mcmazey_nobeards.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~Macmazey's "No Beard" style (dark hair, light complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x8) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x9) THEN BEGIN  /*  Macmazey's "Horatio Photo" style (dark hair, light complexion) */
+  COPY ~aranw/media/portraits/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/mcmazey_photo_hm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/mcmazey_photo_hs.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~Macmazey's "Horatio Photo" style (dark hair, light complexion)installed.~
+END
+ACTION_IF (("arportrait" = 0x9) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xa) THEN BEGIN /*  Peachplum's "Young Fighter" style (red hair, fair comlpexion) */
+  COPY ~aranw/media/portraits/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/peachplums_youngm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/peachplums_youngs.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
+    WRITE_BYTE 0x32 4  /* hair color (auburn) */
+  PRINT ~Peachplum's "Young Fighter" style (red hair, fair comlpexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xa) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
+    WRITE_BYTE 0x32 4  /* hair color (auburn) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xb) THEN BEGIN /*  piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) */
+  COPY ~aranw/media/portraits/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/piper_beard_youngm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/piper_beard_youngs.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xb) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xc) THEN BEGIN  /*  piper's "Mature Bearded" style (dark brown hair, medium complexion) */
+  COPY ~aranw/media/portraits/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/piper_darker_beardm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/piper_darker_beards.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 84 /* skin color (peachy) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~piper's "Mature Bearded" style (dark brown hair, medium complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xd) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 84 /* skin color (peachy) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xd) THEN BEGIN   /*  piper's "Stalwort Young" style (light brown hair, fair complexion) */
+  COPY ~aranw/media/portraits/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
+  COPY ~aranw/media/portraits/piper_nobeard_youngm.bmp~ ~override/c-aranwm.bmp~
+  COPY ~aranw/media/portraits/piper_nobeard_youngs.bmp~ ~override/c-aranws.bmp~
+  COPY_EXISTING ~c-aran7.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 3  /* hair color (light gold) */
+  PRINT ~piper's "Stalwort Young" style (light brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xd) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre  file
+  COPY_EXISTING ~c-aran13.cre~ ~override~
+    WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+    WRITE_BYTE 0x32 2  /* hair color (dark gold) */
+  PRINT ~ToB file patched to match.~
+END
+
+
