@@ -1,0 +1,19 @@
+
+/* stolen from berelinde's b!rest3.baf - DUNGEON - cutscene "rest" that runs after a night talk, preventing dreams or other rest banters from kicking in when the usual RestParty() events aren't wanted */
+
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    Rest()
+    ActionOverride(Player2,Rest())
+    ActionOverride(Player3,Rest())
+    ActionOverride(Player4,Rest())
+    ActionOverride(Player5,Rest())
+    ActionOverride(Player6,Rest())
+    StartMovie("RESTDUNG")
+    MoveViewObject(Player1,INSTANT)
+    Wait(1)
+    EndCutSceneMode()
+END
