@@ -1,0 +1,98 @@
+/* Epilogue: PC Refused Godhood, Low Rep, regardless of friendship or romance status */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  !Global("PlayerChoseEssence","GLOBAL",1)
+  ReputationLT(Player1,10)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE0")
+    SmallWait(1)
+    Continue()
+END
+
+/* PC Refused Godhood, Friendship */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  ReputationGT(Player1,9)
+  !Global("PlayerChoseEssence","GLOBAL",1)
+  !Global("c-aranrom","GLOBAL",2)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE2")
+    SmallWait(1)
+    Continue()
+END
+
+/* PC Refused Godhood, Romance */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  ReputationGT(Player1,9)
+  !Global("PlayerChoseEssence","GLOBAL",1)
+  Global("c-aranrom","GLOBAL",2)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE3")
+    SmallWait(1)
+    Continue()
+END
+
+
+/* PC Became God, Friendship */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  ReputationGT(Player1,9)
+  Global("PlayerChoseEssence","GLOBAL",1)
+  !Global("c-aranrom","GLOBAL",2)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE2")
+    SmallWait(1)
+    Continue()
+END
+
+/* PC Accepted Godhood, Romance, Good or Neutral */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  Global("PlayerChoseEssence","GLOBAL",1)
+  !GlobalGT("PPEvilChoices","GLOBAL",2)
+  Global("c-aranrom","GLOBAL",2)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE4")
+    SmallWait(1)
+    Continue()
+END
+
+/* PC Accepted Godhood, Romance, Evil */
+IF
+  Global("StartEndBios","AR6200",1)
+  InPartyAllowDead("c-aran")
+  Global("PlayerChoseEssence","GLOBAL",1)
+  GlobalGT("PPEvilChoices","GLOBAL",2)
+  Global("c-aranrom","GLOBAL",2)
+  Global("c-aranbio","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranbio","GLOBAL",1)
+    TextScreen("C-ARANE5")
+    SmallWait(1)
+    Continue()
+END
+
+
+

@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		CreateVisualEffect("SPFLESHS",[1454.1398])
+		Wait(1)
+		CreateCreature("C-ARWRTH",[1454.1398],14) //  Deadman
+		ActionOverride("C-ARWRTH",StartDialogueNoSet(Player1))
+END
+
