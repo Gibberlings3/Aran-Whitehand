@@ -1,0 +1,10 @@
+/* aranw/baf/c-aranunderdarkstart */
+
+IF
+  InMyArea("c-aran")
+  InParty("c-aran")
+  Global("c-drow","GLOBAL",0)
+THEN
+RESPONSE #100
+  SetGlobal("c-drow","GLOBAL",1)
+END

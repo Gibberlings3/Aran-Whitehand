@@ -1,0 +1,9 @@
+
+IF
+    CombatCounter(0)
+    Allegiance(Myself,NEUTRAL)
+	See([PC])
+THEN
+    RESPONSE #100
+      Dialog(Player1)
+END
