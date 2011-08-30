@@ -760,7 +760,7 @@ IF ~~ a2257
   ++ ~[PC] (Turn your back to him, walking away silently.)~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3) ActionOverride("c-aran",GivePartyAllEquipment()) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeArea())~ EXIT
   ++ ~[PC] Leave.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3) ActionOverride("c-aran",GivePartyAllEquipment()) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeArea())~ EXIT
   ++ ~[PC] No. Stay with the party. But stay away from me.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3)~ + a2260
-  ++ ~[PC] I need time to understand what you did. Just leave me alone for awhile, while I think.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranpostwraith","GLOBAL",3) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2260 // don't want a fight to kick this into gear. Needs follow up talk, probably.
+  ++ ~[PC] I need time to understand what you did. Just leave me alone for awhile, while I think.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranpostwraith","GLOBAL",3) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2260 /* don't want a fight to kick this into gear. Needs follow up talk, probably. */
 END
 
 IF ~~ a2258
@@ -791,7 +791,7 @@ IF ~Global("c-aranpostwraith","GLOBAL",4)~ c_are_we_on_or_are_we_done
 /* ToB Plot Talk : Big End Battle */
 IF ~Global("c-aranisthisit","GLOBAL",1)~ THEN BEGIN a2922
   SAY ~[ARAN] Right. Check my gear, eh? It might just be that this ends up as th' mother o' all battles.~
-  ++ ~[PC] Oh, relax.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ EXIT // PLACEHOLDER
+  ++ ~[PC] Oh, relax.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ EXIT /* PLACEHOLDER */
 /*
   + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
   + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
@@ -811,7 +811,7 @@ END
 
 /* ToB 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous */
 
-IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a2764 // 7 options
+IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a2764 /*  7 options */
   SAY ~[ARAN] Now, this be just plain silly. Why in Gond's Great Gears do we have to be blighted walkin' everywhere?~
   ++ ~[PC] What does that have to do with my mission?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2765
   ++ ~[PC] I know it is slow and sometimes painful, but I don't see any alternatives.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2766
@@ -846,7 +846,7 @@ IF ~~ a2768
   IF ~~ THEN GOTO a2770
 END
 
-IF ~~ a2769 // 7 options
+IF ~~ a2769 /*  7 options */
   SAY ~[C-ARAN] Do we be talkin' physically, or just metaphorically?~
   ++ ~[PC] Watch it, sellsword. I am an easy woman to understand. I *always* mean physically.~ + a2770
   ++ ~[PC] I can just see it, the two of us, battling dragons, me riding your shoulders, cuddled up around your head...~ + a2786
@@ -857,7 +857,7 @@ IF ~~ a2769 // 7 options
   ++ ~[PC] Oh, come on, Aran.... give me a piggy-back ride!~ + a2789
 END
 
-IF ~~ a2770 // 6 options
+IF ~~ a2770 /*  6 options */
   SAY ~[C-ARAN] Look, we be one o' th' most powerful forces on th' face o' Toril, but do we ride horses around? Do we use one o' them flyin' Calimshan carpet contraptions? Do we summon levitation spells an' waft are way about, pretty as a feather? No. We blighted slog through th' crap like we was green recruits doin' basic trainin'. ~
   + ~ReputationGT(Player1,16)~ + ~[PC] I am doing just fine on my own two feet.~ + a2776
   + ~ReputationLT(Player1,17) ReputationGT(Player1,11)~ + ~[PC] I am doing just fine on my own two feet.~ + a2777
@@ -898,7 +898,7 @@ IF ~~ a2771
   ++ ~[PC] I do remember something about how keeping close to the ground and reducing the potential angles of attack made better tactical sense. In fact, I think you have said that about two hundred times.~ + a2775
 END
 
-IF ~~ a2772 // 6 options
+IF ~~ a2772 /*  6 options */
   SAY ~[C-ARAN] Do we be talkin' physically, or just metaphorically?~
   ++ ~[PC] Watch it, sellsword. Joking with me is gambling with Fate. Not many have bet against her and lived.~ + a2770
   ++ ~[PC] Physically, of course. I can just see it, the two of us, battling dragons, me riding your shoulders like a child...~ + a2770
@@ -950,7 +950,7 @@ IF ~~ a2775
   ++ ~[PC] Just think of how wonderful that footbath and massage will feel when you finally get a chance to indulge..~ + a2784
 END
 
-IF ~~ a2776 // 5 to 6 options
+IF ~~ a2776 /* 5 to 6 options */
   SAY ~[C-ARAN] Right. I guess I be doin' too much grousin', on account o' you mostly do th' right thing by people. If you saw th' need, you would provide it.~
   + ~Class("c-aran",THIEF_ALL)~ + ~[PC] I figure you are smart, dexterous, and tough. A little walking won't kill you. It will make you stronger and more able to pick those locks and dodge those traps.~ + a2784
   + ~Class("c-aran",MAGE_ALL)~ + ~[PC] You may be wielding some decent magic now, but I always think it is good to stick to basics, too. You wouldn't want to lose all that fighting muscle, now, would you?~ + a2784
@@ -962,7 +962,7 @@ IF ~~ a2776 // 5 to 6 options
   ++ ~[PC] It would be so much easier if you would just understand that I am right. Well, once I thought I was wrong, but it turns out I was mistaken, so I was actually right.~ + a2784
 END
 
-IF ~~ a2777 // 6 to 7 options
+IF ~~ a2777 /* 6 to 7 options */
   SAY ~[C-ARAN] You know, sometimes it be more than about you, eh? You do right by most folks, I know. But this walkin' business, it don't seem like you are lookin out for th' party.~
   + ~RandomNum(3,1)~ + ~[PC] Now you are just whining. Shut up, or I will trade you in for something useful, like a smart-talking two-handed sword with delusions of grandeur.~ + a3146 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
   + ~RandomNum(3,2)~ + ~[PC] Dear gods, you never shut up, do you?~ + a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
@@ -977,7 +977,7 @@ IF ~~ a2777 // 6 to 7 options
   ++ ~[PC] That isn't fair at all. I talk to you, and I take your ideas into consideration. This isn't about me, or my needs. If I could have found alternatives, I would have.~ + a2784
 END
 
-IF ~~ a2778 // 6 to 7 options
+IF ~~ a2778 /* 6 to 7 options */
   SAY ~[C-ARAN] That would figure. Another way to torture me an' still make it be all about you.~
   + ~RandomNum(3,1)~ + ~[PC] Now you are just whining. Shut up, or I will trade you in for something useful, like a smart-talking two-handed sword with delusions of grandeur.~ + a3146 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
   + ~RandomNum(3,2)~ + ~[PC] Dear gods, you never shut up, do you?~ + a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
@@ -1096,7 +1096,7 @@ IF ~~ a2789
   IF ~~ THEN GOTO a2770
 END
 
-IF ~~ a2799 // ELF
+IF ~~ a2799 /* ELF */
   SAY ~[C-ARAN] N'Tel’Quessir n'iarelia vodi Tel’Quessir, amin arwin alcarinqua vanima roche.~
   ++ ~[PC] You just blended three different Elven dialects, mispronounced 'horse', and I think in Waterdeep slang you may have just called me your gloriously beautiful sex toy. Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, non-elves do not usually ride elves. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1107,7 +1107,7 @@ IF ~~ a2799 // ELF
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you.~ + a2806
 END
 
-IF ~~ a2800 // HUMAN
+IF ~~ a2800 /* HUMAN */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an'... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1119,7 +1119,7 @@ IF ~~ a2800 // HUMAN
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you.~ + a2806
 END
 
-IF ~~ a2801 // DWARF
+IF ~~ a2801 /* DWARF */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1131,7 +1131,7 @@ IF ~~ a2801 // DWARF
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Dwarven women are strong enough inside and out to hold the caverns of Toril on their shoulders.~ + a2806
 END
 
-IF ~~ a2802 // HALFORC
+IF ~~ a2802 /* HALFORC */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' then... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1145,7 +1145,7 @@ IF ~~ a2802 // HALFORC
   + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently I have hidden untapped depths....~ + a2875
 END
 
-IF ~~ a2803 // GNOME
+IF ~~ a2803 /* GNOME */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1157,7 +1157,7 @@ IF ~~ a2803 // GNOME
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Gnomish women are strong enough inside and out to hold the line with Gnomish men. You haven't seen stubborn until you have to tell your cousin that it is an hour past dinnertime and he has to put his tools away for the night...~ + a2806
 END
 
-IF ~~ a2804 // HALFLING
+IF ~~ a2804 /* HALFLING */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1169,7 +1169,7 @@ IF ~~ a2804 // HALFLING
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Halfling women may look small, but we always have a trick or two up our sleeves.~ + a2806
 END
 
-IF ~~ a2805 // HALF_ELF
+IF ~~ a2805 /* HALF_ELF */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
@@ -1203,7 +1203,7 @@ IF ~~ a2875
   IF ~~ THEN GOTO a2806
 END
 
-END // append C-ARN25J
+END /* append C-ARN25J */
 
 /* BEGIN C-ARN25P is covered in initial dialog compilation. */
 
@@ -1235,11 +1235,11 @@ IF ~Global("KickedOut","LOCALS",0)~ THEN BEGIN a2753
   SAY ~[ARAN] Do you be certain you want me to go?~
   + ~RandomNum(3,1) !AreaCheck("AR4500")~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~  DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1632
   + ~RandomNum(3,2) !AreaCheck("AR4500")~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~  DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1633
-  + ~RandomNum(3,3) !AreaCheck("AR4500")~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~  DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1640 // c-aranrejoin2 // tob
-  + ~!AreaCheck("AR5003") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ DO ~SetGlobal("KickedOut","LOCALS",1)~  + a1639 // c-aranwaitsaradush // tob //  <<POSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5003") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ DO ~SetGlobal("KickedOut","LOCALS",1)~  + a1630 // c-araninnimpossible // tob // <<IMPOSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1638 // c-aranwaitsamkethran // tob //  <<POSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1630 // c-araninnimpossible // tob  // <<IMPOSSIBLE_TO_LEAVE>>
+  + ~RandomNum(3,3) !AreaCheck("AR4500")~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~  DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1640 /* c-aranrejoin2tob */
+  + ~!AreaCheck("AR5003") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ DO ~SetGlobal("KickedOut","LOCALS",1)~  + a1639 /* c-aranwaitsaradush  tob  <<POSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5003") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ DO ~SetGlobal("KickedOut","LOCALS",1)~  + a1630 /* c-araninnimpossibletob  <<IMPOSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1638 /* c-aranwaitsamkethrantob   <<POSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1630 /* c-araninnimpossibletob <<IMPOSSIBLE_TO_LEAVE>> */
   ++ ~[PC] Actually, I've changed my mind. Stay with the party.~ DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
   + ~AreaCheck("AR4500")~ + ~I'm sure.~ DO ~SetGlobal("KickedOut","LOCALS",1) MoveToPointNoInterrupt([1799.1358]) Face(14)~ EXIT
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a3223
@@ -1284,7 +1284,7 @@ IF ~Global("KickedOut","LOCALS",1) AreaCheck("AR4500")~ THEN BEGIN a1629
   + ~OR(2) Class("c-aran",CLERIC_ALL) Class("c-aran",PALADIN_ALL)~ + ~[PC] I need a healer, and you fit the bill. Gear up, boyo... we are heading out.~ DO ~JoinParty()~ EXIT
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a3223
   ++ ~[PC] Not right now, thanks.~ + a1640
-  ++ ~[PC] Well, I came back to this oh-so-pleasant place, and I came over here to talk to you. Do you think it was because I wanted a status report on the massive amount of things going on around here?~ + a1642 // smartalekrejoin // tob
+  ++ ~[PC] Well, I came back to this oh-so-pleasant place, and I came over here to talk to you. Do you think it was because I wanted a status report on the massive amount of things going on around here?~ + a1642 /* smartalekrejointob */
 END
 
 /* Saradush or Amkethran Rejoin */
@@ -1294,8 +1294,8 @@ IF ~Global("KickedOut","LOCALS",1) OR(2) AreaCheck("AR5003") AreaCheck("AR5501")
   ++ ~[PC] Not right now. I might be back later, though.~ + a1632
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a3223
   ++ ~[PC] Stay here, and don't gather any attention to yourself. That means no fighting, no drinking to excess, and no wenching.~ DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-  + ~!AreaCheck("AR5003")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1639 // c-aranwaitsaradush // tob //  <<POSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5501")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1638 // c-aranwaitsamkethran // tob //  <<POSSIBLE_TO_LEAVE>>
+  + ~!AreaCheck("AR5003")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1639 /*  c-aranwaitsaradushtob  <<POSSIBLE_TO_LEAVE>> */  
+  + ~!AreaCheck("AR5501")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1638 /* c-aranwaitsamkethrantob  <<POSSIBLE_TO_LEAVE>> */
   ++ ~[PC] I am sending you back to the Pocket Plane, Aran. I need you there right now.~ DO ~SetGlobal("KickedOut","LOCALS",1)
   CreateVisualEffectObject("SPDIMNDR",Myself)
   Wait(2)
@@ -1309,11 +1309,11 @@ IF ~Global("KickedOut","LOCALS",1) !AreaCheck("AR4500") !AreaCheck("AR5003") !Ar
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a3223
   + ~RandomNum(3,1)~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~ + a1632
   + ~RandomNum(3,2)~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~ + a1633
-  + ~RandomNum(3,3)~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~ + a1640 // c-aranrejoin2 // tob
-  + ~!AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1639 // c-aranwaitsaradush // tob //  <<POSSIBLE_TO_LEAVE>>
-  + ~OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1630 // c-araninnimpossible // tob // <<IMPOSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1638 // c-aranwaitsamkethran // tob //  <<POSSIBLE_TO_LEAVE>>
-  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1630 // c-araninnimpossible // tob  // <<IMPOSSIBLE_TO_LEAVE>>
+  + ~RandomNum(3,3)~ + ~[PC] Not right now. I might be back later, though. Stay right here and wait for me.~ + a1640 /* c-aranrejoin2tob */
+  + ~!AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1639 /* c-aranwaitsaradushtob <<POSSIBLE_TO_LEAVE>> */
+  + ~OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? Perhaps in Saradush?~ + a1630 /* c-araninnimpossibletob  <<IMPOSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1638 /*  c-aranwaitsamkethrantob   <<POSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Why don't you find a good inn and wait for us there? I hear there is an inn somewhere around Amkethran...~ + a1630 /* c-araninnimpossibletob <<IMPOSSIBLE_TO_LEAVE>> */
   ++ ~[PC] I am sending you back to the Pocket Plane, Aran. I need you there right now.~ DO ~SetGlobal("KickedOut","LOCALS",1)
   CreateVisualEffectObject("SPDIMNDR",Myself)
   Wait(2)
@@ -1356,7 +1356,7 @@ IF ~~ a1638
   EscapeAreaMove("AR5501",410,455,8)~ EXIT
 END
 
-END // of append to c-arn25p
+END /*  of append to c-arn25p */
 
 /* A complete rebuild of Anomen's ToB pre-joining dialog, expanded, contracted, and warped out of any semblance or resemblance. */
 
@@ -2190,7 +2190,7 @@ IF ~~ a2654
   IF ~~ THEN GOTO a2631
 END
 
-END // of pre-joined file
+END /* of pre-joined file */
 
 APPEND C-ARN25J
 
@@ -2395,7 +2395,7 @@ IF ~IsGabber(Player1)~ THEN BEGIN a1866 /* tob PID */
   + ~Global("c-aranscribe","GLOBAL",1) RandomNum(5,5)~ + ~[PC] Is that scroll done yet?~ + a3036
   /* nothing PC wants to talk about escape */
   ++ ~[PC] Actually, never mind. I don't really have anything to talk to you about.~ + a3127
-  /* LEAT21 // Human Flesh +5 evil armor equipped complaints */
+  /* LEAT21 - Human Flesh +5 evil armor equipped complaints */
   IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN GOTO a3132
   IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN GOTO a3131
   IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN GOTO a3130
@@ -2459,11 +2459,10 @@ IF ~~ a3024 SAY ~[ARAN] Right. Got it. Business only, an' cut the chatter. I can
 /* c-arantalkok */
 IF ~~ a3025 SAY ~[ARAN] Right. Got it. Chatter away like a crazed monkey, on account o' the fact that it might spice up the usual borin' routine o' see somethin', listen to it deliver an evil monologue o' doom an' destruction, kill it, loot its belongings, rinse, an' repeat.~ [c-aws122] IF ~~ THEN DO ~SetGlobal("c-silencearan","GLOBAL",0)~ EXIT END
 
-/* LEAT21 // Human Flesh +5 evil armor equipped; ToB Content
-IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN GOTO a3132
-IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a3131
-IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a3130
-*/
+/* LEAT21  Human Flesh +5 evil armor equipped; ToB Content */
+/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN GOTO a3132 */ 
+/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a3131 */
+/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a3130 */
 
 /* tiebacks possible with cut & paste */
 IF ~~ a3128 SAY ~[ARAN] Hey, I don't go around second guessin' you. So if I be sayin' it, you know there be one hells of a lot more people who have noticed. Might fit your ideas, but it be bad tactics to give away your position that way.~ IF ~~ THEN EXIT END
@@ -3374,7 +3373,7 @@ IF ~~ a2698
   IF ~~ THEN EXIT
 END
 
-END // of APPEND
+END /* of APPEND */
 
 /* copy for Joined */
 
@@ -3451,7 +3450,7 @@ IF ~~ a3216
   ++ ~[PC] Aran... I know the touch of you, the feel of all you, and that little strained look you get just before you... ~  DO ~SetGlobal("c-aransex","GLOBAL",4)~ + a3215
   ++ ~[PC] No. I think you have it just the way I want it. Thank the gods for memory lapses.~ + a3214
 END
-END // of APPEND
+END /* of APPEND */
 
 /* copy for Post */
 
@@ -3531,7 +3530,7 @@ IF ~~ a3218
   IF ~~ THEN EXIT
 END
 
-END // of APPEND
+END /* of APPEND */
 
 /* Master Wraith Talk. */
 
@@ -3613,7 +3612,7 @@ IF ~~ a2791
   + ~RandomNum(3,1)~ + ~[PC] This is a bit too personal for me right now. Just move along, and cut the chatter, Aran.~ + a3206
 END
 
-// a2792 is a chain
+/* a2792 is a chain */
 
 IF ~~ a2793
   SAY ~[ARAN] I feel th' same way. I mean, I feel th' same way about my sister. I was goin' through some old letters o' Elena's sent on from th' Waterdeep Mage Academy. I guess I get worried I won't be around for to protect her, th' way you did your sister.~
@@ -3703,16 +3702,16 @@ IF ~~ a2809
   + ~Global("c-aranintimate","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2889
 END
 
-// a2810 is a chain
+/* a2810 is a chain */
 
 IF ~~ a2811
   SAY ~[ARAN] Hey, that be unfair! That were an accident, by Helm's Fist. I just didn't' see you there. I done apologized, too! But on th' dangers we face, compared to the usual, well...~
   IF ~~ THEN GOTO a2810
 END
 
-// a2812 is a chain
+/* a2812 is a chain */
 
-// a2813 is a chain
+/* a2813 is a chain */
 
 IF ~~ a2814
   SAY ~[ARAN] No, not too personal. I think I am right close to her. I write to her often enough.~
@@ -4023,7 +4022,7 @@ IF ~~ a2849
   IF ~~ THEN EXIT
 END
 
-END // of append to C-ARN25J
+END /* of append to C-ARN25J */
 
 CHAIN ~C-ARN25J~ a2792
 ~[ARAN] I was goin' through some old letters o' Elena... you know, my sister what be in th' Waterdeep Mage Academy? I guess I get worried I won't be around for to protect her, th' way you did your sister.~
@@ -4082,7 +4081,7 @@ END
 + ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] Lightly, heavily, modestly, boldly... you could just say "I won't leave you alone because I like you", you know.~ + a2849
 + ~Gender(Player1,MALE)~ + ~[PC] Besides, we could all head up there together, and you could introduce me to your sister. Does she like pretty silk underthings? I am quite the ladies man, you know.~ + a2849
 
-CHAIN ~C-ARN25J~ a2885 // no touching; hint
+CHAIN ~C-ARN25J~ a2885 /* no touching; hint */
 ~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'...~
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
@@ -4098,7 +4097,7 @@ END
 ++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
 ++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2886 // kissing
+CHAIN ~C-ARN25J~ a2886 /* kissing */
 ~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'... I think that kissin' you feels nothin' like kissin' a sister.~
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
@@ -4114,7 +4113,7 @@ END
 ++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
 ++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2887 // touching
+CHAIN ~C-ARN25J~ a2887 /* touching */
 ~[ARAN] Well, now, we done pursued some o' that thought together already, eh? Th' touchin', that is, not you bein' my little sister, or anythin'...~
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? You are displaying early signs of mating rituals, and this is not the time or place for such behavior.~
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
@@ -4131,7 +4130,7 @@ END
 ++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
 
-CHAIN ~C-ARN25J~ a2888 // petting
+CHAIN ~C-ARN25J~ a2888 /* petting */
 ~[ARAN] Well, now, that be a good line o' thought to pursue. If I do recollect, we have done our share o' exlorin' that topic, too. Th' touchin', that is, not you bein' my little sister, or anythin'...~
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
@@ -4147,7 +4146,7 @@ END
 ++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
 ++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2889 // sex
+CHAIN ~C-ARN25J~ a2889 /* sex */
 ~[ARAN] Well, now, that came out right fine in my hearin'. I do seem to have some troubles wi' not constantly touchin' you whenever I can find a way to.~
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
@@ -4221,23 +4220,23 @@ END
 
 IF ~~ a2856
   SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
-  ++ ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with other men about their sisters.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] PLACEHOLDER ~ + c-tobplaceholder // PLACEHOLDER
+  ++ ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with other men about their sisters.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] PLACEHOLDER ~ + c-tobplaceholder /* PLACEHOLDER */
 END
 
 IF ~~ a2857
   SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
-  + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder // PLACEHOLDER
-  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. We... we are involved, aren't we? Usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder // PLACEHOLDER
+  + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder /* PLACEHOLDER */
+  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. We... we are involved, aren't we? Usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder /* PLACEHOLDER */
 END
 
 IF ~~ a2858
   SAY ~[ARAN] Oh, nothin' much. Just th' whole set o' Bhaalspawn tryin' to take power makes me wonder if they have any family feelin's at all. Wholesale slaughter o' innocents seems like it be born o' not havin' a sister around to keep you straight.~
-  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] Are you talking about me?~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] You don't know how much of a curse having a god's blood course through your veins can be. It is a constant struggle, and one mistake can turn every friend you ever had into an enemy. No Bhaalspawn has an easy childhood.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] I was lucky. Imoen kept me grounded, even if we were not really siblings. At least, back when we did not realize we were related in any way.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] I never really had that close a relationship with Imoen.~ + c-tobplaceholder // PLACEHOLDER
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] Are you talking about me?~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] You don't know how much of a curse having a god's blood course through your veins can be. It is a constant struggle, and one mistake can turn every friend you ever had into an enemy. No Bhaalspawn has an easy childhood.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I was lucky. Imoen kept me grounded, even if we were not really siblings. At least, back when we did not realize we were related in any way.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I never really had that close a relationship with Imoen.~ + c-tobplaceholder /* PLACEHOLDER */
 END
 
 IF ~~ a2859
@@ -4271,11 +4270,11 @@ END
 
 IF ~~ a2865
   SAY ~[ARAN] Oh, come on now. You must have some right nice things to remember about family.~
-  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~  + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] I have memories, but choose not to share them with you.~ + c-tobplaceholder // PLACEHOLDER
-  ++ ~[PC] I try not to think about any of that.~ + c-tobplaceholder // PLACEHOLDER
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~  + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I try not to think about any of that.~ + c-tobplaceholder /* PLACEHOLDER */
 END
 
 IF ~~ a2866
@@ -4317,9 +4316,9 @@ IF ~~ a2873
   ++ ~[PC] She... she isn't really my sister by blood. Or, she is, but not by mortal blood, you know.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",1)~ +  a2791
   ++ ~[PC] Sisters, sisters... can't live with them, can't live without them. Don't worry, We set him straight. Or rather, we chopped him into little pieces. Why the deep sibling introspection?.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",2)~ +  a2792
   ++ ~[PC] Sometimes the greater good requires some sacrifices, but where Imoen is concerned, I think less about the big picture and more about making sure she is safe.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",3)~ + a2793
-  + ~RandomNum(3,3)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3204 // already 6
-  + ~RandomNum(3,2)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3205 // already 6
-  + ~RandomNum(3,1)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3206 // already 6
+  + ~RandomNum(3,3)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3204 /* already 6 */
+  + ~RandomNum(3,2)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3205 /* already 6 */
+  + ~RandomNum(3,1)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3206 /* already 6 */
   ++ ~[PC] Stop rehashing old history. Irenicus transgressed, I hit back with everything I had, and now I am here and he no longer has any power at all.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",4)~ + a2794
   ++ ~[PC] There is always more at play than it seems, Aran. I wanted Imoen back, but there was far more to be gained by hunting down Irenicus then simply rescuing my 'sister'.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",5)~ + a2795
 END
