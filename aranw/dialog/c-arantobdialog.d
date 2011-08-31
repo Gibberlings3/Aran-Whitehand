@@ -1,4 +1,3 @@
-
 /* ToB Interjections and commentary */
 
 BEGIN C-ARN25A /* pre-joined ToB, just summoned */
