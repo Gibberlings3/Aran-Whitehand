@@ -1,3 +1,4 @@
+
 /* ToB Interjections and commentary */
 
 BEGIN C-ARN25A /* pre-joined ToB, just summoned */
@@ -818,7 +819,7 @@ IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a2764 /*  7 options */
   + ~OR(2)!InParty("Aerie") StateCheck("Aerie",CD_STATE_NOTVALID)~ + ~[PC] We walk because we have feet. Did you want to try sprouting wings?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2768
   + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] Because you would get tired of carrying me on your back?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2772
   + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] Because you would get tired of carrying me on your back?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2769
-  ++ ~[PC] I agree. We should get some horses. Do you know where we can get some?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2771
+  ++ ~[PC] I agree. We should get some horses. Do you know where we can get a few?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2771
   ++ ~[PC] If there is some way I could support you on this, please, let me know. I just don't see any good alternatives to using our feet.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~  + a2770
   + ~RandomNum(3,1)~ + ~[PC] Just shut up and let's keep moving.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3146 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
   + ~RandomNum(3,2)~ + ~[PC] Less complaining, or I will cut out your tongue and use it as fishbait.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
@@ -1220,7 +1221,7 @@ EXTEND_BOTTOM FATESP 6
   Wait(1)
   CreateVisualEffectObject("SPDIMNDR","c-aran")
   Wait(4)
-  MoveGlobal("AR0607","c-aran",[272.294])~ EXIT
+  MoveGlobal("AR0607","c-aran",[272.294])~ EXIT /* circus tent restored */
 + ~Global("c-aransenthome","GLOBAL",1)~ + ~Bring Aran Whitehand back from Amn.~ DO ~CreateVisualEffect("SPPORTAL",[1999.1228])
   Wait(2)
   MoveGlobal("AR4500","c-aran",[1999.1228])
@@ -1325,7 +1326,7 @@ IF ~~ a1630
   IF ~~ THEN EXIT
 END
 IF ~~ a1642
-  SAY ~[ARAN] My, a mite bit snarky today, are we? Don't tell me... yet another impossibly convoluted schemin' bastard decided to give you a pain in th' neck. Come on, let me get my gear, an' we'll both go jam Bane's Bones up his arse.~
+  SAY ~[ARAN] My, a mite bit snarky today, are we? Don't tell me... yet another impossibly convoluted schemin' bastard decided to give you a pain in th' rear. Come on, let me get my gear, an' we'll both go jam Bane's Bones up his arse.~
   IF ~~ THEN DO ~JoinParty()~ EXIT
 END
 
@@ -2212,6 +2213,4552 @@ IF ~Global("c-aranwaukeen","LOCALS",1) Global("c-silencearan","GLOBAL",0)~ THEN 
 END
 
 
+/* Adult - Land. Attempting to have some fun, Romantic Encounters-style. */
+
+/* moved up to emulate dreamscript eval */
+IF ~Global("c-arannightvisit","GLOBAL",1)~ THEN BEGIN a3800 /* START_ARAN_PC_BOOTY_CALL */
+  SAY ~[ARAN] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~
+  ++ ~[PC] (You decide that now is not a good time, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ EXIT
+  + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4025 /* START_LADY_OF_THE_WARM_LIPS */
+  + ~Global("c-arankisses","LOCALS",1)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4028 /* START_MAYHAP_I_GET_A_KISS */
+  + ~Global("c-arankisses","LOCALS",2)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4026 /* START_WITH_SHOULDER_PULL */
+  + ~Global("c-arankisses","LOCALS",3)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  + ~Global("c-arankisses","LOCALS",4)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
+  + ~Global("c-arankisses","LOCALS",5)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4040 /* START_BEARING_GIFTS */
+  + ~Global("c-arankisses","LOCALS",6)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
+  + ~Global("c-arankisses","LOCALS",7)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4041 /* START_SUNES_LIPS */
+  + ~Global("c-arankisses","LOCALS",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4029 /* START_TRY_TO_BE_PHYSICAL */
+  + ~Global("c-arankisses","LOCALS",9)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4017 /* START_LIP_EXERCISES */
+END
+
+/* I. Player Teases with lots and lots of flirts - from .bcs */
+
+IF ~Global("c-arangoaded","GLOBAL",1)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
+  SAY ~[ARAN] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
+  = ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
+  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3802 /* UNSURE_GOADED */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3802 /* UNSURE_GOADED */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] (Pull the blanket free of your body, and draw him closer to you.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you over-endowed, pea-brained idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
+  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3807 /* TONIGHT_HAVE_HEADACHE */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3808 /* PC_HAVING_AFFAIR */
+END
+
+IF ~~ a3807 /* TONIGHT_HAVE_HEADACHE */
+  SAY ~[ARAN] Right, then. I can do that. Mayhap we get a chance again next tenday.~
+  IF ~~ THEN DO ~SetGlobal("c-arangoaded","GLOBAL",3) SetGlobalTimer("c-arangoadedtime","GLOBAL",TEN_DAYS)~ EXIT
+END
+
+/* II. Player Teases with lots and lots of flirts, but sent Aran away the first time - 1 FR tenday later - from .bcs */
+
+IF ~Global("c-arangoaded","GLOBAL",3)~ THEN BEGIN a3809 /* TOO_MUCH_TEASING_RETRY */
+  SAY ~[ARAN] I done tried this awhile ago, but you sent me away. Now, mayhap you want more than lots o' flirtin', and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
+  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3810 /* UNSURE_SECOND */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3810 /* UNSURE_SECOND */
+  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3811 /* ARAN_DECIDES_NO */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3808 /* PC_HAVING_AFFAIR */
+END
+
+IF ~~ a3802 /* UNSURE_GOADED */
+  SAY ~[ARAN] Fair enough. But I be my own man, eh? So I won't be comin' round until you be sure. This particular moment in time might not be happenin' again.~
+  ++ ~[PC] I... I do want you. Come share my bed.~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Well trying to pressure me just made up my mind. Go away, Aran. I like flirting, but I do not want to do anything else. Certainly not tonight.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ + a3807 /* TONIGHT_HAVE_HEADACHE */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep silent about it, then join me.~ + a3808 /* PC_HAVING_AFFAIR */
+  ++ ~[PC] Come here, but kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+END
+
+IF ~~ a3810 /* UNSURE_SECOND */
+  SAY ~[ARAN] Fair enough. But I be my own man, eh? So I won't be comin' round until you be sure. This particular moment in time might not be happenin' again.~
+  ++ ~[PC] I... I do want you. Come share my bed.~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Well, trying to pressure me just made up my mind. Go away, Aran. I like flirting, but I do not want to do anything else. Certainly not tonight.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ + a3811 /* ARAN_DECIDES_NO */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep silent about it, then join me.~ + a3808 /* PC_HAVING_AFFAIR */
+  ++ ~[PC] Come here, but kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+END
+
+IF ~~ a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
+  SAY ~[ARAN] I would pay good coin to see that, I would. Does wonders for a lad's ego to hear he be wanted.~
+  IF ~~ THEN GOTO a3804 /* SHARE_MY_BED */
+END
+
+IF ~~ a3808 /* PC_HAVING_AFFAIR */
+  SAY ~[ARAN] I can live wi' that. I don't rightly like it, but you... you be worth any risk, any pain.~
+  IF ~~ THEN GOTO a3804 /* SHARE_MY_BED */
+END
+
+IF ~~ a3803 /* PC_DEMANDS_STRENGTH */
+  SAY ~[ARAN] There be some things I won't never learn. I done seen th' pain caused when someone gets forced, an' it does nothin' for me. But rough, I try to do, if you be wantin' that.~
+  ++ ~[PC] No. You are too weak. Get out and stay out.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Rough is not enough. You should dominate me.~ + a3812 /* ALL_I_AM_TO_YOU */
+  ++ ~[PC] Strength and power excites me. Show me your pow...~ + a3813 /* PC_WANTS_ROUGHER */
+  ++ ~[PC] Well, I have been pushing you for a while now. I will show you some mercy. We can play it your way, and see if I like it.~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] If you don't want to force me, then I am not interested. Get out.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Oh, just come here. Kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+END
+
+IF ~~ a3812 /* ALL_I_AM_TO_YOU */
+  SAY ~[ARAN] Now, wait a moment. Do that be all I am to you? I am supposed to treat you as somethin' to be conquered?~
+  ++ ~[PC] Yes. Any more questions, or are you going to take your conquest? I will fight you every step of the way. You show me you can handle it.~ + a3813 /* PC_WANTS_ROUGHER */
+  ++ ~[PC] Since when does a man care where he tries to plant his seed? ~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] You are so cute when you try to think. Look, Aran, I care for you. But I get more pleasure out of the excitement of risk, of being controlled. I trust you. Just do whatever you want with me, preferably a little roughly, and I will be a very happy woman.~ + a3816 /* FINE_IF_WANT_THAT_WAY */
+  ++ ~[PC] (Your hand flies towards his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] I... I thought that was what you wanted. What all men want. I was trying to please you.~ + a3818 /* PLEASING_YOU_PLEASES_ME */
+  ++ ~[PC] This is not working out. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3804 /* SHARE_MY_BED */
+  SAY ~[ARAN] (His body warms yours as he moves beside you. His fingers play about your face, caressing and smoothing before pulling you into a gentle kiss.)~
+  + ~GlobalLT("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] You are glowing... your body is so hot that my vision... wait... you expect to fit all of that inside of me?~ + a3820 /* PC_IS_SMALL */
+  + ~Global("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] You are glowing... your body is so hot that my vision... ~ + a3820 /* PC_IS_SMALL */
+  ++ ~[PC] (Let your fingers drift down his chest, until your fingertips gently smooth along his growing erection.)~ + a3821 /* GET_MORE_THEN_YOU_EXPECT */
+  ++ ~[PC] (Take his hand, guiding his fingers down your body until they are trapped between your thighs, warm on your bare skin.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] (Put your arms around his neck, kissing him deeply as he rolls you underneath him.)~ + a3823 /* PC_IS_ON_BACK */
+  ++ ~[PC] (Roll him onto his back, your body nestled to his chest.)~ + a3824 /* LINING_UP_NICELY */
+  ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  ++ ~[PC]  I can't do this. I am sorry. It just feels wrong.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+END
+
+IF ~~ a3820 /* PC_IS_SMALL */
+  SAY ~[ARAN] (His kiss is steady, his arms holding you close to his chest.)~
+  = ~[ARAN] There be times when I envy that sight o' yours. You can judge right straightforward how much I want you. But, we might just take things slow, eh?~
+  ++ ~[PC] (Let your fingers drift down his chest, until your fingertips gently smooth along his growing erection.)~ + a3821 /* GET_MORE_THEN_YOU_EXPECT */
+  ++ ~[PC] (Take his hand, guiding his fingers down your body until they are trapped between your thighs, nestled close to your warmth.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] (Put your arms around his neck, kissing him deeply as he rolls you underneath him.)~ + a3823 /* PC_IS_ON_BACK */
+  ++ ~[PC] (Roll him onto his back, your body nestled to his chest.)~ + a3824 /* LINING_UP_NICELY */
+  ++ ~[PC] I think I don't want slow. I want to experience you, completely.~ + a3825 /* GO_GENTLY_PLEASE */
+  ++ ~[PC] I can't do this. I am sorry. It just feels wrong.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+END
+
+IF ~~ a3813 /* PC_WANTS_ROUGHER */
+  SAY ~[ARAN] (The force of his lips crushing yours cuts off your words, steals your breath. His legs hold yours together and captive. Your hands lock around his wrists, feeling his muscles bunch and strain until your nightclothes tear, revealing all of your treasures. You are captured, exposed and vulnerable beneath him... acutely aware that he is both ready and yet still straining to hold back.)~
+  ++ ~[PC] You call that rough? Perhaps I was not clear enough. What are you waiting for?~ + a3826 /* YOU_CALL_THAT_ROUGH */
+  ++ ~[PC] Gods, yes... make me yours!~ + a3826 /* YOU_CALL_THAT_ROUGH */
+  ++ ~[PC] Force me.~ + a3812 /* ALL_I_AM_TO_YOU */
+  ++ ~[PC] Slow down! You have my attention. I was just testing you. Go more gently, please...~ + a3825 /* GO_GENTLY_PLEASE */
+  ++ ~[PC] STOP. I have changed my mind. Get out of here, right now.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3827 /* WAIT_WE_WERE_LOVING */
+  SAY ~[ARAN] Wait a minute. We were all lovin', and suddenly you want somethin' else?~
+  ++ ~[PC] Oh, no. I have you trapped right where I want you. Don't you move a muscle. HEY. No fair, no flexing, either. At least, not until you can't stand a moment longer...~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] Look at me, Aran. Touch me, here. Do you not desire me? Do you not want to overpower me, mount me from behind, make me yours?~ + a3826 /* YOU_CALL_THAT_ROUGH */
+  ++ ~[PC] I don't have much experience in the bedchamber. I just thought you might think of something that pleases you more than this.~ + a3818 /* PLEASING_YOU_PLEASES_ME */
+  ++ ~[PC] I want to please you. I want you to do what you want to do.~ + a3818 /* PLEASING_YOU_PLEASES_ME */
+  ++ ~[PC] I don't know. I thought I wanted this, but it is not... it is nothing like what I want. You should go.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3826 /* YOU_CALL_THAT_ROUGH */
+  SAY ~[ARAN] (His gaze is insistent, intense with desire, exploring your body with fascination. With a low growl, he rolls you face down in the bedclothes, his hands running along your breasts and down to your waist. His hands grip tightly there, lifting you onto your knees, your body melding to his. For a moment your head is on his shoulder, your back tight to his chest, your arms enfolding his forearms as they hold you together, a rod of heat caught between your thighs...)~
+  ++ ~[PC] (Flip your weight hard against him, rolling away, teeth bared. Launch yourself onto him, pinning his shoulders back and settling yourself on his pelvis.)~ + a3829 /* PC_TURNS_TABLES */
+  ++ ~[PC] (Surrender yourself, spreading your legs and bracing yourself for his thrust.)~ + a3830 /* PC_FACE_DOWN_FINISH */
+  + ~RandomNum(2,2)~ + ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a3831 /* IN_NINE_HELLS */
+  + ~RandomNum(2,1)~ + ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a3832 /* PC_TAUNT_PERHAPS_NOT */
+  ++ ~[PC] Stop. I thought I wanted this, but it is not... it is nothing like what I want. You should go.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I have changed my mind. I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I have changed my mind. I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a3832 /* PC_TAUNT_PERHAPS_NOT */
+  SAY ~[ARAN] (He growls deep in his chest, straining not to push forward, his arms tightening on you with bone-crushing strength. The heat of his tip rests on your threshhold, but he does not move...)~
+  = ~[ARAN] (With a muttered curse he flings you forward onto your face. Standing, he walks silently away.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
+END
+
+IF ~~ a3829 /* PC_TURNS_TABLES */
+  SAY ~[ARAN] (His laughter thunders in the air as his hands encircle your waist.)~
+  = ~[ARAN] Now, what does my little hell-cat want now, eh?~
+  ++ ~[PC] (Rake your fingernails across his chest.)~ + a3835 /* PC_RAKES_CHEST */
+  ++ ~[PC] (Snarl at him, and wriggle your hips to fully seat the tip of his manhood upon your threshold.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] (Run your palms along his face and down his body, gently running yourself back and forth against his hardness.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] I. Want. More. Kissing.~ + a3836 /* KISS_AND_TAKE */
+  ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, forced into submission, and used well.~ + a3827 /* WAIT_WE_WERE_LOVING */
+  ++ ~[PC] (Shift slightly, catching his tip in just the right place and gently pushing your body onto him, until he is nestled deep within you.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+END
+
+IF ~~ a3825 /* GO_GENTLY_PLEASE */
+  SAY ~[ARAN] (His glare is intense, exploring your body with fascination. He moves his ankles between yours, then shifts to move his knees inside of yours, prying you open. For a moment his breath is hot gusts of desire above you, but suddenly they are in a much more intimate place. His lips and tongue quest for your pleasure, dancing and teasing at your petals but never quite granting you release.)~
+  = ~[ARAN] Well, now, turnabout be fair play. You done teased me, an' now I do think I have returned th' favor.~
+  ++ ~[PC] I will not beg for you. Take me, now!~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] Let me up this instant. I am serious. This has gone far enough.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Please, make love to me...~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] If we survive tonight, it will be a miracle. But for the god's sake, don't stop!~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] Your fingers... I want your fingers where your kisses just were... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+END
+
+IF ~~ a3824 /* LINING_UP_NICELY */
+  SAY ~[ARAN] Easy there. Things are linin' up nicely, but you might get more than you expect.~
+  ++ ~[PC] I don't know... I have high expectations. But from the sound you just made, I think we are on the way to meeting some of them.~ + a3838 /* LINING_NICELY_ENDING */
+  ++ ~[PC] (Giggle, and wriggle your hips to fully seat the tip of his manhood on your threshold.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] (Run your palms along his face and down his body, gently running yourself back and forth against his manhood.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, forced into submission, and used well.~ + a3827 /* WAIT_WE_WERE_LOVING */
+  ++ ~[PC] (Shift slightly, catching his tip in just the right place and gently pushing your body onto him, until he is nestled deep within you.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3838 /* LINING_NICELY_ENDING */
+  SAY ~[ARAN] You had better rightly tell me if I am about to be someplace I shouldn't, on acoount o' I may not be able to hold on much longer.~
+  ++ ~[PC] You are right where I want you, Aran. I can feel your entire length in my hand. Go on...~ + a4231 /* TRANSITION_TO_ARAN_RELEASE */
+  ++ ~[PC] You are right where I want you, Aran. I can feel you deep within me. Can't you feel it, too?~ + a3823 /* PC_IS_ON_BACK */
+  ++ ~[PC] I.. ouch. I think we... oh, hold still, please...~ + a4226 /* WAIT_PLEASE */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a4226 /* WAIT_PLEASE */
+  SAY ~[ARAN] (He groans under the stimulation, his body a taught bowstring, but does not move.)~
+  ++ ~[PC] Oh well. What is done is done. I guess you can go ahead until you are satisfied.~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a4227 /* BARN_DOOR */
+  ++ ~[PC] I just needed a moment. You fill me, and it is a little uncomfordable, in a good sort of way. I just want to enjoy every second of being with you.~ + a3844 /* ARAN_ADMITS_VULNERABLE */
+  ++ ~[PC] I am scared.~ + a4229 /* IM_SCARED */
+END
+
+IF ~~ a4227 /* BARN_DOOR */
+  SAY ~[ARAN] Well, it be like closin' th' barn door when all th' livestock be out already, on account o' I can feel th' heat o' you surroundin' me.~
+  ++ ~[PC] This is not what I wanted. You need to go, now. No words. Forget this ever happened.~ + a4228 /* WALK_AWAY */
+  ++ ~[PC] (Kiss him gently, locking your thighs around him and gently pressuring him into you.)~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] Shhh. Stop talking. Just make love to me.~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] I am scared.~ + a4229 /* IM_SCARED */
+  ++ ~[PC] I... I think you should go. I am not ready for all of this.~ + a4230
+  ++ ~[PC] I want you to make love to me. But not tonight. You should go.~ + a4230
+END
+
+IF ~~ a4228 /* WALK_AWAY */
+  SAY ~[ARAN] (He stares deeply into your eyes for a minute, then pulls away. In a moment, he is gone.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4229 /* IM_SCARED */
+  SAY ~[ARAN] I be a mite bit scared, too. But by Lady Firehair, I want you. An' we could face bein' scared together.~
+  + ~RandomNum(4,1)~ + ~[PC] I think I just want to be held, and to be kissed. That is enough for me right now.~ + a4011
+  + ~RandomNum(4,2)~ + ~[PC] I think I just want to be held, and to be kissed. That is enough for me right now.~ + a4012
+  + ~RandomNum(4,3)~ + ~[PC] I think I just want to be held, and to be kissed. That is enough for me right now.~ + a4013
+  + ~RandomNum(4,4)~ + ~[PC] I think I just want to be held, and to be kissed. That is enough for me right now.~ + a4014
+  ++ ~[PC] I think I would like you to make love to me, now. I am ready.~ + a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+  ++ ~[PC] Oh well. What is done is done. I guess you can go ahead until you are satisfied. I will just lie here.~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] (Kiss him gently, locking your thighs around him and gently pressuring him into you.)~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] I... I think you should go. I am not ready for all of this.~ + a4230
+  ++ ~[PC] I want you to make love to me. But not tonight. You should go.~ + a4230
+END
+
+IF ~~ a4230 /* TRANSITION_TO_HOPE */
+  SAY ~[ARAN] (He stares deeply into your eyes for a minute, then pulls away. In a moment, he is gone.)~
+  IF ~~ THEN GOTO a4068 /* ARAN_HOPE_SPRINGS_ETERNAL */
+END
+
+IF ~~ a4231 /* TRANSITION_TO_ARAN_RELEASE */
+  SAY ~[ARAN] (His warmth leaps and strains in your hand, his breath coming in short bursts.)~
+  IF ~~ THEN GOTO a4138 /* ARAN_RELEASE */
+END
+
+IF ~~ a3828 /* CANT_RESIST_MUST_RESIST */
+  SAY ~[ARAN] (He groans under the stimulation, his body a taught bowstring, but does not move.)~
+  ++ ~[PC] Look at me, Aran. Touch me, here. Do you not desire me? Do you not want to overpower me, move within me, and make me yours?~ + a3839 /* SUNE_CELANIL_ANYONE */
+  ++ ~[PC] I don't have much experience in the bedchamber. In fact, I don't have any. Am I pleasing you?~ + a3818 /* PLEASING_YOU_PLEASES_ME */
+  ++ ~[PC] What would please you?~ + a3818 /* PLEASING_YOU_PLEASES_ME */
+  ++ ~[PC] (Rise gently along his length, then drop sharply onto him, letting him fill you completely.)~ + a3840 /* KISSING_PC_ON_TOP */
+  ++ ~[PC] I... I want you on top of me, Aran. Or, at least... I want to be able to kiss you.~ + a3840 /* KISSING_PC_ON_TOP */
+END
+
+IF ~~ a3839 /* SUNE_CELANIL_ANYONE */
+  SAY ~[ARAN] By th' Lady Firehair, by Celanil's Tresses, by any gods out there, what in th' nine hells am I supposed to do wi' such a woman as this?~
+  ++ ~[PC] No, that is the wrong answer. *This* (drive yourself onto his manhood until he is fully embedded within you) is the right answer.~ + a3840 /* KISSING_PC_ON_TOP */
+  ++ ~[PC] You can have mercy on me... I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  ++ ~[PC] Give me roses, chocolate, oh... and perhaps a serious lovemaking session?~ + a3840 /* KISSING_PC_ON_TOP */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  ++ ~[PC] (Lean forward, cupping one breast to his lips.)~ + a3841 /* KISSING_PC_TOP_BREASTS */
+  ++ ~[PC] (Roll with him, until he is towering above you, just barely held captive at your threshhold.)~ + a3842 /* FIRST_TIME */
+END
+
+IF ~~ a3841 /* KISSING_PC_TOP_BREASTS */
+  SAY ~[ARAN] (His lips capture you, gently tasting and kissing.)~
+  IF ~~ THEN GOTO a4059 /* PC_TOP_GO_ON_OR_NOT */
+END
+
+IF ~~ a3840 /* KISSING_PC_ON_TOP */
+  SAY ~[ARAN] (Aran's hands run up your sides, caressing your breasts, and then up to the back of your neck. He pulls you down to his lips, kissing around your nipples and at the base of your throat. When your lips are close to his, he whispers...)~
+  = ~[ARAN] I do believe we can kiss from here just fine.~
+  = ~[ARAN] (As your lips meet, his body begins moving up into yours, continuing your rhythm, moving as a partner with you and guiding your rising pleasure.)~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+
+IF ~~ a3818 /* PLEASING_YOU_PLEASES_ME */
+  SAY ~[ARAN] Th' most any two people can do for each other be to please each other. So let's find out what you be likin', eh? Here, lie down beside me. I'll move over here... Gently, now. Just place me right there. Do I be crushin' you?~
+  ++ ~[PC] A little. There. That is better. Go ahead.~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] I can't wait any longer. (Drive your heels into his flanks, thrusting him deep within you.)~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] (Surrender to your passion, holding him close and urging him on.)~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] Aran...  I have never made love before. So be as gentle as you can.~ + a3842 /* FIRST_TIME */
+  ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, forced into submission, and used well.~ + a3827 /* WAIT_WE_WERE_LOVING */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  ++ ~[PC] All I want right now are kisses. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a3842 /* FIRST_TIME */
+  SAY ~[ARAN] Mayhap we should not do this right now. Do you be right sure this be what you want?~
+  ++ ~[PC] I can't wait any longer. (Drive your heels into his flanks, thrusting him deep within you.)~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] Don't tease me, Aran... I am surrendering to you, and you are talking about whether this is the right time?~ + a3843 /* ARAN_BACKS_AWAY */
+  ++ ~[PC] I am scared, a little. It is strange. I can face the undead, hold my own against my powerful brother, and bear wounds that would kill a normal person outright... and I am scared of taking a small step with you. ~ + a3844 /* ARAN_ADMITS_VULNERABLE */
+  ++ ~[PC] (Surrender to your passion, holding him close and urging him on.)~ + a3837 /* ENDGAME_OF_TEASING */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3844 /* ARAN_ADMITS_VULNERABLE */
+  SAY ~[ARAN] You be so beautiful, but do you know why I can't rightly get you out o' my head? You say things like that. As Sharess grants, I will make your pleasure my only quest.~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+
+/* yeah, right - only in a fantasy novel. For dudes, way fun; probably not so fun for females. But hey, this is romantic fiction, supposedly, so things will be all happy happy... and just for fun, write two states into one, 50/50 chance */
+IF ~~ a3843 /* ARAN_BACKS_AWAY */
+  SAY ~[ARAN] I don't rightly want your first time to be somethin' random, or...~
+  + ~RandomNum(2,2)~ + ~[PC] I know what I want. (Tighten your legs around him, slowly forcing him into you.)~ + a3845 /* PC_ON_BACK_ONE */
+  + ~RandomNum(2,1)~ + ~[PC] I know what I want. (Tighten your legs around him, slowly forcing him into you.)~ + a3846 /* PC_ON_BACK_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(2,2)~ + ~[PC] (Look down at where you are both poised, bite your lip, and urge him inwards with your ankles.)~ + a3837 /* ENDGAME_OF_TEASING */
+  + ~RandomNum(2,1)~ + ~[PC] (Look down at where you are both poised, bite your lip, and urge him inwards with your ankles.)~ + a3837 /* ENDGAME_OF_TEASING */
+  + ~RandomNum(2,2)~ + ~[PC] Oh, great. Get off of me. You tease and flirt, and beg, and then you don't want me when I give in? Get away from me, Aran. I think I am going to cry.~ + a3847 /* GODS_KNOW_I_JUST_GOT_MISUNDERSTOOD */
+  + ~RandomNum(2,1)~ + ~[PC] Oh, great. Get off of me. You tease and flirt, and beg, and then you don't want me when I give in? Get away from me, Aran. I think I am going to cry.~ + a3848 /* GODS_KNOW_I_JUST_GOT_CONFUSED */
+  + ~RandomNum(2,2)~ + ~[PC] Scared of me? Or just scared about what meaning I might attach to this... or to our relationship?~ + a3849 /* SCARED_BUT_TYMORA_LIKES */
+  + ~RandomNum(2,1)~ + ~[PC] Scared of me? Or just scared about what meaning I might attach to this... or to our relationship?~ + a3850 /* BLIGHTED_SCARED_OF_BOTH */
+END
+
+IF ~~ a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  SAY ~[ARAN] Sharess herself would scream in frustration, eh? But you be so beautiful, how can a man rightly refuse such winsomeness. Aye, we can spend some time just holdin' each other.~
+  IF ~~ THEN GOTO a3851 /* CUDDLING_END */
+END
+
+IF ~~ a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  SAY ~[ARAN] I... well... hells. Aye, we can spend some time just holdin' each other. You do know that sayin' that an' holdin' back cost me a year o' my life an' all th' willpower left in me, right?~
+  IF ~~ THEN GOTO a3851 /* CUDDLING_END */
+END
+
+IF ~~ a3847 /* GODS_KNOW_I_JUST_GOT_MISUNDERSTOOD */
+  SAY ~[ARAN] Now, I do be sorry. I had naught in th' way o' meanin' to hurt you. Don't start th' waterworks, for Tymora's Tenderness... we can just lie here together, an' hold each other.~
+  ++ ~[PC] No. that was hurtful, and unforgiveable. Go away.~ EXIT
+  ++ ~[PC] I... well, that would be nice.~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  ++ ~[PC] I will not be denied. You *will* make love to me, and you will do it properly. You can start your apology by kissing every inch of me.~ + a3852 /* KISSING_EVERY_INCH_OF_ME */
+  ++ ~[PC] Why won't you just do wahtever you want with me, and be done with it?~ + a3812 /* ALL_I_AM_TO_YOU */
+END
+
+IF ~~ a3848 /* GODS_KNOW_I_JUST_GOT_CONFUSED */
+  SAY ~[ARAN] I was tryin' to protect you! I mean, I have naught in th' way o' wantin' you, but I don't rightly want you to be mad at me later, neither. For Sune's Blessin's, I be right sorry.~
+  ++ ~[PC] No. that was hurtful, and unforgivable. Go away.~ EXIT
+  ++ ~[PC] I... well, that would be nice.~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  ++ ~[PC] I understand, and you are right. Kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  ++ ~[PC] I will not be denied. You *will* make love to me, and you will do it properly. You can start your apology by kissing every inch of me.~ + a3852 /* KISSING_EVERY_INCH_OF_ME */
+END
+
+IF ~~ a3852 /* KISSING_EVERY_INCH_OF_ME */
+  SAY ~[ARAN] I can do that, an' a mite bit more.~
+  = ~[ARAN] (His lips touch yours, then move to your throat. His closeness radiates heat and strength.)~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+IF ~~ a3849 /* SCARED_BUT_TYMORA_LIKES */
+  SAY ~[ARAN] Mayhap, a little. But Tymora's Coin done give me more than I dreamed, on account o' you be here with me, right now, this minute. An' I intend not to waste neither her Grace nor my opportunity to please you.~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+
+IF ~~ a3850 /* BLIGHTED_SCARED_OF_BOTH */
+  SAY ~[ARAN] Blighted well scared o' both. But not scared enough to back away.~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+
+IF ~~ a3821 /* GET_MORE_THEN_YOU_EXPECT */
+  SAY ~[ARAN] Easy there. You might get more than you expect.~
+  ++ ~[PC] I don't know... I have high expectations. Perhaps we should meet some of them.~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] (Giggle, and withdraw your hand.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] (Run your palms along his body, working outwards but always returning to your original position.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, and used well.~ + a3827 /* WAIT_WE_WERE_LOVING */
+  ++ ~[PC] Now, he seems all confined and trapped in there. Can he come out and play?~ + a3853 /* WHAT_ABOUT_HIS_PLAYMATE */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  SAY ~[ARAN] Now, what be sauce for th' gander be sauce for th' goose, you know... ~
+  IF ~RandomNum(2,2)~ THEN GOTO a3854 /* FINGERTIPS_BRUSH_THIGHS */
+  IF ~RandomNum(2,1)~ THEN GOTO a3855 /* FINGERTIPS_BRUSH_HARDNESS */
+END
+
+IF ~~ a3854 /* FINGERTIPS_BRUSH_THIGHS */
+  SAY ~[ARAN] (His fingertips gently brush the inside of your thighs, hiking the hem of your shift higher, lightly caressing you.)~
+  ++ ~[PC] I think I.. hey, that tickles!~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  ++ ~[PC] (whisper) I can think of other things besides fingertips I would like to feel there...~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~GlobalGT("c-aransex","GLOBAL",1)~ + ~[PC] I think that you have already explored that territory, Aran. Though it does feel good.~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~GlobalLT("c-aransex","GLOBAL",2)~ + ~[PC] Exploring new territory is fun, Aran, but you are teasing me. Though the teasing does feel good...~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] Are you going to speed this along? I have other things to do tonight, you know.~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] Come here, but kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3855 /* FINGERTIPS_BRUSH_HARDNESS */
+  SAY ~[ARAN] (His hand catches yours, and he gently brushes your fingertips along his hardness, using your hand to gently prod your most intimate place with the tip of your new toy.)~
+  ++ ~[PC] I think I.. hey, that tickles!~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] (whisper) So close... If you just push forward, you will be inside.~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~GlobalGT("c-aransex","GLOBAL",1)~ + ~[PC] I think that you have already explored that territory, Aran. Though it does feel good. Very good.~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~GlobalLT("c-aransex","GLOBAL",2)~ + ~[PC] Exploring new territory is fun, Aran, but you are teasing me. Though the teasing does feel good...~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3853 /* WHAT_ABOUT_HIS_PLAYMATE */
+  SAY ~[ARAN] I think that be in order. But what about his playmate?~
+  ++ ~[PC] Oh, she is in a very playful mood. And she seems to be in a hurry, so come on, let's go.~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] (Tear at his clothing, pulling his leggings down a few inches and admiring his physique.)~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I think we should repeat our last experience... (Roll quickly on top of him, your pelvis grinding on him, bringing you both as close together as you can be.)~ + a3856 /* GRIN_AND_BARE_IT */
+  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] Am I everything you ever dreamed? (Roll quickly on top of him, your pelvis grinding on him, bringing you both as close together as you can be.)~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] (Roll onto your back, casually stretching.)~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] Come on. Just get it over with, will you?~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3816 /* FINE_IF_WANT_THAT_WAY */
+  SAY ~[ARAN] I can do that, I suspect. As long as it be what you want. So, stay very still...~
+  = ~[ARAN] (The force of his lips crushing yours cuts off your breath. He drags you up in front of him, gripping the neckline of your shift. His legs hold yours together and captive. Your hands lock around his wrists, feeling his muscles bunch and strain until your nightgown tears, exposing your chest to him, and revealing all of your treasures. You are captured, exposed and vulnerable as he pushes you onto your back in front of him... acutely aware that he is both ready and yet still straining to hold back.~
+  ++ ~[PC] You call that rough? Perhaps I was not clear enough. What are you waiting for?~ + a3826 /* YOU_CALL_THAT_ROUGH */
+  ++ ~[PC] Gods, yes... make me yours!~ + a3826 /* YOU_CALL_THAT_ROUGH */
+  ++ ~[PC] Come on. Just get it over with, will you?~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
+  ++ ~[PC] Slow down! You have my attention. I was just testing you. Go more gently, please...~ + a3825 /* GO_GENTLY_PLEASE */
+  ++ ~[PC] STOP. I have changed my mind. Get out of here, right now.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3815 /* DO_YOU_EVEN_KNOW_ME */
+  SAY ~[ARAN] Sune's Bouncin' Breasts an' Buttocks, do you even know me?~
+  = ~[ARAN] (His violent roll away from you pulls the last of the covers away, and his muted cursing continues as the sounds of rapid dressing come from out of the darkness.)~
+  = ~[ARAN] First off, I be no random encounter on th' street. I didn't see no red lantern out front, an' I don't see no line behind me, neither. If I want to sow my wild oats wi' you, it be for more than a quick ride - you be no tavern girl, nor a woman adventurer out for a bit o' th' rough an' tumble. You be one o' th' most powerful an' beautiful creatures on th' face o' Toril. Not to mention that you be th' boss o' this expedition, like it or not. An' you bloody well think I just be doin' a roll in th' hay to get myself off?~
+  ++ ~[PC] I had no idea your feelings ran that deep for me, Aran. I can't have some lovelorn boy wandering around making things complicated. Get out of here, now.~ + a3857 /* AND_THE_HORSE_YOU_RODE_IN_ON_BIATCH */
+  ++ ~[PC] Aran... I am sorry. That came out all wrong. I didn't mean it that way.~ + a3858 /* SOUNDED_LIKE_TEEN_SPIRIT */
+  ++ ~[PC] Oh, the sensitive caring man. That is bullcrap. You want me, and I want some entertainment. Get back here and do the job properly.~ + a3857 /* AND_THE_HORSE_YOU_RODE_IN_ON_BIATCH */
+  ++ ~[PC] Did you just imply I am a prostitute?~ + a3859 /* AT_LEAST_JOB_IS_HONORABLE */
+  ++ ~[PC] I was teasing you. I did not mean to drive you away. I was just playing with you...~ + a3858 /* SOUNDED_LIKE_TEEN_SPIRIT */
+  ++ ~[PC} I... I am scared of this, you idiot.~ + a4229 /* IM_SCARED */
+END
+
+IF ~~ a3856 /* GRIN_AND_BARE_IT */
+  SAY ~[ARAN] (His response is a grin, and he rolls back and forth with you, his kisses reaching your lips, your neck. His hands play about your body. Suddenly, he moves above you, kneeling between your ankles. His eyes wander over your body for a long moment, his fingertips tracing lines along your ankles, calves, thighs, higher...)~
+  ++ ~[PC] Dear gods, I want you. Come here!~ + a3823 /* PC_IS_ON_BACK */
+  ++ ~[PC] (Sit up suddenly, your forehead resting on his shoulder, your palms memorizing his body, his hardness burning velvet under your touch.)~ + a3860 /* MOVING_ON_BACK */
+  ++ ~[PC] (Enjoy the caresses, holding back your mounting excitement.)~ + a3823 /* PC_IS_ON_BACK */
+  ++ ~[PC] (Sit up, your hands moving to his broad shoulders, pulling yourself onto his knees and wrapping your ankles behind his buttocks.)~ + a3860 /* MOVING_ON_BACK */
+  ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  ++ ~[PC] Slow down, please... kisses are enough for me right now. Your lips, my lips... nothing else.~ + a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  ++ ~[PC] Stop, please. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+END
+
+IF ~~ a3860 /* MOVING_ON_BACK */
+  SAY ~[ARAN] (He gently but forcefully lowers you onto your back, leaving you exposed and vulnerable beneath him.)~
+  IF ~~ THEN GOTO a3823 /* PC_IS_ON_BACK */
+END
+
+IF ~~ a3823 /* PC_IS_ON_BACK */
+  SAY ~[ARAN] (He looms above you in the darkness, his lips meeting yours, your knees rising on either side of his hips. Slowly, insistently, you feel the heat and pressure as he finds his way into you, your body moving to accommodate his progress.)~
+  IF ~~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+END
+
+/* III. From Within Inn Flirts: Looking */
+IF ~~ a3861 /* PC_1_LOOKING */
+  SAY ~[ARAN] Were you lookin' at somethin' in particular, or were you just tryin' to get my attention?~
+  ++ ~[PC] It took you long enough to notice. I think I want to kiss you.~ + a3862 /* FEM_LEAD_1 */
+  ++ ~[PC] (Blush and look down at your hands)~ + a3863 /* MALE_LEAD_1 */
+  ++ ~[PC] (Stand up and walk out of the common room)~ + a3864 /* FEMALE_EXITS */
+  ++ ~[PC] I don't know what you are talking about. I wasn't looking at anything in particular.~ + a3865 /* LOOKING_MAKE_MIND */
+  ++ ~[PC] Actually, I was looking at the armored man behind you. He seems to be very... muscular.~ + a3865 /* LOOKING_MAKE_MIND */
+  ++ ~[PC] If I had really wanted to get your attention, I would have thrown some garbage on the floor so you could root like a wild pig.~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a3865 /* LOOKING_MAKE_MIND */
+  SAY ~[ARAN] Well, now, that may be, or that might just be a bit o' wordplay wi' me, I think. So, were you castin' your eyes my way, or not?~
+  ++ ~[PC] I guess there is no harm in admitting I was looking at you. There might be no harm in my hand catching your chin, like this... or my lips meeting your lips, like this...~ + a3862 /* FEM_LEAD_1 */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I... You don't really want to kiss me, anyways.~ + a3863 /* MALE_LEAD_1 */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I... You don't really want to kiss me, anyways. The last time was probably not that interesting to you.~ + a3863 /* MALE_LEAD_1 */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... You don't really want to kiss me, anyways. You seem much more interested in trying to discover how my body feels under your fingertips.~ + a3863 /* MALE_LEAD_1 */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I... You don't really want to kiss me, anyways. It probably seems so tame, after all the exploration we have already done with each other.~ + a3863 /* MALE_LEAD_1 */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I... You don't really want to kiss me, anyways. You probably just want to go upstairs and throw me around.~ + a3863 /* MALE_LEAD_1 */
+  ++ ~[PC] (Throw your arms around his neck and drag down on his body with all your weight.)~ + a3862 /* FEM_LEAD_1 */
+  ++ ~[PC] I wasn't looking at you this time. My face just happened to be pointing in your direction.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Actually, I was trying to figure out what is uglier - a pile of manure or your hair. The pile of dung was winning, because it probably smells worse... but not by much.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I may have been looking at you, or I may not. But a good friend would not press me on something so silly.~ + a3867 /* LOOKING_JUST_FRIENDS */
+  ++ ~[PC] I think this conversation is over, at least for now.~ + a3864 /* FEMALE_EXITS */
+END
+
+IF ~~ a3862 /* FEM_LEAD_1 */
+  SAY ~[ARAN] (Your lips meet his, the warmth and scent of evergreen heightened by a hint of alcohol lingering on his breath)~
+  IF ~~ THEN GOTO a3868 /* LOOKING_ARAN_RESPONDS */
+END
+
+IF ~~ a3863 /* MALE_LEAD_1 */
+  SAY ~[ARAN] (His hand cups the side of your face, drawing your chin up. His lips meet yours, the warmth and scent of evergreen heightened by a hint of alcohol lingering on his breath.)~
+  IF ~~ THEN GOTO a3868 /* LOOKING_ARAN_RESPONDS */
+END
+
+IF ~~ a3867 /* LOOKING_JUST_FRIENDS */
+  SAY ~[ARAN] I done heard that sometimes friends can be a mite more physically expressive o' their feelin's, wi' no harm an' no foul.~
+  ++ ~[PC] Well, there might be no harm in my hand catching your chin, like this... or my lips meeting your lips, like this...~ + a3862 /* FEM_LEAD_1 */
+  ++ ~[PC] If that is a clumsy attempt at asking for a kiss... I accept.~ + a3863 /* MALE_LEAD_1 */
+  ++ ~[PC] I thought we were on our way to being a little more than friends. Or was that just my imagination?~ + a3863 /* MALE_LEAD_1 */
+  ++ ~[PC] Aran... (Look down at your hands, then up into his face, silently pleading for a kiss.)~ + a3863 /* MALE_LEAD_1 */
+  ++ ~[PC] If it were true, I would have to get past the slight obstacle that the thought of kissing makes me want to throw up.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I think you had better hope I forget you ever said that.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] Maybe, but let's leave things just as they are, at least for now.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3868 /* LOOKING_ARAN_RESPONDS */
+  SAY ~[ARAN] Now, was that so  painful? You could have come over an' said you might be interested in a little sparkin', you know.~
+  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] I could get used to that. But we could do better. Let's try again.~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] How dare you take such a liberty! There is no excuse for crossing that line, no matter what. You should leave, this minute.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I... I  am a little confused. All this is new to me.~ + a3871 /* LOOKING_1_UNSURE */
+  ++ ~[PC] I think I have had enough for one night, thank you.~ + a3871 /* LOOKING_1_UNSURE */
+  ++ ~[PC] A kiss like that is about as exciting as watching moss grow.~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a3871 /* LOOKING_1_UNSURE */
+  SAY ~[ARAN] I don't want naught in th' way o' pressurin' you right now. I was just thinkin' that we be two souls what might need some physical comfort, an' might find it together.~
+  ++ ~[PC] I have no soul.~ + a3872 /* SOUL_PASSTHROUGH */
+  ++ ~[PC] I feel like I have no soul.~ + a3872 /* SOUL_PASSTHROUGH */
+  ++ ~[PC] That is a nice thought, but... I am not ready for romance of any kind right now. Why don't you just sit here with me, and hold my hand?~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a3873 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] No, thank you. I had better leave now.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3872 /* SOUL_PASSTHROUGH */
+  SAY ~[ARAN] That may be, an' it might not be. You be here, an' alive, an' right next to me. Mayhap you just need some companion what to make you feel alive an' desirable, eh?~
+  ++ ~[PC] Don't patronize me, or downplay my loss. You do not know what this feels like.~ + a3874 /* NO_I_DONT */
+  ++ ~[PC] You would say anything to get me into your bed, right?~ + a3875 /* NO_HARM */
+  ++ ~[PC] I know you mean well, but... I am not ready for romance of any kind right now. Why don't you just sit here with me, and hold my hand?~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a3873 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I don't like you, Aran. At least not in that way. But this is not the time or place to discuss this.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3870 /* LOOKING_ARAN_2_RESPONDS */
+  SAY ~[ARAN] Now if we keep doin' this, things might just get a bit interestin', eh?~
+  ++ ~[PC] Well, from what I can feel, things seem to have gotten very exciting already.~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] Oh, so I am not exciting enough for you yet?~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] (Kiss his face, his neck, anything that is uncovered, nestling close to him.)~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] Aran.. your hands... you should take them out from there, I think.~ + a3877 /* CROSSED_LINE */
+  ++ ~[PC] I think that is enough. I don't want to do this right now.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] If you do not take me upstairs... and I mean that in so many ways... I will scream.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] I think you should stop using those lips of yours to make snarky remarks. Mine have all sorts of things they can do with yours, instead.~ + a3873 /* MAKEOUT_INN_EXIT */
+END
+
+IF ~~ a3874 /* NO_I_DONT */
+  SAY ~[ARAN] No, I don't rightly know, do I. But I know loss, an' I know pain, an' I have seen th' horrors o' war. Only three ways to fight that desperate hollowness. One, get drunk. Two, find somebody to be with. Three, run screamin' into th' night stark naked wi' only a dagger between you an' harm, darin' th' gods to smite you down...~
+  = ~[ARAN] err.. somehow I done got sidetracked. Strike that last. Make it two things, an' both together might ease th' pain.~
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] You don't know anything about anything. You are just pushing at me and pawing like an overgrown bear, and I resent it. Go away, sellsword.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I think we should try that kiss again.~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] Now that truly spoiled the mood. Let's play cards, or do something else.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3875 /* NO_HARM */
+  SAY ~[ARAN] I don't mean naught in th' way o' harm. Yes, I want you. No, I'm not blighted likely to do anythin' you don't want to do. What be th' harm in passin' a time wi' you an' me, me an' you?~
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3870 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] If I wanted any of this before, I certainly don't want it now. You just don't understand me or my needs at all. Get away from me.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I many be unsure of myself, but somehow I think you could be much more aggressive, and I might like it...~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] It is nice to know you want me. I like feeling desirable. Unfortunately, I think we should stop this. I am headed to my room. You should stay here.~ + a3864 /* FEMALE_EXITS */
+END
+
+IF ~~ a3877 /* CROSSED_LINE */
+  SAY ~[ARAN] I don't mean naught in th' way o' harm. I'll keep my hands marshaled right proper, an' speak wi' my lips only, if that be what you want.~
+  ++ ~[PC] What do *you*  want?~ + a3879 /* WANT_YOU */
+  ++ ~[PC] No. You crossed the line. I can't trust you. Go away, Aran.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] What is sauce for the goose is sauce for the gander, I think... let me see. Hands go here...~ + a3880 /* YELP_PASSTHROUGH */
+END
+
+IF ~~ a3879 /* WANT_YOU */
+  SAY ~[ARAN] You.~
+  ++ ~[PC] I guess I asked for that. I like you, Aran. But there are times and places, and this is neither.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] And I want you. Perhaps not forever, perhaps not tomorrow, but for tonight.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] Predictable. Well, I am way out of your league, boyo. So stop wasting my time, at least until you have more to offer me.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I'd want me, too. But until I am all in one piece and have settled on what I want for the long term, I am not going to do much more than talk with you.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] You are so sweet. I think you could kiss me, just for saying that.~ + a3878 /* LOOKING_4_RESPOND */
+END
+
+IF ~~ a3880 /* YELP_PASSTHROUGH */
+  SAY ~[ARAN] COLD! Blighted hells, girl, why do you have hands o' ice? Oh... now... easy there, or you will warm up faster than you might want.~
+  ++ ~[PC] But your chest feels so warm, and kind of rough. So, what do you think of me now?~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] But your cheek feels so warm, and kind of rough. So, what do you think of me now?~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] Oh, I feel much warmer now. Actually, it feels like I am holding fire. Perhaps I have a new pet.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3881 /* LOOKING_ADVANCE_INTIMATE */
+  ++ ~[PC] I like the way your armor creases at your neck, and the way your hair plays about in my fingers. I feel so shy, looking at the hunger in your eyes. Aren't you going to kiss me?~ + a3876 /* LOOKING_3_RESPOND */
+  ++ ~[PC] Well, if you can't take it, you are less of a man than I thought. Forget it. I was not really interested anyways.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I... I need to slow down. This is getting out of control. We should stop.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3881 /* LOOKING_ADVANCE_INTIMATE */
+  SAY ~[ARAN] Sune's Sweet Scent, I can't get enough o' th' sight o' you, th' sounds o' you, th' feel o' you...~
+  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] You should take me upstairs... and I mean that in so many ways... right now.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I have things well in hand, I think... but you seem to need some guidance. Here, under this... like this... right there... yes.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Your hands are so warm, and... ooooh. Don't stop any of that, the kissing, the touching...~ + a3873 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] This is too much, too fast. Slow down, Aran. Tell me why you want to be with me.~ + a3876 /* LOOKING_3_RESPOND */
+END
+
+IF ~~ a3876 /* LOOKING_3_RESPOND */
+  SAY ~[ARAN] Hmmm. Incredible lips, check. Eyes to drown in, check. Now, let me convince you o' just how excitin' you are...~
+  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Keep those hands in plain sight, Aran. But as the gods are my witness, I will kill you if you stop kissing me.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] (Kiss him, lips softened and warm, tongue just grazing his lips again and again.)~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] You should take me upstairs... and I mean that in so many ways... right now.~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Oh, dear me. A little chink in your armor, I think... and then my hands can run right up your thighs, right to...~ + a3878 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+END
+
+IF ~~ a3878 /* LOOKING_4_RESPOND */
+  SAY ~[ARAN] (Lips meet lips devouring and battling fiercely for supremacy)~
+  ++ ~[PC] (Get up and lead him upstairs to your bedchamber, giggling and blushing brightly)~ + a3882 /* SLEEP_NOW_PASSTHROUGH */
+  ++ ~[PC] (Follow him upstairs to your bedchamber, sneaking carefully to avoid detection)~ + a3882 /* SLEEP_NOW_PASSTHROUGH */
+  ++ ~[PC] I think I will meet you upstairs in a moment, Aran. I am sure you can find your way.~ + a3883 /* MOVE_TO_AREA */
+  ++ ~[PC] Upstairs, boyo. And don't keep me waiting.~ + a3883 /* MOVE_TO_AREA */
+  ++ ~[PC] This... this is just right. Right here, hidden away in this corner, I could kiss you for hours.~ + a3873 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] Stop! I can't do this.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3883 /* MOVE_TO_AREA */
+  SAY ~[ARAN] (The trip is quick, and the door to your bedchamber is half open. The covers of the bed are visible just beyond.)~
+  IF ~~ THEN GOTO a3882 /* SLEEP_NOW_PASSTHROUGH */
+END
+
+IF ~~ a3882 /* SLEEP_NOW_PASSTHROUGH */
+  SAY ~[ARAN] Hey, this be more than I ever expected. But I want no chances o' makin' things unhappy between us. Just what be my ground rules, eh?~
+  ++ ~[PC] I have changed my mind. Thank you for a wonderful time, but this doorway is as far as you go.~ + a3884 /* SLEEP_NOW_INN_0_EXIT */
+  ++ ~[PC] I would... you know... look, just holding hands is very nice.~ + a3869 /* JUST_FRIENDS_INN_EXIT */
+  ++ ~[PC] Just kissing, of course. If you want to, that is...~ + a3885 /* SLEEP_NOW_INN_1_EXIT */
+  ++ ~[PC] I want to feel you close to me, Aran. I think we can enjoy ourselves without taking off all of our clothes. Just a few odds and ends, here and there...~ + a3886 /* SLEEP_NOW_INN_2_EXIT */
+  ++ ~[PC] You and I can share almost everything except a full-scale committed invasion, if you catch my metaphor.~ + a3887 /* SLEEP_NOW_INN_3_EXIT */
+  ++ ~[PC] I want you to have all of me, in every way. I want all of you, in every way. Can I be much clearer than that?~ + a3888 /* SLEEP_NOW_INN_4_EXIT */
+  ++ ~[PC] I... I am not very experienced, Aran. Can we please go slowly? I am not sure how far I want to go.~ + a3886 /* SLEEP_NOW_INN_2_EXIT */
+  ++ ~[PC] No rules, and no game. Try another time, Aran. I am sure you can find your way back to the common room.~ + a3814 /* GET_OUT_EXIT */
+END
+
+/* IV:  From Within Inn Flirts: Walking At Day Encounter */
+
+IF ~~ a3889 /* PC_OUTDOOR_PLACE */
+  SAY ~[ARAN] Th' problem wi' all o' this outdoor walkin' be that I can't watch you proper when you keep movin' behind me.~
+  ++ ~[PC] I think this is a nice quiet spot, right over here. I think I want to kiss you.~ + a3890 /* FEM_LEAD_1_ACTION */
+  ++ ~[PC] (Pretend to stumble, falling forward.)~ + a3891 /* ARAN_LEAD_TRIP_ACTION */
+  ++ ~[PC] Well, I think I have had enough fresh air. You go on about your business, and I will see you later.~ + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I don't know if I really want to walk, or just to sit over there for a little while, out of the way.~ + a3893 /* ARAN_UNDECIDED_OUTDOOR */
+  ++ ~[PC] Sorry. I was distracted by a man I saw today. His arms were so... well, to be honest, his whole body... is it warm here, or is it just me?~ + a3893 /* ARAN_UNDECIDED_OUTDOOR */
+  ++ ~[PC] I don't like the view of your enormous rear, but it beats having you constantly ogle me when you think I am not paying attention.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3893 /* ARAN_UNDECIDED_OUTDOOR */  /* try not to advance action on this one. Not every state needs to move forward - in RL, relationship plateaus exist. (edit: 7 choices) */
+  SAY ~[ARAN] Here. Sit down. I done cleaned off a nice spot for you, right here.~
+  ++ ~[PC] I think I prefer your lap. And now that I am here, I might as well kiss your neck a little, and see what comes up.~ + a3890 /* FEM_LEAD_1_ACTION */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Don't you think it is about time that you kiss me?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I think we need more lip practice. You start.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I think we are alone. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I wish we could find a way to be completely together right this very minute.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] Oh, get up and get moving. I didn't want you to go all silly. We have better things to do than this.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Then you dirtied it up by sitting there and spoiling everything. What, you expect me to sit on you like some peasant girl?~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think that might be a little too close to each other for appearances. A good friend sits beside you, not practically on top of you.~ + a4060 /* FRIEND_OUTDOOR_BENEFITS */
+  ++ ~[PC] I think this conversation is over, at least for now.~ + a3892 /* FEMALE_LEAVES */
+END
+
+IF ~~ a3891 /* ARAN_LEAD_TRIP_ACTION */
+  SAY ~[ARAN] (His arms catch roughly around your waist, spinning you into his arms.)~
+  = ~[ARAN] Well, I be a mite happier right now, on account o' I have a whole armful o' very interestin' female just inches from kissin'.~
+  ++ ~[PC] Why ask, when I have soft lips proffered to you, begging for your touch?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I would not mind that. In fact, I might like that.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Was the last one so displeasing that you would hesitate right now?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] A kiss might be very nice, and your hands seem to have found my bottom rather quickly.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Too bad we are in public right now, or we could repeat that whole 'put your tongue where your fingers have explored' game...~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hey, this is not the bedchamber, bath, or bedroll. But a kiss or three would be very welcome.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3895 /* FEM_LEAD_2_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] (Loop your arms around his neck and kiss him gently)~ + a3890 /* FEM_LEAD_1_ACTION */
+  ++ ~[PC] I want more than kisses from you, Aran. I want to see some of what is under all that armor. Please?~ + a3895 /* FEM_LEAD_2_ACTION */
+  ++ ~[PC] No kissing, if you please. Actually, no kissing, whether you please or not. But you could hold my hand as we walk, if you like.~ + a3896 /* WALK_HANDHOLDING_EXIT */
+  ++ ~[PC] Let go of me. I wanted a walk, not a wrestling match.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3890 /* FEM_LEAD_1_ACTION */
+  SAY ~[ARAN] ... ~
+  = ~[ARAN] When you kiss, you do really kiss, eh? Not that I be complainin', mind you.~
+  IF ~~ THEN DO ~SetGlobal("c-intimate","GLOBAL",1)~ GOTO a3897 /* ARAN_OUTDOOR_1_RESPONSE */
+END
+
+IF ~~ a3895 /* FEM_LEAD_2_ACTION */
+  SAY ~[ARAN] (Fumbling fingers and some tugging and pulling reveal his chest, strong and smooth. His hands play with your ear, then your cheek.)~
+  ++ ~[PC] Oh. I was expecting more. Much more. Put your armor back on, and let's get going.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] This muscle jumps a little when I touch it. Soft and smooth, but hard under the skin... you take your training regimen seriously.~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] That scar seems like it needs some healing. Perhaps I should kiss it and make it better.~ + a3899 /* ACTION_DELAY */
+  ++ ~[PC] What a cute little dragon tattoo! Does it really go down below your belt?~ + a3899 /* ACTION_DELAY */
+  ++ ~[PC] Fair is fair. You showed me yours, so I should show you mine. Just move closer, here, as I really do not want everything on public display...~ + a3899 /* ACTION_DELAY */
+  ++ ~[PC] I think I am not ready for much more than this, Aran. But you have given me plenty to think about.~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3895 /* FEM_LEAD_2_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+END
+
+IF ~~ a3899 /* ACTION_DELAY */
+  SAY ~[ARAN] Hey now, this be a mite bit public for such things, eh? Mayhap we be better served wi' a kiss on those ripe lips o' yours...~
+  IF ~~ THEN GOTO a3894 /* ARAN_LEAD_1_ACTION */
+END
+
+IF ~~ a4060 /* FRIEND_OUTDOOR_BENEFITS */
+  SAY ~[ARAN] Now, sometimes friends can be a mite more physically expressive o' their feelin's. I'm right sure I have indicated I might just be that sort o' companion, eh?~
+  ++ ~[PC] Well, there might be no harm in letting my lips do more than talk.~ + a3890 /* FEM_LEAD_1_ACTION */
+  ++ ~[PC] A very loose definition of 'friend', I see... I think I will just loosen a few things here and there, and... my. My chest suddenly feels very cold. Do you think you could help in some way?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I thought we were on our way to being a little more than friends. Or was that just my imagination?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I think 'kissing cousins' is a silly phrase. But I kind of like 'kissing companions'.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I think we have stretched the boundaries of 'friendship' into an entirely new shape. I suppose not technically to 'lovers', but very, very close.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Well, I hope the general definition of 'friend' does not include the kind of pleasure we have shared. We may not have been with each other completely, but at this point, that might count as a technicality. Can't we call each other 'lover'?~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Oh, so this is friendship, is it? Hmmm. Remind me to talk to you about normal friendly things the next time you are towering over me, about to consummate our 'friendship'.~ + a3894 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3895 /* FEM_LEAD_2_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3894 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] You could... you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] I think you are pushing boundaries I am not comfortable having pushed. Perhaps we should just stop now, and take this up another time.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] You may have indicated that, but I am not sure I agree. It is fun flirting, but I don't think I want to take any chances of... complications.~ + a3901 /* ARAN_RECHECK_WANTED_RESPONSE */
+  ++ ~[PC] Maybe, but let's leave things just as they are, at least for now.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3894 /* ARAN_LEAD_1_ACTION */
+  SAY ~[ARAN] (His lips meet yours, a low growl rumbling deep in his chest.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ GOTO a3897 /* ARAN_OUTDOOR_1_RESPONSE */
+END
+
+IF ~~ a3897 /* ARAN_OUTDOOR_1_RESPONSE */  /* edit: 8 possible replies */
+  SAY ~[ARAN] So all this walkin' was a means to get me alone for a mite bit, an' take advantage o' me, I bet.~
+  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] Let's try that again. It tickles when you growl that way.~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] Gods, you taste horrible. Whatever possessed me to think you were attractive, anyways?~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I... think I like this, but I am a little confused.~ + a3901 /* ARAN_RECHECK_WANTED_RESPONSE */
+  ++ ~[PC] I think I have had enough for one night, thank you.~ + a3901 /* ARAN_RECHECK_WANTED_RESPONSE */
+  ++ ~[PC] I think we should stop all of this for now.~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, wordlessly promising more than you have promised before.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, wordlessly promising more than you have promised before.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, wordlessly promising more than you have promised before.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, wordlessly promising more than you have promised before.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3902 /* ACTION_PASSTHROUGH */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3902 /* ACTION_PASSTHROUGH */
+END
+
+IF ~~ a3901 /* ARAN_RECHECK_WANTED_RESPONSE */
+  SAY ~[ARAN] Well, there may be someone else what holds your heart, or mayhap not. But I am here right now, an' there be no harm in pursuin' some options, eh?~
+  ++ ~[PC] I want to feel your hands, feel your lips on me. I want so much, right now...~ + a3902 /* ACTION_PASSTHROUGH */
+  ++ ~[PC] I want so much, but I have so little to offer. I don't know how to please you, really... I am just making this up as I go along.~ + a3902 /* ACTION_PASSTHROUGH */
+  ++ ~[PC] That is a nice thought, but... I am not ready for romance of any kind right now. Why don't you just sit here with me for awhile, and hold my hand?~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] Just kiss my lips, and don't stop. Unless the sky is filled with undead flying liches, or Irenicus taps you on the shoulder, in which case, stop while we deal with them... and then start kissing me again.~ + a3903 /* MAKEOUT_IN_SHADOWS */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] You could... you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] No, thank you. I had better leave now.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] There are times and places, Aran, and this is neither.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3902 /* ACTION_PASSTHROUGH */
+  SAY ~[ARAN] I think we can do some searchin' an' playin' and see what it be you really want. Half th' fun be in th' game, eh?~
+  ++ ~[PC] I know you mean well, but... I am not ready for romance of any kind right now. Why don't you just sit here with me, and hold my hand?~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I think I could use some comforting. Perhaps you could hold me close, and we could kiss a little, I would like that.~ + a3903 /* MAKEOUT_IN_SHADOWS */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3900 /* JUST_FRIENDS_EXIT */
+  /* advancement possible talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] This may be a game to you, but I take it very seriously.  I intend to explore every bit of your lips with mine, and nothing is going to stop me.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Kissing is nice. But running my hands along your body, and feeling your fingers touch me that way... it is far more enjoyable.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] What would you say if my hand happened to make its way ... here? ... OH! I was not expecting direct reciprocity!~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I want to please you, Aran. I know we have only a little privacy, but if I move like this, and you lift your knee, my lips can have free reign over your pleasure...~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Shhh. I think we can hide ourselves away right here, and if we are discreet, and I sit on your lap like... this... there. Inseparable. Pinned together.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  /* advancement possible no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Kiss his lips gently, determinedly.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Open your lips to him, running your hands along his body, exploring the feelings that creates.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Play about under his clothing, gently wrestling away from his exploring hands.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Kiss your way down his neck, and then transfer your attentions to just below his beltline...)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Sit gently on his lap facing him, kissing him.)~ + a3904 /* ARAN_HEAVY_RESPONSE */
+  ++ ~[PC] Oh, this is all so stupid. I don't want all this right now. Go and get me a gift, or make me something, or just walk with me.~ + a3896 /* WALK_HANDHOLDING_EXIT */
+  ++ ~[PC] No, thank you. I had better leave now.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3904 /* ARAN_HEAVY_RESPONSE */
+  SAY ~[ARAN] Now, what have we here...~
+  ++ ~[PC] (Kiss him again and again, your desire held at bay.)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  ++ ~[PC] Me. Shhh. Just need to unlace this... and... there. Gods... slowly...~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] (Move down his body slowly, nestling close to him, until your face is in his lap.)~ + a3906 /* ARAN_QUESTIONING */
+  ++ ~[PC] I know we have... you know... but sometimes I think... sometimes I wonder how this happened at all.~ + a3908 /* ARAN_RIGHT_THEN */
+  ++ ~[PC] (Glance quickly around, then undo his lacings and yours, settling yourself down upon his rampant manhood.)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] (Let your hands wander under his clothing, gently moving up and down the length of his manhood, wrestling from time to time with the constraints of his leggings.)~ + a3906 /* ARAN_QUESTIONING */
+END
+
+IF ~~ a3906 /* ARAN_QUESTIONING */
+  SAY ~[ARAN] Easy there... you be gettin' me a bit excited. What do you be after?~
+  ++ ~[PC] Oh, nothing. Shhh. Just need to unlace this... and... hmmmmmm.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  ++ ~[PC] (Answer with your lips finding their way south, savoring his reactions.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  ++ ~[PC] (Inspect your findings carefully, frowning gently, moving your hand along him and listening to the sounds around you.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] I... I don't know what I am after. But I can experiment, and you can tell me if I am pleasing you.~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] You could... you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] Aran... I seem to have gotten carried away again. Is this all right? I mean, does this make me less of a person?~ + a3908 /* ARAN_RIGHT_THEN */
+END
+
+IF ~~ a3898 /* ARAN_OUTDOOR_2_RESPONSE */
+  SAY ~[ARAN] I can't move at all like this. You are drivin' me right crazy, <CHARNAME>... I'm findin' it right hard to keep this up for long.~
+  /* no heavy kissing yet, moving to heavy kissing */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I like it. Kissing. It tickles, and it is warm. But your face is a little rough... I may have burned my lips a little.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] If kissing makes me feel this way, I may have to try some more interesting things with you later on.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] This is pleasant, but it scares me a little. No, it scares me a great deal.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I like driving you crazy. Especially when you let me play with this...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Hesitantly kiss him, hands folded against his chest.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  /* heavy kissing, moving to kissing and touching */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Nonsense. Nothing more than gentle touches, here, there, and.. oh. Now *that* feels very, very interesting.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] It is difficult to concentrate when your hand is finding interesting places to explore. The tie you are trying to unfasten is a little higher, and to the left.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I think this is wonderful, but I never realized how many places ants could find when you are having this much fun. There is one crawling right up my arm.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I can't believe how many contrasts there can be. Smooth but rough, hot but cold, and your hands are doing things I have only dreamed of.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Hesitantly kiss him, your hands playing with his lacings and then finding the touch of skin on skin, carried away by the feel and smell of him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  /* kissing and touching, moving to heavy petting */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Then let me please you. Just don't make any sounds that might attract attention.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I think my lips can do all the moving that is required... though if you roll on your side, there is less chance of a stray glance discovering us.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I must be doing it wrong... you are able to talk to me instead of babbling incoherently. But I prefer not to talk while my mouth is full, so shhh...~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Stop trying to reach for me. This is all about you, for once. Just relax, and feel the excitement. We could be discovered at any moment...~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Nestle down hidden into his lap, letting your lips breathe life into him, playing and gently nipping your way through his reactions.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  /* heavy petting, moving to intercourse */
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Just hold on, if you can... I can move with you inside me, ever so slightly. If you have the willpower to withstand my slowly torturing you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am having trouble enough not crying out... I think you have filled me completely. You keep yourself quiet, and just enjoy.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] That is fine, as I am about to... gods... should we stop?~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3909 /* ARAN_TOO_LATE */
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Silly choice of words, given what I am feeling right now. Do you want me to stop?~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3909 /* ARAN_TOO_LATE */
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] (Smile at him, then look down to see where you both meet, rocking gently.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3907 /* ARAN_SUNES_BLESSINGS */
+  ++ ~[PC] Well, from what I can feel, things seem to have gotten very exciting already. We should slow down, though. I am having second thoughts.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  ++ ~[PC] Oh, so I am not exciting enough for you yet? Well, in that case, I think we had better save this for somewhere else, where we have more privacy.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  ++ ~[PC] I'll stop, then. But I want to curl up in your lap, and have you brush my hair for hours.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3910 /* DEATH_OF_ME */
+END
+
+IF ~~ a3907 /* ARAN_SUNES_BLESSINGS */
+  SAY ~[ARAN] Sharess's Sweet Sighs, I thank Her Name you chose to spend your time wi' me this way. Just be careful, on account o' I am about to...~
+  = ~[ARAN] ... ~
+  ++ ~[PC] Warm. Very warm, and kind of sticky. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] I suppose now is the wrong time to ask if friends make friends have multiple orgasms?~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] Let me have a drink from your waterskin, and perhaps we can try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] That was... well, it made you very happy.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] I think we need a rematch. We can do better.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] (Hold him close to you, savoring his reaction.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] I can't believe we did this. I did this. I... I must have gotten carried away. I shouldn't have done this.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3912 /* ARAN_REASSURE_OUTDOOR */
+END
+
+IF ~~ a3909 /* ARAN_TOO_LATE */
+  SAY ~[ARAN] Gods alive... Too late...~
+  ++ ~[PC] Warm. Very warm, and kind of tickly inside. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] I c... can't stop right now... got to... to...~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] HOLD ME TIGHTER.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] (Savor his pleasure, letting yours join his... a small explosion of feeling quietly hidden in the shadows.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] I suppose now is the wrong time to ask if friends make friends have multiple orgasms?~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] Damn. I was not expecting that. Oh well, what is done is done. We just got carried away. This changes nothing between us, do you understand?~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] I can't believe we did this. I did this. I... I must have gotten carried away again. I shouldn't have. This might complicate things.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3912 /* ARAN_REASSURE_OUTDOOR */
+END
+
+IF ~~ a3905 /* ARAN_OUTDOOR_3_RESPONSE */
+  SAY ~[ARAN] Well, that be fine wi' me, as I have just managed to get my hands into a right interestin' set o' places, an' they want to regroup before renewin' th' assault, so to speak.~
+  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3913 /* ARAN_OUTDOOR_4_RESPONSE */
+  ++ ~[PC] Too fast, too rough... just kiss me, Aran. Hey, I didn't mean that low on my neck. Or there, or... oh. Hmmmm. Gently... they are very sensitive.~ + a3913 /* ARAN_OUTDOOR_4_RESPONSE */
+  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Hands off! This is getting me very exci... I mean, very confused, and I need to think!~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] (Give way to excitement and lust, gently guiding his hands to evoke new feelings.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3913 /* ARAN_OUTDOOR_4_RESPONSE */
+  ++ ~[PC] You are taking advantage of me. I don't mind kissing, but get your paws off of me. NOW.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3913 /* ARAN_OUTDOOR_4_RESPONSE */
+  SAY ~[ARAN] (Lips meet lips devouring and battling in fiery ardor.)~
+  ++ ~[PC] This... this is just right. Right here, hidden away in the shadows, I could kiss you for hours.~ + a3903 /* MAKEOUT_IN_SHADOWS */
+  ++ ~[PC] Stop! I can't do this.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I need to walk away, right now, or I am going to do something that we both will regret. Well, that I will regret.~ + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] (Put your finger over his lips, breaking contact. Slowly settle your head on his chest, his arms around you.)~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] One day, when you least expect it, I think I am going to let you explore every inch of me, and see how many ways you can give me pleasure. But for now, I am happy with a little more walking. You can even hold my hand.~ + a3896 /* WALK_HANDHOLDING_EXIT */
+  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3912 /* ARAN_REASSURE_OUTDOOR */
+  SAY ~[ARAN] <CHARNAME>... Look at me. No, not like that, just look at a lad, in th' eyes...~
+  = ~[ARAN] I know you be uncertain about how this all works out, an' such. But there be no regrets here. An' I think I have proven I will back your play, whatever you require o' me.~
+  ++ ~[PC] You misunderstand me. I am in love with someone else, but I let my lust overcome my good judgement. Just... just leave.~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] I do not need to explain my feelings to you. (Get up and walk away.)~ + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I am not interested in any deep commitments. There is too much at stake.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I... I think you only want me physically. Or perhaps all I have to offer is physical. I don't know.~ + a3908 /* ARAN_RIGHT_THEN */
+  ++ ~[PC] (Kiss his lips, drawing his face close to yours.)~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] I don't know what I think, but we can deal with it later. Right now, I am very, very hungry. Can we get some food?~ + a3896 /* WALK_HANDHOLDING_EXIT */
+END
+
+IF ~~ a3908 /* ARAN_RIGHT_THEN */
+  SAY ~[ARAN] Stop right there. No regrets, eh? Not on my account, anyways. You may be th' child o' a dead god, but you have needs an' wants an' desires same as th' rest o' us. Tell you what. I think what you be needin' is a nice cuddle.~
+  IF ~~ THEN GOTO a3911 /* ARAN_CUDDLE_ON_CHEST */
+END
+
+/* V: From Within Inn Flirts: At Nighttime walk */
+
+IF ~~ a3914 /* PC_NIGHT_WATCH */
+  SAY ~[ARAN] Th' nice thing about walkin' at night is you look right fine lit by stars an' th' moon. I can guess why there be so many worshipers o' Selune.~
+  ++ ~[PC]  I think I want to kiss you.~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] (Impulsively clasp both hands around one of his, pulling it towards you.)~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] I... I am tired of all this walking. Have a good night, Aran. I am fine heading back alone.~ + a3917 /* ARAN_MOON_FEMALE_EXIT */
+  ++ ~[PC] I am not Selune. But you could worship me if you like.~ + a3918 /* ARAN_MOON_MIND */
+  ++ ~[PC] Hey, easy on the compliments. We are just two friends, having a moonlit walk.~ + a3919 /* MOON_JUST_FRIENDS */
+  ++ ~[PC] Walking with you here is a nice rest from all of the day's cares. But then again, lots of things can happen on at night.~ + a3918 /* ARAN_MOON_MIND */
+  ++ ~[PC] Do you call this walking? It is more like a prizefight, where I keep having to block your hands and bar your advances.~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a3919 /* MOON_JUST_FRIENDS */
+  SAY ~[ARAN] Well, now, I think friends be a right fine thing.~
+  IF ~~ THEN GOTO a3940 /* CAN_I_KISS_YOU */
+END
+
+IF ~~ a3918 /* ARAN_MOON_MIND */
+  SAY ~[ARAN] (His rough hands envelop yours, pulling you close to his side.)~
+  ++ ~[PC] The dark can hide many things, like this kiss...~ + a3915 /* FEMALE_MOON_LEADS */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] We talk and flirt enough. Here, alone, I think I want more action and less discussion.~ + a3916 /* ARAN_MOON_LEADS */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] We talk and flirt enough. Here, alone, I think I want more action and less discussion.~ + a3920 /* ARAN_MOON_LEADS1 */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] We talk and flirt enough. Here, alone, I think I want more action and less discussion.~ + a3921 /* ARAN_MOON_LEADS2 */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] We talk and flirt enough. Here, alone, I think I want more action and less discussion.~ + a3922 /* ARAN_MOON_LEADS3 */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] We talk and flirt enough. Here, alone, I think I want more action and less discussion.~ + a3923 /* ARAN_MOON_LEADS4 */
+  ++ ~[PC] Oh, come on. We are not apprentices. If that is all you want, just holding hands like this, I think  I need to find some better company. Go on, get out of here.~ + a3814 /* GET_OUT_EXIT */
+  + ~InParty(Player2) Gender(Player2,MALE) !HasItemEquiped("belt05",Player2) !Name("c-aran",Player2)~ + ~[PC] This is nice. But I really wanted to ask you to tell me all about getting <PLAYER2> into my bedroll.~ + a3924 /* MOON_OTHER_OPTIONS */
+  + ~InParty(Player3) Gender(Player3,MALE) !HasItemEquiped("belt05",Player3) !Name("c-aran",Player3)~ + ~[PC] This is nice. But I really wanted to ask you to tell me all about getting <PLAYER3> into my bedroll.~ + a3924 /* MOON_OTHER_OPTIONS */
+  + ~InParty(Player4) Gender(Player4,MALE) !HasItemEquiped("belt05",Player4) !Name("c-aran",Player4)~ + ~[PC] This is nice. But I really wanted to ask you to tell me all about getting <PLAYER4> into my bedroll.~ + a3924 /* MOON_OTHER_OPTIONS */
+  + ~InParty(Player5) Gender(Player5,MALE) !HasItemEquiped("belt05",Player5) !Name("c-aran",Player5)~ + ~[PC] This is nice. But I really wanted to ask you to tell me all about getting <PLAYER5> into my bedroll.~ + a3924 /* MOON_OTHER_OPTIONS */
+  + ~InParty(Player6) Gender(Player6,MALE) !HasItemEquiped("belt05",Player6) !Name("c-aran",Player6)~ + ~[PC] This is nice. But I really wanted to ask you to tell me all about getting <PLAYER6> into my bedroll.~ + a3924 /* MOON_OTHER_OPTIONS */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3926 /* MOON_JUST_L1_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3927 /* MOON_JUST_L2_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3928 /* MOON_JUST_L3_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3929 /* MOON_JUST_L4_FRIENDS */
+  ++ ~[PC] (Gently lean on his shoulder for a moment, then kiss his neck, your fingers twining in his hair.)~ + a3930 /* FEMALE_MOON_LEADS2 */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931 /* MOON_RECHECK */
+END
+
+IF ~~ a3924 /* MOON_OTHER_OPTIONS */
+  SAY ~[ARAN] Very funny, m'lady witchtongue, very funny. I suppose you would be a mite upset if I said that about some young lass wi' sparklin' eyes an' a come-hither look, eh?~
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3926 /* MOON_JUST_L1_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3927 /* MOON_JUST_L2_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3928 /* MOON_JUST_L3_FRIENDS */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3929 /* MOON_JUST_L4_FRIENDS */
+  ++ ~[PC] (Gently lean on his shoulder for a moment, then kiss his neck, your fingers twining in his hair.)~ + a3930 /* FEMALE_MOON_LEADS2 */
+  + ~InParty(Player2) Gender(Player2,FEMALE) !HasItemEquiped("belt05",Player2) !Name("c-aran",Player2)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER2> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
+  + ~InParty(Player3) Gender(Player3,FEMALE) !HasItemEquiped("belt05",Player3) !Name("c-aran",Player3)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER3> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
+  + ~InParty(Player4) Gender(Player4,FEMALE) !HasItemEquiped("belt05",Player4) !Name("c-aran",Player4)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER4> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
+  + ~InParty(Player5) Gender(Player5,FEMALE) !HasItemEquiped("belt05",Player5) !Name("c-aran",Player5)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER5> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
+  + ~InParty(Player6) Gender(Player6,FEMALE) !HasItemEquiped("belt05",Player6) !Name("c-aran",Player6)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER6> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931 /* MOON_RECHECK */
+  ++ ~[PC] Be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
+  ++ ~[PC] You could say that... or you could you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] Like any girl in her right mind would want you. Hey, that is it... I know how I can get away from your clumsy advances! Next kobold encampment we encounter, we will capture a female one for you. Then you will have someone of your own level to romance!~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a3934 /* ARAN_MOON_NOT_PRACTICAL */
+  SAY ~[ARAN] Now that be th' most wild hyperbole known to fall from a woman's lips, short o' "you are the best lover I ever did have".~
+  ++ ~[PC] What is that supposed to mean?~ + a3935 /* CANT_HAVE_MOON */
+  ++ ~[PC] Oh, just shut up and kiss me.~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] No, it is not. If someone promises something, I expect them to deliver, no matter what they claim.~ + a3935 /* CANT_HAVE_MOON */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I... I can't promise anything. But if you want me, ask me what I want.~ + a3937 /* ARAN_MOON_PLEASEME */
+END
+
+IF ~~ a3935 /* CANT_HAVE_MOON */
+  SAY ~[ARAN] You say you be practical, but that you would expect th' moon. Now that be completely impossible to achieve. I get th' inference, it bein' that if I say somethin' it better be becked up an' truthful. But even I can't rightly do th' impossible, an' I be romantic enough to say somethin' wild in th' eat o' th' moment, so to speak.~
+  = ~[ARAN] How about I start wi' a simple promise, an' work my way up through improbable, until I get to only slightly impossible?~
+  ++ ~[PC] How about we drop this ridiculous discussion and walk together, as two friends out for a stroll?~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Well, if you wanted a more practical application, then a romantic thing might be to... well, to touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] How about you take that pompous overwordy manner of yours and stick it up your rear?~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] How about we stop all the talking, and just kiss?~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] (Take his hands and hold them close to your face.)~ + a4216 /* MOON_ADVANCE_ACTION */
+  ++ ~[PC] I am disappoined. I thought you were a hopeless romantic.~ + a3938 /* ARAN_HOPELESS_ROMANTIC */
+END
+
+IF ~~ a3938 /* ARAN_HOPELESS_ROMANTIC */
+  SAY ~[ARAN] More like a hopeful pragmatist wi' a strong streak o' reckless risktakin'. Speakin' o' reckless, how about I kiss you, right here an' now?~
+  ++ ~[PC] The way to say that correctly is "Would you let me kiss you". And the answer is no.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  ++ ~[PC] The way to say that correctly is "Would you let me kiss you". And the answer is yes.~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] I think things should stay just as they are. Let's just walk, and enjoy the moon and stars together.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  ++ ~[PC] (Impulsively wrap your arms around his neck and kiss him.)~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] Just a kiss? I would think you would be asking to strip me of all of my clothing, push me up against a tree or a fence or a wall or something, and have your way with me.~ + a3939 /* NOW_YOU_ARE_PLAYING_WITH_MY_MIND */
+END
+
+IF ~~ a3933 /* WHERE_DID_THAT_IDEA */
+  SAY ~[ARAN] Th' hells I do... I don't rightly see how a lad can keep two o' you happy, let alone th' specifics o' whether or not just askin' might get someone killed outright. Besides, th' interestin' question be where you got such an idea in the first place.~
+  ++ ~[PC] Candlekeep has an extensive, legendary collection of books and research. And some of it is... very interesting.~ + a3940 /* CAN_I_KISS_YOU */
+  ++ ~[PC] I have an overactive imagination, and listen to too many bard's tales.~ + a3940 /* CAN_I_KISS_YOU */
+  ++ ~[PC] (Blush.)~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  ++ ~[PC] It is easy... I just think "now, what would Aran be thinking", and the most naughty thoughts possible pop into my head.~ + a3940 /* CAN_I_KISS_YOU */
+  ++ ~[PC] I knew it was a bad idea to try to joke around with you. Now I need to distract you with a kiss, so you will stop thinking about it.~ + a3930 /* FEMALE_MOON_LEADS2 */
+END
+
+IF ~~ a3940 /* CAN_I_KISS_YOU */
+  SAY ~[ARAN] I like talkin' wi' you. but I would like somethin' a mite more than that. Would you be lettin' me kiss you?~
+  ++ ~[PC] The way to say that correctly is "Would you let me kiss you". And the answer is no.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  ++ ~[PC] The way to say that correctly is "Would you let me kiss you". And the answer is yes.~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] I think things should stay just as they are. let's just walk, and enjoy the moon and stars together.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  ++ ~[PC] (Impulsively wrap your arms around his neck and kiss him.)~ + a3920 /* ARAN_MOON_LEADS1 */
+  ++ ~[PC] A kiss, yes... but be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
+END
+
+IF ~~ a3915 /* FEMALE_MOON_LEADS */
+  SAY ~[ARAN] (Your lips move towards his, but a sudden painful bump of noses stops the motion from completion.)~
+  IF ~~ THEN GOTO a3941 /* MOON_ARAN_ACTS */
+END
+
+IF ~~ a3930 /* FEMALE_MOON_LEADS2 */
+  SAY ~[ARAN] (His responding kiss is insistent, demanding... it moves from your lips to your neck, seeking to match your actions.)~
+  IF ~~ THEN GOTO a3920 /* ARAN_MOON_LEADS1 */
+END
+
+IF ~~ a3916 /* ARAN_MOON_LEADS */
+  SAY ~[ARAN] (His lips move towards yours, but a sudden painful bump of noses stops the motion from completion.)~
+  IF ~~ THEN GOTO a3941 /* MOON_ARAN_ACTS */
+END
+
+IF ~~ a3920 /* ARAN_MOON_LEADS1 */
+  SAY ~[ARAN] (His lips gently touch yours, warm and tender.)~
+  IF ~~ THEN GOTO a3931 /* MOON_RECHECK */
+END
+
+IF ~~ a3921 /* ARAN_MOON_LEADS2 */
+  SAY ~[ARAN] (His lips gently touch yours, warm and tender, with a gentle tracing of your upper lip with his tongue.)~
+  IF ~~ THEN GOTO a3931 /* MOON_RECHECK */
+END
+
+IF ~~ a3922 /* ARAN_MOON_LEADS3 */
+  SAY ~[ARAN] (His kiss is warm and tender, his embrace as solid as rock. Tongues tangle, then play about your lips and hiss in an intimate caress.)~
+  IF ~~ THEN GOTO a3931 /* MOON_RECHECK */
+END
+
+IF ~~ a3923 /* ARAN_MOON_LEADS4 */
+  SAY ~[ARAN] (His kiss is hot and passionate, and his hands find some very interesting places to caress.)~
+  IF ~~ THEN GOTO a3931 /* MOON_RECHECK */
+END
+
+IF ~~ a3925 /* MOON_JUST_CHASTE_FRIENDS */
+  SAY ~[ARAN] Moonlight an' starlight do wonderful alchemical actions on friends, you know. Darkness gives us a mite bit o' freedom to have some more physical expressions o' friendship, or so I heard told.~
+  ++ ~[PC] (Tip your face upwards in the moonlight, silently offering your lips to him.)~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] I have never heard a worse line. But you can kiss me, if you want.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] That must explain why my cheeks are so flushed, and every time your hands touch me I can feel my heart beating in my throat.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] Aran, you just don't understand yet. I can flirt with you or tease you, or go wandering about with you, but you have no right to respond. You just have to take what you can get.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] For the sake of both of us, I am going forget you ever said that.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Perhaps, but let's leave things just as they are, at least for now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3926 /* MOON_JUST_L1_FRIENDS */
+  SAY ~[ARAN] Moonlight an' starlight do wonderful alchemical actions on friends, you know. Darkness gives us a mite bit o' freedom to have some more physical expressions o' friendship. An' since we have defined some o' th' friendly benefits available to us, well...~
+  ++ ~[PC] (Tip your face upwards in the moonlight, silently offering your lips to him.)~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] I have never heard a worse line. But you can kiss me, if you want.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] That must explain why my cheeks are so flushed, and every time your hands touch me I can feel my heart beating in my throat.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] Aran, you just don't understand yet. I can flirt with you or tease you, or go wandering about with you, but you have no right to respond. You just have to take what you can get.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] For the sake of both of us, I am going forget you ever said that.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Perhaps, but let's leave things just as they are, at least for now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3927 /* MOON_JUST_L2_FRIENDS */
+  SAY ~[ARAN] Moonlight an' starlight do wonderful alchemical actions on friends, you know. Darkness gives us a mite bit o' freedom, an' since we have defined some o' th' friendly benefits available to us, well... I think there might be time to explore some new territory, eh?~
+  ++ ~[PC] (Tip your face upwards in the moonlight, silently offering your lips to him.)~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] I have never heard a worse line. But you can kiss me, if you want.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] That must explain why my cheeks are so flushed, and every time your hands touch me I can feel my heart beating in my throat.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] Aran, you just don't understand yet. I can flirt with you or tease you, or go wandering about with you, but you have no right to respond. You just have to take what you can get.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I know we have kissed and touched each other before. But we should not be doing this now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3928 /* MOON_JUST_L3_FRIENDS */
+  SAY ~[ARAN] Moonlight an' starlight do wonderful alchemical actions on friends, you know. Darkness gives us a mite bit o' freedom to have some more physical expressions o' friendship, an' I think I should take advantage o' that.~
+  ++ ~[PC] (Tip your face upwards in the moonlight, silently offering your lips to him.)~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] I have never heard a worse line. But you can kiss me, if you want.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] That must explain why my cheeks are so flushed, and every time your hands touch me I can feel my heart beating in my throat.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] You would say anything to get me into your bed, right?~ + a3942 /* MOON_NOHARM */
+  ++ ~[PC] Aran, you just don't understand yet. I can flirt with you or tease you, or go wandering about with you, but you have no right to respond. You just have to take what you can get.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I know we have done everything short of making love before. But we should not be doing this now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3929 /* MOON_JUST_L4_FRIENDS */
+  SAY ~[ARAN] Moonlight an' starlight do wonderful alchemical actions. I think I done had a stitch in my heart, seein' you highlighted by th' heaven's light. It makes me want to take you into my arms, an'...~
+  ++ ~[PC] (Tip your face upwards in the moonlight, silently offering your lips to him.)~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] I have never heard a worse line. But you can kiss me, if you want.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] That must explain why my cheeks are so flushed, and every time your hands touch me I can feel my heart beating in my throat.~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] Aran, you just don't understand yet. I can flirt with you or tease you, or go wandering about with you, but you have no right to respond. You just have to take what you can get.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I know we have made love before. But we should not be doing this now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] You would say anything to get me into your bed, right?~ + a3942 /* MOON_NOHARM */
+END
+
+IF ~~ a3941 /* MOON_ARAN_ACTS */
+  SAY ~[ARAN] Right... that hurt a mite bit more than  expected. How about you tell me what you want, an' I try my best to do that wi' out causin' us both to crack our heads together like a pair o' lovestruck apprentices.~
+  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] Let's try that again.~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] Ouch. No. I think I have had quite enough of clumsy, ugly, pain-causing ogres tonight. Go away until you develop some kind of dexterity.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I... I  am a little confused.~ + a3931 /* MOON_RECHECK */
+  ++ ~[PC] That was a sign. Let's leave things just as they are, at least for now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] You are just too slow. Don't worry... I know exactly what you need. (Pull close to him, struggling with his clothing, trying to release him from his leggings.)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
+  ++ ~[PC] Don't patronize me. I didn't need clumsy physical attention, I just thought you needed it. I do not need someone pawing at me to feel loved.~ + a3945 /* MOON_DO_NOT */
+END
+
+IF ~~ a3931 /* MOON_RECHECK */
+  SAY ~[ARAN] Now, that be enough to catch me on fire, that was. I'd be better expressin' what I feel wi' my body, an' yours, if I could.~
+  ++ ~[PC] (Kiss him, pulling at your clothing to allow better access to your body).~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] I feel like this is wrong, but I want so much more....~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  ++ ~[PC] That is a nice thought, but... I am not ready for romance of that kind right now. Why don't you just sit here with me, and hold my hand?~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a4161 /* ARAN_MOON_SLEEP_1_EXIT */
+  ++ ~[PC] (Move into his arms, and kiss him.)~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] No, thank you. I had better leave now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Why would I even want to entertain such a thought? There are so many men available who could be a better a lover than you.~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a3943 /* ARAN_MOON_2_RESPOND */
+  SAY ~[ARAN] Now if we keep doin' this, things might just get a bit interestin', eh?~
+  ++ ~[PC] Well, from what I can feel, things seem to have gotten very exciting already.~ + a3949 /* ARAN_MOON_3_RESPOND */
+  ++ ~[PC] Oh, so I am not exciting enough for you yet?~ + a3949 /* ARAN_MOON_3_RESPOND */
+  ++ ~[PC] Aran... your hands... you should take them out from there, I think.~ + a3950 /* MOON_CROSSEDLINE */
+  ++ ~[PC] I think that is enough. I don't want to do this right now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] (Kiss your way down his chest, pausing here and there to flutter your eyelashes against his skin.).~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Just keep kissing me. Don't stop.~ + a3948 /* ARAN_MOON_MAKEOUT_EXIT */
+END
+
+IF ~~ a3945 /* MOON_DO_NOT */
+  SAY ~[ARAN] Sune's Sweet Sighs, I did it wrong again, didn't I. I be so goal focused, I thought... well... Obviously I pushed right hard when I should o' gone slow. But I just see you, an' it makes me want you so much.~
+  ++ ~[PC] (Move into his arms, and kiss him gently.)~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither. There is no prize to be won here.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] You don't care for me... you just want to possess me and fill me and control me. I have had enough of that with Bhaal and Irenicus, in far deeper a way than just sex. Go away, sellsword.~ + a3952 /* MOON_IRENICUS */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Apology accepted. And... to show there are no hard feelings, I will kiss you. And kiss here... and here...~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] Now that truly spoiled the mood. Let's play cards, or do something else.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3952 /* MOON_IRENICUS */
+  SAY ~[ARAN] Now, that be unfair. But I understand. You have been through enough to confuse th' hells out o' you.~
+  = ~[ARAN] Just remember, I be no Irenicus, an' I sure as hells am no god. What I want be not possession, an' not control. I just want to be wi' you.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3942 /* MOON_NOHARM */
+  SAY ~[ARAN] As these stars be my witness, aye. Th' way your eyes flash when you be angry, th' way your jaw sets just so... we won't even rightly talk about what it does to my heart when you be walkin'. I want to bed you. Do that be a crime?~
+  ++ ~[PC] (Move into his arms, and kiss him gently.)~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] If I wanted any of this before, I certainly don't want it now. You just don't understand me or my needs at all. Get away from me.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I... I can't promise anything. But if you want me, ask me what I want.~ + a3937 /* ARAN_MOON_PLEASEME */
+  ++ ~[PC] A crime? No. But be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
+  ++ ~[PC] It is nice to know you want me. I like feeling desirable. Unfortunately, I think we should stop this. I am headed to my room. You should not follow me.~ + a3917 /* ARAN_MOON_FEMALE_EXIT */
+  ++ ~[PC] (Turn in the starlight, and gently open your clothing to expose your beauty to him.)~ + a3953 /* ARAN_MOON_STRIP */
+END
+
+IF ~~ a3953 /* ARAN_MOON_STRIP */
+  SAY ~[ARAN] (His face is hidden in shadow, but you can tell he is watching each and every movement you make. Starlight gleams across his chest and he begins removing his clothing, matching you movement for movement.)~
+  ++ ~[PC] Stop. Just look. It... it is enough to see you, and have you see me.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  + ~Global("c-aransex","GLOBAL",0) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] You are glowing... your body is so hot that my vision... wait... you expect to fit all of that inside of me?~ + a3937 /* ARAN_MOON_PLEASEME */
+  + ~GlobalGT("c-aransex","GLOBAL",0) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] You are glowing... your body is so hot that my vision... ~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  ++ ~[PC] (Remove everything, covering your charms with your palms as best you can.)~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  ++ ~[PC] I like you, Aran. But I can't do this. I know I started it, but... there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] (Remove everything, boldly revealing your charms.)~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  ++ ~[PC] Don't stand so far from  me, please... I want to feel the heat of your body against mine.~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+END
+
+IF ~~ a3937 /* ARAN_MOON_PLEASEME */
+  SAY ~[ARAN] How can I be pleasin' you?~
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] I ... I don't know. But you could start by kissing me again.~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  ++ ~[PC] What would grant you release without actually bedding me? I have heard that a woman can please a man with her lips...~ + a4061 /* MOON_ORAL */
+  ++ ~[PC] Walking hand in hand with me, looking at the stars, just being together.~ + a4162 /* ARAN_MOON_WALK_EXIT */
+  ++ ~[PC] If you had the woman of your dreams here right now, what would you do with her to give her pleasure?~ + a4222 /* I_ALREADY_DO */
+END
+
+IF ~~ a4061 /* MOON_ORAL */
+  SAY ~[ARAN] I... I don't know I can rightly ask that. I was about pleasin' you, not me.~
+  ++ ~[PC] And I am saying that this is what I can do. It will please me.~ + a4223 /* ARAN_CRAZY */
+  ++ ~[PC] Never mind... I should not have brought this up. We should leave things exactly as they are right now, and move on.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] And I am saying that I feel sorry for you, all frustrated and pent up. I can't love you, or sleep with you, but as a friend I could help with some physical release...~ + a4223 /* ARAN_CRAZY */
+  + ~GlobalLT("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] I can literally see the heat of you, and your need. I... I don't think I can do more than try to please you, to grant you some release. Won't you let me do that much for you?~ + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~Global("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] I can literally see the heat of you, and your need. I know we have made love before, but right now I can't handle all of what that entails. Won't you let me give you release?~ + a4062 /* ARAN_MOON_ORAL_AGREE */
+END
+
+IF ~~ a4062 /* ARAN_MOON_ORAL_AGREE */
+  SAY ~[ARAN] Well if you be set on it, there be ways we could both have some fun, though, if you be willin'.~
+  = ~[ARAN] (His hands busy themselves, attempting to bare your charms to his sight.)~
+  ++ ~[PC] Never mind... I should not have brought this up. We should leave things exactly as they are right now, and move on.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] (Tear at his codpiece, seizing its contents with both hands.)~ + a4224 /* DO_OR_DO_NOT_NO_TRY */
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+END
+
+IF ~~ a4224 /* DO_OR_DO_NOT_NO_TRY */
+  SAY ~[ARAN] Do you...~
+  ++ ~[PC] (Gently run your tongue along his length, glancing up at his face to see his reaction.)~ + a4123 /* ROM_LICK_ARAN */
+  ++ ~[PC] Never mind... I should not have brought this up. We should leave things exactly as they are right now, and move on.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a4223 /* ARAN_CRAZY */
+  SAY ~[ARAN] I must be blighted crazy. No sane man ever turned down such an offer. But...~
+  = ~[ARAN] Look, I be playin' the long game. I don't want a little pinch an' tickle behind th' shed, or your pity. What I want, well... I want you. An' so, I think I needs be turnin' your offer down. Gods curse my name for sayin' it, as it be a dream, but there it be.~
+  ++ ~[PC] You are turning down having my lips run along you, my tongue tasting you, the slow motion of...~ + a4066 /* ARAN_CRAZY_EXIT */
+  ++ ~[PC] Good. I wouldn't have felt right doing it. You just sounded so desperate, and in so much need, that I felt compelled to ask.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I understand. But you should know, there is little hope for your 'long game'.~ + a4068 /* ARAN_HOPE_SPRINGS_ETERNAL */
+  ++ ~[PC] Why are you wasting your time pursuing me? You know all I am going to do is cause you pain and suffering, the way everyone around me always ends up being drawn in and made to suffer.~ + a4067 /* ARAN_YOU_ARE_WORTH_IT */
+END
+
+IF ~~ a4222 /* I_ALREADY_DO */
+  SAY ~[ARAN] I already done said that you be th' woman o' my dreams. Or at least I keep tryin' to say that.~
+  ++ ~[PC] That is very sweet. Now pretend it was someone else. Someone you really lusted after.~ + a4221 /* IF_WISHES */
+  ++ ~[PC] Cut it out. Use your imagination. Someone else.~ + a4221 /* IF_WISHES */
+  ++ ~[PC] Well, I gave you an opportunity to get me all excited, and you try sweet talk instead. Fine. If you don't want to play, then...~ + a4221 /* IF_WISHES */
+  ++ ~[PC] Look, forget I said anything. Can't you just hold my hand, or take my arm, and have a nice walk?~ + a4162 /* ARAN_MOON_WALK_EXIT */
+  ++ ~[PC] Be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
+END
+
+IF ~~ a4221 /* IF_WISHES */
+  SAY ~[ARAN] Right, right... imagination. Well...~
+  = ~[ARAN] I would kiss her again an' again, to holdin' her close. I would gently take th' clothes from her body, kissin' each part o' her what was revealed, gentle-like...~
+  = ~[ARAN] Should I be goin' on?~
+  ++ ~[PC] Yes, that would be nice. What would you do next?~ + a4220 /* DO_NEXT */
+  ++ ~[PC] That was rather unimaginative. next time, I want to hear something much more exciting. But for now, just walk with me, please.~ + a4162 /* ARAN_MOON_WALK_EXIT */
+  ++ ~[PC] I think I have heard enough. I like you, Aran. But there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I think we should stop right there. Just walk with me, please, and let me take your arm. I just want to feel comfortable and cared for.~ + a4162 /* ARAN_MOON_WALK_EXIT */
+  ++ ~[PC] Whoa! You are getting very graphic. I... we should move on.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a4220 /* DO_NEXT */
+  SAY ~[ARAN] I would run my lips up th' insides o' her thighs, an' nibble here an' there, until I found just th' place where she'd take an indrawn breath, an' then I'd kiss her there a mite deeply until I heard her call out in pleasure.~
+  ++ ~[PC] ARAN! Stop. You... that is too far.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Go on...~ + a4219 /* DO_NEXT_FINAL */
+  ++ ~[PC] Where do you get these ideas? I have never heard...~ + a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ ~[PC] Very explicit thoughts. Did you take part in military exercises that called for seduction, or do you just have a dirty mind?~ + a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ ~[PC] Why do men always think that physical depiction is exciting? Whatever happened to romance, to seduction, to genteel discovery?~ +  a4218 /* WHERE_IDEAS_COME_FROM */
+END
+
+IF ~~ a4219 /* DO_NEXT_FINAL */
+  SAY ~[ARAN] Well, when I felt th' time were right, I'd hold her close in front o' me, an' take her slow an' easy, listenin' for each sound she made, an' each quiver around me she had, until I could stand no more. An' then I'd be a right fine lover, always questin' after what pleased her best. It be hard to say what would be th' detail, on account o' every person likes different.~
+  ++ ~[PC] ARAN! Stop. You... that is too far.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Where do you get these ideas? I have never heard...~ + a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ ~[PC] Very explicit thoughts. Did you take part in military exercises that called for seduction, or do you just have a dirty mind?~ + a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ ~[PC] That was very pedestrian. I would expect more of a rough and ready story than that from a sellsword.~ + a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ ~[PC] So, are you all talk and no action?~ + a4064 /* ALL_TALK_NO_ACTION */
+END
+
+IF ~~ a4218 /* WHERE_IDEAS_COME_FROM */
+  SAY ~[ARAN] Hells, <CHARNAME>, talkin' like this was naught o' my idea. I... Well, I have had my share o' travellin' about. I be a bit goal centered, to tell th' truth. An' I might not be th' most handsome lad, but I be a quick learner, an' a good listener. Let's just say that there be plenty o' comrades what have th' need to feel alive after combat. An' learnin' to please someone has some benefits. Most o' all, th' honest truth that th' best aphrodesiac be th' sound o' a woman truly enjoyin' herself.~
+  ++ ~[PC] Well, don't get any ideas about trying any of that with me.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] If you keep talking like that, you might just get a chance to show me what you can do. But for now, I think we should just enjoy the peace and quiet here under the stars.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Would you... would you teach me? About what you know. Not now. But... perhaps someday?~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I think you need to expand your horizons. There are so many other ways to please a woman.~ + a4213 /* ARAN_MOON_MAYHAP */
+  ++ ~[PC] That was really going too far with me. No one wants to hear things like that. You should know better than to be so graphic.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a3950 /* MOON_CROSSEDLINE */
+  SAY ~[ARAN] I don't mean naught in th' way o' harm. I'll keep my hands marshaled right proper, an' speak wi' my lips only, if that be what you want.~
+  ++ ~[PC] What do *you* want?~ + a4217 /* MOON_WISHES */
+  ++ ~[PC] No. You crossed the line. I can't trust you. Go away, Aran.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] (Move into his arms, and kiss him.)~ + a3949 /* ARAN_MOON_3_RESPOND */
+  ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Just walk with me, please, and let me take your arm. I just want to feel comfortable and cared for.~ + a4162 /* ARAN_MOON_WALK_EXIT */
+END
+
+IF ~~ a4217 /* MOON_WISHES */
+  SAY ~[ARAN] I want to kiss you. Mayhap feel th' softness o' your skin, an' chase after each one o' your rosy little nipples, an'...~
+  ++ ~[PC] How do you know my... never mind. I like you, Aran. But there are times and places, and this is neither.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] And I want you. Perhaps not forever, perhaps not tomorrow, but for tonight.~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Predictable. Well, I am way out of your league, boyo. So stop wasting my time, at least until you have more to offer me.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I'd want me, too. But until I am all in one piece and have settled on what I want for the long term, I am not going to do much more than talk with you.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Whoa! You are getting very graphic. Back off!~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a4216 /* MOON_ADVANCE_ACTION */
+  SAY ~[ARAN] (His fingers gently paint their way along your cheekbone, then down your collarbone, then farther and south seeking your bare skin.)~
+  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Fingers, eyes, all seem to be centered someplace very specific. Did you want to kiss them? (Open yourself to his advances).~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] (Kiss his neck and guide both hands to part your thighs, opening your entire body to his advances.)~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Your hands are so warm, and... ooooh. Don't stop any of that, the kissing, the touching...~ + a3948 /* ARAN_MOON_MAKEOUT_EXIT */
+  ++ ~[PC] This is too much, too fast. Slow down, Aran. Tell me why you want to be with me.~ + a3949 /* ARAN_MOON_3_RESPOND */
+END
+
+IF ~~ a3949 /* ARAN_MOON_3_RESPOND */
+  SAY ~[ARAN] You be th' most powerful, interestin' captivatin' woman I ever saw. An' just bein' close to you makes me want to prove myself right worthy to be wi' you.~
+  ++ ~[PC] Hey, those fingers... tell me you are about to replace them with something much more interesting...~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] As the gods are my witness, I will kill you if you stop kissing me.~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Not good enough. Get hold of yourself, sellsword. Go find a nice chambermaid to roll over and spread her knees for you.~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] I am ready for you. Claim me.~ + a3951 /* ARAN_MOON_4_RESPOND */
+  ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+END
+
+IF ~~ a3951 /* ARAN_MOON_4_RESPOND */
+  SAY ~[ARAN] (Lips meet lips devouring and battling fiercely for supremacy)~
+  ++ ~[PC] I need release, but we just can't make love... not here, not now. Just touch me, and I will touch you?~ + a4214 /* ARAN_MOON_SLEEP_PASSTHROUGH */
+  ++ ~[PC] (Take his hardness and place it where it belongs, just barely inside of you.)~ + a4215 /* MOON_MOVE_ACTION */
+  ++ ~[PC] I am ready for you. Just claim me.~ + a4215 /* MOON_MOVE_ACTION */
+  ++ ~[PC] This... this is just right. Right here, under these stars, I could kiss you for hours.~ + a4161 /* ARAN_MOON_SLEEP_1_EXIT */
+  ++ ~[PC] Stop! I can't do this.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a4215 /* MOON_MOVE_ACTION */
+  SAY ~[ARAN] (The sudden thrust pierces you, driving deep.)~
+  ++ ~[PC] (Say nothing, letting his intense need and rough desire build passion within you.)~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  ++ ~[PC] Ouch... Slow down. Gently...~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  ++ ~[PC] (Scratch your fingernails across his back, demanding that he be even more rough, more brutal.)~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  ++ ~[PC] (Lie quietly, passively, as he takes you with passion.)~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  ++ ~[PC] You have what you want. Now, I am going to take what I need, before you are all spent. (Grip him tightly with your thighs and drive your pelvis upwards until your pleasure crests.)~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+END
+
+IF ~~ a4214 /* ARAN_MOON_SLEEP_PASSTHROUGH */
+  SAY ~[ARAN] I want to take you, right here an' now. I want to drive into you over an' over, an' hear you scream your pleasure. For th' sake o' th' gods, let me take you, right now.~
+  ++ ~[PC] We can't. But we can please each other other ways. Keep doing that... and... that...~ + a4160 /* ARAN_MOON_SLEEP_3_EXIT */
+  ++ ~[PC] (Hold him close to you, urging his motions against you, making sure that you never are entered.)~ + a4160 /* ARAN_MOON_SLEEP_3_EXIT */
+  ++ ~[PC] (Wordlessly guide him where he wishes to go, gently accepting him. Your knees hold tight to his flanks as you urge him deep within you, pacing your pleasure.)~ + a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  ++ ~[PC] (Pleasure yourself against him, holding him trapped and unable to enter you.)~ + a4160 /* ARAN_MOON_SLEEP_3_EXIT */
+  ++ ~[PC] I can't stand it. Yes. Take me.~ + a4215 /* MOON_MOVE_ACTION */
+  ++ ~[PC] Stop. This is way too far.~ + a3814 /* GET_OUT_EXIT */
+END
+
+IF ~~ a4213 /* ARAN_MOON_MAYHAP */
+  SAY ~[ARAN] Mayhap there be. An' mayhap you be th' right one to show me, eh?~
+  ++ ~[PC] Not me. I seem destined to drag everyone I know into pain, suffering, and relentless, ceaseless battle against impossible odds.~ + a4067 /* ARAN_YOU_ARE_WORTH_IT */
+  ++ ~[PC] Perhaps. But not tonight.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I cannot stop your dreaming about it. But I think you are fighting a battle you will never win.~ + a4068 /* ARAN_HOPE_SPRINGS_ETERNAL */
+  ++ ~[PC] See, you say things like that, and it spoils the mood completely. You are such an ass.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] You know, I think we need to get you a girlfriend. Preferably one who can keep you in check. I will keep my eyes open and see if we can come up with someone you will be happy with.~ + a4065 /* SECOND_FIDDLE */
+END
+
+/* VI: (actually, VI through infinity) Romance Content: Intimacy Options cycling and recycling Adult Talks - consolidating a number of opportunities in-game called from things like:  In .bcs, reset to cycle through again. IF GlobalGT("c-arankisses","LOCALS",9) THEN RESPONSE #100 SetGlobal("c-arankisses","LOCALS",0). This gives a relatively large number of Aran statements, and a huge number of player choices/responses, with randomness built into the model. Hopefully, this will allow in-game "booty calls" to be unique for most of a playthrough, even for folks who want to knock boots on a regular basis. */
+
+/* step one - initiation points - 1 */
+
+/* found in female PID stuff */
+
+/* PID requests,  PC = Female PID  - follow up responses */
+IF ~~ a4212 /* START_RIGHT_HERE_NOW */
+  SAY ~[ARAN] Aye, then... you go that way, an' I'll be goin' this way, an' we can meet in a few moments.~
+  IF ~RandomNum(5,5)~ THEN GOTO a4211 /* NOT_RIGHT_NOW_BUT_LATER */
+  IF ~RandomNum(5,4)~ THEN GOTO a4015 /* START_ARMS_ENCIRCLE */
+  IF ~RandomNum(5,3)~ THEN GOTO a4021 /* START_SHOULDERS_BLOCK */
+  IF ~RandomNum(5,2)~ THEN GOTO a4027 /* START_COME_UP_BEHIND */
+  IF ~RandomNum(5,1)~ THEN GOTO a4049 /* START_HOLD_OUT_HANDS */
+END
+
+IF ~~ a4210 /* NOT_RIGHT_HERE_NOW_ONE */
+  SAY ~[ARAN] Bane's bones, m'lady wildfire, this be a right odd place to ask for a bit o' time alone. Mayhap I can come by an' see you  next time we rest?~
+  ++ ~[PC] Oh, never mind.~ + a4206 /* THIS_IS_ME_MINDING */
+  + ~RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,5)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(5,4)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(5,3)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+END
+
+IF ~~ a4211 /* NOT_RIGHT_NOW_BUT_LATER */
+  SAY ~[ARAN] Wait a bit... on second thought, there be no good place where to be sparkin' around here right now. How about I come an' visit th' next time we rest?~
+  ++ ~[PC] Oh, never mind.~ + a4206 /* THIS_IS_ME_MINDING */
+  + ~RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,5)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(5,4)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(5,3)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+END
+
+IF ~~ a4225 /* NOT_RIGHT_HERE_NOW */
+  SAY ~[ARAN] Right now there be a severe lack o' privacy. Not to mention an off-puttin' mood, eh? Why don't I be makin' a visit to you next time we rest?~
+  ++ ~[PC] Oh, never mind.~ + a4206 /* THIS_IS_ME_MINDING */
+  + ~RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,5)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4204 /* AGREE_TO_MEET_ONE */
+  + ~RandomNum(5,4)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4203 /* AGREE_TO_MEET_TWO */
+  + ~RandomNum(5,3)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4202 /* AGREE_TO_MEET_THREE */
+  + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
+  + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+END
+
+IF ~~ a4209 /* HELLS_NO_OTHERS */
+  SAY ~[ARAN] Hells, no. Besides, even if there were to be, I'd rightly drop em an' come your way, eh?~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4208 /* LET_ME_CHECK */
+  SAY ~[ARAN] Well, let me see... nope, there be naught on this page... Hmmm. No, she done lives up in th' Dale ands, so naught there... why, I do belive I can scratch you in on my dance card after all!~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4207 /* VERY_FUNNY_VERY_FUNNY */
+  SAY ~[ARAN] Aye, now... funny. Very funny. Take a good look around an' you tell me ~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4206 /* THIS_IS_ME_MINDING */
+  SAY ~[ARAN] This be me, never mindin'. Well, actually, mindin' your words.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4205 /* WHY_DID_YOU_ASK */
+  SAY ~[ARAN] Well, mayhap not. But I don't rightly understand why you asked me, then.~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ EXIT
+END
+
+IF ~~ a4204 /* AGREE_TO_MEET_ONE */
+  SAY ~[ARAN] Aye. That would be right interestin', it would.~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4203 /* AGREE_TO_MEET_TWO */
+  SAY ~[ARAN] Aye. That would be right fine, be it on orders or on request.~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4202 /* AGREE_TO_MEET_THREE */
+  SAY ~[ARAN] I love that you like to live dangerous. I'll be there, if I can get shut o' everythin' an' everyone else.~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4201 /* AGREE_TO_MEET_FOUR */
+  SAY ~[ARAN] Your wish be my command. Actually, your wish might just be mine own, as well.~
+  IF ~~ THEN DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ EXIT
+END
+
+/* Dreamscript Trigger */
+
+/* In DreamScript - remember to set timer so that a PC who wants lots of activity doesn't trigger the flirting one at the same time... a lot too much. P.S. - figure out how to handle the "does he stay overnight or not". Tricky. */
+
+/* MOVED START_ARAN_PC_BOOTY_CALL FROM HERE <<<<< PUT IT IN DREAMSCRIPT EVAL ORDER */
+
+/* Initiating States */
+
+/* STARTING STATES: from PID, from within some dialogs, and available for later lovetalks. */
+
+/* Randomness and Reply - on 3, 2, or 1 of 6, state goes to aran acting first. On 4,5, or 6, state has PC talking. */
+IF ~~ a4015 /* START_ARMS_ENCIRCLE */
+  SAY ~[ARAN] (Aran's arms encircle your waist, pulling you close to him. You are alone together for what brief time you can find.)~
+  ++ ~[PC] And how may I serve you, my lord?~ + a4016 /* SERVE_YOU_MY_LORD */
+  ++ ~[PC] (Launch yourself into his arms, throwing your arms around his neck.)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
+  ++ ~[PC] I was starting to get bored, all by myself, all alone. Perhaps you could suggest something we could do together?~ + a4017 /* START_LIP_EXERCISES */
+  IF ~RandomNum(6,3)~ THEN GOTO a4018 /* KISS_TIP_CHIN */
+  IF ~RandomNum(6,2)~ THEN GOTO a4019 /* KISS_PRESS_SALTY */
+  IF ~RandomNum(6,1)~ THEN GOTO a4020 /* ARAN_KISSES_NECK */
+END
+
+IF ~~ a4021 /* START_SHOULDERS_BLOCK */
+  SAY ~[ARAN] (Aran's broad shoulders are blocking your vision, but since he seems intent on getting closer and closer to you, perhaps that is permissible. You are alone together for what brief time you can find.)~
+  ++ ~[PC] Ah. Now that you are here, I was just thinking...~ + a4022 /* KISS_SILENCE_STRAIGHTEN */
+  ++ ~[PC] What do you want of me, Aran?~ + a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
+  IF ~RandomNum(6,3)~ THEN GOTO a4024 /* KISS_CATCH_HANDS */
+  IF ~RandomNum(6,2)~ THEN GOTO a4025 /* START_LADY_OF_THE_WARM_LIPS */
+  IF ~RandomNum(6,1)~ THEN GOTO a4026 /* START_WITH_SHOULDER_PULL */
+END
+
+IF ~~ a4027 /* START_COME_UP_BEHIND */
+  SAY ~[ARAN] (You are alone together for what brief time you can find.)~
+  ++ ~[PC] Ah. Now that you are here, I was just thinking...~ + a4022 /* KISS_SILENCE_STRAIGHTEN */
+  ++ ~[PC] All alone here, Aran? Did you come to see me?~ + a4028 /* START_MAYHAP_I_GET_A_KISS */
+  ++ ~[PC] (Walk steadily towards him, smiling as you encircle his neck with your arms.)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
+  IF ~RandomNum(6,3)~ THEN GOTO a4029 /* START_TRY_TO_BE_PHYSICAL */
+  IF ~RandomNum(6,2)~ THEN GOTO a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  IF ~RandomNum(6,1)~ THEN GOTO a4031 /* START_BOTTOM_SWAT */
+END
+
+IF ~~ a4031 /* START_BOTTOM_SWAT */
+  SAY ~[ARAN] (A sudden swat lands on your bottom.)~
+  ++ ~[PC] Hey! stop that. At least kiss it better.~ + a4032 /* ARAN_KISS_BACKSIDE */
+  ++ ~[PC] If you were into spanking, I would have know that by now. What do you want?~ + a4033 /* ROM_TWO_6 */
+  ++ ~[PC] (Turn quickly and grab at his waist, pulling him close.) I need you, right now. Quickly. Discreetly.~ + a4034 /* QUICKIE_FRONT_PC */
+  ++ ~[PC] Quickly. No time. Take me, and be fast. (Lean forward, allowing him limited access, your clothing barely parted for him as you rest your forehead on your arms against the nearby wall.)~ + a4035 /* QUICKIE_BEHIND_PC */
+  ++ ~[PC] Kiss me.~ + a4161 /* ARAN_MOON_SLEEP_1_EXIT */
+END
+
+IF ~~ a4034 /* QUICKIE_FRONT_PC */
+  SAY ~[ARAN] (The clatter of codpice and armor fill your ears as he responds, fingers fumbling and tangling with yours as you both seek to undo as little as possible yet still grant access. His sudden fierce thrust rocks your hips back and claps your ankles to his flanks, driving him even deeper. His thrusts are wild, driving deep, relentless and merciless in their intensity. His breath whispers close in your ear as he moves faster and faster, until he presses as far forward into you as he can... and a shuddering sigh escapes his lips.)~
+  ++ ~[PC] (Gather yourself together and smooth your hair, walking away without a glance.)~ EXIT
+  ++ ~[PC] That took the edge off. Now, shoo. There are too many things to worry about without having to explain a woman's needs.~ EXIT
+  ++ ~[PC] I want more.~ + a4036 /* I_WANT_MORE */
+END
+
+IF ~~ a4035 /* QUICKIE_BEHIND_PC */
+  SAY ~[ARAN] (The clatter of codpice and armor fill your ears as he responds, his fierce thrust rocking you forward onto your forearms. His thrusts are wild, driving deep, relentless and merciless in their intensity. His breath whispers close behind you as he moves faster and faster, until he presses as far forward into you as he can... and a shuddering sigh escapes his lips.)~
+  ++ ~[PC] (Gather yourself together and smooth your hair, walking away without a backwards glance.)~ EXIT
+  ++ ~[PC] That took the edge off. Now, shoo. There are too many things to worry about without having to explain a woman's needs.~ EXIT
+  ++ ~[PC] I want more.~ + a4036 /* I_WANT_MORE */
+END
+
+IF ~~ a4036 /* I_WANT_MORE */
+  SAY ~[ARAN] I can't rightly... wait. I have an idea. I think a little bit o' delay, an' I can do more. Talk to me again in a bit, an' I will endeavor to please, eh?~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4032 /* ARAN_KISS_BACKSIDE */
+  SAY ~[ARAN] (With a low growl of laughter, you hear him drop to his knees behind you. Quite suddenly, you are pressed up against the nearby wall, and your rear end is being quite expertly exposed to the air...)~
+  ++ ~[PC] Aran, don't you dare!~ + a4037 /* ARAN_BACK_SURE */
+  ++ ~[PC] Stop that right now. I was joking, and I don't like being manhandled.~ + a4037 /* ARAN_BACK_SURE */
+  ++ ~[PC] Hey, what are you doing?~ + a4037 /* ARAN_BACK_SURE */
+END
+
+IF ~~ a4037 /* ARAN_BACK_SURE */
+  SAY ~[ARAN] (The sudden warmth of his lips caressing the curve of your buttock contrasts with the prickle of his cheek lying along your flank.)~
+  ++ ~[PC] I am serious. Stop right now.~ + a4038 /* ARAN_STOP_RIGHT_NOW */
+  ++ ~[PC] Aran... oh. That feels very nice.~ + a4039 /* ARAN_PLEASE_ORAL_QUICK */
+  ++ ~[PC] (Bite your lip and lean forward, allowing him more access to your charms.)~ + a4039 /* ARAN_PLEASE_ORAL_QUICK */
+END
+
+IF ~~ a4039 /* ARAN_PLEASE_ORAL_QUICK */
+  SAY ~[ARAN] (His lips move on you, exploring and teasing, until they find your intimacy. With gentle tongue he guides your pleasure, stopping only when it has been met.)~
+  = ~[ARAN] Now, I do think those sound you just made be reward enough, m' lady. I'd do more, but time be short an' we'd best get back right quick.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4038 /* ARAN_STOP_RIGHT_NOW */
+  SAY ~[ARAN] Sorry. I misjudged. I thought you would find it right playful an' sexy, mayhap fun. I'll bugger off now.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4049 /* START_HOLD_OUT_HANDS */
+  SAY ~[ARAN] (Aran's quick steps mark his movements as he paces back an forth. His back is to you as you approach him. You are alone together for what brief time you can find.)~
+  ++ ~[PC] So, what did my shining knight bring me?~ + a4040 /* START_BEARING_GIFTS */
+  ++ ~[PC] (Hold both hands out to him, his palms taking yours into a gentle embrace.)~ + a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  ++ ~[PC] Why are you looking at me like that?~ + a4041 /* START_SUNES_LIPS */
+  ++ ~[PC] Don't speak. Just tear everything off of my body and have your way with me.~ + a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+  ++ ~[PC] I... I just want to hold your hand for some time.~ + a4043 /* ROM_ONE_3_HANDS */
+END
+
+IF ~~ a4025 /* START_LADY_OF_THE_WARM_LIPS */
+  SAY ~[ARAN] What do you be wantin', now, m'lady o' th' warm lips?~
+  + ~RandomNum(3,3)~ + ~[PC] (Kiss him tenderly on the cheek and run your hand along his cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(3,2)~ + ~[PC] (Grab his hand and draw it close to you.) You know you want to kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4045 /* ROM_ONE_OUCH_WHAT_GAVE_IDEA */
+  + ~RandomNum(3,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,4)~ + ~[PC] You could kiss me. In fact, I insist that you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] I... I was thinking... perhaps you would kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,2)~ + ~[PC] My lips are actually rather cold right now. Warm them?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,1)~ + ~[PC] Oh, nothing... I just like playing with your hair, like this...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4047 /* ROM_ONE_OUCH_DO_SAME */
+  ++ ~[PC] You spend way too much time talking. Don't you think you could find something else to do with those gorgeous lips of yours?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  ++ ~[PC] I need some warmth. I think you are just the right man for the job.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  + ~RandomNum(5,2)~ + ~[PC] (You lift his hand to your lips, kissing along his palm.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,4)~ + ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(5,5)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4043 /* ROM_ONE_3_HANDS */
+  ++ ~[PC] Nothing. You should leave, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4026 /* START_WITH_SHOULDER_PULL */
+  SAY ~[ARAN] (Strong hands grip your shoulders, pulling you around, face to face with Aran.)~
+  + ~RandomNum(3,3)~ + ~[PC] Well, someone wants to overpower poor little me. I think you should act on those feelings.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,2)~ + ~[PC] Yes? You called, oh plunderer of my body and conquerer of my heart?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,1)~ + ~[PC] Are you going to wrestle, or did you perhaps want to... oh, say... kiss me?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] What are you...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Grab him fiercely, pressing ardent kisses to his lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down his chest.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] I like a man who knows what he wants... and takes it.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] (You proffer your lips to him, blushing with desire.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] (Your hand flies towards his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4200 /* ROM_ONE_SLAP */
+  + ~RandomNum(4,4)~ + ~[PC] (Your hand flies towards his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] Careful! I am not made of glass, but I am not a doll. I can see you want something... here, let me walk with you, hand in hand.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4043 /* ROM_ONE_3_HANDS */
+  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think you should relax. Let me go, and let's just move on, please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+END
+
+IF ~~ a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
+  SAY ~[ARAN] I be needin' to hold you, to touch you... just bein' close to you drives me a mite bit crazy.~
+  + ~RandomNum(3,3)~ + ~[PC] I feel the same way. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,3)~ + ~[PC] If it drives you crazy, think of what I am going through. I shouldn't want you to overpower me and make me your love slave, but I get these urges...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,3)~ + ~[PC] There is nothing crazy about wanting me. You could even kiss me, if you would like.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] Aran! Someone might... oh, we are alone... I suppose a kiss might be in order.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Press your body close to him, lifting your face for a kiss.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down, moving closer to him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] Perhaps we are both crazy. There is only one cure... kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] (Start tugging at his clothes, hands flying as you seek to completely disrobe him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (Your hand flies towards his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4200 /* ROM_ONE_SLAP */
+  + ~RandomNum(3,3)~ + ~[PC] (Your hand flies towards his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] Here, take my hand, and I will take your arm. We can just hold onto each other, and the feelings will pass.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4198 /* ROM_ONE_3_PASS */
+  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
+END
+
+IF ~~ a3944 /* START_NINE_HELLS_PC_ACTION */
+  SAY ~[ARAN] <CHARNAME>, what in th' nine hells do you be doin'?~
+  + ~RandomNum(3,3)~ + ~[PC] Taking your clothes off. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,3)~ + ~[PC] Oh, nothing... one lacing here, one little tug there... I would think my clothes opening for you would give you a slight hint.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,3)~ + ~[PC] I am simply removing anything that could come between my skin and yours. Don't you want to join me?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] Aran! Shhh. This is.. this is difficult enough for me. (Slowly remove your clothing, blushing face turned away from him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Place one finger to his lips, and slowly begin disrobing.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] (Hide your face in his chest, hands gently tugging and pulling as you begin disrobing him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush, but continue removing your clothing.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] Grabbing you. Kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] Here, take my hand, and I will take your arm. My lustful feelings will pass.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4198 /* ROM_ONE_3_PASS */
+  ++ ~[PC] Stop. We should stop this, now, before someone sees or hears us.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Oh, a little butt slap doesn't mean anything. I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
+END
+
+IF ~~ a4028 /* START_MAYHAP_I_GET_A_KISS */
+  SAY ~[ARAN] Now, we do have a moment alone... mayhap I can get a kiss?~
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4197 /* ROM_TWO_1a */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  SAY ~[ARAN] I have been dyin' to kiss you for just about forever. Give a lad a chance to show you how much you be in his heart, eh?~
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4040 /* START_BEARING_GIFTS */
+  SAY ~[ARAN] I come bearin' gifts. Two lips. All yours. An' most o' th' rest o' this here body, if you want it, for that matter.~
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4197 /* ROM_TWO_1a */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4041 /* START_SUNES_LIPS */
+  SAY ~[ARAN] That cheek be rosy an' beautiful, but that mouth... gods, Sune herself be shamed. Mayhap I kiss it?~
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4029 /* START_TRY_TO_BE_PHYSICAL */
+  SAY ~[ARAN] (His rough embrace closes quickly around you, his face pressing close to yours, grinning from ear to ear.)~
+  + ~RandomNum(3,3)~ + ~[PC] Now you have me at a disadvantage. I suppose next you are going to kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] How am I supposed to kiss you when you are grinning like that?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] Tight... can't breathe... you are holding me too tight!~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,4)~ + ~[PC] What do you want?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could kiss me. If you want to..~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,2)~ + ~[PC] I think... I think that a kiss would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look away from him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4017 /* START_LIP_EXERCISES */
+  SAY ~[ARAN] I have some nice lip exercises what help wi' many different an excitin' things. Mayhap a brief lip sparrin' session be in order, eh?~
+  + ~RandomNum(3,3)~ + ~[PC] You could have a brief match with me. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] Why have one session, when you could take two, or three, or four trials...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+/* Intermediaries #1 */
+
+IF ~~ a4016 /* SERVE_YOU_MY_LORD */
+  SAY ~[ARAN] I think I have just th' task in mind.~
+  IF ~~ THEN GOTO a4050 /* SHOW_TATTOO_ARAN_STRIPS */
+END
+
+IF ~~ a4018 /* KISS_TIP_CHIN */
+  SAY ~[ARAN] (Aran leans close to you, his hands gently catching your chin, tipping your lips up to his.)~
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] We need to stop. I am sure about this.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] You have way too many clothes on...~ + a4054 /* ARAN_UNLACING_TUNIC */
+  ++ ~[PC] Gods, what are you waiting for? Get those clothes off, or I will tear them off of your body, and I won't be held responsible for their repair!~ + a4055 /* TAKE_ME_DELAY_THREE */
+END
+
+IF ~~ a4019 /* KISS_PRESS_SALTY */
+  SAY ~[ARAN] (His lips press against yours, his salty taste filling your senses.)~
+  ++ ~[PC] You have way too many clothes on...~ + a4054 /* ARAN_UNLACING_TUNIC */
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] I need you, right now. I need you to make love to me.~ + a4056 /* TAKE_ME_DELAY_FOUR */
+END
+
+IF ~~ a4020 /* ARAN_KISSES_NECK */
+  SAY ~[ARAN] (His lips are warm on your neck, brushing along your collarbone.)~
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] Gods, what are you waiting for? I need you, now!~ + a4055 /* TAKE_ME_DELAY_THREE */
+END
+
+IF ~~ a4022 /* KISS_SILENCE_STRAIGHTEN */
+  SAY ~[ARAN] (His swift kiss silences you, and he straightens slightly, arms catching you around your waist.)~
+  ++ ~[PC] (You hurl yourself at him, tearing at anything that stands between your skin and his...)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] I know what you want, Aran... but you should leave now.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] Take what you want. I am yours, without reservation.~ + a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+END
+
+IF ~~ a4024 /* KISS_CATCH_HANDS */
+  SAY ~[ARAN] (He lightly kisses your mouth, catching both your hands, holding you at bay.)~
+  ++ ~[PC] (You duck under his hands, burying yourself in his chest and hauling at his clothing fiercely, insistently.)~ + a4057 /* ROM_ONE_URGENT */
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] I want to feel you spend yourself inside me.~ + a4058 /* TAKE_ME_DELAY_TWO */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] I know what my body wants from you, Aran... but you should leave now.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+END
+
+/* follow-up to first level */
+
+IF ~~ a4058 /* TAKE_ME_DELAY_TWO */
+  SAY ~[ARAN] Dear gods, you know exactly what you want, an' there be naught in th' way o' beatin' around th' bush.~
+  IF ~~ THEN GOTO a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+END
+
+IF ~~ a4055 /* TAKE_ME_DELAY_THREE */
+  SAY ~[ARAN] There be a right fine power in goin' it slow, eh? Just slow enough that... oh hells, who do I be kiddin'!~
+  IF ~~ THEN GOTO a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+END
+
+IF ~~ a4056 /* TAKE_ME_DELAY_FOUR */
+  SAY ~[ARAN] I don't rightly want to rush into things, when your lips taste so fine. But I do think you be right. If I delay much longer, I am liable to be a mite rough, on account o' I be feelin' practically animal.~
+  IF ~~ THEN GOTO a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+END
+
+IF ~~ a4042 /* REMOVE_CLOTHING_DELAY_ONE */
+  SAY ~[ARAN] (He works firecely to remove anything between your bare skin and the air. His hands tangle with yours, until there is nothing at all between you.)~
+  IF ~RandomNum(8,1)~ THEN GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+  IF ~RandomNum(8,2)~ THEN GOTO a3993 /* YOU_TALK_TOO_MUCH */
+  IF ~RandomNum(8,3)~ THEN GOTO a4009 /* HANDS_TEASING_BARE */
+  IF ~RandomNum(8,4)~ THEN GOTO a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  IF ~RandomNum(8,5)~ THEN GOTO a4051 /* ROM_THREE_PC_TO_ARAN */
+  IF ~RandomNum(8,6)~ THEN GOTO a3992 /* YOU_WANT_TO_STOP_ARE_YOU_CRAZY */
+  IF ~RandomNum(8,7)~ THEN GOTO a4009 /* HANDS_TEASING_BARE */
+  IF ~RandomNum(8,8)~ THEN GOTO a3993 /* YOU_TALK_TOO_MUCH */
+END
+
+IF ~~ a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  SAY ~[ARAN] Now, that be a right clear indication o' what you want. A kiss sets things off right proper, eh?~
+  IF ~~ THEN GOTO a3947 /* ROM_ONE_KISS_ME_AGAIN */
+END
+
+IF ~~ a4045 /* ROM_ONE_OUCH_WHAT_GAVE_IDEA */
+  SAY ~[ARAN] Now, what ever gave you that idea? Was it on account o' I can't catch my breath when you be around, or was it my arms grippin' both your shoulders, like this...~
+  IF ~RandomNum(3,1)~ THEN GOTO a3946 /* ROM_ONE_WARM_LIPS */
+  IF ~RandomNum(3,2)~ THEN GOTO a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  IF ~RandomNum(3,3)~ THEN GOTO a3991 /* ROM_ONE_KISS_ME_ALWAYS */
+END
+
+IF ~~ a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  SAY ~[ARAN] Your wish, an' mine as well, m'lady temptress.~
+  IF ~~ THEN GOTO a3946 /* ROM_ONE_WARM_LIPS */
+END
+
+IF ~~ a4047 /* ROM_ONE_OUCH_DO_SAME */
+  SAY ~[ARAN] Ouch! Careful, there... I can do th' same. But a kiss, now...~
+  IF ~RandomNum(3,1)~ THEN GOTO a3946 /* ROM_ONE_WARM_LIPS */
+  IF ~RandomNum(3,2)~ THEN GOTO a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  IF ~RandomNum(3,3)~ THEN GOTO a3991 /* ROM_ONE_KISS_ME_ALWAYS */
+END
+
+IF ~~ a3946 /* ROM_ONE_WARM_LIPS */
+  SAY ~[ARAN] (Aran's lips are warm and alive on yours, hardening with desire.)~
+  IF ~RandomNum(5,5)~ THEN GOTO a3986 /* ROM_ONE_CAN_I_TOUCH */
+  IF ~RandomNum(5,4)~ THEN GOTO a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
+  IF ~RandomNum(5,3)~ THEN GOTO a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
+  IF ~RandomNum(5,2)~ THEN GOTO a3989 /* ROM_ONE_THREATEN_KISS_BUST */
+  IF ~RandomNum(5,1)~ THEN GOTO a3990 /* ROM_ONE_HANDS_ON_BODY */
+END
+
+IF ~~ a4200 /* ROM_ONE_SLAP */
+  SAY ~[ARAN] OUCH! Blighted hells, what do you be playin' at? Xvim's Spit, I should know better. I don't rightly enjoy pain. I am gettin' shut o' this.~
+  = ~[ARAN] Some things a lad just can't do. I hope you find someone what can help you wi' that.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3817 /* ROM_ONE_SLAP_AVOID */
+  SAY ~[ARAN] (His hand grabs your wrist painfully, trapping it inches from his face.)~
+  ++ ~[PC] Let me go, weakling, or I will kill you where you stand.~ + a4200 /* ROM_ONE_SLAP */
+  ++ ~[PC] Take what you want. Stop toying with me and confusing me.~ + a3998 /* NOT_MY_WAY */
+  ++ ~[PC] You make me so angry. One minute you seem capable of being a strong suitor, and the next you prattle on about weak, soft emotions. I need strength, not a crybaby!~ + a4199 /* NOT_MY_WAY_STRENGTH */
+  ++ ~[PC] Come on, Aran. Admit it. Violence excites you. Don't you want to force me to be your servant, using me as you please?~ + a4199 /* NOT_MY_WAY_STRENGTH */
+END
+
+IF ~~ a4199 /* NOT_MY_WAY_STRENGTH */
+  SAY ~[ARAN] I don't understand. You want me to use you, dominate you like we be unthinkin' animals? You want me to become like Irenicus, causin' you pain? You want to be made subservient, beggin' me for to hurt you an' punish you into submission?~
+  ++ ~[PC] Yes.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] I... I don't know. But it excites me, losing power. Just do it.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] No. I thought that would excite you. I thought that was what you wanted.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] Don't be a fool. There is a big difference between torture and showing dominance. I am willing. I just want to be pushed to my limits.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] You will never understand me, or what I want, will you.~ + a4163 /* NOPE_NOT_WANTED */
+END
+
+IF ~~ a3998 /* NOT_MY_WAY */
+  SAY ~[ARAN] I don't understand you. You want me to do what Bhaal did, an' manipulate you, use you? You want me to become like Irenicus, causin' you pain? You want to be made less than a person, just a vessel for me for to get some minor pleasure?~
+  ++ ~[PC] Yes.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] I... I don't know. But it excites me, losing power. Just do it.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] No. I thought that would excite you. I thought that was what you wanted.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] Don't be a fool. There is a big difference between torture and strength. I am willing. I just want to be pushed to my limits.~ + a4163 /* NOPE_NOT_WANTED */
+  ++ ~[PC] You will never understand me, or what I want, will you.~ + a4163 /* NOPE_NOT_WANTED */
+END
+
+IF ~~ a4198 /* ROM_ONE_3_PASS */
+  SAY ~[ARAN] Yours might, mahap, but mine may not any time soon. Sharess' Sultry Silks, I feel right bound to you, I do. I have naught but you on my mind. Did you put some sort o' geas on me?~
+  ++ ~[PC] If I did, it was the good old fashioned kind. No magic, just me. And you. Together.~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  ++ ~[PC] Like I would waste that kind of magic when all I have to do is kiss you, and it has the same effect.~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  ++ ~[PC] Do you always have to talk so much? Wouldn't you just prefer to converse with our bodies?~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  ++ ~[PC] Hey! Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  + ~RandomNum(2,2)~ + ~[PC] I don't know of any geas. But... I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I don't know of any geas. But... I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a4057 /* ROM_ONE_URGENT */
+  SAY ~[ARAN] (With a low rumbling growl, his hands find yours, half helping and half hindering your efforts. His sudden ferocious need has you half unclad and him mostly unclad when he stops suddenly, looking deeply into your eyes.)~
+  = ~[ARAN] Hanali Celanil Herself be not more desirable, but I don't want to take by force what you might not be offerin'. I want you, right here an' now.~
+  ++ ~[PC] Then take me. Make me yours.~ + a4006 /* ARAN_THRUST_CLOTHES */
+  ++ ~[PC] I offer nothing. If you are man enough, you will force me onto my back, and take what you want.~ + a4006 /* ARAN_THRUST_CLOTHES */
+  + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a3996 /* PC_ON_TOP_ONE */
+  + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a3999 /* PC_ON_TOP_TWO */
+  + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a4000 /* PC_ON_TOP_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a4166 /* PC_ON_TOP_FOUR */
+  + ~RandomNum(4,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4001 /* ARAN_ON_TOP_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4002 /* ARAN_ON_TOP_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4003 /* ARAN_ON_TOP_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4004 /* ARAN_ON_TOP_FOUR */
+  ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a4069 /* ROM_FRIENDS_EXIT_FOUR */
+END
+
+IF ~~ a4197 /* ROM_TWO_1a */
+  SAY ~[ARAN] Now there be no need o' shynesss on my account. Mayhap we are movin' too fast for you right this time an' in this place. Would you like just to walk for a bit, mayhap hold hands, mayhap kiss a little?~
+  + ~RandomNum(2,2)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] Do you... do you care for me?~ + a4196 /* ARAN_NOT_BROTHERLY */
+  + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard, rolling with him until you are on top of him.)~ + a3996 /* PC_ON_TOP_ONE */
+  + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard, rolling with him until you are on top of him.)~ + a3999 /* PC_ON_TOP_TWO */
+  + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard, rolling with him until you are on top of him.)~ + a4000 /* PC_ON_TOP_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard, rolling with him until you are on top of him.)~ + a4166 /* PC_ON_TOP_FOUR */
+END
+
+
+IF ~~ a4196 /* ARAN_NOT_BROTHERLY */
+  SAY ~[ARAN] I have a mite bit o' feelin's for you, m'lady. An' I don't rightly mean th' brotherly kind, eh?~
+  ++ ~[PC] I had a brother, once. I had to kill him.~ + a4195 /* ARAN_KILL_BROTHER */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+END
+
+IF ~~ a4195 /* ARAN_KILL_BROTHER */
+  SAY ~[ARAN] I want naught in th' way o' death, for a change. I want to feel you beneath me, warm, open, an' thoroughly alive.~
+  ++ ~[PC] Why do you even like me?~ + a4194 /* WANT_YOU_OR_NAUGHT */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+END
+
+IF ~~ a4194 /* WANT_YOU_OR_NAUGHT */
+  SAY ~[ARAN] I want you. I don't rightly care about naught else. Don't that mean somethin' to a woman like you?~
+  + ~RandomNum(3,3)~ + ~[PC] A woman like me... just what do you mean by that?~ + a4193 /* WOMAN_WHO_WANTS */
+  + ~RandomNum(3,2)~ + ~[PC] A woman like me... just what do you mean by that?~ + a4192 /* WOMAN_WHO_RESPONDS */
+  + ~RandomNum(3,1)~ + ~[PC] A woman like me... just what do you mean by that?~ + a4191 /* WOMAN_WHO_COMMANDS */
+  ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+  + ~RandomNum(2,2)~ + ~[PC] I think you.... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think you.... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+END
+
+IF ~~ a4193 /* WOMAN_WHO_WANTS */
+  SAY ~[ARAN] A woman what wants an' desires more than she can handle, at times. A woman who knows th' sharpness o' need, but can control herself when it be prudent.~
+  ++ ~[PC] Does this seem prudent? I am opening myself fully to you as a lover, and seeing as you will soon have me pinned and helpless beneath you, prudent might not be the right word...~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (Kiss him gently on the lips.)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+END
+
+IF ~~ a4192 /* WOMAN_WHO_RESPONDS */
+  SAY ~[ARAN] A woman who responds to th' demands o' any situation, whether she wants to or not. A woman wi' th' power to take lives an' change th' world, an' who is not afraid o' takin' me as a lover.~
+  ++ ~[PC] I am afraid. Very afraid. But I can't help it. I want you.~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4191 /* WOMAN_WHO_COMMANDS */
+  SAY ~[ARAN] A woman what commands respect an' admiration, whether she be aware o' it or no. A woman who commands my allegiance so fierce that all I want to do is please her any way she lets me.~
+  ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] I think this is more than just a physical attraction. I... I think I am half in love with you.~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  ++ ~[PC] (Lean forwards, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  SAY ~[ARAN] I won't blighted well wait, then...~
+  IF ~~ THEN GOTO a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+END
+
+IF ~~ a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  SAY ~[ARAN] (His hands reach to cup your face, guiding your lips to his in a deep kiss.)~
+  IF ~RandomNum(3,1)~ THEN GOTO a4183 /* ROM_TWO_2_WANT */
+  IF ~RandomNum(3,2)~ THEN GOTO a4182 /* ROM_TWO_2_NO_PRISONERS */
+  IF ~RandomNum(3,3)~ THEN GOTO a4181 /* ROM_TWO_2_PC_ACTION */
+END
+
+IF ~~ a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  SAY ~[ARAN] (His kiss is sudden, ferocious, as if he is trying to drink your lips.)~
+  IF ~RandomNum(3,1)~ THEN GOTO a4183 /* ROM_TWO_2_WANT */
+  IF ~RandomNum(3,2)~ THEN GOTO a4182 /* ROM_TWO_2_NO_PRISONERS */
+  IF ~RandomNum(3,3)~ THEN GOTO a4181 /* ROM_TWO_2_PC_ACTION */
+END
+
+IF ~~ a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  SAY ~[ARAN] Th' sight o' you be enough to make my heart leap out o' my chest. Th' taste o' you, now that...~
+  IF ~~ THEN GOTO a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+END
+
+IF ~~ a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  SAY ~[ARAN] Well, I thought you might want a bit o' privacy. Me, I'd kiss you anywhere, any time, anyhow I can, eh?~
+  IF ~~ THEN GOTO a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+END
+
+IF ~~ a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
+  SAY ~[ARAN] (His kiss is gentle, warm and tender on your cheek, then your eyebrow, then your lips.)~
+  IF ~RandomNum(3,1)~ THEN GOTO a4183 /* ROM_TWO_2_WANT */
+  IF ~RandomNum(3,2)~ THEN GOTO a4182 /* ROM_TWO_2_NO_PRISONERS */
+  IF ~RandomNum(3,3)~ THEN GOTO a4181 /* ROM_TWO_2_PC_ACTION */
+END
+
+IF ~~ a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  SAY ~[ARAN] (His cheek rests against yours briefly, pushing and nuzzling close to your lips.)~
+  IF ~RandomNum(3,1)~ THEN GOTO a4183 /* ROM_TWO_2_WANT */
+  IF ~RandomNum(3,2)~ THEN GOTO a4182 /* ROM_TWO_2_NO_PRISONERS */
+  IF ~RandomNum(3,3)~ THEN GOTO a4181 /* ROM_TWO_2_PC_ACTION */
+END
+
+IF ~~ a4050 /* SHOW_TATTOO_ARAN_STRIPS */
+  SAY ~[ARAN] (He removes his tunic with a rough motion, his bare chest rippling with lean, taut muscles. A tattoo stands out, the long black lines of a geometric design tracing its way from his pectoral muscles down his front until they disappear into the top of his leggings. Looking closely, you recognise the outline of a dragon.)~
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] That is an interesting design. Does it represent anything?~ + a4184 /* PC_ASKS_TATTOO */
+  ++ ~[PC] (You lean forward, your fingertips lightly tracing the design, hesitating only when your fingers dip under his clothing at his waist.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] (You lean forward, your lips gently brushing along the design, your fingers parting his clothing to clear a path to your prize. As you suspected, the design continues down his right leg... but something quite rampant blocks part of your view.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] Put your clothing back on. I just wanted to discuss your combat performance.~ + a3964 /* SOLID_STOP2 */
+END
+
+IF ~~ a4184 /* PC_ASKS_TATTOO */
+  SAY ~[ARAN] Yes. It represents what a grown man will do for the approval o' a woman he wants. But that be a story for another time, on account o' I want to grab you an' have my way with you, right here an' now.~
+  ++ ~[PC] Good things come to he who waits. Or perhaps I meant come on he who waits, or even come with he who waits... but tell me about the tattoo.~ + a4174 /* ARAN_TATTOO_STORY_ONE */
+  ++ ~[PC] I suppose it does not matter, when I can claim that territory as my own with a simple kiss. (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] It was for one of those tavern sluts you have entertained. Tell me, did she make you feel as good as I can?~ + a4174 /* ARAN_TATTOO_STORY_ONE */
+  ++ ~[PC] I have a tattoo, too. I think they should get to know each other better. See?~ + a4175 /* PC_HAS_TATTOO */
+  ++ ~[PC] Gods, what are you waiting for? I need you, now!~ + a4055 /* TAKE_ME_DELAY_THREE */
+END
+
+IF ~~ a4053 /* PC_STRIPS_FOR_ARAN */
+  SAY ~[ARAN] (His eyes widen as your body is slowly revealed to him. His hands twitch occasionally, as if he wants to reach out to you, but he remains motionless.  When at last you are fully undressed, he whispers something under his breath.)~
+  ++ ~[PC] Do I meet your approval?~ + a4008 /* ARAN_HAS_RESTRAINT */
+  ++ ~[PC] (Spin lightly in front of him, casting a teasing smile over your shoulder as you pirrouette.)~ + a4008 /* ARAN_HAS_RESTRAINT */
+  ++ ~[PC] Look, but don't touch... well... ok, touch!~ + a4178 /* HANDS_EVERYWHERE */
+  ++ ~[PC] The way you are looking at me makes me feel as if you are about to devour me.~ + a4179 /* LIPS_EVERYWHERE */
+  ++ ~[PC] Your turn, I think.~ + a4050 /* SHOW_TATTOO_ARAN_STRIPS */
+END
+
+IF ~~ a4054 /* ARAN_UNLACING_TUNIC */
+  SAY ~[ARAN] (Aran moves slowly, gently unlacing the front of his tunic.)~
+  ++ ~[PC] (You match his actions, inch for inch, watching his chest come into view as your own bares itself to him.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] Aran... I am a woman. I do not need to be treated like a shy innocent. I need you. Now.~ + a4055 /* TAKE_ME_DELAY_THREE */
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] I am getting out of control. You should leave now.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+  ++ ~[PC] (Lean back, holding your hands behind your back, and smile.) Can a girl get a little help, here?~ + a4177 /* GET_A_LITTLE_HELP_HERE */
+END
+
+/* intermediaries from everything above this */
+
+IF ~~ a4009 /* HANDS_TEASING_BARE */
+  SAY ~[ARAN] (His hands are playful, gently stroking here and there in random patterns, always careful to avoid actually touching your most sensitive areas.)~
+  ++ ~[PC] Stop teasing me, please... dear gods, stop teasing me...~ + a4010 /* FINGERS_EXPLORE_CHARMS */
+  /* make-out options */
+  + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please. That is enough for me right now.~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] (Gently restrain his hands, drawing them up to your face, lips pressing for a kiss.)~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Aran... please... slow down. I just want to be held, and kissed.~ + a4014 /* KISSING_HOLDING_FOUR */
+  ++ ~[PC] You are so strong. I want you.~ + a4008 /* ARAN_HAS_RESTRAINT */
+END
+
+IF ~~ a4008 /* ARAN_HAS_RESTRAINT */
+  SAY ~[ARAN] Sharess Herself would be envious. Dear Gods, I need you...~
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please...~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you. Nothing more, right now... just this.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] Kiss me.~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Don't stop kissing me. Just slow down! I like this as it is.~ + a4014 /* KISSING_HOLDING_FOUR */
+  ++ ~[PC] (Open yourself fully to his advances, guiding him where he can grant you the most pleasure.)~ + a3994 /* QUICK_ROUGH_ENTRY */
+  ++ ~[PC] I need you too. Every part of you.~ + a3994 /* QUICK_ROUGH_ENTRY */
+END
+
+IF ~~ a4006 /* ARAN_THRUST_CLOTHES */
+  SAY ~[ARAN] (His hands are strong, too strong... and his legs force their way between yours, leaving you mostly covered but still vulnerable. He pins your arms, holding you precariously perched, only six inches from being conquered.)~
+  ++ ~[PC] Enough. You pass the test. I do not want any more proof. Step away, now.~ + a4005 /* NOT_SO_TOUGH */
+  ++ ~[PC] What are you waiting for, an invitation?~ + a3994 /* QUICK_ROUGH_ENTRY */
+  ++ ~[PC] (Tilt your pelvis, making small circular motions on him, gently working him inside of you.)~ + a3994 /* QUICK_ROUGH_ENTRY */
+  ++ ~[PC] (Wrap your legs around him, kicking his flanks sharply, driving him home.)~ + a3994 /* QUICK_ROUGH_ENTRY */
+  ++ ~[PC] (Twist sideways, denying him entry.)~ + a4005 /* NOT_SO_TOUGH */
+END
+
+IF ~~ a4005 /* NOT_SO_TOUGH */
+  SAY ~[ARAN] I thought you wanted to be dominated, an' taken. You backin' of now?~
+  ++ ~[PC] Yes. I don't want this.~ + a3997 /* MAN_OR_FOOL */
+  ++ ~[PC] Take me against my will. I dare you.~ + a3998 /* NOT_MY_WAY */
+  + ~RandomNum(3,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a3996 /* PC_ON_TOP_ONE */
+  + ~RandomNum(3,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a3999 /* PC_ON_TOP_TWO */
+  + ~RandomNum(3,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Throw your weight hard to one side, rolling with him until you are on top of him.)~ + a4000 /* PC_ON_TOP_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4001 /* ARAN_ON_TOP_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4002 /* ARAN_ON_TOP_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4003 /* ARAN_ON_TOP_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4004 /* ARAN_ON_TOP_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] Are you man enough to walk away, even when everything in you screams that I am here to be claimed?~ + a3997 /* MAN_OR_FOOL */
+END
+
+IF ~~ a3994 /* QUICK_ROUGH_ENTRY */
+  SAY ~[ARAN] (His drive into you is sudden, fierce, and deep. He stays motionless, gripping you close, a rod of iron covered in velvet.)~
+  ++ ~[PC] (Hold yourself motionless, heels trapping him deep within you... and begin to squeeze him with your vaginal muscles, slowly but steadily.)~ + a3995 /* ROM_PULSE_DEEP_FACE */
+  ++ ~[PC] (Begin to move against him, grinding yourself towards pleasure, taking control.)~ + a3996 /* PC_ON_TOP_ONE */
+  ++ ~[PC] OFF. Get off me, NOW.~ + a3831 /* IN_NINE_HELLS */
+  ++ ~[PC] Come on, Aran. You are deep within me. You know you want to thrust over and over into me, opening me, making me scream...~ + a3995 /* ROM_PULSE_DEEP_FACE */
+  ++ ~[PC] Please... Slowly. Too much... ~ + a3995 /* ROM_PULSE_DEEP_FACE */
+END
+
+IF ~~ a3993 /* YOU_TALK_TOO_MUCH */
+  SAY ~[ARAN] I need to memorize every inch o' you. Gods, you are so beautiful...~
+  ++ ~[PC] I am very glad to hear that.~ + a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
+  ++ ~[PC] (You giggle lightly, and catch both your hands in his, holding him at bay.)~ + a4194 /* WANT_YOU_OR_NAUGHT */
+  ++ ~[PC] (You reach for his waist, pulling his close to you, his hands warm on your body.)~ + a3986 /* ROM_ONE_CAN_I_TOUCH */
+  ++ ~[PC] (You suddenly and fiercely seize his shoulders, and pulling him on top of you.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] Aran, we should not be doing this.~ + a3992 /* YOU_WANT_TO_STOP_ARE_YOU_CRAZY */
+END
+
+IF ~~ a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  SAY ~[ARAN] (Softened lips meet; the gentle tickle of his rough-shaven face pressing close.)~
+  IF ~RandomNum(5,5)~ THEN GOTO a3986 /* ROM_ONE_CAN_I_TOUCH */
+  IF ~RandomNum(5,4)~ THEN GOTO a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
+  IF ~RandomNum(5,3)~ THEN GOTO a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
+  IF ~RandomNum(5,2)~ THEN GOTO a3989 /* ROM_ONE_THREATEN_KISS_BUST */
+  IF ~RandomNum(5,1)~ THEN GOTO a3990 /* ROM_ONE_HANDS_ON_BODY */
+END
+
+IF ~~ a3991 /* ROM_ONE_KISS_ME_ALWAYS */
+  SAY ~[ARAN] (Hot kisses press along your cheekbone, your eyelids, finally finding your lips.)~
+  IF ~RandomNum(5,5)~ THEN GOTO a3986 /* ROM_ONE_CAN_I_TOUCH */
+  IF ~RandomNum(5,4)~ THEN GOTO a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
+  IF ~RandomNum(5,3)~ THEN GOTO a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
+  IF ~RandomNum(5,2)~ THEN GOTO a3989 /* ROM_ONE_THREATEN_KISS_BUST */
+  IF ~RandomNum(5,1)~ THEN GOTO a3990 /* ROM_ONE_HANDS_ON_BODY */
+END
+
+IF ~~ a3986 /* ROM_ONE_CAN_I_TOUCH */
+  SAY ~[ARAN] Kissin' you... it makes me feel alive. Can I... mayhap can I touch you? I mean, if that be somethin' you want right now, I surely want to.~
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want this right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Slow down, Aran. Kissing is an art all on its own, and I want to practice more.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* no advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You shake your head, grabbing both of his hands and pulling them to your cheeks, kissing his lips voraciously.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You blush brightly, shaking your head in negation, pulling his hands to grip your waist and holding them there.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You grip his forearms, holding his hands at bay, kissing his lips again and again.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You lock your fingers around his wrists, pulling his arms away from you and settling them around your neck, leaning into his kisses.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... I think I want that. In fact... I think I am ahead of you. I have things in hand already. Oh! It jumped!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Yes. Judging by past experience, I may be saying a good deal of that. Especially if your fingers... do... that...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] HEY! Slow down a little! Beast. You ask a lady a question when you already have invaded her territory? If it didn't feel so good, I would have to... have to...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands along Aran's chest and torso, exploring his body, until you are stroking his bottom.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You slide your hands along Aran's stomach, moving lower and lower, until your caresses are running up and down his hardness.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You trace one finger along his flank, drawing circles within circles, until you have to move a little apart from him to draw those circles on the hardness you find in front of you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You throw yourself against him, hands running up along his back, pulling him close to you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
+  SAY ~[ARAN] (His hands are pulling at you, insistent, unyielding. His fingers begin to tease and stroke below your breasts, threatening to wander up the hillside to claim a nipple).~
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want this right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Slow down, Aran. Kissing is an art all on its own, and I want to practice more.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* no advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You shake your head, grabbing both of his hands and pulling them to your cheeks, kissing his lips voraciously.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You blush brightly, shaking your head in negation, pulling his hands to grip your waist and holding them there.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You grip his forearms, holding his hands at bay, kissing his lips again and again.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You lock your fingers around his wrists, pulling his arms away from you and settling them around your neck, leaning into his kisses.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... I think I want that. In fact... I think I am ahead of you. I have things in hand already. Oh! It jumped!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Yes. Judging by past experience, I may be saying a good deal of that. Especially if your fingers... do... that...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] HEY! Slow down a little! Beast. You ask a lady a question when you already have invaded her territory? If it didn't feel so good, I would have to... have to...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands along Aran's chest and torso, exploring his body, until you are stroking his bottom.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You slide your hands along Aran's stomach, moving lower and lower, until your caresses are running up and down his hardness.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You trace one finger along his flank, drawing circles within circles, until you have to move a little apart from him to draw those circles on the hardness you find in front of you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You throw yourself against him, hands running up along his back, pulling him close to you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
+  SAY ~[ARAN] (His hands are gentle, but unerringly seek their target. His fingers draw soft circles, working ever closer to your breasts, until one hand reaches a peak and gently traps your nipple.).~
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want this right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Slow down, Aran. Kissing is an art all on its own, and I want to practice more.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* no advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You shake your head, grabbing both of his hands and pulling them to your cheeks, kissing his lips voraciously.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You blush brightly, shaking your head in negation, pulling his hands to grip your waist and holding them there.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You grip his forearms, holding his hands at bay, kissing his lips again and again.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You lock your fingers around his wrists, pulling his arms away from you and settling them around your neck, leaning into his kisses.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... I think I want that. In fact... I think I am ahead of you. I have things in hand already. Oh! It jumped!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Yes. Judging by past experience, I may be saying a good deal of that. Especially if your fingers... do... that...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] HEY! Slow down a little! Beast. You ask a lady a question when you already have invaded her territory? If it didn't feel so good, I would have to... have to...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands along Aran's chest and torso, exploring his body, until you are stroking his bottom.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You slide your hands along Aran's stomach, moving lower and lower, until your caresses are running up and down his hardness.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You trace one finger along his flank, drawing circles within circles, until you have to move a little apart from him to draw those circles on the hardness you find in front of you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You throw yourself against him, hands running up along his back, pulling him close to you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+END
+
+IF ~~ a3990 /* ROM_ONE_HANDS_ON_BODY */
+  SAY ~[ARAN] (His kisses are warm, feverish, and pressing close. His palm roves along your body, settling down to cup your most intimate of places.)~
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want kisses right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Slow down, Aran. Kissing is an art all on its own, and I want to practice more.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* no advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You shake your head, grabbing both of his hands and pulling them to your cheeks, kissing his lips voraciously.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You blush brightly, shaking your head in negation, pulling his hands to grip your waist and holding them there.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You grip his forearms, holding his hands at bay, kissing his lips again and again.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You lock your fingers around his wrists, pulling his arms away from you and settling them around your neck, leaning into his kisses.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... I think I want that. In fact... I think I am ahead of you. I have things in hand already. Oh! It jumped!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Yes. Judging by past experience, I may be saying a good deal of that. Especially if your fingers... do... that...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] HEY! Slow down a little! Beast. You ask a lady a question when you already have invaded her territory? If it didn't feel so good, I would have to... have to...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands along Aran's chest and torso, exploring his body, until you are stroking his bottom.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You slide your hands along Aran's stomach, moving lower and lower, until your caresses are running up and down his hardness.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You trace one finger along his flank, drawing circles within circles, until you have to move a little apart from him to draw those circles on the hardness you find in front of you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You throw yourself against him, hands running up along his back, pulling him close to you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a3989 /* ROM_ONE_THREATEN_KISS_BUST */
+  SAY ~[ARAN] Now, were kisses enough for you? On account o' I could trace mine down your neck, an' take each one o' those pert nipples into account...~
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want kisses right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Slow down, Aran. Kissing is an art all on its own, and I want to practice more.~ + a4076 /* ROM_ONE_FAST_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4076 /* ROM_ONE_FAST_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  /* no advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You shake your head, grabbing both of his hands and pulling them to your cheeks, kissing his lips voraciously.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You blush brightly, shaking your head in negation, pulling his hands to grip your waist and holding them there.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You grip his forearms, holding his hands at bay, kissing his lips again and again.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You lock your fingers around his wrists, pulling his arms away from you and settling them around your neck, leaning into his kisses.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I... I think I want that. In fact... I think I am ahead of you. I have things in hand already. Oh! It jumped!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Yes. Judging by past experience, I may be saying a good deal of that. Especially if your fingers... do... that...~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] HEY! Slow down a little! Beast. You ask a lady a question when you already have invaded her territory? If it didn't feel so good, I would have to... have to...~ + a4076 /* ROM_ONE_FAST_KISSES_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands along Aran's chest and torso, exploring his body, until you are stroking his bottom.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You slide your hands along Aran's stomach, moving lower and lower, until your caresses are running up and down his hardness.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You trace one finger along his flank, drawing circles within circles, until you have to move a little apart from him to draw those circles on the hardness you find in front of you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You throw yourself against him, hands running up along his back, pulling him close to you.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4183 /* ROM_TWO_2_WANT */
+  SAY ~[ARAN] I want to do more than just kiss you, you know. Well, I want to kiss much more than your lips.~
+  /* advance  talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I would like that very much. (Begin to loosen your clothing, hesitantly and carefully.)~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] So you have said before. And I think perhaps the time is now.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] So you have said before, though you know you shouldn't talk when your mouth is full, especially of, well... me.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I think that would be a very good idea. And I think I have some interesting ideas about how to make you very, very happy, too. Ones we haven't explored yet.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I want you to, too.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands under Aran's clothing, exploring his body.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You bare your chest, looking deeply into his eyes.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You look down for a moment, the look up, smiling. Your clothing begins falling to the floor as you back away from him.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You bare your shoulders, but your hands have been busier, and as your fingers wrap around his hardness you hear his sudden gasp.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You smooth your hands along his shoulders, and begin kissing your way south, stopping only when your warm lips find something demanding entry...)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  ++ ~[PC] I don't think that is a good idea. Someone might see, or hear, or... look, this is just not a good idea.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,3)~ + ~[PC] Not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] (Shake your head, and push him away.)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] PLACEHOLDER~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] PLACEHOLDER~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4182 /* ROM_TWO_2_NO_PRISONERS */
+  SAY ~[ARAN] What do you be after, here... I be tryin' to follow your lead, on account o' if I take over, you will be at my mercy in a small amount o' time. An' I don't rightly take no prisoners.~
+  /* advance  talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] If you were to be a little more aggressive, I would like that very much. (Begin to loosen your clothing, hesitantly and carefully.)~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] So you have said before. And I think perhaps the time is now. Well, perhaps not a full surrender, but perhaps a scouting expedition.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I think you talk to much, and you should act on those feelings of yours.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I wouldn't want you to. I was thinking of taking a single prisoner, and capturing him. Perhaps even riding him.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] You could follow my lead, or you could just make love to me.~ + a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands under Aran's clothing, exploring his body.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You bare your chest, looking deeply into his eyes.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You look down for a moment, the look up, smiling. Your clothing begins falling away as you back away from him.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You bare your shoulders, but your hands have been busier, and as your fingers wrap around his hardness you hear his sudden gasp.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You smooth your hands along his shoulders, and begin kissing your way south, stopping only when your warm lips find something demanding entry...)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  ++ ~[PC] I don't think that is a good idea. Someone might see, or hear, or... look, this is just not a good idea.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,3)~ + ~[PC] Not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] (Shake your head, and push him away.)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] Stop. This is not what I want at all.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Shhhh.... I thought I heard something. Quick, you have to leave. We need to stop, right now.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4181 /* ROM_TWO_2_PC_ACTION */
+  SAY ~[ARAN] Sune's Desires... you are so beautiful.~
+  ++ ~[PC] I want you. I want you to kiss me, and hold me. I want you to make me forget anything else exists in the world.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  ++ ~[PC] I think it is time that you learned I was in charge. Lie down, Aran. I intend to have my way with you.~ + a4081 /* PC_TAKES_CHARGE */
+  ++ ~[PC] (Kiss him as you both settle to the ground, all the while tearing at his codpiece until his bare warmth and hardness is nosing its way along your palm.)~ + a4081 /* PC_TAKES_CHARGE */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (You slide your hands under Aran's clothing, exploring his body.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (You bare your chest, looking deeply into his eyes.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (You look down for a moment, the look up, smiling. Your clothing begins falling away as you back away from him.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (You bare your shoulders, but your hands have been busier, and as your fingers wrap around his hardness you hear his sudden gasp.)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You smooth your hands along his shoulders, and begin kissing your way south, stopping only when your warm lips find something demanding entry...)~ + a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  ++ ~[PC] I don't think that is a good idea. Someone might see, or hear, or... look, this is just not a good idea.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] We need to stop this, right now.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] (Gently touch his face, drawing small lines along his forehead.)~ + a4180 /* ARAN_UNDOES_PC_FRONT */
+  ++ ~[PC] Aran... we need to stop. I know I am confusing, but that is only because I really don't understand my own feelings right now.~ + a3900 /* JUST_FRIENDS_EXIT */
+END
+
+IF ~~ a4180 /* ARAN_UNDOES_PC_FRONT */
+  SAY ~[ARAN] (You are not sure how he accomplishes it, but you feel a touch of cool air on your torso as his fingers tangle with your clothing.)~
+  IF ~~ GOTO a4171 /* ROM_THREE_HANDS_CUP_UPWARDS */
+END
+
+IF ~~ a4179 /* LIPS_EVERYWHERE */
+  SAY ~[ARAN] (He seizes you abruptly, hands locked around your waist as he whirls you. As your lips find each other's and battle for supremacy, his hands finally make their decision, locking together under your bottom and lifting you against his chest in a ferociously tight embrace.)~
+  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+END
+
+IF ~~ a4178 /* HANDS_EVERYWHERE */
+  SAY ~[ARAN] (His hands refuse to remain still and they play about your body, tussling and stroking, by turns gentle and rough.)~
+  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+END
+
+IF ~~ a4177 /* GET_A_LITTLE_HELP_HERE */
+  SAY ~[ARAN] (A grin splashes across his face as he drops his clothing, hands reaching for yours, pinning them behind your back. He kneels, and begins nuzzling his way to your bare torso, tickling you incessantly.)~
+  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+END
+
+IF ~~ a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
+  SAY ~[ARAN] (His chest bares itself as he strips slowly, the black markings of his dragon tattoo drawing your eyes across taut muscle, lower and lower...)~
+  IF ~~ THEN GOTO a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+END
+
+IF ~~ a4175 /* PC_HAS_TATTOO */
+  SAY ~[ARAN] Well now, if th' two o' them want to get together, we will be in a mite interestin' position, now. But I think that meetin' can be arranged... if you don't mind some other parts havin' a conversation too.~
+  ++ ~[PC] I want that conversation to go on for hours. And if one of us finishes talking, I want the other to get everyone back into the conversation.~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  ++ ~[PC] Why, sweet little innocent me? I would never go so far as to take hold of this... or move my leg like this... or put you right THERE. Oh.~ + a4131 /* ROM_PULSE_DEEP_ABOVE */
+  ++ ~[PC] Well, if I look over my shoulder like this, and then guide you right there, I think... yes... I think they... can meet... eachother... again... and again...~ + a4152 /* BACK_TO_ARAN_GUIDE */
+  ++ ~[PC] Good things come to he who waits. Or perhaps I meant come on, or even come with... but tell me about the tattoo.~ + a4174 /* ARAN_TATTOO_STORY_ONE */
+  ++ ~[PC] I suppose it does not matter, when I can claim that territory as my own with a simple kiss. (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] No, I think I would rather hear the story. I like having all of your attention focused so intently on me, but I am not really interested in things moving forward just yet.~ + a4174 /* ARAN_TATTOO_STORY_ONE */
+END
+
+IF ~~ a4174 /* ARAN_TATTOO_STORY_ONE */
+  SAY ~[ARAN] Why do you want to be hearin' about th' past? We have somethin' happenin' here, an' I don't mind sayin' that I'm bloody tremblin' wi' lust over you. Does it really matter? All I want now is you.~
+  ++ ~[PC] Oh, tell me, please... I will make it worth your while...~ + a4085 /* ARAN_TATTOO_STORY_TWO */
+  ++ ~[PC] All that matters is that I can wrap myself around you like this... and then wiggle a little like this... and gods that is just the right place don't stop don't stop...~ + a4086 /* ARAN_TATTOO_STORY_GETTING_PHYSICAL */
+  ++ ~[PC] Well, you talk, and I will keep my mouth otherwise occupied. Perhaps like this...~ + a4084 /* ARAN_TATTOO_STORY_DELAY */
+  ++ ~[PC] Oh, never mind. It wasn't that interesting a design anyways. And I am not in the mood any more.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  ++ ~[PC] I think you have been very attentive to my needs, Aran. Perhaps it is time I attended to some of yours.~ + a4092 /* ARAN_NEEDS_SOMETHING_WHAT_IS_IT */
+END
+
+IF ~~ a4173 /* ROM_TWO_TALK_THEN_TUSSLE */
+  SAY ~[ARAN] Now, I do think you have th' right idea, there. I think I will join you...~
+  = ~[ARAN] (His hands busy themselves, helping and hindering as you both tussle with anything that shields you from each other's sight.)~
+  IF ~~ THEN GOTO a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+END
+
+/* heavy petting */
+IF ~~ a4010 /* FINGERS_EXPLORE_CHARMS */  /* fingers inside */
+  SAY ~[ARAN] (His hand hesitates, then gently moves inside of you, exploring and teasing.)~
+  + ~RandomNum(2,1)~ + ~[PC] Go on... keep doing that, please...~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] (Grab his hand, stilling its motion... and pull on his shoulders, urging a close embrace.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] (Arch your back under his ministrations, riding your pleasure.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] Ouch. Be careful.~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  + ~RandomNum(2,2)~ + ~[PC] Go on... keep doing that, please...~ + a4095 /* HOW_DO_YOU_FEEL */
+  ++ ~[PC] (Boldly take his manhood into your hand, replacing his teasing fingers with the very tip of him.... until your body is kissing him gently.)~ + a4241 /* KISSING_GENTLY_TIP */
+END
+
+IF ~~ a4241 /* KISSING_GENTLY_TIP */
+  SAY ~[ARAN] (His face is a mixture of wonder and frustration as he pushes forward trying to gain entry.)~
+  ++ ~[PC] (Let him go, nipping lightly at his neck.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] (Squeeze him gently, shaking your head, and continue to please yourself and tease him.)~ +  a4240 /*  GODS_WILL_YOU_LET_ME */
+  ++ ~[PC] We c... can do this together, just this...~ + a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
+  ++ ~[PC] Take me, then, but be gentle, please...~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] I will not beg for you. Take me, now!~ + a3837 /* ENDGAME_OF_TEASING */
+END
+
+IF ~~ a4240 /* GODS_WILL_YOU_LET_ME  */
+  SAY ~[ARAN] Gods, will you be lettin' me just...~
+  ++ ~[PC] Take me, then, but be gentle, please...~ + a3837 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] (Open yourself to him completely, savoring the feeling of his entrance to your body.)~ + a3837 /* ENDGAME_OF_TEASING */
+  + ~RandomNum(2,2)~ + ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a3831 /* IN_NINE_HELLS */
+  + ~RandomNum(2,1)~ + ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a3832 /* PC_TAUNT_PERHAPS_NOT */
+  ++ ~[PC] Stop. I thought I wanted this, but it is not... it is nothing like what I want. You should go.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I have changed my mind. I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I have changed my mind. I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  SAY ~[ARAN] (His hands are everywhere touching, moving along your skin. A brief sharp scratch of fingernail, a close whispering of breath in your ear... then his body is pressed close to yours with a firm strength and weight.)~
+  IF ~~ THEN GOTO a4124 /* CONTINUE_OR_STOP_ACTION_ONE */
+END
+
+IF ~~ a4171 /* ROM_THREE_HANDS_CUP_UPWARDS */
+  SAY ~[ARAN] (His hands follow your navel, brushing upwards to cup your breasts. Slowly, carefully, his hands surround you, touch you.)~
+  IF ~~ THEN GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+END
+
+IF ~~ a4095 /* HOW_DO_YOU_FEEL */
+  SAY ~[ARAN] Now, I know just how you feel.~
+  ++ ~[PC] Why does everyone always think they know how I feel? How many people are the children of a dead god?~ + a4170 /* NO_WHAT_I_MEANT_WAS */
+  ++ ~[PC] What?~ + a4170 /* NO_WHAT_I_MEANT_WAS */
+  ++ ~[PC] (Grab his hand, stilling its motion... and pull on his shoulders, urging a close embrace.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] (Arch your back under his ministrations, riding your pleasure.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] Ouch. Be careful.~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] STOP! We have gone too far. You need to leave!~ + a4072 /* ROM_FRIENDS_EXIT_ONE */
+END
+
+IF ~~ a4170 /* NO_WHAT_I_MEANT_WAS */
+  SAY ~[ARAN] No, if I meant that I would have said I know how you be feelin'. I meant I can feel th' heat o' you, th' curve o' you, an' it be right distractin' to anythin' you be sayin'.~
+  ++ ~[PC] Well, I will stop talking then, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  ++ ~[PC] (Grab his hand, stilling its motion... and pull on his shoulders, urging a close embrace.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  ++ ~[PC] (Arch your back under his ministrations, riding your pleasure.)~ + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+END
+
+IF ~~ a4232 /* ANYWAYYOULIKEIT_3783 */
+  SAY ~[ARAN] Mayhap I would want to see you risin' an' fallin' above me, on me. I'd hear you makin' soft cries o' desire, watch your lips part, feel th' sheen o' perspiration as you came to your delight on me...~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+END
+
+IF ~~ a4233 /* TOLD_ACTION_COMPLETED */
+  SAY ~[ARAN] (His eyes widen as you begin to make his dreams come true.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4234 /* ANYWAYYOULIKEIT_3785 */
+  SAY ~[ARAN] Mayhap I'd like to see you beneath me, your thighs pressed tight around my cheeks. I'd tease you wi' my tounge until your hands be clutchin' at my head, forcin' me to give you even more pleasure, your groans fillin' my ears...~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+END
+
+IF ~~ a4235 /* ANYWAYYOULIKEIT_3786 */
+  SAY ~[ARAN] I might like to just lay beside you, tuchin' an' feelin' every part o' your skin. I'd hold off on touches until we couldn't stand naught any longer, an' then I'd replace my hands wi' my lips. After that, well... I'd be a fool not to drive deep inside o' you, claimin' you an' fillin' you until we cboth coud do naught but sleep.~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+END
+IF ~~ a4236 /* ANYWAYYOULIKEIT_3787 */
+  SAY ~[ARAN] Well, if I had anythin' I could do, it would be to watch your face as you found your pleasure. I'd watch th' slow smile turn anxious, your bright eyes sharpen to keen desire, your chest risin' an' fallin', until th' slow blush be spread across it... I'd follow that blus wi' kisses, until you either demanded I fill you or demanded I release you, whichever suited your fancy. Then I'd be  right hapy man, I would.~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+END
+
+IF ~~ a4237 /* ANYWAYYOULIKEIT_3788 */
+  SAY ~[ARAN] I don't rightly know. Well... I guess I do know, but...~
+  = ~[ARAN] Hells. If we be sharin', then I'd best just say it. I'd roll you onto your back a' drive every inch o' me deep within you, over an' over again, until you screamed out in delight an' began kickin' wi' your heels to make me go faster. Then I'd just let everythin' I have be part o' you.~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+END
+
+IF ~~ a4238 /* ANYWAYYOULIKEIT_3789 */
+  SAY ~[ARAN] I am in a right strange mood, I am. I... well, I'd want to see us. Joined. I mean, I'd watch...~
+  = ~[ARAN] I'd watch th' way you part under me, th' way I nestle deep wi' in you, an' then watch th' slow pull out, over an' over again. I'd see you bite that lower lip o' yours as you watched, too. I'd see an' feel you flutter against me deep inside, your body open to me like never before.~
+  ++ ~[PC] Sleepy. I am going to sleep now. Just hold me.~ EXIT
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] I think you stop talking so much, and start kissing!~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] I think I would like to fulfil that fantasy.~ + a4233 /* TOLD_ACTION_COMPLETED */
+END
+
+/* intermediaries from intermediaries, leading to filters */
+
+IF ~~ a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  SAY ~[ARAN] (His lips are soft, gentle... but insistent, coaxing your tongue to come out and play.)~
+  IF ~~ THEN GOTO a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
+END
+
+IF ~~ a4075 /* ROM_ONE_SLOW_KISSES_TALK */
+  SAY ~[ARAN] I heard tell that th' only thing more intoxicatin' than Rashemi Firewine be Gogondy. I think I done found somethin' even more powerful than that.~
+  IF ~~ THEN GOTO a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
+END
+
+IF ~~ a4076 /* ROM_ONE_FAST_KISSES_ACTION */
+  SAY ~[ARAN] (His kisses burn fiercely on your lips and cheeks, his breathing unsteady.)~
+  IF ~~ THEN GOTO a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
+END
+
+IF ~~ a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  SAY ~[ARAN] Aye, this be a mite bit intense. But by Sune's Sweet Smile, it feels right. I want you, an' I be thinkin' you want me. Do you be sure about stoppin'?~
+  + ~RandomNum(4,1)~ + ~[PC] Yes, I am sure. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(4,2)~ + ~[PC] No, I am not sure. Which is precisely why you should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(4,3)~ + ~[PC] I... I am so confused. Yes, you need to go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(4,4)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a4077 /* SOLID_STOP4 */
+  + ~RandomNum(4,1)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4014 /* KISSING_HOLDING_FOUR */
+  ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] I have disappointed you, haven't I. Well... I surrender. Do what you will with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+END
+/* these two can loop - */
+IF ~~ a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
+  SAY ~[ARAN] Now, there be th' slight matter o' gettin' less to come between us. I have naught in th' way o' access, here.~
+  ++ ~[PC] Is this a little better? I mean, when a lady starts undressing, shouldn't a gentleman match her garment for garment?~ + a4078 /* ROM_ONE_MATCH_STRIPPING */
+  ++ ~[PC] (You offer no resistance as he bares your shoulders, his hands caressing everything his eyes can behold.)~ + a4079 /* ROM_ONE_OFFER_NO_RESISTANCE */
+  ++ ~[PC] Aran, please... slow down. I... ~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] Sometimes it is even more fun to leave almost everything on...~ + a4080 /* SUGGEST_SMALL_ACCESS */
+END
+
+IF ~~ a4080 /* SUGGEST_SMALL_ACCESS */
+  SAY ~[ARAN] If that be an invitation, you may have to help out. I have an easy time o' it, but gettin' access through all that between us be right dauntin'.~
+  ++ ~[PC] I was actually thinking of just being held, not doing anything else.~ + a4072 /* ROM_FRIENDS_EXIT_ONE */
+  /* no advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, just kiss me, please... I just want that right now.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Kissing is an art all on its own, and I want to practice more.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] On second thought, I surrender. No more talk. Just make love to me..~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+END
+
+IF ~~ a4081 /* PC_TAKES_CHARGE */
+  SAY ~[ARAN] I would be a right fool not to follow HEY! What do you be doin'?~
+  ++ ~[PC] What does it look like I am doing? I have had enough. Now that that codpiece is not in the way, I have the perfect scabbard for that short sword you are wielding... there.~ + a4082 /* ARAN_ROMANCE_BE_DEAD */
+  ++ ~[PC] (Kneel over him, one hand guiding his hardness to your entrance, and sit down... hard.)~ + a4082 /* ARAN_ROMANCE_BE_DEAD */
+  ++ ~[PC] If I left you to your own devices, you might go wandering off after some village girl. I know what you need... a good, hard romp. And I need to exercise my riding muscles. I will just keep moving like this...~ + a4082 /* ARAN_ROMANCE_BE_DEAD */
+  ++ ~[PC] Leaving. You were too slow. When a lady says "take me", do it, and don't stop to think or talk.~ + a4083 /* ARAN_SWEAR_ONE */
+  ++ ~[PC] I may not know everything about men, but I know one thing they really, really want. And the feel of me ... *there*... yes, that look on your face says it all. Now I have you. And if I flex a little, like that, perhaps you will make me happy, too.~ + a4082 /* ARAN_ROMANCE_BE_DEAD */
+  ++ ~[PC] I... I don't know what I am doing. I think I need to leave, right now. These feelings are too much.~ + a3965 /* SOLID_STOP3 */
+END
+
+IF ~~ a4084 /* ARAN_TATTOO_STORY_DELAY */
+  SAY ~[ARAN] Sharess' Sensuous Skin, like I will be able to concentrate wi' you doin' that... gods, I... I'll try...~
+  IF ~~ THEN GOTO a4085 /* ARAN_TATTOO_STORY_TWO */
+END
+
+IF ~~ a4085 /* ARAN_TATTOO_STORY_TWO */
+  SAY ~[ARAN] I had been up in Moonshea for nigh on a year when I did fall for a lass. An' th' custom were to have a tattoo to show how much pain one could take, to show if you be strong enough to be a life partner. So it served two purposes, at th' time, one wi' th' Axes, an' two wi' th' womenfolk. Or one woman.~
+  = ~[ARAN] Now, for Sune's Blissful Release, will you stop doin' that? You are like to have a real mess happenin' soon enough!~
+  ++ ~[PC] Stop talking? Well, I suppose we could kiss...~ + a4086 /* ARAN_TATTOO_STORY_GETTING_PHYSICAL */
+  ++ ~[PC] Stop letting my hands wander down your chest? Oh, no, we could not stop that...~ + a4086 /* ARAN_TATTOO_STORY_GETTING_PHYSICAL */
+  ++ ~[PC] But your whole body feels so nice under my hands. I wonder what it would feel like under my lips?~ + a4086 /* ARAN_TATTOO_STORY_GETTING_PHYSICAL */
+  /* tease/insult options */
+  + ~RandomNum(4,1)~ + ~[PC] You know, you talk too much. I think you need to go get some lessons in how to please me.~ + a4097 /* TEASING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] You might be getting all excited, but you are doing nothing for me. You had better be more attentive if you want this to go any further.~ + a4098 /* TEASING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] You know, nothing kills a romance like bad breath and rough caloused hands.~ + a4099 /* TEASING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] I am not sure how you could please any woman. With me, so far, you are barely adequate.~ + a4100 /* TEASING_FOUR */
+END
+
+IF ~~ a4086 /* ARAN_TATTOO_STORY_GETTING_PHYSICAL */
+  SAY ~[ARAN] Gods save us all from th' likes o' mad mages, undead warriors, an' th' wiles o' a determined woman.~
+  IF ~~ THEN EXIT
+END
+
+/* skip to second range */
+
+IF ~~ a4078 /* ROM_ONE_MATCH_STRIPPING */
+  SAY ~[ARAN] Now that be a right fine compliment, to call me a gentleman. An' I be seein' your wager, an' raisin' it. In more ways than one, I do believe.~
+  IF ~~ THEN GOTO a4087 /* ROM_ONE_5 */
+END
+
+IF ~~ a4079 /* ROM_ONE_OFFER_NO_RESISTANCE */
+  SAY ~[ARAN] (His clothing and yours are soon out of harms way, leaving the two of you open to each other's sight.)~
+  IF ~~ THEN GOTO a4087 /* ROM_ONE_5 */
+END
+
+IF ~~ a4082 /* ARAN_ROMANCE_BE_DEAD */
+  SAY ~[ARAN] Chauntea's Womb, romance be dead. Slow down a mite, for th' love o' th' gods, or I will be fillin' you wi' more than you have in you right now, an' no mistake... I will be there right quick!~
+  ++ ~[PC] That is fine, as I am alr... all... g- g- gods...~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Redouble your efforts, driving yourself onto him over and over, faster and faster.)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Rock back and forth, riding his hardness, closing your eyes and losing yourself in the feelings it evokes within you.)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] Still able to talk? I must be doing something wrong. Perhaps this will help... don't you want to fill me, to claim me? Here I am, and I can feel you touching me, deep inside...~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] Gods, you are way too thick. I think I need to slow down.~ + a4089 /* TRY_TO_DELAY */
+END
+
+IF ~~ a4089 /* TRY_TO_DELAY */
+  SAY ~[ARAN] I wish you had not said that, on account o' it stokes th' ego, an' it put me right on th' edge...~
+  IF ~~ THEN GOTO a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+/* Oral Exploration */
+
+IF ~~ a4090 /* STOP_NOW_OR_CONSEQUENCE */
+  SAY ~[ARAN] Dear gods, you had better stop that right quick, or you are like to drive me over th' edge!~
+  ++ ~[PC] Not if I use more than my tongue.~ + a4091 /* READY_OR_NOT_HERE_I_COME */
+  ++ ~[PC] Oh, don't let a little mess stop you. I never have.~ + a4091 /* READY_OR_NOT_HERE_I_COME */
+  ++ ~[PC] Hmmmmmmm?~ + a4091 /* READY_OR_NOT_HERE_I_COME */
+  ++ ~[PC] (Redouble your efforts, letting your lips encompass his hardness, teasing and licking as his heat and tension builds.)~ + a4091 /* READY_OR_NOT_HERE_I_COME */
+  ++ ~[PC] (Lie back, offering yourself to him.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+END
+
+/* filter states first level */
+
+IF ~~ a4092 /* ARAN_NEEDS_SOMETHING_WHAT_IS_IT */
+  SAY ~[ARAN] I have just one need. You might even be able to guess what it be, if you just look in my eyes.~
+  ++ ~[PC] I have heard there is one thing that drives men wild. I think it is time for a little experiment of my own. Now, what happens if I get all this out of the way, and then I take the tip of my tongue, and I trace a line right along... oooh! He jumped!~ + a4090 /* STOP_NOW_OR_CONSEQUENCE */
+  ++ ~[PC] The way you are looking at me, I think I see the two of us, completely naked, exploring all sorts of.... hey! Careful, that cloth might tear!~ + a4093 /* ROM_THREE_ARAN_TO_PC */
+  ++ ~[PC] (Lie back, offering yourself to him.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  ++ ~[PC] Don't you think we should stop? This is getting very confusing...~ + a3992
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+END
+
+IF ~~ a3992 /* YOU_WANT_TO_STOP_ARE_YOU_CRAZY */
+  SAY ~[ARAN] Sune's Blissful Release, you want to stop now? I am on fire for you. Let me please you.~
+  ++ ~[PC] No, I don't want to do everything that the of us could do... but I think I will please you. I wonder what happens when I take the tip of my tongue and do this... and this... perhaps if I just play a little with hmmmmm...~ + a4090 /* STOP_NOW_OR_CONSEQUENCE */
+  ++ ~[PC] What would please me most is just the two of us, completely naked, exploring all sorts of.... hey! Careful, that might tear!~ + a4093 /* ROM_THREE_ARAN_TO_PC */
+END
+
+IF ~~ a4093 /* ROM_THREE_ARAN_TO_PC */
+  SAY ~[ARAN] Aye now, do you be wantin' to stop? Things might get a bit heavy, here...~
+  /* aran explores further */
+  + ~RandomNum(3,1)~ + ~[PC] Gods, no. Whatever you do, do not stop now...~ + a4094 /* HAND_CHEEK_BARE_THIGH */
+  + ~RandomNum(3,2)~ + ~[PC] Gods, no. Whatever you do, do not stop now...~ + a4009 /* HANDS_TEASING_BARE */
+  + ~RandomNum(3,3)~ + ~[PC] This is so... so...~ + a4095 /* HOW_DO_YOU_FEEL */
+  /* stop options */
+  + ~RandomNum(5,1)~ + ~[PC] Can you stop? Or rather, will you stop if I ask you to?~ + a4096 /* WILL_YOU_CAN_YOU */
+  + ~RandomNum(5,2)~ + ~[PC] I know what I invited, but I have changed my mind. You need to stop.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,3)~ + ~[PC] I want you to stop now. Walk away.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,4)~ + ~[PC] I know what I invited, Aran... but I have changed my mind. You need to stop.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,5)~ + ~[PC] I want you to stop now. Walk away, Aran.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  /* make-out options */
+  + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please...~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] Kiss me.~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Gods, no... don't stop kissing me. Just slow down!~ + a4014 /* KISSING_HOLDING_FOUR */
+  + ~RandomNum(3,1)~ + ~[PC] (Kiss him with all of your might, straining against him, fingers stroking through his hair.)~ + a4094 /* HAND_CHEEK_BARE_THIGH */
+  + ~RandomNum(3,2)~ + ~[PC] (Kiss him with all of your might, straining against him, fingers stroking through his hair.)~ + a4009 /* HANDS_TEASING_BARE */
+  + ~RandomNum(3,3)~ + ~[PC] This is so... so...~ + a4095 /* HOW_DO_YOU_FEEL */
+END
+
+IF ~~ a4051 /* ROM_THREE_PC_TO_ARAN */
+  SAY ~[ARAN] Aye now, things might get a bit heavy, here... that be exactly what I would like, if you are game for it.~
+  /* pc explores further */
+  + ~RandomNum(2,1)~ + ~[PC] Gods, yes. In fact, when you keep making that little groaning sound, it excites me...~ + a4094 /* HAND_CHEEK_BARE_THIGH */
+  + ~RandomNum(2,2)~ + ~[PC] Gods, yes. Whatever you do, do not stop now...~ + a4009 /* HANDS_TEASING_BARE */
+  /* stop options */
+  + ~RandomNum(5,1)~ + ~[PC] Can you stop? Or rather, will you stop if I ask you to?~ + a4096 /* WILL_YOU_CAN_YOU */
+  + ~RandomNum(5,2)~ + ~[PC] I know what I invited, but I have changed my mind. You need to stop.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,3)~ + ~[PC] I want you to stop now. Walk away.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,4)~ + ~[PC] I know what I invited, Aran... but I have changed my mind. You need to stop.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  + ~RandomNum(5,5)~ + ~[PC] I want you to stop now. Walk away, Aran.~ + a4052 /* SUNE_SHUTDOWN_EXIT */
+  /* adult sequence */
+  + ~RandomNum(2,1)~ + ~[PC] (Kiss his neck, his chest, rubbing your hands along his skin.)~ + a4094 /* HAND_CHEEK_BARE_THIGH */
+  + ~RandomNum(2,2)~ + ~[PC] (Let your hands play about your own body, stoking and teasing, before bringing them up and tracing his lips.)~ + a4009 /* HANDS_TEASING_BARE */
+  /* make-out options */
+  + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please...~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] Kiss me.~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Gods, no... don't stop kissing me. Just slow down!~ + a4014 /* KISSING_HOLDING_FOUR */
+  /* tease/insult options */
+  + ~RandomNum(4,1)~ + ~[PC] Is that all you can do? Some feeble kissing? I think you need to go get some lessons in how to please me.~ + a4097 /* TEASING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] You might be getting all excited, but you are doing nothing for me. You had better be more attentive if you want this to go any further.~ + a4098 /* TEASING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] You know, nothing kills a romance like bad breath and rough caloused hands.~ + a4099 /* TEASING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Oh, I could take it or leave it. So far, you are barely adequate.~ + a4100 /* TEASING_FOUR */
+END
+
+/* tease/insult options replies */
+IF ~~ a4097 /* TEASING_ONE */
+  SAY ~[ARAN] No call to be mean, there. I thought I was doin' right fine, m'self.~
+  ++ ~[PC] Oh, stop blathering and put that mouth of yours to better use. Or those fingers... (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a4098 /* TEASING_TWO */
+  SAY ~[ARAN] Well, you be a tough nut to crack, that be for sure. I never know when you be teasin' an' when you be serious.~
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  ++ ~[PC] Oh, stop blathering and put that mouth of yours to better use. Or those fingers... (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+END
+
+IF ~~ a4099 /* TEASING_THREE */
+  SAY ~[ARAN] Mayhap I like bein' a pain in your arse. Speakin' o' which, have you ever tried...~
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] Oh, stop blathering and put that mouth of yours to better use. Or those fingers... (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+END
+
+IF ~~ a4100 /* TEASING_FOUR */
+  SAY ~[ARAN] Oh, so sorry m'lady. I didn't rightly know I was makin' your life so uninterestin'. Pity your body don't match up wi' those words.~
+  ++ ~[PC] Oh, stop blathering and put that mouth of yours to better use. Or those fingers... (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+END
+
+IF ~~ a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  SAY ~[ARAN] Now, m'lady there be naught between us but a few threads, an' there be much more to do. Shall we lie together?~
+  ++ ~[PC] (Your arms encircle his neck as you drag him down, kissing him wildly, madly).~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  ++ ~[PC] (You offer no resistance as his arms enfold you, drawing you down face to face.)~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  ++ ~[PC] (You offer no resistance as he draws your back to his chest, arms looping around your waist. You lean back against him as you gently roll together.)~ + a4102 /* ROM_BACK_TO_HIS_CHEST */
+  + ~RandomNum(2,1)~ + ~[PC] I seem to have forgotten this one little flimsy thing. You wouldn't mind removing it for me, would you?~ +  a4103 /* ROUGH_CHEEK_BARES_PC_BREASTS */
+  + ~RandomNum(2,2)~ + ~[PC] Aran.... I want this. But slow down, please. I just need to feel your cheek against mine for a moment.~ + a4104 /* SMOOTH_CHEEK_TO_CHEEK_PRESS_CLOSE */
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+END
+
+/* Just Fingers and Hand-Holds */
+
+IF ~~ a4043 /* ROM_ONE_3_HANDS */
+  SAY ~[ARAN] (His rough hands catch yours tightly, fingers intertwining.)~
+  ++ ~[PC] (Gently rub your thumbs along his fingers, clasping his palms to yours.)~ + a4105 /* PALMS_CLASP_HANDHOLDING */
+  ++ ~[PC] (Pull apart from him until you are barely touching fingertip to fingertip, examining his hands from a distance.)~ + a4106 /* EXAMINE_FINGERS_HANDHOLDING */
+  ++ ~[PC] (Proffer your hands to him, curtseying slightly.)~ + a4107 /* KISS_FINGERS_HANDHOLDING */
+  ++ ~[PC] (Draw one of his hands to cradle against your cheek, pressing kisses along his fingertips.)~ + a4108 /* PC_KISSES_FINGERTIPS */
+  + ~RandomNum(3,1)~ + ~[PC] This is just right. Let's just sit together, hand in hand.~ + a4109 /* HANDHOLDING_EXIT */
+  + ~RandomNum(3,2)~ + ~[PC] This is just right. Let's just sit together, hand in hand.~ + a4110 /* SIT_TOGETHER_HANDHOLD */
+  + ~RandomNum(3,3)~ + ~[PC] This is just right. Let's just sit together, hand in hand.~ + a4111 /* KISS_PALMS_HANDHOLD */
+END
+
+IF ~~ a4105 /* PALMS_CLASP_HANDHOLDING */
+  SAY ~[ARAN] Your plams be a might cold. I think this might warm 'em up a little, eh?~
+  IF ~RandomNum(5,1)~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+  IF ~RandomNum(5,2)~ THEN GOTO a4110 /* SIT_TOGETHER_HANDHOLD */
+  IF ~RandomNum(5,3)~ THEN GOTO a4111 /* KISS_PALMS_HANDHOLD */
+  IF ~RandomNum(5,4)~ THEN GOTO a4107 /* KISS_FINGERS_HANDHOLDING */
+  IF ~RandomNum(5,5)~ THEN GOTO a4106 /* EXAMINE_FINGERS_HANDHOLDING */
+END
+
+IF ~~ a4110 /* SIT_TOGETHER_HANDHOLD */
+  SAY ~[ARAN] (His face turns towards you, glances studying your face carefully.)~
+  IF ~RandomNum(5,1)~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+  IF ~RandomNum(5,2)~ THEN GOTO a4110 /* SIT_TOGETHER_HANDHOLD */
+  IF ~RandomNum(5,3)~ THEN GOTO a4111 /* KISS_PALMS_HANDHOLD */
+  IF ~RandomNum(5,4)~ THEN GOTO a4107 /* KISS_FINGERS_HANDHOLDING */
+  IF ~RandomNum(5,5)~ THEN GOTO a4106 /* EXAMINE_FINGERS_HANDHOLDING */
+END
+
+IF ~~ a4107 /* KISS_FINGERS_HANDHOLDING */
+  SAY ~[ARAN] (His lips are warm on your knuckles as he bends in a slight bow. He squeezes your captive fingers slightly, standing close to you, hand in hand.)~
+  IF ~~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+END
+
+IF ~~ a4106 /* EXAMINE_FINGERS_HANDHOLDING */
+  SAY ~[ARAN] (Roughened skin and strong callouses stand testament to his toils, but his touch is suprisingly light and soft. He looks at you throgh the basket weave made by your fingers and his, a smile playing about his lips.)~
+  IF ~~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+END
+
+IF ~~ a4111 /* KISS_PALMS_HANDHOLD */
+  SAY ~[ARAN] (You sit for a time, his hands warm and rough on yours. Idly, he toys with your fingers, lifting one hand for inspection... and then gently kisses your open palm.)~
+  IF ~~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+END
+
+IF ~~ a4108 /* PC_KISSES_FINGERTIPS */
+  SAY ~[ARAN] (His return kisses brush your fingertips, your palms, your inner wrist.)~
+  IF ~~ THEN GOTO a4109 /* HANDHOLDING_EXIT */
+END
+
+/* just Kissing */
+
+IF ~~ a4011 /* KISSING_HOLDING_ONE */
+  SAY ~[ARAN] His slow, lingering kisses touch your upper lip, then your lower, before finally reaching center with gratifying intensity.)~
+  IF ~~ THEN GOTO a4112 /* KISSING_END_STATE */
+END
+
+IF ~~ a4012 /* KISSING_HOLDING_TWO */
+  SAY ~[ARAN] (His lips catch yours with urgent hunger, his hands cupping you close to his smooth chest.)~
+  IF ~~ THEN GOTO a4112 /* KISSING_END_STATE */
+END
+
+IF ~~ a4013 /* KISSING_HOLDING_THREE */
+  SAY ~[ARAN] (His kiss is a thunderclap of strength, followed by a long slow rain of beseeching, intoxicating nibbles.)~
+  IF ~~ THEN GOTO a4112 /* KISSING_END_STATE */
+END
+
+IF ~~ a4014 /* KISSING_HOLDING_FOUR */
+  SAY ~[ARAN] His arms surround you, shelter you. His kisses are slow but steady, a long feast of desire.)~
+  IF ~~ THEN GOTO a4112 /* KISSING_END_STATE */
+END
+
+/* second range */
+
+IF ~~ a4087 /* ROM_ONE_5 */
+  SAY ~[ARAN] Gods, th' curve o' you, it be a work o' art. I'd be right happy to follow my eyes wi' my hands, if you would let me.~
+  ++ ~[PC] I would like that very much.~ + a4113 /* ROM_ONE_PERMISSION_TOUCH_TALK */
+  ++ ~[PC] (Take his hand, and trace your outline with his fingertips, shuddering under his touch.)~ + a4114 /* ROM_ONE_PERMISSION_TOUCH_ACTION */
+  ++ ~[PC] Not yet. I want to look at you. All of you.~ + a4115  /* ROM_ONE_7 */
+  ++ ~[PC] (Blush and look down, shaking your head, peeking at his body from under lowered eyelashes.)~ + a4115  /* ROM_ONE_7 */
+  ++ ~[PC] So, do you think I am pretty?~ + a4116 /* ROM_ONE_THINK_PRETTY */
+END
+
+IF ~~ a4094 /* HAND_CHEEK_BARE_THIGH */
+  SAY ~[ARAN] (One of his hands strokes your cheek gently, but the other seems to find its way onto your bare thigh... and you realize he has undone you quite rapidly.)~
+  ++ ~[PC] Stop teasing me, please... dear gods, stop teasing me...~ + a4010 /* FINGERS_EXPLORE_CHARMS */
+  /* make-out options */
+  + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please...~ + a4011 /* KISSING_HOLDING_ONE */
+  + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you.~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(4,3)~ + ~[PC] Kiss me.~ + a4013 /* KISSING_HOLDING_THREE */
+  + ~RandomNum(4,4)~ + ~[PC] Gods, no... don't stop kissing me. Just slow down!~ + a4014 /* KISSING_HOLDING_FOUR */
+END
+
+IF ~~ a4096 /* WILL_YOU_CAN_YOU */
+  SAY ~[ARAN] I will stop, but it may blighted well kill me. You are more powerful than you know, <CHARNAME>. One glimpse o' bare thigh, a dazzlin' smile, an' I be held more firmly than a strong spell. I would rather not be stoppin', if you will let me be wi' you.~
+  ++ ~[PC] (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4114 /* ROM_ONE_PERMISSION_TOUCH_ACTION */
+  ++ ~[PC] Aran. Hold still. I think I have something to show you. (Slowly begin removing your clothing.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
+
+END
+
+IF ~~ a4102 /* ROM_BACK_TO_HIS_CHEST */
+  SAY ~[ARAN] Your skin be so smooth, so warm. I can't rightly stop touchin' it.~
+  IF ~~ THEN GOTO a4117 /* ROM_ROUGH_WHISPER_BEHIND_EAR */
+END
+
+IF ~~ a4103 /* ROUGH_CHEEK_BARES_PC_BREASTS */
+  SAY ~[ARAN] (His cheek is rough against your skin, his breath hot on your collarbone as he bares your breasts to his sight.)~
+  IF ~~ THEN GOTO a4114 /* ROM_ONE_PERMISSION_TOUCH_ACTION */
+END
+
+IF ~~ a4104 /* SMOOTH_CHEEK_TO_CHEEK_PRESS_CLOSE */
+  SAY ~[ARAN] (His cheek is the smooth and velvet touch of closely-shaved skin, as he runs it along your cheek and presses close to you.)~
+  ++ ~[PC] I like the feel of your skin beneath my palms.~ + a4113 /* ROM_ONE_PERMISSION_TOUCH_TALK */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] I think we should stop.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] So, do you think I am pretty?~ + a4116 /* ROM_ONE_THINK_PRETTY */
+END
+
+
+IF ~~ a4114 /* ROM_ONE_PERMISSION_TOUCH_ACTION */
+  SAY ~[ARAN] (His hands move to your shoulders, thumbs caressing your collarbone, as he pulls you closer to his chest.)~
+  IF ~~ THEN GOTO a4169 /* ROM_ONE_6 */
+END
+
+IF ~~ a4113 /* ROM_ONE_PERMISSION_TOUCH_TALK */
+  SAY ~[ARAN] (One long finger gently traces your lips, then runs slowly down your neck, and along one breast. His breath is deepening as if he is running a footrace, his touch feather light.)~
+  IF ~~ THEN GOTO a4169 /* ROM_ONE_6 */
+END
+
+IF ~~ a4116 /* ROM_ONE_THINK_PRETTY */
+  SAY ~[ARAN] Pretty? No, not just pretty. Not just cute, neither. Beautiful, mayhap that comes closest. Stunnin', desirable, definitely. There be no words.~
+  ++ ~[PC] I think I look much prettier naked.~ + a4121 /* ROM_ONE_8 */
+  ++ ~[PC] (Watch him carefully, removing any barriers to his vision, baring yourself to him.)~ + a4121 /* ROM_ONE_8 */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] (Reach out and run your fingers along his skin, watching the weave a pattern across his torso.)~ + a4168 /* ROM_ONE_STRONGER_TOUCH */
+END
+
+IF ~~ a4115  /* ROM_ONE_7 */
+  SAY ~[ARAN] (Hard muscle ripples under bronzed skin as his body turns towards you. Broad shoulders, tight waist... and the black markings of a tattoo running from his navel to his loins draw your eyes lower than a lady would look.)~
+  ++ ~[PC] So, do you think I am pretty?~ + a4116 /* ROM_ONE_THINK_PRETTY */
+  ++ ~[PC] Show me where you are looking, Aran.~ + a4113 /* ROM_ONE_PERMISSION_TOUCH_TALK */
+  ++ ~[PC] (Take his hand, and trace your outline with his fingertips, shuddering under his touch.)~ + a4114 /* ROM_ONE_PERMISSION_TOUCH_ACTION */
+  ++ ~[PC] I can't do this. I don't want this. Stop.~ + a3965 /* SOLID_STOP3 */
+END
+
+/* filters for range 2 */
+
+IF ~~ a4169 /* ROM_ONE_6 */
+  SAY ~[ARAN] I am goin' to ask Hanali Celanil for assistance, an' hope She influences you a mite, eh? On account o' I want to be wi' you, right now, more than life itself.~
+  ++ ~[PC] So, you think I am pretty?~ + a4116 /* ROM_ONE_THINK_PRETTY */
+  ++ ~[PC] (Lean forward, carefully not touching any part of him except the warmth of your lips on his.)~ + a4168 /* ROM_ONE_STRONGER_TOUCH */
+  ++ ~[PC] Stop! I... I can't do this.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  ++ ~[PC] (Run your fingers along his shoulders, his chest, his abdomen, lower and lower... until your grip is light but completely encircling his manhood.)~ + a4168 /* ROM_ONE_STRONGER_TOUCH */
+  ++ ~[PC] You don't need divine intervention to see that I want you. Just look in my eyes, Aran. I think you will find your answer there.~ + a4165 /* NO_TALK_JUST_THRUST */
+  ++ ~[PC] Lie down with me, Aran.~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+END
+
+IF ~~ a4168 /* ROM_ONE_STRONGER_TOUCH */
+  SAY ~[ARAN] (His hands stroke down to your hips, your pelvis, his eyes widening as he feels the satin heat of your skin.)~
+  IF ~~ THEN GOTO a4121 /* ROM_ONE_8 */
+END
+
+IF ~~ a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  SAY ~[ARAN] (His breath is warm on your face as you face each other, lying close together.)~
+  + ~RandomNum(5,5)~ + ~[PC] (Turn within his arms, nestling your shoulders back against his pectoral muscles and cupping his palm to your breast.)~ + a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  + ~RandomNum(5,4)~ + ~[PC] (Sigh contentedly and adjust yourself, tucking his hardness between your thighs, and gently caressing the part of him now firmly captured.)~ + a3983 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
+  + ~RandomNum(5,3)~ + ~[PC] (Turn within his arms, flexing and stretching like a cat, one ankle tucking in between his.)~ + a3984 /* BACK_TO_ARAN_TALK_PUSH */
+  + ~RandomNum(5,2)~ + ~[PC] (Turn within his arms, snuggling closely, and run one hand along the side of your neck.)~ + a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  + ~RandomNum(5,1)~ + ~[PC] (Turn within his arms, pulling his arms to you, struggling briefly with the arm now under you.)~ + a3983 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
+  + ~RandomNum(6,6)~ + ~[PC] (Let your hands stroke gently lower and lower, until you hold his hardness in your palm, quivering against your touch.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(6,5)~ + ~[PC] (Let your hands stroke his chest gently, the warmth under your fingers growing in intensity.)~ + a3981 /* FRONT_TO_ARAN1 */
+  + ~RandomNum(6,4)~ + ~[PC] (Let your hands trace his chest, reveling in the feeling of warmth under your fingertips.)~ + a3980 /* FRONT_TO_ARAN2 */
+  + ~RandomNum(6,3)~ + ~[PC] (Place both palms flat on his chest, and press both hands and breasts against his warmth.)~ + a3979 /* FRONT_TO_ARAN3 */
+  + ~RandomNum(6,2)~ + ~[PC] (Stretch back, looping your arms around his neck, and gazing deeply into his eyes.)~ + a3978 /* FRONT_TO_ARAN4 */
+  + ~RandomNum(6,1)~ + ~[PC] (Reach down and gently stroke the hardness pressing close to you, letting your fingertips graze him gently.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(4,1)~ + ~[PC] (Slipping gently out of his arms, you cover yourself, hiding your charms from his gaze.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(4,2)~ + ~[PC] (You roll away from him, gathering what you can to cover yourself.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(4,3)~ + ~[PC] (You shake your head in negation, and pull away from him.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(4,4)~ + ~[PC] Aran... slow down. Aran...~ + a4128 /* CONTINUE_OR_STOP_ACTION_TWO */
+  + ~RandomNum(7,1)~ + ~[PC] This is too intense. You should go, right now.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(7,2)~ + ~[PC] This is too intense. You should go, right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(7,3)~ + ~[PC] This is too intense. You should go, right now.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(7,4)~ + ~[PC] This is too intense. You should go, right now.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(7,5)~ + ~[PC] This is too intense. You should go, right now.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(7,6)~ + ~[PC] This is too intense. You should go, right now.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(7,7)~ + ~[PC] This is too intense. You should go, right now.~ + a3967 /* FIGHT_START */
+  + ~RandomNum(3,1)~ + ~[PC] (Guide his hand, tracing your thighs, then your hips, making small brushstrokes with his fingers on your breasts.)~ + a4139 /* GUIDE_HAND_UP */
+  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently paint your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a4140 /* GUIDE_HAND_DOWN */
+  + ~RandomNum(3,3)~ + ~[PC] (Gently take his palm, guiding his fingers to your most intimate of places, and shift so that his fingertips lie just barely within you.)~ + a4141 /* GUIDE_HAND_IN */
+END
+
+IF ~~ a4117 /* ROM_ROUGH_WHISPER_BEHIND_EAR */
+  SAY ~[ARAN] (A rough whisper in your ear...) Let me make love wi' you.~
+  ++ ~[PC] No. Not yet.~ + a4118 /* ROM_TWO_NO_THANK_YOU */
+  ++ ~[PC] Yes.~ + a4119 /* ROM_TWO_YES_I_THINK_SO */
+  ++ ~[PC] Why don't you bend me forward and have your way with me.~ + a4120 /* TURN_ME_ROUND_BABY_RIGHT_ROUND */
+END
+
+IF ~~ a4121 /* ROM_ONE_8 */
+  SAY ~[ARAN] I told you I be matchin' you eye for eye, but I don't think I can do this much longer. I look at you, an' I burn inside like a battle were about to rage. What do you be wantin', <CHARNAME>?~
+  ++ ~[PC] Aran, please... slow down. I... ~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] I can't do this. I don't want this. Stop.~ + a3965 /* SOLID_STOP3 */
+  ++ ~[PC] Now there are ways of giving pleasure that are lots of fun, but cross no permanent lines. I think my hand moving along you is having quite an effect, don't you?~ + a4122 /* ARAN_FINGERS_ACTION */
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  ++ ~[PC] I think I have an idea. (Gently lean forward and lick along his hardness, glancing up at his face to view his reaction.)~ + a4123 /* ROM_LICK_ARAN */
+END
+
+IF ~~ a4124 /* CONTINUE_OR_STOP_ACTION_ONE */
+  SAY ~[ARAN] I want you, but I know better than to press. Shall I be continuin'?~
+  ++ ~[PC] (Gaze into his eyes, and thrust your pelvis forward, burying him just barely within you.)~ + a4165 /* NO_TALK_JUST_THRUST */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I... I have never done this. Not with you, not with anyone. We are moving a little too fast for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am not ready to do more than this, Aran. The touching, the kissing is so nice, and it is enough for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] This is just right. I have felt you under my fingertips before, and you are certainly feeling me under yours. We should just keep doing this.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I want to slow down, and just touch, Aran. I know we have done more, but just the intimacy of lying together, just touching and kissing... outside, if you please...~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] There is no rush. You have taken me before. Right now, I want to pretend we have done absolutely nothing, and every touch is a new one. Just fingertips.~ + a4125 /* WAY_TOO_GRAPHIC */
+  ++ ~[PC] I want to do this. I just don't want to do this right now. Please? Can we stop?~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(5,1)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,5)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3967 /* FIGHT_START */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(3,1)~ + ~[PC] (Hesitantly nod yes, and wait for him to make the next move.)~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  + ~RandomNum(3,2)~ + ~[PC] (Nod yes, letting your fingers wander over his face, trailing along his cheekbone.)~ + a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  + ~RandomNum(3,3)~ + ~[PC] Yes. Aran... yes.~ + a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+END
+
+IF ~~ a4128 /* CONTINUE_OR_STOP_ACTION_TWO */
+  SAY ~[ARAN] Gods, you be a drop o' th' afterlife made real. I be goin' to make love to you, now.~
+  ++ ~[PC] (Gaze into his eyes, and nod your acceptance.)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I... I have never done this. Not with you, not with anyone. We are moving a little too fast for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am not ready to do more than this, Aran. The touching, the kissing is so nice, and it is enough for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] This is just right. I have felt you under my fingertips before, and you are certainly feeling me under yours. We should just keep doing this.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I want to slow down, and just touch, Aran. I know we have done more, but just the intimacy of lying together, just touching and kissing... outside, if you please...~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] There is no rush. You have taken me before. Right now, I want to pretend we have done absolutely nothing, and every touch is a new one. Just fingertips.~ + a4125 /* WAY_TOO_GRAPHIC */
+  ++ ~[PC] I want to do this. I just don't want to do this right now. Please? Can we stop?~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  + ~RandomNum(5,1)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,5)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3967 /* FIGHT_START */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(8,8)~ + ~[PC] (You lean close to him, your hands moving towards his shoulders, bringing your lips up to his.)~ + a4024 /* KISS_CATCH_HANDS */
+  + ~RandomNum(8,7)~ + ~[PC] (You reach for his chest, your hands deftly playing along his muscles.)~ + a4008 /* ARAN_HAS_RESTRAINT */
+  + ~RandomNum(8,6)~ + ~[PC] (You reach for his chest, your hands deftly playing along his muscles.)~ + a4008 /* ARAN_HAS_RESTRAINT */
+  + ~RandomNum(8,5)~ + ~[PC] (You kiss him gently, moving down his neck to kiss the pulse you feel racing in his throat.)~ + a4008 /* ARAN_HAS_RESTRAINT */
+  + ~RandomNum(8,4)~ + ~[PC] (You kiss him gently, moving down his neck to kiss the pulse you feel racing in his throat.)~ + a4008 /* ARAN_HAS_RESTRAINT */
+  + ~RandomNum(8,3)~ + ~[PC] (You lean close to him, your hands gently pulling on his shoulders, bringing your lips up to his.)~ + a4019 /* KISS_PRESS_SALTY */
+  + ~RandomNum(8,2)~ + ~[PC] (You lean close to him, your hands gently pulling on his shoulders, bringing your lips to his.)~ + a4018 /* KISS_TIP_CHIN */
+  + ~RandomNum(8,1)~ + ~[PC] I yield to your wishes. How can I serve you, my lord?~ + a4016 /* SERVE_YOU_MY_LORD */
+  + ~RandomNum(3,1)~ + ~[PC] (Hesitantly nod yes, and wait for him to make the next move.)~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  + ~RandomNum(3,2)~ + ~[PC] (Nod yes, letting your fingers wander over his face, trailing along his cheekbone.)~ + a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  + ~RandomNum(3,3)~ + ~[PC] Yes. Aran... yes.~ + a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+END
+
+/* action recheck */
+IF ~~ a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  SAY ~[ARAN] What... what be wrong?~
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I... I have never done this. Not with you, not with anyone. We are moving a little too fast for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am not ready to do more than this, Aran. The touching, the kissing is so nice, and it is enough for me.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] This is just right. I have felt you under my fingertips before, and you are certainly feeling me under yours. We should just keep doing this.~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I want to slow down, and just touch, Aran. I know we have done more, but just the intimacy of lying together, just touching and kissing... outside, if you please...~ + a4125 /* WAY_TOO_GRAPHIC */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] There is no rush. You have taken me before. Right now, I want to pretend we have done absolutely nothing, and every touch is a new one. Just fingertips.~ + a4125 /* WAY_TOO_GRAPHIC */
+  ++ ~[PC] I want to do this. I just don't want to do this right now. Please? Can we stop?~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(5,1)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,5)~ + ~[PC] I am not in the mood. This is making me feel very uncomfortable. You should go.~ + a3967 /* FIGHT_START */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(3,1)~ + ~[PC] Never mind. I want this, and I want to be with you right now.~ + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
+  + ~RandomNum(3,2)~ + ~[PC] Never mind. I want this, and I want to be with you right now.~ + a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  + ~RandomNum(3,3)~ + ~[PC] Never mind. I want this, and I want to be with you right now.~ + a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+END
+
+IF ~~ a4059 /* PC_TOP_GO_ON_OR_NOT */
+  SAY ~[ARAN] Now, from my vantage, I can see that you have a right fine decision to make, m'lady. You seem poised to take everythin' I have into you, just by settin' back. Or mayhap you want me to do some o' th' work. Either way, if you don't want me to lose control, you might want to make a choice, eh?~
+  ++ ~[PC] (Gently settle yourself onto him, ever so slowly opening yourself with his length.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3996 /* PC_ON_TOP_ONE */
+  ++ ~[PC] Oh, no need to make a choice. I just... hey, you are getting thicker!~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3996 /* PC_ON_TOP_ONE */
+  ++ ~[PC] I have another idea. Let's see how long you last when I do this... (adjust yoursef slightly, allowing your charms to kiss along his length, slowly teasing both of you.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4129 /* ROM_PULSE_DEEP_LIFT */
+  ++ ~[PC] This is farther than I wanted to go. I just... got carried away. I don't want to frustrate you, but can we just hold each other for a while?~ + a4130 /* CELANIL_SAVE_ME */
+END
+
+IF ~~ a3996 /* PC_ON_TOP_ONE */
+  SAY ~[ARAN] (His eyes widen as he feels your efforts, and his teeth bare slightly as he nips at you.)~
+  ++ ~[PC] (Ride him slowly, seeking your own pleasure against his rock hard warmth as you work him in and out of you.)~ + a4131 /* ROM_PULSE_DEEP_ABOVE */
+  ++ ~[PC] (Thrust yourself down onto his length until you can stand no more, and then hold very still. Each time he tries to move, pin him back, and squeeze him with your innermost walls.)~ + a4132 /* CANT_HOLD_ON */
+  ++ ~[PC] I can feel you. I can see you, driving into me, over and over. This... this feels right.~ + a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
+  ++ ~[PC] (Lean forward and whisper in his ear.) I have you right where you belong. Make me yours, Aran.~ + a4131 /* ROM_PULSE_DEEP_ABOVE */
+  ++ ~[PC] I can't believe we are doing this.~ + a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
+END
+
+IF ~~ a4132 /* CANT_HOLD_ON */
+  SAY ~[ARAN] (Aran's body bucks beneath you, and his hands fly to your waist to goad you into faster motion.)~
+  ++ ~[PC] (You grip his wrists, moving with deliberate slowness, rising and falling in a gentle motion that drives you both to the edge of frenzy.)~ + a4133 /* END_GAME_TOP */
+  ++ ~[PC] Do not wait. Just spend yourself. We have all the time in the world to explore each other.~ + a4133 /* END_GAME_TOP */
+  ++ ~[PC] Perhaps this... is not... the best time... to say this, but... I think... I love you.~ + a4133 /* END_GAME_TOP */
+  ++ ~[PC] (Stop suddenly, leaning forward and kissing his face, neck and chest, awash with sensations that delight you.)~ + a4133 /* END_GAME_TOP */
+END
+
+
+/* range 2 passthrough/delay */
+
+IF ~~ a4139 /* GUIDE_HAND_UP */
+  SAY ~[ARAN] ~
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  ++ ~[PC] W... wait a moment...~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] This is too much. Too fast. Wait.~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] (Grab his wrist and still his motions, holding him away from you.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+END
+
+IF ~~ a4140 /* GUIDE_HAND_DOWN */
+  SAY ~[ARAN] ~
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  ++ ~[PC] (Sigh, moving against him and stretching with pleasure.)~ + a4033 /* ROM_TWO_6 */
+  ++ ~[PC] W... wait a moment...~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] This is too much. Too fast. Wait.~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] (Grab his wrist and still his motions, holding him away from you.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+END
+
+IF ~~ a4141 /* GUIDE_HAND_IN */
+  SAY ~[ARAN] (His eyes widen as they follow the course of his fingetips, watching you part beneath his touch.)~
+  ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
+  ++ ~[PC] (Sigh, moving against him and stretching with pleasure.)~ + a4033 /* ROM_TWO_6 */
+  ++ ~[PC] W... wait a moment...~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] This is too much. Too fast. Wait.~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  ++ ~[PC] (Grab his wrist and still his motions, holding him away from you.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+END
+
+IF ~~ a4118 /* ROM_TWO_NO_THANK_YOU */
+  SAY ~[ARAN] Your words be sayin' no, but your whole body be sayin' yes.~
+  IF ~~ THEN GOTO a4033 /* ROM_TWO_6 */
+END
+
+IF ~~ a4119 /* ROM_TWO_YES_I_THINK_SO */
+  SAY ~[ARAN]  Mayhap I should be th' one sayin' no. Mayhap I should be a bit more careful...~
+  IF ~~ THEN GOTO a4033 /* ROM_TWO_6 */
+END
+
+IF ~~ a4033 /* ROM_TWO_6 */
+  SAY ~[ARAN] Liira's Lushious Lashes, I can't rightly live wi' out th' sight, sound, smell, an' taste o' you. I have to have you.~
+  ++ ~[PC] Well, when you put it that way... We just seem to have one last little thing standing between your lips and my chest.~ + a4134 /* LIPS_PRESS_FINGERS_UNTANGLE_BODICE */
+  ++ ~[PC] (You kiss him deeply, tongue teasing and coaxing him to greater excitement.)~ + a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  + ~RandomNum(5,5)~ + ~[PC] This is too intense. You should go, right now.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] This is too intense. You should go, right now.~ + a3967 /* FIGHT_START */
+  + ~RandomNum(5,3)~ + ~[PC] Aran... slow down. Aran...~ + a4128 /* CONTINUE_OR_STOP_ACTION_TWO */
+  + ~RandomNum(5,2)~ + ~[PC] Stop! This is too much!~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,1)~ + ~[PC] I said no, Aran. We need to stop.~ + a3964 /* SOLID_STOP2 */
+  ++ ~[PC] No, Aran, but we could pleasure each other, as long as you do not bed me.~ + a4244  /* WHAT_DO_YOU_REALLY_WANT */
+END
+
+IF ~~ a4244  /* WHAT_DO_YOU_REALLY_WANT */
+  SAY ~[ARAN] Your wish be my command. What do you be wantin'?~
+  + ~RandomNum(4,4)~ + ~[PC] I think... Yes. I want you inside of me.~ + a4165 /* NO_TALK_JUST_THRUST */
+  + ~RandomNum(4,3)~ + ~[PC] I think... Yes. I want you inside of me.~ + a4004 /* ARAN_ON_TOP_FOUR */
+  + ~RandomNum(4,2)~ + ~[PC] I think... Yes. I want you inside of me.~ + a4003 /* ARAN_ON_TOP_THREE */
+  + ~RandomNum(4,1)~ + ~[PC] I think... Yes. I want you inside of me.~ + a4002 /* ARAN_ON_TOP_TWO */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] (Take his hand, guiding his fingers down your body until they are trapped between your thighs, nestled close to your warmth.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
+  ++ ~[PC] Your fingers... I want your fingers... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
+  ++ ~[PC] I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(3,3)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4112 /* KISSING_END_STATE */
+  + ~RandomNum(3,2)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  + ~RandomNum(3,1)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4145 /* QUICK_END_FADEOUT */
+END
+
+IF ~~ a4134 /* LIPS_PRESS_FINGERS_UNTANGLE_BODICE */
+  SAY ~[ARAN] There be a good answer to that, you know... I could remove th' offendin' material right quick. An' I think I have everythin' important in hand, so to speak.~
+  + ~RandomNum(5,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(5,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(5,1)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4112 /* KISSING_END_STATE */
+  + ~RandomNum(5,2)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4145 /* QUICK_END_FADEOUT */
+  IF ~RandomNum(5,3)~ THEN GOTO a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+  IF ~RandomNum(5,4)~ THEN GOTO a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  IF ~RandomNum(5,5)~ THEN GOTO a4148 /* FRONT_TO_ARAN_FINGERS */
+END
+
+IF ~~ a4125 /* WAY_TOO_GRAPHIC */
+  SAY ~[ARAN] Well, now, we can take it slow, if that be what you want. I think mayhap tastin' your lips be a right fine idea.~
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  + ~RandomNum(3,3)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4112 /* KISSING_END_STATE */
+  + ~RandomNum(3,2)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
+  + ~RandomNum(3,1)~ + ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] This is silly. I... I just don't know.~ + a4244  /* WHAT_DO_YOU_REALLY_WANT */
+END
+
+IF ~~ a3967 /* FIGHT_START */
+  SAY ~[ARAN] What in th' nine hells... I thought we had a moment goin' here. What be th' problem?~
+  + ~RandomNum(2,2)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(2,1)~ + ~[PC] I think... I think I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
+  ++ ~[PC] Just hold me, and kiss me. I want that, no more, and no less.~ + a4112 /* KISSING_END_STATE */
+  + ~RandomNum(5,1)~ + ~[PC] You. You are the problem.~ + a3997 /* MAN_OR_FOOL */
+  + ~RandomNum(5,1)~ + ~[PC] Me. I am the problem. You should go, now.~ + a3997 /* MAN_OR_FOOL */
+  + ~RandomNum(5,2)~ + ~[PC] You. You are the problem.~ + a3811 /* ARAN_DECIDES_NO */
+  + ~RandomNum(5,2)~ + ~[PC] Me. I am the problem. You should go, now.~ + a3939 /* NOW_YOU_ARE_PLAYING_WITH_MY_MIND */
+  + ~RandomNum(5,3)~ + ~[PC] You. You are the problem.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
+  + ~RandomNum(5,3)~ + ~[PC] Me. I am the problem. You should go, now.~ + a4069 /* ROM_FRIENDS_EXIT_FOUR */
+  + ~RandomNum(5,4)~ + ~[PC] You. You are the problem.~ + a3866 /* FIGHT_EXIT */
+  + ~RandomNum(5,4)~ + ~[PC] Me. I am the problem. You should go, now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(5,5)~ + ~[PC] Me. I am the problem. You should go, now.~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  + ~RandomNum(5,5)~ + ~[PC] You. You are the problem.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Oh, just shut up and get out of here. I don't need to explain myself to you.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+  ++ ~[PC] Go away! I don't want to talk about it!~ + a4077 /* SOLID_STOP4 */
+END
+
+/* oral redirects */
+IF ~~ a4122 /* ARAN_FINGERS_ACTION */
+  SAY ~[ARAN] Gods. Yes. But two can play at that game...~
+  = ~[ARAN] (His lips are feverish on yours as you stroke him, his return touches finding your petals, parting them, and gently teasing at your pleasure.)~
+  IF ~~ THEN GOTO a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
+END
+
+IF ~~ a4123  /* ROM_LICK_ARAN */
+  SAY ~[ARAN] (His face is a study in wonder, surprise, and desire as he looks at you.)~
+  ++ ~[PC] (Take him into your mouth, teasing and questing after his pleasure.)~ + a4136 /* ARAN_ORAL_RELEASE */
+  ++ ~[PC] I just wanted to experiment. Judging by that look, I would say it was a success. And judging by the way you are rolling me onto my back, I think I am about to receive a similar prize...~ + a4137 /* ARAN_MUTUAL_LICK */
+  ++ ~[PC] Perhaps we should try doing this to each other.~ + a4137 /* ARAN_MUTUAL_LICK */
+  ++ ~[PC] Make love to me.~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] Take me, but be gentle, please...~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] (Tease him with the tip of your tounge, exploring his length.)~ + a4090 /* STOP_NOW_OR_CONSEQUENCE */
+  ++ ~[PC] (Lie back, offering yourself to him.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+END
+
+IF ~~ a4136 /* ARAN_ORAL_RELEASE */
+  SAY ~[ARAN] (His hands catch at you, his hardness leaping between your lips, alive and getting hotter by the second. Suddenly, he stiffens and arches his back... ~
+  = ~[ARAN] (...and with a small cry escaping his lips he lunges towards you, shoulders curling forward.)~
+  = ~[ARAN] (At last he is spent, curled around you, breath coming in short gasps of pleasure.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
+END
+
+IF ~~ a3973 /* KNEES_ABOVE_ARAN_ORAL */
+  SAY ~[ARAN] (His fingers stroke your cheeks, half pleading for more, half restraining you.)~
+  ++ ~[PC] (Take him into your mouth, teasing and questing after his pleasure.)~ + a4136 /* ARAN_ORAL_RELEASE */
+  ++ ~[PC] I just wanted to experiment. Judging by that look, I would say it was a success. And judging by the way you are rolling me onto my back, I think I am about to receive a similar prize...~ + a4137 /* ARAN_MUTUAL_LICK */
+  ++ ~[PC] Perhaps we should try doing this to each other.~ + a4137 /* ARAN_MUTUAL_LICK */
+  ++ ~[PC] Make love to me.~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] Take me, but be gentle, please...~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] (Tease him with the tip of your tounge, exploring his length.)~ +a4090 /* STOP_NOW_OR_CONSEQUENCE */
+  ++ ~[PC] (Lie back, offering yourself to him.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
+  + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
+  + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
+END
+
+IF ~~ a4091 /* READY_OR_NOT_HERE_I_COME */
+  SAY ~[ARAN] Sharess, I want you. I want to be in you. I want to hear you cry out an' feel you... let me make you feel as good as you be makin' me feel.~
+  ++ ~[PC] (Increase your actions, striving to bring him pleasure.)~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] Take me, then.~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] Take me, then, but be gentle, please...~ + a4138 /* ARAN_RELEASE */
+  ++ ~[PC] Can you wait for me now? Do you have the self-control?~ + a4158 /* LADIES_FIRST_PLEASE */
+END
+
+IF ~~ a4120 /* TURN_ME_ROUND_BABY_RIGHT_ROUND */
+  SAY ~[ARAN] (His fingers are busy gaining access, his breath gusting warm in his excitement.)~
+  IF ~~ THEN GOTO a3984 /* BACK_TO_ARAN_TALK_PUSH */
+END
+
+/* downstream filters */
+
+IF ~~ a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
+  SAY ~[ARAN] (You feel the gentle heat radiating from his body, so close to yours.)~
+  + ~RandomNum(3,1)~ + ~[PC] (Guide his hand, tracing your thighs, then your hips, making small brushstrokes with his fingers on your breasts.)~ + a4139 /* GUIDE_HAND_UP */
+  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently paint your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a4140 /* GUIDE_HAND_DOWN */
+  + ~RandomNum(3,3)~ + ~[PC] (Gently take his palm, guiding his fingers to your most intimate of places, and shift so that his fingertips lie just barely within you.)~ + a4141 /* GUIDE_HAND_IN */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(5,5)~ + ~[PC] (Giggle mischievously at him as you roll to your knees. You bend forward in front of him, bottom towards him, coyly peeking back over your shoulder to gauge his reaction to your body.)~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  + ~RandomNum(5,4)~ + ~[PC] (You roll to your knees, coyly peeking back through your legs to gauge his reaction to your body.)~ + a3968 /* PRESENT_TO_ARAN_ACTION_TEASE */
+  + ~RandomNum(5,3)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, flexing and arching your back, inviting his response.)~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  + ~RandomNum(5,2)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, running your hands along your body, down to your most intimate parts, casting a bold eye over your shoulder at him.)~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  + ~RandomNum(5,1)~ + ~[PC] (You roll to your knees, then growl, wiggling your bottom at him and daring him to respond.)~ + a3970 /* PRESENT_TO_ARAN_ACTION_HAND_TEASE */
+  + ~RandomNum(8,8)~ + ~[PC] (Let your hands smooth down his chest, revelling in the feeling.)~ + a3981 /* FRONT_TO_ARAN1 */
+  + ~RandomNum(8,7)~ + ~[PC] (Let your hands wander down his chest, fingers outlining each muscle, tracing along the small form of a dragon at his waistline.)~ + a3980 /* FRONT_TO_ARAN2 */
+  + ~RandomNum(8,6)~ + ~[PC] (Let your hands stroke gently lower and lower, until you hold his hardness in your palm, quivering against your touch.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(8,5)~ + ~[PC] (Let your hands stroke his chest gently, the warmth under your fingers growing in intensity.)~ + a3980 /* FRONT_TO_ARAN2 */
+  + ~RandomNum(8,4)~ + ~[PC] (Let your hands trace his chest, reveling in the feeling of warmth under your fingertips.)~ + a3979 /* FRONT_TO_ARAN3 */
+  + ~RandomNum(8,3)~ + ~[PC] (Place both palms flat on his chest, and press both hands and breasts against his warmth.)~ + a3978 /* FRONT_TO_ARAN4 */
+  + ~RandomNum(8,2)~ + ~[PC] (Stretch back, looping your arms around his neck, and gazing deeply into his eyes.)~ + a3977 /* FRONT_TO_ARAN5 */
+  + ~RandomNum(8,1)~ + ~[PC] (Reach down and gently stroke the hardness pressing close to you, letting your fingertips graze him gently.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(7,7)~ + ~[PC] (You roll to your knees, hands searching for his hardness, feeling the hot pulse of it between you palms.)~ + a3975 /* KNEES_ABOVE_ARAN_HAND */
+  + ~RandomNum(7,6)~ + ~[PC] (Grab his open palm, kissing it, as you roll to your knees. You hover above him, eyes taking in all that they can of his lean form.)~ + a4167 /* KNEES_ABOVE_ARAN_HANDS_PULL */
+  + ~RandomNum(7,5)~ + ~[PC] (Roll to your knees, dragging one hand along his body, until your fingertips brush against his manhood. You hover above him, fingertips stroking gently along his length.)~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,4)~ + ~[PC] (Roll to your knees, dragging one hand along his body, letting the back of your hand smooth along him until it drops away. You hover over him, waiting for him to make the next move. )~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,3)~ + ~[PC] (As you roll to your knees, you let your hair brush along his chest, gently tickling him, moving lower and lower. You hover above him, lips inches from his manhood, breath hot on him.)~ + a3973 /* KNEES_ABOVE_ARAN_ORAL */
+  + ~RandomNum(7,2)~ + ~[PC] (As you roll to your knees, you let your lips gently brush here and there about his chest, his torso, and then his thigh... here and there, closer and closer, but never touching his manhood.)~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,1)~ + ~[PC] (As you roll to your knees, you let your lips gently brush his manhood, a stray little lick from your tongue grazing him.)~ + a3973 /* KNEES_ABOVE_ARAN_ORAL */
+  + ~RandomNum(5,1)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,5)~ + ~[PC] Stop... I am not really in the mood. This is making me feel very uncomfortable. You should go.~ + a3967 /* FIGHT_START */
+END
+
+IF ~~ a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
+  SAY ~[ARAN] (His touch is gentle, feather light on your cheek. It travels down your body, his eyes following his fingertips.)~
+  + ~RandomNum(9,1)~ + ~[PC] (Turn within his arms, pulling his arms to you, struggling briefly with the arm now under you.)~ + a3985 /* BACK_TO_ARAN_ACTION_HAND_INTIMATE */
+  + ~RandomNum(9,2)~ + ~[PC] (Turn within his arms, laying your head back onto his shoulder.)~ + a3984 /* BACK_TO_ARAN_TALK_PUSH */
+  + ~RandomNum(9,3)~ + ~[PC] (Turn within his arms, nestling your shoulders back against his pectoral muscles and cupping his palm to your breast.)~ + a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  + ~RandomNum(9,4)~ + ~[PC] (Sigh contentedly and adjust yourself, tucking his hardness between your thighs, and gently caressing the part of him now firmly captured.)~ + a3983 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
+  + ~RandomNum(9,5)~ + ~[PC] (Turn within his arms, flexing and stretching like a cat, one ankle tucking in between his.)~ + a3985 /* BACK_TO_ARAN_ACTION_HAND_INTIMATE */
+  + ~RandomNum(9,6)~ + ~[PC] (Turn within his arms, snuggling closely, and run one hand along the side of your neck.)~ + a3984 /* BACK_TO_ARAN_TALK_PUSH */
+  + ~RandomNum(9,7)~ + ~[PC] (Turn within his arms, pulling his arms to you, struggling briefly with the arm now under you.)~ + a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  + ~RandomNum(9,8)~ + ~[PC] (Pull his hands along yourself, stroking gently with his fingers.)~ + a3983 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
+  + ~RandomNum(9,9)~ + ~[PC] (Pull his hands along yourself, stroking gently with his fingers.)~ + a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  + ~RandomNum(8,8)~ + ~[PC] (Let your hands smooth down his chest, revelling in the feeling.)~ + a3981 /* FRONT_TO_ARAN1 */
+  + ~RandomNum(8,7)~ + ~[PC] (Let your hands wander down his chest, fingers outlining each muscle, tracing along the small form of a dragon at his waistline.)~ + a3980 /* FRONT_TO_ARAN2 */
+  + ~RandomNum(8,6)~ + ~[PC] (Let your hands stroke gently lower and lower, until you hold his hardness in your palm, quivering against your touch.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(8,5)~ + ~[PC] (Let your hands stroke his chest gently, the warmth under your fingers growing in intensity.)~ + a3980 /* FRONT_TO_ARAN2 */
+  + ~RandomNum(8,4)~ + ~[PC] (Let your hands trace his chest, reveling in the feeling of warmth under your fingertips.)~ + a3979 /* FRONT_TO_ARAN3 */
+  + ~RandomNum(8,3)~ + ~[PC] (Place both palms flat on his chest, and press both hands and breasts against his warmth.)~ + a3978 /* FRONT_TO_ARAN4 */
+  + ~RandomNum(8,2)~ + ~[PC] (Stretch back, looping your arms around his neck, and gazing deeply into his eyes.)~ + a3977 /* FRONT_TO_ARAN5 */
+  + ~RandomNum(8,1)~ + ~[PC] (Reach down and gently stroke the hardness pressing close to you, letting your fingertips graze him gently.)~ + a3976 /* FRONT_TO_ARAN6 */
+  + ~RandomNum(7,7)~ + ~[PC] (You roll to your knees, hands searching for his hardness, feeling the hot pulse of it between you palms.)~ + a3975 /* KNEES_ABOVE_ARAN_HAND */
+  + ~RandomNum(7,6)~ + ~[PC] (Grab his open palm, kissing it, as you roll to your knees. You hover above him, eyes taking in all that they can of his lean form.)~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,5)~ + ~[PC] (Roll to your knees, dragging one hand along his body, until your fingertips brush against his manhood. You hover above him, fingertips stroking gently along his length.)~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,4)~ + ~[PC] (Roll to your knees, dragging one hand along his body, letting the back of your hand smooth along him until it drops away. You hover over him, waiting for him to make the next move. )~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,3)~ + ~[PC] (As you roll to your knees, you let your hair brush along his chest, gently tickling him, moving lower and lower. You hover above him, lips inches from his manhood, breath hot on him.)~ + a3973 /* KNEES_ABOVE_ARAN_ORAL */
+  + ~RandomNum(7,2)~ + ~[PC] (As you roll to your knees, you let your lips gently brush here and there about his chest, his torso, and then his thigh... here and there, closer and closer, but never touching his manhood.)~ + a3974 /* KNEES_ABOVE_ARAN */
+  + ~RandomNum(7,1)~ + ~[PC] (As you roll to your knees, you let your lips gently brush his manhood, a stray little lick from your tongue grazing him.)~ + a3973 /* KNEES_ABOVE_ARAN_ORAL */
+  + ~RandomNum(6,6)~ + ~[PC] (Slip gently out of his arms, and put a hand to the side of his face.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(6,5)~ + ~[PC] (Slipping gently out of his arms, you cover yourself, hiding your charms from his gaze.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(6,4)~ + ~[PC] (You roll away from him, gathering what you can to cover yourself.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(6,3)~ + ~[PC] (You shake your head in negation, and pull away from him.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... slow down. Aran...~ + a3972 /* CONTINUE_OR_STOP_ACTION */
+  + ~RandomNum(6,1)~ + ~[PC] (You sit up quickly, turning your face away from him.)~ + a3971 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
+  + ~RandomNum(5,5)~ + ~[PC] (Giggle mischievously at him as you roll to your knees. You bend forward in front of him, bottom towards him, coyly peeking back over your shoulder to gauge his reaction to your body.)~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  + ~RandomNum(5,4)~ + ~[PC] (You roll to your knees, coyly peeking back through your legs to gauge his reaction to your body.)~ + a3968 /* PRESENT_TO_ARAN_ACTION_TEASE */
+  + ~RandomNum(5,3)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, flexing and arching your back, inviting his response.)~ + a3970 /* PRESENT_TO_ARAN_ACTION_HAND_TEASE */
+  + ~RandomNum(5,2)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, running your hands along your body, down to your most intimate parts, casting a bold eye over your shoulder at him.)~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  + ~RandomNum(5,1)~ + ~[PC] (You roll to your knees, then growl, wiggling your bottom at him and daring him to respond.)~ + a3968 /* PRESENT_TO_ARAN_ACTION_TEASE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+END
+
+
+IF ~~ a3972 /* CONTINUE_OR_STOP_ACTION */
+  SAY ~[ARAN] (He ceases all motion, breath warm on your skin, frowning slightly.)~
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~RandomNum(5,1)~ + ~[PC] I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+END
+
+/* actions */
+
+IF ~~ a3968 /* PRESENT_TO_ARAN_ACTION_TEASE */
+  SAY ~[ARAN] (With a gentle growl, he seizes your hips and guides his hardness to you, gently teasing you with a tap, tap, tap...)~
+  ++ ~[PC] No teasing. Mount me as if I were a mare in season, Aran. I want to feel all of you.~ + a3830 /* PC_FACE_DOWN_FINISH */
+  ++ ~[PC] Oh, dear... a rough sellsword is in my poor bed, and me only a simple girl, the spoils of war. Whatever shall he do with me...~ + a4239
+  ++ ~[PC] (Lean back, trapping him between your legs but denying him entry, running yourself along his hardness again and again.)~ + a4240 /* GODS_WILL_YOU_LET_ME */
+  ++ ~[PC] (Reach back between your legs and grasp him firmly. Guide him into you, settling him deeply within you.~ + a3830 /* PC_FACE_DOWN_FINISH */
+  + ~RandomNum(5,1)~ + ~[PC] I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+
+END
+
+IF ~~ a4239
+  SAY ~[ARAN] Poor little you? Well, now, I think I have just th' right idea, here. Alas, poor maiden, you have fallen into th' cluches of an evil, evil man, who insists on bedding you an' givin' you multiple orgasms.~
+  ++ ~[PC] Well, if I must, I must. Just be gentle, good sir, for I am a maiden yet, and know not the ways of... OUCH! Stop laughing, you beast!~ + a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  ++ ~[PC] Hah! You but thought I was a poor virtuous maiden. Secretly, I am the evil Dominatrix of the Dales, and I shall throw you to your back...~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  + ~RandomNum(5,1)~ + ~[PC] I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Grab his hands and guide them about your body, running his fingers over your most sensitive places.)~ + a4142 /* LIPS_DEVOUR_NECK */
+END
+
+IF ~~ a3969 /* PRESENT_TO_ARAN_TALK_FEAST */
+  SAY ~[ARAN] Gods alive, that be th' most beautiful sight. I would feast wi' more than my eyes, if you let me.~
+  ++ ~[PC] If... if you want to.~ + a4150 /* TAKE_ME_KISS_DEEP */
+  ++ ~[PC] I want to devour you, but not with my mouth. Push forward, Aran. I am yours.~ + a4150 /* TAKE_ME_KISS_DEEP */
+  ++ ~[PC] No, no, no... you have me bowing before you, begging for everything like a cat in heat, presenting my most private charms to you, and you think of food? Gods, make love to me, now! ~ + a4150 /* TAKE_ME_KISS_DEEP */
+  ++ ~[PC] (Nestle up against him, hands guiding him where he belongs. Straighten up as you sink down on him, his hands smoothing your hips, then your breasts.)~ + a4129 /* ROM_PULSE_DEEP_LIFT */
+  ++ ~[PC] I have a better idea. Now, if I just roll over like this, and find this, and... gods, you are so hot. Literally. It is like stroking warm iron.~ + a4150 /* TAKE_ME_KISS_DEEP */
+END
+
+IF ~~ a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  SAY ~[ARAN] (Your movements are blocked by his powerful forearm as he wrestles you quickly onto your back.)~
+  IF ~~ THEN GOTO a3845 /* PC_ON_BACK_ONE */
+END
+
+IF ~~ a4150 /* TAKE_ME_KISS_DEEP */
+  SAY ~[ARAN] (Words melt away as he attempts to pleasure you, teasing and roaring his delight as you roll together in an intimate embrace.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ EXIT
+END
+
+IF ~~ a3970 /* PRESENT_TO_ARAN_ACTION_HAND_TEASE */
+  SAY ~[ARAN] (His hand hesitantly caresses you, moving here and there, but never quite reaching its goal.)~
+  ++ ~[PC] No teasing. Mount me as if I were a mare in season, Aran. I want to feel all of you.~ + a3830 /* PC_FACE_DOWN_FINISH */
+  ++ ~[PC] Lower... Oh, my. That feels... oh. Just keep doing that, please.~ + a4142 /* LIPS_DEVOUR_NECK */
+  ++ ~[PC] (You wriggle back against him, grabbing his hands and cupping them under your breasts. As his manhood presses close, trap it between your legs, hands gently playing with the velvet hardness, never allowing entrance but pleasuring both of you.)~ + a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
+  ++ ~[PC] (You wriggle back against him, grabbing his hands and cupping them under your breasts. As his manhood presses close, you lean forward, allowing him to fully enter you.)~ + a3830 /* PC_FACE_DOWN_FINISH */
+END
+
+IF ~~ a4142 /* LIPS_DEVOUR_NECK */
+  SAY ~[ARAN] (His lips seek to devour your neck, bites alternating hard and soft as his desire mounts.)~
+  ++ ~[PC] (Begin circling your hips, playing with his fingers deep within you, one hand playing along his length, restraining him and pleasing him at the same time.)~ + a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. You need to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. I think we should experiment. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+END
+
+/* resolutions */
+
+IF ~~ a3974 /* KNEES_ABOVE_ARAN */
+  SAY ~[ARAN] (His gaze devours your body as he seeks to see where you are both barely joined.)~
+  ++ ~[PC] (Gently settle yourself onto him, taking him deeply into your body.)~ + a4000 /* PC_ON_TOP_THREE */
+  ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. You need to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. I think we should experiment. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] You seem to think you have the upper hand, boyo. But I think I am in conrol right now.~ + a3836 /* KISS_AND_TAKE */
+END
+
+IF ~~ a3975 /* KNEES_ABOVE_ARAN_HAND */
+  SAY ~[ARAN] (His hands find your shoulders, then your waist, and he strives to move up into your intimacy.)~
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  ++ ~[PC] (Gently settle yourself onto him, taking him deeply into your body.)~ + a4000 /* PC_ON_TOP_THREE */
+  ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  ++ ~[PC] Aran... just kisses. I only want kisses. You need to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. I think we should experiment. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] You seem to think you have the upper hand, boyo. But I think I am in conrol right now.~ + a3836 /* KISS_AND_TAKE */
+END
+
+IF ~~ a4167 /* KNEES_ABOVE_ARAN_HANDS_PULL */
+  SAY ~[ARAN] (His hands grab for yours, and he pulls you down onto his chest.)~
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  ++ ~[PC] (Gently settle yourself onto him, taking him deeply into your body.)~ + a4000 /* PC_ON_TOP_THREE */
+  ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  ++ ~[PC] Aran... just kisses. I only want kisses. You need to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. I think we should experiment. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] You seem to think you have the upper hand, boyo. But I think I am in conrol right now.~ + a3836 /* KISS_AND_TAKE */
+END
+
+IF ~~ a3836 /* KISS_AND_TAKE */
+  SAY ~[ARAN] (His answering kisses are half laughter, half passion. There can be no denying the heat of him pressed close to your intimacy, a dagger waiting to be sheathed.)~
+  ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, forced into submission, and used well.~ + a3827 /* WAIT_WE_WERE_LOVING */
+  ++ ~[PC] (Shift slightly, catching his tip in just the right place and gently pushing your body onto him, until he is nestled deep within you.)~ + a3828 /* CANT_RESIST_MUST_RESIST */
+  ++ ~[PC] Take me.~ + a4143 /* FRONT_TO_ARAN_PULSE */
+  ++ ~[PC] (Rake your fingernails across his chest.)~ + a3835 /* PC_RAKES_CHEST */
+  ++ ~[PC] (Pull away from him, battling his hands, then move closer and clinging onto him until he calms and focuses everything on just kissing you.)~ + a4012 /* KISSING_HOLDING_TWO */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3967 /* FIGHT_START */
+END
+
+IF ~~ a3835 /* PC_RAKES_CHEST */
+  SAY ~[ARAN] Bane! (His hands grab at your wrists, crushing tight.)~
+  = ~[ARAN] I don't find pain a blighted aphrodesiac. Now, if I were a different sort o' man, I'll just lever your arms right heavy, an' there be no place for your gods-kissed hips to go but down... an' if you look down, there be only one result o' that possible right now. If you didn't want to be speared right solid, used like a Calimshan pleasure slave, you would have naught to say in th' matter.~
+  ++ ~[PC] I'm sorry. I... I got carried away. Make love to me?~ + a3999 /* PC_ON_TOP_TWO */
+  ++ ~[PC] (Catch one of his palms in both your hands, and gently kiss it.)~ + a3999 /* PC_ON_TOP_TWO */
+  ++ ~[PC] You are too weak. A stronger man would not have talked... he would have forced me.~ + a4063 /* ARAN_REFUSES */
+  ++ ~[PC] No. I don't want this. I want to dominate you, contol you. I want to use you, not have you use me.~ + a4063 /* ARAN_REFUSES */
+  ++ ~[PC] Do it.~ + a4063 /* ARAN_REFUSES */
+  ++ ~[PC] (Struggle against his hands, seeking to drive yourself onto him.)~ + a4063 /* ARAN_REFUSES */
+  ++ ~[PC] (Struggle against his hands, seeking to push yourself away.)~ + a4063 /* ARAN_REFUSES */
+  ++ ~[PC] (Stand up suddenly, breaking free... and walk away.)~ EXIT
+END
+
+IF ~~ a3845 /* PC_ON_BACK_ONE */
+  SAY ~[ARAN] Now I have you, I do... well, not quite yet, but in just a second, eh?~
+  IF ~RandomNum(5,5)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(5,4)~ THEN GOTO a4001 /* ARAN_ON_TOP_ONE */
+  IF ~RandomNum(5,3)~ THEN GOTO a4002 /* ARAN_ON_TOP_TWO */
+  IF ~RandomNum(5,2)~ THEN GOTO a4003 /* ARAN_ON_TOP_THREE */
+  IF ~RandomNum(5,1)~ THEN GOTO a4004 /* ARAN_ON_TOP_FOUR */
+END
+
+IF ~~ a3846 /* PC_ON_BACK_TWO */
+  SAY ~[ARAN] (He draws his breath in sharply, moving sightly.)~
+  IF ~RandomNum(5,5)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(5,4)~ THEN GOTO a4001 /* ARAN_ON_TOP_ONE */
+  IF ~RandomNum(5,3)~ THEN GOTO a4002 /* ARAN_ON_TOP_TWO */
+  IF ~RandomNum(5,2)~ THEN GOTO a4003 /* ARAN_ON_TOP_THREE */
+  IF ~RandomNum(5,1)~ THEN GOTO a4004 /* ARAN_ON_TOP_FOUR */
+END
+
+IF ~~ a3999 /* PC_ON_TOP_TWO */
+  SAY ~[ARAN] Now, that be tellin' me you want a fair sight more than just a few kisses an' touches, it do.~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. I think we should experiment. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Pull the barriers away between you, fingers tangling with his in your mutual haste to join. Give way to the madness and open yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Throw yourself at him, breathless and wanton, crying out as your defenses are breached.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] I never was much for lots of words. But you keep talking if you must. I'm busy enjoying the sight of you... ah...  filling me.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4000 /* PC_ON_TOP_THREE */
+  SAY ~[ARAN] (His answer is a growl, his body seeking to merge with yours.)~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4166 /* PC_ON_TOP_FOUR */
+  SAY ~[ARAN] I be a might goal oriented, now. I do be thinkin' my goal presently be to let you ride your pleasure out on me, eh?~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] I think that is an admirable goal. Just be careful not to move too much... I am being stretched a bit...~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3984 /* BACK_TO_ARAN_TALK_PUSH */
+  SAY ~[ARAN] Now, I be in a position to do some serious lovemakin'. If I just move this here, an' mayhap push a little...~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a3982 /* BACK_TO_ARAN_ACTION_POSSIBLE_PIN */
+  SAY ~[ARAN] (His sigh gusts past your ear as his hand presses firmly against your navel. His hand is not the only thing pressing firmly, and if you move even a little, you might find the hardness teasing your intimacy has pinned you...)~
+  + ~RandomNum(5,1)~ + ~[PC] I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Move against him, letting his hardness fill you completely, gentle motions building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a3983 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
+  SAY ~[ARAN] (His hand gently strokes along your side, outlining the shape of your breast as it passes up towards your lips.)~
+  ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his length into your most intimate place, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Move his hand to his hardness. Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. I think I put you in just the right place. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving onto him and against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3985 /* BACK_TO_ARAN_ACTION_HAND_INTIMATE */
+  SAY ~[ARAN] (His hand gently strokes along your side, dropping to cup your most intimate of places. His fingers find their way just within your petals, stroking and teasing.)~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a4149 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4147 /* FRONT_TO_ARAN_EXPLORE */
+  SAY ~[ARAN] (His gaze follows the countours of your body, fingertips seeking, exploring. He moves closer to you, his hardness exposed, seeking your warmth...)~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4148 /* FRONT_TO_ARAN_FINGERS */
+  SAY ~[ARAN] Th' feel o' you, th' scent o' you... gods, I want...~
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his fingers playing about you, in you, rocking steadily against him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ +  a4245  /* WATCH_ME_BE_HAPPY */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advancing fingers.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4245  /* WATCH_ME_BE_HAPPY */
+  ++ ~[PC] I think you should replace those fingers with something else.~ + a4143 /* FRONT_TO_ARAN_PULSE */
+END
+
+IF ~~ a4245  /* WATCH_ME_BE_HAPPY */
+  SAY ~[ARAN] His eyes light with desire, his breath hot on your body as he responds to your pleasure.)~
+  IF ~~ THEN GOTO a4148 /* FRONT_TO_ARAN_FINGERS */
+END
+
+IF ~~ a4143 /* FRONT_TO_ARAN_PULSE */
+  SAY ~[ARAN] (There is a moment of hesitation as you study each other's reactions, eyes widening and eyelashes fluttering, breath in random intake, heads thrown back against the feel of him slowly entering you.)~
+  IF ~~ THEN GOTO a4151 /* TOP_END_RELEASE */
+END
+
+IF ~~ a4152 /* BACK_TO_ARAN_GUIDE */
+  SAY ~[ARAN] (His wordless groan fills your senses as his hands smooth upwards along your backbone, matching his progress within you. They caress and smooth, even as he finds his rhythm, pushing you gently forward again and again.)~
+  IF ~~ THEN GOTO a4151 /* TOP_END_RELEASE */
+END
+
+IF ~~ a3981 /* FRONT_TO_ARAN1 */
+  SAY ~[ARAN] (His gentle motion forward pauses as he looks deeply into your eyes... and then he rolls you in his arms, catching both wrists as he towers above you.)~
+  IF ~~ THEN GOTO a3845 /* PC_ON_BACK_ONE */
+END
+// LAST = a4245, next a4246
+
+IF ~~ a3980 /* FRONT_TO_ARAN2 */
+  SAY ~[ARAN] (His gentle motion forward stops, then starts, and his eyes widen at the sight of the tip of his manhood pressing close to you. He plays with your lips gently, fingers at your mouth, and something decidedly harder at your other lips.)~
+  ++ ~[PC] (You lift one leg up, resting it on top of his hip, letting the play continue.)~ + a3979 /* FRONT_TO_ARAN3 */
+  ++ ~[PC] (You roll onto your back, gazing steadily at him, daring him to make the next move.)~ + a3845 /* PC_ON_BACK_ONE */
+  ++ ~[PC] (You move quickly onto him, wrapping one leg around him and striving after your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4151 /* TOP_END_RELEASE */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3979 /* FRONT_TO_ARAN3 */
+  SAY ~[ARAN] This be teasin' me somethin' fierce. An' judgin' by your reaction, neither one o' us can stand much more o' this.~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (You look to where your bodies are joined, savoring his slow but steady invasion.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Oh. Faster. I can feel you tensing...~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3978 /* FRONT_TO_ARAN4 */
+  SAY ~[ARAN] (His kiss is lingering, fierce.) I think I'd best stop talkin', an' let my body make th' communicatin'.~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3977 /* FRONT_TO_ARAN5 */
+  SAY ~[ARAN] (His kiss is lingering, fierce.) I think I'd best stop talkin', an' let my body make th' communicatin'.~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(6,6)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4232 /* ANYWAYYOULIKEIT_3783 */
+  + ~RandomNum(6,5)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4234 /* ANYWAYYOULIKEIT_3785 */
+  + ~RandomNum(6,4)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4235 /* ANYWAYYOULIKEIT_3786 */
+  + ~RandomNum(6,3)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4236 /* ANYWAYYOULIKEIT_3787 */
+  + ~RandomNum(6,2)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4237 /* ANYWAYYOULIKEIT_3788 */
+  + ~RandomNum(6,1)~ + ~[PC] Aran... tell me what you want. What do you want to do with me?~ + a4238 /* ANYWAYYOULIKEIT_3789 */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a4243 /* SECOND_GUESS */
+END
+
+IF ~~ a3976 /* FRONT_TO_ARAN6 */
+  SAY ~[ARAN] I want you. All o' you. Now.~
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4001 /* ARAN_ON_TOP_ONE */
+  SAY ~[ARAN] I do love it when your ankles be tucked behind my back like that. I think I needs be inside o' you, judgin' by th' way your heels keep pressin' at me.~
+  ++ ~[PC] Stop... talking... and... MOVE!~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4165 /* NO_TALK_JUST_THRUST */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Rock steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4165 /* NO_TALK_JUST_THRUST */
+  SAY ~[ARAN] (His answer is a sharp drive, almost savage in intensity. He steadies himself, watching your face as he absorbs the feeling of your bodies moving together in close rhythm.)~
+  IF ~RandomNum(4,4)~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+  IF ~RandomNum(4,3)~ THEN GOTO a4151 /* TOP_END_RELEASE */
+  IF ~RandomNum(4,2)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(4,1)~ THEN GOTO a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+END
+
+IF ~~ a4002 /* ARAN_ON_TOP_TWO */
+  SAY ~[ARAN] (Slowly, gently, he presses into your depths, resting only when your eyes tell him enough. Just as slowly, he withdraws, watching your every reaction.)~
+  IF ~RandomNum(4,4)~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+  IF ~RandomNum(4,3)~ THEN GOTO a4151 /* TOP_END_RELEASE */
+  IF ~RandomNum(4,2)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(4,1)~ THEN GOTO a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+END
+
+IF ~~ a4003 /* ARAN_ON_TOP_THREE */
+  SAY ~[ARAN] (His rough breath and scent fills your senses as he enters you.)~
+  IF ~RandomNum(4,4)~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+  IF ~RandomNum(4,3)~ THEN GOTO a4151 /* TOP_END_RELEASE */
+  IF ~RandomNum(4,2)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(4,1)~ THEN GOTO a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+END
+
+IF ~~ a4004 /* ARAN_ON_TOP_FOUR */
+  SAY ~[ARAN] (His breath whispers warmth and lust at the base of your throat as he moves between your thighs, by turns gentle and savage.)~
+  IF ~RandomNum(4,4)~ THEN GOTO a3837 /* ENDGAME_OF_TEASING */
+  IF ~RandomNum(4,3)~ THEN GOTO a4151 /* TOP_END_RELEASE */
+  IF ~RandomNum(4,2)~ THEN GOTO a4144 /* ROM_FINAL_TWO */
+  IF ~RandomNum(4,1)~ THEN GOTO a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+END
+
+/* static endings */
+/* Having trouble with dictating PC actions; valid feedback reminded me that less control of PC is a darned good thing. But at some point, to write a scene, there has to be some "taking over" of PC if we are going to give her a story that makes sense. So, some 'scripted' byplays, only available when a PC specifically turns over control to Aran. */
+IF ~~ a3955 /* SEX_SCENE_ONE */
+  SAY ~[ARAN] (His hands are rough hewn but gentle as they lay you down. What little stands between you is gently removed, your nudity flowering to his sight. His breath is warm as he kisses here, there, everywhere... a gentle play in the garden that is your body.)~
+  = ~[ARAN] (His body is lean and muscular as he towers above you, the taut muscles of his abdomen flexing as he positions himself. The long black curling tail of his dragon tattoo draws an arrow to where you both meet, his manhood just barely kissing your most intimate charms.)~
+  = ~[ARAN] (His eyes are pools of desire as he fills you, his lovemaking a sonnet to you.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",1) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3956 /* SEX_SCENE_TWO */
+  SAY ~[ARAN] (Hands here, an elbow there, and an awkward moment as cloth catches and tugs... You lie together, with no barriers to the sight or sound of each other. With fierce ardor, he takes you, his body moving with yours. This is no random act of lust - he actively seeks your pleasure. Like a hunter stalking his quarry, he hunts by feel, teasing and withholding until you demand your release.)~
+  = ~[ARAN] (Then, with a laughing, exulting grin, he claims the hunt. His eyes widen in surprise as you turn from hunted to hunter, moving quickly on him and catching him off guard. His startled expression tightens to the wonder of release, and he falls forward onto you with crushing weight for a moment before he can recover himself and roll you in his arms. There can be no doubt that neither of you will move far for several hours.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",2) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3957 /* SEX_SCENE_THREE */
+  SAY ~[ARAN] (There is gentle tugging and the hushed whisper of cloth and voice as you seek to reveal yourselves to each other fully. With slow intensity, he enters you, body straining to move gently. There is deep tenderness in his lovemaking as you move together, and a pace so slow that his body trembles as he rises and falls above you.)~
+  = ~[ARAN] (Eventually his passion claims victims of desire, and he rests, hot and spent, holding you firmly within his sheltering arms.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",3) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3958 /* SEX_SCENE_FOUR */
+  SAY ~[ARAN] (The warmth of his lips, touching you in places hidden from strangers. The rough tickle of his cheek, scraping soft skin. The acrid smell of sweat, somehow sweet; the rumble of his laughter when you move against him. The sudden silence as he enters you.)~
+  = ~[ARAN] (The delicious pressure where none ordinarily finds itself. The beating of hearts, the relentless pounding rhythm, the sudden catch of breath... his eyes, intense, demanding, beseeching...)~
+  = ~[ARAN] (Release.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",4) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3959 /* SEX_SCENE_FIVE */
+  SAY ~[ARAN] (His desire is immense, and anything between you falls to his advances like wheat to a scythe. With a gutteral roar, he claims you. You feel your defenses breached as he invades your body with sharp, fierce thrusts.)~
+  = ~[ARAN] (No veneer of civilization can mask his raw lust as he towers above you and lifts you, your arms tight around his neck as your body brushes against him again and again.)~
+  = ~[ARAN] (His ardor tempers slightly as he waits for you, delaying his release for as long as he can, until at last he surrenders to the sensations. With a satisfied grumble he tumbles to lie beside you, his head falling on your navel; his hair spilling across your chest. It is a heavy weight, but warm.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",5) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3960 /* SEX_SCENE_SIX */
+  SAY ~[ARAN] (He resists your hands at first, allowing you little access as his hands roam wherever they please. His laughter is gentle and playful until your frustration escalates into a solid spank along his flank.)~
+  = ~[ARAN] (With a startled oath, he rolls you quickly over his knees, his return spank more of a gentle tap. Before long you are both mock fighting, wrestling for position.)~
+  = ~[ARAN] (When things line up, it is almost by accident that you both claim each other, breathless and startling and playful. Perhaps not the most earth-shattering of passions, but something much more intimate, and gratifying.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",6) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3961 /* SEX_SCENE_SEVEN */
+  SAY ~[ARAN] (His breath is hot on your skin as he rolls you onto your front. His hands knead, massage your lower back, then your shoulders as he works carefully to show his desire through his palms. Another presence soon makes itself felt, lying along your thigh, gently pressing and retreating, teasing...)~
+  = ~[ARAN] (And then he thrusts into you. No words, just the tickle of his tongue as it runs along your neck, your spine. His hardness retreats, advances, retreats within you. His body rises over your back and he arcs into you, massaging hands forgotten as another form of pleasuring takes its place.)~
+  = ~[ARAN] (When at last he stiffens and holds himself still within you, his sigh of release is a warm tickle in your ear.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",7) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a3962 /* SEX_SCENE_EIGHT */
+  SAY ~[ARAN] (The passions of well versed lovers fill your senses as you explore each other and push the boundaries of your lovemaking.)~
+  = ~[ARAN] (By turns shy, adventurous, and even playful, the map of your lover's body is worn into your senses the way Candlekeep's innermost secrets live within your memories, and when he rest with you his arms, his smile is tired but satisfied.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",0) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+/* climax and climax/ending combinations */
+
+IF ~~ a3995 /* ROM_PULSE_DEEP_FACE */
+  SAY ~[ARAN] (His arms lock behind your neck as he manouvers you, his thrusts pinning you to him. Their savagery increases as he rides his desire, his face curiously grim as he locks his gaze to yours, eye to eye. You can see them unfocus slightly, and then regain their lock on yours just as you feel his hips press harder against you... and you can feel a warmth leaping within you.)~
+  ++ ~[PC] Again.~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] (Gently cuddle up to him, resting comfortably, feeling the heaving of his chest and his gradually slowing breathing.)~ + a4155 /* DIE_HAPPY_NOW */
+  ++ ~[PC] (Disengage yourself quickly and leave without a word.)~ EXIT
+  ++ ~[PC] (Begin moving, pelvis flexing as you play with him deep inside you, gaining your momentum.)~ + a4154 /* SECOND_TIMES_THE_CHARM */
+  ++ ~[PC] Now that was... exciting. Perhaps someday we should try this again.~ + a4155 /* DIE_HAPPY_NOW */
+  ++ ~[PC] Too little endurance. You should be able to outlast me two or three to one. If there is a "next time", you should try for a better result.~ + a3910 /* DEATH_OF_ME */
+END
+
+IF ~~ a4131 /* ROM_PULSE_DEEP_ABOVE_ONE */
+  SAY ~[ARAN] (He rises to his knees, his abdominal muscles a rock wall as he supports you even as he drives forward into you. His forearms are strong as they lift you, holding you tightly around your waist, his movement within you unceasing. His lips find your breasts, then your neck, and the quite suddenly his face is pulling away from yours with a curious strain spreading across it.)~
+  ++ ~[PC] Oh. I feel it. I feel you. Gods, you are so strong...~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Give in to your pleasure, letting the waves crash around you and through you as you find your release.)~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Stretch back over his arms, back arching in pleasure as you feel him spending himself within you.)~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Shower him with a frenzy of kisses, urging him on, demanding his attention as he fills you completely.)~ +  a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] Hey, be careful... this is...~ +  a4144 /* ROM_FINAL_TWO */
+END
+
+IF ~~ a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
+  SAY ~[ARAN] (His hands find purchase on the surface beneath you. His forearms are strong and muscular under each of your armpits and pressing along the sides of your breasts, holding you close as he rises above you. You can look down and see the movement you can feels as his smooth chest barely brushes your nipples, and his manhood thrusts boldly into you.)~
+  ++ ~[PC] Oh. I feel it. That is... so warm. Faster!~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Give in to your pleasure, letting the waves crash around you and through you as you find your release.)~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Lock your arms around his neck, wordlessly begging for a kiss as he quests inside you.)~ + a4144 /* ROM_FINAL_TWO */
+  ++ ~[PC] (Stretch back against him, opening your thighs as far as you are able, pressing your cheek to his chest.)~ +  a4144 /* ROM_FINAL_TWO */
+END
+
+IF ~~ a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
+  SAY ~[ARAN] (His fingers tease at you, roughening in their play as he shudders at your touch, growing bolder on you and in you. His kisses are frenzied for a moment, but then he pulls away slightly, his body as taught as a bowstring. The hardness that fills your hand jumps once, twice, again, again... his groan of release a deep rumble that seems to shake his entire body.)~
+  ++ ~[PC] Oh. I feel it. That is... so warm.~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] (Disengage yourself quickly and leave without a word.)~ EXIT
+  ++ ~[PC] (Give in to your own pleasure, letting the waves crash around you and through you as you find your release.)~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] (Lean forward and gently kiss his forehead, then rest against him, his flushed chest a comfortable pillow.)~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] Well that is a very nice way to pass a little time. I think I have found a very enjoyable way to exercise.~ +  a4156 /* ROM_FINAL_ONE */
+END
+
+IF ~~ a4129 /* ROM_PULSE_DEEP_LIFT can be from intercourse or from heavy petting so set intimacy level elsewhere */
+  SAY ~[ARAN] (His hands run wild, caressing your waist, your sides, your breasts... suddenly they grip behind your head and he strains upwards underneath you, mouth frozen in a silent grimace of pleasure.)~
+  ++ ~[PC] Oh. I feel it. That is... so warm.~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] (Disengage yourself quickly and leave without a word.)~ EXIT
+  ++ ~[PC] (Give in to your pleasure, letting the waves crash around you and through you as you find your release.)~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] (Lean forward and gently kiss his forehead, then rest against him, his flushed chest a comfortable bed.)~ + a4156 /* ROM_FINAL_ONE */
+  ++ ~[PC] Well, that is a very nice way to pass a little time. I think I have found a very enjoyable way to exercise.~ + a4156 /* ROM_FINAL_ONE */
+END
+
+IF ~~ a4088 /* ROM_PULSE_DEEP_GRUNT */
+  SAY ~[ARAN] (His hands grip your waist with tightness almost cruel in its intensity. You are held fast, his desire unleashed, as you feel the warmth of his offering to you begin to spread from where you are both joined.)~
+  ++ ~[PC] Again.~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] (Gently cuddle up to him, resting comfortably, feeling the heaving of his chest and his gradually slowing breathing.)~ + a4155 /* DIE_HAPPY_NOW */
+  ++ ~[PC] (Get up quickly and leave without a word.)~ EXIT
+  ++ ~[PC] (Begin moving again, pelvis flexing as you play with him deep inside you, gaining your momentum.)~ + a4154 /* SECOND_TIMES_THE_CHARM */
+  ++ ~[PC] Now that was... exciting. Perhaps someday we should try this again.~ + a4155 /* DIE_HAPPY_NOW */
+  ++ ~[PC] Too little endurance. You should be able to outlast me two or three to one. If there is a "next time", you should try for a better result.~ + a3910 /* DEATH_OF_ME */
+END
+
+IF ~~ a4144 /* ROM_FINAL_TWO */
+  SAY ~[ARAN] (His climax is sudden, a quivering thrust that gives way becomes a series of small ones as he groans above you. The heaviness of his weight is just as surprising, but he rolls quickly to his side, sheltering you in his arms.)~
+  IF ~~ THEN GOTO a4157 /* ROM_FINAL_EXITING */
+END
+
+IF ~~ a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  SAY ~[ARAN] (His chest rises and falls, moving apart from you as his arms lock around your neck, gradually drawing you into a tighter embrace. His lips catch and play at your breasts, seeking to soften their movement. His thrusts move ever fiercer, until he freezes, motionless, and you feel the  pulse of his pleasure deep within you.)~
+  = ~[ARAN] (At last you both are spent, and you drift together in warm exhaustion.)~
+END
+
+IF ~~ a4158 /* LADIES_FIRST_PLEASE */
+  SAY ~[ARAN] Oh no, m'lady, I won't. Not before you do. I can... outlast... ~
+  = ~[ARAN] (His eyes widen as he watches yo, seeking to delay until he feels your pleasure peak.)~
+  = ~[ARAN] (His pace quickens, as does his breathing. He drives deep within you, suddenly stilling all motion, all time. The heat of his release fills you, his arms bands of iron holding you close as he shudders his delight.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4154 /* SECOND_TIMES_THE_CHARM */
+  SAY ~[ARAN] Dear gods, <CHARNAME>, I'll give it a go, but it might take a bit o' time. I be no story character, you know, able to perform again instantlike.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3837 /* ENDGAME_OF_TEASING */
+  SAY ~[ARAN] (There are no words, no gestures as he thrusts forward into you, then receeds until your bodies are barely touching, then thrusts again in delicious slowness. Tumbling together in the throes of lust and desire, you dominate and are dominated, are spent and filled and spent again. For one night, nothing exists but the game, hunter and hunted moving in the age old dance.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3830 /* PC_FACE_DOWN_FINISH */
+  SAY ~[ARAN] (A pause, tension building ...and then your face is buried against the back of your hands, your forearms protecting your breasts from the surface beneath you as his savage push forward forces you down. His hands slam to either side of yours, his chest pressing down hard on your back. You can feel it, the heat and strength barely penetrating at your threshold, but there is little time to contemplate. He thrusts within you, filling you and covering you completely.)~
+  = ~[ARAN] (There are no words, no gestures as he takes you like a stallion mounting a mare in heat, posessing you. Tumbling together in the throes of lust, you dominate and are dominated, are spent and filled. For a time, nothing exists but your desires and your surrenders, each more intense than the last.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4133 /* END_GAME_TOP */
+  SAY ~[ARAN] (There are no words, no gestures as you move over him, on him. Iron and velvet, the sweat and pulse of desire join you as you move together, apart, together again, until your heels are red, your thighs burn and his resolve crumbles. His body arcs rigid as he clasps both of your hands tightly above him, palm to palm, straining wordlessly upwards within you. A sudden heat, a tickle growing stronger... a wave. Completion.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4243 /* SECOND_GUESS */
+  SAY ~[ARAN] <CHARNAME>, hold on. I...~
+  = ~[ARAN] This be about th' most un-manly thing I could be sayin', but I just needs be askin'. Do this be for fun, or for serious? I think you inspire me wi' a bit more than just lust.~
+  ++ ~[PC] Like what?~ DO ~SetGlobal("c-aransecondguess","GLOBAL",1)~ + a4242 /* OH_FORGET_IT */
+  ++ ~[PC] Just fun. Is that a problem?~ + a4242 /* OH_FORGET_IT */
+  ++ ~[PC] You had to spoil this by talking. We were having so much fun.~ + a4242 /* OH_FORGET_IT */
+  ++ ~[PC] (Disentangle yourself, get up, and walk away.)~ EXIT
+  ++ ~[PC] (Silence him by covering his mouth with kisses, driving yourself onto his manhood with increasing speed and force.)~ + a4151 /* TOP_END_RELEASE */
+END
+
+IF ~~ a4242 /* OH_FORGET_IT */
+  SAY ~[ARAN] Forget I spoke up, eh? I must be gods-blighted insane to start thinkin' when I have all o' you right under my thumb. Well, not so much thumb, as...~
+  ++ ~[PC] Stop... talking... and... MOVE!~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4165 /* NO_TALK_JUST_THRUST */
+  ++ ~[PC] Aran... just kisses. I only want kisses. We have to slow down.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  ++ ~[PC] There are lots of ways to give pleasure, you know. (Roll quickly so that your lips are caressing his manhood, his your intimacy.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,1)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3963 /* SOLID_STOP1 */
+  + ~RandomNum(5,2)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3964 /* SOLID_STOP2 */
+  + ~RandomNum(5,3)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
+  + ~RandomNum(5,4)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  + ~RandomNum(5,5)~ + ~[PC] I... I have changed my mind. (Get up and cover yourself, pushing him away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
+  ++ ~[PC] (Rock steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4146 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a4088 /* ROM_PULSE_DEEP_GRUNT */
+END
+
+IF ~~ a4151 /* TOP_END_RELEASE */
+  SAY ~[ARAN] (Straining, shuddering, passion... a heat, building until it consumes... an inarticulate cry to the gods. He rests, pulling you close to his chest, still joined and still possessed.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4138 /* ARAN_RELEASE */
+  SAY ~[ARAN] (Your efforts are rewarded with his climax as he roars out his passion, straining against you. His hands tangle and pull at your shoulders, your hair, caress your cheeks, in constant movement as he whispers his gratitude to the gods over and over again. Your name mingles with those of Sune, Sharess, and Hanali Celanil in his whispers, until at last he relaxes, idly caressing your hair.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3888 /* SLEEP_NOW_INN_4_EXIT */
+  SAY ~[ARAN] I do believe a lady should get what she asks, eh? I do think pickin' you up in my arms an' carryin' you to th' bed be just th' ticket.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a4153 /* ARAN_MOON_SLEEP_4_EXIT */
+  SAY ~[ARAN] (His climax is a wordless scream of intensity, his pulse deep within you a visceral cry of desire. His weight crushes you for a moment as he loses control. As for your pleasure... only you know what his raw passion has wrought for you, and a lady never discusses such things.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+/* Multipurpose exits - contextually malleable */
+
+IF ~~ a4145 /* QUICK_END_FADEOUT */
+  SAY ~[ARAN] Aye, now...  I can do that. There be a good bit o' time here, an' I intend to please you as much as you be allowin', eh?~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4155 /* DIE_HAPPY_NOW */
+  SAY ~[ARAN] Whatever brought that on, I thank th' gods it just happened. I can die happy right now.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3910 /* DEATH_OF_ME */
+  SAY ~[ARAN] <CHARNAME>,  you will be th' death o' me, you will. But I think I will die right happy.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4156 /* ROM_FINAL_ONE */
+  SAY ~[ARAN] (You both drift off into reverie for a time, sharing the moment.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4157 /* ROM_FINAL_EXITING */
+  SAY ~[ARAN] (There is only the sound of your breathing as you lie together, entangled, sated, and relaxed.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3911 /* ARAN_CUDDLE_ON_CHEST */
+  SAY ~[ARAN] (You lie together, curled up in a small oasis of warmth and satiation, his chest rising and falling under your cheek, the sound of his heart beating steadily under your ear.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4109 /* HANDHOLDING_EXIT */
+  SAY ~[ARAN] (The cares of adventuring are held at bay for a time as you sit close together, holding each other's hands.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4112 /* KISSING_END_STATE */
+  SAY ~[ARAN] (The cares of adventuring are held at bay for a time as your lips touch again and again, whispering to each other of warmth and desire.)~
+  IF ~~ THEN EXIT
+END
+
+/* exits: mutual fun but not necessarily intercourse */
+
+IF ~~ a4130 /* CELANIL_SAVE_ME */
+  SAY ~[ARAN] Celanil save me. I be as hard as a rock, an' I want to drive deep inside o' you an' spend everythin' I have. But if you be sayin' no, well... no means no. It might blighted kill me to stop, but there it be.~
+  = ~[ARAN] By th' gods, I don't know what be wrong wi' me. I should be stormin' off. But I guess th' warmth o' your cheek on my chest be salve for most pains inflicted, eh?~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
+END
+
+IF ~~ a3903 /* MAKEOUT_IN_SHADOWS */
+  SAY ~[ARAN] (Words melt away as you both settle into the shadows, kissing, fingers intertwined.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a3873 /* MAKEOUT_INN_EXIT */
+  SAY ~[ARAN] (Words melt away as you both settle in a corner of the inn, kissing your way through the evening.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ EXIT
+END
+
+IF ~~ a3885 /* SLEEP_NOW_INN_1_EXIT */
+  SAY ~[ARAN] I do believe a lady should get what she asks, eh? Your lips are feast enough for me, that be Torm's Truth.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a3886 /* SLEEP_NOW_INN_2_EXIT */
+  SAY ~[ARAN] I do believe a lady should get what she asks, eh? Mayhap a little kissin', mayhap some wanderin' hands, an' we will see exactly what catches your fancy.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a3887 /* SLEEP_NOW_INN_3_EXIT */
+  SAY ~[ARAN] I do believe a lady should get what she asks, eh? I do believe we can play a bit... HEY! Wait for a lad to get in th' door, eh?~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a4159 /* ARAN_MOON_SLEEP_2_EXIT */
+  SAY ~[ARAN] (Hands reach and fingers tangle. Palms touch, then retreat. A stray kiss finds its way to new territory, and the excitement it evokes drives kissing to a frenzy. There are few words, but touches shout desire.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ EXIT
+END
+
+IF ~~ a4160 /* ARAN_MOON_SLEEP_3_EXIT */
+  SAY ~[ARAN] (The sounds of his passion are quiet, strained, and intense as he climaxes, then seeks to evoke yours. For a time, the kisses continue, slowly ebbing in strength until at last you are resting together in the starlight.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
+END
+
+IF ~~ a4137 /* ARAN_MUTUAL_LICK */
+  SAY ~[ARAN] (His answer is swiftly given as he rolls with you. His lips seek your petals, his tongue licking at the edges and then the center of your desire.)~
+  = ~[ARAN] (His body and yours seek each other with passion as you tighten against each other, and when release comes his groan is muffled by your thighs, and yours by his manhood.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4161 /* ARAN_MOON_SLEEP_1_EXIT */
+  SAY ~[ARAN] (Kisses, lips barely touching. Cheeks, blushed. Strong scents, murmured whispers, and the time flies past with excitement and unfulfilled desire.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a3948 /* ARAN_MOON_MAKEOUT_EXIT */
+  SAY ~[ARAN] (Words melt away as you both settle into the shadows cast by the moon and stars, kissing and holding each other in close embrace.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ EXIT
+END
+
+IF ~~ a4162 /* ARAN_MOON_WALK_EXIT */
+  SAY ~[ARAN] Now, a walk holdin' your hand be just right, I think. Here, I'll be takin' your arm, there, an' we can see th' sights all shadowed an' beautiful.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+END
+
+/* exits: friendly, unfriendly, or just stop stop the action */
+
+IF ~~ a4083 /* ARAN_SWEAR_ONE */
+  SAY ~[ARAN] Sune's... Shar's... Oh bloody hell. I needs be findin' a bucket o' cold water, right quick.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4163 /* NOPE_NOT_WANTED */
+  SAY ~[ARAN] This be naught o' what I want. I want a partner, not to possess a toy, nor be one in return. An' I want pleasure, not pain an' submission.~
+  = ~[ARAN] Look, mayhap I be th' wrong lad for you after all. I can match you want for need, need for want, but when it comes to this, I just blighted well can't do it, even in play. I be right sorry, but that be th' answer I have.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4164 /* ROM_ARAN_HAD_IT */
+  SAY ~[ARAN] If she would do naught in th' way o' mind games an' manipulation, tryin' to hurt me an' tease me, yes.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4052 /* SUNE_SHUTDOWN_EXIT */
+  SAY ~[ARAN] Sune Herself would be envious o' your beauty. Dear Gods, I want you... but I know better than to press th' issue, eh? Mayhap I'd best be gettin' myself together an' leavin'.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4072 /* ROM_FRIENDS_EXIT_ONE */
+  SAY ~[ARAN] I understand. I don't rightly like it, but I understand.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3900 /* JUST_FRIENDS_EXIT */
+  SAY ~[ARAN] I do understand what you be sayin'. Right now, right here, there be a few too many chances where privacy might be broken, an' mayhap even a good friendship. I want you, but not at that kind o' cost.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3851 /* CUDDLING_END */
+  SAY ~[ARAN] (You curl up together for a time, a small fortress against the cares of the world.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3896 /* WALK_HANDHOLDING_EXIT */
+  SAY ~[ARAN] Aye, now that sounds right nice, it does. Come on, mayhap we can stir up a little trouble elsewhere, an' blame it on someone else.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3892 /* FEMALE_LEAVES */
+  SAY ~[ARAN] Well, naught in th' way o' Sune's Blessin' nor Tymora's Coin fell my way, it looks like. I thought I might o' had a chance, there.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3963 /* SOLID_STOP1 */
+  SAY ~[ARAN] <CHARNAME>, wait... I want... hells. Fine. I'll blighted well go off on my own.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3964 /* SOLID_STOP2 */
+  SAY ~[ARAN] Sharess' Salacious Scents, I have naught in th' way o' understandin' all this. I thought you wanted to... ~
+  = ~[ARAN] I don't rightly understand you. I thought I knew what women might be partial to, but you seem to have a whole different set o' rules.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3965 /* SOLID_STOP3 */
+  SAY ~[ARAN] You would stop us right now, just when things be gettin'... look. My eyes an' ears be tellin' me different things about what you want an' need from me. From th' two o' us. Mayhap I be wrong. But by Meilikki's Bow, someone around here better start clearin' up these misunderstandin's, or I am likely to misunderstand in a way that hurts one or both o' us right harsh.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4077 /* SOLID_STOP4 */
+  SAY ~[ARAN] Gods alive, I want you. An' you might not say it out straight, but it seems to me you want me. I be man enough to walk away, but it takes two to get here. If we be havin' this conversation, then some seriously powerful signals have gotten crossed right solid.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  SAY ~[ARAN] Aye, now... it be hard for me to stop, but I'd be naught of a gentleman if I didn't do as you ask. Perhaps this be somethin' for another time, another place.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  SAY ~[ARAN] Right. I don't have no way o' tellin' what you want, save th' words you say. So I be a mite confused. But hells, you say go, I say "yes ma'am".~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3884 /* SLEEP_NOW_INN_0_EXIT */
+  SAY ~[ARAN] I do believe a lady should get what she asks, eh? Your lips were feast enough for me, that be Torm's Truth. You have a good rest, an' pleasant dreams. I know what dreams I'll be havin', by Sune's Lips.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a4071 /* ROM_FRIENDS_EXIT_TWO */
+  SAY ~[ARAN] Well, you call th' shots. But I needs be sayin' somethin' right serious, here. I be fine wi' bein' friends, just so long as you know that I want more. An' by more, I mean I want you.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4070 /* ROM_FRIENDS_EXIT_THREE */
+  SAY ~[ARAN] Sune grant me some patience, or at least some release. Gettin' close to you drives me right crazy, an' gettin' sidelined drives me even crazier. If we are just goin' to be friends, then mayhap you can find me someone who will want me to be more, eh?~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4069 /* ROM_FRIENDS_EXIT_FOUR */
+  SAY ~[ARAN] You done got me confused again. But it be my fault. I keep thinkin' Tymora has flipped Her coin my way, an' you are interested in bein' much more than a friend, benefits or none given. Anyone else, I'd be a right gentleman an' move on, lookin' for a cute young redheaded lass who might flip up her skirts at me, an' make me a right happy man. Problem is, I just can't get you out o' my head.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4068 /* ARAN_HOPE_SPRINGS_ETERNAL */
+  SAY ~[ARAN] Well, now. Hope do spring eternal. I learned long ago that sometimes th' most impossible battles be worth th' fight, an' every once in awhile, it turns out winnable.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4067 /* ARAN_YOU_ARE_WORTH_IT */
+  SAY ~[ARAN] You be worth goin' through anythin' an' everythin'.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4066 /* ARAN_CRAZY_EXIT */
+  SAY ~[ARAN] Cyric's Blighted Balls, shut up, will you? It be bad enough I am stupid enough to turn it down, but torturin' me be just plain mean!~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3939 /* NOW_YOU_ARE_PLAYING_WITH_MY_MIND */
+  SAY ~[ARAN] You done read my mind. But now you be playin' wi' me, an' teasin' me somethin' fierce. I suppose I asked for it, though. Come on, we'd best be gettin' cleared away. I suspect there might be some company comin' in on us soon. Mayhap I might have better luck next time.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3811 /* ARAN_DECIDES_NO */
+  SAY ~[ARAN] That be enough answer for me. I can take a hint, if it be bludgeoned into my forehead wi' a rock. I won't bother you no more doin' this wi' out you tellin' me to.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3869 /* JUST_FRIENDS_INN_EXIT */
+  SAY ~[ARAN] Aye, now I do understand what you be sayin'. Mayhap some lines might not be crossed right now, right here.~
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+END
+
+IF ~~ a3864 /* FEMALE_EXITS */
+  SAY ~[ARAN] Well, that went just peachy. Torm's Hand, I be a right sorry sort o' flirt, watchin' such a woman walk away.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3917 /* ARAN_MOON_FEMALE_EXIT */
+  SAY ~[ARAN] Well, that went just wonderful, eh? Lady Goldheart's Laughter, I be sorry. But at least I had a look at how beautiful you be in th' starlight.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  SAY ~[ARAN] Aye, now. Mayhap some lines are meant to be crossed another night, another way. Starlight be a fine romantic notion, but it ends, an' then daylight means takin' stock an' reapin' consequences.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4065 /* SECOND_FIDDLE */
+  SAY ~[ARAN] That would be right kind o' you, but I think that might wait a bit. Not so fair to th' girl you be findin', after all. I don't see naught in th' way o' findin' anyone who could successfully compete wi' you.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4064 /* ALL_TALK_NO_ACTION */
+  SAY ~[ARAN] No. When I get th' right signals, I act. But somethin' be not quite right here. I think I done pressed too hard, an' told too much. Mayhap I should be on about my business. But if you ever decide to have a bit o' pleasure, I be th' man for th' job. Just ask.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4063 /* ARAN_REFUSES */
+  SAY ~[ARAN] Now, there be a bit o' a problem here. You think strength be causin' pain an' forcin' my will on yours. You see that as th' way to win your respect. Problem is, I don't rightly see things that way. I want someone who can give voice to their pleasure, an' be an equal, not some ~
+  = ~[ARAN] (He pushes apart from you.) If you be lookin' for this sort o' ugliness, then tell me it be over. You won't be gettin' that kind o' thing from me.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3858 /* SOUNDED_LIKE_TEEN_SPIRIT */
+  SAY ~[ARAN] Well, it sure as Sune's Breath sounded like you meant it. I'll be on my way. I am sure you can find some other poor bastard to torment. Good luck to you on that.~
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
+END
+
+IF ~~ a3819 /* UNFULFILLED_TEASED_EXIT */
+  SAY ~[ARAN] First you want me, then you don't want me. I do believe I have fallen under th' spell o' th' most chaotic woman I could possibly meet.~ = ~[ARAN] Fine. I am not rightly happy about this, but I know my bloody place.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a3857 /* AND_THE_HORSE_YOU_RODE_IN_ON_BIATCH */
+  SAY ~[ARAN] Oh, screw you, <CHARNAME>. Find some other poor bastard to act as a blighted seed dispenser. I will stick to doin' my job, and stay th' nine hells away from you for a time.~
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
+END
+
+IF ~~ a3859 /* AT_LEAST_JOB_IS_HONORABLE */
+  SAY ~[ARAN] No, I didn't. You did. An' it be wrong to do so... a prostitute don't toy with a man unless it be part of her job. You seem to want to toy wi' me out o' pure spite an' malice. I have better things to do wi' my time than play mouse to a feral cat.~
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
+END
+
+IF ~~ a3831 /* IN_NINE_HELLS */
+  SAY ~[ARAN] (His exit is twice as fast as his entry, and he slams his fist against the ground as he fumbles with his gear.)~
+  = ~[ARAN] What in th' nine hells be your game? You goad me into rough play, an' then throw me off o' you... what do you be playin' at?~
+  IF ~~ THEN DO ~SetGlobalTimer("c-aranismad","GLOBAL",TWO_DAYS)~ GOTO a3997 /* MAN_OR_FOOL */
+END
+
+IF ~~ a3997 /* MAN_OR_FOOL */
+  SAY ~[ARAN] Man or fool, I don't know which I be. All I know is these mind games o' yours may please you, but they be hell on earth for me. Play nicer, or mayhap I needs be findin' me a nice lass who will be more amenable.~
+  ++ ~[PC] Would you really be satisfied with a silly village girl, ready to bed you and dote upon you, dependent and sycophantic?~ + a4164 /* ROM_ARAN_HAD_IT */
+  ++ ~[PC] You cannot resist me, even if you try.~ + a4163 /* NOPE_NOT_WANTED */
+END
+
+IF ~~ a3866 /* FIGHT_EXIT */  /* attempt to give PC last word - closer to my RL experience, anyways!  This one needs help, though... */
+  SAY ~[ARAN] Why do you treat me like I was naught but a target for weapons practice sometimes? I meant no harm, an' was tryin' to be right friendly.~
+  ++ ~[PC] (Stand up and walk out.)~ DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ + a3864 /* FEMALE_EXITS */
+  ++ ~[PC] For the same reason you act like a spoiled little sex-starved bastard with no self control. It is just who I am.~ DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~  EXIT
+  ++ ~[PC] You keep mixing up the words 'friendly' and 'inappropriate'. I did not ask for all of this. Just leave me alone.~ DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~  EXIT
+  ++ ~[PC] Can't you ever just leave a woman in peace?~ + a3135
+  ++ ~[PC] I... I know you meant well. But your attention scares me. I just wasn't ready for it.~ EXIT
+  ++ ~[PC] I am having a bad day. Try again some other time.~ + a3148
+  ++ ~[PC] I like you, Aran. But there are times an places, and this is neither.~ EXIT
+END
+
+IF ~~ a3814 /* GET_OUT_EXIT */
+  SAY ~[ARAN] Now I feel like a mite bit o' a fool... I... ~
+  IF ~RandomNum(20,1)~ THEN GOTO a3135 /* c-aranshutup2 ~[ARAN] By the Cryin' God's tears, you are in a mood.~ */
+  IF ~RandomNum(20,2)~ THEN GOTO a3139 /* c-aranshutup6 ~[ARAN] Corellon's Bowhand, you have an attitude today.~ */
+  IF ~RandomNum(20,3)~ THEN GOTO a3140 /* c-aranshutup7 ~[ARAN] Shar's Arsehole, shut me down, will ya? Fine.~ */
+  IF ~RandomNum(20,4)~ THEN GOTO a3146 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
+  IF ~RandomNum(20,5)~ THEN GOTO a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
+  IF ~RandomNum(20,6)~ THEN GOTO a3148 /* c-aranshutup15 ~[ARAN] Malar's Sharp Teeth. Shuttin' up an' soldierin'.~ */
+  IF ~RandomNum(20,7)~ THEN GOTO a3150 /* c-aranshutup17 ~[ARAN] Talona's Pestilence - is my breath that bad?~ */
+  IF ~RandomNum(20,8)~ THEN GOTO a3153 /* c-aranshutup20 ~[ARAN] Well, that was colder than Auril's Tits in th' Ten Towns. Shuttin' up.~ */
+  IF ~RandomNum(20,9)~ THEN GOTO a3155 /* c-aranshutup22 ~[ARAN] Bane's Broken Bones, but you are in a mood.~ */
+  IF ~RandomNum(20,10)~ THEN GOTO a3157 /* c-aranshutup24 ~[ARAN] Lathander's Shining Buttocks, I'll just shut my mouth an' keep to myself, then.~ */
+  IF ~RandomNum(20,11)~ THEN GOTO a3166 /* c-aranshutup33 ~[ARAN] Larethian's Sharp Sword, you got a bad case o' attitude, eh?~ */
+  IF ~RandomNum(20,12)~ THEN GOTO a3170 /* c-aranshutup37 ~[ARAN] Avoreen's Bowhand, I'll just be a good little boy an' go play wi' myself, then.~  */
+  IF ~RandomNum(20,13)~ THEN GOTO a3172 /* c-aranshutup39 ~[ARAN] Clanggedin's Hammer. Fine. Be that way.~  */
+  IF ~RandomNum(20,14)~ THEN GOTO a3191 /* c-aranshutup58 ~[ARAN] Umberlee's Dark Depths, That were cold. Fine. No more on this talk, I be guessin'.~  */
+  IF ~RandomNum(20,15)~ THEN GOTO a3194 /* c-aranshutup61 ~[ARAN] Deneir's Sharp Quill, you cut that conversation right short.~  */
+  IF ~RandomNum(20,16)~ THEN GOTO a3196 /* c-aranshutup63 ~[ARAN] Deneir's Indelible Ink. You would think I'd know not to bother you by now. But I be a slow learner, I guess.~  */
+  IF ~RandomNum(20,17)~ THEN GOTO a3197 /* c-aranshutup64 ~[ARAN] Eldath's Sweet Song, I was hopin'... well, never mind.~  */
+  IF ~RandomNum(20,18)~ THEN GOTO a3204 /* c-aranshutup71 ~[ARAN] Hoar's Swift Justice, you shot that down right quick.~  */
+  IF ~RandomNum(20,19)~ THEN GOTO a3205 /* c-aranshutup72 ~[ARAN] The Red Knight's Rump, I think I be makin' a tactical withdrawal. In layman's terms, that be "run away! run away!"~  */
+  IF ~RandomNum(20,20)~ THEN GOTO a3207 /* c-aranshutup74 ~[ARAN] Sharess' Sensual Caress, I was not expectin' to be cut off at th' knees like that.~  */
+END
+
+
+/* END OF ADULT LAND */
+
 /* ToB PID Entries - evaluate to last in order */
 
 IF ~!IsGabber(Player1)~ THEN BEGIN a2693
@@ -2383,6 +6930,18 @@ IF ~IsGabber(Player1)~ THEN BEGIN a1866 /* tob PID */
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) RandomNum(5,3)~ + ~[PC] How come we never fight anymore?~ + a1870
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) RandomNum(5,2)~ + ~[PC] How come we never fight anymore?~ + a1871
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) RandomNum(5,1)~ + ~[PC] How come we never fight anymore?~ + a1872
+  /* PID requests,  PC = Female PID */
+  /* blocking for 'goaded' talk triggered at rest, and var already set - also, no nookie during waking hours in a dungeon. */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4210  /* NOT_RIGHT_HERE_NOW_ONE  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4225  /* NOT_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4212  /* START_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4212  /* START_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a4204  /* AGREE_TO_MEET_ONE  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a4203  /* AGREE_TO_MEET_TWO  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a4202  /* AGREE_TO_MEET_THREE  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a4201  /* AGREE_TO_MEET_FOUR  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3)~ + ~[PC] I have changed my mind about you visiting me the next time we rest. Now is not a good time.~ + a4205  /* WHY_DID_YOU_ASK  */
+  /* logic check, so "goaded" or delay of "goaded' does not get an opportunity to shut it down - the point is Aran actually takes initiative to the 'unspoken' request. */
   /* PID Scribing Scrolls Blocks */
   + ~Global("c-arnscrollwork","GLOBAL",0) Global("c-aranscribe","GLOBAL",0)~ + ~[PC] Can you scribe a scroll for me?~ DO ~SetGlobal("c-arnscrollwork","GLOBAL",1)~ + a3031
   + ~Global("c-arnscrollwork","GLOBAL",1) Global("c-aranscribe","GLOBAL",0)~ + ~[PC] Tell me again how you work with scrolls and spells.~ + a3031

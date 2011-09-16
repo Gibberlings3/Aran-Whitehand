@@ -3803,7 +3803,7 @@ IF ~~ a32
 END
 
 IF ~~ a33   /*  add more here for later chapters? */
-  SAY ~[ARAN] Well, I can try. Where do you want me to go?~
+  SAY ~[ARAN] Well, I can try. Where do you be wantin' me to go?~
   + ~!AreaCheck("AR1600")~ + ~[PC] Head for the Brynlaw docks.~ UNSOLVED_JOURNAL ~Whitehand Docked
 
   I told Aran Whitehand to wait for me at the Brynlaw docks.~ + a38
@@ -3830,18 +3830,18 @@ IF ~~ a38
 END
 
 IF ~~ a39
-  SAY ~[ARAN] Aye, then. There's bugger all to do around here anyways. I'll go check on th' shops an' resupply.~
+  SAY ~[ARAN] Aye, then. There's bugger all to do around here anyways. I'll go check on th' shops an' resupply. Or even better... I will go see how things are at th' Broken Sword, eh?~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT  /* ActionOverride("c-aran",EscapeAreaMove( <<MARKET>> )) */
 END
 
 IF ~~ a40
-  SAY ~[ARAN] Aye, then. I'll wait around th' Keep an stay hidden, like.~
+  SAY ~[ARAN] Aye, then. I'll wait around outside th' Keep an stay hidden, like.~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( <<KEEP>> )) */
 END
 
 IF ~~ a41
-  SAY ~[ARAN] Aye, then. Trademeet it is.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( <<TRADEMEET>> )) */
+  SAY ~[ARAN] Aye, then. Trademeet it is. I done heard o' a fine pub there.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( AR2010 )) */
 END
 
 IF ~~ a42
@@ -14261,7 +14261,7 @@ END
 /* Adult - Land. Attempting to have some fun, Romantic Encounters-style. */
 
 /* moved up to emulate dreamscript eval */
-IF ~Global("c-arannightvisit","GLOBAL",1)~ THEN BEGIN start_the_call /* START_ARAN_PC_BOOTY_CALL */
+IF ~Global("c-arannightvisit","GLOBAL",1)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
   SAY ~[ARAN] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~
   ++ ~[PC] (You decide that now is not a good time, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ EXIT
   + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a3576 /* START_LADY_OF_THE_WARM_LIPS */
