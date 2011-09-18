@@ -1,9 +1,9 @@
 BACKUP ~aranw/backup~
 AUTHOR ~cmorgan~
 
-VERSION ~pre-alpha 4.10.2011~
+VERSION ~Beta_1~
 
-BEGIN ~Install Aran Whitehand alpha, 4.10.2011, for Ajnos.~
+BEGIN ~Install Aran Whitehand beta 1~
 
 /* extra regexp vars */
 INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
@@ -2881,6 +2881,7 @@ COPY_EXISTING c-ar01.are override
   END
 */
 
+/* install scripts */
 EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ // sets up filter indicating drow avatar and spelunking
 
 EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~  // shuts down underdark filter
@@ -2888,6 +2889,8 @@ EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~  // shuts down und
 EXTEND_BOTTOM ~bodhiamb.bcs~ ~aranw\baf\c-aranvampire.baf~ // bodhi disappears with aran
 
 EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ // restoring aran
+
+EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 
 COMPILE ~aranw/baf/c-abvp.baf~ // vampire script
 COMPILE ~aranw/baf/c-aran.baf~ // override script

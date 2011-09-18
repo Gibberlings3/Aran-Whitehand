@@ -650,49 +650,49 @@ END
 IF
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
-  GlobalLT("c-aranintimate","GLOBAL",1) // = 0
-  Global("c-aransex","GLOBAL",1) // kissed...
+  Global("c-aranintimate","GLOBAL",1) // we kissed...
+  Global("c-aransex","GLOBAL",0) // not registered...
   Gender(Player1,FEMALE)
   !HasItemEquiped("belt05",Player1)
 THEN
   RESPONSE #100
-    SetGlobal("c-aranintimate","GLOBAL",1) // we kissed.
+    SetGlobal("c-aransex","GLOBAL",1) // we kissed.
 END
 /* look for incrementing relationship to kissing + touching */
 IF
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",1) // we kissed.
-  Global("c-aransex","GLOBAL",2) // kissed and touched
+  Global("c-aranintimate","GLOBAL",2) // kissed and touched
+  Global("c-aransex","GLOBAL",1) // not registered
   Gender(Player1,FEMALE)
   !HasItemEquiped("belt05",Player1)
 THEN
   RESPONSE #100
-    SetGlobal("c-aranintimate","GLOBAL",2) // we kissed and touched
+    SetGlobal("c-aransex","GLOBAL",2) // we kissed and touched
 END
 /* look for incrementing relationship to petting */
 IF
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",2) // we kissed and touched
-  Global("c-aransex","GLOBAL",3) // we went further, but not the big one
+  Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
+  Global("c-aransex","GLOBAL",2) // not registered
   Gender(Player1,FEMALE)
   !HasItemEquiped("belt05",Player1)
 THEN
   RESPONSE #100
-    SetGlobal("c-aranintimate","GLOBAL",3) // we went further, but not the big one
+    SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
 END
 /* look for incrementing relationship to full intimacy */
 IF
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",3)
-  Global("c-aransex","GLOBAL",4) // shared everything
+  Global("c-aranintimate","GLOBAL",4)
+  Global("c-aransex","GLOBAL",3) // shared everything
   Gender(Player1,FEMALE)
   !HasItemEquiped("belt05",Player1)
 THEN
   RESPONSE #100
-    SetGlobal("c-aranintimate","GLOBAL",4) // shared everything
+    SetGlobal("c-aransex","GLOBAL",4) // shared everything
 END
 /* BCS Blocks for Scroll Creation */
 /* c-arSCRL15 Aran PID: Create Scroll of Protection from Petrification */
@@ -3391,7 +3391,7 @@ END
 
 /* NPC-Initiated Flirts: */
 
-/* Set up flirting for initial entries? Set through PID flirting a bunch of times */
+/* Set up flirting for initial entries -  Set through PID flirting a bunch of times */
 IF
   Global("c-aranpcflirtstart","GLOBAL",0)
   GlobalGT("c-aranearlyflirt","LOCALS",12)  // try this value - may be too high or too low
@@ -3406,11 +3406,10 @@ THEN RESPONSE #100
   RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
 END
 
-/* Set Up Flirting After 3 FTs + 3 LTs, if player has not taken a shortcut and flirted alot. */
+/* Set Up Flirting After 3 FTs, if player has not taken a shortcut and flirted alot. */
 IF
   Global("c-aranpcflirtstart","GLOBAL",0)
   GlobalGT("c-aranfriendbg2","GLOBAL",6)
-  GlobalGT("c-aranbg2rom","GLOBAL",6)
   OR(2)
     Global("c-aranrom","GLOBAL",1)
     Global("c-aranrom","GLOBAL",2)
@@ -3551,6 +3550,7 @@ IF
   !AreaCheck("AR2402")
 THEN RESPONSE #100
   SetGlobal("c-aranbedflirt","GLOBAL",1)
+  SetGlobal("c-aranrom","GLOBAL",2)
   StartDialogNoSet(Player1)
 END
 

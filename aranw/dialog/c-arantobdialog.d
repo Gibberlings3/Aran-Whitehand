@@ -1,3 +1,4 @@
+/* new numbers start at a4249 */
 
 /* ToB Interjections and commentary */
 
@@ -793,16 +794,16 @@ IF ~Global("c-aranisthisit","GLOBAL",1)~ THEN BEGIN a2922
   SAY ~[ARAN] Right. Check my gear, eh? It might just be that this ends up as th' mother o' all battles.~
   ++ ~[PC] Oh, relax.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ EXIT /* PLACEHOLDER */
 /*
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",0) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",2) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",3) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
-  + ~Gender(Player1,FEMALE) Global("c-aranintimate","GLOBAL",4) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",0) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",2) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",3) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
 */
 END
 
@@ -1097,12 +1098,12 @@ IF ~~ a2789
 END
 
 IF ~~ a2799 /* ELF */
-  SAY ~[C-ARAN] N'Tel’Quessir n'iarelia vodi Tel’Quessir, amin arwin alcarinqua vanima roche.~
+  SAY ~[C-ARAN] N'Tel'Quessir n'iarelia vodi Tel'Quessir, amin arwin alcarinqua vanima roche.~
   ++ ~[PC] You just blended three different Elven dialects, mispronounced 'horse', and I think in Waterdeep slang you may have just called me your gloriously beautiful sex toy. Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, non-elves do not usually ride elves. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am an elf. Let me worry about both of those things, please.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am an elf. Let me worry about both of those things, please.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] You are so cute when you try to speak my language!~ + a2806
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you.~ + a2806
 END
@@ -1111,9 +1112,9 @@ IF ~~ a2800 /* HUMAN */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an'... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes. There is no harm in asking, you know.~ + a2806
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes. There is no harm in asking, you know.~ + a2806
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Or stand between her and chocolate.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you.~ + a2806
@@ -1123,9 +1124,9 @@ IF ~~ a2801 /* DWARF */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am dwarven. Let me worry about that, please.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am dwarven. Let me worry about that, please.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Or stand between her and a precious stone.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Dwarven women are strong enough inside and out to hold the caverns of Toril on their shoulders.~ + a2806
@@ -1135,23 +1136,23 @@ IF ~~ a2802 /* HALFORC */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' then... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I have orcish blood. Try me.~ + a2806
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I have orcish blood. Try me.~ + a2806
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently, I have hidden untapped depths.~ + a2806
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently I have hidden untapped depths... oops. That came out wrong, didn't it?~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently I have hidden untapped depths....~ + a2875
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently, I have hidden untapped depths.~ + a2806
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently I have hidden untapped depths... oops. That came out wrong, didn't it?~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. Apparently I have hidden untapped depths....~ + a2875
 END
 
 IF ~~ a2803 /* GNOME */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am a gnome. Let me worry about both of those things, please.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am a gnome. Let me worry about both of those things, please.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Or stand between her and a precious stone, or anything that resembles a stalagmite...~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Gnomish women are strong enough inside and out to hold the line with Gnomish men. You haven't seen stubborn until you have to tell your cousin that it is an hour past dinnertime and he has to put his tools away for the night...~ + a2806
@@ -1161,9 +1162,9 @@ IF ~~ a2804 /* HALFLING */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am a halfling. Let me worry about both of those things, please.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes because you are a human, and I am a halfling. Let me worry about both of those things, please.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Or stand between her and something she covets.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
   ++ ~[PC] I don't mind, really. Hop on, and I will carry you. Halfling women may look small, but we always have a trick or two up our sleeves.~ + a2806
@@ -1173,14 +1174,14 @@ IF ~~ a2805 /* HALF_ELF */
   SAY ~[C-ARAN] Well, now, a lad don't usually go about ridin' his lady's back, an' there be a mite bit o' a size difference... blighted hells, that came out all wrong, didn't it?~
   ++ ~[PC] Why, Aran, you naughty boy. Did you just make a sly innuendo? Perhaps you should quit while you still have a foot to put in your mouth.~ + a2784
   ++ ~[PC] No, you probably would look a little silly. Something about weight, body size, and general politeness. But you wanted alternatives to walking...~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes. Something about 'The human and the <PRO_RACE>' is just so cliche. Let me worry about that, please.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] The way you said that, it sounded like you want to escalate our relationship a bit, but are worried I might not say yes. Something about 'The human and the <PRO_RACE>' is just so cliche. Let me worry about that, please.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hmmmm. I think we have actually done that, if I recall... you were very, very happy.~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Better yet, never doubt me, regardless of my state of determination.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
   + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths.~ + a2806
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths... oops. That came out wrong, didn't it?~ + a2784
-  + ~Global("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths...~ + a2875
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths... oops. That came out wrong, didn't it?~ + a2784
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths...~ + a2875
 END
 
 IF ~~ a2806
@@ -2233,38 +2234,38 @@ END
 
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
-IF ~Global("c-arangoaded","GLOBAL",1)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
+IF ~Global("c-arangoaded","GLOBAL",2)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
   SAY ~[ARAN] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
   = ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
-  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3802 /* UNSURE_GOADED */
-  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3802 /* UNSURE_GOADED */
-  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3803 /* PC_DEMANDS_STRENGTH */
-  ++ ~[PC] (Pull the blanket free of your body, and draw him closer to you.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3804 /* SHARE_MY_BED */
-  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3804 /* SHARE_MY_BED */
-  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you over-endowed, pea-brained idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
-  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
-  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3807 /* TONIGHT_HAVE_HEADACHE */
-  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",2)~ + a3808 /* PC_HAVING_AFFAIR */
+  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] (Pull the blanket free of your body, and draw him closer to you.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you over-endowed, pea-brained idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
+  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3807 /* TONIGHT_HAVE_HEADACHE */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3808 /* PC_HAVING_AFFAIR */
 END
 
 IF ~~ a3807 /* TONIGHT_HAVE_HEADACHE */
   SAY ~[ARAN] Right, then. I can do that. Mayhap we get a chance again next tenday.~
-  IF ~~ THEN DO ~SetGlobal("c-arangoaded","GLOBAL",3) SetGlobalTimer("c-arangoadedtime","GLOBAL",TEN_DAYS)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-arangoaded","GLOBAL",4) SetGlobalTimer("c-arangoadedtime","GLOBAL",TEN_DAYS)~ EXIT
 END
 
 /* II. Player Teases with lots and lots of flirts, but sent Aran away the first time - 1 FR tenday later - from .bcs */
 
-IF ~Global("c-arangoaded","GLOBAL",3)~ THEN BEGIN a3809 /* TOO_MUCH_TEASING_RETRY */
+IF ~Global("c-arangoaded","GLOBAL",5)~ THEN BEGIN a3809 /* TOO_MUCH_TEASING_RETRY */
   SAY ~[ARAN] I done tried this awhile ago, but you sent me away. Now, mayhap you want more than lots o' flirtin', and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
-  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3810 /* UNSURE_SECOND */
-  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3810 /* UNSURE_SECOND */
-  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3804 /* SHARE_MY_BED */
-  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
-  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3803 /* PC_DEMANDS_STRENGTH */
-  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
-  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3804 /* SHARE_MY_BED */
-  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3811 /* ARAN_DECIDES_NO */
-  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3808 /* PC_HAVING_AFFAIR */
+  + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3810 /* UNSURE_SECOND */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3810 /* UNSURE_SECOND */
+  ++ ~[PC] Yes, I do. Come share my bed.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] The only thing I could have done to make it more obvious was to strip down, tackle you, and start screaming "take me now, you idiot" at the top of my lungs.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3805 /* GET_YOUR_BUTT_IN_HERE_NOW */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] Go away, Aran. I like flirting, but I do not want to do anything else, tonight or any other night.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3806 /* NO_WAY_THIS_OR_ANY_NIGHT */
+  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3804 /* SHARE_MY_BED */
+  ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3811 /* ARAN_DECIDES_NO */
+  ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep your mouth shut, then join me.~ DO ~SetGlobal("c-arangoaded","GLOBAL",6)~ + a3808 /* PC_HAVING_AFFAIR */
 END
 
 IF ~~ a3802 /* UNSURE_GOADED */
@@ -4620,22 +4621,22 @@ END
 
 IF ~~ a4180 /* ARAN_UNDOES_PC_FRONT */
   SAY ~[ARAN] (You are not sure how he accomplishes it, but you feel a touch of cool air on your torso as his fingers tangle with your clothing.)~
-  IF ~~ GOTO a4171 /* ROM_THREE_HANDS_CUP_UPWARDS */
+  IF ~~ THEN GOTO a4171 /* ROM_THREE_HANDS_CUP_UPWARDS */
 END
 
 IF ~~ a4179 /* LIPS_EVERYWHERE */
   SAY ~[ARAN] (He seizes you abruptly, hands locked around your waist as he whirls you. As your lips find each other's and battle for supremacy, his hands finally make their decision, locking together under your bottom and lifting you against his chest in a ferociously tight embrace.)~
-  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+  IF ~~ THEN GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
 END
 
 IF ~~ a4178 /* HANDS_EVERYWHERE */
   SAY ~[ARAN] (His hands refuse to remain still and they play about your body, tussling and stroking, by turns gentle and rough.)~
-  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+  IF ~~ THEN GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
 END
 
 IF ~~ a4177 /* GET_A_LITTLE_HELP_HERE */
   SAY ~[ARAN] (A grin splashes across his face as he drops his clothing, hands reaching for yours, pinning them behind your back. He kneels, and begins nuzzling his way to your bare torso, tickling you incessantly.)~
-  IF ~~ GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
+  IF ~~ THEN GOTO a4093 /* ROM_THREE_ARAN_TO_PC */
 END
 
 IF ~~ a4176 /* ROM_TWO_CHEST_BARES_TATTOO */
@@ -5460,7 +5461,7 @@ IF ~~ a4244  /* WHAT_DO_YOU_REALLY_WANT */
   + ~RandomNum(4,1)~ + ~[PC] I think... Yes. I want you inside of me.~ + a4002 /* ARAN_ON_TOP_TWO */
   + ~RandomNum(2,1)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4071 /* ROM_FRIENDS_EXIT_TWO */
   + ~RandomNum(2,2)~ + ~[PC] I think we should slow down. I like being friends with you, and perhaps a little bit more at times, but you should leave now.~ + a4070 /* ROM_FRIENDS_EXIT_THREE */
-  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",4)~ + a3803 /* PC_DEMANDS_STRENGTH */
+  ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ + a3803 /* PC_DEMANDS_STRENGTH */
   ++ ~[PC] (Take his hand, guiding his fingers down your body until they are trapped between your thighs, nestled close to your warmth.)~ + a3822 /* SAUCE_FOR_GOOSE_GANDER */
   ++ ~[PC] Your fingers... I want your fingers... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
   ++ ~[PC] I do not think I can do this. In fact, I know I can't. You should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
@@ -6932,15 +6933,15 @@ IF ~IsGabber(Player1)~ THEN BEGIN a1866 /* tob PID */
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) RandomNum(5,1)~ + ~[PC] How come we never fight anymore?~ + a1872
   /* PID requests,  PC = Female PID */
   /* blocking for 'goaded' talk triggered at rest, and var already set - also, no nookie during waking hours in a dungeon. */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4210  /* NOT_RIGHT_HERE_NOW_ONE  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4225  /* NOT_RIGHT_HERE_NOW  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4212  /* START_RIGHT_HERE_NOW  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4212  /* START_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4210 /* NOT_RIGHT_HERE_NOW_ONE  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4225 /* NOT_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a4212 /* START_RIGHT_HERE_NOW  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a4212 /* START_RIGHT_HERE_NOW  */
   + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a4204  /* AGREE_TO_MEET_ONE  */
   + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a4203  /* AGREE_TO_MEET_TWO  */
   + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a4202  /* AGREE_TO_MEET_THREE  */
   + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a4201  /* AGREE_TO_MEET_FOUR  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3)~ + ~[PC] I have changed my mind about you visiting me the next time we rest. Now is not a good time.~ + a4205  /* WHY_DID_YOU_ASK  */
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1)~ + ~[PC] I have changed my mind about you visiting me the next time we rest. Now is not a good time.~ + a4205 /* WHY_DID_YOU_ASK  */
   /* logic check, so "goaded" or delay of "goaded' does not get an opportunity to shut it down - the point is Aran actually takes initiative to the 'unspoken' request. */
   /* PID Scribing Scrolls Blocks */
   + ~Global("c-arnscrollwork","GLOBAL",0) Global("c-aranscribe","GLOBAL",0)~ + ~[PC] Can you scribe a scroll for me?~ DO ~SetGlobal("c-arnscrollwork","GLOBAL",1)~ + a3031
@@ -8253,11 +8254,11 @@ IF ~~ a2809
   ++ ~[PC] I was teasing you, Aran. I don't think you have as much to worry about as I did, though.~ + a2810
   ++ ~[PC] What a pity. I would make such a good little sister for you. I would have you worrying about all sorts of interesting things, most of whom are poisonous, dangerous, undead, or all three combined.~ + a2810
   + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2810
-  + ~Global("c-aranintimate","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2885
-  + ~Global("c-aranintimate","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2886
-  + ~Global("c-aranintimate","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2887
-  + ~Global("c-aranintimate","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2888
-  + ~Global("c-aranintimate","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2889
+  + ~Global("c-aransex","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2885
+  + ~Global("c-aransex","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2886
+  + ~Global("c-aransex","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2887
+  + ~Global("c-aransex","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2888
+  + ~Global("c-aransex","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~ + a2889
 END
 
 /* a2810 is a chain */
