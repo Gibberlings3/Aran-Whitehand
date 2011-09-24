@@ -12827,7 +12827,7 @@ IF ~~ a2081
 END
 
 IF ~~ a1906
-  SAY ~[ARAN] I can do that, an' I'd be right happy too, but not right now. But you could always ask me again, someplace a bit more prioivate. I think right now I am likely to be more enteartainin' than I want to be for th' bartender, eh?~
+  SAY ~[ARAN] I can do that, an' I'd be right happy too, but not right now. But you could always ask me again, someplace a bit more private. I think right now I am likely to be more entertainin' than I want to be for th' bartender, eh?~
   IF ~~ THEN EXIT
 END
 

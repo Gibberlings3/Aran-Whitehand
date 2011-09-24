@@ -2250,12 +2250,12 @@ END
 
 /* end of define all macros */
 
-PRINT ~Installing SoA dialog~
+PRINT ~Installing SoA dialog...~
 
 COMPILE ~aranw/dialog/c-arandialog.d~ // SoA dialog file
 
 ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
-	PRINT ~Installing ToB dialog~
+	PRINT ~Installing ToB dialog...~
   COMPILE ~aranw/dialog/c-arantobdialog.d~
 
  
@@ -2703,7 +2703,7 @@ COMPILE ~aranw/baf/c-ar01.baf~
 
 /* Existing Promenade edits */
 
-EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/spawnbouncer.baf~
+EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
 
 /* delete original info trigger */
 COPY_EXISTING ar0700.are override
@@ -2882,6 +2882,8 @@ COPY_EXISTING c-ar01.are override
 */
 
 /* install scripts */
+
+PRINT ~Installing SoA scripts...~
 EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ // sets up filter indicating drow avatar and spelunking
 
 EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~  // shuts down underdark filter
@@ -2902,6 +2904,16 @@ COMPILE ~aranw/baf/c-restpp.baf~ // rest cutscene for pocket plane
 COMPILE ~aranw/baf/c-malcer.baf~ // override script for Malcer
 COMPILE ~aranw/baf/c-oskut.baf~ // override script for Oskut
 COMPILE ~aranw/baf/c-taman.baf~ // override script for Taman
+
+ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
+	PRINT ~Installing ToB scripts...~
+	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
+	COMPILE ~aranw/baf/c-arn25.baf~ // joined ToB script
+	COMPILE ~aranw/baf/c-arn25d.baf~ // ToB dreamscript
+	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
+	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
+	EXTEND_TOP ~ar6200.bcs~ ~aranw/baf/ar6200_epilog_ext.baf~ // epilogues triggered
+END
 
 /* sounds */
                                 

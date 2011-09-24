@@ -604,6 +604,64 @@ IF ~~ a2304
 END
 
 
+/* NightTalk: Stars, Constancy Thereof */
+IF ~Global("c-tobnightone","GLOBAL",1)~ THEN BEGIN a4249
+  SAY ~[ARAN] Now that be a sight. Those stars seem  to cover th' whole sky, or what we can see o' it.~
+  ++ ~[PC] I prefer to keep my eyes focused nearer to reality. The only good use for starlight is exposing your enemies when they are stupid enough to move across open terrain without cover.~ + a4250
+  ++ ~[PC] They do have a way of reminding us that some things never change. All we do, all we attain, all we suffer.... they just keep shining, completely untouched.~ + a4251
+  ++ ~[PC] They are very cold. Almost eyes, watching us, judging us, evaluating us.~ + a4251
+  ++ ~[PC] I think they are like small campfires, a host of ones like ours, warm in the night.~ + a4251
+  + ~Gender(Player1,MALE)~ + ~[PC] I think they seem like they are mocking me. Kind of like women, all shiny and sparkley, yet cold and distant.~ + a4251
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] They seem... romantic, somehow. Always there, no matter what.~ + a4251
+  + ~RandomNum(5,5)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3188 /* c-aranshutup55 */
+  + ~RandomNum(5,4)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3189 /* c-aranshutup56 */
+  + ~RandomNum(5,3)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3190 /* c-aranshutup57 */
+  + ~RandomNum(5,2)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3191 /* c-aranshutup58 */
+  + ~RandomNum(5,1)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3192 /* c-aranshutup59 */
+END
+
+IF ~~ a4250
+  SAY ~[ARAN] Aye. Spoken like a true warrior. Although all killin' an' no imagination probably leaves things a mite bit dull, don't you think?~
+  ++ ~[PC] I don't know. There are so many fascinating and different ways to kill. Why, just think of all the possibilities acid has for creative application.~ + a4252
+  ++ ~[PC] True enough. I suppose a little time to see the sights is not a bad way to relax.~ + a4251
+  +  ~OR(3) Global("c-aranrom","GLOBAL",0) Global("c-aranrom","GLOBAL",3) HasItemEquiped("belt05",Player1)~ + ~[PC] I have plenty of other thoughts to occupy my mind right now. Some of them are rather unpleasant, but so far we have come out on top. I will sleep as well as can be expected.~ + a4254
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] I have plenty of other thoughts to occupy my mind right now. Some of them are rather unpleasant, but so far we have come out on top. I will sleep as well as can be expected.~ + a4253
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] You might be right. Sometimes it is nice just to sit and think.~ + a4253
+  + ~RandomNum(5,5)~ + ~[PC] Given the choice between watching the stars, listening to you, and committing ritual suicide, I am pretty sure ritual suicide comes out a winner.~ + a3188 /* c-aranshutup55 */
+  + ~RandomNum(5,4)~ + ~[PC] Given the choice between watching the stars, listening to you, and committing ritual suicide, I am pretty sure ritual suicide comes out a winner.~ + a3189 /* c-aranshutup56 */
+  + ~RandomNum(5,3)~ + ~[PC] Given the choice between watching the stars, listening to you, and committing ritual suicide, I am pretty sure ritual suicide comes out a winner.~ + a3190 /* c-aranshutup57 */
+  + ~RandomNum(5,2)~ + ~[PC] Given the choice between watching the stars, listening to you, and committing ritual suicide, I am pretty sure ritual suicide comes out a winner.~ + a3191 /* c-aranshutup58 */
+  + ~RandomNum(5,1)~ + ~[PC] Given the choice between watching the stars, listening to you, and committing ritual suicide, I am pretty sure ritual suicide comes out a winner.~ + a3192 /* c-aranshutup59 */
+END
+
+IF ~~ a4251
+  SAY ~[ARAN] They sure be beautiful. So powerful, shinin' down like that. An' so far out o' reach.~
+  IF ~OR(4) Global("c-aranrom","GLOBAL",0) Global("c-aranrom","GLOBAL",3) HasItemEquiped("belt05",Player1) Gender(Player1,MALE)~ THEN GOTO a4254
+  IF ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ THEN GOTO a4253
+END
+
+IF ~~ a4252
+  SAY ~[ARAN] Talos' an' Teos' Twisted Temper... Thanks a bunch, eh? Now I'll be havin' nightmares all night.~
+  IF ~~ THEN GOTO a4254
+END
+
+IF ~~ a4253
+  SAY ~[ARAN] You know, you look right fine lit by stars an' th' moon. I can guess why there be so many worshipers o' Selune.~
+  ++ ~[PC]  I think I want to kiss you.~ + a3915 /* FEMALE_MOON_LEADS */
+  ++ ~[PC] (Impulsively clasp both hands around one of his, pulling it towards you.)~ + a3916 /* ARAN_MOON_LEADS */
+  ++ ~[PC] I... I am tired. Have a good night, Aran.~ + a4254
+  ++ ~[PC] I am not Selune. But you could worship me if you like.~ + a3918 /* ARAN_MOON_MIND */
+  ++ ~[PC] Hey, easy on the compliments. Friends, remember? You are starting to sound all romantic and weepy.~ + a3919 /* MOON_JUST_FRIENDS */
+  ++ ~[PC] Talking with you here is a nice rest from all of the day's cares. But then again, lots of things besides talking can happen beneath those little twinkling lights.~ + a3918 /* ARAN_MOON_MIND */
+  ++ ~[PC] You are so... stupid. And pushy. Go away and leave me in peace.~ + a3866 /* FIGHT_EXIT */
+END
+
+IF ~~ a4254
+  SAY ~[ARAN] Well, I'm off. Got th' first watch anyhow. Have a dream or two for me.~
+  IF ~~ THEN EXIT
+END
+
+
 /* ToB Plot Talk : Sarevok chosen as companion: Activate after a week */
 /*
 ~Global("c-aranworriedtob","GLOBAL",1)~
@@ -792,7 +850,7 @@ IF ~Global("c-aranpostwraith","GLOBAL",4)~ c_are_we_on_or_are_we_done
 /* ToB Plot Talk : Big End Battle */
 IF ~Global("c-aranisthisit","GLOBAL",1)~ THEN BEGIN a2922
   SAY ~[ARAN] Right. Check my gear, eh? It might just be that this ends up as th' mother o' all battles.~
-  ++ ~[PC] Oh, relax.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ EXIT /* PLACEHOLDER */
+  ++ ~[PC] Oh, relax.~ DO ~SetGlobal("c-aranisthisit","GLOBAL",2)~ EXIT /* PLACEHOLDER */
 /*
   + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
   + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] ~ +
@@ -4162,7 +4220,7 @@ IF ~~ a4057 /* ROM_ONE_URGENT */
 END
 
 IF ~~ a4197 /* ROM_TWO_1a */
-  SAY ~[ARAN] Now there be no need o' shynesss on my account. Mayhap we are movin' too fast for you right this time an' in this place. Would you like just to walk for a bit, mayhap hold hands, mayhap kiss a little?~
+  SAY ~[ARAN] Now there be no need o' shyness on my account. Mayhap we are movin' too fast for you right this time an' in this place. Would you like just to walk for a bit, mayhap hold hands, mayhap kiss a little?~
   + ~RandomNum(2,2)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3833 /* ARAN_AGREES_ONE_CUDDLE */
   + ~RandomNum(2,1)~ + ~[PC] I think you.... I think you are right. I am not ready for this. Can we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
   ++ ~[PC] (Look down at your clothes, then begin removing them while watching for his reaction behind lowered eyelashes.)~ + a4053 /* PC_STRIPS_FOR_ARAN */
@@ -7794,12 +7852,6 @@ IF ~~ a3208 /* c-aranshutup75 */ SAY ~[ARAN] Velsharoon's Vicious Vampires, you 
   // + ~RandomNum(5,2)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3186 /* c-aranshutup53 */
   // + ~RandomNum(5,1)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
 
-  // + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3188 /* c-aranshutup55 */
-  // + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3189 /* c-aranshutup56 */
-  // + ~RandomNum(5,3)~ + ~[PC] Oh, just shut up, will you?~ + a3190 /* c-aranshutup57 */
-  // + ~RandomNum(5,2)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3191 /* c-aranshutup58 */
-  // + ~RandomNum(5,1)~ + ~[PC] I think you should stand downwind of me. Perhaps that will make your muttering to yourself less obvious.~ + a3192 /* c-aranshutup59 */
-
   // + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3193 /* c-aranshutup60 */
   // + ~RandomNum(5,4)~ + ~[PC] Is there any way I could pursuade you to just shut the hells up? Short of physical violence, I mean.~ + a3194 /* c-aranshutup61 */
   // + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3195 /* c-aranshutup62 */
@@ -8897,6 +8949,47 @@ END
 END
 
 /* ToB Banters */
+
+/* ToB Banters: Aran > Nalia */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob24b","GLOBAL",0) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B c-arantob24b
+~[ARAN] Whoa, there, Nalia... easy on th' fierce gestures! I'd prefer to keep my head all in one piece, not be missin' half my face on account o' you be pissed off a bit, eh?~ DO ~SetGlobal("c-arntob24b","GLOBAL",1)~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] I am not angry, just frustrated.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Anger, frustration, a little bit miffed, well... when I be on th' receivin' end o' any o' those, an' th' giver be an archmage what can wipe me out wi' a few words an' a quick gesture... it all seems th' same to me.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Oh, I was not frustrated with you. It just seems that no matter how powerful I become, the less I am able to make meaningful change.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'd say disintegratin', wiltin' an' generally obliteratin' your opponents counts as makin' a blighted meanin'ful change, at least to them.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] I mean changes that make more of a difference than a few enemies here and there. The Council of Six, The Cowled Wizards, my own lands... all of them cry out for change. Any one of them could take a lifetime of commitment to adjust the inequities.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Hells, you be talkin' about social change. That takes a mite bit more than a single lifetime, I'd say. Only one answer. Kill 'em all an' set yourself up in charge, an' change everythin' all at once.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Aran! How can you even think that!~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Sarevok")~ THEN ~[ARAN] I'm only jokin', m'girl. Ask that bastard Sarevok how that kind o' thinkin' works out. I bet you he'd tell you it takes a lifetime just to keep power when you rise that way. You don't have time to change things much, on account o' you are always fightin' just to stay in power.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Whenever some blighted fool gets th' idea that you can make long-term change that way, th' mercenary life gets a bit more lucrative. Violent an' bloody social revolution, it do be a great equalizer, though.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] I do not see how. The cost in lives and resources, the constant cycle of destruction, none of that stops the pain of the common folk.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Aye. But noble, common, rich, poor, pretty, ugly... dead be dead. Can't rightly get more equal that that, eh?~
+EXIT
+
+/* ToB Banters: Nalia > Aran */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob8b","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty(Myself) !StateCheck(Myself,CD_STATE_NOTVALID)~ THEN BNALIA25 c-arantob8b
+~[NALIA] Aran, I do think that you are beginning to grow up.~ DO ~SetGlobal("c-arntob8b","GLOBAL",1)~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Now, what in Sune's Blessed Sweetness would cause you to say somethin' so mean?~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] You seeme to have stopped trying to stare at my bottom when you think I am not looking.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] That's not growin' up. That's just realizin' that you have spells what can disintegrate me. Call it 'enlightened self interest.'~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Still, that is more thinking than the old Aran would do.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Fair enough. By th' way, you done got a little spot o' somethin' on th' left o' your derriere. I'd have said somethin', but that self-preservation thing made me a mite bit reticent, eh?~
+EXIT
+
+/* ToB Banters: Aran > Sarevok */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob32b","GLOBAL",0) InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B c-arantob32b
+~[ARAN] I don't rightly trust you, you know.~ DO ~SetGlobal("c-arntob32b","GLOBAL",1)~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] Then you have studied better than I thought. All war is based on deception. Trust is a weakness.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] So you do be plannin' to betray <PRO_HIMHER> when th' time be right.~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] No.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Why not? You have done far worse in th' past, an' you hold no contract sacred.~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] I cannot.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You  can't rightly betray <PRO_HIMHER>, or you choose not to?~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] Both.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I don't rightly understand.~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] That is not my problem, sellsword. Come to me when you have tasted the glories of unadulterated strength, when you have fools who follow you to their destruction regardless of cost to themselves, when you have ultimate power just within your reach...~
+== BSAREV25 IF ~InParty("Sarevok") InMyArea("Sarevok") !StateCheck("Sarevok",CD_STATE_NOTVALID)~ THEN ~[SAREVOK] ...and it has been torn from your grasp and from your very soul. Only then will you understand. I will not betray my <PRO_BROTHERSISTER>. My time has passed. Now, <PRO_HISHER>s is rising.~
+EXIT
 
 /* Only one of these fire per game, dependent on the NPC being in the party; closed by Global("c-arntobtellher","GLOBAL" */
 

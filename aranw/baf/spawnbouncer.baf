@@ -1,8 +1,0 @@
-IF
-  Global("c-spawnbouncer","AR0700",0)
-THEN
-  RESPONSE #100
-  CreateCreature("C-AW01EP",[3300.976],15)
-  SetGlobal("c-spawnbouncer","AR0700",1)
-  Continue()
-END
