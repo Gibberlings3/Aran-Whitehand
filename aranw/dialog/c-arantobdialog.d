@@ -8896,5 +8896,355 @@ END
 
 END
 
+/* ToB Banters */
+
+/* Only one of these fire per game, dependent on the NPC being in the party; closed by Global("c-arntobtellher","GLOBAL" */
+
+/* ToB Banters: Aran > Aerie : Tell Her */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntobtellher","GLOBAL",0) InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)
+!Global("B!KeldornRA","GLOBAL",1) // banter deferred to Keldorn if active
+!Global("C#AjantisPCMarriage","GLOBAL",1) // banter shut down if PC is married to Ajantis
+!Global("ADAngelMarried","GLOBAL",1) // banter shut down if PC is married to Angelo
+OR(2)
+Global("c-aranrom","GLOBAL",1)
+Global("c-aranrom","GLOBAL",2)
+OR(16)
+Global("LS#SarevokRomanceActive","GLOBAL",1) 
+Global("LS#SarevokRomanceActive","GLOBAL",2)
+Global("B!GavRA","GLOBAL",2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+Global("EdwinRomanceActive", "GLOBAL", 1)
+Global("EdwinRomanceActive", "GLOBAL", 2)
+Global("J#KelseyRomanceActive","GLOBAL",2)
+Global("TsujathaRomanceActive","GLOBAL",2)
+Global("LS_HaerDalisRomance","GLOBAL",1)
+Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("ADAngelRomanceActive","GLOBAL",2)
+GlobalGT("SolaTalk","GLOBAL",14)
+Global("P#KivanRomanceActive","GLOBAL",2)
+Global("H#ValygarRomanceActive","GLOBAL",2)
+Global("O#XanRomanceActive","GLOBAL",2)~
+THEN C-ARN25B c-arantob33b1
+~[ARAN] Blighted hells. No accountin' for taste, I suppose, but Sune herself must o' cursed me right proper.~ DO ~SetGlobal("c-arntobtellher","GLOBAL",1)~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Tell her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What?~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Tell her how you feel.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Now, what do you be goin' on about, Aerie? Never did hear you dole out advice so freely. Complaints, yes. Advice, no.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] It is obvious you love her. And it hurts you to see her with him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted hells, keep your voice down! She might hear you!~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why don't you just tell her how much you care?~ 
+/* Haer'Dalis, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no extra-planar bard wi' beautiful speech an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Angelo, Sister Vigilante */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no world-travellin' kara-turan wi' interestin' stories an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Sarevok, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS#SarevokRomanceActive","GLOBAL",1) Global("LS#SarevokRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He be power, hunger, an' strength, tied right proper to her soul. I have naught to compete against that.~
+/* Kelsey, JCompton */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("J#KelseyRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Th' boy loves her right proper, an' she seems happy enough. Soon enough she will be tellin' me to keep away an' 'just be friends'.~
+/* Tsujatha, Nethrun and Sillara */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("TsujathaRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Necromantic extra-planar elf versus th' poor sod what sells his sword an' can barely speak two blighted words wi' out bringin' a god or two into th' conversation.~
+/* Gavin, Berelinde */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!GavRA","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He may be a clumsy bastard, an' gods knows he comes wi' a bit o' baggage wi' Lanie an' all, but th' boy makes her right happy. An' he be a good friend.~
+/* Anomen, BioWare */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("AnomenRomanceActive","GLOBAL",1) Global("AnomenRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I don't rightly see what she sees in that pompous self-centered bastard, but he can offer her much more than I can. An' she seems to be willin' to let him be close.~
+/* Edwin, Laufey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("EdwinRomanceActive", "GLOBAL", 1) Global("EdwinRomanceActive", "GLOBAL", 2)~ THEN ~[ARAN]  Look at me. An' then look at him. He may be a self-centered prissy evil bastard, but he be a Red Wizard. Power, refinement, sophistication. Everythin' I'm not.~
+/* Ajantis, Jastey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. A blighted knight, versus a sellsword what has naught to offer. Hells, I can't even sit at th' same table as Ajantis. I'd be out wi' th' other common rabble, not sittin' in a Greathall.~
+/* Solaufein, Weimer */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("SolaTalk","GLOBAL",14)~ THEN ~[ARAN] Look at me. An' then look at him. I know she sees more in him than in me. I look at him, an' I see naught but an enemy. She looks at him, an' she sees somethin' that lets him get close. Soon enough, she will tell me to 'just be friends'.~
+/* Kivan, Domi  */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("P#KivanRomanceActive","GLOBAL",2) !Global("P#KivanRomanceInactive","GLOBAL",1)~ THEN ~[ARAN] I see it in her eyes. Th' way she looks at him... Lost love or no, he has followed her since th' first. How can I compete wi' an elven archer what has bent centuries o' will to servin' her an' lovin' her?~
+/* Valygar, CRomantique, Domi */ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("H#ValygarRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. We be worlds apart, yet she lets him be close. I'm not sayin' Valygar is th' worst she could do, but am I really any better?~
+/* Xan: materials without referent cover all pathways without worrying about Xan, Valygar, Bonded, not bonded, etc. */ 
+/* summary response */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'll take whatever time she gives me, an' be glad enough for that.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] You sound like me. Like I used to sound. I thought I was the one who wallowed in self-pity. ~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Not self-pity, just cold hard facts.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I thought you once told me that the exterior didn't matter, and my inner strength was what made me interesting.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] If I did, I was bein' a poncy idiot what wanted to bed you.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I know you better than that, Aran. I think you are running away. Just tell her.~ 
+EXIT
+
+/* ToB Banters: Aran > Jaheira : Tell Her */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntobtellher","GLOBAL",0) 
+InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)
+!Global("B!KeldornRA","GLOBAL",1) // banter deferred to Keldorn if active
+!Global("C#AjantisPCMarriage","GLOBAL",1) // banter shut down if PC is married to Ajantis
+!Global("ADAngelMarried","GLOBAL",1) // banter shut down if PC is married to Angelo
+OR(2)
+Global("c-aranrom","GLOBAL",1)
+Global("c-aranrom","GLOBAL",2)
+OR(16)
+Global("LS#SarevokRomanceActive","GLOBAL",1) 
+Global("LS#SarevokRomanceActive","GLOBAL",2)
+Global("B!GavRA","GLOBAL",2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+Global("EdwinRomanceActive", "GLOBAL", 1)
+Global("EdwinRomanceActive", "GLOBAL", 2)
+Global("J#KelseyRomanceActive","GLOBAL",2)
+Global("TsujathaRomanceActive","GLOBAL",2)
+Global("LS_HaerDalisRomance","GLOBAL",1)
+Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("ADAngelRomanceActive","GLOBAL",2)
+GlobalGT("SolaTalk","GLOBAL",14)
+Global("P#KivanRomanceActive","GLOBAL",2)
+Global("H#ValygarRomanceActive","GLOBAL",2)
+Global("O#XanRomanceActive","GLOBAL",2)~
+THEN C-ARN25B c-arantob33b2
+~[ARAN] Blighted hells. No accountin' for taste, I suppose, but Sune herself must o' cursed me right proper.~ DO ~SetGlobal("c-arntobtellher","GLOBAL",1)~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Tell her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What?~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Tell her how you feel.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Here it comes. Mother Jaheira, First Prime o' th' Busybody an' Unwanted Meddlin' Guild. Paid your dues yet this year?~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] It is obvious you love her. And it hurts you to see her with him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted hells, keep your voice down! She might hear you!~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Why don't you just tell her how much you care?~ 
+/* Haer'Dalis, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no extra-planar bard wi' beautiful speech an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Angelo, Sister Vigilante */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no world-travellin' kara-turan wi' interestin' stories an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Sarevok, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS#SarevokRomanceActive","GLOBAL",1) Global("LS#SarevokRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He be power, hunger, an' strength, tied right proper to her soul. I have naught to compete against that.~
+/* Kelsey, JCompton */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("J#KelseyRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Th' boy loves her right proper, an' she seems happy enough. Soon enough she will be tellin' me to keep away an' 'just be friends'.~
+/* Tsujatha, Nethrun and Sillara */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("TsujathaRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Necromantic extra-planar elf versus th' poor sod what sells his sword an' can barely speak two blighted words wi' out bringin' a god or two into th' conversation.~
+/* Gavin, Berelinde */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!GavRA","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He may be a clumsy bastard, an' gods knows he comes wi' a bit o' baggage wi' Lanie an' all, but th' boy makes her right happy. An' he be a good friend.~
+/* Anomen, BioWare */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("AnomenRomanceActive","GLOBAL",1) Global("AnomenRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I don't rightly see what she sees in that pompous self-centered bastard, but he can offer her much more than I can. An' she seems to be willin' to let him be close.~
+/* Edwin, Laufey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("EdwinRomanceActive", "GLOBAL", 1) Global("EdwinRomanceActive", "GLOBAL", 2)~ THEN ~[ARAN]  Look at me. An' then look at him. He may be a self-centered prissy evil bastard, but he be a Red Wizard. Power, refinement, sophistication. Everythin' I'm not.~
+/* Ajantis, Jastey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. A blighted knight, versus a sellsword what has naught to offer. Hells, I can't even sit at th' same table as Ajantis. I'd be out wi' th' other common rabble, not sittin' in a Greathall.~
+/* Solaufein, Weimer */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("SolaTalk","GLOBAL",14)~ THEN ~[ARAN] Look at me. An' then look at him. I know she sees more in him than in me. I look at him, an' I see naught but an enemy. She looks at him, an' she sees somethin' that lets him get close. Soon enough, she will tell me to 'just be friends'.~
+/* Kivan, Domi  */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("P#KivanRomanceActive","GLOBAL",2) !Global("P#KivanRomanceInactive","GLOBAL",1)~ THEN ~[ARAN] I see it in her eyes. Th' way she looks at him... Lost love or no, he has followed her since th' first. How can I compete wi' an elven archer what has bent centuries o' will to servin' her an' lovin' her?~
+/* Valygar, CRomantique, Domi */ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("H#ValygarRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. We be worlds apart, yet she lets him be close. I'm not sayin' Valygar is th' worst she could do, but am I really any better?~
+/* Xan: materials without referent cover all pathways without worrying about Xan, Valygar, Bonded, not bonded, etc. */ 
+/* summary response */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'll take whatever time she gives me, an' be glad enough for that.~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Khalid used to think that way about himself. He once said he never understood why I chose him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Why did you?~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] I almost didn't.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What sealed th' deal?~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] He let me know he loved me.~ 
+EXIT
+
+/* ToB Banters: Aran > Nalia : Tell Her */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntobtellher","GLOBAL",0) 
+InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)
+!Global("B!KeldornRA","GLOBAL",1) // banter deferred to Keldorn if active
+!Global("C#AjantisPCMarriage","GLOBAL",1) // banter shut down if PC is married to Ajantis
+!Global("ADAngelMarried","GLOBAL",1) // banter shut down if PC is married to Angelo
+OR(2)
+Global("c-aranrom","GLOBAL",1)
+Global("c-aranrom","GLOBAL",2)
+OR(16)
+Global("LS#SarevokRomanceActive","GLOBAL",1) 
+Global("LS#SarevokRomanceActive","GLOBAL",2)
+Global("B!GavRA","GLOBAL",2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+Global("EdwinRomanceActive", "GLOBAL", 1)
+Global("EdwinRomanceActive", "GLOBAL", 2)
+Global("J#KelseyRomanceActive","GLOBAL",2)
+Global("TsujathaRomanceActive","GLOBAL",2)
+Global("LS_HaerDalisRomance","GLOBAL",1)
+Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("ADAngelRomanceActive","GLOBAL",2)
+GlobalGT("SolaTalk","GLOBAL",14)
+Global("P#KivanRomanceActive","GLOBAL",2)
+Global("H#ValygarRomanceActive","GLOBAL",2)
+Global("O#XanRomanceActive","GLOBAL",2)~
+THEN C-ARN25B c-arantob33b3
+~[ARAN] Blighted hells. No accountin' for taste, I suppose, but Sune herself must o' cursed me right proper.~ DO ~SetGlobal("c-arntobtellher","GLOBAL",1)~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Tell her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What?~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Tell her how you feel.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Look, Nalia, you be a right fine lookin' woman. If things were a mite bit different, I'd be chasin' you right proper. But you be a mite bit naive in th' love department, all arranged-marriage an' such. No offense, but you don't blighted know naught.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] It is obvious you love her. And it hurts you to see her with him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted hells, keep your voice down! She might hear you!~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Why don't you just tell her how much you care?~ 
+/* Haer'Dalis, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no extra-planar bard wi' beautiful speech an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Angelo, Sister Vigilante */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no world-travellin' kara-turan wi' interestin' stories an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Sarevok, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS#SarevokRomanceActive","GLOBAL",1) Global("LS#SarevokRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He be power, hunger, an' strength, tied right proper to her soul. I have naught to compete against that.~
+/* Kelsey, JCompton */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("J#KelseyRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Th' boy loves her right proper, an' she seems happy enough. Soon enough she will be tellin' me to keep away an' 'just be friends'.~
+/* Tsujatha, Nethrun and Sillara */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("TsujathaRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Necromantic extra-planar elf versus th' poor sod what sells his sword an' can barely speak two blighted words wi' out bringin' a god or two into th' conversation.~
+/* Gavin, Berelinde */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!GavRA","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He may be a clumsy bastard, an' gods knows he comes wi' a bit o' baggage wi' Lanie an' all, but th' boy makes her right happy. An' he be a good friend.~
+/* Anomen, BioWare */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("AnomenRomanceActive","GLOBAL",1) Global("AnomenRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I don't rightly see what she sees in that pompous self-centered bastard, but he can offer her much more than I can. An' she seems to be willin' to let him be close.~
+/* Edwin, Laufey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("EdwinRomanceActive", "GLOBAL", 1) Global("EdwinRomanceActive", "GLOBAL", 2)~ THEN ~[ARAN]  Look at me. An' then look at him. He may be a self-centered prissy evil bastard, but he be a Red Wizard. Power, refinement, sophistication. Everythin' I'm not.~
+/* Ajantis, Jastey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. A blighted knight, versus a sellsword what has naught to offer. Hells, I can't even sit at th' same table as Ajantis. I'd be out wi' th' other common rabble, not sittin' in a Greathall.~
+/* Solaufein, Weimer */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("SolaTalk","GLOBAL",14)~ THEN ~[ARAN] Look at me. An' then look at him. I know she sees more in him than in me. I look at him, an' I see naught but an enemy. She looks at him, an' she sees somethin' that lets him get close. Soon enough, she will tell me to 'just be friends'.~
+/* Kivan, Domi  */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("P#KivanRomanceActive","GLOBAL",2) !Global("P#KivanRomanceInactive","GLOBAL",1)~ THEN ~[ARAN] I see it in her eyes. Th' way she looks at him... Lost love or no, he has followed her since th' first. How can I compete wi' an elven archer what has bent centuries o' will to servin' her an' lovin' her?~
+/* Valygar, CRomantique, Domi */ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("H#ValygarRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. We be worlds apart, yet she lets him be close. I'm not sayin' Valygar is th' worst she could do, but am I really any better?~
+/* Xan: materials without referent cover all pathways without worrying about Xan, Valygar, Bonded, not bonded, etc. */ 
+/* summary response */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'll take whatever time she gives me, an' be glad enough for that.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] It is true that you are coarse, crude, dirty-minded, usually dirty-handed, and rude.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You could have thrown in ugly an' lowclass, you know. I think you missed a couple o' opportunities to kick me while I was down, there.~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] On the other hand, you love her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What difference does that make?~
+== BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] It makes all the difference in the world. Trust me.~ 
+EXIT
+
+/* ToB Banters: Aran > Mazzy : Tell Her */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntobtellher","GLOBAL",0) 
+InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)
+!Global("B!KeldornRA","GLOBAL",1) // banter deferred to Keldorn if active
+!Global("C#AjantisPCMarriage","GLOBAL",1) // banter shut down if PC is married to Ajantis
+!Global("ADAngelMarried","GLOBAL",1) // banter shut down if PC is married to Angelo
+OR(2)
+Global("c-aranrom","GLOBAL",1)
+Global("c-aranrom","GLOBAL",2)
+OR(16)
+Global("LS#SarevokRomanceActive","GLOBAL",1) 
+Global("LS#SarevokRomanceActive","GLOBAL",2)
+Global("B!GavRA","GLOBAL",2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+Global("EdwinRomanceActive", "GLOBAL", 1)
+Global("EdwinRomanceActive", "GLOBAL", 2)
+Global("J#KelseyRomanceActive","GLOBAL",2)
+Global("TsujathaRomanceActive","GLOBAL",2)
+Global("LS_HaerDalisRomance","GLOBAL",1)
+Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("ADAngelRomanceActive","GLOBAL",2)
+GlobalGT("SolaTalk","GLOBAL",14)
+Global("P#KivanRomanceActive","GLOBAL",2)
+Global("H#ValygarRomanceActive","GLOBAL",2)
+Global("O#XanRomanceActive","GLOBAL",2)~
+THEN C-ARN25B c-arantob33b4
+~[ARAN] Blighted hells. No accountin' for taste, I suppose, but Sune herself must o' cursed me right proper.~ DO ~SetGlobal("c-arntobtellher","GLOBAL",1)~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] Tell her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What?~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] Tell her how you feel.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Look, Mazzy, you be a right fine friend. But you see things a bit black an' white, all or naught. This be more complicated than that.~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] It is obvious you love her. And it hurts you to see her with him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted hells, keep your voice down! She might hear you!~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] Why don't you just tell her how much you care?~ 
+/* Haer'Dalis, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no extra-planar bard wi' beautiful speech an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Angelo, Sister Vigilante */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no world-travellin' kara-turan wi' interestin' stories an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Sarevok, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS#SarevokRomanceActive","GLOBAL",1) Global("LS#SarevokRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He be power, hunger, an' strength, tied right proper to her soul. I have naught to compete against that.~
+/* Kelsey, JCompton */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("J#KelseyRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Th' boy loves her right proper, an' she seems happy enough. Soon enough she will be tellin' me to keep away an' 'just be friends'.~
+/* Tsujatha, Nethrun and Sillara */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("TsujathaRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Necromantic extra-planar elf versus th' poor sod what sells his sword an' can barely speak two blighted words wi' out bringin' a god or two into th' conversation.~
+/* Gavin, Berelinde */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!GavRA","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He may be a clumsy bastard, an' gods knows he comes wi' a bit o' baggage wi' Lanie an' all, but th' boy makes her right happy. An' he be a good friend.~
+/* Anomen, BioWare */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("AnomenRomanceActive","GLOBAL",1) Global("AnomenRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I don't rightly see what she sees in that pompous self-centered bastard, but he can offer her much more than I can. An' she seems to be willin' to let him be close.~
+/* Edwin, Laufey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("EdwinRomanceActive", "GLOBAL", 1) Global("EdwinRomanceActive", "GLOBAL", 2)~ THEN ~[ARAN]  Look at me. An' then look at him. He may be a self-centered prissy evil bastard, but he be a Red Wizard. Power, refinement, sophistication. Everythin' I'm not.~
+/* Ajantis, Jastey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. A blighted knight, versus a sellsword what has naught to offer. Hells, I can't even sit at th' same table as Ajantis. I'd be out wi' th' other common rabble, not sittin' in a Greathall.~
+/* Solaufein, Weimer */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("SolaTalk","GLOBAL",14)~ THEN ~[ARAN] Look at me. An' then look at him. I know she sees more in him than in me. I look at him, an' I see naught but an enemy. She looks at him, an' she sees somethin' that lets him get close. Soon enough, she will tell me to 'just be friends'.~
+/* Kivan, Domi  */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("P#KivanRomanceActive","GLOBAL",2) !Global("P#KivanRomanceInactive","GLOBAL",1)~ THEN ~[ARAN] I see it in her eyes. Th' way she looks at him... Lost love or no, he has followed her since th' first. How can I compete wi' an elven archer what has bent centuries o' will to servin' her an' lovin' her?~
+/* Valygar, CRomantique, Domi */ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("H#ValygarRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. We be worlds apart, yet she lets him be close. I'm not sayin' Valygar is th' worst she could do, but am I really any better?~
+/* Xan: materials without referent cover all pathways without worrying about Xan, Valygar, Bonded, not bonded, etc. */ 
+/* summary response */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'll take whatever time she gives me, an' be glad enough for that.~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] I know that Avoreen does not always let us have exactly what we want. But She seeks to give us what we need.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] An' you think I am a better fit for what be needed?~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] I do not know. But I know that there are seldom second chances. If I had another chance, I would tell Patrick how I felt. I would tell him every day.~ 
+EXIT
+
+/* ToB Banters: Aran > Keldorn, Romanced Or Not : Tell Her */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntobtellher","GLOBAL",0) 
+InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)
+!Global("C#AjantisPCMarriage","GLOBAL",1) // banter shut down if PC is married to Ajantis
+!Global("ADAngelMarried","GLOBAL",1) // banter shut down if PC is married to Angelo
+OR(2)
+Global("c-aranrom","GLOBAL",1)
+Global("c-aranrom","GLOBAL",2)
+OR(17)
+Global("B!KeldornRA","GLOBAL",1) // banter deferred to Keldorn if active
+Global("LS#SarevokRomanceActive","GLOBAL",1) 
+Global("LS#SarevokRomanceActive","GLOBAL",2)
+Global("B!GavRA","GLOBAL",2)
+Global("AnomenRomanceActive","GLOBAL",1)
+Global("AnomenRomanceActive","GLOBAL",2)
+Global("EdwinRomanceActive", "GLOBAL", 1)
+Global("EdwinRomanceActive", "GLOBAL", 2)
+Global("J#KelseyRomanceActive","GLOBAL",2)
+Global("TsujathaRomanceActive","GLOBAL",2)
+Global("LS_HaerDalisRomance","GLOBAL",1)
+Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("ADAngelRomanceActive","GLOBAL",2)
+GlobalGT("SolaTalk","GLOBAL",14)
+Global("P#KivanRomanceActive","GLOBAL",2)
+Global("H#ValygarRomanceActive","GLOBAL",2)
+Global("O#XanRomanceActive","GLOBAL",2)~
+THEN C-ARN25B c-arantob33b5
+~[ARAN] Blighted hells. Sune herself must o' cursed me right proper.~ DO ~SetGlobal("c-arntobtellher","GLOBAL",1)~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Tell her.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] What?~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Tell her how you feel.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I can't rightly do that.~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] It is obvious you love her. And it hurts you to see her with him.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted.. Keldorn, keep your voice down. She might hear you.~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] You have the strength, and you have the power. You lack the will. Just tell her how much you care.~ 
+/* Haer'Dalis, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no extra-planar bard wi' beautiful speech an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Angelo, Sister Vigilante */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I be no world-travellin' kara-turan wi' interestin' stories an' soft words. Hells, I can't even rightly say naught wi' out bringin one or more gods into th' conversation.~
+/* Sarevok, Aeryn */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS#SarevokRomanceActive","GLOBAL",1) Global("LS#SarevokRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He be power, hunger, an' strength, tied right proper to her soul. I have naught to compete against that.~
+/* Kelsey, JCompton */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("J#KelseyRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Th' boy loves her right proper, an' she seems happy enough. Soon enough she will be tellin' me to keep away an' 'just be friends'.~
+/* Tsujatha, Nethrun and Sillara */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("TsujathaRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. Necromantic extra-planar elf versus th' poor sod what sells his sword an' can barely speak two blighted words wi' out bringin' a god or two into th' conversation.~
+/* Gavin, Berelinde */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!GavRA","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. He may be a clumsy bastard, an' gods knows he comes wi' a bit o' baggage wi' Lanie an' all, but th' boy makes her right happy. An' he be a good friend.~
+/* Anomen, BioWare */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("AnomenRomanceActive","GLOBAL",1) Global("AnomenRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. I don't rightly see what she sees in that pompous self-centered bastard, but he can offer her much more than I can. An' she seems to be willin' to let him be close.~
+/* Edwin, Laufey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("EdwinRomanceActive", "GLOBAL", 1) Global("EdwinRomanceActive", "GLOBAL", 2)~ THEN ~[ARAN]  Look at me. An' then look at him. He may be a self-centered prissy evil bastard, but he be a Red Wizard. Power, refinement, sophistication. Everythin' I'm not.~
+/* Ajantis, Jastey */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. A blighted knight, versus a sellsword what has naught to offer. Hells, I can't even sit at th' same table as Ajantis. I'd be out wi' th' other common rabble, not sittin' in a Greathall.~
+/* Solaufein, Weimer */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("SolaTalk","GLOBAL",14)~ THEN ~[ARAN] Look at me. An' then look at him. I know she sees more in him than in me. I look at him, an' I see naught but an enemy. She looks at him, an' she sees somethin' that lets him get close. Soon enough, she will tell me to 'just be friends'.~
+/* Kivan, Domi  */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("P#KivanRomanceActive","GLOBAL",2) !Global("P#KivanRomanceInactive","GLOBAL",1)~ THEN ~[ARAN] I see it in her eyes. Th' way she looks at him... Lost love or no, he has followed her since th' first. How can I compete wi' an elven archer what has bent centuries o' will to servin' her an' lovin' her?~
+/* Valygar, CRomantique, Domi */ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("H#ValygarRomanceActive","GLOBAL",2)~ THEN ~[ARAN] Look at me. An' then look at him. We be worlds apart, yet she lets him be close. I'm not sayin' Valygar is th' worst she could do, but am I really any better?~
+/* Xan: materials without referent cover all pathways without worrying about Xan, Valygar, Bonded, not bonded, etc. */ 
+/* summary response */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I'll take whatever time she gives me, an' be glad enough for that.~
+/* Keldorn Not Romanced Extension */
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) !Global("B!KeldornRA","GLOBAL",1)~ THEN ~[KELDORN] I have never seen you flinch from a battle, or hide from a true challenge. If it is in your heart, then the way forward is to let her know your feelings.~ 
+/* Keldorn Romance Extension */
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1)~ THEN ~[KELDORN] Would you subject me to the... to the pain I have already experienced?~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1)~ THEN ~[ARAN] Hells, Keldorn, no, I... Have I been disloyal? I done pledged you my sword, an' I'd follow you anywhere. But she... she is...~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID) Global("B!KeldornRA","GLOBAL",1)~ THEN ~[KELDORN] I know. But do not underestimate her. And do not underestimate me. Honesty and truth is more important in this matter than any other. She deserves to know, and to make her choice. And on the bonds of our friendship, both you and I need the truth to be open and between us, as well.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I... ~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I hear you. I don't rightly believe love be truly a war. Somehow, it seems much bloodier, an' a hells o' a lot more painful.~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] I believe that is the truest thing I have ever heard you say.~ 
+EXIT
+
 
 
