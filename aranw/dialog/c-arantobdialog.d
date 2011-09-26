@@ -9339,5 +9339,55 @@ THEN C-ARN25B c-arantob33b5
 == BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] I believe that is the truest thing I have ever heard you say.~ 
 EXIT
 
+/* need two variants for bad guys */
+
+
+/* ToB Banters: Aran > Valygar */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob25b","GLOBAL",0) InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B c-arantob25b
+~[ARAN] So, have you decided what th' acceptable level o' corruption be, or do you just be waitin' until th' right moment to say you be wrong?~ DO ~SetGlobal("c-arntob25b","GLOBAL",1)~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] I am not wrong. Magic is a force that corrupts all who use it.~ 
+/* sideline: PC is magic user */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) !Class("c-aran",MAGE_ALL) !Class("c-aran",SORCERER) OR(2) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ THEN ~[ARAN] <CHARNAME>, <PRO_HESHE> be a right powerful user o' magic.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID) !Class("c-aran",MAGE_ALL) !Class("c-aran",SORCERER) OR(2) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ THEN ~[VALYGAR] An occurrence which troubles me greatly. I think <PRO_HESHE> should proceed carefully.~ 
+/* sideline: PC and Aran are magic users */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Class("c-aran",MAGE_ALL) Class("c-aran",SORCERER) OR(2) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ THEN ~[ARAN] <CHARNAME>, <PRO_HESHE> an I both be right powerful users o' magic.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID) OR(2) Class("c-aran",MAGE_ALL) Class("c-aran",SORCERER) OR(2) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ THEN ~[VALYGAR] An occurrence which troubles me greatly. Both of you should proceed carefully.~
+/* sideline: Aran is magic user */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Class("c-aran",MAGE_ALL) Class("c-aran",SORCERER) !Class(Player1,MAGE_ALL) !Class(Player1,SORCERER)~ THEN ~[ARAN] I be a right powerful user o' magic.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID) OR(2) Class("c-aran",MAGE_ALL) Class("c-aran",SORCERER) !Class(Player1,MAGE_ALL) !Class(Player1,SORCERER)~ THEN ~[VALYGAR] An occurrence which troubles me greatly. You should proceed carefully.~ 
+/* moving on... */
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I don't rightly think we could get all th' way here without usin' some serious magic. I don't feel corrupted. Hells, I feel right fine, I do.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Do you think Bodhi felt that her vampiric nature and magical powers were a form of corruption?~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Well, she were undead herself, eh? She looked a mite peaked an' whitish, I guess. Th' magic use were somethin' secondary to her nature, is all.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] You do not seem to be getting my point.~ 
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Oh, I be gettin' it. I just don't find m'self in agreement, is all.~
+EXIT
+
+/* ToB Banters: Haer'Dalis > Aran */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob1b","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty(Myself) !StateCheck(Myself,CD_STATE_NOTVALID)~ THEN BHAERD25 c-arantob1b
+~[HAERDALIS] My fierce hound, why so morose and destitute?~ DO ~SetGlobal("c-arntob1b","GLOBAL",1)~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Who do you be callin' destitute? I have more than a few coin hidden about by now.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Oh no, you misunderstand. I but alluded to your air of despondency, your troubled brow. It is at odds with our progress. Your part in our little drama seems a great success.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Aye. Th' thing is... well, to take a metaphor, mayhap this truly be like one o' your fancy plays.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] I shall listen, good hound, with much anticipation.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Well, th' long an' th' short o' it is, what happens when th' play be over?~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] We take our bows, receive our acclaim, and enjoy the adoration of our many admirers for the brief span of time before the next performance.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You done played th' leadin' man too many times, boyo. For th' rest o' us bit parts, we don't follow along to th' next performance. We tend to get less o' glory an' challenge, an' more waitin' tables, muckin' out stalls, an' fadin' into th' woodwork. Metaphorically speakin', o' course.~
+EXIT
+
+/* ToB Banters: Aran > Haer'Dalis */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob17b","GLOBAL",0) InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B c-arantob17b
+~[ARAN] Hey, Haer'Dalis, you be a right fine bard, eh?~ DO ~SetGlobal("c-arntob17b","GLOBAL",1)~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Would that all my audiences were as appreciative as you! Or perhaps you meant to ask this poor sparrow for an evaluation of his own talents? ~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Well, more o' th' first than th' second, I think. I was just wonderin'... would you do a lad a favor an' look this little story over for me?~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] I see that you have talents of your own, my hound, for that 'little' story appears to be scribed on several parchments.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I done got carried away, a little.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] It would be my pleasure. Let me see this gentle foray into the wilds of authorship.~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] ...~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Well, what do you be thinkin'? On account o' you have a peculiar look on your face, even more'n usual.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] I must struggle to maintain my composure, my fierce hound. You have written perhaps the most... most amusing comedy! I had no idea you were so creative. This passage, for example; masterful overuse of purple prose. A parody -  nay, even a Burlesque!~
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Errr... it were supposed to be a bit risky, an' bedroomy, an' all. More get th' reader all hot an' bothered. Not really one o' those comedy things, eh?~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Ah. Yes. Well. To borrow a turn of phrase often heard in bardic lore... this is an intriguing concept. In the hands of a talented author, it might even be publishable. Alas, it is neither.~
+EXIT
 
 
