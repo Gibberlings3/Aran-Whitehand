@@ -8950,6 +8950,52 @@ END
 
 /* ToB Banters */
 
+APPEND C-ARN25B
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Ajantis */
+IF ~~ a4255
+  SAY ~[ARAN] Hells, Ajantis be as bad as you. He has naught in th' way o' good juicy gossip, just tales o' honor an' such. I think he were a companion back on th' Trade Way, before you all headed southwest.~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Imoen */
+IF ~~ a4257
+  SAY ~[ARAN] Imoen must have been a sight to see, an' a blighted tough one to keep up with, back on th' Sword Coast. I can imagine she kept everyone on their toes. Glory, conquest, an' pink accoutrements for all, eh?~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Viconia */
+IF ~~ a4258
+  SAY ~[ARAN] I think Viconia met up wi' you way back, but I'm not blighted likely to get no stories from her. Not that I'd believe them anyways, or listen, or even ask that spiderspawn bitch naught.~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Edwin */
+IF ~~ a4259
+  SAY ~[ARAN] I done heard rumors what put Edwin an' <CHARNAME> together far back on th' Sword Coast. I don't rightly believe anythin' he claims fully, on account o' that overweanin' ego o' his, but I think he claims all th' glories o' old were his doin'.~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Gavin */
+IF ~~ a4260
+  SAY ~[ARAN] Gavin be a right good lad, but I can't get much in th' way o' glory stories out o' him. I think he done met up wi' you early on, eh? That must o' been somethin', wanderin' into dangerous terrritory wi' a healer what might trip over his own two feet if th' wind blows th' wrong way. ~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Xan */
+IF ~~ a4261
+  SAY ~[ARAN] You have to help a lad out, here. Xan jut looks at me wi' that morose expression o' his an' shakes his head. A Moonblade weilder, a Harper, an' <CHARNAME>. Hells, that must o' spawned quite a few stoories an' glories.~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Kivan */
+IF ~~ a4262
+  SAY ~[ARAN] Kivan don't say much about those days. He just looks at those hands o' his, flexes them a mite bit, an' gets a far-off look in his eyes. A powerful one like that on your side, you all must o' made quite th' play for glory.~
+  IF ~~ THEN EXTERN BJAHEI25 a4256
+END
+
+END
+
 /* ToB Banters: Aran > Nalia */
 CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob24b","GLOBAL",0) InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B c-arantob24b
 ~[ARAN] Whoa, there, Nalia... easy on th' fierce gestures! I'd prefer to keep my head all in one piece, not be missin' half my face on account o' you be pissed off a bit, eh?~ DO ~SetGlobal("c-arntob24b","GLOBAL",1)~
@@ -9390,4 +9436,111 @@ CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob17b","GLOBAL",0) InP
 == BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Ah. Yes. Well. To borrow a turn of phrase often heard in bardic lore... this is an intriguing concept. In the hands of a talented author, it might even be publishable. Alas, it is neither.~
 EXIT
 
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Romanceables */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(7) InParty("Viconia") InParty("c#ajantis") InParty("Imoen2") InParty("Edwin") InParty("B!Gavin2") InParty("O#Xan") InParty("P#KIVAN")~ THEN C-ARN25B a4263
+~[ARAN] You look a mite pensive, Jaheira. What be draggin' you back down th' distant foggy paths o' memory?~ DO ~SetGlobal("c-arntob18b","GLOBAL",1)~
+== BJAHEI25 ~[JAHEIRA] I am simply remembering how this all started. How young <CHARNAME> was, those few short years ago.~
+== C-ARN25B ~[ARAN] So, tell me a story, eh? You never do tell all th' ins an' outs o' what th' glorious days were like. You started out early enough to know <PRO_HIMHER> when a few kobolds were a right difficult challenge.~
+END
+IF ~!InParty("Viconia") !InParty("c#ajantis") !InParty("Imoen2") !InParty("Edwin") !InParty("B!Gavin2") !InParty("O#Xan") !InParty("P#KIVAN")~ EXTERN BJAHEI25 a4256
+IF ~InParty("Viconia")~ EXTERN C-ARN25B a4258
+IF ~InParty("c#ajantis")~ EXTERN C-ARN25B a4255
+IF ~InParty("Imoen2")~ EXTERN C-ARN25B a4257
+IF ~InParty("Edwin")~ EXTERN C-ARN25B a4259
+IF ~InParty("B!Gavin2")~ EXTERN C-ARN25B a4260
+IF ~InParty("O#Xan")~ EXTERN C-ARN25B a4261
+IF ~InParty("P#KIVAN")~ EXTERN C-ARN25B a4262
+
+CHAIN BJAHEI25 a4256
+~[JAHEIRA] I would not describe them as glorious. But they did have their charm.~
+== C-ARN25B ~[ARAN] I can see it now. <CHARNAME>, all wrapped up in swaddlin' clothes, wavin' <PRO_HISHER> arms wild-like an' bein' chased by a horde o' gibberlings.~
+== BJAHEI25 ~[JAHEIRA] The waving of arms, perhaps. But no swaddling clothes.~
+END
+
+IF ~InParty("Jaheira") Global("JaheiraRomanceActive","GLOBAL",2)~ EXTERN C-ARN25B a4264
+IF ~InParty("Jaheira") !Global("JaheiraRomanceActive","GLOBAL",2)~ EXTERN C-ARN25B a4265
+IF ~InParty("Viconia") OR(2) Global("ViconiaRomanceActive","GLOBAL",1) Global("ViconiaRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4266
+IF ~InParty("Viconia") !Global("ViconiaRomanceActive","GLOBAL",1) !Global("ViconiaRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("c#ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4267
+IF ~InParty("c#ajantis") !Global("C#AjantisRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("Imoen2") OR(2) Global("ImoenRomanceActive","GLOBAL",1) Global("ImoenRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4268
+IF ~InParty("Imoen2") !Global("ImoenRomanceActive","GLOBAL",1) !Global("ImoenRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("Edwin") Global("EdwinRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4269
+IF ~InParty("Edwin") !Global("EdwinRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("B!Gavin2") Global("B!GavRA","GLOBAL",2)~ THEN EXTERN C-ARN25B a4270
+IF ~InParty("B!Gavin2") !Global("B!GavRA","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("O#Xan") Global("O#XanRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4271
+IF ~InParty("O#Xan") !Global("O#XanRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+IF ~InParty("P#KIVAN") Global("P#KivanRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4272
+IF ~InParty("P#KIVAN") !Global("P#KivanRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4264
+~[ARAN] Well, was there somethin' right special from th' first sight o' <PRO_HIMHER>, or did th' whole romance thing wi' you two spring up just when you be wanderin' around Amn fendin' off challenges to th' Balance?~
+== BJAHEI25 ~[JAHEIRA] I was deeply in love with Khalid. I am still deeply in love with Khalid. After his death, it... it became complicated.~
+== C-ARN25B ~[ARAN] Blighted hells... I done put my foot right in it. Look, I meant no harm. I was just askin' on account o' you an <PRO_HIMHER>, you seem to fit right together. Xvim's Spit, I just stuffed both feet right up my mouth.~
+== BJAHEI25 ~[JAHEIRA] A habit which I find I must constantly remind you to curb.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4267
+~[ARAN] I always wanted to know if was there somethin' right special from th' first, or did th' whole romance thing wi' those two spring up just when they be wanderin' around Amn smitin' evil an' generally doin' good?~
+== C-ARN25B IF ~Global("C#AjantisPCMarriage","GLOBAL",1)~ THEN ~[ARAN] Just wonderin', on account o' it seems they were a mite fast to get married.~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. If Ajantis does not wish to tell you, and <CHARNAME> says nothing, then I certainly cannot.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4268
+~[ARAN] Not to put too fine a point on it, but... well, I don't quite get what th' two o' them have as a relationship. On th' one hand, Imoen be like a sister to <PRO_HIMHER>. On th' other, I done seen how <CHARNAME> looks at Imoen, an' there be little o' sisterlyness, eh? It be hard to hide that they be right close together more'n most folks what be married. Did they always be this way?~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. If Imoen does not wish to tell you, and <CHARNAME> says nothing, then I certainly cannot.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4266
+~[ARAN] When did <CHARNAME> get all bent up over th' Shar-kissed drowess, anyways? I mean, were it just animal attraction at first, an' then some kind o' power struggle, or did she set right out to seduce <PRO_HIMHER> right away?~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. Given your obvious hatred of Viconia, I would be discreet, and leave them alone.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4269
+~[ARAN] Th' two o' them, Odesseiron an' <CHARNAME>... were they like to spark right from th' beginnin', or did they decide to become insufferable together later on?~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. I do not doubt that Edwin will gladly boast of their relationship.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4270
+~[ARAN] An' when did Gavin start gettin' so close to <CHARNAME>? Were it gradual, or instant-like? Love at first sight back by th' Temple he says he worked with back near Beregost, or did he have to batter at th' gates, so to speak?~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. If Gavin does not wish to tell you, and <CHARNAME> says nothing, then I certainly cannot.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4271
+~[ARAN] I don't rightly see what <PRO_HESHE> seen in him, y'know. All that doom an' gloom an' angst. But they spark an' confer like they was attached at th' soul, or somethin'. When did <PRO_HESHE> fall for Xan, anyways?~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. If Xan does not wish to tell you, and <CHARNAME> says nothing, then I certainly cannot.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4272
+~[ARAN] Did <PRO_HESHE> fall for th' ohtar right away, or were it more gradual? It seems all a mite bit complicated, it do. Kwentra i'narn, mellonamin.~
+== BJAHEI25 ~[JAHEIRA] That is their story to tell, Aran. If Kivan does not wish to tell you, and <CHARNAME> says nothing, then I certainly cannot. And 'ohtar' translates as 'warrior'. Kivan is far more than that.~
+EXTERN C-ARN25B a4265
+
+CHAIN C-ARN25B a4265
+~[ARAN] Well, nothin' ventured, nothin' gained, I guess. Don't blame a lad for some simple curiosity.~
+== C-ARN25B ~[ARAN] I know it were not all teacups an' roses, but I'd give a blighted fortune to have seen th' whole Iron Throne thing from your perspective, instead o' from th' front lines fightin' Chill an' Blacktalons.~
+== BJAHEI25 ~[JAHEIRA] I... I have many memories I would not repeat. But I am glad that I can think back on them, and see where we are now.~
+EXIT
+
+/* ToB Banters: Aran > Jaheira Back in The Day : Non-Romanceables */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(13) InParty("WLBRAN") InParty("DL#BWN") InParty("Coran") InParty("O#Coran") InParty("M#Eldoth") InParty("Minsc") InParty("QUAYLE") InParty("Sharteel") !InParty("shartel") !InParty("Skiedv") InParty("O#Tiax") InParty("TLXan") InParty("Yesli")~ THEN C-ARN25B a4273
+~[ARAN] You look a mite pensive, Jaheira. What be draggin' you back down th' distant foggy paths o' memory?~ DO ~SetGlobal("c-arntob18b","GLOBAL",1)~
+== BJAHEI25 ~[JAHEIRA] I am simply remembering how this all started. How young <CHARNAME> seemed, those few short years ago.~
+== C-ARN25B IF ~InParty("WLBRAN")~ THEN ~[ARAN] Branwen was mutterin' somethin' similar just a bit ago. Judgin' by th' amount o' "Tempus this" an' "Tempus that", she weren't so sure things have gotten better.~
+== C-ARN25B IF ~InParty("DL#BWN")~ THEN ~[ARAN] Branwen was mutterin' somethin' similar just a bit ago. Judgin' by th' amount o' "Tempus this" an' "Tempus that", she weren't so sure things have gotten better.~
+== C-ARN25B IF ~InParty("Coran")~ THEN ~[ARAN] You Tel'Quessir must be connected somehow. Coran were sayin' somethin' yesterday about th' wondrous Cloakwood, an' how th' more things change th' more things change. Didn't rightly make no sense to me.~
+== C-ARN25B IF ~InParty("O#Coran")~ THEN ~[ARAN] You Tel'Quessir must be connected somehow.  Coran were sayin' somethin' yesterday about th' wondrous Cloakwood, an' how th' more things change th' more things change. Didn't rightly make no sense to me.~
+== C-ARN25B IF ~InParty("M#Eldoth")~ THEN ~[ARAN] I don't rightly trust that Eldoth fellow to tell th' tales. For a bard, he be a mite bit on th' silent side. But I suppose he might have seen a fair bit.~
+== C-ARN25B IF ~InParty("Minsc")~ THEN ~[ARAN] My bet be Minsc has not changed much.~
+== C-ARN25B IF ~InParty("QUAYLE")~ THEN ~[ARAN] I'd ask Quayle about th' old days, but somehow I suspect I'd be listenin' to a blighted hells o' a long story. I just want some o' th' juicy bits.~
+== C-ARN25B IF ~InParty("Sharteel")~ THEN ~[ARAN] Shar-Teel were around back then, I think, but she don't seem to like me much. Comes wi' havin' to wear a codpiece, I guess.~
+== C-ARN25B IF ~InParty("shartel")~ THEN ~[ARAN] Shar-Teel were around back then, I think, but she don't seem to like me much. Comes wi' havin' to wear a codpiece, I guess.~
+== C-ARN25B IF ~InParty("Skiedv") !InParty("M#Eldoth")~ THEN ~[ARAN] I'd ask Skie, on account o' she loves a good piece o' gossip, but then I'd have to get through all th' chatter about silks, an' that bastard Elfred, or Eddoth, or whatever th' bard what she moans about were named.~
+== C-ARN25B IF ~InParty("Skiedv") InParty("M#Eldoth")~ THEN ~[ARAN] I'd ask Skie, on account o' she loves a good piece o' gossip, but then I'd have to get through all th' chatter about silks, an' that bastard Eldoth treated her right bad, but she just loves him anyways. Or hates him. Guess it depends on th' day.~
+== C-ARN25B IF ~InParty("O#Tiax")~ THEN ~[ARAN] Somehow I think th' conversation wi' Tiax would be about how he solved th' whole Iron Throne crisis in spite o' havin' all o' you along, eh?~
+== C-ARN25B IF ~InParty("Yesli")~ THEN ~[ARAN] Yeslick has one hells o' a hollow leg, but no matter how much he drinks he don't spill naught in th' way o' good stories.~
+== C-ARN25B ~[ARAN] An' you, you be th' worst o' all. You never do tell all th' ins an' outs. My boon companions, startin' out early enough to know <PRO_HIMHER> when a few kobolds were a right difficult challenge, an' you hold back on th' tales o' glory.~
+EXTERN BJAHEI25 a4256
 
