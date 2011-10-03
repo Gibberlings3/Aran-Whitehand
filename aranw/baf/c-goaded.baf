@@ -1,0 +1,19 @@
+IF
+	!RealGlobalTimerNotExpired("RE_DreamTimer","GLOBAL")
+	Global("c-arangoaded","GLOBAL",1)
+	InParty("c-aran")
+	!StateCheck("c-aran",CD_STATE_NOTVALID)
+THEN RESPONSE #100
+	SetGlobal("c-arangoaded","GLOBAL",2)
+	ActionOverride(Player1,StartDialog("c-aran",Player1))
+END
+
+
+IF
+	!RealGlobalTimerNotExpired("RE_DreamTimer","GLOBAL")
+	GlobalTimerExpired("c-arangoadedtime","GLOBAL")
+	Global("c-arangoaded","GLOBAL",4)
+THEN RESPONSE #100
+	SetGlobal("c-arangoaded","GLOBAL",5)
+	ActionOverride(Player1,StartDialog("c-aran",Player1))
+END

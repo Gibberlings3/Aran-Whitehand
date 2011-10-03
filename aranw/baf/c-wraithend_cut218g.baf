@@ -1,0 +1,10 @@
+/* change animation so we can get rid of the .cre in the combat at the end of the encounter during cutscene cut218g */
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId("C-ARWRTH")
+        CreateVisualEffectObject("SPFLESHS",Myself)
+        Wait(1)
+        ChangeAnimation("HGWRA02") // Devil Shade
+END

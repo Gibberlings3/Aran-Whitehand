@@ -611,7 +611,7 @@ IF ~Global("c-tobnightone","GLOBAL",1)~ THEN BEGIN a4249
   ++ ~[PC] They do have a way of reminding us that some things never change. All we do, all we attain, all we suffer.... they just keep shining, completely untouched.~ + a4251
   ++ ~[PC] They are very cold. Almost eyes, watching us, judging us, evaluating us.~ + a4251
   ++ ~[PC] I think they are like small campfires, a host of ones like ours, warm in the night.~ + a4251
-  + ~Gender(Player1,MALE)~ + ~[PC] I think they seem like they are mocking me. Kind of like women, all shiny and sparkley, yet cold and distant.~ + a4251
+  + ~Gender(Player1,MALE)~ + ~[PC] I think they seem like they are mocking me. Kind of like women, all shiny and sparkly, yet cold and distant.~ + a4251
   + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] They seem... romantic, somehow. Always there, no matter what.~ + a4251
   + ~RandomNum(5,5)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3188 /* c-aranshutup55 */
   + ~RandomNum(5,4)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3189 /* c-aranshutup56 */
@@ -1110,7 +1110,7 @@ IF ~~ a2782
 END
 
 IF ~~ a2783
-  SAY ~[C-ARAN] Figures. Right, right, got it... strength an' control gives th' biggest rewards. I should look for ways o' turnin' th' walkin' into an advantage. None o' that soft goodie-twoshoes help th' other guy out... toughen up or get th' blighted hells out o' th' way.~
+  SAY ~[C-ARAN] Figures. Right, right, got it... strength an' control gives th' biggest rewards. I should look for ways o' turnin' th' walkin' into an advantage. None o' that soft goodie-two-shoes help th' other guy out... toughen up or get th' blighted hells out o' th' way.~
   + ~RandomNum(3,1)~ + ~[PC] Now you are just whining. Shut up, or I will trade you in for something useful, like a smart-talking two-handed sword with delusions of grandeur.~ + a3146 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
   + ~RandomNum(3,2)~ + ~[PC] Dear gods, you never shut up, do you?~ + a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
   + ~RandomNum(3,3)~ + ~[PC] All I hear is whine, whimper, cry. Are you really a sellsword, or do you just play one at the Ten Taverns Amateur Acting Night?~ + a3148 /* c-aranshutup15 ~[ARAN] Malar's Sharp Teeth. Shuttin' up an' soldierin'.~ */
@@ -3144,7 +3144,7 @@ END
 
 IF ~~ a3909 /* ARAN_TOO_LATE */
   SAY ~[ARAN] Gods alive... Too late...~
-  ++ ~[PC] Warm. Very warm, and kind of tickley inside. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
+  ++ ~[PC] Warm. Very warm, and kind of tickly inside. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
   ++ ~[PC] I c... can't stop right now... got to... to...~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
   ++ ~[PC] HOLD ME TIGHTER.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3910 /* DEATH_OF_ME */
   ++ ~[PC] (Savor his pleasure, letting yours join his... a small explosion of feeling quietly hidden in the shadows.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3911 /* ARAN_CUDDLE_ON_CHEST */
@@ -3233,7 +3233,7 @@ IF ~~ a3918 /* ARAN_MOON_MIND */
 END
 
 IF ~~ a3924 /* MOON_OTHER_OPTIONS */
-  SAY ~[ARAN] Very funny, m'lady witchtongue, very funny. I suppose you would be a mite upset if I said that about some young lass wi' sparklin' eyes an' a come-hither look, eh?~
+  SAY ~[ARAN] Very funny, m'lady witch-tongue, very funny. I suppose you would be a mite upset if I said that about some young lass wi' sparklin' eyes an' a come-hither look, eh?~
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3925 /* MOON_JUST_CHASTE_FRIENDS */
   + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3926 /* MOON_JUST_L1_FRIENDS */
   + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3927 /* MOON_JUST_L2_FRIENDS */
@@ -3265,7 +3265,7 @@ IF ~~ a3935 /* CANT_HAVE_MOON */
   = ~[ARAN] How about I start wi' a simple promise, an' work my way up through improbable, until I get to only slightly impossible?~
   ++ ~[PC] How about we drop this ridiculous discussion and walk together, as two friends out for a stroll?~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
   ++ ~[PC] Well, if you wanted a more practical application, then a romantic thing might be to... well, to touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
-  ++ ~[PC] How about you take that pompous overwordy manner of yours and stick it up your rear?~ + a3866 /* FIGHT_EXIT */
+  ++ ~[PC] How about you take that pompous over-wordy manner of yours and stick it up your rear?~ + a3866 /* FIGHT_EXIT */
   ++ ~[PC] How about we stop all the talking, and just kiss?~ + a3920 /* ARAN_MOON_LEADS1 */
   ++ ~[PC] (Take his hands and hold them close to your face.)~ + a4216 /* MOON_ADVANCE_ACTION */
   ++ ~[PC] I am disappointed. I thought you were a hopeless romantic.~ + a3938 /* ARAN_HOPELESS_ROMANTIC */
@@ -4633,8 +4633,8 @@ IF ~~ a4183 /* ROM_TWO_2_WANT */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   ++ ~[PC] (Shake your head, and push him away.)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] PLACEHOLDER~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] PLACEHOLDER~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] Dream on. You know that is not going to happen.~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think... I think this enough for right now.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4182 /* ROM_TWO_2_NO_PRISONERS */
@@ -7153,7 +7153,7 @@ IF ~~ a1987 SAY ~[ARAN] I say we drop a coin or two as a nice little gesture. Ne
 IF ~~ a1988 SAY ~[ARAN] Bloody poor defenses, if you ask me. We can probably waltz through this place wi' out much pain. This bastard doesn't seem to believe in trainin' his followers so well.~ IF ~~ THEN EXIT END /* Gromnir's Barracks */
 IF ~~ a1989 SAY ~[ARAN] I'd rather not leave none o' us separate, on account o' all these blighted cells. No tellin' what be hidin' where. Not that thrilled wi' bein' no snack for whatever keeps this place so deserted, eh?~ IF ~~ THEN EXIT END /* Saradush Prison */
 IF ~~ a1990 SAY ~[ARAN] Save everyone we can, an' watch everythin' right careful. There be more traps here than in some mad wizard's fantasy.~ IF ~~ THEN EXIT END /* Basement Entrance to Gromnir's Hideout */
-IF ~~ a1991 SAY ~[ARAN] I don't trust that slippery bastard. I say we loot th' whole blighted place. It might not be th' nicest thing to do, but somethin' tells me th' bastard has it comin'.~ IF ~~ THEN EXIT END /* Kiser's Home */
+IF ~~ a1991 SAY ~[ARAN] I don't trust that slippery arse. I say we loot th' whole blighted place. It might not be th' nicest thing to do, but somethin' tells me th' bastard has it comin'.~ IF ~~ THEN EXIT END /* Kiser's Home */
 IF ~~ a1992 SAY ~[ARAN] That bed be lookin' right invitin'. Pity there be such blighted noise none o' us could sleep.~ IF ~~ THEN EXIT END /* House (no exit?) */
 IF ~~ a1993 SAY ~[ARAN] Chauntea's Basket, that kitchen be right fine. A steady source o' clean water, some o' th' finest produce... I'd be right happy to spend a few hours in there, eh?~ IF ~~ THEN EXIT END /* Countess Santele's Home */
 IF ~~ a1994 SAY ~[ARAN] I say give me th' party purse, an' walk away. I bet there be some o' th' nicest scrolls an' supplies this side o' Neverwinter, an' wi' a little persuasion an' some coin we could get some right fine materials! look at th' quality o' th' scraps left behind. Think o' what his private stores must be like!~ IF ~~ THEN EXIT END /* Arcana Archives */
@@ -7181,23 +7181,23 @@ IF ~~ a2015 SAY ~[ARAN] Dragon carvin's everywhere. Dark. Smells worse than my f
 IF ~~ a2016 SAY ~[ARAN] There be somethin' odd about those pools. I say we take a closer look. Mayhap we can find somethin' to our advantage. Or mayhap we just end up as bits o' sausage in someone's soup, eh?~ IF ~~ THEN EXIT END /* Abazigal's Lair Entrance Hall */
 IF ~~ a2017 SAY ~[ARAN] Kill anythin' that wiggles, an' remind me to get somethin' what cuts fish-oil smell off o' gear.~ IF ~~ THEN EXIT END /* Abazigal's Lair -- Cells */
 IF ~~ a2018 SAY ~[ARAN] I say we poke about in every single corner o' this place. Selune's Silver Strands, there be a fortune in vellum an' ink to plunder, an' have you seen th' rare inks he has just lyin' out there for th' takin'? I be like to jump out o' my skin!~ IF ~~ THEN EXIT END /* Abazigal's Lair -- Iycanth the Mad, Bondari */
-IF ~~ a2019 SAY ~[ARAN] Brilliant. Just bloody brilliant. A whole room full o' pools, an' on top o' it, dragon poop. Why don't we just go fr th' whole trifecta, an' get a vampiric lich wi' halitosis. My advice? We need to take a blighted break. Every time we start makin' our way forward, we seem to step right into another wonderful experience just like this one.~ IF ~~ THEN EXIT END /* Abazigal's Lair -- Fll'Yissetat */
-IF ~~ a2020 SAY ~[ARAN] PLACEHOLDER~ IF ~~ THEN EXIT END /* Abazigal's Hideout */
+IF ~~ a2019 SAY ~[ARAN] Brilliant. Just bloody brilliant. A whole room full o' pools, an' on top o' it, dragon poop. Why don't we just go for th' whole trifecta, an' get a vampiric lich wi' halitosis. My advice? We need to take a blighted break. Every time we start makin' our way forward, we seem to step right into another wonderful experience just like this one.~ IF ~~ THEN EXIT END /* Abazigal's Lair -- Fll'Yissetat */
+IF ~~ a2020 SAY ~[ARAN] I'd say somethin' quotable, but given th' amount o' pain radiatin' from that blighted huge nastyy lookin' sword, I think I'll just shut my mouth an' keep a wary eye out.~ IF ~~ THEN EXIT END /* Abazigal's Hideout */
 IF ~~ a2021 SAY ~[ARAN] Dive back through th' pool?~ IF ~~ THEN EXIT END /* Frost Salamander Cave */
-IF ~~ a2022 SAY ~[ARAN] PLACEHOLDER~ IF ~~ THEN EXIT END /* Orbs and Gauth */
+IF ~~ a2022 SAY ~[ARAN] Looks like someone done a right good job o' buildin' a library o' spell components an' writin' materials. Mayhap I'll be seein' one o' my manuscripts lyin' around, on account o'this place be just scary enough to be a publisher's office, eh?~ IF ~~ THEN EXIT END /* Orbs and Gauth */
 IF ~~ a2023 SAY ~[ARAN] I might have some advice, but I think I just swallowed a minnow. That be just wrong, that be.~ IF ~~ THEN EXIT END /* Pool Home -- breath under water */
-IF ~~ a2024 SAY ~[ARAN] PLACEHOLDER~ IF ~~ THEN EXIT END /* Area outside Sendai's Hideout */
+IF ~~ a2024 SAY ~[ARAN] Somethin' don't seem quite as it should be. I don't rightly know why, but it feels like there be plenty o' eyes watchin' us right now.~ IF ~~ THEN EXIT END /* Area outside Sendai's Hideout */
 IF ~~ a2025 SAY ~[ARAN] We sure as Shar's Spit don't stand around jawin'. This place be crawlin wi' those blighted Drow bastards.~ IF ~~ THEN EXIT END /* Main Entrance Sendai's Lair */
 IF ~~ a2026 SAY ~[ARAN] My advice be to shut th' hells up an' kill everythin' we can. I'd say do it slow an' make 'em suffer, but right now speed be th' smartest route, I think.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Slavemaster */
 IF ~~ a2027 SAY ~[ARAN] Get out quick. Flame everythin'.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Spiders */
-IF ~~ a2028 SAY ~[ARAN] PLACEHOLDER~ IF ~~ THEN EXIT END /* Sendai's Lair -- Crossway */
+IF ~~ a2028 SAY ~[ARAN] Give a lad a moment, eh? I just looked over th' edge, an' somehow fallin' a mile or so down into whatever th' blighted hells be down there don't seem that appealin' to me.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Crossway */
 IF ~~ a2029 SAY ~[ARAN] Small area. Confined spaces. We should throw up some defenses, an' blast area o' effect spells any time somethin' moves.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Diaytha, Abishai */
 IF ~~ a2030 SAY ~[ARAN] What do you be askin' me for? We don't rightly have much choice. We go forward, we go back... either way, we are bound to run into trouble. Drow travel in packs, like seriously screwed up gibberlings.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Captain Egeissag */
 IF ~~ a2031 SAY ~[ARAN] We done come this far. No sense not to go one more step forward, eh? By th' way,. I done made out a last will an' testament, just in case. Probably a bit late for it, on account of if you be needin' to read it, we probably will have all taken th' great dirt nap, eh?~ IF ~~ THEN EXIT END /* Sendai's Lair -- Mithykyl */
 IF ~~ a2032 SAY ~[ARAN] Nope. I got nothin'.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Sendai */
-IF ~~ a2033 SAY ~[ARAN] PLACEHOLDER~ IF ~~ THEN EXIT END /* Sendai's Lair -- Drow */
+IF ~~ a2033 SAY ~[ARAN] When I say th' only good drow be a dead drow, I wasn't sayin' I was volunteerin' to singlehandedly depopulate th' entire range o' Faerun's dark elves.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Drow */
 IF ~~ a2034 SAY ~[ARAN] Every time we be seein' those funny tusk-like projections circlin' 'round some dias, it seems there be a whole load o' trouble headin' our way. I say we start lookin' in th' doors careful like, an' every time we see somethin' that looks like this, just walk away.~ IF ~~ THEN EXIT END /* Sendai's Lair -- Odamaron */
-IF ~~ a2035 SAY ~[ARAN] Smells funny. Odd food supplies for a woodcutter. We'd best poke around a bit. But I think I'll be leavin' those mushrooms over there alone, on account o' I think they be right poisonous.~ IF ~~ THEN EXIT END /* Woodcutter's House -- Sendai's Area */
+IF ~~ a2035 SAY ~[ARAN] Smells funny. Odd food supplies. We'd best poke around a bit. But I think I'll be leavin' those mushrooms over there alone, on account o' I think they be right poisonous.~ IF ~~ THEN EXIT END /* Woodcutter's House -- Sendai's Area */
 IF ~~ a2036 SAY ~[ARAN] Kill anythin' that moves. Then kill it again. Mayhap dig it up an' kill it a third time, just to be sure. Gods don't rightly die quick, is my guess.~ IF ~~ THEN EXIT END /* The Throne of Bhaal */
 IF ~~ a2037 SAY ~[ARAN] You know, short o' th' standard combat tactics, I really got nothin' here. Ever since we started poppin' in an' out o' that blighted section o' hell, my sense o' what be possible has had to have some readjustin'. I'm not rightly sure I have a good handle on what we can do. Right now, it looks like we can take on half o' Faerun in battle an' win. I'm just not sure that be th' best way to get your point across, eh? But one thing be for sure... we needs be gatherin' what we can o' that water.~ IF ~~ THEN EXIT END /* Oasis in Tethyr */
 IF ~~ a2038 SAY ~[ARAN] Anyone for a nice swim? That water looks right peaceful an' happy, it does. Or not.~ IF ~~ THEN EXIT END /* River Area */
@@ -8960,7 +8960,7 @@ END
 
 /* ToB Banters: Aran > Jaheira Back in The Day : Imoen */
 IF ~~ a4257
-  SAY ~[ARAN] Imoen must have been a sight to see, an' a blighted tough one to keep up with, back on th' Sword Coast. I can imagine she kept everyone on their toes. Glory, conquest, an' pink accoutrements for all, eh?~
+  SAY ~[ARAN] Imoen must have been a sight to see, an' a blighted tough one to keep up with, back on th' Sword Coast. I can imagine she kept everyone on their toes. Glory, conquest, an' pink accouterments for all, eh?~
   IF ~~ THEN EXTERN BJAHEI25 a4256
 END
 

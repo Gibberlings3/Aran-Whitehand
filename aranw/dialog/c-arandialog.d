@@ -22233,11 +22233,11 @@ IF ~~ a1420
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
 END
 
-/* set the night visit here: Global("c-aranflirtbed","GLOBAL",1) */
+/* set the night visit here: Global("c-arangoaded","GLOBAL",1) */
 IF ~~ a1421
   SAY ~[ARAN] (Aran's grip is tight, catching your hand with sudden intensity, his eyes searching yours keenly.)~
   = ~Aye, I will find a way. You are like a fire in my heart, <CHARNAME>. An' I can't find aught to cool the flames.~
-  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",2) SetGlobal("c-aranflirtbed","GLOBAL",1)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",2) SetGlobal("c-arangoaded","GLOBAL",1)~ EXIT
 END
 
 IF ~~ a1422
