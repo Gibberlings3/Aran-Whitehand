@@ -2287,13 +2287,13 @@ ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
 
   COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE4.2da~
     REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving as Her right hand on Faerun. His constant work furthering her causes helped develop a respectable following, and his willingness to travel anywhere in Her name led others to regard him as some sort of high priest... a notion that often was dispelled in a barrage of blasphemy and cursing. As the histories recount, his last days on this mortal plane were spent comfortably on Evermeet, attempting to arrange a joint project between the followers of <CHARNAME> and Hanali Celanil's Order of the Ruby Rose to commemorate what would have been <CHARNAME>'s eightieth mortal birth-day celebration.~
+    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving as Her right hand on Faerun. His constant work furthering her causes helped develop a respectable following, and his willingness to travel anywhere in Her name led others to regard him as some sort of high priest... a notion that often was dispelled in a barrage of blasphemy. As the histories recount, his last days on this mortal plane were spent comfortably on Evermeet, attempting to arrange a joint project between the followers of <CHARNAME> and Hanali Celanil's Order of the Ruby Rose to commemorate what would have been <CHARNAME>'s eightieth mortal birth-day celebration.~
 
   /* PC Accepted Godhood, Romance, Evil */
 
   COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
     REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. His constant work furthering her causes eventually corrupted him completely, though later writings indicate growing fear and desolation as his mortality left him increasingly unable to serve <CHARNAME> in the manner she wished. It is a mark of their love that when a Paladin of Helm finally ended Aran's life, <CHARNAME> herself personally blasted the woman into nothingness, causing a minor skirmish in the wars of the gods.~
+    REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. His constant work furthering her causes eventually corrupted him completely, though later writings indicate growing fear and desolation as his mortality left him increasingly unable to serve <CHARNAME> in the manner she wished. It is a mark of their love that when a Paladin of Helm finally ended Aran's life, <CHARNAME> Herself personally blasted the woman into nothingness, causing a minor skirmish in the wars of the gods.~
 
 END /* of ToB installation */
 

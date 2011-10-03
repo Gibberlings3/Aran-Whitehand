@@ -3700,35 +3700,35 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a24
   + ~RandomNum(8,1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a25
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
   + ~RandomNum(8,2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a26
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
   + ~RandomNum(8,3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a27
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
   + ~RandomNum(8,4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a28
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
   + ~RandomNum(8,5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a29
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
   + ~RandomNum(8,6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a30
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
   + ~RandomNum(8,7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a31
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
   + ~RandomNum(8,8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a32
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
   ++ ~[PC] Aran, go on and make your way alone. I will join you when I am able.~ + a33
 END
 
@@ -3748,7 +3748,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1)~ THEN BEGIN a22
 END
 
 IF ~~ a23
-  SAY ~[ARAN] Right then, contract's up, eh? Well, I'll be off. There be some work I wanted to do up north a ways in Waterdeep, anyways.~
+  SAY ~[ARAN] Right then, contract's up, eh? Well, I'll be off. There be some work I wanted to do up north a ways in Waterdeep, anyways. Mayhap I will see you sometime a few years hence, when I have made my mark on th' world.~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
@@ -3798,55 +3798,63 @@ IF ~~ a31
 END
 
 IF ~~ a32
-  SAY ~[ARAN] Tymora's Luck - I'd be a mite happier if I was along wi' ye. But you call th' shots, so here I stay.~
+  SAY ~[ARAN] Tymora's Luck - I'd be a mite happier if I was along wi' you. But you call th' shots, so here I stay.~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a33   /*  add more here for later chapters? */
   SAY ~[ARAN] Well, I can try. Where do you be wantin' me to go?~
-  + ~!AreaCheck("AR1600")~ + ~[PC] Head for the Brynlaw docks.~ UNSOLVED_JOURNAL ~Whitehand Docked
+  + ~!AreaCheck("AR1600")~ + ~[PC] Head for the Brynlaw docks.~ UNSOLVED_JOURNAL ~Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.~ + a38
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~ + a38bryn
+  + ~!AreaCheck("AR0300")~ + ~[PC] Head for the Athalka docks.~ UNSOLVED_JOURNAL ~Whitehand Docked
 
-  ++ ~[PC] Meet me in the Market District in Athalka.~ UNSOLVED_JOURNAL ~Whitehand Sold on Staying
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.~ + a38
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.~ + a39
+  + ~!AreaCheck("C-AR01") !AreaCheck("AR0700")~ + ~[PC] Meet me in the Market District in Athalka.~ UNSOLVED_JOURNAL ~Whitehand Sold on Staying
+
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.~ + a39
   ++ ~[PC] Meet me outside of the de'Arnise Keep.~ UNSOLVED_JOURNAL ~Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.~ + a40
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.~ + a40
   ++ ~[PC] Meet me in Trademeet.~ UNSOLVED_JOURNAL ~Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.~ + a41
-  ++ ~[PC] Meet me outside of the Windspeare Hills.~ UNSOLVED_JOURNAL ~Whitehand in Windspeare
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.~ + a41
+  ++ ~[PC] Meet me outside of the Umar Hills.~ UNSOLVED_JOURNAL ~Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.~ + a42
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.~ + a42
 END
 
 /*  a34, a35, a36, a37 are chains */
 
+IF ~~ a38bryn
+  SAY ~[ARAN] Aye, then. I'll take up a charter, mayhap work th' oars. I may have one blighted hells o' a time findin' th' Cyric-kissed place, but I'll be there when you get there. I just hope you have some coin for me when you do.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR1600",1572,1469,10))~ EXIT /* Go to AR1600, Bynlaw  */
+END
+
 IF ~~ a38
-  SAY ~[ARAN] Aye, then. I'll take up fishin'.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( <<DOCKS>> )) */
+  SAY ~[ARAN] Aye, then. I'll take up fishin'. I do like to look at th' ships an' such, so mayhap I will go lean on th' worn old stone an' watch th' big fishnest get dragged in.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR0300",3574,3008,10))~ EXIT /* Go to AR0300, The Docks */
 END
 
 IF ~~ a39
   SAY ~[ARAN] Aye, then. There's bugger all to do around here anyways. I'll go check on th' shops an' resupply. Or even better... I will go see how things are at th' Broken Sword, eh?~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT  /* ActionOverride("c-aran",EscapeAreaMove( <<MARKET>> )) */
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("C-AR01",976,306,6))~ EXIT /* Go to C-AR01, The Broken Sword */
 END
 
 IF ~~ a40
-  SAY ~[ARAN] Aye, then. I'll wait around outside th' Keep an stay hidden, like.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( <<KEEP>> )) */
+  SAY ~[ARAN] Aye, then. I'll wait around outside th' Keep. If I scout out a bit, mayhap I can find some old friends what signed on as guards for th' de'Arnise family awhile back. I'm right sure there will be an outpost what will let me lay down a bedroll, if I be lucky.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR1300",1091,3364,9))~ EXIT /* Go to  AR1300, de'Arnise Palisade */
 END
 
 IF ~~ a41
-  SAY ~[ARAN] Aye, then. Trademeet it is. I done heard o' a fine pub there.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( AR2010 )) */
+  SAY ~[ARAN] Aye, then. Trademeet it is. I done heard o' a fine pub there. Mayhap I will be inside, mayhap outside, when you come callin'. Either way, I'll be close to Vyatri's place there. Good ale, an' they have a bard or two woth listenin' to.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR2000",2046,2342,10))~ EXIT /* Go to AR2000, outside Vyatri's Pub in Trademeet */
 END
 
 IF ~~ a42
-  SAY ~[ARAN] Aye, then. Might be somethin' interestin' to do around that little village, there, I guess.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT /* ActionOverride("c-aran",EscapeAreaMove( <<WINDSPEAR>> )) */
+  SAY ~[ARAN] Aye, then. Might be somethin' interestin' to do around that little village, there, I guess. More'n likely there be a pub what can stave off a lad's thirst, as well.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR1105",1041,276,0))~ EXIT /* Go to AR1105, Imnesvale Inn in the Umar Hills */
 END
 
 IF ~~ a480
@@ -3898,10 +3906,7 @@ END
 IF ~~ a486
   SAY ~[ARAN] (His hands close hard around yours, drawing you face to face.) I swear by any an' all gods, that I am your Sword. If I turn again, kill me. For if you don't, I will take my own life.~
   = ~[ARAN] I'll be gatherin' my gear an' gettin' back to th' routine. An' <CHARNAME>... Thank you.~
-  IF ~~ THEN DO ~EraseJournalEntry(%Whitehand Waits
-
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
+  IF ~~ THEN DO ~EraseJournalEntry(%Aran Leaves
 
   Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
@@ -3909,34 +3914,31 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Waits
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%) JoinParty()~ EXIT
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
 END
 
 IF ~~ a487
   SAY ~[ARAN] Aye, then, I'll be gatherin' my gear an' gettin' back to th' routine.~
   = ~[ARAN] An' <CHARNAME>... Thank you.~
-  IF ~~ THEN DO ~EraseJournalEntry(%Whitehand Waits
-
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
+  IF ~~ THEN DO ~EraseJournalEntry(%Aran Leaves
 
   Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
@@ -3944,24 +3946,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Waits
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%) JoinParty()~ EXIT
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+EraseJournalEntry(%Whitehand Heads for the Hills
+
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
 END
 
 IF ~~ a488
@@ -4082,10 +4085,7 @@ IF ~~ a2707 SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly
 
 IF ~~ a2947
   SAY ~[ARAN] Wait a mite bit, here... No gifts o' welcome, an' no party? It has been a mite bit dull around here. Can I be joinin' up again?~
-  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Whitehand Waits
-
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
+  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Aran Leaves
 
   Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
@@ -4093,25 +4093,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Waits
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
   + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
   + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
   + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
@@ -4138,10 +4138,7 @@ END
 
 IF ~~ a2951
   SAY ~[ARAN] I done whittled you this little keepsake for you, <CHARNAME>, but by Chauntea's Grain Basket, I done just lopped off too much. I'll be havin' to keep workin' on it a bit more.~
-  ++ ~[PC] Time to join up again, Aran.~ DO ~EraseJournalEntry(%Whitehand Waits
-
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
+  ++ ~[PC] Time to join up again, Aran.~ DO ~EraseJournalEntry(%Aran Leaves
 
   Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
@@ -4149,25 +4146,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Waits
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
   + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
   + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
   + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
@@ -4193,10 +4190,7 @@ IF ~~ a2952
   + ~Gender(Player1,MALE) RandomNum(2,1)~ + ~[PC] I might let you rejoin the party, if you promise to stop that tuneless whistling you are so fond of inflicting on us.~ + a2716
   + ~Gender(Player1,FEMALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to let me teach you how to speak.~ + a2715
   + ~Gender(Player1,MALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to learn how to cook.~ + a2716
-  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Whitehand Waits
-
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
+  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Aran Leaves
 
   Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
@@ -4204,25 +4198,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Waits
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
+  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
+  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
+  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
+  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a2712
   ++ ~[PC] Aran, go on and make your way alone someplace else. I will join you when I am able.~ + a33
   + ~InParty(Player2) Gender(Player2,FEMALE) !Name("c-aran",Player2)~ + ~[PC] As long as you promise to stop staring at <PLAYER2>'s rear end, you can join us.~ + a2713
