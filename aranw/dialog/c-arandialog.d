@@ -3686,55 +3686,1209 @@ IF ~~ a1648
 END
 
 /* NPC Management: Post-Joined File : Move It Or lose It. */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21 // add erasejournalentry
   SAY ~[ARAN] Hey, I'm right out, if that's what you want. You want me in, out, or somewhere else?~ [c-aws084]
   ++ ~[PC] I want you to stay in the party, Aran.~ + a1694
-  ++ ~[PC] I am terminating your contract permanently, Aran. The paper one. I don't mean to sound ominous or anything. Go find work with someone else.~ SOLVED_JOURNAL ~Whitehand Left for Waterdeep
+  ++ ~[PC] I am terminating your contract permanently, Aran. The paper one. I don't mean to sound ominous or anything. Go find work with someone else.~ DO ~EraseJournalEntry(%Whitehand Sent to the Gods
 
-  I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.~ + a23
-  + ~Gender(Player1,FEMALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a2320
-  + ~Gender(Player1,MALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a24
-  + ~RandomNum(8,1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
-  + ~RandomNum(8,2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
-  + ~RandomNum(8,3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
-  + ~RandomNum(8,4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
-  + ~RandomNum(8,5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
-  + ~RandomNum(8,6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
-  + ~RandomNum(8,7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
-  + ~RandomNum(8,8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
-  UNSOLVED_JOURNAL ~Whitehand Waits
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ SOLVED_JOURNAL ~Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.~ + a23
+  + ~Gender(Player1,FEMALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a2320
+  + ~Gender(Player1,MALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ DO ~/* Journal Entry Block */
+EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a24
+  + ~Global("c-aranwaiting","GLOBAL",0) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
+  + ~Global("c-aranwaiting","GLOBAL",1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
+  + ~Global("c-aranwaiting","GLOBAL",2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
+  + ~Global("c-aranwaiting","GLOBAL",3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
+  + ~Global("c-aranwaiting","GLOBAL",4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
+  + ~Global("c-aranwaiting","GLOBAL",5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
+  + ~Global("c-aranwaiting","GLOBAL",6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
+  + ~Global("c-aranwaiting","GLOBAL",7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
+  + ~AreaCheck("C-AR01")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.~ + a4275
+  + ~AreaCheck("AR0313")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.~ + a4276
+  + ~AreaCheck("AR0406")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.~ + a4277
+  + ~AreaCheck("AR0509")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.~ + a4278
+  + ~AreaCheck("AR0522")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.~ + a4279
+  + ~AreaCheck("AR0704")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.~ + a4280
+  + ~AreaCheck("AR1105")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.~ + a4281
+  + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.~ + a4282
+  + ~AreaCheck("AR2010")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.~ + a4283
+  + ~AreaCheck("AR0709")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.~ + a4284
+  + ~AreaCheck("AR0513")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.~ + a4285
+  + ~AreaCheck("AR0021")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.~ + a4286
+  + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~  DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.~ + a4287  
   ++ ~[PC] Aran, go on and make your way alone. I will join you when I am able.~ + a33
 END
 
 IF ~~ a1694
   SAY ~[ARAN] Well, you had me a mite bit confused, for a minute there. Sure thing, I be stayin'.~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
+END
+
+IF ~~ a4275
+  SAY ~[ARAN] Aye. Teldra might even have some good stories to swap, an' I can always bother Erika. Mayhap i will go find th' dice table, an' win me some interestin' trinkets, eh?~ 
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4276
+  SAY ~[ARAN] Blighted hells, i haven't had a good lusty sing in a bit. I'll go over there an' see what new songs I can learn. Mayhap trade a few o' th' bawdy... errr well, hells. I'll just go wet my whistle, an' learn what I can learn.~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4277
+  SAY ~[ARAN] Mayhap I will find a nice lplace in a corner, an' see what tere be to see. Not one for th' pits m'self. Too many ways things like that can leave a man less than he used to be, body or soul, eh?~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4278
+  SAY ~[ARAN] Hmmm... what did you say? Got a mite bit distracted there. Wait here? Fine by me. You run along, an' come pick me up later, eh? I'll just enjoy th' scenery.~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4279
+  SAY ~[ARAN] Right. Leave th' poor sellsword to do th' books an' clean up th' accounts, while you go galivantin' around faerun solvin' th' world's problems. Sune's Sweet Sighs, don't actors realize all those special effects cost coin? Usin' a blighted spell wi' a pearl in th' components, when a minor cantrip would work. We need to hire on an illusionist, before th' blighted players sped us out o' house an' home!~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4280
+  SAY ~[ARAN] Sure thing. I might be able to sweet-talk th' cook into tradin' for some nice spices. That larder... hells, someone knows how to blighted well cook.~
+    IF ~~ THEN EXIT
+END  
+
+IF ~~ a4281
+  SAY ~[ARAN] Right. Wait here, don't gawk, avoid gettin' into trouble, keep my nose clean, don't spit on th' floor, an' keep an eye out for trouble. Hey, do you think they have D'Tranion on tap?~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4282
+  SAY ~[ARAN] Sure thing. Mayhap they even have one. A monkey, I mean. Don't rightly see how a monkey can be vulgar, but... hey, what do you be lookin' at me like that for?~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4283
+  SAY ~[ARAN] Good singin', better playin' an' a fair number o' relatively rich folk. If I get thrown out o' here, look around for me, eh? This place holds a good bit o' promise.~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4284
+  SAY ~[ARAN] Hells, I'd rather not sit around doin' nothin', but I think I can talk my way into some fun around here. Don't you worry naught... I'll be all talk an' no action, an' keep a lookout for interestin' news.~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4285
+  SAY ~[ARAN] I can do that. I saw me some interestin' games over there. Mayhap I can get a good flush o' luck, an Tymora will rewardd me wi' a bit o' extra coin, eh?~
+  IF ~~ THEN EXIT
+END  
+
+IF ~~ a4286
+  SAY ~[ARAN] Sure thing. Mayhap I can find a good vintage among these cut-rate drinks, eh? Not that I am hopeful, on account o' I think some o' that wine really be grapes pressed through old socks an' a dash o' spirits added. I'm not blighted well tryin' any o' th' ale. On Gond's Gonads, I'm not that stupid.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4287
+  SAY ~[ARAN] I'll be right here. Well, I'll likely be right here, or over wi' th' lads, singin', or drinkin'. So, sort o' here, eh?~
+  IF ~~ THEN EXIT
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In */
@@ -3764,49 +4918,49 @@ END
 
 IF ~~ a25
   SAY ~[ARAN] Bring me back somethin' nice, will you?~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a26
   SAY ~[ARAN] Selune's Misty Eyes. I hope there isn't much dangerous around here. It could harm a lad, you know.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",2) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a27
   SAY ~[ARAN] I'll just be thinkin' about that last inn. Or any inn.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",3) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a28
   SAY ~[ARAN] Just don't be gone too long, eh?~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",4) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a29
   SAY ~[ARAN] I'll scout around a bit, and settle somewhere around here 'til you get back.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",5) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a30
   SAY ~[ARAN] Chauntea's Basket, I could grow moss waitin'. So don't be long, eh?~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",6) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a31
   SAY ~[ARAN] There's got to be somethin' I can ferment around here. I'm runnin' short o' ale.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",7) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a32
   SAY ~[ARAN] Tymora's Luck - I'd be a mite happier if I was along wi' you. But you call th' shots, so here I stay.~
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) SetGlobal("c-aranwaiting","GLOBAL",0) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END
 
 IF ~~ a33   /*  add more here for later chapters? */
   SAY ~[ARAN] Well, I can try. Where do you be wantin' me to go?~
   + ~!AreaCheck("AR1600")~ + ~[PC] Head for the Brynlaw docks.~ UNSOLVED_JOURNAL ~Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~ + a38bryn
+  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~ + a4274
   + ~!AreaCheck("AR0300")~ + ~[PC] Head for the Athalka docks.~ UNSOLVED_JOURNAL ~Whitehand Docked
 
   I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.~ + a38
@@ -3827,7 +4981,7 @@ END
 
 /*  a34, a35, a36, a37 are chains */
 
-IF ~~ a38bryn
+IF ~~ a4274
   SAY ~[ARAN] Aye, then. I'll take up a charter, mayhap work th' oars. I may have one blighted hells o' a time findin' th' Cyric-kissed place, but I'll be there when you get there. I just hope you have some coin for me when you do.~
   IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeAreaMove("AR1600",1572,1469,10))~ EXIT /* Go to AR1600, Bynlaw  */
 END
@@ -3977,77 +5131,674 @@ END
 
 IF ~~ a2713
   SAY ~[ARAN] Right, pull on both o' my legs. I know when I be th' butt o' th' joke. I think.~
-  IF ~~ THEN GOTO a2717
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2714
   SAY ~[ARAN] Blighted hells, that be between me an' him, anyways.~
-  IF ~~ THEN GOTO a2717
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2715
   SAY ~[ARAN] That be a harsh set o' words for me to hear you be sayin'. I may not talk quite th' way you would like, an' mayhap not always behave, but I be right loyal, I am.~
-  IF ~~ THEN GOTO a2717
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2716
   SAY ~[ARAN] Sune's Sweet Song, that be a harsh set o' words for me to hear you be sayin'. I be right loyal, but I 'd rather hear th' criticism on my fightin' an' such, on account o' that be more impersonal.~
-  IF ~~ THEN GOTO a2717
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2717
   SAY ~[ARAN] I'd be right happy to leave here wi' you, you know. Action o' any kind beats sittin' around.~
-  ++ ~[PC] Sure. Join me.~ + a487
-  + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
-  + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
-  + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4306
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4288
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4289
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4290
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4291
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4292
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4293
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4294
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4295
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4296
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4297
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4298
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4299
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949 
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4300 
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4301 
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950 
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4302 
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4303 
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4304 
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4305
+  
   ++ ~[PC] I am terminating your contract permanently, Aran. The paper one. I don't mean to sound ominous or anything. Go find work with someone else.~ SOLVED_JOURNAL ~Whitehand Left for Waterdeep
 
-  I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.~  + a23
+  I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.~ + a23
   + ~Gender(Player1,FEMALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
 
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a2320
   + ~Gender(Player1,MALE)~ + ~[PC] I am terminating you, Aran. Permanently. Die well.~ SOLVED_JOURNAL ~Whitehand Sent to the Gods
 
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a24
-  + ~RandomNum(8,1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+  + ~Global("c-aranwaiting","GLOBAL",0) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a25
-  + ~RandomNum(8,2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
+  + ~Global("c-aranwaiting","GLOBAL",1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
+  + ~Global("c-aranwaiting","GLOBAL",2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
+  + ~Global("c-aranwaiting","GLOBAL",3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
+  + ~Global("c-aranwaiting","GLOBAL",4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
+  + ~Global("c-aranwaiting","GLOBAL",5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
+  + ~Global("c-aranwaiting","GLOBAL",6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
+  + ~Global("c-aranwaiting","GLOBAL",7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
+  + ~Global("c-aranwaiting","GLOBAL",8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Wait here. And try not to get into any trouble. I have eyes and ears everywhere.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a2718
+  + ~AreaCheck("C-AR01")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a26
-  + ~RandomNum(8,3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.~ + a4275
+  + ~AreaCheck("AR0313")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a27
-  + ~RandomNum(8,4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.~ + a4276
+  + ~AreaCheck("AR0406")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a28
-  + ~RandomNum(8,5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.~ + a4277
+  + ~AreaCheck("AR0509")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a29
-  + ~RandomNum(8,6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.~ + a4278
+  + ~AreaCheck("AR0522")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a30
-  + ~RandomNum(8,7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.~ + a4279
+  + ~AreaCheck("AR0704")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a31
-  + ~RandomNum(8,8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.~ + a4280
+  + ~AreaCheck("AR1105")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.~ + a32
+  I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.~ + a4281
+  + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.~ + a4282
+  + ~AreaCheck("AR2010")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.~ + a4283
+  + ~AreaCheck("AR0709")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.~ + a4284
+  + ~AreaCheck("AR0513")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.~ + a4285
+  + ~AreaCheck("AR0021")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
+  UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.~ + a4286
+  + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.~ + a4287  
+  + ~InParty(Player4) Gender(Player4,FEMALE) !Name("c-aran",Player4)~ + ~[PC] As long as you promise to stop staring at <PLAYER4>'s hair when she is not looking, you can join us.~ + a2713
+  + ~InParty(Player5) Gender(Player5,FEMALE) !Name("c-aran",Player5)~ + ~[PC] If you stop gawking at <PLAYER5>'s legs, you can join us.~ + a2713
+  + ~InParty(Player6) Gender(Player6,FEMALE) !Name("c-aran",Player6)~ + ~[PC] As long as you promise to stop staring at <PLAYER6>'s decolletage, you can join us.~ + a2713
   ++ ~[PC] Aran, go on and make your way alone someplace else. I will join you when I am able.~ + a33
-  ++ ~[PC] Wait here. And try not to get into any trouble. I have eyes and ears everywhere.~ + a2718
 END
 
 IF ~~ a2718
-  SAY ~[ARAN] That sounds like it might be a mite uncomfortable. I'll just be stickin' wi' my two an' two configuration.~
-  IF ~~ THEN EXIT
+  SAY ~[ARAN] That sounds like it might be a mite uncomfortable. I'll just be stickin' wi' my two an' two configuration.~ 
+  IF ~~ THEN DO ~SetGlobal("c-aranwaiting","GLOBAL",0)~ EXIT 
 END
 
 IF ~~ a2706
@@ -4084,57 +5835,1180 @@ IF ~~ a2710 SAY ~[ARAN] Well, you had me off balance, there. I be right happy we
 IF ~~ a2707 SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly forget anythin' about us, but it sure does feel good to hear you speakin' o' us like this. I was just a mite off balance, is all. Mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN EXIT END
 
 IF ~~ a2947
-  SAY ~[ARAN] Wait a mite bit, here... No gifts o' welcome, an' no party? It has been a mite bit dull around here. Can I be joinin' up again?~
-  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Aran Leaves
+  SAY ~[ARAN] Wait a mite bit, here... No gifts o' welcome, an' no party? It has been a mite bit dull around here.~
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
 
-  Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
 
-  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
-EraseJournalEntry(%Whitehand Sailing
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
-EraseJournalEntry(%Whitehand Docked
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
-EraseJournalEntry(%Whitehand Sold on Staying
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
-EraseJournalEntry(%Whitehand Keeping Still
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
-EraseJournalEntry(%Whitehand Trading
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
-EraseJournalEntry(%Whitehand Heads for the Hills
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
-  + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
-  + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
-  + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4306
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4288
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4289
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4290
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4291
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4292
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4293
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4294
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4295
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4296
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] I could use your help right now. Join up.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4297
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4298
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4299
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949 
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4300 
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4301 
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950 
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4302 
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4303 
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4304 
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4305
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a2712
   ++ ~[PC] Aran, go on and make your way alone someplace else. I will join you when I am able.~ + a33
-  + ~Gender(Player1,FEMALE)~ + ~[PC] I might let you rejoin the party, if you promise to behave yourself.~ + a2715
-  + ~Gender(Player1,MALE)~ + ~[PC] I might let you rejoin the party, if you promise to stop that tuneless whistling you are so fond of inflicting on us.~ + a2716
+  + ~Gender(Player1,FEMALE) RandomNum(2,1)~ + ~[PC] I might let you rejoin the party, if you promise to behave yourself.~ + a2715
+  + ~Gender(Player1,MALE) RandomNum(2,1)~ + ~[PC] I might let you rejoin the party, if you promise to stop that tuneless whistling you are so fond of inflicting on us.~ + a2716
+  + ~Gender(Player1,FEMALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to let me teach you how to speak.~ + a2715
+  + ~Gender(Player1,MALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to learn how to cook.~ + a2716
 END
+
+
+
+
+
+
+
+
+
+
+
+
+
+IF ~~ a4307
+  SAY ~[ARAN] I blighted well be lookin' forward to joinin' up wi' you again.~
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4306
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4288
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4289
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4290
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4291
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4292
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4293
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4294
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4295
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4296
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4297
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4298
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4299
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949 
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4300 
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4301 
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950 
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4302 
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4303 
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4304 
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4305
+  ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a2712
+  ++ ~[PC] Aran, go on and make your way alone someplace else. I will join you when I am able.~ + a33
+  + ~InParty(Player2) Gender(Player2,FEMALE) !Name("c-aran",Player2)~ + ~[PC] As long as you promise to stop staring at <PLAYER2>'s rear end, you can join us.~ + a2713
+  + ~InParty(Player3) Gender(Player3,FEMALE) !Name("c-aran",Player3)~ + ~[PC] As long as you promise to stop staring at <PLAYER3>'s bustline, you can join us.~ + a2713
+END
+
+/* stay here exit panel */
 
 IF ~~ a2948
   SAY ~[ARAN] Right. Stay here. Watch my life waste away doin' naught but guard duty on a big patch o' nothin'. Got it.~
-  IF ~~ THEN EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4298
+  SAY ~[ARAN] I'll take me a look around, an' see what' to be seen..~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",2)~ EXIT
+END
+
+IF ~~ a4299
+  SAY ~[ARAN] Sure thing. Mayhap I can catch up on some writin'. Though from th' looks o' this place, mayhap not.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",3)~ EXIT
 END
 
 IF ~~ a2949
   SAY ~[ARAN] Hurry on back, eh? If I keep sharpenin' my dagger, it will grind away to naught.~
-  IF ~~ THEN EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a4300
+  SAY ~[ARAN] An' here I thought th' military were th' only place where "hurry up an' wait" were words to live by.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",5)~ EXIT
+END
+
+IF ~~ a4301
+  SAY ~[ARAN] I don't mind scoutin', an' I don't mind hangin' about waitin'... well... hells. Scoutin's all right, but this hangin' around doin' naught just plain stinks.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",6)~ EXIT
 END
 
 IF ~~ a2950
-  SAY ~[ARAN] Sure thing. If you happen on any birds, get me some new feathers, eh? I have done tun out o' quills to scribe wi'.~
-  IF ~~ THEN EXIT
+  SAY ~[ARAN] Sure thing. If you happen on any birds, get me some new feathers, eh? I have done run out o' quills to scribe wi'.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",7)~ EXIT
 END
+
+IF ~~ a4302
+  SAY ~[ARAN] I'd rather not. But you be th' one callin' th' shots.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",8)~ EXIT
+END
+
+IF ~~ a4303
+  SAY ~[ARAN] Th' number o' times you had me waitin' about, then pickin' me back up, it makes me think you have a mite bit o chaos at th' soul level, eh? No matter. I'll wait.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",9)~ EXIT
+END
+
+IF ~~ a4304
+  SAY ~[ARAN] Look, I've had enough times bein' kicked out an' told to wait that I had time to crochet this nice scarf for you. I guess I'll just start on a sweater while I be sittin' around, waitin' for you, again.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",10)~ EXIT
+END
+
+IF ~~ a4305
+  SAY ~[ARAN] Blighted hells, fine. I have gotten into th' habit o' sittin' around doin' nothin'. Either that, or you have one hells o' a bad script stutter on your hands. Either way, I am not goin' anywhere soon.~
+  IF ~~ THEN DO ~SetGlobal("c-aranjoinupagain","GLOBAL",0)~ EXIT
+END
+
+
+
+
+
+
+
+
+
+
+
 
 IF ~~ a2951
   SAY ~[ARAN] I done whittled you this little keepsake for you, <CHARNAME>, but by Chauntea's Grain Basket, I done just lopped off too much. I'll be havin' to keep workin' on it a bit more.~
@@ -4183,68 +7057,630 @@ END
 
 IF ~~ a2952
   SAY ~[ARAN] So, do you be thinkin' about usin' my skills again?~
-  + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
-  + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
-  + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
-  + ~Gender(Player1,FEMALE) RandomNum(2,1)~ + ~[PC] I might let you rejoin the party, if you promise to behave yourself.~ + a2715
-  + ~Gender(Player1,MALE) RandomNum(2,1)~ + ~[PC] I might let you rejoin the party, if you promise to stop that tuneless whistling you are so fond of inflicting on us.~ + a2716
-  + ~Gender(Player1,FEMALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to let me teach you how to speak.~ + a2715
-  + ~Gender(Player1,MALE) RandomNum(2,2)~ + ~[PC] I might let you rejoin the party, if you promise to learn how to cook.~ + a2716
-  ++ ~[PC] Sure. Join up.~ DO ~EraseJournalEntry(%Aran Leaves
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
 
-  Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4306
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4288
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4289
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4290
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4291
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4292
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
 
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
   I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
-EraseJournalEntry(%Whitehand Sailing
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
-EraseJournalEntry(%Whitehand Docked
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Athalka docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
-EraseJournalEntry(%Whitehand Sold on Staying
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
-EraseJournalEntry(%Whitehand Keeping Still
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
-EraseJournalEntry(%Whitehand Trading
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
-EraseJournalEntry(%Whitehand Heads for the Hills
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4293
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4294
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4295
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4296
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Sure. Join me.~ DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
+
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
+EraseJournalEntry(%Whitehand Sent to the Gods
+
+  I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
+EraseJournalEntry(%Whitehand Waits
+
+  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ + a4297
+  + ~Global("c-aranjoinupagain","GLOBAL",0)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
+  + ~Global("c-aranjoinupagain","GLOBAL",1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4298
+  + ~Global("c-aranjoinupagain","GLOBAL",2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4299
+  + ~Global("c-aranjoinupagain","GLOBAL",3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949 
+  + ~Global("c-aranjoinupagain","GLOBAL",4)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4300 
+  + ~Global("c-aranjoinupagain","GLOBAL",5)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4301 
+  + ~Global("c-aranjoinupagain","GLOBAL",6)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950 
+  + ~Global("c-aranjoinupagain","GLOBAL",7)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4302 
+  + ~Global("c-aranjoinupagain","GLOBAL",8)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4303 
+  + ~Global("c-aranjoinupagain","GLOBAL",9)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4304 
+  + ~Global("c-aranjoinupagain","GLOBAL",10)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a4305
   ++ ~[PC] Actually, I wanted to talk to you about how things are between us.~ + a2712
   ++ ~[PC] Aran, go on and make your way alone someplace else. I will join you when I am able.~ + a33
   + ~InParty(Player2) Gender(Player2,FEMALE) !Name("c-aran",Player2)~ + ~[PC] As long as you promise to stop staring at <PLAYER2>'s rear end, you can join us.~ + a2713
-  + ~InParty(Player3) Gender(Player3,FEMALE) !Name("c-aran",Player3)~ + ~[PC] As long as you promise to stop staring at <PLAYER3>'s rear end, you can join us.~ + a2713
-  + ~InParty(Player4) Gender(Player4,FEMALE) !Name("c-aran",Player4)~ + ~[PC] As long as you promise to stop staring at <PLAYER4>'s rear end, you can join us.~ + a2713
-  + ~InParty(Player5) Gender(Player5,FEMALE) !Name("c-aran",Player5)~ + ~[PC] As long as you promise to stop staring at <PLAYER5>'s rear end, you can join us.~ + a2713
-  + ~InParty(Player6) Gender(Player6,FEMALE) !Name("c-aran",Player6)~ + ~[PC] As long as you promise to stop staring at <PLAYER6>'s rear end, you can join us.~ + a2713
+  + ~InParty(Player3) Gender(Player3,FEMALE) !Name("c-aran",Player3)~ + ~[PC] As long as you promise to stop staring at <PLAYER3>'s bustline, you can join us.~ + a2713
 END
 
 IF ~~ a2953
   SAY ~[ARAN] Now, you look like a bright mornin' sunrise, you do, <CHARNAME>. What did you do wi' your hair? I did certainly miss you.~
-  IF ~RandomNum(3,1)~ THEN GOTO a2717
-  IF ~RandomNum(3,2)~ THEN GOTO a2947
-  IF ~RandomNum(3,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2954
   SAY ~[ARAN] I was in th' middle o' th' most suprisin' dreams when you walked up. Or mayhap you walkin' up inspired some right warm dreams.~
-  IF ~RandomNum(3,1)~ THEN GOTO a2717
-  IF ~RandomNum(3,2)~ THEN GOTO a2947
-  IF ~RandomNum(3,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
 END
 
 IF ~~ a2955
   SAY ~[ARAN] I swear, you look a sight finer each time I see you.~
-  IF ~RandomNum(3,1)~ THEN GOTO a2717
-  IF ~RandomNum(3,2)~ THEN GOTO a2947
-  IF ~RandomNum(3,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,1)~ THEN GOTO a2717
+  IF ~RandomNum(4,2)~ THEN GOTO a2947
+  IF ~RandomNum(4,3)~ THEN GOTO a2952
+  IF ~RandomNum(4,4)~ THEN GOTO a4307
+END
+
+/* join up exit panel */
+
+IF ~~ a4306
+  SAY ~[ARAN] Aye, then, I'll be gatherin' my gear an' gettin' back to th' routine.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",1) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4288
+  SAY ~[ARAN] Now I wish I'd taken th' time to do a bit o' laundry. You wouldn't happen to be able to spare a lad a clean handkerchief, eh?~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",2) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4289
+  SAY ~[ARAN] Back to work. At least wi' you, there be no such thing as a borin' day. Nor quiet night, for that matter.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",3) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4290
+  SAY ~[ARAN] Gear, check. Weapons, check. Coinpurse... coinp... oh, blighted hells. Give a lad a hand, an' help me find th' bloody thing before we move on, eh?~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",4) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4291
+  SAY ~[ARAN] Right. I done re-packed most o' th' important stuff. O' course, there were some odds an' ends what were left out. Don't rightly know what I wanted wi' a left-handed ivory moustache comb, nohow.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",5) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4292
+  SAY ~[ARAN] Aye.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",6) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4293
+  SAY ~[ARAN] Right. I'm on it.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",7) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4294
+  SAY ~[ARAN] Joinin' up on an adventure. Just what my mother always told me was about as smart as pickin' a fight wi' an ogre.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",8) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4295
+  SAY ~[ARAN] Just call me 'Al'. Hells, call me anythin' you want. Never did get what that song were all about nohow.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",9) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4296
+  SAY ~[ARAN] OK. I got me a pound o' flour for to throw about findin' invisibles, some butter for greasin' things up, two eggs for grenades, some o' this yeast.... wait a moment. Strike that. This be cookin' supplies.~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",10) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+END
+
+IF ~~ a4297
+  SAY ~[ARAN] Now, there be a right fine idea. I'll just get my arse back where it belongs, watchin' your... err... followin' your lead!~
+  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoinupagain","GLOBAL",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
 END
 
 END /* of APPEND to C-ARANP */
@@ -4264,7 +7700,7 @@ CHAIN C-ARANP a34
 == IMOEN2J IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN ~[IMOEN] Heya. I'll let <CHARNAME> fill you in on what's happened so far.~
 END
 IF ~GlobalGT("c-aranrom","GLOBAL",1)~ THEN EXTERN C-ARANP a2955
-IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a2952
+IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a2717
 
 CHAIN C-ARANP a35
 ~[ARAN] I was gettin' tired o' cookin' for one, all by myself.~
@@ -4280,7 +7716,7 @@ CHAIN C-ARANP a35
 == MINSCJ IF ~Global("c-kickedminsc","GLOBAL",2) InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~[MINSC] <CHARNAME>, must we keep leaving Aran behind and then picking him up again? Boo's whiskers are turning grey with the confusion.~ DO ~SetGlobal("c-kickedminsc","GLOBAL",3)~
 END
 IF ~GlobalGT("c-aranrom","GLOBAL",1)~ THEN EXTERN C-ARANP a2951
-IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a2952
+IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a2947
 
 CHAIN C-ARANP a36
 ~[ARAN] No real fightin' around here so far. Perhaps they are waitin' for you to show up, <CHARNAME>.~
@@ -4310,7 +7746,7 @@ CHAIN C-ARANP a37
 == C-ARANP IF ~GlobalGT("c-aranrom","GLOBAL",1)~ THEN ~[ARAN] That were a friendly gesture, nothin' more, <CHARNAME>, I swear it.~
 END
 IF ~GlobalGT("c-aranrom","GLOBAL",1)~ THEN EXTERN C-ARANP a2954
-IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a2952
+IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a4307
 
 /* C-ARANJ joined SoA */
 

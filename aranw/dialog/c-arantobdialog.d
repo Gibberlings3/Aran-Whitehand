@@ -8978,13 +8978,13 @@ END
 
 /* ToB Banters: Aran > Jaheira Back in The Day : Gavin */
 IF ~~ a4260
-  SAY ~[ARAN] Gavin be a right good lad, but I can't get much in th' way o' glory stories out o' him. I think he done met up wi' you early on, eh? That must o' been somethin', wanderin' into dangerous terrritory wi' a healer what might trip over his own two feet if th' wind blows th' wrong way. ~
+  SAY ~[ARAN] Gavin be a right good lad, but I can't get much in th' way o' glory stories out o' him. I think he done met up wi' you early on, eh? That must o' been somethin', wanderin' into dangerous territory wi' a healer what might trip over his own two feet if th' wind blows th' wrong way. ~
   IF ~~ THEN EXTERN BJAHEI25 a4256
 END
 
 /* ToB Banters: Aran > Jaheira Back in The Day : Xan */
 IF ~~ a4261
-  SAY ~[ARAN] You have to help a lad out, here. Xan jut looks at me wi' that morose expression o' his an' shakes his head. A Moonblade weilder, a Harper, an' <CHARNAME>. Hells, that must o' spawned quite a few stoories an' glories.~
+  SAY ~[ARAN] You have to help a lad out, here. Xan just looks at me wi' that morose expression o' his an' shakes his head. A Moonblade wielder, a Harper, an' <CHARNAME>. Hells, that must o' spawned quite a few stories an' glories.~
   IF ~~ THEN EXTERN BJAHEI25 a4256
 END
 
@@ -9525,7 +9525,7 @@ CHAIN C-ARN25B a4265
 EXIT
 
 /* ToB Banters: Aran > Jaheira Back in The Day : Non-Romanceables */
-CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(13) InParty("WLBRAN") InParty("DL#BWN") InParty("Coran") InParty("O#Coran") InParty("M#Eldoth") InParty("Minsc") InParty("QUAYLE") InParty("Sharteel") !InParty("shartel") !InParty("Skiedv") InParty("O#Tiax") InParty("TLXan") InParty("Yesli")~ THEN C-ARN25B a4273
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID) InParty("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN C-ARN25B a4273
 ~[ARAN] You look a mite pensive, Jaheira. What be draggin' you back down th' distant foggy paths o' memory?~ DO ~SetGlobal("c-arntob18b","GLOBAL",1)~
 == BJAHEI25 ~[JAHEIRA] I am simply remembering how this all started. How young <CHARNAME> seemed, those few short years ago.~
 == C-ARN25B IF ~InParty("WLBRAN")~ THEN ~[ARAN] Branwen was mutterin' somethin' similar just a bit ago. Judgin' by th' amount o' "Tempus this" an' "Tempus that", she weren't so sure things have gotten better.~
@@ -9540,7 +9540,7 @@ CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InP
 == C-ARN25B IF ~InParty("Skiedv") !InParty("M#Eldoth")~ THEN ~[ARAN] I'd ask Skie, on account o' she loves a good piece o' gossip, but then I'd have to get through all th' chatter about silks, an' that bastard Elfred, or Eddoth, or whatever th' bard what she moans about were named.~
 == C-ARN25B IF ~InParty("Skiedv") InParty("M#Eldoth")~ THEN ~[ARAN] I'd ask Skie, on account o' she loves a good piece o' gossip, but then I'd have to get through all th' chatter about silks, an' that bastard Eldoth treated her right bad, but she just loves him anyways. Or hates him. Guess it depends on th' day.~
 == C-ARN25B IF ~InParty("O#Tiax")~ THEN ~[ARAN] Somehow I think th' conversation wi' Tiax would be about how he solved th' whole Iron Throne crisis in spite o' havin' all o' you along, eh?~
-== C-ARN25B IF ~InParty("Yesli")~ THEN ~[ARAN] Yeslick has one hells o' a hollow leg, but no matter how much he drinks he don't spill naught in th' way o' good stories.~
+== C-ARN25B IF ~InParty("Yesli")~ THEN ~[ARAN] Yeslick has one hells o' a hollow leg, but no matter how much he drinks he don't spill naught in th' way o' good stories.~== C-ARN25B IF ~InParty("CMALORA")~ THEN ~[ARAN] Alora just looks at me an' giggles, so no help there.~
 == C-ARN25B ~[ARAN] An' you, you be th' worst o' all. You never do tell all th' ins an' outs. My boon companions, startin' out early enough to know <PRO_HIMHER> when a few kobolds were a right difficult challenge, an' you hold back on th' tales o' glory.~
 EXTERN BJAHEI25 a4256
 
