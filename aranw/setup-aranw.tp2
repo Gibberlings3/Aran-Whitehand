@@ -1,6 +1,14 @@
 BACKUP ~aranw/backup~
 AUTHOR ~cmorgan~
 
+/* 
+ * IF YOU ARE DOWNOADING FROM GITHUB, you need to do the following: 
+ * 1. check to make sure everything is there,
+ * 2. edit the VERSION line found right below this message with your username and the date, so you have a way of knowing what "version" you have
+ * 3. copy another mod's setup-mymod.exe and rename it setup-aranw.exe
+ * 4. enjoy the mod. If you run into problmes, find me at G3 or start an issue ticket on GitHub!
+*/
+
 VERSION ~Beta_1~
 
 BEGIN ~Install Aran Whitehand beta 1~

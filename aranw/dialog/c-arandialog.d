@@ -18105,7 +18105,7 @@ END
 
 IF ~~ a3368 /* FINE_IF_WANT_THAT_WAY */
   SAY ~[ARAN] I can do that, I suspect. As long as it be what you want. So, stay very still...~
-  = ~[ARAN] (The force of his lips crushing yours cuts off your breath. He drags you up in front of him, gripping the neckline of your shift. His legs hold yours together and captive. Your hands lock around his wrists, feeling his muscles bunch and strain until your nightgown tears, exposing your chest to him, and revealing all of your treasures. You are captured, exposed and vulnerable as he pushes you onto your back in front of him... acutely aware that he is both ready and yet still straining to hold back.~
+  = ~[ARAN] (The force of his lips crushing yours cuts off your breath. He drags you up in front of him, gripping the neckline of your shift. His legs hold yours together and captive. Your hands lock around his wrists, feeling his muscles bunch and strain until your nightgown tears, exposing your chest to him, and revealing all of your treasures. You are captured, exposed and vulnerable as he pushes you onto your back in front of him... acutely aware that he is both ready and yet still straining to hold back.)~
   ++ ~[PC] You call that rough? Perhaps I was not clear enough. What are you waiting for?~ + a3378 /* YOU_CALL_THAT_ROUGH */
   ++ ~[PC] Gods, yes... make me yours!~ + a3378 /* YOU_CALL_THAT_ROUGH */
   ++ ~[PC] Come on. Just get it over with, will you?~ + a3367 /* DO_YOU_EVEN_KNOW_ME */
@@ -21884,7 +21884,7 @@ IF ~~ a3702 /* TOP_END_RELEASE */
 END
 
 IF ~~ a3689 /* ARAN_RELEASE */
-  SAY ~[ARAN] (Your efforts are rewarded with his climax as he roars out his passion, straining against you. His hands tangle and pull at your shoulders, your hair, caress your cheeks, in constant movement as he whispers his gratitude to the gods over and over again. Your name mingles with those of Sune, Sharess, and Hanali Celanil in his whispers, until at last he relaxes, idly caressing your hair.)~
+  SAY ~[ARAN] (Your efforts are rewarded with his climax as he roars out his passion, straining against you. His hands tangle and pull at your shoulders, caress your cheeks, in constant movement as he whispers his gratitude to the gods over and over again. Your name mingles with those of Sune, Sharess, and Hanali Celanil in his whispers, until at last he relaxes, idly caressing your hair.)~
   IF ~~ THEN EXIT
 END
 
@@ -26086,7 +26086,7 @@ IF ~~ a1843
   ++ ~[PC] Silly sellsword. It is I who shall do the playing. And the taking. And I intend for you to be very, very... gods... taken...~ + a1837
   ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
   ++ ~[PC] Perfect choice of words...~ +  a1829
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse.)~ + a1837
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this big thing goes right here, or at least he starts there... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse.)~ + a1837
   ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
   ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
 END
@@ -26096,7 +26096,7 @@ IF ~~ a1844
   ++ ~[PC] Silly sellsword. It is I who shall do the taking. And I intend for you to be very, very... (Move onto him, his breath roughening as he enters you.) ...taken...~ + a1837
   ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
   ++ ~[PC] Perfect choice of words...~ +  a1829
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse).~ + a1837
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and the tip of this big boy goes right here... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse).~ + a1837
   ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
   ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
 END
@@ -26195,6 +26195,7 @@ IF ~~ a1855
   ++ ~[PC] Oh, Aran, fill me completely. I am yours, and only yours.~ + a1837
   ++ ~[PC] Harder. Faster. I want more. Gods, I want more.~ + a1863
   ++ ~[PC] I... I don't want to stop, but I have to. We have to. Aran, stop. We have gone too far. ARAN.~ + a1826
+  ++ ~[PC] Get away from me. Now.~ + a1826
 END
 
 IF ~~ a1856

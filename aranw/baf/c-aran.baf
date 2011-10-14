@@ -3208,8 +3208,8 @@ IF
     Global("c-aranfriendbg2","GLOBAL",18) // set up SoA_FT_10
     Global("c-aranfriendbg2","GLOBAL",20) // set up SoA_FT_11
     Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12
- //   Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
- //   Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
+    Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
+    Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
  //   Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
  //   Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
 THEN
@@ -3241,8 +3241,8 @@ IF
     Global("c-aranfriendbg2","GLOBAL",19)  // fire SoA_FT_10
     Global("c-aranfriendbg2","GLOBAL",21)  // fire SoA_FT_11
     Global("c-aranfriendbg2","GLOBAL",23)  // fire SoA_FT_12
-//    Global("c-aranfriendbg2","GLOBAL",25)  // fire SoA_FT_13
-//    Global("c-aranfriendbg2","GLOBAL",27)  // fire SoA_FT_14
+    Global("c-aranfriendbg2","GLOBAL",25)  // fire SoA_FT_13
+    Global("c-aranfriendbg2","GLOBAL",27)  // fire SoA_FT_14
 //    Global("c-aranfriendbg2","GLOBAL",29)  // fire SoA_FT_15
 //    Global("c-aranfriendbg2","GLOBAL",31)  // fire SoA_FT_16
 THEN
