@@ -21,20 +21,21 @@ END
 
 /*  smalltalk, randomized blocks, cyclical */ 
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",0)
 THEN
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",1)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",1)
   Wait(2)
   DisplayStringHead("C-AW01W1",~I heard you, I heard you.~)
   Wait(2)
   DisplayStringHead("C-TORAN",~No rush. Just letting you know I need more ale.~)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",1)
   Wait(2)
@@ -46,10 +47,11 @@ RESPONSE #50
 END
   
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",1)
 THEN  
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",2)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
 RESPONSE #20
@@ -90,18 +92,19 @@ RESPONSE #20
 END
 
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",2) 
 THEN 
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",3)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",3)
   Wait(2)
   DisplayStringHead("C-AW01TK",~Someone go wake Lani up. She was supposed to be performing tonight, but her harp isn't even unpacked.~)  
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",3)
   Wait(2)
@@ -110,13 +113,14 @@ RESPONSE #50
 END
  
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",3)
 THEN
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",4)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",4)
   Wait(2)
@@ -125,7 +129,7 @@ RESPONSE #50
   DisplayStringHead("C-AW01W1",~I just finished this order. Keep your pants on.~)
   Wait(2)
   DisplayStringHead("C-AW01TK",~Perish the thought.~)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",4)
   Wait(2)
@@ -136,10 +140,11 @@ RESPONSE #50
 END
   
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",4)
 THEN
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",5)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
 RESPONSE #50
@@ -161,10 +166,11 @@ RESPONSE #50
 END  
   
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",5)
 THEN
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",6)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
 RESPONSE #50
@@ -190,10 +196,11 @@ RESPONSE #50
 END  
   
 IF
+  AreaCheckObject("C-AR01",Player1)
   RealGlobalTimerExpired("c-scenery","GLOBAL")
   Global("c-smalltalk","C-AR01",6)
 THEN 
-RESPONSE #40
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",0)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
 RESPONSE #20

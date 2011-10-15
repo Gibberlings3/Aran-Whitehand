@@ -2275,7 +2275,7 @@ END
 /* Adult - Land. Attempting to have some fun, Romantic Encounters-style. */
 
 /* moved up to emulate dreamscript eval */
-IF ~Global("c-arannightvisit","GLOBAL",1)~ THEN BEGIN a3800 /* START_ARAN_PC_BOOTY_CALL */
+IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3800 /* START_ARAN_PC_BOOTY_CALL */
   SAY ~[ARAN] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~
   ++ ~[PC] (You decide that now is not a good time, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ EXIT
   + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4025 /* START_LADY_OF_THE_WARM_LIPS */
@@ -6971,7 +6971,19 @@ IF ~IsGabber(Player1)~ THEN BEGIN a1866 /* tob PID */
   + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",3) Global("c-aranmakeup","GLOBAL",1)~ + ~[PC] Look, I know it is over between us. But I think I have changed my mind. Perhaps a romance with you might be interesting after all.~ DO ~SetGlobal("c-aranmakeup","GLOBAL",2)~  + a3120 /* c-aranpidbreakupover2 */
   + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",3) Global("c-aranmakeup","GLOBAL",2)~ + ~[PC] Look, I know it is over between us. But I think I have changed my mind. Perhaps a romance with you might be interesting after all.~ + a3121 /* c-aranpidbreakupover3 */
   /* PID Anomen Romance Conflict Toggle */
-  + ~InParty("Anomen") Global("c-aanoconflict","GLOBAL",0)~ + ~[PC] I like Anomen well enough, Aran. But you keep fighting with him. I want you to stop doing that.~ + a3029 /* c-aranvsanom1s */
+  + ~InParty("Anomen") 
+	  OR(10)
+		GlobalGT("c-aanocon120","GLOBAL",0)
+		GlobalGT("c-aanocon121","GLOBAL",0)
+		GlobalGT("c-aanocon158","GLOBAL",0)
+		GlobalGT("c-aanocon194","GLOBAL",0)
+		GlobalGT("c-aanocon212","GLOBAL",0)
+		GlobalGT("c-aanocon224","GLOBAL",0)
+		GlobalGT("c-aanocon232","GLOBAL",0)
+		GlobalGT("c-aanocon287","GLOBAL",0)
+		GlobalGT("c-anomenaran","GLOBAL",0)
+		GlobalGT("c-arananomen","GLOBAL",0)
+  Global("c-aanoconflict","GLOBAL",0)~ + ~[PC] I like Anomen well enough, Aran. But you keep fighting with him. I want you to stop doing that.~ + a3029 /* c-aranvsanom1s */
   + ~InParty("Anomen") Global("c-aanoconflict","GLOBAL",1)~ + ~[PC] I have changed my mind about fighting with Anomen, Aran. Go ahead and speak your mind.~ + a3030 /* c-aranvsanom1c */
   /* Stop or Restart Flirting; (1) of the three should be active at any one time. None show for males. */
   /*  PC Doesn't Want NPC Initiated flirts */
@@ -7124,7 +7136,7 @@ IF ~~ a3073 SAY ~[ARAN] Laugh away, <CHARNAME>. In all those bard's stories, the
 IF ~~ a3074 SAY ~[ARAN] Well, th' wildlife has right perky breasts, long fangs, an' an unaccountable taste for a poor lad's blood. So far, I'd give it a nine out o' ten on th' 'stay the hells away' vacation list.~ IF ~~ THEN EXIT END /*  c-aranpidWK2  */
 IF ~~ a3075 SAY ~[ARAN] I don't rightly think it wants us out, either. At least, not alive an' kickin'.~ IF ~~ THEN EXIT END /*  c-aranpidWK3  */
 IF ~~ a3076 SAY ~[ARAN] Do that be a trick question?~ IF ~~ THEN EXIT END /*  c-aranpidWK4  */
-IF ~~ a3077 SAY ~[ARAN] Now, relax, m'<PRO_BOYGIRL>... so far, we just get to battle improbably rare creatures from darkest deepest legend. Hells, as long as we are not battlin' a god or an arch-demon, we have nothin' to fear. All part o' th' job.~ IF ~~ THEN EXIT END /*  c-aranpidWK5  */
+IF ~~ a3077 SAY ~[ARAN] Now, relax, m'<PRO_GIRLBOY>... so far, we just get to battle improbably rare creatures from darkest deepest legend. Hells, as long as we are not battlin' a god or an arch-demon, we have nothin' to fear. All part o' th' job.~ IF ~~ THEN EXIT END /*  c-aranpidWK5  */
 IF ~~ a3078 SAY ~[ARAN] Unless that drink is mostly hard liquor, forget it. I would say this place is gettin' on my nerves, but that would be an understatement.~ IF ~~ THEN EXIT END /*  c-aranpidWK6  */
 IF ~~ a3079 SAY ~[ARAN] Tymora's against me today, I see. She's a fickle one, that one. Right. Business only. Got it.~ IF ~~ THEN DO ~SetGlobal("c-aranflirtstop","GLOBAL",1)~ EXIT END /* c-aranrestopflirts */
 IF ~~ a3080 SAY ~[ARAN] Sune's... well, I'd be a liar if I said I wasn't thinkin' about it. Can't figure if you want me to express appreciation, or not. Women. Naught but trouble, they are.~ IF ~~ THEN DO ~SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT END /* c-aranrestartflirts */
@@ -7221,7 +7233,7 @@ END
 IF ~~ a3032 SAY ~[ARAN] Keep your shirt on, eh? I'm still workin' on it. I said how long it might be, an' I hold to my contracts, written or spoken.~ IF ~~ THEN EXIT END
 IF ~~ a3033 SAY ~[ARAN] Aye. It is finished. See, I just magically added a whole extra bunch o' time to today, an' somehow a whole week passed in an instant, an' while I was at it, I grew bunny ears an' married a Drowess.~ IF ~~ THEN EXIT END
 IF ~~ a3034 SAY ~[ARAN] No. Not done yet, eh?~ IF ~~ THEN EXIT END
-IF ~~ a3035 SAY ~[ARAN] Ilmater's Sufferin', do you ask questions like 'are we there yet?' 'how long until th' next town?' 'why is th' grass green?' 'why is Aran about to make a blighted rude gesture in your general direction?' What are you, <PRO_BOYGIRL>, a four year old?~ IF ~~ THEN EXIT END
+IF ~~ a3035 SAY ~[ARAN] Ilmater's Sufferin', do you ask questions like 'are we there yet?' 'how long until th' next town?' 'why is th' grass green?' 'why is Aran about to make a blighted rude gesture in your general direction?' What are you, <PRO_GIRLBOY>, a four year old?~ IF ~~ THEN EXIT END
 IF ~~ a3036 SAY ~[ARAN] Now, I'm rightly a patient man. Well, sort o' patient. So I'm goin' to say this, slow - like, just in case you didn't quite understand me. N O T Y E T.~ IF ~~ THEN EXIT END
 
 IF ~~ a3037
@@ -7609,7 +7621,7 @@ IF ~~ a1873
   + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3134 /* c-aranshutup1 */
   + ~RandomNum(5,4)~ + ~[PC] They say silence is golden. Pay yourself.~ + a3135 /* c-aranshutup2 */
   + ~RandomNum(5,3)~ + ~[PC] Oh, just shut up, will you?~ + a3136 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3137 /* c-aranshutup4 */
+  + ~RandomNum(5,2)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3137 /* c-aranshutup4 */
   + ~RandomNum(5,1)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3138 /* c-aranshutup5 */
   + ~Gender(Player1,MALE)~ + ~[PC] I was looking at you. Do you have a problem with that?~ + a1887
   + ~Gender(Player1,FEMALE)~ + ~[PC] I was looking at you. Did you know that your bottom is really tight and muscular?~ + a1886
@@ -7652,7 +7664,7 @@ IF ~~ a1875
   ++ ~[PC] Yes, you are a sight for sore eyes. Well, close, anyways - the sight of you makes my eyes sore...~ + a1897
   + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3208 /* c-aranshutup75 */
   + ~RandomNum(5,4)~ + ~[PC] Just leave me alone, ok? I didn't mean to disturb your industrious scratching of various body parts. Go back to doing whatever it is you were doing.~ + a3144 /* c-aranshutup11 */
-  + ~RandomNum(5,3)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3145 /* c-aranshutup12 */
+  + ~RandomNum(5,3)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3145 /* c-aranshutup12 */
   + ~RandomNum(5,2)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3146 /* c-aranshutup13 */
   + ~RandomNum(5,1)~ + ~[PC] Oh, just shut up, will you?~ + a3147 /* c-aranshutup14 */
   ++ ~[PC] Actually, you were blocking my view. Have you put on a few pounds?~ + a1892
@@ -7677,11 +7689,11 @@ END
 
 IF ~~ a1877 SAY ~[ARAN] I'd bloody well fix myself up, if it didn't hurt so much to breathe. Hey, lend a lad a hand, will you? Just get me one o' them nice potions or a spell or somethin'.~ IF ~~ THEN EXIT END
 IF ~~ a1878 SAY ~[ARAN] I's just a flesh wound. I figure if worst comes to worst, I can distract 'em wi' a mite bit o' blood. mayhap even scare 'em wi' some of my bruises. But thanks for lookin' in on me, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1879 SAY ~[ARAN] If that be some kind o' crack about hangin' back in combat, m'<PRO_BOYGIRL>, I go where you be tellin' me an' do what you be tellin' me, so more's th' fault wi' you!.~ IF ~~ THEN EXIT END
+IF ~~ a1879 SAY ~[ARAN] If that be some kind o' crack about hangin' back in combat, m'<PRO_GIRLBOY>, I go where you be tellin' me an' do what you be tellin' me, so more's th' fault wi' you!.~ IF ~~ THEN EXIT END
 IF ~~ a1880 SAY ~[ARAN] Laugh away, monkey<PRO-BOYGIRL>. I know where you sleep!~ IF ~~ THEN EXIT END
 IF ~~ a1881 SAY ~[ARAN] I keep askin' an' they keep tossin'. Problem is, it is vegetables, not skirts!~ IF ~~ THEN EXIT END
 IF ~~ a1882 SAY ~[ARAN] You let me know when you be volunteerin'!~ IF ~~ THEN EXIT END
-IF ~~ a1883 SAY ~[ARAN] Funny, funny - I handle my weapon quite well, m'<PRO_BOYGIRL>. I just like it better when some fair maiden handles it for me!~ IF ~~ THEN EXIT END
+IF ~~ a1883 SAY ~[ARAN] Funny, funny - I handle my weapon quite well, m'<PRO_GIRLBOY>. I just like it better when some fair maiden handles it for me!~ IF ~~ THEN EXIT END
 IF ~~ a1884 SAY ~[ARAN] No, seriously. Somethin' there? Did I forget to wash some blood off? A spider? Cyric's Black Heart, <CHARNAME>, you are messin' with me!~ IF ~~ THEN EXIT END
 IF ~~ a1885 SAY ~[ARAN] Well, you found it. An' there be more where that came form, so I'd move upwind if I was you.~ IF ~~ THEN EXIT END
 IF ~~ a1886 SAY ~[ARAN] Now how in th' hells you know that when I be wearin' armor is a question for th' ages. Most armor makes my arse look as big as a barn door. But thank you right kindly. Now, I would start complimentin' your various body parts, but I think I will avoid th' slappin' that will accompany my discussion o' your various curves an' byways, eh?~ IF ~~ THEN EXIT END
@@ -7704,7 +7716,7 @@ IF ~~ a1898 SAY ~[ARAN] Now, last time you buttered me up like that, it was on a
 IF ~~ a1902
   SAY ~[ARAN] Have I got somethin' on my face? I have a bit o' food somewhere, don't I.~
   ++ ~[PC] Yep, that's it. Green, kinda slimy looking, and... oh, wait... that's your nose.~ + a1880
-  + ~RandomNum(5,5)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3153 /* c-aranshutup20 */
+  + ~RandomNum(5,5)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3153 /* c-aranshutup20 */
   + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3154 /* c-aranshutup21 */
   + ~RandomNum(5,3)~ + ~[PC] Is there any way I could persuade you to just shut the hells up? Short of physical violence, I mean.~ + a3155 /* c-aranshutup22 */
   + ~RandomNum(5,2)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3156 /* c-aranshutup23 */
@@ -7735,7 +7747,7 @@ IF ~~ a1904
   + ~RandomNum(5,5)~ + ~[PC] Look, that wasn't funny. Just shut up already. You talk too much.~ + a3163 /* c-aranshutup30 */
   + ~RandomNum(5,4)~ + ~[PC] If I wanted an idiot's opinion... wait... yep, I would have asked you, all right.~ + a3164 /* c-aranshutup31 */
   + ~RandomNum(5,3)~ + ~[PC] Oh, just shut up, will you?~ + a3165 /* c-aranshutup32 */
-  + ~RandomNum(5,2)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3166 /* c-aranshutup33 */
+  + ~RandomNum(5,2)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3166 /* c-aranshutup33 */
   + ~RandomNum(5,1)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3167 /* c-aranshutup34 */
   ++ ~[PC] You shouldn't have put that advertisement out, then.~ + a1895
   ++ ~[PC] Well, now the tables are turned. We are going looking for it.~ + a1896
@@ -7847,7 +7859,7 @@ IF ~~ a3208 /* c-aranshutup75 */ SAY ~[ARAN] Velsharoon's Vicious Vampires, you 
   // + ~RandomNum(5,1)~ + ~[PC] To quote a Rashemite insult, thou art a warped ill-nurtured gibberling.~ + a3182 /* c-aranshutup49 */
 
   // + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
-  // + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  // + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
   // + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
   // + ~RandomNum(5,2)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3186 /* c-aranshutup53 */
   // + ~RandomNum(5,1)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
@@ -7858,7 +7870,7 @@ IF ~~ a3208 /* c-aranshutup75 */ SAY ~[ARAN] Velsharoon's Vicious Vampires, you 
   // + ~RandomNum(5,2)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3196 /* c-aranshutup63 */
   // + ~RandomNum(5,1)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3197 /* c-aranshutup64 */
 
-  // + ~RandomNum(5,5)~ + ~[PC] Can a <PRO_BOYGIRL> get a little peace and quiet around here?~ + a3198 /* c-aranshutup65 */
+  // + ~RandomNum(5,5)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3198 /* c-aranshutup65 */
   // + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3199 /* c-aranshutup66 */
   // + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3200 /* c-aranshutup67 */
   // + ~RandomNum(5,2)~ + ~[PC] Oh, just shut up, will you?~ + a3201 /* c-aranshutup68 */

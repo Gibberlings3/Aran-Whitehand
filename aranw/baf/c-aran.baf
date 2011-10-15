@@ -3339,7 +3339,7 @@ IF
     Global("c-aranbg2rom","GLOBAL",10) // set up SoA_LT_6
     Global("c-aranbg2rom","GLOBAL",12) // set up SoA_LT_7
     Global("c-aranbg2rom","GLOBAL",14) // set up SoA_LT_8
-    Global("c-aranbg2rom","GLOBAL",16) // set up SoA_LT_9
+ //   Global("c-aranbg2rom","GLOBAL",16) // set up SoA_LT_9
  //   Global("c-aranbg2rom","GLOBAL",18) // set up SoA_LT_10
  //   Global("c-aranbg2rom","GLOBAL",20) // set up SoA_LT_11    
  //   Global("c-aranbg2rom","GLOBAL",22) // set up SoA_LT_12

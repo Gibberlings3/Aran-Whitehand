@@ -1,0 +1,12 @@
+
+OR(10)
+GlobalGT("c-aanocon120","GLOBAL",0)
+GlobalGT("c-aanocon121","GLOBAL",0)
+GlobalGT("c-aanocon158","GLOBAL",0)
+GlobalGT("c-aanocon194","GLOBAL",0)
+GlobalGT("c-aanocon212","GLOBAL",0)
+GlobalGT("c-aanocon224","GLOBAL",0)
+GlobalGT("c-aanocon232","GLOBAL",0)
+GlobalGT("c-aanocon287","GLOBAL",0)
+GlobalGT("c-anomenaran","GLOBAL",0)
+GlobalGT("c-arananomen","GLOBAL",0)
