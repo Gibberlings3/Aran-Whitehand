@@ -3653,8 +3653,8 @@ IF ~~ a4210 /* NOT_RIGHT_HERE_NOW_ONE */
   + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
   + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
   + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+  + ~RandomNum(3,2)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,1)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
 END
 
 IF ~~ a4211 /* NOT_RIGHT_NOW_BUT_LATER */
@@ -3670,8 +3670,8 @@ IF ~~ a4211 /* NOT_RIGHT_NOW_BUT_LATER */
   + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
   + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
   + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+  + ~RandomNum(3,2)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,1)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
 END
 
 IF ~~ a4225 /* NOT_RIGHT_HERE_NOW */
@@ -3687,8 +3687,8 @@ IF ~~ a4225 /* NOT_RIGHT_HERE_NOW */
   + ~RandomNum(5,2)~ + ~[PC] I will have to check my schedule. Hmmmm... yes. It would be very nice if you would visit me.~ + a4201 /* AGREE_TO_MEET_FOUR */
   + ~RandomNum(5,1)~ + ~[PC] On second thought, it probably isn't a good idea.~ + a4205 /* WHY_DID_YOU_ASK */
   + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4209 /* HELLS_NO_OTHERS */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
-  + ~RandomNum(3,3)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
+  + ~RandomNum(3,2)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4208 /* LET_ME_CHECK */
+  + ~RandomNum(3,1)~ + ~[PC] I will have to check your schedule. You don't have some other woman asking for some personal time, do you?~ + a4207 /* VERY_FUNNY_VERY_FUNNY */
 END
 
 IF ~~ a4209 /* HELLS_NO_OTHERS */
