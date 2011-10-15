@@ -3186,9 +3186,8 @@ THEN
   RESPONSE #100                // 100% of the time
     SetGlobal("c-aranfriendbg2","GLOBAL",1)     //  set up SoA_FT_1
     SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
-    RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",120)  // Minimum Real Time until SoA_FT_1  is called, unlless the player initiates PID and triggers it 
+    RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",160)  // Minimum Real Time until SoA_FT_1  is called, unlless the player initiates PID and triggers it 
 END
-
 
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
@@ -3221,8 +3220,8 @@ END
 /* This block takes the odd variables set by the last block, and tries to fire them off.  */
 IF
   GlobalLT("c-aranfriendbg2","GLOBAL",32)  // shuts down sequence when finished
-  !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
   RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")  // Timer Expired
+  !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
   InParty(Myself)            // Aran is here
   !StateCheck(Myself,CD_STATE_NOTVALID)  // Aran is ok
   !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok

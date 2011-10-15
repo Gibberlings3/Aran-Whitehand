@@ -44,6 +44,7 @@ RESPONSE #20
   DisplayStringHead("C-AW01TK",~I have no idea.~)
   Wait(2)
   DisplayStringHead("C-AW01W1",~Oh.~)
+  Wait(2)
 END
   
 IF
@@ -64,6 +65,7 @@ RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",2)
   Wait(2)
   DisplayStringHead("C-AW01W1",~Orrin, the half orc back there says she wants real ale, not the watered down stuff.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",2)
@@ -77,11 +79,13 @@ RESPONSE #20
   DisplayStringHead("C-AW01W1",~In that case, make sure the next pint on table twelve makes them sick.~)
   Wait(2)
   DisplayStringHead("C-AW01TK",~So let it be written, so let it be done.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",2)
   Wait(2)
   DisplayStringHead("C-AW01P2",~I wonder if anyone has a game going in the center room.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",2)
@@ -89,6 +93,7 @@ RESPONSE #20
   DisplayStringHead("C-AW01P1",~You would think this place would have a good spittoon...~)
   Wait(2)
   DisplayStringHead("C-AW01P1",~Oh. I'm drinking from it.~)
+  Wait(2)
 END
 
 IF
@@ -104,12 +109,26 @@ RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",3)
   Wait(2)
   DisplayStringHead("C-AW01TK",~Someone go wake Lani up. She was supposed to be performing tonight, but her harp isn't even unpacked.~)  
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",3)
   Wait(2)
-  DisplayStringHead("C-AW01W1",~Can I borrow something pretty from the stock tonight? I have a date....~)
+  DisplayStringHead("C-AW01W1",~Can I borrow something pretty from the stock tonight? I have a date...~)
+  Wait(2)
   DisplayStringHead("C-AW01TK",~No.~)
+  Wait(2)
+RESPONSE #20
+  RealSetGlobalTimer("c-scenery","GLOBAL",60)
+  SetGlobal("c-smalltalk","C-AR01",3)
+  Wait(2)
+  DisplayStringHead("C-AW01W1",~Hey, Orrin, what is the chance of me getting to leave early tonight?~)
+  Wait(2)
+  DisplayStringHead("C-AW01TK",~That depends. What are the chances you will actually make it to work on time tomorrow?~)
+  Wait(2)
+  DisplayStringHead("C-AW01W1",~I guess you have a point. I have to close up, then, right?~)
+  Wait(2)
+  DisplayStringHead("C-AW01TK",~Indubitably.~)
 END
  
 IF
@@ -129,14 +148,29 @@ RESPONSE #20
   DisplayStringHead("C-AW01W1",~I just finished this order. Keep your pants on.~)
   Wait(2)
   DisplayStringHead("C-AW01TK",~Perish the thought.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",4)
   Wait(2)
   DisplayStringHead("C-TORAN",~So Ribald called me a whoreson.~)
+  Wait(2)
   DisplayStringHead("C-AW01TK",~What did you do?~)
+  Wait(2)
   DisplayStringHead("C-TORAN",~Nothing. Can't knock a man for telling the truth.~)
+  Wait(2)
   DisplayStringHead("C-AW01TK",~Cheers to that.~)
+  Wait(2)
+RESPONSE #20
+  RealSetGlobalTimer("c-scenery","GLOBAL",60)
+  SetGlobal("c-smalltalk","C-AR01",4)
+  Wait(2)
+  DisplayStringHead("C-AW01TK",~Two more orders for the back room, ready to go.~)
+  Wait(2)
+  DisplayStringHead("C-AW01W1",~I had a change in order. One of the Bitterblacks cancelled, D'Tranion instead.~)
+  Wait(2)
+  DisplayStringHead("C-AW01TK",~Fine. Give me another second, then.~)
+  Wait(2)
 END
   
 IF
@@ -147,7 +181,7 @@ THEN
 RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",5)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",5)
   Wait(2)
@@ -156,13 +190,23 @@ RESPONSE #50
   DisplayStringHead("C-AW01W1",~What is the difference?~)
   Wait(2)
   DisplayStringHead("C-AW01TK",~About 2gp.~)
-RESPONSE #50
+  Wait(2)
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",5)
   Wait(2)
   DisplayStringHead("C-TORAN",~Hey, Erika... how about seeing the circus with me?~)
   Wait(2)
   DisplayStringHead("C-AW01W1",~No, thank you. This place is enough of a circus for me.~)
+  Wait(2)
+RESPONSE #20
+  RealSetGlobalTimer("c-scenery","GLOBAL",60)
+  SetGlobal("c-smalltalk","C-AR01",5)
+  Wait(2)
+  DisplayStringHead("C-TORAN",~This ale tastes like water.~)
+  Wait(2)
+  DisplayStringHead("C-AW01W1",~How would you know? You never touch the stuff.~)
+  Wait(2)
 END  
   
 IF
@@ -173,7 +217,7 @@ THEN
 RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",6)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
-RESPONSE #50
+RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",6)
   Wait(2)
@@ -182,7 +226,8 @@ RESPONSE #50
   DisplayStringHead("C-TORAN",~Hmmm...~)
   Wait(2)
   DisplayStringHead("C-TORAN",~Nope. I can still feel my face. Give me another one.~)
-RESPONSE #50
+  Wait(2)
+RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",6)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   Wait(2)
@@ -193,6 +238,7 @@ RESPONSE #50
   DisplayStringHead("C-AW01TK",~Do I need to do anything?~)  
   Wait(2)
   DisplayStringHead("C-AW01W1",~No. Teldra slapped him and told him to shape up or she would get him in trouble.~)
+  Wait(2)
 END  
   
 IF
@@ -207,28 +253,30 @@ RESPONSE #20
   SetGlobal("c-smalltalk","C-AR01",0)
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   Wait(2)  
-  DisplayStringHead("C-AW01P3",~Oh, the Flaming Fist is a bunch of orc-loving bastards. Speaking of which, I wonder if Cheris is still in her room...~) 
+  DisplayStringHead("C-AW01P3",~Oh, the Flaming Fist is a bunch of orc-loving bastards. Speaking of which, I wonder if Cheris is still in her room...~)   Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",0)
   Wait(2)
   DisplayStringHead("C-AW01P2",~I wonder if anyone has a game going in the center room.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",0)
   Wait(2)
   DisplayStringHead("C-AW01P1",~Never met an ale I didn't like. People, on the other hand...~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",0)
   Wait(2)
   DisplayStringHead("C-AW01P2",~Anyone want a game of dice? I'll wager clothing.~)
+  Wait(2)
 RESPONSE #20
   RealSetGlobalTimer("c-scenery","GLOBAL",60)
   SetGlobal("c-smalltalk","C-AR01",0)
   Wait(2)
   DisplayStringHead("C-AW01P1",~Blighted Blue Boars. Think they are all gentlemen.~) 
+  Wait(2)
 END
-
-
 

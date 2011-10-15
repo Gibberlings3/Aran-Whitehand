@@ -4827,12 +4827,12 @@ IF ~~ a1694
 END
 
 IF ~~ a4275
-  SAY ~[ARAN] Aye. Teldra might even have some good stories to swap, an' I can always bother Erika. Mayhap i will go find th' dice table, an' win me some interestin' trinkets, eh?~ 
+  SAY ~[ARAN] Aye. Teldra might even have some good stories to swap, an' I can always bother Erika. Mayhap I will go find th' dice table, an' win me some interestin' trinkets, eh?~ 
   IF ~~ THEN EXIT
 END  
 
 IF ~~ a4276
-  SAY ~[ARAN] Blighted hells, i haven't had a good lusty sing in a bit. I'll go over there an' see what new songs I can learn. Mayhap trade a few o' th' bawdy... errr well, hells. I'll just go wet my whistle, an' learn what I can learn.~
+  SAY ~[ARAN] Blighted hells, I haven't had a good lusty sing in a bit. I'll go over there an' see what new songs I can learn. Mayhap trade a few o' th' bawdy... errr well, hells. I'll just go wet my whistle, an' learn what I can learn.~
   IF ~~ THEN EXIT
 END  
 
@@ -7821,36 +7821,54 @@ IF ~~ a1981 /* c-aranshutup75 */ SAY ~[ARAN] Velsharoon's Vicious Vampires, you 
 
 IF ~~ a1728
   SAY ~[ARAN] Hey! Cyric's Buttocks, you traitorous wench...~
-  IF ~~ THEN DO ~EraseJournalEntry(%Whitehand Waits
+  IF ~~ THEN DO ~EraseJournalEntry(%Whitehand Left for Waterdeep
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Aran Leaves
-
-  Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.%)
+I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.%)
 EraseJournalEntry(%Whitehand Sent to the Gods
 
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
+I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to hide, and be there when I return.%)
-EraseJournalEntry(%Whitehand Docked
+I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks.%)
-EraseJournalEntry(%Whitehand Sold on Staying
+I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the Market District in Athalka.%)
-EraseJournalEntry(%Whitehand Keeping Still
+I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep.%)
-EraseJournalEntry(%Whitehand Trading
+I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me outside Trademeet.%)
-EraseJournalEntry(%Whitehand in Windspeare
+I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me at the outside of the Windspeare Hills.%)~ GOTO a1755
+I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.%)
+EraseJournalEntry(%Whitehand Waits
+
+I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.%)~ GOTO a1755
 END
 
 IF ~~ a1755
@@ -7871,7 +7889,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",1)~ THEN BEGIN a43
   + ~Class(Player1,SORCERER)~ + ~[PC] I am used to be called "strange", Aran, but not usually to my face. Or are you just randomly commenting on our scenery?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
   + ~Class(Player1,MONK)~ + ~[PC] There is infinite strangeness in all things, Aran. Are we discussing something particular, or are you just randomly commenting on our scenery?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
   + ~Class(Player1,THIEF_ALL)~ + ~[PC] What is strange? I have been watching the whole area... or are you just randomly commenting on the universe?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~InParty("minsc")~ + ~[PC] Let me guess. You have noticed that the big guy with the rodent talks to himself once in awhile. Get over it, please - Minsc is a useful companion, despite his eccentricities.~ +  a45
+  + ~InParty("minsc")~ + ~[PC] Let me guess. You have noticed that the big guy with the rodent talks to himself once in awhile. Get over it, please - Minsc is a useful companion, despite his eccentricities.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
   + ~RandomNum(3,1)~ + ~[PC] It is not a great time to talk right now, Aran.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
   + ~RandomNum(3,2)~ + ~[PC] It is not a great time to talk right now, Aran.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(3,3)~ + ~[PC] It is not a great time to talk right now, Aran.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
@@ -15144,38 +15162,38 @@ IF ~Gender(Player1,MALE) RealGlobalTimerExpired("c-aranbrotimer","GLOBAL") Globa
 END
 
 /* inn dancing/drinking sequence : female in an inn, cyclical */
-IF ~Gender(Player1,FEMALE) RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",0) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a762
+IF ~Gender(Player1,FEMALE) !RealGlobalTimerNotExpired("c-araninflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",0) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a762
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
-  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a796
-  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
-  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2913
-  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2340
-  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2907
+  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a796
+  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ EXIT
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2913
+  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2340
+  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2907
 END
 
-IF ~Gender(Player1,FEMALE) RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",1) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a763
+IF ~Gender(Player1,FEMALE) !RealGlobalTimerNotExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",1) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a763
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
-  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a818
-  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
-  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2913
-  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2341
+  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a818
+  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ EXIT
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2913
+  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2341
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ + a2907
 END
 
-IF ~Gender(Player1,FEMALE) RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",2) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a764
+IF ~Gender(Player1,FEMALE) !RealGlobalTimerNotExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",2) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a764
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
-  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",3) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2575
-  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
-  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2342
-  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2907
+  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",3) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2575
+  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ EXIT
+  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2342
+  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2907
 END
 
-IF ~Gender(Player1,FEMALE) RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",3) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a765
+IF ~Gender(Player1,FEMALE) !RealGlobalTimerNotExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",3) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a765
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
-  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a3005
-  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
-  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2343
-  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a2907
+  ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a3005
+  ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ EXIT
+  ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2343
+  ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-araninnflirttimer","GLOBAL",300)~ + a2907
 END
 
 /* stream bonding 1 of 2, cycles, (male) or flirt possibility (female), identical for level 1, 2, and 3 level flirts */
@@ -24983,7 +25001,7 @@ IF ~~ a1179 SAY ~[ARAN] (Aran's distracted glances center on your finger, watchi
 IF ~~ a1180 SAY ~[ARAN] (Aran completely fails to notice the flower, until he begins digging in his pouch for odds and ends. He brings the mangled husk of wildflower remnants out cupped in the palm of his hand, staring at them in deep puzzlement.) Chauntea's Rosy Cheeks, I must o' been drunk or asleep. I should know better than to gamble with a mage - that bastard must o' put a spell on a flower an' made it look like good coin. Oh well - easy come, easy go, eh?~ IF ~~ THEN EXIT END
 IF ~~ a1181 SAY ~[ARAN] I'd be right happy to, <CHARNAME>. Now you were talkin' swords, or daggers? Or perhaps a mite o' hand-to-hand? I don't suppose you mean lipwrestlin', but a man has to hold out hope, he does...~ IF ~~ THEN EXIT END
 IF ~~ a1182 SAY ~[ARAN] (Aran's gaze sweeps your body, leaving nothing uninspected. His low whistle turns quickly to a cough.) You'll do right fine, you will. Nothin' out o' place, not nowhere. Gear's all set in right proper.~ IF ~~ THEN EXIT END
-IF ~~ a1183 SAY ~[ARAN] Waukeen's Silver Tongue, <CHARNAME> I wasn't born yesterday, eh? I'm not goin' to answer that, no way, no how! That be a right fine trap, that is.~ IF ~~ THEN EXIT END
+IF ~~ a1183 SAY ~[ARAN] Waukeen's Silver Tongue, <CHARNAME>, I wasn't born yesterday, eh? I'm not goin' to answer that, no way, no how! That be a right fine trap, that is.~ IF ~~ THEN EXIT END
 IF ~~ a1184 SAY ~[ARAN] (Laughter lines crinkle around his eyes.) You offerin' ?~ IF ~~ THEN EXIT END
 IF ~~ a1185 SAY ~[ARAN] You.~ IF ~~ THEN EXIT END
 IF ~~ a1186 SAY ~[ARAN] (Aran bows clumsily, mimicking a noble at court.) Why, yes, Princess o' All You Do Survey, She Who Must Be Obeyed. I done got just th' ticket. (He makes a loud smacking sound, blowing a mocking kiss in your direction. You do notice that his eyes linger on your face even while he laughs, though.)~ IF ~~ THEN EXIT END
