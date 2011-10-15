@@ -2815,87 +2815,6 @@ END
 
 /* Gaining Stronghold Responses : set from .bcs */
 /* 1 possible if played without mods, 2 or 3 for multiclass PC's with mods, all of them if one of the multi-stronghold tweaks are installed */
-/* old versions = 
-IF
-Global("c-arants","LOCALS",0)
-GlobalGT("PlayerThiefGuild","GLOBAL",0) 
-AreaCheck("AR0322")
-THEN
-RESPONSE #100
-SetGlobal("c-arants","LOCALS",1)
-END
-
-IF
-Global("c-aranrs","LOCALS",0)
-GlobalGT("RangerProtector","GLOBAL",0) 
-AreaCheck("AR1100")  
-THEN
-RESPONSE #100
-SetGlobal("c-aranrs","LOCALS",1)
-END
-
-IF
-Global("c-aranps","LOCALS",0)
-GlobalGT("PaladinOrder","GLOBAL",0) 
-AreaCheck("AR0903")  
-THEN
-RESPONSE #100
-SetGlobal("c-aranps","LOCALS",1)
-END
-
-IF
-Global("c-aranms","LOCALS",0)
-GlobalGT("PCSphere","GLOBAL",0) 
-AreaCheck("AR0411")
-THEN
-RESPONSE #100
-SetGlobal("c-aranms","LOCALS",1)
-END
-
-IF
-Global("c-aranfs","LOCALS",0)
-Global("PCKeepOwner","GLOBAL",1) 
-AreaCheck("AR1306")
-THEN
-RESPONSE #100
-SetGlobal("c-aranfs","LOCALS",1)
-END
-
-IF
-Global("c-arands","LOCALS",0)
-GlobalGT("DruidStrongHold","GLOBAL",0) 
-AreaCheck("AR1900") 2602 
-THEN
-RESPONSE #100
-SetGlobal("c-arands","LOCALS",1)
-END
-
-IF
-Global("c-arancs","LOCALS",0)
-GlobalGT("JoinLathander","GLOBAL",0) 
-AreaCheck("AR0902")
-
-GlobalGT("JoinTalos","GLOBAL",0) 
-AreaCheck("AR0904")
-
-GlobalGT("JoinHelm","GLOBAL",0) 
-AreaCheck("AR0901")
- 
-THEN
-RESPONSE #100
-SetGlobal("c-arancs","LOCALS",1)
-END
-
-IF
-Global("c-aranbs","LOCALS",0)
-GlobalGT("Playhouse","GLOBAL",0) 
-AreaCheck("AR0523") 
-THEN
-RESPONSE #100
-SetGlobal("c-aranbs","LOCALS",1)
-END
-
-*/
 
 /* Easter Egg for Multi-stronghold folks who get all strongholds at once */
 IF
@@ -3327,6 +3246,7 @@ END
 IF
   GlobalLT("c-aranbg2rom","GLOBAL",32)  // shuts down sequence when finished
   RealGlobalTimerExpired("c-aranromtimer","GLOBAL")  // Timer Expired
+  GlobalGT("c-aranfriendbg2","GLOBAL",5) //  FT 3 has played
   !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
   Global("c-aranmatch","GLOBAL",1) // romance matched
   !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
@@ -3685,22 +3605,124 @@ IF
   !StateCheck(Myself,CD_STATE_NOTVALID)
   InMyArea(Player1)
   !StateCheck(Player1,CD_STATE_NOTVALID)
-  OR(9)
     Global("c-aranlich","LOCALS",1)
-    Global("c-aranshadelord","LOCALS",1)
-    Global("c-arandragon","LOCALS",1)
-    Global("c-aranbasilisk","LOCALS",1)
-    Global("c-aranettercap","LOCALS",1)
-    Global("c-arangolem","LOCALS",1)
-    Global("c-aranzombie","LOCALS",1)
-    Global("c-aranworkbod","LOCALS",1)
-    Global("c-aranworkaran","LOCALS",1)
 THEN
   RESPONSE #100
     SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
     StartDialogNoSet(Player1)
 END
 
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranshadelord","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-arandragon","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranbasilisk","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranettercap","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-arangolem","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranzombie","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranworkbod","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
+
+IF
+  !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+  Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  InMyArea(Player1)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+    Global("c-aranworkaran","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+    StartDialogNoSet(Player1)
+END
 
 /* For catching general objects without regard to DVs, we can use a general catch all using the .ids entries -
  * [EA.GENERAL.RACE.CLASS]. An entry of 0 in a field will match any value.
@@ -3965,12 +3987,11 @@ IF
   !Class(Myself,CLERIC_ALL)
   !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
   Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
-  OR(4)
+  OR(6)
     Global("c-aranoghma","LOCALS",1)
     Global("c-aranilmater","LOCALS",1)
     Global("c-aranhelm","LOCALS",1)
     Global("c-aranlath","LOCALS",1)
-    // Global("c-arantalos","LOCALS",1)
     Global("c-aranumberlee","LOCALS",1)
     Global("c-aranwaukeen","LOCALS",1)
   InParty(Myself)
