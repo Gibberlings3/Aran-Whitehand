@@ -13502,8 +13502,10 @@ IF ~Global("c-aranbg2rom","GLOBAL",7)~ THEN BEGIN a575
   ++ ~[PC] Oh, many things. I like to sew, do bead work, craft little booties for my future children, sit in a rocking chair, and wait for my true prince to come and save me.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a576
   ++ ~[PC] I like to play games with rude sellsword's emotions until they are driven insane with desire, and then dump them.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a577
   ++ ~[PC] I find many things pleasurable. But I have not had any time to do much beyond survive, lately.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a578
-  ++ ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579
-  ++ ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579_flirt
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580_flirt
   ++ ~[PC] I think that is my own business, not yours.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a581
 END
 
@@ -13551,6 +13553,19 @@ IF ~~ a579
   ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
 END
 
+IF ~~ a579_flirt
+  SAY ~[ARAN] That sounds right nice, it does. I like sittin' down in an older section o' a library, an' huntin' through as many illustrated manuscripts as time will allow me. Unfortunately, it sounds absolutely nothin' like what we are doin' here, trekkin' about an' fightin' over an' over again. An' you have an eye for a mite bit o' fun, on account o' we have had a flirt or two pass between us. But riddle me this - you ever think about sparkin' more serious-like? Courtin'?~
+  ++ ~[PC] I have not given it much thought.~ + a587
+  + ~RandomNum(3,1)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1931 /* c-aranshutup25 */
+  + ~RandomNum(3,2)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1932 /* c-aranshutup26 */
+  + ~RandomNum(3,3)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1933 /* c-aranshutup27 */
+  ++ ~[PC] I think you are being a little slow, Aran. I have already set my heart on someone, and it is not you.~ + a594
+  ++ ~[PC] So you think love is a game. Interesting.~ + a587
+  ++ ~[PC] I play games to win. I do not waste my time with what you call 'fun'.~ + a583
+  ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
+END
+
+
 IF ~~ a580
   SAY ~[ARAN] That sounds right nice, it does. I like a good solid meal, both th' preparin' an' th' sharin'. There's few drinks I met I didn't like, too. Unfortunately, it sounds absolutely nothin' like what we are doin' here, trekkin' about an' fightin' over an' over again. But riddle me this - you ever think about sparkin'? Courtin'?~
   ++ ~[PC] I have not given it much thought.~ + a587
@@ -13563,6 +13578,18 @@ IF ~~ a580
   ++ ~[PC] I play games to win. I do not waste my time with what you call 'fun'.~ + a583
 END
 
+IF ~~ a580_flirt
+  SAY ~[ARAN] That sounds right nice, it does. I like a good solid meal, both th' preparin' an' th' sharin'. There's few drinks I met I didn't like, too. Unfortunately, it sounds absolutely nothin' like what we are doin' here, trekkin' about an' fightin' over an' over again. An' you have an eye for a mite bit o' fun, on account o' we have had a flirt or two pass between us. But riddle me this - you ever think about sparkin' more serious-like? Courtin'?~
+  ++ ~[PC] I have not given it much thought.~ + a587
+  + ~RandomNum(3,1)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1934 /* c-aranshutup28 */
+  + ~RandomNum(3,2)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1935 /* c-aranshutup29 */
+  + ~RandomNum(3,3)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1936 /* c-aranshutup30 */
+  ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
+  ++ ~[PC] I think you are being a little slow, Aran. I have already set my heart on someone, and it is not you.~ + a594
+  ++ ~[PC] So you think love is a game. Interesting.~ + a587
+  ++ ~[PC] I play games to win. I do not waste my time with what you call 'fun'.~ + a583
+END
+
 IF ~~ a581
   SAY ~[ARAN] Now, <CHARNAME>, come on wi' ye. Just humor me, eh? A little harmless fun, that's all I'm askin'. What do you like to do, when you don't have no crowd o' monsters tryin' to dog your every step?~
   + ~RandomNum(3,1)~ + ~[PC] Apparently, your definition of 'monster dogging my step' is more restrictive than mine. For me, impertinent personal questions fall into 'dogging', and someone who cannot take a hint qualifies under 'monster'.~ + a1940 /* c-aranshutup34 */
@@ -13570,8 +13597,10 @@ IF ~~ a581
   + ~RandomNum(3,3)~ + ~[PC] Apparently, your definition of 'monster dogging my step' is more restrictive than mine. For me, impertinent personal questions fall into 'dogging', and someone who cannot take a hint qualifies under 'monster'.~ + a1942 /* c-aranshutup36 */
   ++ ~[PC] Life so far has left me little time or inclination for courting.~ + a578
   ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
-  ++ ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a579
-  ++ ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a580
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a579
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a579_flirt
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a580
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a580_flirt
   ++ ~[PC] I like romance, Aran. Do you like courting?~ + a587
   ++ ~[PC] I think you are being a little slow, Aran. I have already set my heart on someone, and it is not you.~  + a594
 END
@@ -13620,7 +13649,7 @@ IF ~~ a586
 END
 
 IF ~~ a587
-  SAY ~[ARAN] Aye, well, I do like th' game. I know there's  mite o' trouble to be had, even when the person in question is displayin' a flower behind her ear. I never quite get which ear for which likin', either, which leads to some discomfort when th' lady in question prefers ladies. But it be a grand game, wi' nice stakes, good payoff, an' once in awhile there be a chance for somethin' pretty special.~
+  SAY ~[ARAN] Aye, well, I do like th' game. I know there's a mite o' trouble to be had, even when the person in question is displayin' a flower behind her ear. I never quite get which ear for which likin', either, which leads to some discomfort when th' lady in question prefers ladies. But it be a grand game, wi' nice stakes, good payoff, an' once in awhile there be a chance for somethin' pretty special.~
   ++ ~[PC] I have no desire to put myself under the thumb of any man.~ + a588
   ++ ~[PC] Well I do not like 'the game', as you call it. I expect people to treat me as more than a prize to be won.~ + a589
   ++ ~[PC] I play about, and I play hard. The question is, can you survive the game?~ + a590
@@ -22900,7 +22929,7 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   + ~InParty("Anomen") Global("c-aanoconflict","GLOBAL",1)~ + ~[PC] I have changed my mind about fighting with Anomen, Aran. Go ahead and speak your mind.~ + a1039 /* c-aranvsanom1c */
   /* Stop or Restart Flirting; (1) of the three should be active at any one time. None show for males. */
   /*  PC Doesn't Want NPC Initiated flirts */
-  + ~Gender(Player1,FEMALE) Global("c-aranflirtstop","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] You have to stop coming up to me and flirting. I do not want that behavior to continue.~ + a1154 /* c-aranrestopflirts */
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranpcflirtstart","GLOBAL",0) Global("c-aranflirtstop","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] You have to stop coming up to me and flirting. I do not want that behavior to continue.~ + a1154 /* c-aranrestopflirts */
   /* PC Wants NPC Initiated Flirts */
   + ~Gender(Player1,FEMALE) Global("c-aranflirtstop","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] You do not pay attention to me the way you used to, Aran. I miss your company.~ + a1155 /* c-aranrestartflirts */
   /* PC Wants NPC Initiated Flirts but Aran is Mad */
@@ -22911,7 +22940,7 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   /* PC Wants To Initiate A Flirt: Lightweight */
   + ~Gender(Player1,FEMALE) Global("c-aranpcflirtstart","GLOBAL",1) Global("c-aransex","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1074 /* c-pcflirtsaran1 */
   /* PC Wants To Initiate A Flirt: Heavyweight */
-  + ~Gender(Player1,FEMALE) Global("c-aranpcflirtstart","GLOBAL",2) OR(3) Global("c-aransex","GLOBAL",0) Global("c-aransex","GLOBAL",1) Global("c-aransex","GLOBAL",3) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /*  c-pcflirtsaran2 */
+  + ~Gender(Player1,FEMALE) Global("c-aranpcflirtstart","GLOBAL",2) OR(3) Global("c-aransex","GLOBAL",0) Global("c-aransex","GLOBAL",1) Global("c-aransex","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /*  c-pcflirtsaran2 */
   /* PC Wants To Initiate A Flirt: Mature */
   + ~Gender(Player1,FEMALE) Global("c-aranpcflirtstart","GLOBAL",2) GlobalGT("c-aransex","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076 /*  c-pcflirtsaran3 */
   /* 2d - PC Wants To Initiate A Flirt, But Aran Is Angry - handled within submenu  */
@@ -22927,15 +22956,15 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   + ~Global("c-aranscribe","GLOBAL",1) RandomNum(5,5)~ + ~[PC] Is that scroll done yet?~ + a1050
   /* PID requests,  PC = Female PID */
   /* blocking for 'goaded' talk triggered at rest, and var already set - also, no nookie during waking hours in a dungeon. */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a3761  /* NOT_RIGHT_HERE_NOW_ONE  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a3776  /* NOT_RIGHT_HERE_NOW  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a3763  /* START_RIGHT_HERE_NOW  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a3763  /* START_RIGHT_HERE_NOW  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a3755  /* AGREE_TO_MEET_ONE  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a3754  /* AGREE_TO_MEET_TWO  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a3753  /* AGREE_TO_MEET_THREE  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a3752  /* AGREE_TO_MEET_FOUR  */
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3)~ + ~[PC] I have changed my mind about you visiting me the next time we rest. Now is not a good time.~ + a3756  /* WHY_DID_YOU_ASK  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a3761  /* NOT_RIGHT_HERE_NOW_ONE  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a3776  /* NOT_RIGHT_HERE_NOW  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,2)~ + ~[PC] Aran... we could slip away, right here, right now... come away with me for a moment.~ + a3763  /* START_RIGHT_HERE_NOW  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3) !AreaType(DUNGEON) RandomNum(2,1)~ + ~[PC] Didn't you want to get me alone for awhile, just the two of us? Now is the perfect time.~ + a3763  /* START_RIGHT_HERE_NOW  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,4)~ + ~[PC] Come to me when we rest. And come alone.~ + a3755  /* AGREE_TO_MEET_ONE  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,3)~ + ~[PC] Come to me when we rest. And come alone.~ + a3754  /* AGREE_TO_MEET_TWO  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,2)~ + ~[PC] Come to me when we rest. And come alone.~ + a3753  /* AGREE_TO_MEET_THREE  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) !Global("c-arannightvisit","GLOBAL",1) RandomNum(4,1)~ + ~[PC] Come to me when we rest. And come alone.~ + a3752  /* AGREE_TO_MEET_FOUR  */
+  + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE) Global("c-arannightvisit","GLOBAL",1) !Global("c-arangoaded","GLOBAL",1) !Global("c-arangoaded","GLOBAL",3)~ + ~[PC] I have changed my mind about you visiting me the next time we rest. Now is not a good time.~ + a3756  /* WHY_DID_YOU_ASK  */
   /* logic check, so "goaded" or delay of "goaded' does not get an opportunity to shut it down - the point is Aran actually takes initiative to the 'unspoken' request. */
   /* Letter blocked PID toggle */
   + ~Global("c-aranletterblocked","GLOBAL",1)~ + ~[PC] Aran... I found a letter in your pack. I can't read it. Will you read it to me?~ + a3239

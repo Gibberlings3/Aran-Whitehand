@@ -2910,8 +2910,7 @@ GlobalGT("PlayerThiefGuild","GLOBAL",0)
 GlobalGT("DruidStrongHold","GLOBAL",0) 
 GlobalGT("PCSphere","GLOBAL",0) 
 GlobalGT("RangerProtector","GLOBAL",0)   
-THEN
-RESPONSE #100
+THEN RESPONSE #100
 SetGlobal("c-aranas","LOCALS",1)
 END
 
@@ -3187,8 +3186,9 @@ THEN
   RESPONSE #100                // 100% of the time
     SetGlobal("c-aranfriendbg2","GLOBAL",1)     //  set up SoA_FT_1
     SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
-    RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",120)  // Minimum Real Time until SoA_FT_1  // set test time  <<<
+    RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",120)  // Minimum Real Time until SoA_FT_1  is called, unlless the player initiates PID and triggers it 
 END
+
 
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
@@ -3196,7 +3196,7 @@ IF
   GlobalLT("c-aranfriendbg2","GLOBAL",32)  // shuts down sequence when finished
   RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")  // Timer Expired
   !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-  OR(15)
+  OR(13)
     Global("c-aranfriendbg2","GLOBAL",2)  // set up SoA_FT_2
     Global("c-aranfriendbg2","GLOBAL",4)  // set up SoA_FT_3
     Global("c-aranfriendbg2","GLOBAL",6)  // set up SoA_FT_4
@@ -3228,7 +3228,7 @@ IF
   !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
   !ActuallyInCombat()
   !See([ENEMY])  // Can't see any enemies
-  OR(16)
+  OR(14)
     Global("c-aranfriendbg2","GLOBAL",1)   // fire SoA_FT_1
     Global("c-aranfriendbg2","GLOBAL",3)   // fire SoA_FT_2
     Global("c-aranfriendbg2","GLOBAL",5)   // fire SoA_FT_3
@@ -3306,10 +3306,10 @@ END
 
 IF
   Global("c-aranmatch","GLOBAL",0)     // Not evaluated
+  Gender(Player1,FEMALE)         // Player1 is female
   InParty(Myself)            // Aran is here
   !StateCheck(Myself,CD_STATE_NOTVALID)  // Aran is ok
   !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
-  Gender(Player1,FEMALE)         // Player1 is female
   !HasItemEquiped("belt05",Player1)	   // Girdle of sex change not on Player1
 THEN
   RESPONSE #100                // 100% of the time
@@ -3317,7 +3317,6 @@ THEN
     SetGlobal("c-aranrom","GLOBAL",1)  // Aran is interested
     RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)  // Minimum Real Time until first LT 
     RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT) // Tee up flirt timer 
-    SetGlobal("c-aranbg2rom","GLOBAL",1)     //  Tee up SoA_LT_1
 END
 
 
@@ -3330,8 +3329,10 @@ IF
   GlobalLT("c-aranbg2rom","GLOBAL",32)  // shuts down sequence when finished
   RealGlobalTimerExpired("c-aranromtimer","GLOBAL")  // Timer Expired
   !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+  Global("c-aranmatch","GLOBAL",1) // romance matched
   !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-  OR(15)
+  OR(8)
+    Global("c-aranbg2rom","GLOBAL",0)  //  set up SoA_LT_1
     Global("c-aranbg2rom","GLOBAL",2)  // set up SoA_LT_2
     Global("c-aranbg2rom","GLOBAL",4)  // set up SoA_LT_3
     Global("c-aranbg2rom","GLOBAL",6)  // set up SoA_LT_4
@@ -3365,7 +3366,7 @@ IF
   !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
   CombatCounter(0)  // Not in combat
   !See([ENEMY])  // Can't see any enemies
-  OR(16)
+  OR(8)
     Global("c-aranbg2rom","GLOBAL",1)   // fire SoA_LT_1
     Global("c-aranbg2rom","GLOBAL",3)   // fire SoA_LT_2
     Global("c-aranbg2rom","GLOBAL",5)   // fire SoA_LT_3
