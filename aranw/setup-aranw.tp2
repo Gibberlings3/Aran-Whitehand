@@ -2904,6 +2904,7 @@ EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initi
 
 COMPILE ~aranw/baf/c-abvp.baf~ // vampire script
 COMPILE ~aranw/baf/c-aran.baf~ // override script
+COMPILE ~aranw/baf/c-arand.baf~ // SoA dreamscript
 COMPILE ~aranw/baf/c-aranx.baf~ // out-of-party combat script
 COMPILE ~aranw/baf/c-restco.baf~ // rest cutscene for camping outside
 COMPILE ~aranw/baf/c-restin.baf~ // rest cutscene for inn
