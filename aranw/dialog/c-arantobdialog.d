@@ -4273,7 +4273,7 @@ IF ~~ a4192 /* WOMAN_WHO_RESPONDS */
   ++ ~[PC] (Lean forward, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4191 /* WOMAN_WHO_COMMANDS */
@@ -4283,7 +4283,7 @@ IF ~~ a4191 /* WOMAN_WHO_COMMANDS */
   ++ ~[PC] (Lean forward, wrapping your arms around him and nuzzling closer.)~ + a4186 /* ROM_TWO_KISS_GENTLE_CHEEK_LIPS */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4190 /* ROM_TWO_WONT_WAIT_THEN */
@@ -4383,7 +4383,7 @@ IF ~~ a4008 /* ARAN_HAS_RESTRAINT */
   SAY ~[ARAN] Sharess Herself would be envious. Dear Gods, I need you...~
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
   + ~RandomNum(4,1)~ + ~[PC] Just kiss me and hold me, please...~ + a4011 /* KISSING_HOLDING_ONE */
   + ~RandomNum(4,2)~ + ~[PC] I want your lips on mine, and I want to be held close to you. Nothing more, right now... just this.~ + a4012 /* KISSING_HOLDING_TWO */
   + ~RandomNum(4,3)~ + ~[PC] Kiss me.~ + a4013 /* KISSING_HOLDING_THREE */
@@ -4487,7 +4487,7 @@ IF ~~ a3986 /* ROM_ONE_CAN_I_TOUCH */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
@@ -4518,7 +4518,7 @@ IF ~~ a3987 /* ROM_ONE_HANDS_UNDER_BUST_ONE */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
@@ -4537,7 +4537,7 @@ IF ~~ a3988 /* ROM_ONE_HANDS_UNDER_BUST_TWO */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You hunch your shoulders together, curling up into his chest, fending off his hands, until his palms are in yours and are held tightly behind your back.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
   /* advance talking */
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Well, seeing as my hands have found their way to your bottom, I can hardly deny you the same pleasures. Your bottom is so... hard.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
   + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Hey, that tickles! I guess the question was just a formality, since your hand seems to be outlining my... oh, that feels good.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
@@ -4580,7 +4580,7 @@ IF ~~ a3990 /* ROM_ONE_HANDS_ON_BODY */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a3989 /* ROM_ONE_THREATEN_KISS_BUST */
@@ -4611,7 +4611,7 @@ IF ~~ a3989 /* ROM_ONE_THREATEN_KISS_BUST */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (You lean back, pressing your waist tight to his, allowing him free access to your breasts.)~ + a4075 /* ROM_ONE_SLOW_KISSES_TALK */
   ++ ~[PC] I'm not feeling comfortable with doing this. We should stop.~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   ++ ~[PC] I have had enough. Get away from me.~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I don't... look, I think this lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I don't... look, I think this is lots of fun. But we are just friends. We should stop, before I do something I will regret later.~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4183 /* ROM_TWO_2_WANT */
@@ -6421,7 +6421,7 @@ IF ~~ a4154 /* SECOND_TIMES_THE_CHARM */
 END
 
 IF ~~ a3837 /* ENDGAME_OF_TEASING */
-  SAY ~[ARAN] (There are no words, no gestures as he thrusts forward into you, then recedes until your bodies are barely touching, then thrusts again in delicious slowness. Tumbling together in the throes of lust and desire, you dominate and are dominated, are spent and filled and spent again. For one night, nothing exists but the game, hunter and hunted moving in the age old dance.~
+  SAY ~[ARAN] (There are no words, no gestures as he thrusts forward into you, then recedes until your bodies are barely touching, then thrusts again in delicious slowness. Tumbling together in the throes of lust and desire, you dominate and are dominated, are spent and filled and spent again. For one night, nothing exists but the game, hunter and hunted moving in the age old dance.)~
   IF ~~ THEN EXIT
 END
 
