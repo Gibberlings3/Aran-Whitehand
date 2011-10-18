@@ -3531,9 +3531,9 @@ END
 /* Drunk Talks (incorporates Flirts if gender and romance variables set)  */
 /* Using GLOBAL here so it can influence friendtalks */
 IF
-  GlobalLT("c-arandrunk","GLOBAL",6)  // shuts down sequence when finished
+  GlobalLT("c-arandrunk","GLOBAL",4)  // shuts down sequence when finished
   InParty(Myself)
-  CheckStatGT(Myself,50,INTOXICATION)  // Whoot - the room is moving about too much
+  CheckStatGT(Myself,40,INTOXICATION)  // Whoot - the room is moving about too much
   OR(13)
     AreaCheck("AR0313") // Sea's Bounty
     AreaCheck("AR0406") // Copper Coronet
@@ -3548,10 +3548,10 @@ IF
     AreaCheck("AR0021") // Crooked Crane 1st Floor
     AreaCheck("AR1602") // Brynnlaw's Inn
     AreaCheck("C-AR01") // The Broken Sword (Aran's initial inn )
-  OR(3)
+  OR(2)
     Global("c-arandrunk","GLOBAL",0)
     Global("c-arandrunk","GLOBAL",2)
-    Global("c-arandrunk","GLOBAL",4)
+    // Global("c-arandrunk","GLOBAL",4)
   InMyArea(Player1)
   !StateCheck(Player1,CD_STATE_NOTVALID)
   CombatCounter(0)
@@ -3562,7 +3562,7 @@ THEN
 END
 
 IF
-  GlobalLT("c-arandrunk","GLOBAL",6)  // shuts down sequence when finished
+  GlobalLT("c-arandrunk","GLOBAL",4)  // shuts down sequence when finished
   !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3584,10 +3584,10 @@ IF
     AreaCheck("C-AR01") // The Broken Sword (Aran's initial inn )
   CombatCounter(0)  // Not in combat
   !See([ENEMY])  // Can't see any enemies
-  OR(3)
+  OR(2)
     Global("c-arandrunk","GLOBAL",1)
     Global("c-arandrunk","GLOBAL",3)
-    Global("c-arandrunk","GLOBAL",5)
+    // Global("c-arandrunk","GLOBAL",5)
 THEN
   RESPONSE #100
     PlaySong(0)

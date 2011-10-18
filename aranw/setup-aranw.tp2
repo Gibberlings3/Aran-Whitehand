@@ -1659,7 +1659,7 @@ Please type 1, 2, 3, 4, or 5 and press enter.~
   			ACTION_READLN aran_armor_choice
   		END // of O_F
   	LAUNCH_ACTION_MACRO ~aran_report_status~
-  		COPY ~aranw/cre/c-arnmge.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
+  		COPY ~aranw/cre/c-arnclr.cre~ ~override/c-aran7.cre~ // copy the base .cre into the game, and
       	PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
       		LAUNCH_PATCH_MACRO ~aran_cre_setup~  // patch in player choices using this pre-defined code
       	END ELSE BEGIN
@@ -2899,6 +2899,8 @@ EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~  // shuts down und
 EXTEND_BOTTOM ~bodhiamb.bcs~ ~aranw\baf\c-aranvampire.baf~ // bodhi disappears with aran
 
 EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ // restoring aran
+
+EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 

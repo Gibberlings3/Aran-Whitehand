@@ -1,0 +1,19 @@
+
+/* Night Talk: Amorous */
+IF
+  Global("c-arannightvisit","GLOBAL",1)
+  InParty("c-aran")
+  !Global("c-aranspar","GLOBAL",1)
+  !Global("c-aranspar","GLOBAL",4)
+  !Global("c-arandreamstar","LOCALS",1)
+  !RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
+  !RealGlobalTimerExpired("RE_DreamTimer","GLOBAL")
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  !StateCheck("c-aran",CD_STATE_NOTVALID)
+THEN  
+  RESPONSE #100
+	SetGlobal("c-arannightvisit","GLOBAL",2)
+	PlaySong(0)
+	PlaySound("c-arnltl")
+	ActionOverride(Player1,StartDialog("player1",Player1))
+END
