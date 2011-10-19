@@ -22,6 +22,78 @@ BEGIN C-OSKUT   /* Initialize SoA Dialogs : bar fight npc Oskut */
 
 /* SoA Interjections */
 
+/* SoA Interjections : Gratuitous Stupidity Comments 1 */
+I_C_T SAHKNG01 1 c-aransahgng011 /* ~It seems most... most strange!  They have no scales!  Look how small and puny their teeth are!~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Small! Naught about me could rightly be called small! You should see th' size o' my... err... yep. Teeth. Sorry. Shuttin' up an' soldierin'.~
+END
+
+/* SoA Interjections : Gratuitous Stupidity Comments 2 */
+I_C_T2 PIRMUR01 2 c-aranpirmur012 /* ~Hmmm, so we do. Who are you, <MANWOMAN>? Where are my useless guards?~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Now, to be fair, they were a mite bit useful. Watchin' 'em bumble around an' fall over themselves, it were as entertainin' as one o' them plays or follies, or such.~
+END
+
+/* SoA Interjections : Sided Bodhi Final Task */
+I_C_T2 BODHI 72 c-aranbodhi72 /* ~You must invade their lair for one last time. You must kill Aran Linvail, the Shadow Master. Do this for me and our arrangement wil be fulfilled.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Blighted... Look. I kept my bloody mouth shut up to now. But this be war on more than a minor guildmember. An' we still pay? Bane's Blighted Bones, <CHARNAME>, we are bein' used hard, wi' naught in th' way o' a decent reward... only a blighted "discount". I for one don't like th' feelin' o' a club being shoved up my arse an' twisted hard.~
+END
+
+/* SoA Interjections : Slavery Comments */
+I_C_T COPGREET 1 c-arancopgreet1 /* ~Better than that!  Here we have the very best in live entertainment!  Actual combat between man and beast, presented for your viewing pleasure!~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] So, when you get in th' pit, which side do you fight on? Or do you be considered in th' category wi' th' otyughs?~
+== COPGREET IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[COPGREET] I do not quite understand you, my lord. I do not get in the pits.~
+END
+
+I_C_T COPGREET 7 c-arancopgreet7 /* ~Slavery is such a harsh word, my <LADYLORD>.  Here, we think of them as purchased employees...and an excellent source of entertainment!  Go on in and witness it for yourself!~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Cyric's Black Bowed Balls o' Blighted...~
+== COPGREET IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[COPGREET] Please, sir, such language! This is a place of entertainment. Gratuitous violence and carnal pleasures are encouraged. But foul language? That is simply barbaric!~
+END
+
+I_C_T HENDAK 1 c-aranhendak1 /* ~I beg of you, please free us!  I have never begged before, and yet I do it now so I might wreak vengeance on Lehtinan and end his sick and twisted enterprise!~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You want a weapon? I'd be glad to give you mine own, as long as there be a fair sight o' blood on it when you give it back.~
+== HENDAK IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HENDAK] I need no weapon. I will kill him with my own hands.~
+END
+
+I_C_T HENDAK 19 c-aranhendak19 /* ~I know nothing of the defenses of the place inside, however.  My stay there was brief and very long ago.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] By Tymora's Bright Coin, let's be gettin' on wi' th' job. Sometimes th' best way o' takin' a place is by sheer suprise, an' right now, we have that advantage. A few more minutes, an' some bastard will let th' cat out o' th' bag, eh?~ 
+== HENDAK IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HENDAK] Speed is of importance.~
+END
+
+I_C_T HAEGAN 0 c-aranhaegan0 /* ~You! How dare you! We were doin' good business in this town before you took out my partner, Lehtinan at the Copper Coronet! Why are you out to ruin me?~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Oh, we just dropped by to get rid o' th' vermin. An' when you turned out to be such a Cyric-kissed piece of shite, we just figured it were th' right thing to do. Good for th' neighborhood, an' all. You first, then th' piece o' crud you call 'Lehtinan'. Got any other names you want to drop, while we be all cosy an' chatty?~
+END
+
+I_C_T HAEGAN 4 c-aranhaegan4 /* ~Who in the Nine Hells are you? Why have you barged in here with drawn weapons and attacked my men? If you want to be buying some slaves from me you're going about it the wrong way.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Sure thing. We be here to get us some slaves. You, him, an' that pretty boy over in th' corner wearin' th' low-cut robe, well, I think you'd make right fine Calimshan pleasure slaves. Once we take off th' unnecessary bits, o' course.~
+END
+
+/* SoA Interjections : Kahlah And What He Was Promised Comments - remember to add crossmod for the UB restoration of Kalah's Quest */
+I_C_T KALAH2 7 c-arankalah27 /* ~Indifference killed those fools from the circus.  I treat them in death as they were to me in life.  A gnome gets no respect...I just wanted people to look up...to me.  All that I have done...~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Blighted hells. All this because you don't know th' difference between bein' small on th' outside, versus bein' small in th' inside.~
+== KALAH2 IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[KALAH] You have no right to judge me.~
+END
+
+I_C_T KALAH2 8 c-arankalah28 /* ~You don't understand, do you?  You take my life, but worse, you take my dignity.  I just wanted...I wanted to be the king instead of...instead of...~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Blighted hells. All this because you don't know th' difference between bein' small on th' outside, versus bein' small in th' inside.~
+== KALAH2 IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[KALAH] You have no right to judge me.~
+END
+
+I_C_T KALAH2 9 c-arankalah29 /* ~You don't know...denied respect my entire life.  A clown, a fool...it does not matter...I die as I...as I...~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Blighted hells. All this because you don't know th' difference between bein' small on th' outside, versus bein' small in th' inside.~
+== KALAH2 IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[KALAH] You have no right to judge me.~
+END
+
+/* SoA Interjections: Scarles and the Artistic Temperment */
+I_C_T SCSARLES 11 c-aranscsarles11
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Now *that* be a mercenary. Makes a lad proud, you know.~
+== SCSARLES IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[SCSARLES] Go on! Shoo!~
+END
+
+/* SoA Interjections : Gaelen Bale, lesser of two evils  */
+I_C_T GAELAN 66 c-arangael66 /* ~Remember, it's northwest in the Docks district.  As unlikely as it seems, the Shadow Thieves will prove to be the least of all evils you will encounter.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Somehow, that don't rightly seem comfortin'. Kind o' like sayin' "Here, eat this. It be better than dirt".~
+== GAELAN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[GAELAN] The evil you know is the one you can understand.~
+END
+
 /* SoA Interjections : Nalia Quest Interjection: Old Bat Blabbers */
 ADD_TRANS_ACTION DELCIA BEGIN 16 END BEGIN END ~SetGlobal("c-aranoldbat","GLOBAL",1)~
 
@@ -304,6 +376,12 @@ END
 
 I_C_T AERIEJ 218 c-aranar218 /* You... you're Haer'Dalis?  Raelis sent us... to free you. */
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranrom","GLOBAL",2)~ THEN ~[ARAN] Bloody hells, girl. That look could melt mithral. Looks like someone's libido just woke up, eh? They hit puberty so fast these days...~
+END
+
+/* SoA Interjections : Valygar  (1) */
+I_C_T VALYGAR 8 c-aranvalygar8 /* ~I have no desire to meet my ancestor, and even less desire to help the Cowled Wizards, who believe my body is the only key to enter the sphere... alive or no.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] I suppose this be a bad time to joke about every-body needs some-body, eh?~
+== VALYGAR IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[VALYGAR] Yes.~
 END
 
 /* SoA Interjections : Viconia  (1) */
@@ -605,7 +683,7 @@ END
 APPEND PLAYER1
 
 IF ~~ a469
-  SAY ~[ARAN] You see Aran Whitehand, sword and scribe. His jaw is as hard as granite, and he keeps flexing his hands. He looks up, his eyes meeting yours.~
+  SAY ~[ARAN] Aran Whitehand, sword and scribe. His jaw is as hard as granite, and he keeps flexing his hands. He looks up, his eyes meeting yours.~
   IF ~~ THEN DO ~SetGlobal("c-arantreelife","GLOBAL",1)~ EXTERN C-ARANJ a470
 END
 
@@ -9100,7 +9178,7 @@ END
 
 IF ~~ a142
   SAY ~[ARAN] So how are you goin' to help, oh mighty spellweaver? Start a fire wi' your fingers, or just create it out of thin air?~
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
   ++ ~[PC] One simple Burning hands spell, and your coals will be ready. Or would you rather I use lightning? A fireball spell?~ + a150
   ++ ~[PC] I shall drink Shadowdark ale and enjoy the fire while you serve me.~ + a150
 END
@@ -9108,14 +9186,14 @@ END
 IF ~~ a143
   SAY ~[ARAN] So how are you goin' to help, strongarm - gatherin' firewood, or cleanin' up?~
   ++ ~[PC] I shall drink Shadowdark ale and enjoy the fire while you serve me.~ + a150
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
 END
 
 IF ~~ a144
   SAY ~[ARAN] So how are you goin' to help, oh Speaker o' the Gods - cleanin' up, or buildin' th' fire?~
   ++ ~[PC] I think my contribution will be providing an audience for your work. After all, the true work of eating is done by the taster, is it not?~ + a150
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
 END
 
@@ -9123,13 +9201,13 @@ IF ~~ a145
   SAY ~[ARAN] So how are you goin' to help, oh agile one - cuttin' th' ingredients, or just disappearin' into the shadows the way you sometimes do?~
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
   ++ ~[PC] I shall scout the area, I think. You cook, and I will keep one eye on you, and one on our surroundings.~ + a151
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
 END
 
 IF ~~ a146
   SAY ~[ARAN] So how are you goin' to help, oh entert... I mean, oh Great Beguiler? Sing our supper to the right temperature?~
   ++ ~[PC] I shall drink Shadowdark ale and enjoy the fire while you serve me.~ + a150
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
   ++ ~[PC] I shall entertain you in grand style, while you prepare a feast for the ages. Of course, in less flowery phrases, that means you cook while I sit and practice.~ + a150
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
 END
@@ -9145,7 +9223,7 @@ IF ~~ a148
   SAY ~[ARAN] So how are you goin' to help, oh Protector of the Balance? An' if you start in about how tasty grubs an' twigs are, I'm not lettin' you near th' cookin' pots.~
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
   ++ ~[PC] I shall scout the area, I think. You cook, and I will keep one eye on you, and one on our surroundings.~ + a151
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
 END
 
 IF ~~ a149
@@ -9153,7 +9231,7 @@ IF ~~ a149
   ++ ~[PC] I shall drink Shadowdark ale and enjoy the fire while you serve me.~ + a150
   ++ ~[PC] Of course I will help with cutting up the ingredients.~ + a151
   ++ ~[PC] I shall scout the area, I think. You cook, and I will keep one eye on you, and one on our surroundings.~ + a151
-  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyways.~ + a150
+  ++ ~[PC] I am good at cleaning up. I usually have to clean up after you regularly anyway.~ + a150
 END
 
 IF ~~ a150
@@ -13271,7 +13349,7 @@ IF ~~ a538
 END
 
 IF ~~ a539
-  SAY ~[ARAN] I been on th' road now nigh on eight years, buy one count, an' my whole life by another. An' it is fun for awhile. But sometimes leavin' a pretty lass behind after a few weeks just feels all empty, somehow.~
+  SAY ~[ARAN] I been on th' road now nigh on eight years, by one count, an' my whole life by another. An' it is fun for awhile. But sometimes leavin' a pretty lass behind after a few weeks just feels all empty, somehow.~
   ++ ~[PC] That sounds like you have a bit of a problem. Luckily, I don't share it.~ + a530
   ++ ~[PC] Are you developing a conscience, just have not found the right woman, or are you just getting old?~ + a533
   ++ ~[PC] There really is not much choice for an adventurer. The freedom to explore requires some sacrifices.~ + a534
@@ -18919,7 +18997,7 @@ IF ~~ a3466 /* PC_NIGHT_WATCH */
   ++ ~[PC] I... I am tired of all this walking. Have a good night, Aran. I am fine heading back alone.~ + a3469 /* ARAN_MOON_FEMALE_EXIT */
   ++ ~[PC] I am not Selune. But you could worship me if you like.~ + a3470 /* ARAN_MOON_MIND */
   ++ ~[PC] Hey, easy on the compliments. We are just two friends, having a moonlit walk.~ + a3471 /* MOON_JUST_FRIENDS */
-  ++ ~[PC] Walking with you here is a nice rest from all of the day's cares. But then again, lots of things can happen on at night.~ + a3470 /* ARAN_MOON_MIND */
+  ++ ~[PC] Walking with you here is a nice rest from all of the day's cares. But then again, lots of things can happen at night.~ + a3470 /* ARAN_MOON_MIND */
   ++ ~[PC] Do you call this walking? It is more like a prizefight, where I keep having to block your hands and bar your advances.~ + a3418 /* FIGHT_EXIT */
 END
 
@@ -22140,7 +22218,7 @@ IF ~~ a3705 /* SECOND_TIMES_THE_CHARM */
 END
 
 IF ~~ a3389 /* ENDGAME_OF_TEASING */
-  SAY ~[ARAN] (There are no words, no gestures as he thrusts forward into you, then recedes until your bodies are barely touching, then thrusts again in delicious slowness. Tumbling together in the throes of lust and desire, you dominate and are dominated, are spent and filled and spent again. For one night, nothing exists but the game, hunter and hunted moving in the age old dance.~
+  SAY ~[ARAN] (There are no words, no gestures as he thrusts forward into you, then recedes until your bodies are barely touching, then thrusts again in delicious slowness. Tumbling together in the throes of lust and desire, you dominate and are dominated, are spent and filled and spent again. For one night, nothing exists but the game, hunter and hunted moving in the age old dance.)~
   IF ~~ THEN EXIT
 END
 
@@ -27606,7 +27684,7 @@ IF ~~ a2481
 END
 
 IF ~~ a2482
-  SAY ~[C-AW01TK] At a copper per broadside given to a new customers, I will not gain much. Still, anything that provides a profit, no matter how small, is worth pursuing. In addition, he is running up quite a bar tab, and getting him employed might mean I get some return on my loans to him.~
+  SAY ~[C-AW01TK] At a copper per broadside given to new customers, I will not gain much. Still, anything that provides a profit, no matter how small, is worth pursuing. In addition, he is running up quite a bar tab, and getting him employed might mean I get some return on my loans to him.~
   ++ ~[PC] So... you loan out money? Any chance I could get one of these loans?~ + a2484
   ++ ~[PC] I wish to peruse your selection of services, if I may.~ + a2472
   + ~OR(2) PartyGoldGT(3000) Global("c-awtavkquest","C-AR01",2)~ + ~[PC] I have heard that a wealthy, well connected person might peruse some of the more... interesting wares?~ + a2473
@@ -28270,19 +28348,19 @@ APPEND PLAYER1
 
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
-IF ~Global("c-arangoaded","GLOBAL",2)~ THEN BEGIN a3353 /* TOO_MUCH_TEASING */
+IF ~Global("c-arangoaded","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3353 /* TOO_MUCH_TEASING */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
   IF ~~ THEN EXTERN C-ARANJ a3353_transfer
 END
 
-IF ~Global("c-arangoaded","GLOBAL",5)~ THEN BEGIN a3353_tryagain /* TOO_MUCH_TEASING_RETRY */
+IF ~Global("c-arangoaded","GLOBAL",5) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3353_tryagain /* TOO_MUCH_TEASING_RETRY */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
   IF ~~ THEN EXTERN C-ARANJ a3361
 END
 
 
 /* Night Visit from requests or flirts */
-IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
+IF ~Global("c-arannightvisit","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
   SAY ~[PC] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~ 
   ++ ~[PC] (You decide that now is not a good time for a romantic encounter, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXIT
   + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARANJ a3576 /* START_LADY_OF_THE_WARM_LIPS */

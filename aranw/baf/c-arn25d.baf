@@ -1,4 +1,4 @@
-/* NightTalk: Stars, Constancy Thereof */
+/* NightTalk: Stars, Constancy Thereof, ToB  */
 IF
     Global("c-tobnightone","GLOBAL",0)
     OR(2)
@@ -15,20 +15,3 @@ THEN RESPONSE #100
     StartDialogueNoSet(Player1)
 END
 
-/* Night Talk: Amorous */
-IF
-  Global("c-arannightvisit","GLOBAL",1)
-  InParty(Myself)
-  !RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
-  !RealGlobalTimerExpired("RE_DreamTimer","GLOBAL")
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN  
-  RESPONSE #100
-	SetGlobal("c-arannightvisit","GLOBAL",2)
-	SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
-	RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)
-	PlaySong(0)
-	PlaySound("c-arnltl")
-	StartDialogNoSet(Player1)
-END

@@ -10,7 +10,7 @@
 
 /* c-arand.bcs */
 /* Sparring, females */
-IF 
+IF
   Global("c-aranspar","GLOBAL",1)
   InParty(Myself)
   !RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
@@ -42,8 +42,8 @@ IF
   !StateCheck(Player1,CD_STATE_NOTVALID)
   !AreaType(DUNGEON)
   OR(2)
-  AreaType(OUTDOOR)
-  AreaType(FOREST)
+    AreaType(OUTDOOR)
+    AreaType(FOREST)
 THEN  
   RESPONSE #100
 	SetGlobal("c-aranspar","GLOBAL",5)
@@ -55,7 +55,7 @@ THEN
 END
 
 /* Stone Walls, Stone Hearts, Stone Heads : Dream Script, De'Arnise Keep (Stronghold) Script */
-IF
+IF 
   Global("c-arandreamstone","GLOBAL",0)
   InParty(Myself)
   !RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
@@ -84,7 +84,7 @@ IF
   Global("c-arandreamstar","LOCALS",0)
   InParty(Myself)
   !RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
-  !RealGlobalTimerExpired("RE_DreamTimer","GLOBAL")
+  !RealGlobalTimerExpired("RE_DreamTimer","GLOBAL")  
   Gender(Player1,FEMALE)
   GlobalLT("Chapter","GLOBAL",5)
   CombatCounter(0)
@@ -92,8 +92,8 @@ IF
   !StateCheck(Player1,CD_STATE_NOTVALID)
   !AreaType(DUNGEON)
   OR(2)
-  AreaType(OUTDOOR)
-  AreaType(FOREST)
+    AreaType(OUTDOOR)
+    AreaType(FOREST)
 THEN  
   RESPONSE #100
 	SetGlobal("c-arandreamstar","GLOBAL",1)

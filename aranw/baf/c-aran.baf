@@ -686,8 +686,8 @@ END
 IF
   InParty(Myself)
   !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",4)
-  Global("c-aransex","GLOBAL",3) // shared everything
+  Global("c-aranintimate","GLOBAL",4) // shared everything
+  Global("c-aransex","GLOBAL",3)
   Gender(Player1,FEMALE)
   !HasItemEquiped("belt05",Player1)
 THEN
@@ -2818,19 +2818,19 @@ END
 
 /* Easter Egg for Multi-stronghold folks who get all strongholds at once */
 IF
-Global("c-aranas","LOCALS",0)
-GlobalGT("JoinLathander","GLOBAL",0) 
-GlobalGT("JoinTalos","GLOBAL",0) 
-GlobalGT("JoinHelm","GLOBAL",0) 
-GlobalGT("PaladinOrder","GLOBAL",0) 
-GlobalGT("Playhouse","GLOBAL",0) 
-GlobalGT("PCKeepOwner","GLOBAL",0) 
-GlobalGT("PlayerThiefGuild","GLOBAL",0) 
-GlobalGT("DruidStrongHold","GLOBAL",0) 
-GlobalGT("PCSphere","GLOBAL",0) 
-GlobalGT("RangerProtector","GLOBAL",0)   
+	Global("c-aranas","LOCALS",0)
+	GlobalGT("JoinLathander","GLOBAL",0) 
+	GlobalGT("JoinTalos","GLOBAL",0) 
+	GlobalGT("JoinHelm","GLOBAL",0) 
+	GlobalGT("PaladinOrder","GLOBAL",0) 
+	GlobalGT("Playhouse","GLOBAL",0) 
+	GlobalGT("PCKeepOwner","GLOBAL",0) 
+	GlobalGT("PlayerThiefGuild","GLOBAL",0) 
+	GlobalGT("DruidStrongHold","GLOBAL",0) 
+	GlobalGT("PCSphere","GLOBAL",0) 
+	GlobalGT("RangerProtector","GLOBAL",0)   
 THEN RESPONSE #100
-SetGlobal("c-aranas","LOCALS",1)
+	SetGlobal("c-aranas","LOCALS",1)
 END
 
 /* Bards : Activate */

@@ -2274,27 +2274,14 @@ END
 
 /* Adult - Land. Attempting to have some fun, Romantic Encounters-style. */
 
-/* moved up to emulate dreamscript eval */
-IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3800 /* START_ARAN_PC_BOOTY_CALL */
-  SAY ~[ARAN] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~
-  ++ ~[PC] (You decide that now is not a good time, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ EXIT
-  + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4025 /* START_LADY_OF_THE_WARM_LIPS */
-  + ~Global("c-arankisses","LOCALS",1)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4028 /* START_MAYHAP_I_GET_A_KISS */
-  + ~Global("c-arankisses","LOCALS",2)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4026 /* START_WITH_SHOULDER_PULL */
-  + ~Global("c-arankisses","LOCALS",3)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4030 /* START_GIVE_A_LAD_A_CHANCE */
-  + ~Global("c-arankisses","LOCALS",4)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
-  + ~Global("c-arankisses","LOCALS",5)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4040 /* START_BEARING_GIFTS */
-  + ~Global("c-arankisses","LOCALS",6)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
-  + ~Global("c-arankisses","LOCALS",7)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4041 /* START_SUNES_LIPS */
-  + ~Global("c-arankisses","LOCALS",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4029 /* START_TRY_TO_BE_PHYSICAL */
-  + ~Global("c-arankisses","LOCALS",9)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0)~ + a4017 /* START_LIP_EXERCISES */
-END
+/* moved up to emulate dreamscript eval  IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3800 START_ARAN_PC_BOOTY_CALL */
+
+ 
 
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
-IF ~Global("c-arangoaded","GLOBAL",2)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
-  SAY ~[ARAN] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
-  = ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
+IF ~~ a3801_transfer /* TOO_MUCH_TEASING */
+  SAY ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
   + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
   ++ ~[PC] I try to train you, and this is the result? Aran, I have tried to let you know that I expect you to take, not ask. This is a battlefield, to be won or lost on strength.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3803 /* PC_DEMANDS_STRENGTH */
@@ -9469,7 +9456,6 @@ CHAIN BJAHEI25 a4256
 == C-ARN25B ~[ARAN] I can see it now. <CHARNAME>, all wrapped up in swaddlin' clothes, wavin' <PRO_HISHER> arms wild-like an' bein' chased by a horde o' gibberlings.~
 == BJAHEI25 ~[JAHEIRA] The waving of arms, perhaps. But no swaddling clothes.~
 END
-
 IF ~InParty("Jaheira") Global("JaheiraRomanceActive","GLOBAL",2)~ EXTERN C-ARN25B a4264
 IF ~InParty("Jaheira") !Global("JaheiraRomanceActive","GLOBAL",2)~ EXTERN C-ARN25B a4265
 IF ~InParty("Viconia") OR(2) Global("ViconiaRomanceActive","GLOBAL",1) Global("ViconiaRomanceActive","GLOBAL",2)~ THEN EXTERN C-ARN25B a4266
@@ -9556,3 +9542,35 @@ CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InP
 == C-ARN25B ~[ARAN] An' you, you be th' worst o' all. You never do tell all th' ins an' outs. My boon companions, startin' out early enough to know <PRO_HIMHER> when a few kobolds were a right difficult challenge, an' you hold back on th' tales o' glory.~
 EXTERN BJAHEI25 a4256
 
+
+APPEND PLAYER1
+
+/* I. Player Teases with lots and lots of flirts - from .bcs */
+
+IF ~Global("c-arangoaded","GLOBAL",2) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
+  SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
+  IF ~~ THEN EXTERN C-ARN25J a3801_transfer
+END
+
+IF ~Global("c-arangoaded","GLOBAL",5) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3809_tryagain /* TOO_MUCH_TEASING_RETRY */
+  SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
+  IF ~~ THEN EXTERN C-ARN25J a3809
+END
+
+/* Night Visit from requests or flirts */
+IF ~Global("c-arannightvisit","GLOBAL",2) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
+  SAY ~[PC] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~ 
+  ++ ~[PC] (You decide that now is not a good time for a romantic encounter, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXIT
+  + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4025 /* START_LADY_OF_THE_WARM_LIPS */
+  + ~Global("c-arankisses","LOCALS",1)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4028 /* START_MAYHAP_I_GET_A_KISS */
+  + ~Global("c-arankisses","LOCALS",2)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4026 /* START_WITH_SHOULDER_PULL */
+  + ~Global("c-arankisses","LOCALS",3)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  + ~Global("c-arankisses","LOCALS",4)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
+  + ~Global("c-arankisses","LOCALS",5)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4040 /* START_BEARING_GIFTS */
+  + ~Global("c-arankisses","LOCALS",6)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a3944 /* START_NINE_HELLS_PC_ACTION */
+  + ~Global("c-arankisses","LOCALS",7)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4041 /* START_SUNES_LIPS */
+  + ~Global("c-arankisses","LOCALS",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4029 /* START_TRY_TO_BE_PHYSICAL */
+  + ~Global("c-arankisses","LOCALS",9)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4017 /* START_LIP_EXERCISES */
+END
+
+END
