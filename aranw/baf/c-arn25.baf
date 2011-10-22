@@ -1,2223 +1,2255 @@
 
-/* ToB  RE */
-
-/* Romantic Encounters: Cambion  */
+/* ToB Watcher's Keep */
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("RE_CambionFlirt","GLOBAL",1)
-  Global("c-arnRECambion","LOCALS",0)
-  Gender(Player1,FEMALE)
-  AreaCheck("AR3007")
+	Global("c-aranwatchkeep","GLOBAL",0)
+	AreaCheck("AR3000") 
+	Global("OpenDungeonDoor5","GLOBAL",0)
+	CombatCounter(0)
+	!See([ENEMY])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
 THEN
-  RESPONSE #100
-    DisplayStringHead(Myself,~Hmmm. Takin' strip poker a mite too far, eh?~)
-    SetGlobal("c-arnRECambion","LOCALS",2)
+	RESPONSE #100
+		SetGlobal("c-aranwatchkeep","GLOBAL",1)
+END
+
+IF
+	Global("c-aranwatchkeep","GLOBAL",1)
+	CombatCounter(0)
+	!See([ENEMY])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+THEN
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
+END
+
+
+/* ToB	RE */
+
+/* Romantic Encounters: Cambion	*/
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("RE_CambionFlirt","GLOBAL",1)
+	Global("c-arnRECambion","LOCALS",0)
+	Gender(Player1,FEMALE)
+	AreaCheck("AR3007")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,~Hmmm. Takin' strip poker a mite too far, eh?~)
+		SetGlobal("c-arnRECambion","LOCALS",2)
 END
 
 /* Romantic Encounters: Cambion Shutdown */
 IF
-  InParty(Myself)
-  Global("RE_CambionFlirt","GLOBAL",1)
-  Global("c-arnRECambion","LOCALS",0)
-  Gender(Player1,FEMALE)
-  !AreaCheck("AR3007")
+	InParty(Myself)
+	Global("RE_CambionFlirt","GLOBAL",1)
+	Global("c-arnRECambion","LOCALS",0)
+	Gender(Player1,FEMALE)
+	!AreaCheck("AR3007")
 THEN
-  RESPONSE #100
-    SetGlobal("c-arnRECambion","LOCALS",2)
+	RESPONSE #100
+		SetGlobal("c-arnRECambion","LOCALS",2)
 END
 
-/* Romantic Encounters: Cyric  */
+/* Romantic Encounters: Cyric	*/
 IF
-  InParty(Myself)
-  Global("RE_CyricSex","GLOBAL",1)
-  Global("c-arnRECyric","LOCALS",0)
-  Gender(Player1,FEMALE)
-  !AreaCheck("AR4500")
-  !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty(Myself)
+	Global("RE_CyricSex","GLOBAL",1)
+	Global("c-arnRECyric","LOCALS",0)
+	Gender(Player1,FEMALE)
+	!AreaCheck("AR4500")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    DisplayStringHead(Myself,~You look downright drained, <CHARNAME>. Kinda glowy, though.~)
-    SetGlobal("c-arnRECyric","LOCALS",2)
+	RESPONSE #100
+		DisplayStringHead(Myself,~You look downright drained, <CHARNAME>. Kinda glowy, though.~)
+		SetGlobal("c-arnRECyric","LOCALS",2)
 END
 
-/* Romantic Encounters: Laran  */
+/* Romantic Encounters: Laran	*/
 IF
-  InParty(Myself)
-  Global("RE_LaranSexToB","GLOBAL",1)
-  Global("c-arnRELaranToB","LOCALS",0)
-  !AreaCheck("AR5003")
-  !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty(Myself)
+	Global("RE_LaranSexToB","GLOBAL",1)
+	Global("c-arnRELaranToB","LOCALS",0)
+	!AreaCheck("AR5003")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    DisplayStringHead(Myself,~Look what th' cat dragged in. What be that big smile for, anyhow?~)
-    SetGlobal("c-arnRELaranToB","LOCALS",2)
+	RESPONSE #100
+		DisplayStringHead(Myself,~Look what th' cat dragged in. What be that big smile for, anyhow?~)
+		SetGlobal("c-arnRELaranToB","LOCALS",2)
 END
 
-/* Romantic Encounters: Viekang  */
+/* Romantic Encounters: Viekang	*/
 IF
-  InParty(Myself)
-  Global("RE_ViekangFlirt","GLOBAL",1)
-  Global("c-arnREViekang","LOCALS",0)
-  !AreaCheck("AR5003")
-  !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty(Myself)
+	Global("RE_ViekangFlirt","GLOBAL",1)
+	Global("c-arnREViekang","LOCALS",0)
+	!AreaCheck("AR5003")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    SetGlobal("c-arnREViekang","LOCALS",9)
+	RESPONSE #100
+		SetGlobal("c-arnREViekang","LOCALS",9)
 END
 
-/* Romantic Encounters: Sarevok  */
+/* Romantic Encounters: Sarevok	*/
 IF
-  InParty(Myself)
-  Global("RE_SarevokSex","GLOBAL",1)
-  Global("c-arnRESarev","LOCALS",0)
-  !AreaCheck("AR5003")
-  !StateCheck(Myself,CD_STATE_NOTVALID)
+	InParty(Myself)
+	Global("RE_SarevokSex","GLOBAL",1)
+	Global("c-arnRESarev","LOCALS",0)
+	!AreaCheck("AR5003")
+	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    SetGlobal("c-arnRESarevok","LOCALS",9)
+	RESPONSE #100
+		SetGlobal("c-arnRESarevok","LOCALS",9)
 END
 
 /* tracking intimacy levels */
 /* look for incrementing relationship to kissing */
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",1) // we kissed...
-  Global("c-aransex","GLOBAL",0) // not registered...
-  Gender(Player1,FEMALE)
-  !HasItemEquiped("belt05",Player1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",1) // we kissed...
+	Global("c-aransex","GLOBAL",0) // not registered...
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
 THEN
-  RESPONSE #100
-    SetGlobal("c-aransex","GLOBAL",1) // we kissed.
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",1) // we kissed.
 END
 /* look for incrementing relationship to kissing + touching */
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",2) // kissed and touched
-  Global("c-aransex","GLOBAL",1) // not registered
-  Gender(Player1,FEMALE)
-  !HasItemEquiped("belt05",Player1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",2) // kissed and touched
+	Global("c-aransex","GLOBAL",1) // not registered
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
 THEN
-  RESPONSE #100
-    SetGlobal("c-aransex","GLOBAL",2) // we kissed and touched
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",2) // we kissed and touched
 END
 /* look for incrementing relationship to petting */
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
-  Global("c-aransex","GLOBAL",2) // not registered
-  Gender(Player1,FEMALE)
-  !HasItemEquiped("belt05",Player1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
+	Global("c-aransex","GLOBAL",2) // not registered
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
 THEN
-  RESPONSE #100
-    SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
 END
 /* look for incrementing relationship to full intimacy */
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aranintimate","GLOBAL",4) // shared everything
-  Global("c-aransex","GLOBAL",3) // not registered
-  Gender(Player1,FEMALE)
-  !HasItemEquiped("belt05",Player1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",4) // shared everything
+	Global("c-aransex","GLOBAL",3) // not registered
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
 THEN
-  RESPONSE #100
-    SetGlobal("c-aransex","GLOBAL",4) // shared everything
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",4) // shared everything
 END
 
 /* BCS Blocks for Scroll Creation */
 /* c-arSCRL15 Aran PID: Create Scroll of Protection from Petrification */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL15","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL15","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    StartCutSceneMode()
-    SetGlobal("c-arSCRL15","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL15",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Petrification be finished, if you want it.~)
-    EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL15","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL15",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Petrification be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1B Aran PID: Create Scroll of Agannazar's Scorcher */
+/*	c-arSCRL1B Aran PID: Create Scroll of Agannazar's Scorcher */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1B","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1B","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1B","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1B",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Agannazar's Scorcher be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1B","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1B",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Agannazar's Scorcher be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1C Aran PID: Create Scroll of Ghoul Touch */
+/*	c-arSCRL1C Aran PID: Create Scroll of Ghoul Touch */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1C","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1C","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1C","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1C",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Ghoul Touch be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1C","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1C",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghoul Touch be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1D Aran PID: Create Scroll of Clairvoyance */
+/*	c-arSCRL1D Aran PID: Create Scroll of Clairvoyance */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1D","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1D","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1D","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1D",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Clairvoyance be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1D","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1D",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Clairvoyance be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1E Aran PID: Create Scroll of Dispel Magic */
+/*	c-arSCRL1E Aran PID: Create Scroll of Dispel Magic */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1E","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1E","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1E","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1E",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Dispel Magic be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1E","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1E",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Dispel Magic be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1F Aran PID: Create Scroll of Flame Arrow */
+/*	c-arSCRL1F Aran PID: Create Scroll of Flame Arrow */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1F","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1F","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1F","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1F",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Flame Arrow be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1F","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1F",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Flame Arrow be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1G Aran PID: Create Scroll of Fireball */
+/*	c-arSCRL1G Aran PID: Create Scroll of Fireball */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1G","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1G","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1G","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1G",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Fireball be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1G","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1G",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireball be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1H Aran PID: Create Scroll of Haste */
+/*	c-arSCRL1H Aran PID: Create Scroll of Haste */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1H","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1H","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1H","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1H",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Haste be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1H","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1H",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Haste be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1I Aran PID: Create Scroll of Hold Person */
+/*	c-arSCRL1I Aran PID: Create Scroll of Hold Person */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1I","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1I","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1I","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1I",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Person be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1I","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1I",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Person be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1J Aran PID: Create Scroll of Invisibility 10' radius */
+/*	c-arSCRL1J Aran PID: Create Scroll of Invisibility 10' radius */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1J","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1J","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1J","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1J",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility 10' radius be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1J","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1J",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility 10' radius be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1K Aran PID: Create Scroll of Lightning Bolt */
+/*	c-arSCRL1K Aran PID: Create Scroll of Lightning Bolt */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1K","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1K","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1K","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1K",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Lightning Bolt be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1K","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1K",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Lightning Bolt be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1M Aran PID: Create Scroll of NonDetection */
+/*	c-arSCRL1M Aran PID: Create Scroll of NonDetection */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1M","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1M","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1M","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1M",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' NonDetection be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1M","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1M",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' NonDetection be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1N Aran PID: Create Scroll of Protection from Normal Missiles */
+/*	c-arSCRL1N Aran PID: Create Scroll of Protection from Normal Missiles */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1N","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1N","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1N","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1N",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Missiles be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1N","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1N",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Missiles be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1O Aran PID: Create Scroll of Slow */
+/*	c-arSCRL1O Aran PID: Create Scroll of Slow */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1O","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1O","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1O","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1O",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Slow be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1O","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1O",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Slow be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1P Aran PID: Create Scroll of Skull Trap */
+/*	c-arSCRL1P Aran PID: Create Scroll of Skull Trap */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1P","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1P","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1P","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1P",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Skull Trap be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1P","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1P",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Skull Trap be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1Q Aran PID: Create Scroll of Vampiric Touch */
+/*	c-arSCRL1Q Aran PID: Create Scroll of Vampiric Touch */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1Q","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1Q","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1Q","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1Q",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Vampiric Touch be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1Q","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1Q",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Vampiric Touch be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1S Aran PID: Create Scroll of Dire Charm */
+/*	c-arSCRL1S Aran PID: Create Scroll of Dire Charm */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1S","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1S","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1S","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1S",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Dire Charm be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1S","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1S",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Dire Charm be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1T Aran PID: Create Scroll of Ghost Armor */
+/*	c-arSCRL1T Aran PID: Create Scroll of Ghost Armor */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1T","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1T","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1T","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1T",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Ghost Armor be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1T","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1T",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghost Armor be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1U Aran PID: Create Scroll of Confusion */
+/*	c-arSCRL1U Aran PID: Create Scroll of Confusion */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1U","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1U","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1U","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1U",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Confusion be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1U","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1U",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Confusion be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1V Aran PID: Create Scroll of Stoneskin */
+/*	c-arSCRL1V Aran PID: Create Scroll of Stoneskin */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1V","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1V","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1V","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1V",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Stoneskin be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1V","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1V",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Stoneskin be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1W Aran PID: Create Scroll of Fireshield (Blue) */
+/*	c-arSCRL1W Aran PID: Create Scroll of Fireshield (Blue) */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1W","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1W","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1W","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1W",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Blue) be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1W","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1W",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Blue) be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1X Aran PID: Create Scroll of Ice Storm */
+/*	c-arSCRL1X Aran PID: Create Scroll of Ice Storm */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1X","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1X","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1X","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1X",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Ice Storm be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1X","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1X",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Ice Storm be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1Y Aran PID: Create Scroll of Improved Invisibility */
+/*	c-arSCRL1Y Aran PID: Create Scroll of Improved Invisibility */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1Y","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1Y","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-  SetGlobal("c-arSCRL1Y","LOCALS",0)
-  SetGlobal("c-aranscribe","GLOBAL",0)
-  GiveItemCreate("SCRL1Y",Myself,1,1,1)
-  DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Invisibility be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+	SetGlobal("c-arSCRL1Y","LOCALS",0)
+	SetGlobal("c-aranscribe","GLOBAL",0)
+	GiveItemCreate("SCRL1Y",Myself,1,1,1)
+	DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Invisibility be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
+/*	c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL1Z","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL1Z","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL1Z","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL1Z",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Globe of Invulnerability be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL1Z","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1Z",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Globe of Invulnerability be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL2E Aran PID: Create Scroll of Cloudkill */
+/*	c-arSCRL2E Aran PID: Create Scroll of Cloudkill */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL2E","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL2E","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL2E","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL2E",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Cloudkill be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL2E","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL2E",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Cloudkill be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL2F Aran PID: Create Scroll of Cone of Cold */
+/*	c-arSCRL2F Aran PID: Create Scroll of Cone of Cold */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL2F","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL2F","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL2F","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL2F",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Cone of Cold be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL2F","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL2F",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Cone of Cold be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL2H Aran PID: Create Scroll of Shadow Door */
+/*	c-arSCRL2H Aran PID: Create Scroll of Shadow Door */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL2H","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL2H","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL2H","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL2H",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Shadow Door be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL2H","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL2H",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Shadow Door be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL3G Aran PID: Create Scroll of Vocalize */
+/*	c-arSCRL3G Aran PID: Create Scroll of Vocalize */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL3G","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL3G","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL3G","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL3G",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Vocalize be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL3G","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL3G",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Vocalize be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5G Aran PID: Create Scroll of Remove Curse */
+/*	c-arSCRL5G Aran PID: Create Scroll of Remove Curse */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5G","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5G","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5G","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5G",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Remove Curse be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5G","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5G",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Remove Curse be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5H Aran PID: Create Scroll of Emotion */
+/*	c-arSCRL5H Aran PID: Create Scroll of Emotion */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5H","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5H","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5H","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5H",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Emotion be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5H","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5H",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Emotion be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5I Aran PID: Create Scroll of Greater Malison */
+/*	c-arSCRL5I Aran PID: Create Scroll of Greater Malison */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5I","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5I","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5I","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5I",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Greater Malison be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5I","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5I",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Greater Malison be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5J Aran PID: Create Scroll of Otiluke's Resilient Sphere */
+/*	c-arSCRL5J Aran PID: Create Scroll of Otiluke's Resilient Sphere */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5J","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5J","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5J","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5J",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Otiluke's Resilient Sphere be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5J","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5J",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Otiluke's Resilient Sphere be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5K Aran PID: Create Scroll of Spirit Armor */
+/*	c-arSCRL5K Aran PID: Create Scroll of Spirit Armor */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5K","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5K","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5K","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5K",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spirit Armor be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5K","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5K",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spirit Armor be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL5N Aran PID: Create Scroll of Domination */
+/*	c-arSCRL5N Aran PID: Create Scroll of Domination */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5N","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5N","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5N","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5N",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Domination be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5N","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5N",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Domination be finished, if you want it.~)
+	EndCutSceneMode()
 END
 
-/*  c-arSCRL5P Aran PID: Create Scroll of Chaos */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5P","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5P","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5P",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Chaos be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL5Q Aran PID: Create Scroll of Feeblemind */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5Q","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5Q","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5Q",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Feeblemind be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL5T Aran PID: Create Scroll of Protection from Electricity */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5T","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5T","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5T",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Electricity be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL5U Aran PID: Create Scroll of Reflected Image */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL5U","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL5U","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL5U",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Reflected Image be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL66 Aran PID: Create Scroll of Grease */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL66","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL66","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL66",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Grease be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL67 Aran PID: Create Scroll of Armor */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL67","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL67","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL67",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Armor be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL68 Aran PID: Create Scroll of Burning Hands */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL68","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL68","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL68",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Burning Hands be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL69 Aran PID: Create Scroll of Charm Person */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL69","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL69","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL69",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Charm Person be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6D Aran PID: Create Scroll of Find Familiar */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6D","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6D","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6D",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Find Familiar be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6E Aran PID: Create Scroll of Power Word, Sleep */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6E","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6E","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6E",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Sleep be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6F Aran PID: Create Scroll of Ray of Enfeeblement */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6F","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6F","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6F",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Ray of Enfeeblement be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6G Aran PID: Create Scroll of Minor Spell Deflection */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6G","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6G","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6G",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Deflection be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6H Aran PID: Create Scroll of Protection from Fire */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6H","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6H","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6H",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Fire be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6I Aran PID: Create Scroll of Protection from Cold */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6I","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6I","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6I",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Cold be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6J Aran PID: Create Scroll of Spell Thrust */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6J","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6J","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6J",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Thrust be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6K Aran PID: Create Scroll of Detect Illusion */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6K","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6K","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6K",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Illusion be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6L Aran PID: Create Scroll of Hold Undead */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6L","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6L","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6L",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Undead be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6M Aran PID: Create Scroll of Enchanted Weapon */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6M","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6M","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6M",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Enchanted Weapon be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6N Aran PID: Create Scroll of Fireshield (Red) */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6N","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6N","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6N",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Red) be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6O Aran PID: Create Scroll of Secret Word */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6O","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6O","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6O",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Secret Word be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6P Aran PID: Create Scroll of Minor Sequencer */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6P","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6P","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6P",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Sequencer be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6S Aran PID: Create Scroll of Spell Immunity */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6S","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6S","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6S",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Immunity be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6T Aran PID: Create Scroll of Protection from Normal Weapons */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6T","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6T","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6T",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Weapons be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6U Aran PID: Create Scroll of Breach */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6U","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6U","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6U",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Breach be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6V Aran PID: Create Scroll of Lower Resistance */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6V","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6V","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6V",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Lower Resistance be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6W Aran PID: Create Scroll of Oracle */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6W","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6W","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6W",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Oracle be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6Y Aran PID: Create Scroll of Protection from Acid */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6Y","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6Y","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6Y",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Acid be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL6Z Aran PID: Create Scroll of Phantom Blade */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL6Z","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL6Z","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL6Z",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Phantom Blade be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL70 Aran PID: Create Scroll of Color Spray */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL70","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL70","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL70",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Color Spray be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL71 Aran PID: Create Scroll of Blindness */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL71","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL71","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL71",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Blindness be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL72 Aran PID: Create Scroll of Friends */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL72","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL72","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL72",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Friends be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL75 Aran PID: Create Scroll of Identify */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL75","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL75","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL75",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Identify be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL76 Aran PID: Create Scroll of Infravision */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL76","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL76","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL76",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Infravision be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL77 Aran PID: Create Scroll of Magic Missile */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL77","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL77","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL77",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Magic Missile be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL78 Aran PID: Create Scroll of Protection from Evil */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL78","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL78","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL78",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Evil be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL79 Aran PID: Create Scroll of Shield */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL79","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL79","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL79",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Shield be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7D Aran PID: Create Scroll of Minor Spell Turning */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7D","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7D","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7D",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Turning be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7F Aran PID: Create Scroll of Globe of Invulnerability */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7F","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7F","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7F",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Globe of Invulnerability be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7G Aran PID: Create Scroll of Tenser's Transformation */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7G","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7G","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7G",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Tenser's Transformation be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7H Aran PID: Create Scroll of Flesh to Stone */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7H","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7H","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7H",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Flesh to Stone be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7I Aran PID: Create Scroll of Death Spell */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7I","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7I","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7I",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Death Spell be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7J Aran PID: Create Scroll of Protection from Magic */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7J","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7J","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7J",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magic be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7K Aran PID: Create Scroll of Mislead */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7K","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7K","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7K",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Mislead be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7L Aran PID: Create Scroll of Pierce Magic */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7L","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7L","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7L",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Pierce Magic be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7M Aran PID: Create Scroll of True Sight */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7M","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7M","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7M",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' True Sight be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7O Aran PID: Create Scroll of Protection from Magical Weapons */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7O","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7O","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7O",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magical Weapons be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7P Aran PID: Create Scroll of Power Word, Silence */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7P","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7P","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7P",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Silence be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7Q Aran PID: Create Scroll of Improved Haste */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7Q","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7Q","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7Q",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Haste be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7R Aran PID: Create Scroll of Death Fog */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7R","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7R","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7R",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Death Fog be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7S Aran PID: Create Scroll of Chain Lightning */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7S","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7S","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7S",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Chain Lightning be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7T Aran PID: Create Scroll of Disintegrate */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7T","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7T","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7T",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Disintegrate be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7U Aran PID: Create Scroll of Contingency */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7U","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7U","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7U",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Contingency be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL7V Aran PID: Create Scroll of Spell Deflection */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL7V","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL7V","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL7V",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Deflection be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL80 Aran PID: Create Scroll of Shocking Grasp */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL80","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL80","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL80",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Shocking Grasp be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL81 Aran PID: Create Scroll of Sleep */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL81","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL81","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL81",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Sleep be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL82 Aran PID: Create Scroll of Chill Touch */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL82","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL82","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL82",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Chill Touch be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL83 Aran PID: Create Scroll of Chromatic Orb */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL83","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL83","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL83",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Chromatic Orb be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL84 Aran PID: Create Scroll of Larloch's Minor Drain */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL84","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL84","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL84",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Larloch's Minor Drain be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL85 Aran PID: Create Scroll of Blur */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL85","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL85","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL85",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Blur be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL86 Aran PID: Create Scroll of Detect Evil */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL86","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL86","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL86",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Evil be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL87 Aran PID: Create Scroll of Detect Invisibility */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL87","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL87","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL87",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Invisibility be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL89 Aran PID: Create Scroll of Horror */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL89","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL89","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL89",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Horror be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL8C Aran PID: Create Scroll of Stone to Flesh */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL8C","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL8C","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL8C",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Stone to Flesh be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL8X Aran PID: Create Scroll of Spell Shield */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL8X","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL8X","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL8X",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Shield be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL90 Aran PID: Create Scroll of Invisibility */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL90","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL90","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL90",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL91 Aran PID: Create Scroll of Knock */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL91","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL91","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL91",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Knock be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL92 Aran PID: Create Scroll of Know Alignment */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL92","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL92","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL92",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Know Alignment be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL93 Aran PID: Create Scroll of Luck */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL93","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL93","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL93",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Luck be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL94 Aran PID: Create Scroll of Resist Fear */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL94","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL94","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL94",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Resist Fear be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL95 Aran PID: Create Scroll of Melf's Acid Arrow */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL95","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL95","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL95",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Acid Arrow be finished, if you want it.~)
-  EndCutSceneMode()
-END
-/*  c-arSCRL96 Aran PID: Create Scroll of Mirror Image */
-IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL96","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL96","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL96",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Mirror Image be finished, if you want it.~)
-  EndCutSceneMode()
+/*	c-arSCRL5P Aran PID: Create Scroll of Chaos */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5P","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5P","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5P",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Chaos be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL5Q Aran PID: Create Scroll of Feeblemind */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5Q","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5Q","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5Q",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Feeblemind be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL5T Aran PID: Create Scroll of Protection from Electricity */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5T","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5T","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5T",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Electricity be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL5U Aran PID: Create Scroll of Reflected Image */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL5U","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL5U","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL5U",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Reflected Image be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL66 Aran PID: Create Scroll of Grease */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL66","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL66","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL66",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Grease be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL67 Aran PID: Create Scroll of Armor */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL67","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL67","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL67",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Armor be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL68 Aran PID: Create Scroll of Burning Hands */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL68","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL68","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL68",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Burning Hands be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL69 Aran PID: Create Scroll of Charm Person */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL69","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL69","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL69",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Charm Person be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6D Aran PID: Create Scroll of Find Familiar */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6D","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6D","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6D",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Find Familiar be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6E Aran PID: Create Scroll of Power Word, Sleep */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6E","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6E","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6E",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Sleep be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6F Aran PID: Create Scroll of Ray of Enfeeblement */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6F","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6F","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6F",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Ray of Enfeeblement be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6G Aran PID: Create Scroll of Minor Spell Deflection */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6G","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6G","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6G",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Deflection be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6H Aran PID: Create Scroll of Protection from Fire */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6H","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6H","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6H",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Fire be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6I Aran PID: Create Scroll of Protection from Cold */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6I","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6I","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6I",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Cold be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6J Aran PID: Create Scroll of Spell Thrust */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6J","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6J","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6J",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Thrust be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6K Aran PID: Create Scroll of Detect Illusion */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6K","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6K","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6K",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Illusion be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6L Aran PID: Create Scroll of Hold Undead */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6L","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6L","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6L",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Undead be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6M Aran PID: Create Scroll of Enchanted Weapon */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6M","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6M","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6M",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Enchanted Weapon be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6N Aran PID: Create Scroll of Fireshield (Red) */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6N","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6N","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6N",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Red) be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6O Aran PID: Create Scroll of Secret Word */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6O","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6O","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6O",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Secret Word be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6P Aran PID: Create Scroll of Minor Sequencer */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6P","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6P","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6P",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Sequencer be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6S Aran PID: Create Scroll of Spell Immunity */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6S","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6S","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6S",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Immunity be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6T Aran PID: Create Scroll of Protection from Normal Weapons */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6T","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6T","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6T",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Weapons be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6U Aran PID: Create Scroll of Breach */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6U","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6U","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6U",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Breach be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6V Aran PID: Create Scroll of Lower Resistance */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6V","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6V","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6V",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Lower Resistance be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6W Aran PID: Create Scroll of Oracle */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6W","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6W","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6W",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Oracle be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6Y Aran PID: Create Scroll of Protection from Acid */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6Y","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6Y","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6Y",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Acid be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL6Z Aran PID: Create Scroll of Phantom Blade */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL6Z","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL6Z","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL6Z",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Phantom Blade be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL70 Aran PID: Create Scroll of Color Spray */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL70","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL70","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL70",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Color Spray be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL71 Aran PID: Create Scroll of Blindness */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL71","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL71","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL71",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Blindness be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL72 Aran PID: Create Scroll of Friends */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL72","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL72","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL72",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Friends be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL75 Aran PID: Create Scroll of Identify */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL75","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL75","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL75",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Identify be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL76 Aran PID: Create Scroll of Infravision */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL76","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL76","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL76",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Infravision be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL77 Aran PID: Create Scroll of Magic Missile */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL77","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL77","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL77",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Magic Missile be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL78 Aran PID: Create Scroll of Protection from Evil */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL78","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL78","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL78",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Evil be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL79 Aran PID: Create Scroll of Shield */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL79","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL79","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL79",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Shield be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7D Aran PID: Create Scroll of Minor Spell Turning */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7D","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7D","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7D",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Turning be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7F Aran PID: Create Scroll of Globe of Invulnerability */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7F","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7F","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7F",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Globe of Invulnerability be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7G Aran PID: Create Scroll of Tenser's Transformation */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7G","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7G","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7G",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Tenser's Transformation be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7H Aran PID: Create Scroll of Flesh to Stone */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7H","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7H","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7H",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Flesh to Stone be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7I Aran PID: Create Scroll of Death Spell */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7I","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7I","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7I",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Spell be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7J Aran PID: Create Scroll of Protection from Magic */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7J","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7J","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7J",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magic be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7K Aran PID: Create Scroll of Mislead */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7K","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7K","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7K",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Mislead be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7L Aran PID: Create Scroll of Pierce Magic */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7L","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7L","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7L",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Pierce Magic be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7M Aran PID: Create Scroll of True Sight */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7M","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7M","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7M",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' True Sight be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7O Aran PID: Create Scroll of Protection from Magical Weapons */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7O","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7O","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7O",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magical Weapons be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7P Aran PID: Create Scroll of Power Word, Silence */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7P","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7P","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7P",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Silence be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7Q Aran PID: Create Scroll of Improved Haste */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7Q","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7Q","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7Q",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Haste be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7R Aran PID: Create Scroll of Death Fog */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7R","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7R","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7R",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Fog be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7S Aran PID: Create Scroll of Chain Lightning */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7S","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7S","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7S",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Chain Lightning be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7T Aran PID: Create Scroll of Disintegrate */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7T","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7T","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7T",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Disintegrate be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7U Aran PID: Create Scroll of Contingency */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7U","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7U","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7U",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Contingency be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL7V Aran PID: Create Scroll of Spell Deflection */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL7V","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL7V","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL7V",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Deflection be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL80 Aran PID: Create Scroll of Shocking Grasp */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL80","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL80","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL80",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Shocking Grasp be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL81 Aran PID: Create Scroll of Sleep */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL81","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL81","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL81",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Sleep be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL82 Aran PID: Create Scroll of Chill Touch */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL82","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL82","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL82",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Chill Touch be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL83 Aran PID: Create Scroll of Chromatic Orb */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL83","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL83","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL83",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Chromatic Orb be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL84 Aran PID: Create Scroll of Larloch's Minor Drain */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL84","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL84","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL84",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Larloch's Minor Drain be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL85 Aran PID: Create Scroll of Blur */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL85","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL85","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL85",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Blur be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL86 Aran PID: Create Scroll of Detect Evil */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL86","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL86","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL86",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Evil be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL87 Aran PID: Create Scroll of Detect Invisibility */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL87","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL87","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL87",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Invisibility be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL89 Aran PID: Create Scroll of Horror */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL89","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL89","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL89",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Horror be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL8C Aran PID: Create Scroll of Stone to Flesh */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL8C","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL8C","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL8C",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Stone to Flesh be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL8X Aran PID: Create Scroll of Spell Shield */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL8X","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL8X","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL8X",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Shield be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL90 Aran PID: Create Scroll of Invisibility */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL90","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL90","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL90",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL91 Aran PID: Create Scroll of Knock */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL91","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL91","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL91",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Knock be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL92 Aran PID: Create Scroll of Know Alignment */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL92","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL92","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL92",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Know Alignment be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL93 Aran PID: Create Scroll of Luck */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL93","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL93","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL93",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Luck be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL94 Aran PID: Create Scroll of Resist Fear */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL94","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL94","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL94",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Resist Fear be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL95 Aran PID: Create Scroll of Melf's Acid Arrow */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL95","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL95","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL95",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Acid Arrow be finished, if you want it.~)
+	EndCutSceneMode()
+END
+/*	c-arSCRL96 Aran PID: Create Scroll of Mirror Image */
+IF
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL96","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL96","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL96",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Mirror Image be finished, if you want it.~)
+	EndCutSceneMode()
 END
 
-/*  c-arSCRL97 Aran PID: Create Scroll of Stinking Cloud */
+/*	c-arSCRL97 Aran PID: Create Scroll of Stinking Cloud */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL97","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL97","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL97","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL97",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Stinking Cloud be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL97","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL97",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Stinking Cloud be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL98 Aran PID: Create Scroll of Strength */
+/*	c-arSCRL98 Aran PID: Create Scroll of Strength */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL98","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL98","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL98","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL98",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Strength be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL98","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL98",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Strength be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRL99 Aran PID: Create Scroll of Web */
+/*	c-arSCRL99 Aran PID: Create Scroll of Web */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRL99","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRL99","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRL99","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRL99",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Web be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRL99","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL99",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Web be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA1 Aran PID: Create Scroll of Wizard Eye */
+/*	c-arSCRLA1 Aran PID: Create Scroll of Wizard Eye */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA1","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA1","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA1","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA1",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Wizard Eye be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA1","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA1",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Wizard Eye be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA2 Aran PID: Create Scroll of Deafness */
+/*	c-arSCRLA2 Aran PID: Create Scroll of Deafness */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA2","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA2","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA2","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA2",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Deafness be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA2","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA2",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Deafness be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA3 Aran PID: Create Scroll of Glitterdust */
+/*	c-arSCRLA3 Aran PID: Create Scroll of Glitterdust */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA3","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA3","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA3","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA3",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Glitterdust be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA3","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA3",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Glitterdust be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA5 Aran PID: Create Scroll of Melf's Minute Meteors */
+/*	c-arSCRLA5 Aran PID: Create Scroll of Melf's Minute Meteors */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA5","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA5","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA5","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA5",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Minute Meteors be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA5","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA5",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Minute Meteors be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA6 Aran PID: Create Scroll of Spook */
+/*	c-arSCRLA6 Aran PID: Create Scroll of Spook */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA6","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA6","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA6","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA6",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Spook be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA6","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA6",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Spook be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLA8 Aran PID: Create Scroll of Contagion */
+/*	c-arSCRLA8 Aran PID: Create Scroll of Contagion */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLA8","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLA8","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLA8","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLA8",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Contagion be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLA8","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLA8",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Contagion be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLAJ Aran PID: Create Scroll of Farsight */
+/*	c-arSCRLAJ Aran PID: Create Scroll of Farsight */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLAJ","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLAJ","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLAJ","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLAJ",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Farsight be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLAJ","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLAJ",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Farsight be finished, if you want it.~)
+	EndCutSceneMode()
 END
-/*  c-arSCRLAL Aran PID: Create Scroll of Sunfire */
+/*	c-arSCRLAL Aran PID: Create Scroll of Sunfire */
 IF
-  GlobalTimerExpired("c-aranscribing","GLOBAL")
-  Global("c-aranscribe","GLOBAL",1)
-  Global("c-arSCRLAL","LOCALS",1)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aranscribing","GLOBAL")
+	Global("c-aranscribe","GLOBAL",1)
+	Global("c-arSCRLAL","LOCALS",1)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  StartCutSceneMode()
-    SetGlobal("c-arSCRLAL","LOCALS",0)
-    SetGlobal("c-aranscribe","GLOBAL",0)
-    GiveItemCreate("SCRLAL",Myself,1,1,1)
-    DisplayStringHead(Myself,~Aye, now, that scroll o' Sunfire be finished, if you want it.~)
-  EndCutSceneMode()
+	RESPONSE #100
+	StartCutSceneMode()
+		SetGlobal("c-arSCRLAL","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRLAL",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Sunfire be finished, if you want it.~)
+	EndCutSceneMode()
 END
 
 
@@ -2227,136 +2259,136 @@ END
 
 // /* Sarevok chosen as companion: Setup */
 // IF
-  // CombatCounter(0)
-  // !See([ENEMY])
-  // Global("c-aranworriedtob","GLOBAL",0)
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // InParty("Sarevok")
-  // !StateCheck("Sarevok",CD_STATE_NOTVALID)
+	// CombatCounter(0)
+	// !See([ENEMY])
+	// Global("c-aranworriedtob","GLOBAL",0)
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// InParty("Sarevok")
+	// !StateCheck("Sarevok",CD_STATE_NOTVALID)
 // THEN
-  // RESPONSE #100
-  // SetGlobal("c-aranworriedtob","GLOBAL",1)
-  // SetGlobalTimer("c-aransaravoktalk","GLOBAL",TEN_DAYS)
+	// RESPONSE #100
+	// SetGlobal("c-aranworriedtob","GLOBAL",1)
+	// SetGlobalTimer("c-aransaravoktalk","GLOBAL",TEN_DAYS)
 // END
 
 // /* Sarevok chosen as companion: Activate after a week */
 // IF
-  // CombatCounter(0)
-  // !See([ENEMY])
-  // Global("c-aranworriedtob","GLOBAL",1)
-  // !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
-  // GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // InParty("Sarevok")
-  // !StateCheck("Sarevok",CD_STATE_NOTVALID)
+	// CombatCounter(0)
+	// !See([ENEMY])
+	// Global("c-aranworriedtob","GLOBAL",1)
+	// !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
+	// GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// InParty("Sarevok")
+	// !StateCheck("Sarevok",CD_STATE_NOTVALID)
 // THEN
-  // RESPONSE #100
-    // PlaySong(0)
-    // PlaySound("c-arnfth")
-    // StartDialogueNoSet(Player1)
+	// RESPONSE #100
+		// PlaySong(0)
+		// PlaySound("c-arnfth")
+		// StartDialogueNoSet(Player1)
 // END
 
 // /* Sarevok chosen as companion: death of Sarevok after warning activate */
 // IF
-  // CombatCounter(0)
-  // !See([ENEMY])
-  // Global("c-aranworriedtob","GLOBAL",2)
-  // !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
-  // GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // InPartyAllowDead("Sarevok")
-  // Dead("Sarevok")
+	// CombatCounter(0)
+	// !See([ENEMY])
+	// Global("c-aranworriedtob","GLOBAL",2)
+	// !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
+	// GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// InPartyAllowDead("Sarevok")
+	// Dead("Sarevok")
 // THEN
-  // RESPONSE #100
-    // SetGlobal("c-aranworriedtob","GLOBAL",3)
+	// RESPONSE #100
+		// SetGlobal("c-aranworriedtob","GLOBAL",3)
 // END
 
 // /* Sarevok chosen as companion: death of Sarevok after warning initiate */
 // IF
-  // CombatCounter(0)
-  // !See([ENEMY])
-  // Global("c-aranworriedtob","GLOBAL",3)
-  // !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
-  // GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // InPartyAllowDead("Sarevok")
-  // Dead("Sarevok")
+	// CombatCounter(0)
+	// !See([ENEMY])
+	// Global("c-aranworriedtob","GLOBAL",3)
+	// !GlobalTimerNotExpired("c-aransmalltalk","GLOBAL")
+	// GlobalTimerExpired("c-aransaravoktalk","GLOBAL")
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// InPartyAllowDead("Sarevok")
+	// Dead("Sarevok")
 // THEN
-  // RESPONSE #100
-    // PlaySong(0)
-    // PlaySound("c-arnfth")
-    // StartDialogueNoSet(Player1)
+	// RESPONSE #100
+		// PlaySong(0)
+		// PlaySound("c-arnfth")
+		// StartDialogueNoSet(Player1)
 // END
 
 /* Master Wraith Post-Traumatic Stress Disorder Amelioration Talk */
 IF
-  Global("c-aranpostwraith","GLOBAL",0)
-  GlobalGT("WraithPunish","GLOBAL",0)
-  Global("c-aranlovedone","GLOBAL",6)
-  InParty(Myself)
-  InMyArea(Player1)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  CombatCounter(0)
-  !See([ENEMY])
+	Global("c-aranpostwraith","GLOBAL",0)
+	GlobalGT("WraithPunish","GLOBAL",0)
+	Global("c-aranlovedone","GLOBAL",6)
+	InParty(Myself)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
 THEN
-  RESPONSE #100
-  SetGlobal("c-aranpostwraith","GLOBAL",1)
+	RESPONSE #100
+	SetGlobal("c-aranpostwraith","GLOBAL",1)
 END
 
 IF
-  Global("c-aranpostwraith","GLOBAL",1)
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  InMyArea(Player1)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("c-aranpostwraith","GLOBAL",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  PlaySong(0)
-    PlaySound("c-arnfti")
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+	PlaySong(0)
+		PlaySound("c-arnfti")
+		StartDialogueNoSet(Player1)
 END
 
 /* Saradush Sacked */
 
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  Global("c-aransaradsush","GLOBAL",0)
-  Global("SaradushSacked","GLOBAL",1)
-  CombatCounter(0)
-  InMyArea(Player1)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aransaradsush","GLOBAL",0)
+	Global("SaradushSacked","GLOBAL",1)
+	CombatCounter(0)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-    SetGlobal("c-aransaradsush","GLOBAL",1)
-    SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
+	RESPONSE #100
+		SetGlobal("c-aransaradsush","GLOBAL",1)
+		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
 END
 
 IF
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  InMyArea(Player1)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
-  GlobalTimerExpired("c-aransmalltalk","GLOBAL")
-  Global("c-aransaradsush","GLOBAL",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL")
+	Global("c-aransaradsush","GLOBAL",1)
 THEN
-  RESPONSE #100
-    PlaySong(0)
-    PlaySound("c-arnfti")
-    StartDialogueNoSet(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("c-arnfti")
+		StartDialogueNoSet(Player1)
 END
 
 /* Abazigal Talk
@@ -2385,58 +2417,58 @@ END
 /* The Long, Long Walk */
 
 // IF
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // Global("c-aranrom","GLOBAL",2)
-  // Global("ChallengesDone","GLOBAL",1)
-  // CombatCounter(0)
-  // Global("c-aranisthisit","GLOBAL",0)
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// Global("c-aranrom","GLOBAL",2)
+	// Global("ChallengesDone","GLOBAL",1)
+	// CombatCounter(0)
+	// Global("c-aranisthisit","GLOBAL",0)
 // THEN
-  // RESPONSE #100
-    // SetGlobal("c-aranisthisit","GLOBAL",0)
+	// RESPONSE #100
+		// SetGlobal("c-aranisthisit","GLOBAL",0)
 // END
 
 // IF
-  // InParty(Myself)
-  // !StateCheck(Myself,CD_STATE_NOTVALID)
-  // InMyArea(Player1)
-  // !StateCheck(Player1,CD_STATE_NOTVALID)
-  // Global("c-aranisthisit","GLOBAL",1)
-  // Global("c-aranrom","GLOBAL",2)
-  // CombatCounter(0)
+	// InParty(Myself)
+	// !StateCheck(Myself,CD_STATE_NOTVALID)
+	// InMyArea(Player1)
+	// !StateCheck(Player1,CD_STATE_NOTVALID)
+	// Global("c-aranisthisit","GLOBAL",1)
+	// Global("c-aranrom","GLOBAL",2)
+	// CombatCounter(0)
 // THEN
-  // RESPONSE #100
-    // PlaySong(0)
-    // PlaySound("c-arnftu")
-    // StartDialogueNoSet(Player1)
+	// RESPONSE #100
+		// PlaySong(0)
+		// PlaySound("c-arnftu")
+		// StartDialogueNoSet(Player1)
 // END
 
 // /* Friend Talks Sequence */
 
-// /* Friend Talks Setup  */
+// /* Friend Talks Setup	*/
 // IF
-  // Global("c-aranfriendtob","GLOBAL",0)   // Not evaluated true yet
-  // InParty(Myself)            // Aran is here
-  // !StateCheck(Myself,CD_STATE_NOTVALID)  // Aran is ok
-  // !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+	// Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
+	// InParty(Myself)						// Aran is here
+	// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 // THEN
-  // RESPONSE #100                // 100% of the time
-    // SetGlobal("c-aranfriendtob","GLOBAL",1)     //  set up ToB_FT_1
-    // RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",10)  // Minimum Real Time until ToB_FT_1  // set test time  <<<
+	// RESPONSE #100								// 100% of the time
+		// SetGlobal("c-aranfriendtob","GLOBAL",1)		 //	set up ToB_FT_1
+		// RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",10)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
 // END
 
 // /* Aran's FriendTalks Aim, c-aranfriendtob, ARAN_FTT */
 // /* This block takes the even variables set in dialog, and advances them to the odd */
 // IF
-// GlobalLT("c-aranfriendtob","GLOBAL",32)  // shuts down sequence when finished
-// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")  // Timer Expired
+// GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
+// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 // OR(15)
-// Global("c-aranfriendtob","GLOBAL",2)  // set up ToB_FT_2
-// Global("c-aranfriendtob","GLOBAL",4)  // set up ToB_FT_3
-// Global("c-aranfriendtob","GLOBAL",6)  // set up ToB_FT_4
-// Global("c-aranfriendtob","GLOBAL",8)  // set up ToB_FT_5
+// Global("c-aranfriendtob","GLOBAL",2)	// set up ToB_FT_2
+// Global("c-aranfriendtob","GLOBAL",4)	// set up ToB_FT_3
+// Global("c-aranfriendtob","GLOBAL",6)	// set up ToB_FT_4
+// Global("c-aranfriendtob","GLOBAL",8)	// set up ToB_FT_5
 // Global("c-aranfriendtob","GLOBAL",10) // set up ToB_FT_6
 // Global("c-aranfriendtob","GLOBAL",12) // set up ToB_FT_7
 // Global("c-aranfriendtob","GLOBAL",14) // set up ToB_FT_8
@@ -2450,42 +2482,42 @@ END
 // Global("c-aranfriendtob","GLOBAL",30) // set up ToB_FT_16
 // THEN
 // RESPONSE #100
-// IncrementGlobal("c-aranfriendtob","GLOBAL",1)  // move up from even to odd
+// IncrementGlobal("c-aranfriendtob","GLOBAL",1)	// move up from even to odd
 // END
 
 // /* Aran's FriendTalks Fire, c-aranfriendtob, ARAN_FTT */
-// /* This block takes the odd variables set by the last block, and tries to fire them off.  */
+// /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 // IF
-// GlobalLT("c-aranfriendtob","GLOBAL",32)  // shuts down sequence when finished
+// GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
 // !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")  // Timer Expired
-// InParty(Myself)            // Aran is here
-// !StateCheck(Myself,CD_STATE_NOTVALID)  // Aran is ok
+// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+// InParty(Myself)						// Aran is here
+// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 // !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 // !ActuallyInCombat()
-// !See([ENEMY])  // Can't see any enemies
+// !See([ENEMY])	// Can't see any enemies
 // OR(16)
-// Global("c-aranfriendtob","GLOBAL",1)   // fire ToB_FT_1
-// Global("c-aranfriendtob","GLOBAL",3)   // fire ToB_FT_2
-// Global("c-aranfriendtob","GLOBAL",5)   // fire ToB_FT_3
-// Global("c-aranfriendtob","GLOBAL",7)   // fire ToB_FT_4
-// Global("c-aranfriendtob","GLOBAL",9)   // fire ToB_FT_5
-// Global("c-aranfriendtob","GLOBAL",11)  // fire ToB_FT_6
-// Global("c-aranfriendtob","GLOBAL",13)  // fire ToB_FT_7
-// Global("c-aranfriendtob","GLOBAL",15)  // fire ToB_FT_8
-// Global("c-aranfriendtob","GLOBAL",17)  // fire ToB_FT_9
-// Global("c-aranfriendtob","GLOBAL",19)  // fire ToB_FT_10
-// Global("c-aranfriendtob","GLOBAL",21)  // fire ToB_FT_11
-// Global("c-aranfriendtob","GLOBAL",23)  // fire ToB_FT_12
-// Global("c-aranfriendtob","GLOBAL",25)  // fire ToB_FT_13
-// Global("c-aranfriendtob","GLOBAL",27)  // fire ToB_FT_14
-// Global("c-aranfriendtob","GLOBAL",29)  // fire ToB_FT_15
-// Global("c-aranfriendtob","GLOBAL",31)  // fire ToB_FT_16
+// Global("c-aranfriendtob","GLOBAL",1)	 // fire ToB_FT_1
+// Global("c-aranfriendtob","GLOBAL",3)	 // fire ToB_FT_2
+// Global("c-aranfriendtob","GLOBAL",5)	 // fire ToB_FT_3
+// Global("c-aranfriendtob","GLOBAL",7)	 // fire ToB_FT_4
+// Global("c-aranfriendtob","GLOBAL",9)	 // fire ToB_FT_5
+// Global("c-aranfriendtob","GLOBAL",11)	// fire ToB_FT_6
+// Global("c-aranfriendtob","GLOBAL",13)	// fire ToB_FT_7
+// Global("c-aranfriendtob","GLOBAL",15)	// fire ToB_FT_8
+// Global("c-aranfriendtob","GLOBAL",17)	// fire ToB_FT_9
+// Global("c-aranfriendtob","GLOBAL",19)	// fire ToB_FT_10
+// Global("c-aranfriendtob","GLOBAL",21)	// fire ToB_FT_11
+// Global("c-aranfriendtob","GLOBAL",23)	// fire ToB_FT_12
+// Global("c-aranfriendtob","GLOBAL",25)	// fire ToB_FT_13
+// Global("c-aranfriendtob","GLOBAL",27)	// fire ToB_FT_14
+// Global("c-aranfriendtob","GLOBAL",29)	// fire ToB_FT_15
+// Global("c-aranfriendtob","GLOBAL",31)	// fire ToB_FT_16
 // THEN
 // RESPONSE #100
-// PlaySong(0)  // play a blank reference, stoping the soundtrack
+// PlaySong(0)	// play a blank reference, stoping the soundtrack
 // PlaySound("c-arnftu") // play a .wav or .wavc file
-// StartDialogueNoSet(Player1)  // Yo, we are talkin', here...
+// StartDialogueNoSet(Player1)	// Yo, we are talkin', here...
 // END
 
 
@@ -2499,22 +2531,22 @@ END
 // */
 
 // IF
-  // Global("c-aranmatch","GLOBAL",0)     // Not evaluated
-  // Global("c-arantobrom","GLOBAL",0)    // no other LTs have played
-  // InParty(Myself)            // Aran is here
-  // !StateCheck(Myself,CD_STATE_NOTVALID)  // Aran is ok
-  // !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
-  // Gender(Player1,FEMALE)         // Player1 is female
-  // OR(2)
-  // Global("c-aranrom","GLOBAL",1)  // PC indicated Aran is interested
-  // Global("c-aranrom","GLOBAL",2)  // PC indicated Aran is interested
-  // !HasItemEquiped("belt05",Player1)	   // Girdle of sex change not on Player1
+	// Global("c-aranmatch","GLOBAL",0)		 // Not evaluated
+	// Global("c-arantobrom","GLOBAL",0)		// no other LTs have played
+	// InParty(Myself)						// Aran is here
+	// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+	// Gender(Player1,FEMALE)				 // Player1 is female
+	// OR(2)
+	// Global("c-aranrom","GLOBAL",1)	// PC indicated Aran is interested
+	// Global("c-aranrom","GLOBAL",2)	// PC indicated Aran is interested
+	// !HasItemEquiped("belt05",Player1)		 // Girdle of sex change not on Player1
 // THEN
-  // RESPONSE #100                // 100% of the time
-  // SetGlobal("c-aranmatch","GLOBAL",1)  // Matched
-  // RealSetGlobalTimer("c-aranromtimer","GLOBAL",900)  // Minimum Real Time until first LT
-  // RealSetGlobalTimer("c-aranflirttimer","GLOBAL",600) // Tee up flirt timer
-  // SetGlobal("c-arantobrom","GLOBAL",1)     //  Tee up ToB_LT_1
+	// RESPONSE #100								// 100% of the time
+	// SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
+	// RealSetGlobalTimer("c-aranromtimer","GLOBAL",900)	// Minimum Real Time until first LT
+	// RealSetGlobalTimer("c-aranflirttimer","GLOBAL",600) // Tee up flirt timer
+	// SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
 // END
 
 // /* LOVE TALKS */
@@ -2523,89 +2555,89 @@ END
 // /* Aran's Romance LoveTalks Aim, c-arantobrom, ARAN_LTT */
 // /* This block takes the even variables set in dialog, and advances them to the odd */
 // IF
-  // GlobalLT("c-arantobrom","GLOBAL",32)  // shuts down sequence when finished
-  // RealGlobalTimerExpired("c-aranromtimer","GLOBAL")  // Timer Expired
-  // !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-  // OR(15)
-  // Global("c-arantobrom","GLOBAL",2)  // set up ToB_LT_2
-  // Global("c-arantobrom","GLOBAL",4)  // set up ToB_LT_3
-  // Global("c-arantobrom","GLOBAL",6)  // set up ToB_LT_4
-  // Global("c-arantobrom","GLOBAL",8)  // set up ToB_LT_5
-  // Global("c-arantobrom","GLOBAL",10) // set up ToB_LT_6
-  // Global("c-arantobrom","GLOBAL",12) // set up ToB_LT_7
-  // Global("c-arantobrom","GLOBAL",14) // set up ToB_LT_8
-  // Global("c-arantobrom","GLOBAL",16) // set up ToB_LT_9
-  // Global("c-arantobrom","GLOBAL",18) // set up ToB_LT_10
-  // Global("c-arantobrom","GLOBAL",20) // set up ToB_LT_11
-  // Global("c-arantobrom","GLOBAL",22) // set up ToB_LT_12
-  // Global("c-arantobrom","GLOBAL",24) // set up ToB_LT_13
-  // Global("c-arantobrom","GLOBAL",26) // set up ToB_LT_14
-  // Global("c-arantobrom","GLOBAL",28) // set up ToB_LT_15
-  // Global("c-arantobrom","GLOBAL",30) // set up ToB_LT_16
+	// GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	// RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
+	// !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
+	// OR(15)
+	// Global("c-arantobrom","GLOBAL",2)	// set up ToB_LT_2
+	// Global("c-arantobrom","GLOBAL",4)	// set up ToB_LT_3
+	// Global("c-arantobrom","GLOBAL",6)	// set up ToB_LT_4
+	// Global("c-arantobrom","GLOBAL",8)	// set up ToB_LT_5
+	// Global("c-arantobrom","GLOBAL",10) // set up ToB_LT_6
+	// Global("c-arantobrom","GLOBAL",12) // set up ToB_LT_7
+	// Global("c-arantobrom","GLOBAL",14) // set up ToB_LT_8
+	// Global("c-arantobrom","GLOBAL",16) // set up ToB_LT_9
+	// Global("c-arantobrom","GLOBAL",18) // set up ToB_LT_10
+	// Global("c-arantobrom","GLOBAL",20) // set up ToB_LT_11
+	// Global("c-arantobrom","GLOBAL",22) // set up ToB_LT_12
+	// Global("c-arantobrom","GLOBAL",24) // set up ToB_LT_13
+	// Global("c-arantobrom","GLOBAL",26) // set up ToB_LT_14
+	// Global("c-arantobrom","GLOBAL",28) // set up ToB_LT_15
+	// Global("c-arantobrom","GLOBAL",30) // set up ToB_LT_16
 // THEN
-  // RESPONSE #100
-  // IncrementGlobal("c-arantobrom","GLOBAL",1)
+	// RESPONSE #100
+	// IncrementGlobal("c-arantobrom","GLOBAL",1)
 // END
 
 // /* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
-// /* This block takes the odd variables set by the last block, and tries to fire them off.  */
+// /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 // IF
-  // GlobalLT("c-arantobrom","GLOBAL",32)  // shuts down sequence when finished
-  // RealGlobalTimerExpired("c-aranromtimer","GLOBAL")  // Timer Expired
-  // !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-  // CombatCounter(0)  // Not in combat
-  // !See([ENEMY])  // Can't see any enemies
-  // OR(16)
-  // Global("c-arantobrom","GLOBAL",1)   // fire ToB_LT_1
-  // Global("c-arantobrom","GLOBAL",3)   // fire ToB_LT_2
-  // Global("c-arantobrom","GLOBAL",5)   // fire ToB_LT_3
-  // Global("c-arantobrom","GLOBAL",7)   // fire ToB_LT_4
-  // Global("c-arantobrom","GLOBAL",9)   // fire ToB_LT_5
-  // Global("c-arantobrom","GLOBAL",11)  // fire ToB_LT_6
-  // Global("c-arantobrom","GLOBAL",13)  // fire ToB_LT_7
-  // Global("c-arantobrom","GLOBAL",15)  // fire ToB_LT_8
-  // Global("c-arantobrom","GLOBAL",17)  // fire ToB_LT_9
-  // Global("c-arantobrom","GLOBAL",19)  // fire ToB_LT_10
-  // Global("c-arantobrom","GLOBAL",21)  // fire ToB_LT_11
-  // Global("c-arantobrom","GLOBAL",23)  // fire ToB_LT_12
-  // Global("c-arantobrom","GLOBAL",25)  // fire ToB_LT_13
-  // Global("c-arantobrom","GLOBAL",27)  // fire ToB_LT_14
-  // Global("c-arantobrom","GLOBAL",29)  // fire ToB_LT_15
-  // Global("c-arantobrom","GLOBAL",31)  // fire ToB_LT_16
+	// GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	// RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
+	// !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
+	// CombatCounter(0)	// Not in combat
+	// !See([ENEMY])	// Can't see any enemies
+	// OR(16)
+	// Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
+	// Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
+	// Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3
+	// Global("c-arantobrom","GLOBAL",7)	 // fire ToB_LT_4
+	// Global("c-arantobrom","GLOBAL",9)	 // fire ToB_LT_5
+	// Global("c-arantobrom","GLOBAL",11)	// fire ToB_LT_6
+	// Global("c-arantobrom","GLOBAL",13)	// fire ToB_LT_7
+	// Global("c-arantobrom","GLOBAL",15)	// fire ToB_LT_8
+	// Global("c-arantobrom","GLOBAL",17)	// fire ToB_LT_9
+	// Global("c-arantobrom","GLOBAL",19)	// fire ToB_LT_10
+	// Global("c-arantobrom","GLOBAL",21)	// fire ToB_LT_11
+	// Global("c-arantobrom","GLOBAL",23)	// fire ToB_LT_12
+	// Global("c-arantobrom","GLOBAL",25)	// fire ToB_LT_13
+	// Global("c-arantobrom","GLOBAL",27)	// fire ToB_LT_14
+	// Global("c-arantobrom","GLOBAL",29)	// fire ToB_LT_15
+	// Global("c-arantobrom","GLOBAL",31)	// fire ToB_LT_16
 // THEN
-  // RESPONSE #100
-  // PlaySong(0)
-  // PlaySound("c-arnltl")
-  // StartDialogueNoSet(Player1)
+	// RESPONSE #100
+	// PlaySong(0)
+	// PlaySound("c-arnltl")
+	// StartDialogueNoSet(Player1)
 // END
 
 /* NPC-Initiated Flirts: */
 
-/* Set Up Flirting  */
+/* Set Up Flirting	*/
 IF
-  Global("c-aranpcflirtstart","GLOBAL",0)
-  Gender(Player1,FEMALE)
-  OR(2)
-  Global("c-aranrom","GLOBAL",1)
-  Global("c-aranrom","GLOBAL",2)
+	Global("c-aranpcflirtstart","GLOBAL",0)
+	Gender(Player1,FEMALE)
+	OR(2)
+	Global("c-aranrom","GLOBAL",1)
+	Global("c-aranrom","GLOBAL",2)
 THEN
-  RESPONSE #100
-  SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-  RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+	RESPONSE #100
+	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
 END
 
 /* Player likes to flirt, 24 interactions by either Aran or PC without shutting him down */
 IF
-  Global("c-aranpcflirtstart","GLOBAL",1)
-  OR(2)
-  Global("c-aranrom","GLOBAL",1)
-  Global("c-aranrom","GLOBAL",2)
-  GlobalGT("c-aranflirt","GLOBAL",24)
-  Gender(Player1,FEMALE)
+	Global("c-aranpcflirtstart","GLOBAL",1)
+	OR(2)
+	Global("c-aranrom","GLOBAL",1)
+	Global("c-aranrom","GLOBAL",2)
+	GlobalGT("c-aranflirt","GLOBAL",24)
+	Gender(Player1,FEMALE)
 THEN
-  RESPONSE #100
-  SetGlobal("c-aranpcflirtstart","GLOBAL",2)
-  RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+	RESPONSE #100
+	SetGlobal("c-aranpcflirtstart","GLOBAL",2)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
 END
 
 /* Lightweight Flirts */
@@ -2648,7 +2680,7 @@ THEN RESPONSE #100
 	StartDialogNoSet(Player1)
 END
 
-// /* Bedroll... Flirt?  */
+// /* Bedroll... Flirt?	*/
 // /* Lots of Flirts means Player Wants Action */
 // IF
 // GlobalGT("c-aranflirt","GLOBAL",40)
@@ -2686,39 +2718,39 @@ END
 
 /* You look dead on your feet */
 IF
-  Global("c-silencearan","GLOBAL",0)
-  CheckStatGT(Player1,6,FATIGUE)
-  Global("c-aranpctired","LOCALS",0)
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	Global("c-silencearan","GLOBAL",0)
+	CheckStatGT(Player1,6,FATIGUE)
+	Global("c-aranpctired","LOCALS",0)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  SetGlobal("c-aranpctired","LOCALS",1)
-  SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
-  StartDialogNoSet(Player1)
+	RESPONSE #100
+	SetGlobal("c-aranpctired","LOCALS",1)
+	SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+	StartDialogNoSet(Player1)
 END
 
-/* Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight)  */
+/* Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight)	*/
 IF
-  !Class(Myself,CLERIC_ALL)
-  Global("c-silencearan","GLOBAL",0)
-  Global("c-aranwaukeen","LOCALS",0)
-  OR(2)
-  AreaCheck("AR5004") //  Temple of Waukeen
-  InParty(Myself)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck(Player1,CD_STATE_NOTVALID)
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranwaukeen","LOCALS",0)
+	OR(2)
+	AreaCheck("AR5004") //	Temple of Waukeen
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
-  RESPONSE #100
-  SetGlobal("c-aranwaukeen","LOCALS",1)
+	RESPONSE #100
+	SetGlobal("c-aranwaukeen","LOCALS",1)
 END
 
 /* Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight) Firing */
 IF
 	!Class(Myself,CLERIC_ALL)
 	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
-	Global("c-silencearan","GLOBAL",0)  // a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranwaukeen","LOCALS",1)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
