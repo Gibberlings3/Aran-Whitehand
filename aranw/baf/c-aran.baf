@@ -255,7 +255,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnREAnishai","LOCALS",1)
 END
-/* Romantic Encounters: Aran Linvale */
+/* Romantic Encounters: Aran Linvail */
 IF
 	InParty(Myself)
 	Global("RE_AranFlirt","GLOBAL",1)
@@ -267,7 +267,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnREAran","LOCALS",9)
 END
-/* Romantic Encounters: Aran Linvale Comment */
+/* Romantic Encounters: Aran Linvail Comment */
 IF
 	InParty(Myself)
 	Global("RE_AranFlirt","GLOBAL",1)
@@ -3149,7 +3149,7 @@ THEN
 	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
 END
 
-/* Rangers : Activate */
+/* Rangers : Initiate */
 IF
 	Global("c-aranrs","LOCALS",1)
 	InParty(Myself)
@@ -3352,14 +3352,15 @@ THEN
 	RESPONSE #100								// 100% of the time
 		SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
 		SetGlobal("c-aranrom","GLOBAL",1)	// Aran is interested
- 		RealSetGlobalTimer("c-aranromtimeroffset","GLOBAL",1200) // wait 20 minutes real-time before starting the relevant timers
 END
 
-/* Please consider staggering your flirts and your dialogues. Flirts are nice when they break up long stretches between LTs. I suggest using non-standard values for the flirt timer so that it won't always coincide with a lovetalk. Instead of using 15min, 30min, 45min, 60min, 90min, and 120min, use 20min, 40min, 50min, 70min, 100min, and 140min. That way, odds of having the flirts line up with the talks is reduced. 
+/* Berelinde: Please consider staggering your flirts and your dialogues. Flirts are nice when they break up long stretches between LTs. 
+ * cmorgan: OK, great idea - let's make it really complicated, and base the first timer on the player's choice of overall speed of progress...
  */
  IF
-	RealGlobalTimerExpired("c-aranromtimeroffset","GLOBAL")
+	Global("c-aranmatch","GLOBAL",1)	// Matched
 	Global("c-aransetupromtimers","GLOBAL",0)	 // Not evaluated
+	GlobalGT("c-aranfriendbg2","GLOBAL",5) //	FT 3 has played
 	Gender(Player1,FEMALE)				 // Player1 is female
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
@@ -3368,8 +3369,8 @@ END
 THEN
 	RESPONSE #100
  		SetGlobal("c-aransetupromtimers","GLOBAL",1)
- 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)	// Minimum Real Time until first LT 
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT) // Tee up flirt timer 
+ 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
 END
 
 /* LOVE TALKS */
@@ -3445,10 +3446,10 @@ END
 
 /* NPC-Initiated Flirts: */
 
-/* Set up flirting for initial entries -	Set through PID flirting a bunch of times */
+/* Set up flirting for initial entries - Set through PID flirting a bunch of times */
 IF
 	Global("c-aranpcflirtstart","GLOBAL",0)
-	GlobalGT("c-aranearlyflirt","LOCALS",12)	// try this value - may be too high or too low
+	GlobalGT("c-aranearlyflirt","LOCALS",12)// try this value - may be too high or too low
 	GlobalLT("c-aranfriendbg2","GLOBAL",7)
 	GlobalLT("c-aranbg2rom","GLOBAL",7)
 	OR(2)
@@ -3457,28 +3458,17 @@ IF
 	!HasItemEquiped("belt05",Player1)
 THEN RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)
 END
 
-/* Set Up Flirting After 3 FTs, if player has not taken a shortcut and flirted alot. */
-IF
-	Global("c-aranpcflirtstart","GLOBAL",0)
-	GlobalGT("c-aranfriendbg2","GLOBAL",6)
-	OR(2)
-		Global("c-aranrom","GLOBAL",1)
-		Global("c-aranrom","GLOBAL",2)
-	!HasItemEquiped("belt05",Player1)
-THEN RESPONSE #100
-	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
-END
+/* Set Up Flirting After 3 FTs, if player has not taken a shortcut and flirted alot - done in romance talk setup . */
 
 /* Player likes to flirt, 24 interactions by either Aran or PC without shutting him down */
 IF
 	Global("c-aranpcflirtstart","GLOBAL",1)
 	OR(2)
-	Global("c-aranrom","GLOBAL",1)
-	Global("c-aranrom","GLOBAL",2)
+		Global("c-aranrom","GLOBAL",1)
+		Global("c-aranrom","GLOBAL",2)
 	GlobalGT("c-aranflirt","GLOBAL",24)
 	Gender(Player1,FEMALE)
 	!HasItemEquiped("belt05",Player1)
@@ -3497,8 +3487,8 @@ IF
 	Global("c-aranflirtstop","GLOBAL",0)
 	Global("c-aranfight","GLOBAL",0)
 	OR(2)
-	Global("c-aranrom","GLOBAL",1)
-	Global("c-aranrom","GLOBAL",2)
+		Global("c-aranrom","GLOBAL",1)
+		Global("c-aranrom","GLOBAL",2)
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
@@ -3537,9 +3527,9 @@ IF
 	Global("c-aranflirtstop","GLOBAL",0)
 	Global("c-aranfight","GLOBAL",0)
 	OR(2)
-	Global("c-aranrom","GLOBAL",1)
-	Global("c-aranrom","GLOBAL",2)
-	See(Player1)
+		Global("c-aranrom","GLOBAL",1)
+		Global("c-aranrom","GLOBAL",2)
+	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 	!HasItemEquiped("belt05",Player1)
@@ -3579,9 +3569,9 @@ IF
 	Global("c-aranflirtstop","GLOBAL",0)
 	Global("c-aranfight","GLOBAL",0)
 	OR(2)
-	Global("c-aranrom","GLOBAL",1)
-	Global("c-aranrom","GLOBAL",2)
-	See(Player1)
+		Global("c-aranrom","GLOBAL",1)
+		Global("c-aranrom","GLOBAL",2)
+	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 	CombatCounter(0)

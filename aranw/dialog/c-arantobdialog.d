@@ -2646,7 +2646,7 @@ IF ~~ a3854 /* FINGERTIPS_BRUSH_THIGHS */
   SAY ~[ARAN] (His fingertips gently brush the inside of your thighs, hiking the hem of your shift higher, lightly caressing you.)~
   ++ ~[PC] I think I.. hey, that tickles!~ + a3856 /* GRIN_AND_BARE_IT */
   ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
-  ++ ~[PC] (whisper) I can think of other things besides fingertips I would like to feel there...~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] (Whisper) I can think of other things besides fingertips I would like to feel there...~ + a3856 /* GRIN_AND_BARE_IT */
   + ~GlobalGT("c-aransex","GLOBAL",1)~ + ~[PC] I think that you have already explored that territory, Aran. Though it does feel good.~ + a3856 /* GRIN_AND_BARE_IT */
   + ~GlobalLT("c-aransex","GLOBAL",2)~ + ~[PC] Exploring new territory is fun, Aran, but you are teasing me. Though the teasing does feel good...~ + a3856 /* GRIN_AND_BARE_IT */
   ++ ~[PC] Are you going to speed this along? I have other things to do tonight, you know.~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
@@ -2657,7 +2657,7 @@ END
 IF ~~ a3855 /* FINGERTIPS_BRUSH_HARDNESS */
   SAY ~[ARAN] (His hand catches yours, and he gently brushes your fingertips along his hardness, using your hand to gently prod your most intimate place with the tip of your new toy.)~
   ++ ~[PC] I think I.. hey, that tickles!~ + a3856 /* GRIN_AND_BARE_IT */
-  ++ ~[PC] (whisper) So close... If you just push forward, you will be inside.~ + a3856 /* GRIN_AND_BARE_IT */
+  ++ ~[PC] (Whisper) So close... If you just push forward, you will be inside.~ + a3856 /* GRIN_AND_BARE_IT */
   + ~GlobalGT("c-aransex","GLOBAL",1)~ + ~[PC] I think that you have already explored that territory, Aran. Though it does feel good. Very good.~ + a3856 /* GRIN_AND_BARE_IT */
   + ~GlobalLT("c-aransex","GLOBAL",2)~ + ~[PC] Exploring new territory is fun, Aran, but you are teasing me. Though the teasing does feel good...~ + a3856 /* GRIN_AND_BARE_IT */
   ++ ~[PC] I do not think I can do this. In fact, I know I can't. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
@@ -3014,7 +3014,7 @@ IF ~~ a3894 /* ARAN_LEAD_1_ACTION */
 END
 
 IF ~~ a3897 /* ARAN_OUTDOOR_1_RESPONSE */  /* edit: 8 possible replies */
-  SAY ~[ARAN] So all this walkin' was a means to get me alone for a mite bit, an' take advantage o' me, I bet.~
+  SAY ~[ARAN] So, all this walkin' was a means to get me alone for a mite bit, an' take advantage o' me, I bet.~
   ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] Let's try that again. It tickles when you growl that way.~ + a3898 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] Gods, you taste horrible. Whatever possessed me to think you were attractive, anyways?~ + a3814 /* GET_OUT_EXIT */
@@ -3216,7 +3216,7 @@ IF ~~ a3918 /* ARAN_MOON_MIND */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3928 /* MOON_JUST_L3_FRIENDS */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3929 /* MOON_JUST_L4_FRIENDS */
   ++ ~[PC] (Gently lean on his shoulder for a moment, then kiss his neck, your fingers twining in his hair.)~ + a3930 /* FEMALE_MOON_LEADS2 */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931 /* MOON_RECHECK */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931_replacement /* HANDINHAND OR CONFUSED */
 END
 
 IF ~~ a3924 /* MOON_OTHER_OPTIONS */
@@ -3232,7 +3232,7 @@ IF ~~ a3924 /* MOON_OTHER_OPTIONS */
   + ~InParty(Player4) Gender(Player4,FEMALE) !HasItemEquiped("belt05",Player4) !Name("c-aran",Player4)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER4> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player5) Gender(Player5,FEMALE) !HasItemEquiped("belt05",Player5) !Name("c-aran",Player5)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER5> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player6) Gender(Player6,FEMALE) !HasItemEquiped("belt05",Player6) !Name("c-aran",Player6)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER6> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931 /* MOON_RECHECK */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931_replacement /* HANDINHAND OR CONFUSED */
   ++ ~[PC] Be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
   ++ ~[PC] You could say that... or you could you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
   ++ ~[PC] Like any girl in her right mind would want you. Hey, that is it... I know how I can get away from your clumsy advances! Next kobold encampment we encounter, we will capture a female one for you. Then you will have someone of your own level to romance!~ + a3866 /* FIGHT_EXIT */
@@ -3370,14 +3370,26 @@ IF ~~ a3929 /* MOON_JUST_L4_FRIENDS */
 END
 
 IF ~~ a3941 /* MOON_ARAN_ACTS */
-  SAY ~[ARAN] Right... that hurt a mite bit more than  expected. How about you tell me what you want, an' I try my best to do that wi' out causin' us both to crack our heads together like a pair o' lovestruck apprentices.~
+  SAY ~[ARAN] Right... that hurt a mite bit more than I expected. How about you tell me what you want, an' I try my best to do that wi' out causin' us both to crack our heads together like a pair o' lovestruck apprentices.~
   ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3943 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Let's try that again.~ + a3943 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Ouch. No. I think I have had quite enough of clumsy, ugly, pain-causing ogres tonight. Go away until you develop some kind of dexterity.~ + a3866 /* FIGHT_EXIT */
-  ++ ~[PC] I... I  am a little confused.~ + a3931 /* MOON_RECHECK */
+  ++ ~[PC] I... I am a little confused.~ + a3931_replacement /* HANDINHAND OR CONFUSED */
   ++ ~[PC] That was a sign. Let's leave things just as they are, at least for now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
   ++ ~[PC] You are just too slow. Don't worry... I know exactly what you need. (Pull close to him, struggling with his clothing, trying to release him from his leggings.)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
   ++ ~[PC] Don't patronize me. I didn't need clumsy physical attention, I just thought you needed it. I do not need someone pawing at me to feel loved.~ + a3945 /* MOON_DO_NOT */
+END
+
+IF ~~ a3931_replacement /* HANDINHAND OR CONFUSED */
+  SAY ~[ARAN] I guess I am a mite bit confused on what you want. I'd have a right better time o' knowin' how to make you happy if you'd use some words, or gestures, or somethin' so's a lad can take some liberties but not make you angry.~
+  ++ ~[PC] (Kiss him, pulling at your clothing to allow him better access to your body).~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] I feel like this is wrong, but I want so much more....~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  ++ ~[PC] I am not ready for any deep romance right now. Why don't you just sit here with me, and hold my hand?~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a4161 /* ARAN_MOON_SLEEP_1_EXIT */
+  ++ ~[PC] (Move into his arms, and kiss him.)~ + a3943 /* ARAN_MOON_2_RESPOND */
+  ++ ~[PC] I like it when you are confused. I think I had better leave now, before you start to figure everything out.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] I... I don't know what I want. I think I had better leave now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Why would I even want to entertain such a thought? There are so many men available who could be a better a lover than you.~ + a3866 /* FIGHT_EXIT */
 END
 
 IF ~~ a3931 /* MOON_RECHECK */
@@ -6324,7 +6336,7 @@ END
 
 IF ~~ a3962 /* SEX_SCENE_EIGHT */
   SAY ~[ARAN] (The passions of well versed lovers fill your senses as you explore each other and push the boundaries of your lovemaking.)~
-  = ~[ARAN] (By turns shy, adventurous, and even playful, the map of your lover's body is worn into your senses the way Candlekeep's innermost secrets live within your memories, and when he rest with you his arms, his smile is tired but satisfied.)~
+  = ~[ARAN] (By turns shy, adventurous, and even playful, the map of your lover's body is worn into your senses the way Candlekeep's innermost secrets live within your memories, and when he rest with you in his arms, his smile is tired but satisfied.)~
   IF ~~ THEN DO ~SetGlobal("c-aranpcbedding","LOCALS",0) SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
 END
 
@@ -7820,7 +7832,7 @@ IF ~~ a3196 /* c-aranshutup63 */ SAY ~[ARAN] Deneir's Indelible Ink. You would t
 IF ~~ a3197 /* c-aranshutup64 */ SAY ~[ARAN] Eldath's Sweet Song, I was hopin'... well, never mind.~ IF ~~ THEN EXIT END
 IF ~~ a3198 /* c-aranshutup65 */ SAY ~[ARAN] Lliira's Joyful Lips, I can take a hint. Especially when it be no hint, but a bald-faced "Shut your stinkin' mouth, sellsword".~ IF ~~ THEN EXIT END
 IF ~~ a3199 /* c-aranshutup66 */ SAY ~[ARAN] Malar's Beastial Breath, I am shuttin' up.~ IF ~~ THEN EXIT END
-IF ~~ a3200 /* c-aranshutup67 */ SAY ~[ARAN] Milil's Robust Voice. You don't have to cut e down that harsh. A mild "shut your stinkin' hole you stupid sellsword" would have got your point across right fine.~ IF ~~ THEN EXIT END
+IF ~~ a3200 /* c-aranshutup67 */ SAY ~[ARAN] Milil's Robust Voice. You don't have to cut me down that harsh. A mild "shut your stinkin' hole you stupid sellsword" would have got your point across right fine.~ IF ~~ THEN EXIT END
 IF ~~ a3201 /* c-aranshutup68 */ SAY ~[ARAN] Shaundakul's Wandering Ways, I didn't mean to... fine. Shuttin' my mouth an' soldierin'.~ IF ~~ THEN EXIT END
 IF ~~ a3202 /* c-aranshutup69 */ SAY ~[ARAN] Talona's Mericless Poisons, I be shuttin' up.~ IF ~~ THEN EXIT END
 IF ~~ a3203 /* c-aranshutup70 */ SAY ~[ARAN] Garagos' Mighty Halberd, I wasn't tryin' to tick you off.~ IF ~~ THEN EXIT END

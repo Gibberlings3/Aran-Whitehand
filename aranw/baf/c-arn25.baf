@@ -2524,29 +2524,30 @@ END
 /* ROMANCE TALKS */
 
 /* Romance Match and Initiation (He is not picky...)
-* One new thing here - Aran is ok if a friend switches genders -
-* but not so much on the romance side. So, we add a blocking variable
-// * to make sure nothing progresses while that silly Girdle is in place.
-// * He can have some special lines to play during the FT sequence on that.
-// */
+ * One new thing here - Aran is ok if a friend switches genders -
+ * but not so much on the romance side. So, we add a blocking variable
+ * to make sure nothing progresses while that silly Girdle is in place.
+ * He can have some special lines to play during the FT sequence on that.
+*/
 
-// IF
+/* Berelinde: Please consider staggering your flirts and your dialogues. Flirts are nice when they break up long stretches between LTs. 
+ * cmorgan: OK, great idea - let's make it really complicated, and base the first timer on the player's choice of overall speed of progress...
+ */
+
+// IF	
 	// Global("c-aranmatch","GLOBAL",0)		 // Not evaluated
 	// Global("c-arantobrom","GLOBAL",0)		// no other LTs have played
 	// InParty(Myself)						// Aran is here
 	// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	// Gender(Player1,FEMALE)				 // Player1 is female
-	// OR(2)
-	// Global("c-aranrom","GLOBAL",1)	// PC indicated Aran is interested
-	// Global("c-aranrom","GLOBAL",2)	// PC indicated Aran is interested
 	// !HasItemEquiped("belt05",Player1)		 // Girdle of sex change not on Player1
 // THEN
 	// RESPONSE #100								// 100% of the time
 	// SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
-	// RealSetGlobalTimer("c-aranromtimer","GLOBAL",900)	// Minimum Real Time until first LT
-	// RealSetGlobalTimer("c-aranflirttimer","GLOBAL",600) // Tee up flirt timer
 	// SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
+	// RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom% )	// Minimum Real Time until first LT
+	// RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt% ) // Tee up flirt timer
 // END
 
 // /* LOVE TALKS */
@@ -2623,7 +2624,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)
 END
 
 /* Player likes to flirt, 24 interactions by either Aran or PC without shutting him down */
@@ -2680,25 +2681,6 @@ THEN RESPONSE #100
 	StartDialogNoSet(Player1)
 END
 
-// /* Bedroll... Flirt?	*/
-// /* Lots of Flirts means Player Wants Action */
-// IF
-// GlobalGT("c-aranflirt","GLOBAL",40)
-// Global("c-aranbedflirt","GLOBAL",0)
-// Global("c-aranpcflirtstart","GLOBAL",2)
-// Global("c-aranflirtstop","GLOBAL",0)
-// Global("c-aranfight","GLOBAL",0)
-// OR(2)
-// Global("c-aranrom","GLOBAL",1)
-// Global("c-aranrom","GLOBAL",2)
-// See(Player1)
-// !StateCheck(Player1,CD_STATE_NOTVALID)
-// !StateCheck("c-aran",CD_STATE_NOTVALID)
-// CombatCounter(0)
-// THEN RESPONSE #100
-// SetGlobal("c-aranbedflirt","GLOBAL",1)
-// StartDialogNoSet(Player1)
-// END
 
 /* Monster Reactions */
 

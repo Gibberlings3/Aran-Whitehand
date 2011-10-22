@@ -28,150 +28,130 @@ Please type 1 or 2 and press enter.~
 END // of O_F
 
 ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
-	/* .ids patching with player choice: set talk timers	*/
-	APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
-	PRINT ~Friendship Speed: minimum 1 hour real time between dialogues~
-	APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
-	PRINT ~Lovetalk Speed: minimum 1 hour real time between dialogues~
-	APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
-	PRINT ~Flirt Speed: minimum 45 minutes real time between Aran-initiated flirts~
+	/* .ids patching with player choice: set talk timers */
+		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
+		PRINT ~Speed: minimum 1 hour real time between dialogues (Default, recommended)~
+		OUTER_SET choseninitialrom = 2400
+		PRINT ~Initial Lovetalk offset by 40 minutes~
+		OUTER_SET choseninitialflirt = 1200
+		PRINT ~Initial NPC-Initiated Flirt offset by 20 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start 
+hourly FT, NPC Flirt 20 minutes later, and RT 20 minutes after that, then 20 minutes later the next FT fires. 
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits.~
 END
+	
 
 ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
-	PRINT ~Select Aran's Friendship Talk timer:~
+	PRINT ~Select Aran's Talk timers:~
 
 	PRINT ~Please choose one of the following:
-[1] 15 minutes real time minimum between dialogues
-[2] 30 minutes real time minimum between dialogues
-[3] 45 minutes real time minimum between dialogues
-[4] 1 hour real time minimum between dialogues (recommended)
-[5] 1 hour 30 minutes real time minimum between dialogues
-[6] 2 hours real time minimum between dialogues
-[7] TESTING (1 minute)~
+ [1] approximately 1 hour real time minimum between friendship dialogues (recommended, default)
+ [2] approximately 15 minutes real time minimum between friendship dialogues
+ [3] approximately 30 minutes real time minimum between friendship dialogues
+ [4] approximately 45 minutes real time minimum between friendship dialogues
+ [5] approximately 1 hour 30 minutes real time minimum friendship between dialogues
+ [6] approximately 2 hours real time minimum between friendshipdialogues~
 
 	OUTER_SPRINT ~friendshiptimer~ ~placeholder_value~
-	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x7) OR (~friendshiptimer~ < 0x1)) BEGIN
+	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x6) OR (~friendshiptimer~ < 0x1)) BEGIN
 		PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
 		ACTION_READLN ~friendshiptimer~
 	END
 	ACTION_IF ("friendshiptimer" = 1) THEN BEGIN
-		APPEND ~gtimes.ids~ ~900 ARAN_FTT~
-		PRINT ~Speed: minimum 15 minutes real time between dialogues~
+		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
+		PRINT ~Speed: minimum 1 hour real time between dialogues (Default, recommended)~
+		OUTER_SET choseninitialrom = 2400
+		PRINT ~Initial Lovetalk offset by 40 minutes~
+		OUTER_SET choseninitialflirt = 1200
+		PRINT ~Initial NPC-Initiated Flirt offset by 20 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start 
+hourly FT, NPC Flirt 20 minutes later, and RT 20 minutes after that, then 20 minutes later the next FT fires. 
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits.~
 	END
 	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
-		APPEND ~gtimes.ids~ ~1800 ARAN_FTT~
-		PRINT ~Speed: minimum 30 minutes real time between dialogues~
+		APPEND ~gtimes.ids~ ~900 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~900 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~900 ARAN_FLIRT~
+		PRINT ~Speed: minimum 15 minutes real time between dialogues~
+		OUTER_SET choseninitialrom = 600
+		PRINT ~Initial Lovetalk offset by 10 minutes~
+		OUTER_SET choseninitialflirt = 300
+		PRINT ~Initial NPC-Initiated Flirt offset by 5 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start  
+15 minute FT, NPC-initiated Flirt 5 minutes later, and RT 5 minutes after that, then 5 minutes later the next FT.
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits... especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
-		APPEND ~gtimes.ids~ ~2700 ARAN_FTT~
-		PRINT ~Speed: minimum 45 minutes real time between dialogues~
+		APPEND ~gtimes.ids~ ~1800 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~1800 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~1800 ARAN_FLIRT~
+		PRINT ~Speed: minimum 30 minutes real time between dialogues~
+		OUTER_SET choseninitialrom = 1200
+		PRINT ~Initial Lovetalk offset by 20 minutes~
+		OUTER_SET choseninitialflirt = 600
+		PRINT ~Initial NPC-Initiated Flirt offset by 10 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start  
+30 minute FT, NPC-initiated Flirt 10 minutes later, and RT 10 minutes after that, then 10 minutes later the next FT.
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits... especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
-		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
-		PRINT ~Speed: minimum 1 hour real time between dialogues~
+		APPEND ~gtimes.ids~ ~2700 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~2700 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
+		PRINT ~Speed: minimum 45 minutes real time between dialogues~
+		OUTER_SET choseninitialrom = 1800
+		PRINT ~Initial Lovetalk offset by 30 minutes~
+		OUTER_SET choseninitialflirt = 900
+		PRINT ~Initial NPC-Initiated Flirt offset by 15 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start  
+45 minute FT, NPC-initiated Flirt 15 minutes later, and RT 15 minutes after that, then 15 minutes later the next FT.
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits... especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
 		APPEND ~gtimes.ids~ ~5400 ARAN_FTT~
+		APPEND ~gtimes.ids~ ~5400 ARAN_LTT~
+		APPEND ~gtimes.ids~ ~5400 ARAN_FLIRT~
 		PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
+		OUTER_SET choseninitialrom = 3600
+		PRINT ~Initial Lovetalk offset by 60 minutes~
+		OUTER_SET choseninitialflirt = 1800
+		PRINT ~Initial NPC-Initiated Flirt offset by 30 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start  
+90 minute FT, NPC-initiated Flirt 30 minutes later, and RT 30 minutes after that, then 30 minutes later the next FT.
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits... especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
 		APPEND ~gtimes.ids~ ~7200 ARAN_FTT~
-		PRINT ~Speed: minimum 2 hours real time between dialogues~
-	END
-	ACTION_IF ("friendshiptimer" = 7) THEN BEGIN
-		APPEND ~gtimes.ids~ ~60 ARAN_FTT~
-		PRINT ~TESTING SPEED: wicked googly fast~
-	END
-
-	PRINT ~Select Aran's LoveTalk timer:~
-
-	PRINT ~Please choose one of the following:
-[1] 15 minutes real time minimum between dialogues
-[2] 30 minutes real time minimum between dialogues
-[3] 45 minutes real time minimum between dialogues
-[4] 1 hour real time minimum between dialogues (recommended)
-[5] 1 hour 30 minutes real time minimum between dialogues
-[6] 2 hours real time minimum between dialogues
-[7] TESTING (1 minute)~
-OUTER_SPRINT ~lovetalktimer~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~lovetalktimer~) OR (~lovetalktimer~ > 0x7) OR (~lovetalktimer~ < 0x1)) BEGIN
-	PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
-	ACTION_READLN ~lovetalktimer~
-END
-	ACTION_IF ("lovetalktimer" = 1) THEN BEGIN
-		APPEND ~gtimes.ids~ ~900 ARAN_LTT~
-		PRINT ~Speed: minimum 15 minutes real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 2) THEN BEGIN
-		APPEND ~gtimes.ids~ ~1800 ARAN_LTT~
-		PRINT ~Speed: minimum 30 minutes real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 3) THEN BEGIN
-		APPEND ~gtimes.ids~ ~2700 ARAN_LTT~
-		PRINT ~Speed: minimum 45 minutes real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 4) THEN BEGIN
-		APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
-		PRINT ~Speed: minimum 1 hour real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 5) THEN BEGIN
-		APPEND ~gtimes.ids~ ~5400 ARAN_LTT~
-		PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 6) THEN BEGIN
 		APPEND ~gtimes.ids~ ~7200 ARAN_LTT~
-		PRINT ~Speed: minimum 2 hours real time between dialogues~
-	END
-	ACTION_IF ("lovetalktimer" = 7) THEN BEGIN
-		APPEND ~gtimes.ids~ ~60 ARAN_LTT~
-		PRINT ~TESTING SPEED: wicked googly fast, baby.~
-	END
-
-	PRINT ~Select Aran's NPC-initiated Flirt timer:~
-
-	PRINT ~Please choose one of the following:
-[1] 15 minutes real time minimum between dialogues
-[2] 30 minutes real time minimum between dialogues
-[3] 45 minutes real time minimum between dialogues
-[4] 1 hour real time minimum between dialogues (recommended)
-[5] 1 hour 30 minutes real time minimum between dialogues
-[6] 2 hours real time minimum between dialogues
-[7] TESTING (1 minute)~
-
-OUTER_SPRINT ~flirttimer~ ~placeholder_value~
-OUTER_WHILE (!(IS_AN_INT ~flirttimer~) OR (~flirttimer~ > 0x7) OR (~flirttimer~ < 0x1)) BEGIN
-	PRINT ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
-	ACTION_READLN ~flirttimer~
-END
-	ACTION_IF ("flirttimer" = 1) THEN BEGIN
-		APPEND ~gtimes.ids~ ~900 ARAN_FLIRT~
-		PRINT ~Speed: minimum 15 minutes real time between dialogues~
-	END
-	ACTION_IF ("flirttimer" = 2) THEN BEGIN
-		APPEND ~gtimes.ids~ ~1800 ARAN_FLIRT~
-		PRINT ~Speed: minimum 30 minutes real time between dialogues~
-	END
-	ACTION_IF ("flirttimer" = 3) THEN BEGIN
-		APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
-		PRINT ~Speed: minimum 45 minutes real time between dialogues~
-	END
-	ACTION_IF ("flirttimer" = 4) THEN BEGIN
-		APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
-		PRINT ~Speed: minimum 1 hour real time between dialogues~
-	END
-	ACTION_IF ("flirttimer" = 5) THEN BEGIN
-		APPEND ~gtimes.ids~ ~5400 ARAN_FLIRT~
-		PRINT ~Speed: minimum 1 hour 30 minutes real time between dialogues~
-	END
-	ACTION_IF ("flirttimer" = 6) THEN BEGIN
 		APPEND ~gtimes.ids~ ~7200 ARAN_FLIRT~
 		PRINT ~Speed: minimum 2 hours real time between dialogues~
+		OUTER_SET choseninitialrom = 4800
+		PRINT ~Initial Lovetalk offset by 80 minutes~
+		OUTER_SET choseninitialflirt = 2400
+		PRINT ~Initial NPC-Initiated Flirt offset by 40 minutes~
+		PRINT ~So if you are in a romance with him and never stop the romance, 
+after the lovetalks start (after friendship talk 3), the timer sequence will start  
+120 minute FT, NPC-initiated Flirt 40 minutes later, and RT 40 minutes after that, then 40 minutes later the next FT.
+Please note that the timers are not exact, and variations within the game may mean 
+bursts of activity followed by long waits... especially when you run out of timered content!~
 	END
-	ACTION_IF ("flirttimer" = 7) THEN BEGIN
-		APPEND ~gtimes.ids~ ~60 ARAN_FLIRT~
-		PRINT ~TESTING SPEED: wicked googly fast~
-	END
-END // of action_if
+END
 
 /* .2da patching */
 
@@ -2778,116 +2758,101 @@ BUT_ONLY
 COPY_EXISTING c-ar01.are override
 	LPF fj_are_structure
 	INT_VAR
-		fj_loc_x		 = 1170
-		fj_loc_y		 = 910
-		fj_orientation = 7
+		fj_loc_x			= 1170
+		fj_loc_y			= 910
+		fj_orientation		= 7
 	STR_VAR
-		fj_structure_type = entrance
-		fj_name	= Trancar01
+		fj_structure_type 	= entrance
+		fj_name			= Trancar01
 	END
 	LPF fj_are_structure
 	INT_VAR
-		fj_type		 = 2	// travel
-		fj_box_left	 = 1165
-		fj_box_top		= 879
-		fj_box_right	= 1297
-		fj_box_bottom	 = 984
-		fj_cursor_idx	 = 34	 // wheel
-		fj_alt_x = 1231
-		fj_alt_y = 931
+		fj_type		 	= 2	// travel
+		fj_box_left			= 1165
+		fj_box_top			= 879
+		fj_box_right		= 1297
+		fj_box_bottom		= 984
+		fj_cursor_idx		= 34 // wheel
+		fj_alt_x 			= 1231
+		fj_alt_y 			= 931
 	STR_VAR
-		fj_structure_type	 = region
+		fj_structure_type	= region
 		fj_name = Tran0700
-		fj_destination_area = ar0700
-		fj_destination_name = Exitc-ar01
+		fj_destination_area 	= ar0700
+		fj_destination_name	= Exitc-ar01
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 897
 		fj_loc_y			= 934
-		fj_orientation	= 15	 // SSE
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name	= c-aw01tk
-		fj_cre_resref = c-aw01tk
+		fj_structure_type 	= actor
+		fj_name			= c-aw01tk
+		fj_cre_resref 		= c-aw01tk
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 516
 		fj_loc_y			= 616
-		fj_orientation	= 11	 // NEE
+		fj_orientation		= 11 // NEE
 	STR_VAR
 		fj_structure_type = actor
-		fj_name = c-aw01tl
-		fj_cre_resref	 = c-aw01tl
+		fj_name 			= c-aw01tl
+		fj_cre_resref		= c-aw01tl
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 1195
 		fj_loc_y			= 801
-		fj_orientation	= 15	 // SSE
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name = c-aw01w1
-		fj_cre_resref	 = c-aw01w1
+		fj_structure_type 	= actor
+		fj_name 			= c-aw01w1
+		fj_cre_resref		= c-aw01w1
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 367
 		fj_loc_y			= 729
-		fj_orientation	= 15	 // SSE
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name = c-aw01p2
-		fj_cre_resref	= c-aw01p2
+		fj_structure_type 	= actor
+		fj_name 			= c-aw01p2
+		fj_cre_resref		= c-aw01p2
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 478
 		fj_loc_y			= 528
-		fj_orientation	= 15	 // SSE
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name = c-aw01p1
-		fj_cre_resref	= c-aw01p1
+		fj_structure_type 	= actor
+		fj_name 			= c-aw01p1
+		fj_cre_resref		= c-aw01p1
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 713
 		fj_loc_y			= 398
-		fj_dest_x		 = 1128
-		fj_dest_y		 = 926
-		fj_orientation	= 15	 //	SSE
+		fj_dest_x			= 1128
+		fj_dest_y			= 926
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name = c-aw01p3
-		fj_cre_resref	= c-aw01p3
+		fj_structure_type 	= actor
+		fj_name 			= c-aw01p3
+		fj_cre_resref		= c-aw01p3
 	END
 	LPF fj_are_structure
 	INT_VAR
 		fj_loc_x			= 1014
 		fj_loc_y			= 1027
-		fj_orientation	= 15	 //	SSE
+		fj_orientation		= 15 // SSE
 	STR_VAR
-		fj_structure_type = actor
-		fj_name = c-toran
-		fj_cre_resref	= c-toran
+		fj_structure_type 	= actor
+		fj_name 			= c-toran
+		fj_cre_resref		= c-toran
 	END
-
-/*
-	LPF fj_are_structure
-	INT_VAR
-	fj_loc_x			=
-	fj_loc_y			=
-	fj_dest_x		 =
-	fj_dest_y		 =
-	fj_orientation	= 15	 //	SSE
-	STR_VAR
-	fj_structure_type = actor
-	fj_name =
-	fj_cre_resref	=
-	END
-*/
 
 /* install scripts */
 
@@ -2905,7 +2870,6 @@ EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog in
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 
 COMPILE ~aranw/baf/c-abvp.baf~ // vampire script
-COMPILE ~aranw/baf/c-aran.baf~ // override script
 COMPILE ~aranw/baf/c-arand.baf~ // SoA dreamscript
 COMPILE ~aranw/baf/c-aranx.baf~ // out-of-party combat script
 COMPILE ~aranw/baf/c-restco.baf~ // rest cutscene for camping outside
@@ -2916,10 +2880,12 @@ COMPILE ~aranw/baf/c-malcer.baf~ // override script for Malcer
 COMPILE ~aranw/baf/c-oskut.baf~ // override script for Oskut
 COMPILE ~aranw/baf/c-taman.baf~ // override script for Taman
 
+COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ // override script
+
 ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
 	PRINT ~Installing ToB scripts...~
 	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
-	COMPILE ~aranw/baf/c-arn25.baf~ // joined ToB script
+	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
 	COMPILE ~aranw/baf/c-arn25d.baf~ // ToB dreamscript
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
 	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
@@ -2934,10 +2900,10 @@ BEGIN ~Install Soundset, Voiced lines, and Music~
 
 	/* replace this for .acm music later - but for now,	add the blank sound reference */
 
-	COPY ~aranw/media/g3blank.mus~ 		~music~
+	COPY ~aranw/media/g3blank.mus~ 	~music~
 	COPY_EXISTING ~songlist.2da~ 		~override~
 		SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
-		BUT_ONLY
+	BUT_ONLY
 
 	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
 
