@@ -1,0 +1,8 @@
+/* This is Bodhi abduction stuff, extends ar0809.bcs */
+IF
+  Global("c-aranvamped","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranvamped","GLOBAL",2)
+    CreateCreature("c-arnvmp",[1473.332],2)
+END

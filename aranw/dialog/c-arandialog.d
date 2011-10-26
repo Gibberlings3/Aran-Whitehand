@@ -717,7 +717,7 @@ CHAIN BODHIAMB a490
 == C-ARANJ ~[ARAN] Now, look what we be seein' here. A sentimental bloodsucker. There's naught you can do to <CHARNAME>. An' I done told you exactly what I think o' you.~
 == BODHIAMB ~[BODHI] But I wonder, does <CHARNAME> fear your loss? Follow me further and you will lose more than you can imagine. That is a promise, not a threat.~
 END
-IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("C-ABVMP")~ UNSOLVED_JOURNAL ~The Final Battle with Bodhi.
+IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("C-ABVAMP")~ UNSOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and stealing Aran from my side. Before she vanished and unleashed more of her undead creations upon me, Bodhi warned that if I continue I will lose even more than I thought possible. I cannot give up on the Rhynn Lanthorn... but now the life and immortal soul of Aran is at stake, as well!~ EXIT
 
@@ -3690,7 +3690,7 @@ APPEND C-ARANP
 
 /* Plot Talks: Post-Joined File : Hey, an Un-Vampification! Almost as good as finding out you have a little sister-Slayer! */
 
-IF ~Global("c-aranvamped","GLOBAL",4)~ THEN BEGIN a479
+IF ~Global("c-aranvamped","GLOBAL",5)~ THEN BEGIN a479
   SAY ~[ARAN] Sune's Sweet Cheeks... I....~ [c-aws082]
   = ~[ARAN] <CHARNAME>? Bloody hells, it is good to see you. Filthy bloodsuckers had me right out o' my head. I can feel th' queen bitch be gone. Showed her how we do things downtown, eh? An' me, too.~
   /* Plot Talks: Post-Joined File : 1 - Happy to have you back, old boy. Cheerio, stiff upper lip, don't kiss in front of the children. */
@@ -3701,7 +3701,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 EraseJournalEntry(%The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...%)
-SetGlobal("c-aranvamped","GLOBAL",5)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
+SetGlobal("c-aranvamped","GLOBAL",6)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~ + a480
   /* Plot Talks: Post-Joined File : 2 - OHMYGODILOVEYOUSOMUCHJUSTHOLDME! */
@@ -3712,7 +3712,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 EraseJournalEntry(%The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...%)
-SetGlobal("c-aranvamped","GLOBAL",5)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
+SetGlobal("c-aranvamped","GLOBAL",6)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~ + a481
   /* Plot Talks: Post-Joined File : 3 - Yeah, whatever. You could have warned me you like Goth chicks with fangs. What did she do with you, anyways. */
@@ -3723,7 +3723,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 EraseJournalEntry(%The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...%)
-SetGlobal("c-aranvamped","GLOBAL",5)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
+SetGlobal("c-aranvamped","GLOBAL",6)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~ + a482
   /* Plot Talks: Post-Joined File : 4 - Cool. Hey, while you were gone, me and <PLAYER2> decided to shack up and have lots of sex. Sorry about that. You can find the door, right?  */
@@ -3734,7 +3734,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 EraseJournalEntry(%The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...%)
-SetGlobal("c-aranvamped","GLOBAL",5)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
+SetGlobal("c-aranvamped","GLOBAL",6)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~ + a483
   /* Plot Talks: Post-Joined File : 5 - I was serious about the whole toy thing. You crossed the line, and attacked me. But this whole saving thing is so I could look in your eyes before I kill you, and watch you die slowly. */
@@ -3745,13 +3745,13 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 EraseJournalEntry(%The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...%)
-SetGlobal("c-aranvamped","GLOBAL",5)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
+SetGlobal("c-aranvamped","GLOBAL",6)~ SOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~ + a484
 END
 
 /* Plot Talks: Post-Joined File : Standard "you tick me off too much to stick around" state */
-IF ~HappinessLT(Myself,-290) ~ THEN BEGIN a20
+IF ~HappinessLT(Myself,-290)~ THEN BEGIN a20
   SAY ~[ARAN] No contracts wi' you. I have had my fill o' killin' babies an' destroyin' worlds.~ [c-aws083]
   IF ~~ THEN JOURNAL ~Whitehand Withdraws
 

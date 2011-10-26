@@ -3,7 +3,7 @@
 /*  Darious's script to restore the vamped body */
 /* This is Bodhi abduction stuff, extends cleanse.bcs */
 IF 
-  Contains("c-avbody",Myself) 
+  Contains("c-avbody",Myself)  // ~Aran's Body~
   Global("CleanseVampire","AR1401",0) 
 THEN RESPONSE #100 
   SetGlobal("CleanseVampire","AR1401",1) 
@@ -22,6 +22,6 @@ THEN RESPONSE #100
   Wait(1) 
   CreateVisualEffect("SPFLESHS",[2565.1677]) 
   Wait(1) 
-  MoveGlobal("AR1401","c-aran",[2565.1677]) 
+  MoveGlobal("AR1401","c-aran",[2565.1677])
   SetInterrupt(TRUE) 
 END

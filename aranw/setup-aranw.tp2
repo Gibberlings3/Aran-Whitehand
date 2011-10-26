@@ -2551,12 +2551,31 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~	/*	 thug 3	- L10	male fight
 	SAY NAME1 ~Taman~
 	SAY NAME2 ~Taman~
 	WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
-	WRITE_BYTE 0x32 4	/* hair color (auburn) */
-	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8	/* give new override AI script */
-	WRITE_ASCII 0x268 ~WTASIGHT~ #8	/* give new default AI script */
+	WRITE_BYTE 0x32 4 /* hair color (auburn) */
+	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8 /* give new override AI script */
+	WRITE_ASCII 0x268 ~WTASIGHT~ #8 /* give new default AI script */
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~blun21~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+
+/* Vamp'd Aran's Body */ 
+COPY_EXISTING ~miscbm.itm~ ~override/c-avbody.itm~
+	SAY NAME1 ~Aran's Body~
+	SAY NAME2 ~Aran's Body~
+	SAY UNIDENTIFIED_DESC ~Aran's Body
+
+Aran was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be.~
+/* Vamp'd Aran */
+COPY_EXISTING ~vampano.cre~ ~override/c-arnvmp.cre~ 
+	REMOVE_CRE_ITEM ~miscbm~
+	SAY NAME1 ~Aran~
+	SAY NAME2 ~Aran Whitehand~
+	WRITE_ASCII 0x34 ~c-aranws~ #8 /* small portrait */
+	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8	 /* override AI script */
+	WRITE_ASCII 0x268 ~c-vampai~ #8	 /*  default AI script */
+	WRITE_ASCIIE 0x2cc ~%DEST_RES%~ #8 /* dialogue */
+	WRITE_ASCIIE 0x280 ~%DEST_RES%~ #32 /* death variable */
+	ADD_CRE_ITEM ~c-avbody~ #0 #0 #0 IDENTIFIED QITEM1
 
 /* stores */
 
@@ -2678,10 +2697,10 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 	END
 
 /* area creation */
-COPY ~aranw/areas/c-ar01.are~ ~override~
-COPY ~aranw/areas/c-ar01.tis~ ~override~
-COPY ~aranw/areas/c-ar01.mos~ ~override~
-COPY ~aranw/areas/c-ar01.wed~ ~override~
+COPY ~aranw/areas/c-ar01.are~ 	~override~
+COPY ~aranw/areas/c-ar01.tis~ 	~override~
+COPY ~aranw/areas/c-ar01.mos~ 	~override~
+COPY ~aranw/areas/c-ar01.wed~ 	~override~
 COPY ~aranw/areas/c-ar01ht.bmp~ ~override~
 COPY ~aranw/areas/c-ar01lm.bmp~ ~override~
 COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
@@ -2735,10 +2754,10 @@ COPY_EXISTING ar0700.are override
 		fj_vertex_8	 = 3178 + (868 << 16)
 		fj_vertex_9	 = 3175 + (883 << 16)
 	STR_VAR
-		fj_structure_type	 = region
-		fj_name	= Trancar01
-		fj_destination_area = c-ar01
-		fj_destination_name = Trancar01
+		fj_structure_type	= region
+		fj_name			= Trancar01
+		fj_destination_area 	= c-ar01
+		fj_destination_name 	= Trancar01
 	END
 
 /* new area added */
@@ -2857,35 +2876,38 @@ COPY_EXISTING c-ar01.are override
 /* install scripts */
 
 PRINT ~Installing SoA scripts...~
-EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ // sets up filter indicating drow avatar and spelunking
-
-EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~	// shuts down underdark filter
-
-EXTEND_BOTTOM ~bodhiamb.bcs~ ~aranw\baf\c-aranvampire.baf~ // bodhi disappears with aran
-
-EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ // restoring aran
-
+/* underdark trigger */
+EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ /* sets up filter indicating drow avatar and spelunking */
+EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~	/* shuts down underdark filter */
+/* Vampire Scripty Stuff */
+EXTEND_BOTTOM ~vampamb.bcs~ ~aranw\baf\c-vampamb.baf~ /* create vampired-aran in area; c-arnvmp */
+EXTEND_BOTTOM ~bodhiamb.bcs~ ~aranw\baf\c-aranvampire.baf~ /* bodhi disappears with aran */
+EXTEND_BOTTOM ~ar0809.bcs~ ~aranw\baf\c-vampar0809.baf~ /* create vampired-aran in area; c-arnvmp */
+EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ /* restoring aran */
+COMPILE ~aranw/baf/c-abvamp.baf~ /* aran vampired cutscene */
+COMPILE ~aranw/baf/c-vampai.baf~ /* vampire ai script for c-arnvmp */
+COMPILE ~aranw/baf/c-arnvmp.baf~ /* vampire override script for c-arnvmp */
+/* Night Talks */
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog initiation for dreamscripts */
-
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
+/* Regular Scripts */
+COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ /* override script */
+COMPILE ~aranw/baf/c-arand.baf~ /* SoA dreamscript */
+COMPILE ~aranw/baf/c-aranx.baf~ /* out-of-party combat script */
+/* Rest-but-don't-trigger-player1D */
+COMPILE ~aranw/baf/c-restco.baf~ /* rest cutscene for camping outside */
+COMPILE ~aranw/baf/c-restin.baf~ /* rest cutscene for inn */
+COMPILE ~aranw/baf/c-restdg.baf~ /* rest cutscene for dungeon */
+COMPILE ~aranw/baf/c-restpp.baf~ /* rest cutscene for pocket plane */
+/* NPC Scripts */
+COMPILE ~aranw/baf/c-malcer.baf~ /* override script for Malcer */
+COMPILE ~aranw/baf/c-oskut.baf~ /* override script for Oskut */
+COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
 
-COMPILE ~aranw/baf/c-abvp.baf~ // vampire script
-COMPILE ~aranw/baf/c-arand.baf~ // SoA dreamscript
-COMPILE ~aranw/baf/c-aranx.baf~ // out-of-party combat script
-COMPILE ~aranw/baf/c-restco.baf~ // rest cutscene for camping outside
-COMPILE ~aranw/baf/c-restin.baf~ // rest cutscene for inn
-COMPILE ~aranw/baf/c-restdg.baf~ // rest cutscene for dungeon
-COMPILE ~aranw/baf/c-restpp.baf~ // rest cutscene for pocket plane
-COMPILE ~aranw/baf/c-malcer.baf~ // override script for Malcer
-COMPILE ~aranw/baf/c-oskut.baf~ // override script for Oskut
-COMPILE ~aranw/baf/c-taman.baf~ // override script for Taman
-
-COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ // override script
-
-ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
+ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN /* ToB dialog file */
 	PRINT ~Installing ToB scripts...~
-	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
 	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
+	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
 	COMPILE ~aranw/baf/c-arn25d.baf~ // ToB dreamscript
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
 	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
@@ -3130,7 +3152,7 @@ BEGIN	~Aran Whitehand, default configuration (Soldier)~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /*	override script */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
 		PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
 	END
@@ -3148,7 +3170,7 @@ BEGIN	~Aran Whitehand, Mage Dual-Class stats configuration (Tinker)~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /*	override script */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
 		PRINT ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
 	END

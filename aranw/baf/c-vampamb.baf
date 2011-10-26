@@ -1,0 +1,33 @@
+/* From Darious: This is Bodhi abduction stuff, extends vampamb.bcs */
+IF
+  Global("CleanseVampire","AR1401",2)
+  Global("c-aranvamped","GLOBAL",3)
+  Name("c-aran",Myself)
+  AreaCheck("AR1401")
+THEN
+  RESPONSE #100
+    SetGlobal("c-aranvamped","GLOBAL",4)
+    DialogueInterrupt(TRUE)
+    ChangeAIScript("c-aran",OVERRIDE)
+END
+
+IF
+  Global("c-aranvamped","GLOBAL",1)
+  Global("RomanceVampire","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RomanceVampire","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("c-aranvamped","GLOBAL",1)
+  Global("RomanceVampire","GLOBAL",1)
+  Global("RomanceVampireTeleport","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RomanceVampireTeleport","GLOBAL",1)
+    CreateVisualEffectObject("SPDIMNDR",Myself)
+    Wait(2)
+    DestroySelf()
+END
