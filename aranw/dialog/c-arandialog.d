@@ -16428,8 +16428,8 @@ IF ~~ a2080
   SAY ~[ARAN] Now that be a pickup line if I ever did here one. I am only happy to oblige. Just tell me when an' where, an' I will do my best to please you.~
   ++ ~[PC] Ooooh, goody. Meet me at the gates of hell, when it freezes solid.~ + a2084
   ++ ~[PC] I could happen to leave my door unlatched tonight...~ DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ + a2097
-  + ~!TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ + a2097
-  + ~TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside. Perhaps we could walk together.~ + a2097
+  + ~!TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ + a2097_walking
+  + ~TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside. Perhaps we could walk together.~ + a2097_walking
   ++ ~[PC] Right now. Right here. I can't wait.~ + a2083
   ++ ~[PC] Oh, great. I forgot I was supposed to... I can't do this. I am sorry. I was about to make an excuse, but you deserve the truth. I just can't do this with you.~ + a2084
 END
