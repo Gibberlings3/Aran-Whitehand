@@ -1,3 +1,4 @@
+
 /* Initialize SoA Dialogs */
 BEGIN C-ARAN   /* Initialize SoA Dialogs : pre-joining SoA */
 BEGIN C-ARANJ  /* Initialize SoA Dialogs : joined SoA */
@@ -743,7 +744,7 @@ END
 APPEND C6BODHI
 
 IF ~~ THEN BEGIN a491
-   SAY ~[BODHI] He is lost to you, <CHARNAME>. Aran was quite unreceptive to my discipline at first, but in the end he came along like a good little soldier. You could not have been that fond of him after all. Your petty interests fell away with a bite and a gaze.~
+   SAY ~[BODHI] He is lost to you, <CHARNAME>. Aran was quite unreceptive to my discipline at first, but in the end he came along like a good little soldier. You could not have been that fond of him after all.All his resistance fell away with a bite and a gaze. Isn't that right, my little pet?~
    IF ~~ THEN UNSOLVED_JOURNAL ~The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...~ EXTERN C-ARNVMP a494
@@ -769,7 +770,7 @@ EXTERN C6BODHI 28
 
 /* Plot Talks: In Quest Of Answers. Where is Giles when you need him? */
 EXTEND_BOTTOM C6ELHAN2 70
-  + ~PartyHasItem("C-ARNBDY")~ + ~[PC] Elhan! I've the half vampire body of Aran here because of you! You'll tell me now!~ GOTO 76
+  + ~PartyHasItem("C-ARNBDY")~ + ~[PC] Elhan! I've the half-vampire body of Aran here because of you! You'll tell me now!~ GOTO 76
 END
 
 EXTEND_BOTTOM DOGHMA 0 #5
@@ -781,14 +782,14 @@ EXTEND_BOTTOM DOGHMA 3 7 9 #4
 END
 
 EXTEND_BOTTOM IMNBOOK1 0
-  + ~Global("RevealUmar","GLOBAL",1) PartyHasItem("C-ARNBDY")~ + ~[PC] I'm looking for information about a tome that details the curing of Vampirism.~ GOTO 4
+  + ~Global("RevealUmar","GLOBAL",1) OR(2) Global("c-aranvamped","GLOBAL",2) PartyHasItem("C-ARNBDY")~ + ~[PC] I'm looking for information about a tome that details the curing of Vampirism.~ GOTO 4
 END
 
-ADD_STATE_TRIGGER OGHMONK1 0 ~!PartyHasItem("C-ARNBDY")~ 1 2 3
+ADD_STATE_TRIGGER OGHMONK1 0 ~!PartyHasItem("C-ARNBDY") !Global("c-aranvamped","GLOBAL",2)~ 1 2 3
 
 APPEND OGHMONK1
 
-IF WEIGHT #-1 ~Global("RevealUmar","GLOBAL",1) PartyHasItem("C-ARNBDY")~ THEN BEGIN a1807
+IF WEIGHT #-1 ~Global("RevealUmar","GLOBAL",1) OR(2) Global("c-aranvamped","GLOBAL",2) PartyHasItem("C-ARNBDY")~ THEN BEGIN a1807
   SAY ~[MONK] Have you come seeking wisdom from the Binder of What is Known? The Wise God stands ready.~
   ++ ~[PC] No, thank you, I have no need of help at the moment.~ GOTO 5
   ++ ~[PC] A friend is afflicted by vampirism.  An old book suggested that followers of Oghma might know something about that.~ GOTO 6
@@ -803,16 +804,19 @@ END
 
 EXTEND_BOTTOM WARSAGE 0
   + ~!Dead("c6bodhi") Global("c-aranvamped","GLOBAL",2)~ + ~[PC] A companion was taken by a vampire. What can I expect when I find them?~ GOTO 6
+END
+
+EXTEND_BOTTOM WARSAGE 0  
   + ~PartyHasItem("C-ARNBDY")~ + ~[PC] Someone I care about has fallen to a vampire. Is there any way to save them?~ GOTO 5
 END
 
 /* Plot Talks: Slayer Transformation Talks, 3, canonical, third class. With frosting. */
 EXTEND_BOTTOM PLAYER1 3
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) ~ EXTERN C-ARANJ a495
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ EXTERN C-ARANJ a495
 END
 
 EXTEND_BOTTOM PLAYER1 7
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) ~ EXTERN C-ARANJ a496
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ EXTERN C-ARANJ a496
 END
 
 EXTEND_BOTTOM PLAYER1 10
@@ -13511,7 +13515,7 @@ IF ~~ a558
   ++ ~[PC] (You grab the back of his pack and haul back hard on it.)~ + a572
   ++ ~[PC] (You run your gaze over broad shoulders and narrow waist, and begin to envision the sight without quite as many garments in the way.)~ EXIT
   ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and tuck it back in.)~ + a565
-  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
+  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr3",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
 END
 
 IF ~~ a559
@@ -13519,7 +13523,7 @@ IF ~~ a559
   ++ ~[PC] (You shake your head silently and move on.)~ EXIT
   ++ ~[PC] (You run your gaze over broad shoulders and narrow waist, and begin to envision the sight without quite as many garments in the way.)~ EXIT
   ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and tuck it back in.)~ + a565
-  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
+  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr3",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
   ++ ~[PC] (You scowl at his receding form, but move on.)~ EXIT
 END
 
@@ -13556,7 +13560,7 @@ IF ~~ a564
   ++ ~[PC] (You shake your head silently and move on.)~ EXIT
   ++ ~[PC] (You run your gaze over broad shoulders and narrow waist, and begin to envision the sight without quite as many garments in the way.)~ EXIT
   ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and tuck it back in.)~ + a565
-  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
+  ++ ~[PC] (You see a small corner of parchment sticking out of a pocket of his pack, and gently pluck it out.)~ DO ~GiveItemCreate("c-alttr3",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1)~ + a566
   ++ ~[PC] (You scowl at his receding form, but move on.)~ EXIT
 END
 
@@ -15318,7 +15322,7 @@ IF ~Gender(Player1,FEMALE) !GlobalTimerNotExpired("c-araninnflirttimer","GLOBAL"
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a796
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
-  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2913
+  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2340
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2907
 END
@@ -15327,7 +15331,7 @@ IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Gl
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a818
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
-  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2913
+  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2341
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ + a2907
 END
@@ -15338,6 +15342,7 @@ IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Gl
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2342
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2907
+  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
 END
 
 IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",3) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a765
@@ -15422,7 +15427,7 @@ END
 
 IF ~~ a3225 SAY ~[ARAN] 'Deborah sighed gustily as she looked out across the valley. She could not forget the sight of his chest, bronzed and muscular, glistening with sweat as he worked the forge. She knew it was wrong to have such feelings for a commoner of the Dales, but she could not help herself. The blush of wanton desire spread across her cheeks as she imagined him working her, rather than the forge, his hammer rising and falling to the beat of her pulse and the racing of her heart.'~ IF ~~ THEN EXIT END
 IF ~~ a3226 SAY ~[ARAN] "No, no!" Deborah's broken pleas slipped from her lips, even as they pressed themselves to him. "I can not! I have never..." His strong hands held her poised above him, ready to go where no man had gone before. His desire was palpable.~ IF ~~ THEN EXIT END
-IF ~~ a3227 SAY ~[ARAN] 'There were no words as Deborah created  crafted crufted crinfalled There were no sonunds there were blighted hells. Note: look for good descriptors that can translate to Dwarven without taking on the wrong meanings. Pradeep of Westhaven might buy this thing if I can just get the writing open for gnomish and dwarven translation. Second Note: remember that dwarves find beards appealing on both women and men. May have to rewrite. Third note, get a good proofreader before I send anything.'~ IF ~~ THEN EXIT END
+IF ~~ a3227 SAY ~[ARAN] 'There were no words as Deborah created... crafted... crufted... crinfalled... There were no sonunds... There were... blighted hells. Note: look for good descriptors that can translate to Dwarven without taking on the wrong meanings. Pradeep of Westhaven might buy this thing if I can just get the writing open for gnomish and dwarven translation. Second Note: remember that dwarves find beards appealing on both women and men. May have to rewrite. Third note, get a good proofreader before I send anything.'~ IF ~~ THEN EXIT END
 IF ~~ a3228 SAY ~[ARAN] 'She flung herself in front of him, begging to be taken, begging to be his. Buck sat stone-faced, unmoving. "Do you think that a commoner has no feelings? I share everything with you, and you sleep with him. My forge may take on many projects, but only one heart commands it. Who's heart commands your forge, Deborah?'~ IF ~~ THEN EXIT END
 IF ~~ a3229 SAY ~[ARAN] 'Buck's bronzed form glistened in the lamplight, his dark beard covering everything. Deborah could not help herself. Her eyes dropped lower, lower. Her face burned in the darkness, a beacon in the stone cave. "It is glowing", she whispered. "It is." he answered.'~ IF ~~ THEN EXIT END
 
@@ -15435,7 +15440,7 @@ Mae govannen. An lema? Amin naa lle nai. I'narr en gothrim glinuva nuin I'anor. 
 
 Have Sword, Will Travel. No Job Too Small. No Dragons. Experienced Caravan Guard, Scrivner, OutRider, Oarsman. Trade Contracts and Copywork Drawn. Reasonable Rates. Inquire at Public House for Whitehand.~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT /* c-alttr2.itm */
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT /* c-alttr2.itm */
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15448,7 +15453,7 @@ I love the emerald, and I will figure out what you mean about saying the inscrip
 I do have some news. I have started working with a new group. There is not much to say yet, but it is not a regular mercenary group. <CHARNAME>, the one who leads, is different. I will have more to say later, I am sure. In the meantime, keep up your studies, and I will try to send you some of the spell components you asked about as best I can. Judging by the look of things, I may be able to get some very rare components for you just by keeping my eyes open and wits sharp.
   Yours Faithfully, Aran~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr2",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15462,7 +15467,7 @@ I did hear from Nathan the other day, and his letter asked after you. I told him
 Well, I must close, as I am out of room, and low on supplies. Time to mix up some more ink, too. As always.
   Yours Faithfully, Aran~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr3",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15474,7 +15479,7 @@ I hope that all is well with you. For me, I am sorely in need of your guidance. 
 I do not know if you would like her, or not. But do not believe the stories that must be floating around about what we are doing. All I can say is that she has captivated my attention in a way no other woman has. Yes, even more than SilverEyes. I just have difficulties seeing what I can offer her in return. I have no wealth or title, no real prospects, and I do not even know if she truly would have me. But that is how serious my situation seems to have become. For Sune's Blessing and for the love of your brother, help me. I need to know what a woman of power really wants.
 Yours faithfully, Aran~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr4",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15487,7 +15492,7 @@ There are many things going on right now, and I am not at liberty to write much 
 In the meantime, I will be enclosing a small packet of wildspeare flowers for your component pouch when I get a chance to send this. I hope that it helps your studies. Please try not to turn Jill into a flowerpot again. I know that the polymorph spell usually results in squirrels, berrygobblers, or chipmunks rather than inanimate objects, so study hard and next time it might go better.
 Yours faithfully, Aran.~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr5",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15500,7 +15505,7 @@ IF ~~ a3236 /* aran letter #6 (rom, c-alttr6.itm) */
   There will be time enough to write more later. I will be enclosing a few odds and ends gleaned from our last few combats, but I am unsure as to how to stop them from breaking when transported to you. If the letter you are holding is a bright black on one corner, then I would seek out the Priests for healing immediately. I am never sure why you want me to send you these things, as my training has been in writing, not herbalism, but you know that I would do anything for you.
   Yours faithfully, Aran~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr6",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15513,7 +15518,7 @@ Yes, I know I have a double standard, but I have always been very interested in 
 I trust you to make the right choice for you, of course. I would send for you to join us for a little bit, so you could get away and think, but I am afraid things here have gotten very difficult. Our adversaries are the stiff of legends and folktales, only they turn out to be real. Usually, they also turn out to be able to crush me into goo. No matter what is going on there, things are worse here. Do not worry for me, though. I have always had an eye out for trouble, and I think I enjoy feeling part of something that will make a difference.
   Yours faithfully, Aran~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
-  ++ ~[PC] (You take the letter.)~ DO ~SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
+  ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr7",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -15563,7 +15568,6 @@ IF ~~ a2911_extend2
   SAY ~[ARAN] I would get right snippy wi' whomever were messin' about, but other than rufflin' my feathers, there be no real harm done. There be precious little what be private in a group like this. If anyone wants to know what I be writin' to my sister, they don't have to poke about. They could just ask, eh?~
   IF ~~ THEN EXIT
 END
-
 
 /* flirting with other patrons */
 IF ~~ a2907
@@ -16205,12 +16209,12 @@ IF ~~ a2059
   /* Idea from Berelinde's Gavin BG2 - check for armor. Must make sure it can't e accessed from the PC responses where PC is showing off a dress, so needs some tidying before integration. */
   SAY ~[ARAN] Aye, there be a bit more to it than first appears, eh? Here, let me help. Now, take th' quill, like this... dip it here. No, not that far down. We want naught in th' way o' splatter, just a fine line's worth. Good. Now, let me take your hand... an' then it be a circular motion, like this...~
   = ~[ARAN] (His breath whispers warmth on your neck as he leans against your back, guiding your hand over the rough parchment.)~
-  IF ~OR(20) HasItemEquiped("chan01","c-aran") HasItemEquiped("chan02","c-aran") HasItemEquiped("chan03","c-aran") HasItemEquiped("chan04","c-aran") HasItemEquiped("chan05","c-aran") HasItemEquiped("chan06","c-aran") HasItemEquiped("chan07","c-aran") HasItemEquiped("chan08","c-aran") HasItemEquiped("chan09","c-aran") HasItemEquiped("chan10","c-aran") HasItemEquiped("chan11","c-aran") HasItemEquiped("chan12","c-aran") HasItemEquiped("chan13","c-aran") HasItemEquiped("chan14","c-aran") HasItemEquiped("chan15","c-aran") HasItemEquiped("chan16","c-aran") HasItemEquiped("chan17","c-aran") HasItemEquiped("chan18","c-aran") HasItemEquiped("dwchan01","c-aran") HasItemEquiped("dwchan02","c-aran") RandomNum(3,1)~ THEN GOTO a2060
-  IF ~OR(20) HasItemEquiped("chan01","c-aran") HasItemEquiped("chan02","c-aran") HasItemEquiped("chan03","c-aran") HasItemEquiped("chan04","c-aran") HasItemEquiped("chan05","c-aran") HasItemEquiped("chan06","c-aran") HasItemEquiped("chan07","c-aran") HasItemEquiped("chan08","c-aran") HasItemEquiped("chan09","c-aran") HasItemEquiped("chan10","c-aran") HasItemEquiped("chan11","c-aran") HasItemEquiped("chan12","c-aran") HasItemEquiped("chan13","c-aran") HasItemEquiped("chan14","c-aran") HasItemEquiped("chan15","c-aran") HasItemEquiped("chan16","c-aran") HasItemEquiped("chan17","c-aran") HasItemEquiped("chan18","c-aran") HasItemEquiped("dwchan01","c-aran") HasItemEquiped("dwchan02","c-aran") RandomNum(3,2)~ THEN GOTO a2061
-  IF ~OR(20) HasItemEquiped("chan01","c-aran") HasItemEquiped("chan02","c-aran") HasItemEquiped("chan03","c-aran") HasItemEquiped("chan04","c-aran") HasItemEquiped("chan05","c-aran") HasItemEquiped("chan06","c-aran") HasItemEquiped("chan07","c-aran") HasItemEquiped("chan08","c-aran") HasItemEquiped("chan09","c-aran") HasItemEquiped("chan10","c-aran") HasItemEquiped("chan11","c-aran") HasItemEquiped("chan12","c-aran") HasItemEquiped("chan13","c-aran") HasItemEquiped("chan14","c-aran") HasItemEquiped("chan15","c-aran") HasItemEquiped("chan16","c-aran") HasItemEquiped("chan17","c-aran") HasItemEquiped("chan18","c-aran") HasItemEquiped("dwchan01","c-aran") HasItemEquiped("dwchan02","c-aran") RandomNum(3,3)~ THEN GOTO a2062
-  IF ~!HasItemEquiped("chan01","c-aran") !HasItemEquiped("chan02","c-aran") !HasItemEquiped("chan03","c-aran") !HasItemEquiped("chan04","c-aran") !HasItemEquiped("chan05","c-aran") !HasItemEquiped("chan06","c-aran") !HasItemEquiped("chan07","c-aran") !HasItemEquiped("chan08","c-aran") !HasItemEquiped("chan09","c-aran") !HasItemEquiped("chan10","c-aran") !HasItemEquiped("chan11","c-aran") !HasItemEquiped("chan12","c-aran") !HasItemEquiped("chan13","c-aran") !HasItemEquiped("chan14","c-aran") !HasItemEquiped("chan15","c-aran") !HasItemEquiped("chan16","c-aran") !HasItemEquiped("chan17","c-aran") !HasItemEquiped("chan18","c-aran") !HasItemEquiped("dwchan01","c-aran") !HasItemEquiped("dwchan02","c-aran") RandomNum(3,1)~ THEN GOTO a2063
-  IF ~!HasItemEquiped("chan01","c-aran") !HasItemEquiped("chan02","c-aran") !HasItemEquiped("chan03","c-aran") !HasItemEquiped("chan04","c-aran") !HasItemEquiped("chan05","c-aran") !HasItemEquiped("chan06","c-aran") !HasItemEquiped("chan07","c-aran") !HasItemEquiped("chan08","c-aran") !HasItemEquiped("chan09","c-aran") !HasItemEquiped("chan10","c-aran") !HasItemEquiped("chan11","c-aran") !HasItemEquiped("chan12","c-aran") !HasItemEquiped("chan13","c-aran") !HasItemEquiped("chan14","c-aran") !HasItemEquiped("chan15","c-aran") !HasItemEquiped("chan16","c-aran") !HasItemEquiped("chan17","c-aran") !HasItemEquiped("chan18","c-aran") !HasItemEquiped("dwchan01","c-aran") !HasItemEquiped("dwchan02","c-aran") RandomNum(3,2)~ THEN GOTO a2064
-  IF ~!HasItemEquiped("chan01","c-aran") !HasItemEquiped("chan02","c-aran") !HasItemEquiped("chan03","c-aran") !HasItemEquiped("chan04","c-aran") !HasItemEquiped("chan05","c-aran") !HasItemEquiped("chan06","c-aran") !HasItemEquiped("chan07","c-aran") !HasItemEquiped("chan08","c-aran") !HasItemEquiped("chan09","c-aran") !HasItemEquiped("chan10","c-aran") !HasItemEquiped("chan11","c-aran") !HasItemEquiped("chan12","c-aran") !HasItemEquiped("chan13","c-aran") !HasItemEquiped("chan14","c-aran") !HasItemEquiped("chan15","c-aran") !HasItemEquiped("chan16","c-aran") !HasItemEquiped("chan17","c-aran") !HasItemEquiped("chan18","c-aran") !HasItemEquiped("dwchan01","c-aran") !HasItemEquiped("dwchan02","c-aran") RandomNum(3,3)~ THEN GOTO a2065
+  IF ~OR(20) HasItemEquiped("chan01",Player1) HasItemEquiped("chan02",Player1) HasItemEquiped("chan03",Player1) HasItemEquiped("chan04",Player1) HasItemEquiped("chan05",Player1) HasItemEquiped("chan06",Player1) HasItemEquiped("chan07",Player1) HasItemEquiped("chan08",Player1) HasItemEquiped("chan09",Player1) HasItemEquiped("chan10",Player1) HasItemEquiped("chan11",Player1) HasItemEquiped("chan12",Player1) HasItemEquiped("chan13",Player1) HasItemEquiped("chan14",Player1) HasItemEquiped("chan15",Player1) HasItemEquiped("chan16",Player1) HasItemEquiped("chan17",Player1) HasItemEquiped("chan18",Player1) HasItemEquiped("dwchan01",Player1) HasItemEquiped("dwchan02",Player1) RandomNum(3,1)~ THEN GOTO a2060
+  IF ~OR(20) HasItemEquiped("chan01",Player1) HasItemEquiped("chan02",Player1) HasItemEquiped("chan03",Player1) HasItemEquiped("chan04",Player1) HasItemEquiped("chan05",Player1) HasItemEquiped("chan06",Player1) HasItemEquiped("chan07",Player1) HasItemEquiped("chan08",Player1) HasItemEquiped("chan09",Player1) HasItemEquiped("chan10",Player1) HasItemEquiped("chan11",Player1) HasItemEquiped("chan12",Player1) HasItemEquiped("chan13",Player1) HasItemEquiped("chan14",Player1) HasItemEquiped("chan15",Player1) HasItemEquiped("chan16",Player1) HasItemEquiped("chan17",Player1) HasItemEquiped("chan18",Player1) HasItemEquiped("dwchan01",Player1) HasItemEquiped("dwchan02",Player1) RandomNum(3,2)~ THEN GOTO a2061
+  IF ~OR(20) HasItemEquiped("chan01",Player1) HasItemEquiped("chan02",Player1) HasItemEquiped("chan03",Player1) HasItemEquiped("chan04",Player1) HasItemEquiped("chan05",Player1) HasItemEquiped("chan06",Player1) HasItemEquiped("chan07",Player1) HasItemEquiped("chan08",Player1) HasItemEquiped("chan09",Player1) HasItemEquiped("chan10",Player1) HasItemEquiped("chan11",Player1) HasItemEquiped("chan12",Player1) HasItemEquiped("chan13",Player1) HasItemEquiped("chan14",Player1) HasItemEquiped("chan15",Player1) HasItemEquiped("chan16",Player1) HasItemEquiped("chan17",Player1) HasItemEquiped("chan18",Player1) HasItemEquiped("dwchan01",Player1) HasItemEquiped("dwchan02",Player1) RandomNum(3,3)~ THEN GOTO a2062
+  IF ~!HasItemEquiped("chan01",Player1) !HasItemEquiped("chan02",Player1) !HasItemEquiped("chan03",Player1) !HasItemEquiped("chan04",Player1) !HasItemEquiped("chan05",Player1) !HasItemEquiped("chan06",Player1) !HasItemEquiped("chan07",Player1) !HasItemEquiped("chan08",Player1) !HasItemEquiped("chan09",Player1) !HasItemEquiped("chan10",Player1) !HasItemEquiped("chan11",Player1) !HasItemEquiped("chan12",Player1) !HasItemEquiped("chan13",Player1) !HasItemEquiped("chan14",Player1) !HasItemEquiped("chan15",Player1) !HasItemEquiped("chan16",Player1) !HasItemEquiped("chan17",Player1) !HasItemEquiped("chan18",Player1) !HasItemEquiped("dwchan01",Player1) !HasItemEquiped("dwchan02",Player1) RandomNum(3,1)~ THEN GOTO a2063
+  IF ~!HasItemEquiped("chan01",Player1) !HasItemEquiped("chan02",Player1) !HasItemEquiped("chan03",Player1) !HasItemEquiped("chan04",Player1) !HasItemEquiped("chan05",Player1) !HasItemEquiped("chan06",Player1) !HasItemEquiped("chan07",Player1) !HasItemEquiped("chan08",Player1) !HasItemEquiped("chan09",Player1) !HasItemEquiped("chan10",Player1) !HasItemEquiped("chan11",Player1) !HasItemEquiped("chan12",Player1) !HasItemEquiped("chan13",Player1) !HasItemEquiped("chan14",Player1) !HasItemEquiped("chan15",Player1) !HasItemEquiped("chan16",Player1) !HasItemEquiped("chan17",Player1) !HasItemEquiped("chan18",Player1) !HasItemEquiped("dwchan01",Player1) !HasItemEquiped("dwchan02",Player1) RandomNum(3,2)~ THEN GOTO a2064
+  IF ~!HasItemEquiped("chan01",Player1) !HasItemEquiped("chan02",Player1) !HasItemEquiped("chan03",Player1) !HasItemEquiped("chan04",Player1) !HasItemEquiped("chan05",Player1) !HasItemEquiped("chan06",Player1) !HasItemEquiped("chan07",Player1) !HasItemEquiped("chan08",Player1) !HasItemEquiped("chan09",Player1) !HasItemEquiped("chan10",Player1) !HasItemEquiped("chan11",Player1) !HasItemEquiped("chan12",Player1) !HasItemEquiped("chan13",Player1) !HasItemEquiped("chan14",Player1) !HasItemEquiped("chan15",Player1) !HasItemEquiped("chan16",Player1) !HasItemEquiped("chan17",Player1) !HasItemEquiped("chan18",Player1) !HasItemEquiped("dwchan01",Player1) !HasItemEquiped("dwchan02",Player1) RandomNum(3,3)~ THEN GOTO a2065
 END
 
 IF ~~ a2063
@@ -16423,8 +16427,9 @@ END
 IF ~~ a2080
   SAY ~[ARAN] Now that be a pickup line if I ever did here one. I am only happy to oblige. Just tell me when an' where, an' I will do my best to please you.~
   ++ ~[PC] Ooooh, goody. Meet me at the gates of hell, when it freezes solid.~ + a2084
-  ++ ~[PC] I could happen to leave my door unlatched tonight...~ DO ~SetGlobal("c-aranREinn","GLOBAL",1)~ + a2097
-  ++ ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ DO ~SetGlobal("c-aranREmoon","GLOBAL",1)~ + a2097
+  ++ ~[PC] I could happen to leave my door unlatched tonight...~ DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ + a2097
+  + ~!TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ + a2097
+  + ~TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside. Perhaps we could walk together.~ + a2097
   ++ ~[PC] Right now. Right here. I can't wait.~ + a2083
   ++ ~[PC] Oh, great. I forgot I was supposed to... I can't do this. I am sorry. I was about to make an excuse, but you deserve the truth. I just can't do this with you.~ + a2084
 END
@@ -16492,7 +16497,11 @@ END
 IF ~~ a2094 SAY ~[ARAN] Accidents do happen, they do. Right now, though, I think I might be a bit better off if you practice a bit. An' me, I... well, I think I needs best be gettin' a good drink. Or a solid splash o' ice-cold water. Or both.~ IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2095 SAY ~[ARAN] Well, thank you right kindly. It were a mite bit small for so large a healin' touch, but I do appreciate it. I think I needs best be gettin' a good drink, or mayhap a bit o' cold water to slow th' swellin'. Hey, no gigglin'!~ IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2096 SAY ~[ARAN] (You work together for a time, his strong hands guiding yours over copywork again and again, shaping and moving words and figures, until at last the ink is spent.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
-IF ~~ a2097 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN EXIT END /* PLACEHOLDER _ SET INN VISIT */
+IF ~~ a2097 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN EXIT END
+IF ~~ a2097_walking 
+  SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ 
+  IF ~~ THEN GOTO new_walking_action
+END
 IF ~~ a2098 SAY ~[ARAN] I never did have so much fun doin' absolutely nothin'. Just be careful, eh? On account o' you are completely intoxicatin'.~ IF ~~ THEN DO ~RestParty()~ EXIT END
 
 IF ~~ a2099
@@ -16582,7 +16591,12 @@ IF ~~ a2279
 END
 
 IF ~~ a2280
-  SAY ~[ARAN] I can do that. (It is a scant few steps before you are walking together outside.) ~
+  SAY ~[ARAN] I can do that.~
+  IF ~~ THEN GOTO new_walking_action
+END
+
+IF ~~ new_walking_action
+  SAY ~[ARAN] (It is a scant few steps before you are walking together outside.) ~
   IF ~TimeOfDay(NIGHT)~ THEN GOTO a3466 /* PC_NIGHT_WATCH */
   IF ~!TimeOfDay(NIGHT)~ THEN GOTO a3441 /* PC_OUTDOOR_PLACE */
 END
@@ -17026,7 +17040,7 @@ IF ~~ a824
   SAY ~[ARAN] Now then, let's see what sort of player you are. Choose a fist, an' let's get playin'.~
   ++ ~[PC] (You play carefully and calmly, sweeping the board of his pieces and trapping his king only after decimating the board.)~ + a862
   ++ ~[PC] (You play poorly, allowing him to win, his grin increasing with each piece he takes. Eventually, your king is stripped of all companions, and you tip him over to indicate your loss.)~ + a854
-  ++ ~[PC] (You play carefully and calmly, but at every turn your moves are twarted... and Aran wins the game.)~ + a862
+  ++ ~[PC] (You play carefully and calmly, but at every turn your moves are thwarted... and Aran wins the game.)~ + a854
   ++ ~[PC] (You cheat mercilessly, leaning forward and exposing soft skin to him whenever possible until his distraction is complete - as is his loss.)~ + a862
   ++ ~[PC] (You play with wild abandon, sacrificing pawns with no reason and generally causing chaos on the board, until no one is sure exactly what rules, if any, are in play. As it appears Aran is going to win, you clear the board with a broad sweep of your hands, covering the board with your body.)~ + a825
 END
@@ -17262,7 +17276,7 @@ IF ~~ a3005
   + ~RandomNum(4,3) Global("c-aransex","GLOBAL",3)~ + ~[PC] I want a bath, and some time to relax. Come on, show me where they are around here.~ + a2276
   + ~RandomNum(4,3) Global("c-aransex","GLOBAL",4)~ + ~[PC] I want a bath, and some time to relax. Come on, show me where they are around here.~ + a2277
   + ~RandomNum(4,4)~ + ~[PC] Teach me to scribe something new.~ + a2286
-  + ~TimeofDay(NIGHT)~ + ~[PC] This place is too stuffy and warm. I think that you should escort me on a moonlit walk.~ + a2280
+  + ~!TimeofDay(DAY)~ + ~[PC] This place is too stuffy and warm. I think that you should escort me on a moonlit walk.~ + a2280
   + ~TimeofDay(DAY)~ + ~[PC] This place is too stuffy and closed up. I think that you should escort me on a nice quiet walk.~ + a2583
   + ~InParty(Player2) Gender(Player2,FEMALE) !Name("c-aran",Player2)~ + ~[PC] Actually, I was looking for <PLAYER2>. Have you seen her?~ + a3006
   + ~InParty(Player3) Gender(Player3,FEMALE) !Name("c-aran",Player3)~ + ~[PC] Actually, I was looking for <PLAYER3>. Have you seen her?~ + a3006
@@ -17408,24 +17422,24 @@ END
 IF ~Global("c-arangravecomment","LOCALS",1) TimeOfDay(DAY)~ THEN BEGIN a2321_day
   SAY ~[ARAN] You know, I thought it might be right fine to pay respects to th' dead, an' wander among th' headstones. Thought it might be peaceful, an' not spooky at all.~
   = ~[ARAN] Then again, mother always did say I be a proper idiot.~
-  IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ EXIT
 END
 
 IF ~Global("c-arangravecomment","LOCALS",1) !TimeOfDay(DAY)~ THEN BEGIN a2321_night
   SAY ~[ARAN] Somehow, it seems th' type o' folks you meet in a boneyard just don't always seem to have th' best interest o' me an' mine held proper. Mayhap we stop all this grave-grubbin', at least until after daylight. This place be a mite less than cheerful, eh?~
-  IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
 
 /* Scenery Talks : On waking banter, after Underdark : dlg */
 
 IF ~Global("c-aranwakeup","LOCALS",1) OR(2) TimeOfDay(DAY) TimeOfDay(MORNING)~ THEN BEGIN a2321_wakingday
   SAY ~[ARAN] Birds. Daylight. Sunrise. Blighted hells, it be nice to stretch out after a real sleep, an' see th' sky...~ [c-aws110]
-  IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2)~ GOTO a1806
+  IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ GOTO a1806
 END
 
 IF ~Global("c-aranwakeup","LOCALS",1) !TimeOfDay(DAY) !TimeOfDay(MORNING)~ THEN BEGIN a2193_wakingnight
   SAY ~[ARAN] Stars. Breezes. Selune Herself, shinin' down. Blighted hells, it be nice to stretch out after a real sleep, an' see th' sky...~ [c-aws111]
-  IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2)~ GOTO a1806
+  IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ GOTO a1806
 END
 
 IF ~~ a1806
@@ -25067,7 +25081,7 @@ IF ~~ a1097 SAY ~[ARAN] Sorry. It be th' eyes. No, the ears. No, the chin... hel
 IF ~~ a1098 SAY ~[ARAN] Yep. We have done so much good, our Cyric-blighted poop don't stink. Not that I mind, eh?~ IF ~~ THEN EXIT END
 IF ~~ a1099 SAY ~[ARAN] Well, some good, some non-committal, but in general, we are on th' side o' Solars an' Planetars, eh? Good place to be, unless we are headed to Calimport next.~ IF ~~ THEN EXIT END
 IF ~~ a1100 SAY ~[ARAN] If by reputation, you mean "who the hells are those idiots standin' over in the corner wi' all the fancy gear', then aye. Most folks just don't rightly know what to make o' us.~ IF ~~ THEN EXIT END
-IF ~~ a1101 SAY ~[ARAN] Yep. Red Wizards, Xanathar's Guild, Zhents, an' us. Gets th' job done right quick when we say '<CHARNAME', an' folks start tremblin' an' hidin' their children.~ IF ~~ THEN EXIT END
+IF ~~ a1101 SAY ~[ARAN] Yep. Red Wizards, Xanathar's Guild, Zhents, an' us. Gets th' job done right quick when we say '<CHARNAME>', an' folks start tremblin' an' hidin' their children.~ IF ~~ THEN EXIT END
 IF ~~ a1102 SAY ~[ARAN] Sure. Hells, that last bar, I mentioned your name to a Red Wizard an' he pissed himself. That be power o' I kind, I guess.~ IF ~~ THEN EXIT END
 IF ~~ a1103 SAY ~[ARAN] Well, thank you right kindly, but I still got some work to do on th' scroll you had me start on. I'll be lettin' you know if I get stuck, though.~ IF ~~ THEN EXIT END
 IF ~~ a1104 SAY ~[ARAN] Aye. You sure could use some. Or was that some sort o' crack about my lack o' skills?~ IF ~~ THEN EXIT END
@@ -25153,7 +25167,7 @@ IF ~~ a1174 SAY ~[ARAN] OUCH! Blighted hells, girl, you want to tear th' hair ou
 IF ~~ a1175 SAY ~[ARAN] (Aran mimes staggering, grabs his arm dramatically, and twists his face in mock agony - though his grin spoils the whole effect.) Oh no, I've been right mortally wounded, I have. Quick, someone get a healer an' a stretcher, or I might lose th' whole arm for good!~ IF ~~ THEN EXIT END
 IF ~~ a1176 SAY ~[ARAN] (Aran jumps back quickly, grinning as the water splashes harmlessly on the ground.) Sune's Sweet Smile, you are an evil creature, you are! All sweetness an' light, butter wouldn't melt in your mouth, an' then you go dumpin' water over a poor boy. Now, let's just see, mistress funny one, what I can do to return th' favor. Just remember, when you least expect it, well, expect it!~ IF ~~ THEN EXIT END
 IF ~~ a1177 SAY ~[ARAN] Liira's Laugh, lassie - no call for th' sarcasm! Now, you want th' strap tighter, or looser? (His arms brush close and strong around you as he searches for the strap, and a sharp tug threatens to throw you to the ground.)~ IF ~~ THEN EXIT END
-IF ~~ a1178 SAY ~[ARAN] (Aran glances in your direction occasionally, attempting to concentrate. He loosens his arms a bit, flexing slightly, then glances your direction. Finally, he shakes his head sharply, squares his shoulders, and moves away from you.)~ IF ~~ THEN EXIT END
+IF ~~ a1178 SAY ~[ARAN] (Aran casts a glance your way, then clears his throat, attempting to concentrate. He loosens his arms a bit, flexing slightly, then glances your in your direction again. Finally, he shakes his head sharply, squares his shoulders, and moves away from you.)~ IF ~~ THEN EXIT END
 IF ~~ a1179 SAY ~[ARAN] (Aran's distracted glances center on your finger, watching it curling and uncurling, bending and unbending. His gaze drops to your eyes, and he blushes when he realizes he has been caught staring. A brusque cough, and he is back attending to his duties.)~ IF ~~ THEN EXIT END
 IF ~~ a1180 SAY ~[ARAN] (Aran completely fails to notice the flower, until he begins digging in his pouch for odds and ends. He brings the mangled husk of wildflower remnants out cupped in the palm of his hand, staring at them in deep puzzlement.) Chauntea's Rosy Cheeks, I must o' been drunk or asleep. I should know better than to gamble with a mage - that bastard must o' put a spell on a flower an' made it look like good coin. Oh well - easy come, easy go, eh?~ IF ~~ THEN EXIT END
 IF ~~ a1181 SAY ~[ARAN] I'd be right happy to, <CHARNAME>. Now you were talkin' swords, or daggers? Or perhaps a mite o' hand-to-hand? I don't suppose you mean lipwrestlin', but a man has to hold out hope, he does...~ IF ~~ THEN EXIT END
@@ -28332,6 +28346,94 @@ IF ~Global("c-arannightvisit","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN B
   + ~Global("c-arankisses","LOCALS",9)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARANJ a3568 /* START_LIP_EXERCISES */
 END
 
+
+END
+
+/* Madam Nin Dialog : Playing Aran */ 
+APPEND MADAM
+
+IF WEIGHT #-1 ~Name("c-aran",LastTalkedToBy) Global("c-aranmadam","GLOBAL",0)~ THEN BEGIN c-aranmadamnin
+  SAY ~[MADAM] Greetings, my <LADYLORD>.  I am Madame Nin, and I am here to ensure you are pleasantly accompanied.  Are you interested in companionship, my <LADYLORD>?~
+  + ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[ARAN] Now, if I didn't already have my eye on a certain someone, I might be a bit interested, an' that be th' truth. But I was actually hopin' you might have one o' those Calshite bathin' places around here. Any luck on that?~ DO ~SetGlobal("c-aranmadam","GLOBAL",1)~ + c_one_nin 
+  + ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + ~[ARAN] No, I think I won't rightly need anyone to help in that direction. I saw a lass up th' street what looked more like my type. You know, young... beautiful... unattainable... th' usual ego-smashin' fun a lad likes to subject himself to, eh?~ DO ~SetGlobal("c-aranmadam","GLOBAL",1)~ EXTERN MADAM 2
+END
+
+IF ~~ c_one_nin
+  SAY ~[MADAM] I am sorry, my <LADYLORD>.  We do not have a large enough establishment to offer such delights.~
+  IF ~~ THEN EXTERN C-ARANJ c-no_such_delights
+END
+
+END
+
+APPEND C-ARANJ
+
+IF ~~ c-no_such_delights
+  SAY ~[ARAN] Now there be a golden opportunity wasted, you know. You ever decide to expand, an' mayhap need a hand wi' th' contracts an' such, look me up, eh? Aran Whitehand, Sword n' Pen. Trade Contracts and Copywork Drawn. Here, have one o' my broadsides. Wait, take two.~
+  IF ~~ THEN EXIT
+END
+
+END
+
+/* NPC Gypsy Fortunetelling */
+EXTEND_BOTTOM TRGYP02 2
+IF ~!InPartySlot(LastTalkedToBy,0) Name("c-aran",LastTalkedToBy)~ THEN EXTERN TRGYP02 c-aranfortune
+END
+
+APPEND TRGYP02
+
+IF ~~ c-aranfortune
+  SAY ~[TRGYP02] Your loyalty is your friend, your foe; your death, your life... it will bring you great happiness and great pain. Your sword swings wide of its mark, but your worth lies in the swing not the connection. There is little you will accomplish alone, yet you have the path of greatness open before you.~
+  IF ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ c-aranfortunetold
+  IF ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ c-aranotherfortunetold
+END
+END
+
+APPEND C-ARANJ
+IF ~~ c-aranfortunetold
+  SAY ~[ARAN] Gond's Great Gear, an' here all I wanted was to know if I should be bettin wi' this set o' dice, or get new ones, on account o' th' last few times they seem a mite bit cursed.~
+  IF ~~ EXIT
+END
+
+/* Fun with songs! */ 
+IF ~~ c-aranotherfortunetold
+  SAY ~[ARAN] Gond's Great Gear, an' here all I wanted was to know if I should be sendin' nice little notes back to Erika, on account o' her bein' just about th' right stage to break up wi' that beau o' hers. Or mayhap th' young lass in Trademeet, th' one wi' th' coppery hair hangin' over her shoulder all tied up in a black velvet band. Or mayhap th' young lass outside o' Nashkel, th' bold bright black eyes what sparkled... no, no... mayhap some other lass be th' right one to be courtin' from afar.~ // Black Velvet Band, The Raven Eyed Lass
+  ++ ~[PC] Or the young woman in the stables outside the Government district? The one they call 'Mustang Sally'?~ + c_mustangsally // pickett
+  ++ ~[PC] Just don't bother with Alice. I have heard all the gilrs love Alice.~ + c_allthegirlslovealice // Elton John
+  ++ ~[PC] You always go on and on about some girl named Eileen, and how at this moment she means everything...~ + c_comeoneileen // Dexy
+  ++ ~[PC] There was that Elenor somebody you used to mutter about.~ + c_elenorrigby // Beatles
+  ++ ~[PC] What about that bardess Chiquitita? I heard she has a new song...~ + c_chiquitita // ABBA
+  ++ ~[PC] I thought you liked that barmaid in the Trade district... Sue, wasn't that her name?~ + c_runaroundsue // Dion
+END
+
+IF ~~ c_mustangsally // pickett
+  SAY ~[ARAN] I tried to get that lass to spark, but all she wanted to do was ride. Now, don't you be lookin' at me that way... I mean ride th' horses around an' look at th' sights! If that were innuendo, my friend, you would not have me along. I'd be right by her side to this day!~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ c_allthegirlslovealice // Elton John
+  SAY ~[ARAN] Now, how were I to know she preferered th' ladies? She wore th' flower in both ears, an' seemed interested in me as much as any. No, I think I wouldn't be askin' about her.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ c_comeoneileen // Dexy and the Midnight Runners 
+  SAY ~[ARAN] No, I want naught o' Eileen. She ran off in th' dead o' night wi' some young lad named Dexy. That girl were a keeper, though. She could keep a lad wantin' more.~
+  IF ~~ THEN EXIT
+END
+  
+IF ~~ c_elenorrigby // Beatles
+  SAY ~[ARAN] Now that were a lass to remember. last I heard, though, she up an' died. She be buried somewhere right lonely, too. Not many made th' funeral. Pity.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ c_chiquitita // ABBA
+  SAY ~[ARAN] Now that be a right fine young lass. Th' way her neck moves just so, an' th' gentle curves... hells, what were I talkin' about? Oh, no. Not her. She loved th' sadness an' despondency o' broken romance. Hells, we broke up three times in one night, just on account o' she wanted to make up. Not that makin' up were hard to do...~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ c_runaroundsue  //  Dion
+  SAY ~[ARAN] Now don't be bringin' that evil wench into th' conversation. Chestnut hair, snub little nose, eyes set just too wide to be pretty... but a sparkin' spirit an' a body like to kill a man what looks at it. That wench done run around wi' half o' Amn, an' she kept promisin' I were her one an' only. No Sue on th' questionin' for me!~
+  IF ~~ THEN EXIT
+END
 
 END
 

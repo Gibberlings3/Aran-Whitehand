@@ -1,3 +1,40 @@
+/* look for incrementing relationship to kissing + touching */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",2) // kissed and touched
+	Global("c-aransex","GLOBAL",1) // not registered
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",2) // we kissed and touched
+END
+/* look for incrementing relationship to petting */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
+	Global("c-aransex","GLOBAL",2) // not registered
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
+END
+
+/* look for incrementing relationship to full intimacy */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",4) // shared everything
+	Global("c-aransex","GLOBAL",3)
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",4) // shared everything
+END
 
 /* Watcher's Keep */
 IF
@@ -799,42 +836,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aransex","GLOBAL",1) // we kissed.
-END
-/* look for incrementing relationship to kissing + touching */
-IF
-	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	Global("c-aranintimate","GLOBAL",2) // kissed and touched
-	Global("c-aransex","GLOBAL",1) // not registered
-	Gender(Player1,FEMALE)
-	!HasItemEquiped("belt05",Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("c-aransex","GLOBAL",2) // we kissed and touched
-END
-/* look for incrementing relationship to petting */
-IF
-	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
-	Global("c-aransex","GLOBAL",2) // not registered
-	Gender(Player1,FEMALE)
-	!HasItemEquiped("belt05",Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
-END
-/* look for incrementing relationship to full intimacy */
-IF
-	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	Global("c-aranintimate","GLOBAL",4) // shared everything
-	Global("c-aransex","GLOBAL",3)
-	Gender(Player1,FEMALE)
-	!HasItemEquiped("belt05",Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("c-aransex","GLOBAL",4) // shared everything
 END
 /* BCS Blocks for Scroll Creation */
 /* c-arSCRL15 Aran PID: Create Scroll of Protection from Petrification */
@@ -2928,8 +2929,6 @@ THEN
 	EndCutSceneMode()
 END
 
-
-
 /* Player Stronghold Reactions */
 
 /* Gaining Stronghold Responses : set from .bcs */
@@ -2948,8 +2947,9 @@ IF
 	GlobalGT("DruidStrongHold","GLOBAL",0) 
 	GlobalGT("PCSphere","GLOBAL",0) 
 	GlobalGT("RangerProtector","GLOBAL",0)	 
-THEN RESPONSE #100
-	SetGlobal("c-aranas","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranas","LOCALS",1)
 END
 
 /* Bards : Activate */
@@ -2962,9 +2962,8 @@ IF
 	!See([ENEMY])
 	!ActuallyInCombat()
 THEN
-RESPONSE #100
-	SetGlobal("c-aranbs","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+	RESPONSE #100
+		SetGlobal("c-aranbs","LOCALS",1)
 END
 
 /* Bards : Initiate */
@@ -2976,19 +2975,19 @@ IF
 	!See([ENEMY])
 	!ActuallyInCombat()
 THEN
-RESPONSE #100
-	PlaySong(0)
-	PlaySound("c-arnfth")
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
 END
 
 /* Clerics : Activate */
 IF
 	Global("c-arancs","LOCALS",0)
 	OR(3)
-	Global("JoinLathander","GLOBAL",1)
-	Global("JoinTalos","GLOBAL",1)
-	Global("JoinHelm","GLOBAL",1)
+		Global("JoinLathander","GLOBAL",1)
+		Global("JoinTalos","GLOBAL",1)
+		Global("JoinHelm","GLOBAL",1)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -2997,7 +2996,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-arancs","LOCALS",1)
-		RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
 END
 
 /* Clerics : Initiate */
@@ -3024,9 +3022,9 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!ActuallyInCombat()
 	!See([ENEMY])
-THEN RESPONSE #100
-	SetGlobal("c-arands","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+THEN 
+	RESPONSE #100
+		SetGlobal("c-arands","LOCALS",1)
 END
 
 /* Druids : Activate */
@@ -3038,10 +3036,10 @@ IF
 	!See([ENEMY])
 	!ActuallyInCombat()
 THEN
-RESPONSE #100
-	PlaySong(0)
-	PlaySound("c-arnfth")
-	StartDialogueNoSet(Player1)
+	RESPONSE #100
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
 END
 
 /* Fighters : Activate */
@@ -3055,8 +3053,7 @@ IF
 	!See([ENEMY])
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranfs","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+		SetGlobal("c-aranfs","LOCALS",1)
 END
 
 /* Fighters : Initiate */
@@ -3069,9 +3066,9 @@ IF
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-	PlaySong(0)
-	PlaySound("c-arnfth")
-	StartDialogueNoSet(Player1)
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
 END
 
 /* Mages : Activate */
@@ -3085,11 +3082,10 @@ IF
 	!See([ENEMY])
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranms","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+		SetGlobal("c-aranms","LOCALS",1)
 END
 
-/* Mages : Activate */
+/* Mages : Initiate */
 IF
 	Global("c-aranms","LOCALS",1)
 	InParty(Myself)
@@ -3099,9 +3095,9 @@ IF
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-	PlaySong(0)
-	PlaySound("c-arnfth")
-	StartDialogueNoSet(Player1)
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
 END
 
 /* Paladins : Activate */
@@ -3115,8 +3111,7 @@ IF
 	!See([ENEMY])
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranps","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+		SetGlobal("c-aranps","LOCALS",1)
 END
 
 /* Paladins : Initiate */
@@ -3145,8 +3140,7 @@ IF
 	!See([ENEMY])
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranrs","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+		SetGlobal("c-aranrs","LOCALS",1)
 END
 
 /* Rangers : Initiate */
@@ -3182,8 +3176,7 @@ IF
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranas","LOCALS",1)
-	RealSetGlobalTimer("c-aranstrong","GLOBAL",180)
+		SetGlobal("c-aranas","LOCALS",1)
 END
 
 /* Got All Strongholds : Initiate */
@@ -3197,9 +3190,9 @@ IF
 	!ActuallyInCombat()
 THEN
 	RESPONSE #100
-	PlaySong(0)
-	PlaySound("c-arnfth")
-	StartDialogueNoSet(Player1)
+		PlaySong(0)
+		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
 END
 
 
@@ -3217,23 +3210,26 @@ END
 
 /* Friend Talks Setup	*/
 IF
-	Global("c-aranfriendbg2","GLOBAL",0)	 // Not evaluated true yet
+	Global("c-aranfriendsetup","GLOBAL",0)	 // Not evaluated true yet
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 THEN
 	RESPONSE #100								// 100% of the time
-		SetGlobal("c-aranfriendbg2","GLOBAL",1)		 //	set up SoA_FT_1
+		SetGlobalTimer("c-aransmalltalk","GLOBAL",60)
 		SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
+		SetGlobal("c-aranfriendsetup","GLOBAL",1)
 		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",160)	// Minimum Real Time until SoA_FT_1	is called, unlless the player initiates PID and triggers it 
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghild spacer timer 
 END
 
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",27)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-	OR(13)
+	OR(14)
+		Global("c-aranfriendbg2","GLOBAL",0)	// set up SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",2)	// set up SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",4)	// set up SoA_FT_3
 		Global("c-aranfriendbg2","GLOBAL",6)	// set up SoA_FT_4
@@ -3257,7 +3253,7 @@ END
 /* Aran's FriendTalks Fire, c-aranfriendbg2, ARAN_FTT */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",28)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
 	InParty(Myself)						// Aran is here
@@ -3266,11 +3262,11 @@ IF
 	!ActuallyInCombat()
 	!See([ENEMY])	// Can't see any enemies
 	OR(14)
-		Global("c-aranfriendbg2","GLOBAL",1)	 // fire SoA_FT_1
-		Global("c-aranfriendbg2","GLOBAL",3)	 // fire SoA_FT_2
-		Global("c-aranfriendbg2","GLOBAL",5)	 // fire SoA_FT_3
-		Global("c-aranfriendbg2","GLOBAL",7)	 // fire SoA_FT_4
-		Global("c-aranfriendbg2","GLOBAL",9)	 // fire SoA_FT_5
+		Global("c-aranfriendbg2","GLOBAL",1)		// fire SoA_FT_1
+		Global("c-aranfriendbg2","GLOBAL",3)		// fire SoA_FT_2
+		Global("c-aranfriendbg2","GLOBAL",5)		// fire SoA_FT_3
+		Global("c-aranfriendbg2","GLOBAL",7)		// fire SoA_FT_4
+		Global("c-aranfriendbg2","GLOBAL",9)		// fire SoA_FT_5
 		Global("c-aranfriendbg2","GLOBAL",11)	// fire SoA_FT_6
 		Global("c-aranfriendbg2","GLOBAL",13)	// fire SoA_FT_7
 		Global("c-aranfriendbg2","GLOBAL",15)	// fire SoA_FT_8
@@ -3293,9 +3289,9 @@ END
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
-	GlobalLT("c-aranfriendud","GLOBAL",8)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendud","GLOBAL",9)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	OR(4)
+	OR(5)
 		Global("c-aranfriendud","GLOBAL",0)	// set up SoA_UDFT_1
 		Global("c-aranfriendud","GLOBAL",2)	// set up SoA_UDFT_2
 		Global("c-aranfriendud","GLOBAL",4)	// set up SoA_UDFT_3
@@ -3317,7 +3313,7 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	CombatCounter(0)	// Not in combat
 	!See([ENEMY])	// Can't see any enemies
-	OR(4)
+	OR(5)
 		Global("c-aranfriendud","GLOBAL",1)	 // fire SoA_UDFT_1
 		Global("c-aranfriendud","GLOBAL",3)	 // fire SoA_UDFT_2
 		Global("c-aranfriendud","GLOBAL",5)	 // fire SoA_UDFT_3
@@ -3379,7 +3375,7 @@ END
 /* Aran's Romance LoveTalks Aim, c-aranbg2rom, ARAN_LTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranbg2rom","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-aranbg2rom","GLOBAL",15)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	GlobalGT("c-aranfriendbg2","GLOBAL",5) //	FT 3 has played
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
@@ -3414,7 +3410,7 @@ IF
 	See(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
-	GlobalLT("c-aranbg2rom","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-aranbg2rom","GLOBAL",16)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
@@ -3534,23 +3530,23 @@ IF
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 	!HasItemEquiped("belt05",Player1)
 	CombatCounter(0)
-	!AreaCheck("AR2100")
-	!AreaCheck("AR2101")
-	!AreaCheck("AR2102")
-	!AreaCheck("AR2200")
-	!AreaCheck("AR2201")
-	!AreaCheck("AR2202")
-	!AreaCheck("AR2203")
-	!AreaCheck("AR2204")
-	!AreaCheck("AR2205")
-	!AreaCheck("AR2206")
-	!AreaCheck("AR2207")
-	!AreaCheck("AR2208")
-	!AreaCheck("AR2209")
-	!AreaCheck("AR2210")
-	!AreaCheck("AR2400")
-	!AreaCheck("AR2401")
-	!AreaCheck("AR2402")
+	!AreaCheck("AR2100") // Underdark
+	!AreaCheck("AR2101") // Beholder Cave in Underdark
+	!AreaCheck("AR2102") // Adalon's Cave
+	!AreaCheck("AR2200") // Ust Natha
+	!AreaCheck("AR2201") // Temple in Ust Natha
+	!AreaCheck("AR2202") // Inn in Ust Natha 1st Floor
+	!AreaCheck("AR2203") // Inn in Ust Natha; 2nd Floor
+	!AreaCheck("AR2204") // House in Ust Natha
+	!AreaCheck("AR2205") // House in Ust Natha
+	!AreaCheck("AR2206") // Qilue's House in Ust Natha
+	!AreaCheck("AR2207") // Deirex's Tower in Ust Natha
+	!AreaCheck("AR2208") // Jarlaxle's House wherever
+	!AreaCheck("AR2209") // Jae'llat's House
+	!AreaCheck("AR2210") // Deirex's Cave
+	!AreaCheck("AR2400") // Mind Flayers in Underdark
+	!AreaCheck("AR2401") // Cave Between Underdark and Exit from Underdark
+	!AreaCheck("AR2402") // Kuo Toa in Underdark
 THEN 
 	RESPONSE #100
 		SetGlobal("c-aranheavyflirt","GLOBAL",1)
@@ -3575,27 +3571,28 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 	CombatCounter(0)
-	!AreaCheck("AR2100")
-	!AreaCheck("AR2101")
-	!AreaCheck("AR2102")
-	!AreaCheck("AR2200")
-	!AreaCheck("AR2201")
-	!AreaCheck("AR2202")
-	!AreaCheck("AR2203")
-	!AreaCheck("AR2204")
-	!AreaCheck("AR2205")
-	!AreaCheck("AR2206")
-	!AreaCheck("AR2207")
-	!AreaCheck("AR2208")
-	!AreaCheck("AR2209")
-	!AreaCheck("AR2210")
-	!AreaCheck("AR2400")
-	!AreaCheck("AR2401")
-	!AreaCheck("AR2402")
-THEN RESPONSE #100
-	SetGlobal("c-aranbedflirt","GLOBAL",1)
-	SetGlobal("c-aranrom","GLOBAL",2)
-	StartDialogNoSet(Player1)
+	!AreaCheck("AR2100") // Underdark
+	!AreaCheck("AR2101") // Beholder Cave in Underdark
+	!AreaCheck("AR2102") // Adalon's Cave
+	!AreaCheck("AR2200") // Ust Natha
+	!AreaCheck("AR2201") // Temple in Ust Natha
+	!AreaCheck("AR2202") // Inn in Ust Natha 1st Floor
+	!AreaCheck("AR2203") // Inn in Ust Natha; 2nd Floor
+	!AreaCheck("AR2204") // House in Ust Natha
+	!AreaCheck("AR2205") // House in Ust Natha
+	!AreaCheck("AR2206") // Qilue's House in Ust Natha
+	!AreaCheck("AR2207") // Deirex's Tower in Ust Natha
+	!AreaCheck("AR2208") // Jarlaxle's House wherever
+	!AreaCheck("AR2209") // Jae'llat's House
+	!AreaCheck("AR2210") // Deirex's Cave
+	!AreaCheck("AR2400") // Mind Flayers in Underdark
+	!AreaCheck("AR2401") // Cave Between Underdark and Exit from Underdark
+	!AreaCheck("AR2402") // Kuo Toa in Underdark
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranbedflirt","GLOBAL",1)
+		SetGlobal("c-aranrom","GLOBAL",2)
+		StartDialogNoSet(Player1)
 END
 
 
@@ -3687,7 +3684,7 @@ END
 
 IF
 	GlobalLT("c-arandrunk","GLOBAL",4)	// shuts down sequence when finished
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -3723,35 +3720,33 @@ END
 
 /* Commenting on some Monster Encounters, Working for The Man/Undead */
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL")
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-		Global("c-aranlich","LOCALS",1)
+	Global("c-aranlich","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-		Global("c-aranshadelord","LOCALS",1)
+	Global("c-aranshadelord","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3760,26 +3755,24 @@ IF
 		Global("c-arandragon","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-		Global("c-aranbasilisk","LOCALS",1)
+	Global("c-aranbasilisk","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3788,12 +3781,11 @@ IF
 		Global("c-aranettercap","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3802,12 +3794,11 @@ IF
 		Global("c-arangolem","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3816,12 +3807,11 @@ IF
 		Global("c-aranzombie","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3830,21 +3820,19 @@ IF
 		Global("c-aranworkbod","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-		Global("c-aranworkaran","LOCALS",1)
+	Global("c-aranworkaran","LOCALS",1)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
@@ -3908,6 +3896,17 @@ IF
 THEN
 	RESPONSE #100
 		StartDialogueNoSet(Player1)
+END
+
+/* escape if not played */
+IF
+	Global("c-arshaddrag","GLOBAL",1)
+	InParty(Myself)
+	!AreaCheck("AR1402")
+	Dead("ShaDra01")	
+THEN
+	RESPONSE #100
+		SetGlobal("c-arshaddrag","GLOBAL",5)
 END
 
 /* Aran Dragon-Slayer (Darios) */
@@ -4005,7 +4004,7 @@ END
 
 /* Commenting on PC being tired, 1 time */
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranpctired","LOCALS",1)
 	InParty(Myself)
@@ -4013,13 +4012,12 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 /* Commenting on Phaerie */
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranphaere","LOCALS",1)
 	InParty(Myself)
@@ -4027,13 +4025,12 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 /* Commenting on Leader */
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+//	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranleader","LOCALS",1)
 	InParty(Myself)
@@ -4041,13 +4038,12 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
 /* Commenting on Slaver Procession */
 IF
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranslaver","LOCALS",1)
 	InParty(Myself)
@@ -4055,7 +4051,6 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 		StartDialogNoSet(Player1)
 END
 
@@ -4088,6 +4083,16 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranslaver","LOCALS",1)
+END
+
+/* Slums Slavers (Darios, extended) Escape if not played */
+IF
+	Global("c-aranslaver","LOCALS",1)
+	InParty(Myself)
+	!AreaCheck("AR0400")	// The Slums
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranslaver","LOCALS",9)
 END
 
 /* Setting Aran as Leader */
@@ -4136,6 +4141,18 @@ THEN
 		StartDialogueNoSet(Player1)
 END 
 
+/* Scenery Dialog : Graveyard Escape if not played in time */
+IF
+	Global("c-arangravecomment","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!AreaCheck("AR0800")
+THEN
+	RESPONSE #100
+		SetGlobal("c-arangravecomment","LOCALS",9)
+END
+
 IF
 	Global("PlayerThiefGuild","GLOBAL",1)
 	Global("c-aranguild","LOCALS",0)
@@ -4148,21 +4165,79 @@ END
 /* Scenery Dialog : Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight) Firing */
 IF
 	!Class(Myself,CLERIC_ALL)
-	!GlobalTimerNotExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has never been set or has expired
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
-	OR(6)
-		Global("c-aranoghma","LOCALS",1)
-		Global("c-aranilmater","LOCALS",1)
-		Global("c-aranhelm","LOCALS",1)
-		Global("c-aranlath","LOCALS",1)
-		Global("c-aranumberlee","LOCALS",1)
-		Global("c-aranwaukeen","LOCALS",1)
+	Global("c-aranoghma","LOCALS",1)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-aranilmater","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-aranhelm","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-aranlath","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-aranumberlee","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-aranwaukeen","LOCALS",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
 		StartDialogNoSet(Player1)
 END
 
@@ -4183,6 +4258,19 @@ END
 IF
 	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranoghma","LOCALS",1)
+	!AreaCheck("AR0319") //	Temple of Oghma
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranoghma","LOCALS",0)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranilmater","LOCALS",0)
 	OR(2)
 		AreaCheck("AR0408") //	Temple of Ilmater
@@ -4192,7 +4280,21 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranilmater","LOCALS",1)
+		SetGlobal("c-aranilmater","LOCALS",1)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranilmater","LOCALS",1)
+	!AreaCheck("AR0408") //	Temple of Ilmater
+	!AreaCheck("AR0703") //	Temple of Ilmater
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranilmater","LOCALS",0)
 END
 
 IF
@@ -4213,6 +4315,20 @@ END
 IF
 	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranhelm","LOCALS",1)
+	!AreaCheck("AR0512") //	Temple of Helm
+	!AreaCheck("AR0901") //	Temple of Helm
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranhelm","LOCALS",0)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranlath","LOCALS",0)
 	AreaCheck("AR0902") //	Temple of Lathander
 	InParty(Myself)
@@ -4222,6 +4338,20 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranlath","LOCALS",1)
 END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranlath","LOCALS",1)
+	!AreaCheck("AR0902") //	Temple of Lathander
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranlath","LOCALS",0)
+END
+
 
 /*
 IF
@@ -4254,6 +4384,19 @@ END
 IF
 	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranumberlee","LOCALS",1)
+	!AreaCheck("AR1604") //	Temple of Umberlee
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranumberlee","LOCALS",0)
+END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranwaukeen","LOCALS",0)
 	OR(2)
 		AreaCheck("AR1010") //	Temple of Waukeen
@@ -4265,6 +4408,21 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranwaukeen","LOCALS",1)
 END
+
+IF
+	!Class(Myself,CLERIC_ALL)
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranwaukeen","LOCALS",1)
+	!AreaCheck("AR1010") //	Temple of Waukeen
+	!AreaCheck("AR2008") //	Temple of Waukeen
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranwaukeen","LOCALS",0)
+END
+
 
 /*	Gavin Raised From The Dead */
 IF
