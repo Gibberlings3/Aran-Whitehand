@@ -1,4 +1,4 @@
-
+/* DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ */
 /* Initialize SoA Dialogs */
 BEGIN C-ARAN   /* Initialize SoA Dialogs : pre-joining SoA */
 BEGIN C-ARANJ  /* Initialize SoA Dialogs : joined SoA */
@@ -1490,7 +1490,7 @@ END
 
 CHAIN ~BEDWIN~ a2906
 ~[EDWIN] Do not test my patience by siding with this moronic baboon. I have had enough of his eyes undressing my superior physical form, and I do not wish to be the subject of his puerile dreams.~
-== C-ARANB ~[ARAN] Hey,I never said my dreams be pure... wait... somehow, I don't think I understood th' objection.~ EXIT
+== C-ARANB ~[ARAN] Hey, I never said my dreams be pure... wait... somehow, I don't think I understood th' objection.~ EXIT
 
 APPEND C-ARANB
 
@@ -1512,7 +1512,118 @@ IF ~GlobalTimerExpired("c-aranblush","GLOBAL") CombatCounter(0) !Detect([ENEMY])
   + ~Gender(Player1,MALE)~ + ~[PC] No, I think those are neither yours nor mine. Generally speaking, I do not wear women's underthings. Where did you find them?~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1605
   + ~Gender(Player1,MALE)~ + ~[PC] Do you want to explain why you have a woman's undergarment in your pack?~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1606
   + ~Gender(Player1,MALE)~ + ~[PC] I did not realize you liked women's clothes so much. We should put you in some of the 'armor' they make for them. On second thought, seeing you in a chainmail bikini is not something I would really like to experience.~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1607
+  IF ~NumInParty(2) Gender(Player1,FEMALE) Gender(Player2,MALE)~ THEN GOTO a4325
+  IF ~NumInParty(3) Gender(Player1,FEMALE) Gender(Player2,MALE) Gender(Player3,MALE)~ THEN GOTO a4325
+  IF ~NumInParty(4) Gender(Player1,FEMALE) Gender(Player2,MALE) Gender(Player3,MALE) Gender(Player4,MALE)~ THEN GOTO a4325
+  IF ~NumInParty(5) Gender(Player1,FEMALE) Gender(Player2,MALE) Gender(Player3,MALE) Gender(Player4,MALE) Gender(Player5,MALE)~ THEN GOTO a4325
+  IF ~NumInParty(6) Gender(Player1,FEMALE) Gender(Player2,MALE) Gender(Player3,MALE) Gender(Player4,MALE) Gender(Player5,MALE) Gender(Player6,MALE)~ THEN GOTO a4325
 END
+
+IF ~~ a4325
+  SAY ~[ARAN] Since you be th' only female in this company, they must be yours.~
+  ++ ~[PC] ARAN! Put that away before someone sees you!~ DO ~SetGlobal("c-aranpanties","LOCALS",1) SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1604
+  ++ ~[PC] I think those are mine. Where did you find them?~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1605
+  ++ ~[PC] No, they are not mine. Do you want to explain why you have another woman's undergarment in your pack? Or perhaps how this occurred?~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a4326
+  ++ ~[PC] I did not realize you liked women's clothes so much. We should put you in some of the 'armor' they make available to us, and see how you like having a chainmail bikini to hide your most intimate parts.~ DO ~SetGlobal("c-aranpanties","LOCALS",1)  SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS)~ + a1607
+END
+
+IF ~~ a4326
+  SAY ~[ARAN] Now, hold on a moment! There be only one time here... wait...~
+  = ~[ARAN] Oh, Sune's Sweet Secrets. I done thought she were jokin'. If these are not yours, then they must o' come from that nice young lass at th' laundry. She seemed right interested, she did. I guess it might be some way o' catchin' my eye.~
+  IF ~Race(Player1,HUMAN)~ THEN GOTO a4327
+  IF ~Race(Player1,ELF)~ THEN GOTO a4328
+  IF ~Race(Player1,HALF_ELF)~ THEN GOTO a4329
+  IF ~Race(Player1,DWARF)~ THEN GOTO a4330
+  IF ~Race(Player1,HALFLING)~ THEN GOTO a4331
+  IF ~Race(Player1,GNOME)~ THEN GOTO a4332
+  IF ~Race(Player1,HALFORC)~ THEN GOTO a4334
+END
+
+IF ~~ a4327
+  SAY ~[ARAN] Now, I should have figured they were naught in th' way o' your property, on account o' th' size.~
+ ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments are?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4328
+  SAY ~[ARAN] I should have known they were naught o' your own by th' size alone, eh? I don't rightly think it be elven in make, niether.~
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments are?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4329
+  SAY ~[ARAN]  I should have known they were naught o' your own by th' size alone, eh? They might be a bit big... no, actually, they seem like th' right size after all.~
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments should be?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4330
+  SAY ~[ARAN]  I should have known they were naught o' your own by th' size alone, eh? This be too narrow an' flimsy for a dwarven lass like you.~	
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments are?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4331
+  SAY ~[ARAN]  I should have known they were naught o' your own by th' size alone, eh? Why, a Han lass like you could make this into a right fine slip, all on its own. Well, a pretty scanty slip, anyways.~
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments are?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4332
+  SAY ~[ARAN]  I should have known they were naught o' your own by th' size alone. This looks more like a half elf or human underthing, I imagine, not somethin' fit for a cute little gnomish lass like you. Though I guess you could make it work, eh?~
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments should be?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4334
+  SAY ~[ARAN] I should have known they were naught o' your own by th' size alone, eh? These would be a mite bit snug on you, at that.~
+  ++ ~[PC] Why did I know you were going to make a comment like that?~ + a4335
+  ++ ~[PC] If that comment is about the size of my rear, you just signed your own death warrant.~ + a4335
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] And how exactly would you know what size my undergarments should be?~ + a4335
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I am not suprised you know exactly what would fit my figure. Your hands seem unable to stop re-mapping me.~ + a4335
+  ++ ~[PC] You of all people should know that it isn't the size that counts... it is what you can do with it.~ + a4335
+  ++ ~[PC] Are you sure she gave them to you, and you didn't take them so you could return them... perhaps some evening?~ + a4335
+  ++ ~[PC] Oh. I... Well. I guess some women might find you interesting.~ + a4335
+  ++ ~[PC] I think I have heard enough from you. Put those away, and get moving.~ + a4335
+END
+
+IF ~~ a4335 SAY ~[ARAN] I... err... you...~ = ~[ARAN] Oh, Grumbar's Hardened Hide, I just put both feet right in my mouth, an' now naught I say can tell you what I meant wi' out makin' you more insulted. I'm callin' this a loss, an' shuttin' th' hells up.~ IF ~~ THEN EXIT END
 
 IF ~~ a1604
   SAY ~[ARAN] What I be tryin' to figure is why all th' fuss over a scrap o' linen. Although I suspect it has a mite to do wi' exactly what that scrap be coverin'. How about next time we do some clothes washin', you check where things be stored? People might get th' wrong idea.~
@@ -2490,21 +2601,17 @@ IF ~~ a754 SAY ~[ARAN] Hey, I was just commentin', is all. I don't rightly hold 
 
 /* SoA Story Pool : Multiple References  */
 
-IF ~~ a1385
-  SAY ~[ARAN] Now there be no call to harp on th' stupidity o' me in my youth, eh? How was I to know those bastards reproduced through violence?~
-  IF ~~ THEN EXIT
-END
+IF ~~ a1385 SAY ~[ARAN] Now there be no call to harp on th' stupidity o' me in my youth, eh? How was I to know those bastards reproduced through violence?~ IF ~~ THEN EXIT END
+IF ~~ a1666 SAY ~[ARAN] Hmmm. Well, you could call it subtle, if you consider screamin' "Hey, change th' blighted conversation now or I will cram my fist down your throat" at th' top o' your lungs a gentle admonition.~ IF ~~ THEN EXIT END
+IF ~~ a1669 SAY ~[ARAN] By Grumbar's Crumbly Arse, you bet I will.~ IF ~~ THEN EXIT END
+IF ~~ a1670 SAY ~[ARAN] No, I don't think it be a good story to tell. I don't see how bringin' up past pain will help none. Life goes on, and we meet new people. Come on, let's get movin'.~ IF ~~ THEN EXIT END
+IF ~~ a1668 SAY ~[ARAN] No, I don't think it be a good story to tell. This place already be wearin' a big dark patch in my soul. I don't see how bringin' up past pain will help none. Come on, let's get movin'.~ IF ~~ THEN EXIT END
 
 IF ~~ a1665
   SAY ~[ARAN] I never mentioned no lost love. Not to you, not to anyone, as far as I be knowin'. Do you be askin' after a story, or do you just want to avoid this whole conversation, so are misdirectin' it?~
   ++ ~[PC] Misdirecting it. I guess that was not so subtle, was it.~ + a1666
   ++ ~[PC] Oh, come on. You must have a lost love. You keep talking about women as if you have had experience with them.~ + a1667
   ++ ~[PC] Forget I asked anything.~ + a1669
-END
-
-IF ~~ a1666
-  SAY ~[ARAN] Hmmm. Well, you could call it subtle, if you consider screamin' "Hey, change th' blighted conversation now or I will cram my fist down your throat" at th' top o' your lungs a gentle admonition.~
-  IF ~~ THEN EXIT
 END
 
 /* this one is a fun little  construction - you get  2 top responses in underdark, followed by one of two for Clerics in underdark, then two that always play, then the mirror of the first four for not in underdark. It appeals to my sense of harmonious order :)  */
@@ -2520,21 +2627,6 @@ IF ~~ a1667
   + ~!Global("c-drow","GLOBAL",1) Class(Player1,CLERIC_ALL) Alignment(Player1,MASK_GOOD)~ + ~[PC] The gods test us in many ways. I sometimes wish that our spells could mend broken hearts as well as they mend broken heads. But you should unburden your soul so you can learn from the experience.~ + a1670
   + ~!Global("c-drow","GLOBAL",1)~ + ~[PC] You are a fool. You should never let anyone get that close to you. You had better tell me, so I can show you where you made your mistakes.~ + a1670
   + ~!Global("c-drow","GLOBAL",1)~ + ~[PC] That was graphic. Whoever she was, she really hurt you, didn't she. It might help to talk about it...~ + a1670
-END
-
-IF ~~ a1668
-  SAY ~[ARAN] No, I don't think it be a good story to tell. This place already be wearin' a big dark patch in my soul. I don't see how bringin' up past pain will help none. Come on, let's get movin'.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1669
-  SAY ~[ARAN] By Grumbar's Crumbly Arse, you bet I will.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1670
-  SAY ~[ARAN] No, I don't think it be a good story to tell. I don't see how bringin' up past pain will help none. Life goes on, and we meet new people. Come on, let's get movin'.~
-  IF ~~ THEN EXIT
 END
 
 IF ~~ a1671
@@ -2659,10 +2751,7 @@ IF ~~ a1683
   IF ~~ THEN DO ~SetGlobal("c-aranwritesstory","LOCALS",2)~ EXIT
 END
 
-IF ~~ a1684
-  SAY ~[ARAN] Mystra's Mouth, I do ramble on, eh? Well, I suppose we should get rollin' anyhow.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a1684 SAY ~[ARAN] Mystra's Mouth, I do ramble on, eh? Well, I suppose we should get rollin' anyhow.~ IF ~~ THEN EXIT END
 
 /* SoA Story Pool : can't think of one not told */
 IF ~~ a1685
@@ -2907,20 +2996,10 @@ IF ~~ a1695
   IF ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2)~  DO ~SetGlobal("c-aranaerieud","LOCALS",1)~ GOTO a1698
 END
 
-IF ~~ a1696
-  SAY ~[ARAN] Man to man, though, an' no offense intended, but she's way too high maintenance for me. I'd not bed her, for fear o' hurtin' her. She don't need no romp. She needs someone what can give her th' support, patience, an' true love what will heal her. Me, I'm not rightly that man. You might be, though...~
-  IF ~~ THEN EXIT
-END
-
 IF ~~ a1697
   SAY ~[ARAN] Friend to friend, though, an' no offense intended, but she's a might too high maintenance for me. I'd not kick her out o' my bedroll if she came callin' lookin' for comfort, but I'm not lookin' to tie myself down for a long term contract. An' I think she probably won't be up for anythin' short of a lifetime commitment.~
   ++ ~[PC] Is that what you say about me behind my back, too?~ + a1699
   + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] That didn't stop you from having some fun with me, if I recall correctly.~ + a1700
-END
-
-IF ~~ a1698
-  SAY ~[ARAN] But <CHARNAME>, no offense intended... I am not sure why you think I'd prefer her over you. You are beautiful, special, an' make me feel... well, you make me feel. Why would I go throw that away on a high maintenance Avariel what needs protectin', comfortin', an' hand-holdin' just to get out o' bed in th' morning? I think I have been pretty clear on what I want. An' that be you.~
-  IF ~~ THEN EXIT
 END
 
 IF ~~ a1699
@@ -2938,20 +3017,11 @@ IF ~~ a1700
   IF ~~ THEN EXIT
 END
 
-IF ~~ a1701
-  SAY ~[ARAN] You mean to say there be a line between th' two? Heh. That explains why so many women seem to think my cheeks make good slappin' targets.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1702
-  SAY ~[ARAN] Well, my mother done taught me right. If a lady needs somethin', don't talk back - just do what she be askin'. Saves a heap o' trouble, it does. Except that time when I done what th' lady asked, only to find out there should have been a mite bit more communication with her husband...~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1703
-  SAY ~[ARAN] Well, when you put it that way, I suspect you be right.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a1696 SAY ~[ARAN] Man to man, though, an' no offense intended, but she's way too high maintenance for me. I'd not bed her, for fear o' hurtin' her. She don't need no romp. She needs someone what can give her th' support, patience, an' true love what will heal her. Me, I'm not rightly that man. You might be, though...~ IF ~~ THEN EXIT END
+IF ~~ a1698 SAY ~[ARAN] But <CHARNAME>, no offense intended... I am not sure why you think I'd prefer her over you. You are beautiful, special, an' make me feel... well, you make me feel. Why would I go throw that away on a high maintenance Avariel what needs protectin', comfortin', an' hand-holdin' just to get out o' bed in th' morning? I think I have been pretty clear on what I want. An' that be you.~ IF ~~ THEN EXIT END
+IF ~~ a1701 SAY ~[ARAN] You mean to say there be a line between th' two? Heh. That explains why so many women seem to think my cheeks make good slappin' targets.~ IF ~~ THEN EXIT END
+IF ~~ a1702 SAY ~[ARAN] Well, my mother done taught me right. If a lady needs somethin', don't talk back - just do what she be askin'. Saves a heap o' trouble, it does. Except that time when I done what th' lady asked, only to find out there should have been a mite bit more communication with her husband...~ IF ~~ THEN EXIT END
+IF ~~ a1703 SAY ~[ARAN] Well, when you put it that way, I suspect you be right.~ IF ~~ THEN EXIT END
 
 IF ~~ a1704
   SAY ~[ARAN] An' what, pray tell, be my problems?~
@@ -3532,30 +3602,11 @@ IF ~~ a5
   ++ ~[PC] The rest of the group shares what I choose to share, and they are glad to get that much. Do you have a problem with that?~ + a13
 END
 
-IF ~~ a6
-  SAY ~[ARAN] That be a story in itself, eh?~
-  IF ~~ THEN GOTO a14
-END
-
-IF ~~ a7
-  SAY ~[ARAN] Bugger all, you be a tough one to convince. If you change your mind, I'll be here.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a8
-  SAY ~[ARAN] Ilmater's Blood, I had my hopes up. Look, when you need me, I'll be at the bar.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a9
-  SAY ~[ARAN] I'd rather be workin' with you than sittin' around here on my arse. Come back when you need a good fighter.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a10
-  SAY ~[ARAN] Sune's Bosom. I might have to take that trade ship job to Calimport after all. I'll be here a few more days, if you change your mind.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a6 SAY ~[ARAN] That be a story in itself, eh?~ IF ~~ THEN GOTO a14 END
+IF ~~ a7 SAY ~[ARAN] Bugger all, you be a tough one to convince. If you change your mind, I'll be here.~ IF ~~ THEN EXIT END
+IF ~~ a8 SAY ~[ARAN] Ilmater's Blood, I had my hopes up. Look, when you need me, I'll be at the bar.~ IF ~~ THEN EXIT END
+IF ~~ a9 SAY ~[ARAN] I'd rather be workin' with you than sittin' around here on my arse. Come back when you need a good fighter.~ IF ~~ THEN EXIT END
+IF ~~ a10 SAY ~[ARAN] Sune's Bosom. I might have to take that trade ship job to Calimport after all. I'll be here a few more days, if you change your mind.~ IF ~~ THEN EXIT END
 
 IF ~~ a11
   SAY ~[ARAN] Elminster's Left Buttock. More sittin' around.~
@@ -3638,15 +3689,8 @@ IF ~~ a19
   ++ ~[PC] Hire on with us, then. Follow my instructions, and you will be welcome. Cross me, and things could get unpleasant for you.~ + a13
 END
 
-IF ~~ a2956
-  SAY ~[ARAN] I know better than to get between a <PRO_MANWOMAN> an' <PRO_HISHER> drink. Th' bar be out front, just to th' south. If you needs be hirin' me on, I expect I will be right here.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2946
-  SAY ~[ARAN] Well, I suppose I could look around an' see what else there be to do. But if you change your mind, I expect I will be right here.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a2956 SAY ~[ARAN] I know better than to get between a <PRO_MANWOMAN> an' <PRO_HISHER> drink. Th' bar be out front, just to th' south. If you needs be hirin' me on, I expect I will be right here.~ IF ~~ THEN EXIT END
+IF ~~ a2946 SAY ~[ARAN] Well, I suppose I could look around an' see what else there be to do. But if you change your mind, I expect I will be right here.~ IF ~~ THEN EXIT END
 
 END /*  of APPEND to c-aran */
 
@@ -3657,7 +3701,7 @@ CHAIN C-ARAN a14
 == EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN ~[EDWIN] More ridiculous foreign customs. The trollop should be punished, or sold into slavery. <CHARNAME>, dismiss this overgrown ape and let us continue.~
 == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Ah, my eagle, the stories we could swap...~
 == JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] A grown man should know a child from a woman. He should also know that children like to play adult long before they are ready for true partnership.~
-== ~JANJ~ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN ~[JAN]  Well, now, that is an entirely different matter. My Uncle Matthias always said that females were trouble. They were, too; every time he said it, Aunt Petunia hit him with a frying pan.~
+== JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN ~[JAN]  Well, now, that is an entirely different matter. My Uncle Matthias always said that females were trouble. They were, too; every time he said it, Aunt Petunia hit him with a frying pan.~
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] There are reasons for the ritual, but it takes common sense and a willingness to look carefully at the situation before accepting.~
 == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] Aye, good on ye. If she wants ter play wi' th' big boys, then it's her own business. Next time, though, you'd be better served takin' the trade, so a few coins saves ye th' trouble.~
 == YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[YOSHIMO] A custom of flowers behind the ears denoting availability? Interesting.~
@@ -8260,15 +8304,8 @@ IF ~~ a59
   ++ ~[PC] Watch it, sellsword. I have killed men for saying less.~ + a1926 /* c-aranshutup20 */
 END
 
-IF ~~ a60
-  SAY ~[ARAN] (Flushes burgundy) Aye, then. Didn't mean to be so forward. Shuttin' up.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2324
-  SAY ~[ARAN] Time to get movin' again, eh? Don't you be worryin'. I may talk a good bit, but I fight well enough to make up for it. I hope.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a60 SAY ~[ARAN] (Flushes burgundy) Aye, then. Didn't mean to be so forward. Shuttin' up.~ IF ~~ THEN EXIT END
+IF ~~ a2324 SAY ~[ARAN] Time to get movin' again, eh? Don't you be worryin'. I may talk a good bit, but I fight well enough to make up for it. I hope.~ IF ~~ THEN EXIT END
 
 /* BG2 FriendTalk 2 c-aranfriendbg2 = 3 : "My Pal the Shield Wall", or, merits of Heavy Metal (Whitesnake) vs Alternative (Feist) */
 
@@ -8347,10 +8384,7 @@ END
 
 /* a70, a71, a72, a73, a74 in chains */
 
-IF ~~ a75
-  SAY ~[ARAN] Just a suggestion, you know. Tymora's Fickle Fingers, it'd be nice to have some more help, is all.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a75 SAY ~[ARAN] Just a suggestion, you know. Tymora's Fickle Fingers, it'd be nice to have some more help, is all.~ IF ~~ THEN EXIT END
 
 /* BG2 FriendTalk 3 c-aranfriendbg2 = 5 : "The Price of Fame", or, Whoa - *that* <CHARNAME>? Sux to be you, pal. */
 
@@ -8515,16 +8549,6 @@ IF ~~ a92
   IF ~~ THEN GOTO a94
 END
 
-IF ~~ a93
-  SAY ~[ARAN] Well, I guess that is the best that can be hoped for. I mean, I appreciate th' compliment, about friends, an' team, an' all. It makes it easier to do the job when you know your compatriots be watchin' your back.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a94
-  SAY ~[ARAN] Right then. I'll go sharpen somethin', or just poke about a bit. Make myself useful, an' all.~
-  IF ~~ THEN EXIT
-END
-
 IF ~~ a95
   SAY ~[ARAN] Well, knock me over with Clangedden's Hammer. A Bhaalspawn. Well, that explains some things, I guess. I think I might be right glad I am on your side. If even half of the stories are half true, I wouldn't want to be against you, that's for sure.~
   IF ~~ THEN GOTO a94
@@ -8545,6 +8569,9 @@ IF ~~ a98
   IF ~~ THEN GOTO a94
 END
 
+IF ~~ a93 SAY ~[ARAN] Well, I guess that is the best that can be hoped for. I mean, I appreciate th' compliment, about friends, an' team, an' all. It makes it easier to do the job when you know your compatriots be watchin' your back.~ IF ~~ THEN EXIT END
+IF ~~ a94 SAY ~[ARAN] Right then. I'll go sharpen somethin', or just poke about a bit. Make myself useful, an' all.~ IF ~~ THEN EXIT END
+
 /* BG2 FriendTalk 4 c-aranfriendbg2 = 7 : Mongo But Pawn In Great Chess Game of Life? */
 
 IF ~Global("c-aranfriendbg2","GLOBAL",7)~ THEN BEGIN a3317
@@ -8558,30 +8585,11 @@ IF ~Global("c-aranfriendbg2","GLOBAL",7)~ THEN BEGIN a3317
   ++ ~[PC] Look, I don't want to talk about this right now. Actually, I think I never want to talk about this.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3344
 END
 
-IF ~~ a3318
-  SAY ~[ARAN] You be about as funny as a horde o' gibberlings tryin' to light a fire.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3319
-  SAY ~[ARAN] Now that I have naught in th' way o' toleration for. I may have a bit o' Trade-speak accent, an' mayhap those dwarven bastards what I fought wi' sprinkled some oddities in here an' there, but my writin' an' scribin' be top notch. Mayhap I will go on about my business, now, on account o' you keep findin' fault wi' me.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3320
-  SAY ~[ARAN] Aye, <CHARNAME>, sure enough. I talk a mite bit more than I should anyhow. Bad habit, I guess.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3321
-  SAY ~[ARAN] Mayhap I need to start thinkin' more like an adventurer an' less like a mercenary, if I'm to be right helpful, <CHARNAME>. Old habits die hard, though. I just keep wishin' we had a few cavalry out on th' wings, an' mayhap a ballista or two creakin' along. Takin' on th' world be a dauntin' task.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3322
-  SAY ~[ARAN] Second, third, fourth, an' fifth ones. But then again, if I ever paid passin' attention to my thoughts, I would never have become a mercenary, eh?~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3318 SAY ~[ARAN] You be about as funny as a horde o' gibberlings tryin' to light a fire.~ IF ~~ THEN EXIT END
+IF ~~ a3319 SAY ~[ARAN] Now that I have naught in th' way o' toleration for. I may have a bit o' Trade-speak accent, an' mayhap those dwarven bastards what I fought wi' sprinkled some oddities in here an' there, but my writin' an' scribin' be top notch. Mayhap I will go on about my business, now, on account o' you keep findin' fault wi' me.~ IF ~~ THEN EXIT END
+IF ~~ a3320 SAY ~[ARAN] Aye, <CHARNAME>, sure enough. I talk a mite bit more than I should anyhow. Bad habit, I guess.~ IF ~~ THEN EXIT END
+IF ~~ a3321 SAY ~[ARAN] Mayhap I need to start thinkin' more like an adventurer an' less like a mercenary, if I'm to be right helpful, <CHARNAME>. Old habits die hard, though. I just keep wishin' we had a few cavalry out on th' wings, an' mayhap a ballista or two creakin' along. Takin' on th' world be a dauntin' task.~ IF ~~ THEN EXIT END
+IF ~~ a3322 SAY ~[ARAN] Second, third, fourth, an' fifth ones. But then again, if I ever paid passin' attention to my thoughts, I would never have become a mercenary, eh?~ IF ~~ THEN EXIT END
 
 IF ~~ a3323
   SAY ~[ARAN] Cyric's Blighted Balls. Perhaps I should just write it all down an' hand it to you, eh?~
@@ -8649,7 +8657,7 @@ END
 
 IF ~~ a3333
   SAY ~[ARAN] Well, yes. It sure as Helm's Horny Hands beats sittin' around tryin' to make time wi' Erika, an' havin' old Orrin look for new ways to squeeze coin I don't have out o' my purse.~
-  IF ~~ THEN GOTO  a3321
+  IF ~~ THEN GOTO a3321
 END
 
 IF ~~ a3334
@@ -9295,15 +9303,8 @@ END
 
 /* a157, a158 are chains */
 
-IF ~~ a159
-  SAY ~[ARAN] Bugger tactics, get in close, an' just whack th' bastards 'til they stop movin'.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a160
-  SAY ~[ARAN] Suit yourself. An' I had a good punchline, an' all. I talk a mite more'n I should, anyhow.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a159 SAY ~[ARAN] Bugger tactics, get in close, an' just whack th' bastards 'til they stop movin'.~ IF ~~ THEN EXIT END
+IF ~~ a160 SAY ~[ARAN] Suit yourself. An' I had a good punchline, an' all. I talk a mite more'n I should, anyhow.~ IF ~~ THEN EXIT END
 
 /* BG2 FriendTalk 8 c-aranfriendbg2  is 15 : "Warning - Objects Are Closer Than They Appear", or, why you want to check carefully behind your target area before firing that arrow. */
 
@@ -9367,11 +9368,6 @@ IF ~~ a167
   ++ ~[PC] I was joking, too. Although if you play your cards right, there could be some fame and fortune to be had. You could be the first person to have a stretch Calimport sewer named after you!~ + a168
 END
 
-IF ~~ a168
-  SAY ~[ARAN] Funny. Right funny, there. You should look into gettin' a job tellin' jokes at th' Low Lantern. I bet you could make it work, if you stripped down to almost bare nekkid.~
-  IF ~~ THEN EXIT
-END
-
 IF ~~ a169
   SAY ~[ARAN] When you pick a target as nasty as that slippery bastard, you might get an edge up if you look at th' whole target, not just what you are aimin' at, an' try to get ahead o' his game. Chasin' him around so he can lead you where he wants you be poor strategy.~
   ++ ~[PC] I know what I am doing. You should trust me, and stop talking about things you do not understand.~ + a1915 /* c-aranshutup9 */
@@ -9397,25 +9393,11 @@ IF ~~ a171
   ++ ~[PC] You have a point. Do you have some specific suggestions?~ + a173
 END
 
-IF ~~ a172
-  SAY ~[ARAN] Last time I got myself into a game like that, me an' Grisa had to toss th' table over, an' fight our way out o' th' inn. We done almost made it, too. Good to be friends wi' a lass with orcish blood at times. If they had stuck to ten to one odds, no worries, but they got smart an' called in th' watch. Cost me over 300gp to clean up that mess.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a173
-  SAY ~[ARAN] Sune's Rambunctious Rump, <PRO_GIRLBOY>, I wish I did. I should have been studyin' strategy instead o' tactics. Next time we see a LoreKeeper, I think I will have a mite o' a word on what tomes to study. Tactics you can learn piecemeal, but strategy, that be a tougher game.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a174
-  SAY ~[ARAN] Grumbar's Clay Fist, <PRO_GIRLBOY>, you do have an odd way o' lookin' at things.  I wish I saw things as clear as you do. I just keep runnin' into some problems in my own head. Some fool cleric or other said it was on account o' havin' somethin' called a 'conscience'. But you been callin' the plays well enough, an' I should shut up an' soldier.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a175
-  SAY ~[ARAN] Now, I didn't rightly say that, now, did I. I be after th' 'near death' experience, an' th' excitement, but I don't rightly want to move on to the next level. There be a big world out there, and I have seen only a small part o' it.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a168 SAY ~[ARAN] Funny. Right funny, there. You should look into gettin' a job tellin' jokes at th' Low Lantern. I bet you could make it work, if you stripped down to almost bare nekkid.~ IF ~~ THEN EXIT END
+IF ~~ a172 SAY ~[ARAN] Last time I got myself into a game like that, me an' Grisa had to toss th' table over, an' fight our way out o' th' inn. We done almost made it, too. Good to be friends wi' a lass with orcish blood at times. If they had stuck to ten to one odds, no worries, but they got smart an' called in th' watch. Cost me over 300gp to clean up that mess.~ IF ~~ THEN EXIT END
+IF ~~ a173 SAY ~[ARAN] Sune's Rambunctious Rump, <PRO_GIRLBOY>, I wish I did. I should have been studyin' strategy instead o' tactics. Next time we see a LoreKeeper, I think I will have a mite o' a word on what tomes to study. Tactics you can learn piecemeal, but strategy, that be a tougher game.~ IF ~~ THEN EXIT END
+IF ~~ a174 SAY ~[ARAN] Grumbar's Clay Fist, <PRO_GIRLBOY>, you do have an odd way o' lookin' at things. I wish I saw things as clear as you do. I just keep runnin' into some problems in my own head. Some fool cleric or other said it was on account o' havin' somethin' called a 'conscience'. But you been callin' the plays well enough, an' I should shut up an' soldier.~ IF ~~ THEN EXIT END
+IF ~~ a175 SAY ~[ARAN] Now, I didn't rightly say that, now, did I. I be after th' 'near death' experience, an' th' excitement, but I don't rightly want to move on to the next level. There be a big world out there, and I have seen only a small part o' it.~ IF ~~ THEN EXIT END
 
 IF ~~ a176
   SAY ~[ARAN] Now, that sounds right beautiful! Riches beyond my wildest ideas, all summed up right proper! What more could I want, eh?~
@@ -9484,10 +9466,7 @@ IF ~~ a185
   ++ ~[PC] I am not sure if you are ready to hear about my faith.~ + a193
 END
 
-IF ~~ a186
-  SAY ~[ARAN] Either you be jokin', or you be th' scariest <PRO_MANWOMAN> I ever did meet, <CHARNAME>. Messin' with those forces is like stickin' your head down a firedrake's throat an' ticklin' him.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a186 SAY ~[ARAN] Either you be jokin', or you be th' scariest <PRO_MANWOMAN> I ever did meet, <CHARNAME>. Messin' with those forces is like stickin' your head down a firedrake's throat an' ticklin' him.~ IF ~~ THEN EXIT END
 
 IF ~~ a187
   SAY ~[ARAN] Look, I don't mean nothin'. I have faith in the gods. No offense, but I favor Tymora the most, an' I figure she would like the gamble. It's a soldier's prerogative to swear, and I may take advantage a bit, but I don't mean you no harm. But I have to ask, why do you choose service your god? Seems like all they do is play with us mortals like toys.~
@@ -9544,11 +9523,7 @@ IF ~~ a196
   IF ~~ THEN GOTO a197
 END
 
-IF ~~ a197
-  SAY ~[ARAN] Besides, I am all done up. Give me a hand up, eh? We better get movin'.~
-  IF ~~ THEN EXIT
-
-END
+IF ~~ a197 SAY ~[ARAN] Besides, I am all done up. Give me a hand up, eh? We better get movin'.~ IF ~~ THEN EXIT END
 
 /* BG2 FriendTalk 10 c-aranfriendbg2 = 19 : "Weapons Practice for Fun and Profit", or, never bet with a Sicilian when death is on the line. */
 /* Setup for evening sparring, 1 version for (non-hitting on) males: c-aranspar 4 -> 5 -> 6, one for (hitting on) females: c-aranspar 1 -> 2 -> 3 */
@@ -10932,7 +10907,7 @@ END
 
 IF ~~ a289
   SAY ~[ARAN] (Aran catches your chin quickly, turning your face to his) To me, you are right beautiful. Hanali Celanil an' Sune are but pale comparisons, <CHARNAME>.~
-  ++ ~[PC] (Kiss him.)~ + a296
+  ++ ~[PC] (Kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a296
   ++ ~[PC] (Break away quickly.) Are we going to spar, or talk?~ + a309
   ++ ~[PC] (Look him directly in the eyes.) Big words. But a real man would not talk. He would take what he wants.~ + a294
   ++ ~[PC] (Look him directly in the eyes, and slam your fist into his gut.)~ + a281
@@ -10986,7 +10961,7 @@ IF ~~ a295
   ++ ~[PC] ...a little unsure of myself? Hardly. Just hold me, Aran. Make me feel alive. Just be a good friend and hold me.~ + a298
   ++ ~[PC] ...a little confusing to you? I am confused, too. Look, let's just get a few rounds of swordfighting in, and be done with it.~ + a309
   ++ ~[PC] This was a bad idea. I think I will just go to bed. Alone.~ + a283
-  ++ ~[PC] (Kiss him again and move deeper into his arms.)~ + a355
+  ++ ~[PC] (Kiss him again and move deeper into his arms.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a355
 END
 
 IF ~~ a296
@@ -10995,7 +10970,7 @@ IF ~~ a296
   ++ ~[PC] I... I do not know. I thought I wanted to have someone want me, desire me. But now I really just feel like that will make things worse. I think I should go now.~ + a358
   ++ ~[PC] I came here to be made love to, silly. So shut up and get to it!~ + a354
   ++ ~[PC] I came out here because you are a friend, Aran. And I need all of those I can get right now.~ + a358
-  ++ ~[PC] (Kiss his neck and move deeper into his arms.)~ + a295
+  ++ ~[PC] (Kiss his neck and move deeper into his arms.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a295
 END
 
 IF ~~ a297
@@ -11601,20 +11576,20 @@ END
 IF ~~ a329
   SAY ~[ARAN] (He gently takes you hand, and kisses each fingertip.)~
   = ~[ARAN] Is that better?~
-  ++ ~[PC] Perhaps. But it hurts a little higher up.~ + a330
-  ++ ~[PC] I think I have had enough excitement. I call this a draw. We will have to do this again sometime.~ + a352
-  ++ ~[PC] No, no... it is fine now. A minor annoyance. Prepare to be defeated.~ + a308
-  ++ ~[PC] I bet you do that to everyone's fingers.~ + a346
-  ++ ~Yes, it is fine. Let's spar now!~ + a308
+  ++ ~[PC] Perhaps. But it hurts a little higher up.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a330
+  ++ ~[PC] I think I have had enough excitement. I call this a draw. We will have to do this again sometime.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a352
+  ++ ~[PC] No, no... it is fine now. A minor annoyance. Prepare to be defeated.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a308
+  ++ ~[PC] I bet you do that to everyone's fingers.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a346
+  ++ ~Yes, it is fine. Let's spar now!~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a308
 END
 
 IF ~~ a330
   SAY ~[ARAN] (He gently kisses the inside of your palm and carefully kisses each wrist.)~
   = ~[ARAN] Is that better?~
-  ++ ~[PC] Perhaps. But it hurts a little higher up.~ + a331
-  ++ ~[PC] No, no... it is fine now. A minor annoyance. Prepare to be defeated.~ + a308
-  ++ ~[PC] Perhaps. But it now aches a little lower down...~ + a332
-  ++ ~[PC] I think I have had enough excitement. I call this a draw. We will have to do this again sometime.~ + a352
+  ++ ~[PC] Perhaps. But it hurts a little higher up.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a331
+  ++ ~[PC] No, no... it is fine now. A minor annoyance. Prepare to be defeated.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a308
+  ++ ~[PC] Perhaps. But it now aches a little lower down...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a332
+  ++ ~[PC] I think I have had enough excitement. I call this a draw. We will have to do this again sometime.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a352
 END
 
 IF ~~ a331
@@ -11629,8 +11604,8 @@ END
 
 IF ~~ a332
   SAY ~[ARAN] Aye, now you be after sparrin' o' a different kind, I see. For that, I'd have to get rid o' some o' these obstacles...~
-  ++ ~[PC] (Open the front of your clothing carefully, avoiding eye contact.)~ + a354
-  ++ ~[PC] (Tear your clothing from your shoulders, baring yourself in the moonlight.)~ + a354
+  ++ ~[PC] (Open the front of your clothing carefully, avoiding eye contact.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a354
+  ++ ~[PC] (Tear your clothing from your shoulders, baring yourself in the moonlight.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a354
   ++ ~[PC] I will not yield to you. But I will take what I want from you, right this moment.~ + a354
   ++ ~[PC] I think I have had enough excitement. I call this a draw. We will have to do this again sometime.~ + a352
   ++ ~[PC] But I think I am ready for more fencing, now. We shall see if you can concentrate on the task at hand.~ + a308
@@ -12944,7 +12919,7 @@ IF ~~ a2879
   SAY ~[ARAN] Lost me...~
   ++ ~[PC] Not here.~ + a2880
   ++ ~[PC] Forget it.~ + a2880
-  + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Kiss me?~ + a2882
+  + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Kiss me?~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a2882
   ++ ~[PC] Got my back?~ + a2881
   ++ ~[PC] Later.~ + a2880
   ++ ~[PC] SHUT UP.~ + a2880
@@ -13971,7 +13946,7 @@ IF ~~ a601
   SAY ~[ARAN] I would be right happy to prove my worth, <CHARNAME>, if I have not already.~
   ++ ~[PC] You are very useful, Aran. I suspect you can even be trained to be entertaining.~ + a603
   ++ ~[PC] What would you say if I told you that you were a burden, Aran? If I told you that your attentions bore me?~ + a603
-  ++ ~[PC] Well, then, prove it. (Fling your arms around his neck and kiss his lips.)~ + a614
+  ++ ~[PC] Well, then, prove it. (Fling your arms around his neck and kiss his lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
   ++ ~[PC] I know you want me, Aran. But the thought of a relationship is frightening. How can we actually get close to each other, when so much is going wrong around us?~ + a606
   + ~OR(2) Class(Player1,CLERIC_ALL) Class(Player1,PALADIN_ALL)~ + ~[PC] No matter what I may like to do with my personal life, my first love will always be my god.~ + a609
 END
@@ -13989,7 +13964,7 @@ IF ~~ a603
   SAY ~[ARAN] I would be naught but happy to prove entertainin', <CHARNAME>. After all, it be right kind o' you to keep me on, when there be so many others what could be assistin' you in all this.~
   ++ ~[PC] You do a good job of amusing me. It does not have to include a formal romance.~ + a611
   ++ ~[PC] That is what is confusing me. I am not sure about all of this. Please do not make me choose only one person, or one plan. There is too much going on right now.~ + a610
-  ++ ~[PC] Well, then, prove it. (Fling your arms around his neck and kiss his lips.)~ + a614
+  ++ ~[PC] Well, then, prove it. (Fling your arms around his neck and kiss his lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
   ++ ~[PC] You do not really amuse me. But I suppose it does no harm to have you worship me. Now, go carry my gear.~ +  a394 /* yes, a394 is correct -  "Aye, you be a woman after my own heart. Cheers." Inference is a rude gesture, but people can read it how they like for the characters involved, of course. */
 END
 
@@ -13999,7 +13974,7 @@ IF ~~ a604
   ++ ~[PC] No.~ + a603
   ++ ~[PC] What I think is that you cannot take a hint. I do not want this attention, Aran. I have my love, and he has me. Stop talking to me like this.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a603
   ++ ~[PC] Comfortable enough to know that you are too good a friend to risk romantic attachments.~ + a611
-  ++ ~[PC] (Fling your arms around his neck and kiss his lips.)~ + a614
+  ++ ~[PC] (Fling your arms around his neck and kiss his lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
 END
 
 IF ~~ a605
@@ -14007,7 +13982,7 @@ IF ~~ a605
   ++ ~[PC] You are very useful, Aran. I suspect you can even be trained to be entertaining.~ + a603
   ++ ~[PC] I trust you enough to know that you are too good a friend to risk romantic attachments.~ + a611
   ++ ~[PC] I am not sure I can trust myself, let alone you. Please do not make me choose only one person, or one plan. There is too much going on right now.~ + a610
-  ++ ~[PC] You really, really talk too much. (Fling your arms around his neck and kiss his lips.)~ + a614
+  ++ ~[PC] You really, really talk too much. (Fling your arms around his neck and kiss his lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
   + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] Oh, I trust you. At least I do when <PLAYER2> is close at hand, anyways...~ + a613
   + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] Oh, I trust you. At least I do when <PLAYER3> is close at hand, anyways...~ + a613
   + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] Oh, I trust you. At least I do when <PLAYER4> is close at hand, anyways...~ + a613
@@ -14039,7 +14014,7 @@ IF ~~ a607
   ++ ~[PC] How do I make you feel?~ + a616
   ++ ~[PC] Well, in that case, how does me nestling up in your arms like this make you feel?~ + a616
   ++ ~[PC] What I think is that you are easy to manipulate. I can have you, or drop you, at my whim. It has been fun, but I do not want you any more. Get on with your job, sellsword.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1947 /* c-aranshutup41 */
-  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ + a616
+  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a616
   ++ ~[PC] I am not sure about all of this. I like you, and I like him. Please do not make me choose between you.~ + a610
   ++ ~[PC] You both are useful, in your own way. I will not choose between you. I deserve more attention than one person can give.~ + a610
 END
@@ -14049,7 +14024,7 @@ IF ~~ a608
   ++ ~[PC] How do I make you feel?~ + a616
   ++ ~[PC] Well, in that case, how does me nestling up in your arms like this make you feel?~ + a616
   ++ ~[PC] What I think is that you cannot take a hint. I do not want this attention, Aran. Stop talking to me like this.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1948 /* c-aranshutup42 */
-  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ + a616
+  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a616
   ++ ~[PC] I am not sure about all of this. I like you, and I like him. Please do not make me choose between you.~ + a610
   ++ ~[PC] You both are useful, in your own way. I will not choose between you. I deserve more attention than one person can give.~ + a610
 END
@@ -14059,7 +14034,7 @@ IF ~~ a609
   ++ ~[PC] How do I make you feel?~ + a616
   ++ ~[PC] Well, in that case, how does me nestling up in your arms like this make you feel?~ + a616
   ++ ~[PC] What I think is that you are easy to manipulate. I can have you, or drop you, at my whim. It has been fun playing with you, but I do not want you any more. Get on with your job, sellsword.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1907 /* c-aranshutup1 */
-  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ + a616
+  ++ ~[PC] Talk is a waste of energy. How does this make you feel? (Draw his lips down to yours and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a616
   ++ ~[PC] I am not sure about all of this. I like you, and I like another - not a god, another man. Please do not make me choose between you.~ + a610
   ++ ~[PC] I am afraid my vows are for chastity, and I will not waver. I am sorry, Aran, but it was never meant to be.Please speak no more on the subject.~ DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ EXIT
 END
@@ -14101,7 +14076,7 @@ IF ~~ a611
   + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + ~[PC] How would you feel if I said I prefer Xan?~ + a615   /* PPG Xan "O#XAN" */
   + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + ~[PC] How would you feel if I said I prefer Faren?~ + a615 /* SHS Faren FHFarenRomanceActive=2 */
   + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + ~[PC] How would you feel if I said I prefer Ajantis?~ + a615   /* RosenRanken Ajantis */
-  ++ ~[PC] Big talk. Do it. (Fling your arms around his neck and kiss him.)~ + a614
+  ++ ~[PC] Big talk. Do it. (Fling your arms around his neck and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
 END
 
 IF ~~ a613
@@ -14179,8 +14154,8 @@ IF ~~ a620
   SAY ~[ARAN] To get closer to you, I wager. You are a mite bit interestin', you know. But I will admit, I was askin' out o' a different motivation.~
   ++ ~[PC] You do really not care about my childhood?~ + a623
   ++ ~[PC] Do you think that sharing stories of my childhood will bring us closer together?~ + a621
-  ++ ~[PC] I really do not care what your motivations are, as long as we get to do this... (Kiss him gently on the lips.)~ + a636
-  ++ ~[PC] I really do not care what your motivations are, as long as we get to do this... (Grab him by the collar, slam your body against his chest, and attack him with a kiss.)~ + a636
+  ++ ~[PC] I really do not care what your motivations are, as long as we get to do this... (Kiss him gently on the lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a636
+  ++ ~[PC] I really do not care what your motivations are, as long as we get to do this... (Grab him by the collar, slam your body against his chest, and attack him with a kiss.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a636
   ++ ~[PC] I do not want most people to get closer to me.~ + a635
 END
 
@@ -14195,8 +14170,8 @@ END
 
 IF ~~ a622
   SAY ~[ARAN] Hey, there, I am all in favor o' more sparkin'! I just... well, you are not like any other woman I have been attracted to, is all.~
-  ++ ~[PC] Perhaps that is because I like to skip all the talking and just do this... (Kiss him gently on the lips.)~ + a636
-  ++ ~[PC] Perhaps that is because I like to skip all the talking and just do this... (Grab him by the collar, slam your body against his chest, and attack him with a kiss.)~ + a636
+  ++ ~[PC] Perhaps that is because I like to skip all the talking and just do this... (Kiss him gently on the lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a636
+  ++ ~[PC] Perhaps that is because I like to skip all the talking and just do this... (Grab him by the collar, slam your body against his chest, and attack him with a kiss.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a636
   ++ ~[PC] Perhaps it is because you know I already have found someone else, and you can never truly have all of me. Perhaps having a meaningless physical fling excites you.~ + a594
   ++ ~[PC] There is no other way to put this, Aran... we are not going to be sparking any time soon. I have found someone else.~ + a594
   ++ ~[PC] You are not quite like any other man I have seen, either. Why do you want to talk? ~ + a637
@@ -14324,7 +14299,7 @@ IF ~~ a636
   SAY ~[ARAN] (His strong hands grip your waist and pull you tightly to him.) Tempus' Tribute, you cut right to th' chase, don't you. So you want none o' th' talk? I thought you might want to share some stories, an' get right close an' all. Emotionally, I mean.~
   ++ ~[PC] I only want one thing from you, Whitehand, and it is most definitely south of your mouth. Though I have some ideas about that mouth, too...~ EXIT
   ++ ~[PC] Of course I do. But I want you to talk with your body, not words.~ EXIT
-  ++ ~[PC] Perhaps later. Or perhaps never. Or perhaps in a few minutes. But right now, just shut up and kiss me.~ EXIT
+  ++ ~[PC] Perhaps later. Or perhaps never. Or perhaps in a few minutes. But right now, just shut up and kiss me.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
   ++ ~[PC] Well, I guess we can talk. But when did you decide to get in touch with your emotional side?~ + a638
   ++ ~[PC] Are you purposely trying to annoy me, Aran?~ + a658
 END
@@ -14333,7 +14308,7 @@ IF ~~ a637
   SAY ~[ARAN] I thought you might want to share some stories, an' get right close an' all. Emotionally, I mean.~
   ++ ~[PC] I only want one thing from you, Whitehand, and it is most definitely south of your mouth. Though I have some ideas about that mouth, too...~ EXIT
   ++ ~[PC] Of course I do. But I want you to talk with your body, not words.~ EXIT
-  ++ ~[PC] Perhaps later. Or perhaps never. Or perhaps in a few minutes. But right now, just shut up and kiss me.~ EXIT
+  ++ ~[PC] Perhaps later. Or perhaps never. Or perhaps in a few minutes. But right now, just shut up and kiss me.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
   ++ ~[PC] Well, I guess we can talk. But when did you decide to get in touch with your emotional side?~ + a638
   ++ ~[PC] Are you purposely trying to annoy me, Aran?~ + a658
 END
@@ -14568,7 +14543,7 @@ END
 
 IF ~~ a670
   SAY ~[ARAN] (Aran's face goes as still and careful as if aiming an arrow.)~
-  ++ ~[PC] (Lean into him and kiss him.)~ + a671
+  ++ ~[PC] (Lean into him and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a671
   ++ ~[PC] (Look into his eyes, then release his jaw and step away.)~ + a672
   ++ ~[PC] Aran, don't you want to do something?~ + a672
   ++ ~[PC] I... Aran... I want you to kiss me, please.~ + a671
@@ -14579,12 +14554,12 @@ END
 IF ~~ a671
   SAY ~[ARAN] (Slowly, reluctantly, large rough hands grip around your waist as Aran leans forward into the kiss, tipping your head back.)~
   = ~[ARAN] (Suddenly they grip harder, and he pulls away, his chest rising and falling rapidly.)~
-  ++ ~[PC] That was not so bad, now, was it? Or were you looking for more, right here and now?~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a677
-  ++ ~[PC] Why did you stop? Did I do something wrong?~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a677
+  ++ ~[PC] That was not so bad, now, was it? Or were you looking for more, right here and now?~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",2)~ + a677
+  ++ ~[PC] Why did you stop? Did I do something wrong?~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",2)~ + a677
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hey, we have already had wild sex. Why are you backing away from me now?~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a675
   + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] You know I am not a prude, Aran. I have had my share of affairs and flirtations. Why are you backing away?~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a675
-  ++ ~[PC] (Smile at him, turn, and walk away.)~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ EXIT
-  ++ ~[PC] Just a downpayment on tonight's entertainment. Or perhaps not. I will leave you to your thoughts.~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ EXIT
+  ++ ~[PC] (Smile at him, turn, and walk away.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",2)~ EXIT
+  ++ ~[PC] Just a downpayment on tonight's entertainment. Or perhaps not. I will leave you to your thoughts.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",2)~ EXIT
 END
 
 IF ~~ a672
@@ -14799,17 +14774,17 @@ END
 
 IF ~~ a700
   SAY ~[ARAN] Get your pretty arse over here, woman, on account o' I either kiss you right this minute or explode o' confined lust!~
-  ++ ~[PC] Cad. For that, I will limit you to a dozen or so kisses. No, not there. Oh. Well, perhaps there. Ummmm...~ EXIT
+  ++ ~[PC] Cad. For that, I will limit you to a dozen or so kisses. No, not there. Oh. Well, perhaps there. Ummmm...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
   ++ ~[PC] Explode all you want, boyo. Just nowhere near me!~ EXIT
   ++ ~[PC] Hush, darling. Not in front of the children.~ + a706
-  ++ ~[PC] MY 'pretty arse'? You can kiss my... HEY! I did not mean that literally!~ EXIT
+  ++ ~[PC] MY 'pretty arse'? You can kiss my... HEY! I did not mean that literally!~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
   ++ ~[PC] Take a good, long look as I walk away. Next time, remember that I do not take kindly to crass language and you ordering me about like a serving wench.~ EXIT
   ++ ~[PC] Someday, my Prince will come. But right now, you will do just fine.~ EXIT
 END
 
 IF ~~ a701
   SAY ~[ARAN] I am right easy to follow. But it be a nicer view when you be ahead o' me, an' I get a goodly gander.~
-  ++ ~[PC] Cad. For that, I will limit you to a dozen or so kisses. No, not there. Oh. Well, perhaps there. Ummmm...~ EXIT
+  ++ ~[PC] Cad. For that, I will limit you to a dozen or so kisses. No, not there. Oh. Well, perhaps there. Ummmm...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
   ++ ~[PC] Hush, darling. Not in front of the children.~ + a706
   ++ ~[PC] If you keep torturing Common like that, I am going to go crazy.~ + a689
   ++ ~[PC] I think there are two questions, Aran. Can you handle yourself? Can you handle me?~ + a703
@@ -14975,7 +14950,7 @@ CHAIN C-ARANJ a70
 == KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[KORGAN] All this namby-pamby talk o' tactics makes me wanna hit something. Cut the blabber so we can get going.~ DO ~SetGlobal("c-fightanalysis","GLOBAL",1)~
 == C-ARANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[ARAN] Ho, shortaxe, got up on th' wrong side o' bed this century?~
 == VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[VICONIA] It is right that the weaker and lesser cattle should be expended as shields.~ DO ~SetGlobal("c-fightanalysis","GLOBAL",1)~
-== C-ARANJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[ARAN] I wasn't talkin' to you, drowess... you can kiss by arse.~
+== C-ARANJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[ARAN] I wasn't talkin' to you, drowess... you can kiss my arse.~
 END
 ++ ~[PC] I think that is enough analysis.~ EXTERN C-ARANJ a64
 + ~Global("c-fightanalysis1","LOCALS",0)~ + ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ DO ~SetGlobal("c-fightanalysis1","LOCALS",1)~ EXTERN C-ARANJ a69
@@ -15342,11 +15317,12 @@ IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Gl
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2342
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2907
-  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
+  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",FIVE_DAYS)~ + a2913
 END
 
 IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",3) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a765
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
+  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",FIVE_DAYS)~ + a2913
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a3005
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2343
@@ -15356,10 +15332,10 @@ END
 /* stream bonding 1 of 2, cycles, (male) or flirt possibility (female), identical for level 1, 2, and 3 level flirts */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk","GLOBAL",0) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a766
   SAY ~[PC] (You look around for Aran, but he is not to be seen. It looks like he has headed for nearby water.)~
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a790
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a790
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide to follow him.)~ DO ~RealSetGlobalTimer("c-arstreambrotimer","GLOBAL",500)~ + a791
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",3) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ EXIT
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",3) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ EXIT
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",3)~ EXIT
   /* letter sequence, courtesy of a slightly psycho mail-reading gf I had once... this can crop up in some other areas and flirts. */
@@ -15380,7 +15356,7 @@ END
 /* stream bonding 2 of 2, cycles, (male) or flirt possibility (female), identical for level 1, 2, and 3 level flirts */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk","GLOBAL",1) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a767
   SAY ~[PC] (You look around for Aran, but he is not to be seen. It looks like he has headed for nearby water.)~
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a792
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a792
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide to follow him.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",0)  RealSetGlobalTimer("c-arstreambrotimer","GLOBAL",500)~ + a793
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ EXIT
   ++ ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",2)~ EXIT
@@ -15548,8 +15524,8 @@ END
 /* Scenery Dialog : Inked or Stolen Letters 2 */
 IF ~Global("c-arlettertaken","GLOBAL",2)~ THEN BEGIN a2910
   SAY ~[ARAN] Hey, there, I got a question for you. Do you know who has been messin' about in my pack, smudgin' up my writin' space?~ [c-aws108]
-  ++ ~[PC] Yes, I do. I did. What are these letters you keep writing all about?~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a2911_extend1
-  ++ ~[PC] No, I don't.~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a2911_extend2
+  ++ ~[PC] Yes, I do. I did. What are these letters you keep writing all about?~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a4337
+  ++ ~[PC] No, I don't.~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a4338
   ++ ~[PC] You must be mistaken. I did not leave a single smudge or telltale sign of my browsing.~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a2909
   ++ ~[PC] Search me.~ DO ~SetGlobal("c-arlettertaken","GLOBAL",3)~ + a2911
 END
@@ -15559,12 +15535,12 @@ IF ~~ a2911
   IF ~~ THEN EXIT
 END
 
-IF ~~ a2911_extend1
+IF ~~ a4337
   SAY ~[ARAN] I thought my gear would be offerin' some privacy, but then again there be naught in th' way o' that in a group like this. If you want to know what I be writin' to my sister, you don't have to poke about. You could just ask, eh?~
   IF ~~ THEN EXIT
 END
 
-IF ~~ a2911_extend2
+IF ~~ a4338
   SAY ~[ARAN] I would get right snippy wi' whomever were messin' about, but other than rufflin' my feathers, there be no real harm done. There be precious little what be private in a group like this. If anyone wants to know what I be writin' to my sister, they don't have to poke about. They could just ask, eh?~
   IF ~~ THEN EXIT
 END
@@ -16428,8 +16404,8 @@ IF ~~ a2080
   SAY ~[ARAN] Now that be a pickup line if I ever did here one. I am only happy to oblige. Just tell me when an' where, an' I will do my best to please you.~
   ++ ~[PC] Ooooh, goody. Meet me at the gates of hell, when it freezes solid.~ + a2084
   ++ ~[PC] I could happen to leave my door unlatched tonight...~ DO ~SetGlobal("c-arannightvisit","GLOBAL",1)~ + a2097
-  + ~!TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ + a2097_walking
-  + ~TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside. Perhaps we could walk together.~ + a2097_walking
+  + ~!TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside this evening, in the moonlight. Perhaps we could walk together.~ + a4339
+  + ~TimeofDay(DAY)~ + ~[PC] I was thinking of taking a walk outside. Perhaps we could walk together.~ + a4339
   ++ ~[PC] Right now. Right here. I can't wait.~ + a2083
   ++ ~[PC] Oh, great. I forgot I was supposed to... I can't do this. I am sorry. I was about to make an excuse, but you deserve the truth. I just can't do this with you.~ + a2084
 END
@@ -16498,7 +16474,7 @@ IF ~~ a2094 SAY ~[ARAN] Accidents do happen, they do. Right now, though, I think
 IF ~~ a2095 SAY ~[ARAN] Well, thank you right kindly. It were a mite bit small for so large a healin' touch, but I do appreciate it. I think I needs best be gettin' a good drink, or mayhap a bit o' cold water to slow th' swellin'. Hey, no gigglin'!~ IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2096 SAY ~[ARAN] (You work together for a time, his strong hands guiding yours over copywork again and again, shaping and moving words and figures, until at last the ink is spent.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2097 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN EXIT END
-IF ~~ a2097_walking 
+IF ~~ a4339 
   SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ 
   IF ~~ THEN GOTO new_walking_action
 END
@@ -16530,7 +16506,7 @@ IF ~~ a2102
   ++ ~[PC] Ouch! (Jump up off of his lap, rubbing at your backside, blushing.)~ + a2979
 END
 
-IF ~~ a2102_extended
+IF ~~ a4340
   SAY ~[ARAN] That would be a pleasure. I'll show you some runes I found, an' you can trace 'em to test your skills.~
   ++ ~[PC] (Pick up the proffered quill and begin tracing on the parchment he offers.)~ + a2059
   ++ ~[PC] (Wiggle a bit on his lap, adjusting yourself and making a show of picking up the quill.)~ + a3257
@@ -16547,7 +16523,7 @@ END
 
 IF ~~ a2271
   SAY ~[ARAN] Careful, now. Don't rightly just hurl yourself into a man's lap. You can harm a lad that way.~
-  ++ ~[PC] Come on, Aran. You are always poking about scrolls with that quill of yours. Teach me to scribe something interesting.~ + a2102_extended
+  ++ ~[PC] Come on, Aran. You are always poking about scrolls with that quill of yours. Teach me to scribe something interesting.~ + a4340
   ++ ~[PC] That assumes you are a man. Somehow, I think you will come to no harm.~ + a2970
   ++ ~[PC] Are you a 'lad'? I think I can feel something that seems more in the 'manly' category, very hard, right here...~ + a2979
   ++ ~[PC] What happens if I wriggle up against you like this?~ + a3257
@@ -16751,7 +16727,7 @@ IF ~~ a796
   ++ ~[PC] I should have known you would be here. I suppose you have already chosen your evening's entertainment?~ + a799
   ++ ~[PC] Dance with me.~ + a807
   ++ ~[PC] Like I care what you think.~ + a811
-  ++ ~[PC] (Walk over and grab his chin, kissing him solidly on the lips).~ + a805
+  ++ ~[PC] (Walk over and grab his chin, kissing him solidly on the lips).~  DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a805
   + ~RandomNum(4,1)~ + ~[PC] I want a bath. Do you know where they are?~ + a1808
   + ~RandomNum(4,2)~ + ~[PC] Teach me to scribe something new.~ + a2057
   + ~RandomNum(4,3) Global("c-aransex","GLOBAL",0)~ + ~[PC] I want a bath, and some time to relax. Come on, show me where they are around here.~ + a2273
@@ -16870,7 +16846,7 @@ END
 IF ~~ a805
   SAY ~[ARAN] Now, what was that for? Not that I'm complainin', mind. See, this be me, not complainin'.~
   ++ ~[PC] No particular reason. Now get me a drink, and then leave. Don't let me see your face here again tonight. You have guard duty, and I will not have you drunk on duty.~ + a1932 /* c-aranshutup26 */
-  ++ ~[PC] Just shut up and keep kissing.~ + a808
+  ++ ~[PC] Just shut up and keep kissing.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a808
   ++ ~[PC] (Slap him hard across the cheek)~ + a3247
   ++ ~[PC] A moment of weakness, I guess. Don't worry, it probably won't happen again. Have a nice time, Aran. I'm off to explore.~ + a3247
   ++ ~[PC] I see your hand has found something very interesting to play with.~ + a3246
@@ -17079,16 +17055,16 @@ END
 
 IF ~~ a829
   SAY ~[ARAN] An' here I thought we were plain' a game. Which one o' those are you holdin' me to, love, or war?~
-  ++ ~[PC] Why, Aran, I'm not holding you to anything. I'll let you figure out which one might be more fun...~ + c-restingexitpanel2
-  ++ ~[PC] War, of course. I have plenty of love already, and it will be fun to see if I can twist your poor brain into knots.~ + c-restingexitpanel3
-  ++ ~[PC] I'm holding you to another game, another day, and that is enough for me.~ + c-restingexitpanel1
+  ++ ~[PC] Why, Aran, I'm not holding you to anything. I'll let you figure out which one might be more fun...~ + a4321
+  ++ ~[PC] War, of course. I have plenty of love already, and it will be fun to see if I can twist your poor brain into knots.~ + a4322
+  ++ ~[PC] I'm holding you to another game, another day, and that is enough for me.~ + a4320
   ++ ~[PC] I will see you later, Aran.~ + a865
 END
 
-IF ~~ c-restingexitpanel1 SAY ~[ARAN] Right. I suppose there be some good in just havin' a decent night's sleep. Or indecent, if a lad could find a partner, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
-IF ~~ c-restingexitpanel2 SAY ~[ARAN] Now I don't know whether I be comin' or goin'. You seem to have all th' pieces covered, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
-IF ~~ c-restingexitpanel3 SAY ~[ARAN] Well, on both counts, looks like you succeded. I might just have a drink or two an' then let my poor addled brain sleep in th' resultin' alcohol-induced hazy bliss, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
-IF ~~ c-restingexitpanel4 SAY ~[ARAN] (The evening passes in a warm, relaxed haze of comfort.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4320 SAY ~[ARAN] Right. I suppose there be some good in just havin' a decent night's sleep. Or indecent, if a lad could find a partner, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4321 SAY ~[ARAN] Now I don't know whether I be comin' or goin'. You seem to have all th' pieces covered, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4322 SAY ~[ARAN] Well, on both counts, looks like you succeded. I might just have a drink or two an' then let my poor addled brain sleep in th' resultin' alcohol-induced hazy bliss, eh?~ IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4323 SAY ~[ARAN] (The evening passes in a warm, relaxed haze of comfort.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
 
 IF ~~ a830
   SAY ~[ARAN] Well, what did you have in mind, then?~
@@ -17148,7 +17124,7 @@ IF ~~ a840
   ++ ~[PC] Hmmm. Is it here? (Walk your fingers up his arm and point to the leather tie holding a locket out of sight under his shirt.)~ + a843
   ++ ~[PC] Hmmm. Is it here? (Gently run your palm down to the center of his back, pressing close to him and looking up into his eyes.)~ + a844
   ++ ~[PC] Hmmm. Is it here? (Gently tug at his belt, loosening it and slipping your fingers under his clothing.)~ + a845
-  ++ ~[PC] I think I will do better with a whole body search. (Turn around and look coyly over your shoulder at him while nestling your back up against him and wiggling your hips.)~ + a845
+  ++ ~[PC] I think I will do better with a whole body search. (Turn around and look coyly over your shoulder at him, while nestling your back up against him and wiggling your hips.)~ + a845
 END
 
 IF ~~ a841 SAY ~[ARAN] Right you are, in one! An' for winnin' I'll get you a right fine drink, an' we can sit an' chat a bit. Innkeeper, Rashemi Firewine, straight. None o' that watered crap, neither!~ IF ~~ THEN DO ~RestParty()~ EXIT END
@@ -17216,7 +17192,7 @@ IF ~~ a852
 END
 
 IF ~~ a853 SAY ~[ARAN] Sorry about that. You smell right nice, like a warm rain in th' spring. Sometimes, there be times when a man's a man, no matter what's right or wrong. I'll watch m'self. Let's just enjoy th' dancin', an' all.~ 
-   IF ~~ THEN GOTO c-restingexitpanel4 
+   IF ~~ THEN GOTO a4323 
 END
 
 IF ~~ a854
@@ -17361,83 +17337,83 @@ IF ~~ a3019 SAY ~[ARAN] Well, now, that be a great debate. Do it resolve from th
 
 IF ~Global("c-arandreamstar","LOCALS",1)~ THEN BEGIN a2193
   SAY ~[ARAN] Now, that be a sight. Th' stars, all lightin' up in th' sky. I never tire o' lookin' at them.~
-  + ~Gender(Player1,MALE)~ + ~[PC] (Gaze silently up at the twinkling lights far above you.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_male1
-  + ~Gender(Player1,MALE)~ + ~[PC] There are lots more interesting things to look at than those far off lights.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_male2
-  + ~Gender(Player1,MALE)~ + ~[PC] Are you feeling all nostalgic and weepy again? Good god, man. You must be in love.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_male3
-  + ~Gender(Player1,MALE)~ + ~[PC] It kind of makes you think. What kind of powerful creatures can wander around those far-off tings at will?~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_male4
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (Gaze silently up at the twinkling lights far above you.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_extend1
-  + ~Gender(Player1,FEMALE)~ + ~[PC] There are lots more interesting things to look at than those far off lights.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_extend2
-  + ~Gender(Player1,FEMALE)~ + ~[PC] Is this another attempt to get me into your bedroll?~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_finish
-  + ~Gender(Player1,FEMALE)~ + ~[PC] (Study his profile carefully, his face slightly glowing in reflected starlight.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_extend1
-  ++ ~[PC] Right. This is a waste of time. I'm tired. Have fun staring vacantly at the sky.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a2193_extendwaste
+  + ~Gender(Player1,MALE)~ + ~[PC] (Gaze silently up at the twinkling lights far above you.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4341
+  + ~Gender(Player1,MALE)~ + ~[PC] There are lots more interesting things to look at than those far off lights.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4342
+  + ~Gender(Player1,MALE)~ + ~[PC] Are you feeling all nostalgic and weepy again? Good god, man. You must be in love.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4343
+  + ~Gender(Player1,MALE)~ + ~[PC] It kind of makes you think. What kind of powerful creatures can wander around those far-off tings at will?~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4344
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (Gaze silently up at the twinkling lights far above you.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4345
+  + ~Gender(Player1,FEMALE)~ + ~[PC] There are lots more interesting things to look at than those far off lights.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4346
+  + ~Gender(Player1,FEMALE)~ + ~[PC] Is this another attempt to get me into your bedroll?~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4347
+  + ~Gender(Player1,FEMALE)~ + ~[PC] (Study his profile carefully, his face slightly glowing in reflected starlight.)~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4345
+  ++ ~[PC] Right. This is a waste of time. I'm tired. Have fun staring vacantly at the sky.~ DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4348
 END
 
-IF ~~ a2193_extend1
+IF ~~ a4345
   SAY ~[ARAN] (Aran's face turns towards yours, and he smiles.)~
-  IF ~~ THEN GOTO a2193_silent
+  IF ~~ THEN GOTO a4352
 END
 
-IF ~~ a2193_extend2
+IF ~~ a4346
   SAY ~[ARAN] (Aran's face turns towards yours, and he smiles.)~
-  IF ~~ THEN GOTO a2193_finish
+  IF ~~ THEN GOTO a4347
 END
 
-IF ~~ a2193_finish
+IF ~~ a4347
   SAY ~[ARAN] Aye. Now that be a right powerful truth.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_silent
+IF ~~ a4352
   SAY ~[ARAN] For a moment there, sound, thought, an' even time all seemed a might bit unimportant. Your face... well, it be more beautiful even than them there stars.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_male1
+IF ~~ a4341
   SAY ~[ARAN] Well, that were a moment. Come to think of it, I get right tired o' lookin' at things outside o' my grasp. What I needs be doin' right now is tryin' to figure out how to get me a woman. Have a good night, eh?~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_male2
+IF ~~ a4342
   SAY ~[ARAN] Mayhap you be right. For one thing, there was this barmaid in Calimport, one o' them young ladies what dance, see? She had jewels all over her most interestin' areas what sparkled like those stars. Th' diffrernce was, when you took off those stars, she were a sight more beautiful. Plus she were in arm's reach, so to speak.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_male3
+IF ~~ a4343
   SAY ~[ARAN] Hells, no. Lust, mayhap, but that be a healthy thing for a young lad to be in, eh? Come to think of it, I should be writin' a nice letter to her right now, so's to warm her up for when I come callin'. Have a good night. I'll go find me a good light to work by.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_male4
+IF ~~ a4344
   SAY ~[ARAN] Hells, man. Give us a few more years, an th' two o' us will be stridin' between 'em like two boys on a lark, an' gatherin' 'em up to hand over to adorin' admirers. After all, we done faced more powerful bein's than most folks know exist. An' on that happy thought, I'm off to bed. Your turn at watch, I think.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
-IF ~~ a2193_extendwaste
+IF ~~ a4348
   SAY ~[ARAN] Hells, a man has to look up at th' sky just to tell him that there be more than th' dirt, eh? Way to spoil th' mood. An' on that happy thought, I'm off to bed. Your turn at watch, I think.~ 
   IF ~~ THEN DO ~RestParty()~ EXIT
 END
 
 
 /* Scenery Dialog : Graveyard */
-IF ~Global("c-arangravecomment","LOCALS",1) TimeOfDay(DAY)~ THEN BEGIN a2321_day
+IF ~Global("c-arangravecomment","LOCALS",1) TimeOfDay(DAY)~ THEN BEGIN a4353
   SAY ~[ARAN] You know, I thought it might be right fine to pay respects to th' dead, an' wander among th' headstones. Thought it might be peaceful, an' not spooky at all.~
   = ~[ARAN] Then again, mother always did say I be a proper idiot.~
   IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ EXIT
 END
 
-IF ~Global("c-arangravecomment","LOCALS",1) !TimeOfDay(DAY)~ THEN BEGIN a2321_night
+IF ~Global("c-arangravecomment","LOCALS",1) !TimeOfDay(DAY)~ THEN BEGIN a4354
   SAY ~[ARAN] Somehow, it seems th' type o' folks you meet in a boneyard just don't always seem to have th' best interest o' me an' mine held proper. Mayhap we stop all this grave-grubbin', at least until after daylight. This place be a mite less than cheerful, eh?~
   IF ~~ THEN DO ~SetGlobal("c-arangravecomment","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
 
 /* Scenery Talks : On waking banter, after Underdark : dlg */
 
-IF ~Global("c-aranwakeup","LOCALS",1) OR(2) TimeOfDay(DAY) TimeOfDay(MORNING)~ THEN BEGIN a2321_wakingday
+IF ~Global("c-aranwakeup","LOCALS",1) OR(2) TimeOfDay(DAY) TimeOfDay(MORNING)~ THEN BEGIN a4355
   SAY ~[ARAN] Birds. Daylight. Sunrise. Blighted hells, it be nice to stretch out after a real sleep, an' see th' sky...~ [c-aws110]
   IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ GOTO a1806
 END
 
-IF ~Global("c-aranwakeup","LOCALS",1) !TimeOfDay(DAY) !TimeOfDay(MORNING)~ THEN BEGIN a2193_wakingnight
+IF ~Global("c-aranwakeup","LOCALS",1) !TimeOfDay(DAY) !TimeOfDay(MORNING)~ THEN BEGIN a4358
   SAY ~[ARAN] Stars. Breezes. Selune Herself, shinin' down. Blighted hells, it be nice to stretch out after a real sleep, an' see th' sky...~ [c-aws111]
   IF ~~ THEN DO ~SetGlobal("c-aranwakeup","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) ~ GOTO a1806
 END
@@ -17776,7 +17752,7 @@ END
 IF ~~ a2215
   SAY ~[ARAN] (His kisses are ferocious, demanding yours with rising passion. His hands hold your face, cupping you to his lips like a man driven by desperate thirst.)~
   = ~[ARAN] (Only the gentle knocking on the door reminds you that you have duties and appointments waiting before you can sleep, and you hastily compose yourself before Aran slips out of the door. The Captain of the Guard raises one eyebrow while requesting orders, but he is far too professional to inquire. When you catch a glimpse in the mirror, you see that your cheeks and lips are not quite as calm and composed as the Protector of the Keep might be expected to be.)~
-  IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
 END
 
 IF ~~ a2216
@@ -18044,7 +18020,7 @@ END
 
 /* moved  to PLAYER1D dreamscript eval  : IF ~Global("c-arangoaded","GLOBAL",2)~ THEN BEGIN a3353 TOO_MUCH_TEASING */
 
-IF ~~ a3353_transfer
+IF ~~ a4356
   SAY ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
   + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3354 /* UNSURE_GOADED */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3354 /* UNSURE_GOADED */
@@ -18090,7 +18066,7 @@ END
 IF ~~ a3362 /* UNSURE_SECOND */
   SAY ~[ARAN] Fair enough. But I be my own man, eh? So I won't be comin' round until you be sure. This particular moment in time might not be happenin' again.~
   ++ ~[PC] I... I do want you. Come share my bed.~ + a3356 /* SHARE_MY_BED */
-  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ + a3356 /* SHARE_MY_BED */
+  ++ ~[PC] (Take his hand, and place his palm across your lips, kissing gently... then slide it down your body.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3356 /* SHARE_MY_BED */
   ++ ~[PC] Well, trying to pressure me just made up my mind. Go away, Aran. I like flirting, but I do not want to do anything else. Certainly not tonight.~ + a3358 /* NO_WAY_THIS_OR_ANY_NIGHT */
   ++ ~[PC] Well, your timing stinks. Can't you come back another night? I am really not in the mood.~ + a3363 /* ARAN_DECIDES_NO */
   ++ ~[PC] I have someone I care for very deeply, who would be hurt if this became known. But if you can keep silent about it, then join me.~ + a3360 /* PC_HAVING_AFFAIR */
@@ -18135,7 +18111,7 @@ IF ~~ a3356 /* SHARE_MY_BED */
   + ~Global("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + ~[PC] You are glowing... your body is so hot that my vision... ~ + a3372 /* PC_IS_SMALL */
   ++ ~[PC] (Let your fingers drift down his chest, until your fingertips gently smooth along his growing erection.)~ + a3373 /* GET_MORE_THEN_YOU_EXPECT */
   ++ ~[PC] (Take his hand, guiding his fingers down your body until they are trapped between your thighs, warm on your bare skin.)~ + a3374 /* SAUCE_FOR_GOOSE_GANDER */
-  ++ ~[PC] (Put your arms around his neck, kissing him deeply as he rolls you underneath him.)~ + a3375 /* PC_IS_ON_BACK */
+  ++ ~[PC] (Put your arms around his neck, kissing him deeply as he rolls you underneath him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3375 /* PC_IS_ON_BACK */
   ++ ~[PC] (Roll him onto his back, your body nestled to his chest.)~ + a3376 /* LINING_UP_NICELY */
   ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a3699 /* FRONT_TO_ARAN_FINGERS */
   ++ ~[PC]  I can't do this. I am sorry. It just feels wrong.~ + a3358 /* NO_WAY_THIS_OR_ANY_NIGHT */
@@ -18193,7 +18169,7 @@ IF ~~ a3381 /* PC_TURNS_TABLES */
   ++ ~[PC] (Rake your fingernails across his chest.)~ + a3387 /* PC_RAKES_CHEST */
   ++ ~[PC] (Snarl at him, and wriggle your hips to fully seat the tip of his manhood upon your threshold.)~ + a3380 /* CANT_RESIST_MUST_RESIST */
   ++ ~[PC] (Run your palms along his face and down his body, gently running yourself back and forth against his hardness.)~ + a3380 /* CANT_RESIST_MUST_RESIST */
-  ++ ~[PC] I. Want. More. Kissing.~ + a3388 /* KISS_AND_TAKE */
+  ++ ~[PC] I. Want. More. Kissing.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3388 /* KISS_AND_TAKE */
   ++ ~[PC] I do not want apprentice games and blushing novices. I want to be taken roughly, forced into submission, and used well.~ + a3379 /* WAIT_WE_WERE_LOVING */
   ++ ~[PC] (Shift slightly, catching his tip in just the right place and gently pushing your body onto him, until he is nestled deep within you.)~ + a3380 /* CANT_RESIST_MUST_RESIST */
 END
@@ -18259,7 +18235,7 @@ IF ~~ a3780 /* IM_SCARED */
   + ~RandomNum(4,4)~ + ~[PC] I think I just want to be held, and to be kissed. That is enough for me right now.~ + a3565
   ++ ~[PC] I think I would like you to make love to me, now. I am ready.~ + a3678 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
   ++ ~[PC] Oh well. What is done is done. I guess you can go ahead until you are satisfied. I will just lie here.~ + a3367 /* DO_YOU_EVEN_KNOW_ME */
-  ++ ~[PC] (Kiss him gently, locking your thighs around him and gently pressuring him into you.)~ + a3389 /* ENDGAME_OF_TEASING */
+  ++ ~[PC] (Kiss him gently, locking your thighs around him and gently pressuring him into you.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3389 /* ENDGAME_OF_TEASING */
   ++ ~[PC] I... I think you should go. I am not ready for all of this.~ + a3781
   ++ ~[PC] I want you to make love to me. But not tonight. You should go.~ + a3781
 END
@@ -18279,17 +18255,17 @@ IF ~~ a3380 /* CANT_RESIST_MUST_RESIST */
   ++ ~[PC] Look at me, Aran. Touch me, here. Do you not desire me? Do you not want to overpower me, move within me, and make me yours?~ + a3391 /* SUNE_CELANIL_ANYONE */
   ++ ~[PC] I don't have much experience in the bedchamber. In fact, I don't have any. Am I pleasing you?~ + a3370 /* PLEASING_YOU_PLEASES_ME */
   ++ ~[PC] What would please you?~ + a3370 /* PLEASING_YOU_PLEASES_ME */
-  ++ ~[PC] (Rise gently along his length, then drop sharply onto him, letting him fill you completely.)~ + a3392 /* KISSING_PC_ON_TOP */
+  ++ ~[PC] (Rise gently along his length, then drop sharply onto him, letting him fill you completely.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3392 /* KISSING_PC_ON_TOP */
   ++ ~[PC] I... I want you on top of me, Aran. Or, at least... I want to be able to kiss you.~ + a3392 /* KISSING_PC_ON_TOP */
 END
 
 IF ~~ a3391 /* SUNE_CELANIL_ANYONE */
   SAY ~[ARAN] By th' Lady Firehair, by Celanil's Tresses, by any gods out there, what in th' nine hells am I supposed to do wi' such a woman as this?~
-  ++ ~[PC] No, that is the wrong answer. *This* (drive yourself onto his manhood until he is fully embedded within you) is the right answer.~ + a3392 /* KISSING_PC_ON_TOP */
+  ++ ~[PC] No, that is the wrong answer. *This* (drive yourself onto his manhood until he is fully embedded within you) is the right answer.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3392 /* KISSING_PC_ON_TOP */
   ++ ~[PC] You can have mercy on me... I do not think I can do this. In fact, I know I can't. You should leave.~ + a3371 /* UNFULFILLED_TEASED_EXIT */
   ++ ~[PC] Give me roses, chocolate, oh... and perhaps a serious lovemaking session?~ + a3392 /* KISSING_PC_ON_TOP */
   ++ ~[PC] Wait. I do not think I can do this. In fact, I know I can't. You should leave.~ + a3371 /* UNFULFILLED_TEASED_EXIT */
-  ++ ~[PC] (Lean forward, cupping one breast to his lips.)~ + a3393 /* KISSING_PC_TOP_BREASTS */
+  ++ ~[PC] (Lean forward, cupping one breast to his lips.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3393 /* KISSING_PC_TOP_BREASTS */
   ++ ~[PC] (Roll with him, until he is towering above you, just barely held captive at your threshold.)~ + a3394 /* FIRST_TIME */
 END
 
@@ -18530,7 +18506,7 @@ END
 
 IF ~~ a3420 /* LOOKING_ARAN_RESPONDS */
   SAY ~[ARAN] Now, was that so painful? You could have come over an' said you might be interested in a little sparkin', you know.~
-  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~  DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
   ++ ~[PC] I could get used to that. But we could do better. Let's try again.~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
   ++ ~[PC] How dare you take such a liberty! There is no excuse for crossing that line, no matter what. You should leave, this minute.~ + a3418 /* FIGHT_EXIT */
   ++ ~[PC] I... I  am a little confused. All this is new to me.~ + a3423 /* LOOKING_1_UNSURE */
@@ -18544,7 +18520,7 @@ IF ~~ a3423 /* LOOKING_1_UNSURE */
   ++ ~[PC] I feel like I have no soul.~ + a3424 /* SOUL_PASSTHROUGH */
   ++ ~[PC] That is a nice thought, but... I am not ready for romance of any kind right now. Why don't you just sit here with me, and hold my hand?~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a3425 /* MAKEOUT_INN_EXIT */
-  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~  + a3422 /* LOOKING_ARAN_2_RESPONDS */
   ++ ~[PC] No, thank you. I had better leave now.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
 END
@@ -18563,7 +18539,7 @@ IF ~~ a3422 /* LOOKING_ARAN_2_RESPONDS */
   SAY ~[ARAN] Now if we keep doin' this, things might just get a bit interestin', eh?~
   ++ ~[PC] Well, from what I can feel, things seem to have gotten very exciting already.~ + a3428 /* LOOKING_3_RESPOND */
   ++ ~[PC] Oh, so I am not exciting enough for you yet?~ + a3428 /* LOOKING_3_RESPOND */
-  ++ ~[PC] (Kiss his face, his neck, anything that is uncovered, nestling close to him.)~ + a3428 /* LOOKING_3_RESPOND */
+  ++ ~[PC] (Kiss his face, his neck, anything that is uncovered, nestling close to him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3428 /* LOOKING_3_RESPOND */
   ++ ~[PC] Aran.. your hands... you should take them out from there, I think.~ + a3429 /* CROSSED_LINE */
   ++ ~[PC] I think that is enough. I don't want to do this right now.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] If you do not take me upstairs... and I mean that in so many ways... I will scream.~ + a3430 /* LOOKING_4_RESPOND */
@@ -18573,7 +18549,7 @@ END
 IF ~~ a3426 /* NO_I_DONT */
   SAY ~[ARAN] No, I don't rightly know, do I. But I know loss, an' I know pain, an' I have seen th' horrors o' war. Only three ways to fight that desperate hollowness. One, get drunk. Two, find somebody to be with. Three, run screamin' into th' night stark naked wi' only a dagger between you an' harm, darin' th' gods to smite you down...~
   = ~[ARAN] err.. somehow I done got sidetracked. Strike that last. Make it two things, an' both together might ease th' pain.~
-  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
   ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] You don't know anything about anything. You are just pushing at me and pawing like an overgrown bear, and I resent it. Go away, sellsword.~ + a3418 /* FIGHT_EXIT */
   ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
@@ -18583,7 +18559,7 @@ END
 
 IF ~~ a3427 /* NO_HARM */
   SAY ~[ARAN] I don't mean naught in th' way o' harm. Yes, I want you. No, I'm not blighted likely to do anythin' you don't want to do. What be th' harm in passin' a time wi' you an' me, me an' you?~
-  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
   ++ ~[PC] If I wanted any of this before, I certainly don't want it now. You just don't understand me or my needs at all. Get away from me.~ + a3418 /* FIGHT_EXIT */
   ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] I many be unsure of myself, but somehow I think you could be much more aggressive, and I might like it...~ + a3430 /* LOOKING_4_RESPOND */
@@ -18594,7 +18570,7 @@ IF ~~ a3429 /* CROSSED_LINE */
   SAY ~[ARAN] I don't mean naught in th' way o' harm. I'll keep my hands marshaled right proper, an' speak wi' my lips only, if that be what you want.~
   ++ ~[PC] What do *you*  want?~ + a3431 /* WANT_YOU */
   ++ ~[PC] No. You crossed the line. I can't trust you. Go away, Aran.~ + a3418 /* FIGHT_EXIT */
-  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3428 /* LOOKING_3_RESPOND */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3428 /* LOOKING_3_RESPOND */
   ++ ~[PC] I like you, Aran. But there are times and places, and this is neither.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] What is sauce for the goose is sauce for the gander, I think... let me see. Hands go here...~ + a3432 /* YELP_PASSTHROUGH */
 END
@@ -18625,15 +18601,15 @@ IF ~~ a3433 /* LOOKING_ADVANCE_INTIMATE */
   ++ ~[PC] You should take me upstairs... and I mean that in so many ways... right now.~ + a3430 /* LOOKING_4_RESPOND */
   ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3418 /* FIGHT_EXIT */
   ++ ~[PC] I have things well in hand, I think... but you seem to need some guidance. Here, under this... like this... right there... yes.~ + a3430 /* LOOKING_4_RESPOND */
-  ++ ~[PC] Your hands are so warm, and... ooooh. Don't stop any of that, the kissing, the touching...~ + a3425 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] Your hands are so warm, and... ooooh. Don't stop any of that, the kissing, the touching...~  DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3425 /* MAKEOUT_INN_EXIT */
   ++ ~[PC] This is too much, too fast. Slow down, Aran. Tell me why you want to be with me.~ + a3428 /* LOOKING_3_RESPOND */
 END
 
 IF ~~ a3428 /* LOOKING_3_RESPOND */
   SAY ~[ARAN] Hmmm. Incredible lips, check. Eyes to drown in, check. Now, let me convince you o' just how excitin' you are...~
-  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ + a3430 /* LOOKING_4_RESPOND */
-  ++ ~[PC] Keep those hands in plain sight, Aran. But as the gods are my witness, I will kill you if you stop kissing me.~ + a3430 /* LOOKING_4_RESPOND */
-  ++ ~[PC] (Kiss him, lips softened and warm, tongue just grazing his lips again and again.)~ + a3430 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3430 /* LOOKING_4_RESPOND */
+  ++ ~[PC] Keep those hands in plain sight, Aran. But as the gods are my witness, I will kill you if you stop kissing me.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3430 /* LOOKING_4_RESPOND */
+  ++ ~[PC] (Kiss him, lips softened and warm, tongue just grazing his lips again and again.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3430 /* LOOKING_4_RESPOND */
   ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3418 /* FIGHT_EXIT */
   ++ ~[PC] You should take me upstairs... and I mean that in so many ways... right now.~ + a3430 /* LOOKING_4_RESPOND */
   ++ ~[PC] Oh, dear me. A little chink in your armor, I think... and then my hands can run right up your thighs, right to...~ + a3430 /* LOOKING_4_RESPOND */
@@ -18646,7 +18622,7 @@ IF ~~ a3430 /* LOOKING_4_RESPOND */
   ++ ~[PC] (Follow him upstairs to your bedchamber, sneaking carefully to avoid detection)~ + a3434 /* SLEEP_NOW_PASSTHROUGH */
   ++ ~[PC] I think I will meet you upstairs in a moment, Aran. I am sure you can find your way.~ + a3435 /* MOVE_TO_AREA */
   ++ ~[PC] Upstairs, boyo. And don't keep me waiting.~ + a3435 /* MOVE_TO_AREA */
-  ++ ~[PC] This... this is just right. Right here, hidden away in this corner, I could kiss you for hours.~ + a3425 /* MAKEOUT_INN_EXIT */
+  ++ ~[PC] This... this is just right. Right here, hidden away in this corner, I could kiss you for hours.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3425 /* MAKEOUT_INN_EXIT */
   ++ ~[PC] Stop! I can't do this.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3366 /* GET_OUT_EXIT */
@@ -18661,10 +18637,10 @@ IF ~~ a3434 /* SLEEP_NOW_PASSTHROUGH */
   SAY ~[ARAN] Hey, this be more than I ever expected. But I want no chances o' makin' things unhappy between us. Just what be my ground rules, eh?~
   ++ ~[PC] I have changed my mind. Thank you for a wonderful time, but this doorway is as far as you go.~ + a3436 /* SLEEP_NOW_INN_0_EXIT */
   ++ ~[PC] I would... you know... look, just holding hands is very nice.~ + a3421 /* JUST_FRIENDS_INN_EXIT */
-  ++ ~[PC] Just kissing, of course. If you want to, that is...~ + a3437 /* SLEEP_NOW_INN_1_EXIT */
-  ++ ~[PC] I want to feel you close to me, Aran. I think we can enjoy ourselves without taking off all of our clothes. Just a few odds and ends, here and there...~ + a3438 /* SLEEP_NOW_INN_2_EXIT */
-  ++ ~[PC] You and I can share almost everything except a full-scale committed invasion, if you catch my metaphor.~ + a3439 /* SLEEP_NOW_INN_3_EXIT */
-  ++ ~[PC] I want you to have all of me, in every way. I want all of you, in every way. Can I be much clearer than that?~ + a3440 /* SLEEP_NOW_INN_4_EXIT */
+  ++ ~[PC] Just kissing, of course. If you want to, that is...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3437 /* SLEEP_NOW_INN_1_EXIT */
+  ++ ~[PC] I want to feel you close to me, Aran. I think we can enjoy ourselves without taking off all of our clothes. Just a few odds and ends, here and there...~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3438 /* SLEEP_NOW_INN_2_EXIT */
+  ++ ~[PC] You and I can share almost everything except a full-scale committed invasion, if you catch my metaphor.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3439 /* SLEEP_NOW_INN_3_EXIT */
+  ++ ~[PC] I want you to have all of me, in every way. I want all of you, in every way. Can I be much clearer than that?~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3440 /* SLEEP_NOW_INN_4_EXIT */
   ++ ~[PC] I... I am not very experienced, Aran. Can we please go slowly? I am not sure how far I want to go.~ + a3438 /* SLEEP_NOW_INN_2_EXIT */
   ++ ~[PC] No rules, and no game. Try another time, Aran. I am sure you can find your way back to the common room.~ + a3366 /* GET_OUT_EXIT */
 END
@@ -18683,7 +18659,7 @@ END
 
 IF ~~ a3445 /* ARAN_UNDECIDED_OUTDOOR */  /* try not to advance action on this one. Not every state needs to move forward - in RL, relationship plateaus exist. (edit: 7 choices) */
   SAY ~[ARAN] Here. Sit down. I done cleaned off a nice spot for you, right here.~
-  ++ ~[PC] I think I prefer your lap. And now that I am here, I might as well kiss your neck a little, and see what comes up.~ + a3442 /* FEM_LEAD_1_ACTION */
+  ++ ~[PC] I think I prefer your lap. And now that I am here, I might as well kiss your neck a little, and see what comes up.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3442 /* FEM_LEAD_1_ACTION */
   /* advance talking */
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
   + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
@@ -18709,7 +18685,7 @@ IF ~~ a3443 /* ARAN_LEAD_TRIP_ACTION */
   /* advance talking */
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I would not mind that. In fact, I might like that.~ + a3446 /* ARAN_LEAD_1_ACTION */
   + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Was the last one so displeasing that you would hesitate right now?~ + a3446 /* ARAN_LEAD_1_ACTION */
-  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] A kiss might be very nice, and your hands seem to have found my bottom rather quickly.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] A kiss might be very nice, and your hands seem to have found my bottom rather quickly.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3446 /* ARAN_LEAD_1_ACTION */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Too bad we are in public right now, or we could repeat that whole 'put your tongue where your fingers have explored' game...~ + a3446 /* ARAN_LEAD_1_ACTION */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Hey, this is not the bedchamber, bath, or bedroll. But a kiss or three would be very welcome.~ + a3446 /* ARAN_LEAD_1_ACTION */
   /* advance no talking */
@@ -18718,7 +18694,7 @@ IF ~~ a3443 /* ARAN_LEAD_TRIP_ACTION */
   + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips toward his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3447 /* FEM_LEAD_2_ACTION */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
-  ++ ~[PC] (Loop your arms around his neck and kiss him gently)~ + a3442 /* FEM_LEAD_1_ACTION */
+  ++ ~[PC] (Loop your arms around his neck and kiss him gently)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3442 /* FEM_LEAD_1_ACTION */
   ++ ~[PC] I want more than kisses from you, Aran. I want to see some of what is under all that armor. Please?~ + a3447 /* FEM_LEAD_2_ACTION */
   ++ ~[PC] No kissing, if you please. Actually, no kissing, whether you please or not. But you could hold my hand as we walk, if you like.~ + a3448 /* WALK_HANDHOLDING_EXIT */
   ++ ~[PC] Let go of me. I wanted a walk, not a wrestling match.~ + a3366 /* GET_OUT_EXIT */
@@ -18779,7 +18755,7 @@ END
 
 IF ~~ a3449 /* ARAN_OUTDOOR_1_RESPONSE */  /* edit: 8 possible replies */
   SAY ~[ARAN] So, all this walkin' was a means to get me alone for a mite bit, an' take advantage o' me, I bet.~
-  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] Let's try that again. It tickles when you growl that way.~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] Gods, you taste horrible. Whatever possessed me to think you were attractive, anyways?~ + a3366 /* GET_OUT_EXIT */
   ++ ~[PC] I... think I like this, but I am a little confused.~ + a3453 /* ARAN_RECHECK_WANTED_RESPONSE */
@@ -18803,8 +18779,8 @@ IF ~~ a3453 /* ARAN_RECHECK_WANTED_RESPONSE */
   ++ ~[PC] I want to feel your hands, feel your lips on me. I want so much, right now...~ + a3454 /* ACTION_PASSTHROUGH */
   ++ ~[PC] I want so much, but I have so little to offer. I don't know how to please you, really... I am just making this up as I go along.~ + a3454 /* ACTION_PASSTHROUGH */
   ++ ~[PC] That is a nice thought, but... I am not ready for romance of any kind right now. Why don't you just sit here with me for awhile, and hold my hand?~ + a3452 /* JUST_FRIENDS_EXIT */
-  ++ ~[PC] Just kiss my lips, and don't stop. Unless the sky is filled with undead flying liches, or Irenicus taps you on the shoulder, in which case, stop while we deal with them... and then start kissing me again.~ + a3455 /* MAKEOUT_IN_SHADOWS */
-  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] Just kiss my lips, and don't stop. Unless the sky is filled with undead flying liches, or Irenicus taps you on the shoulder, in which case, stop while we deal with them... and then start kissing me again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3455 /* MAKEOUT_IN_SHADOWS */
+  ++ ~[PC] (Move into his arms, and kiss him under the chin.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] You could... you could touch me.~ + a3767 /* MOON_ADVANCE_ACTION */
   ++ ~[PC] No, thank you. I had better leave now.~ + a3452 /* JUST_FRIENDS_EXIT */
   ++ ~[PC] There are times and places, Aran, and this is neither.~ + a3452 /* JUST_FRIENDS_EXIT */
@@ -18833,12 +18809,12 @@ END
 
 IF ~~ a3456 /* ARAN_HEAVY_RESPONSE */
   SAY ~[ARAN] Now, what have we here...~
-  ++ ~[PC] (Kiss him again and again, your desire held at bay.)~ + a3457 /* ARAN_OUTDOOR_3_RESPONSE */
-  ++ ~[PC] Me. Shhh. Just need to unlace this... and... there. Gods... slowly...~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] (Kiss him again and again, your desire held at bay.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3457 /* ARAN_OUTDOOR_3_RESPONSE */
+  ++ ~[PC] Me. Shhh. Just need to unlace this... and... there. Gods... slowly... gently... your fingers...~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
   ++ ~[PC] (Move down his body slowly, nestling close to him, until your face is in his lap.)~ + a3458 /* ARAN_QUESTIONING */
   ++ ~[PC] I know we have... you know... but sometimes I think... sometimes I wonder how this happened at all.~ + a3460 /* ARAN_RIGHT_THEN */
-  ++ ~[PC] (Glance quickly around, then undo his lacings and yours, settling yourself down upon his rampant manhood.)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
-  ++ ~[PC] (Let your hands wander under his clothing, gently moving up and down the length of his manhood, wrestling from time to time with the constraints of his leggings.)~ + a3458 /* ARAN_QUESTIONING */
+  ++ ~[PC] (Glance quickly around, then undo his lacings and yours, settling yourself down upon his rampant manhood.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3450 /* ARAN_OUTDOOR_2_RESPONSE */
+  ++ ~[PC] (Let your hands wander under his clothing, gently moving up and down the length of his manhood, wrestling from time to time with the constraints of his leggings.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3458 /* ARAN_QUESTIONING */
 END
 
 IF ~~ a3458 /* ARAN_QUESTIONING */
@@ -18908,23 +18884,23 @@ END
 IF ~~ a3457 /* ARAN_OUTDOOR_3_RESPONSE */
   SAY ~[ARAN] Well, that be fine wi' me, as I have just managed to get my hands into a right interestin' set o' places, an' they want to regroup before renewin' th' assault, so to speak.~
   ++ ~[PC] Hey, those hands... oh, never mind. No one can see us over here anyw... ways... ok, now that feels good.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3465 /* ARAN_OUTDOOR_4_RESPONSE */
-  ++ ~[PC] Too fast, too rough... just kiss me, Aran. Hey, I didn't mean that low on my neck. Or there, or... oh. Hmmmm. Gently... they are very sensitive.~ + a3465 /* ARAN_OUTDOOR_4_RESPONSE */
-  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ + a3366 /* GET_OUT_EXIT */
+  ++ ~[PC] Too fast, too rough... just kiss me, Aran. Hey, I didn't mean that low on my neck. Or there, or... oh. Hmmmm. Gently... they are very sensitive.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3465 /* ARAN_OUTDOOR_4_RESPONSE */
+  ++ ~[PC] Hey, watch it. If I wanted to be felt up and mauled like a prize cow, I would have stayed in Candlekeep. Haven't you ever entertained a woman before?~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3366 /* GET_OUT_EXIT */
   ++ ~[PC] Hands off! This is getting me very exci... I mean, very confused, and I need to think!~ + a3452 /* JUST_FRIENDS_EXIT */
   ++ ~[PC] Aran, stop... I am not ready for any of this. I might never be. I don't know. Just... I should go.~ + a3452 /* JUST_FRIENDS_EXIT */
-  ++ ~[PC] (Give way to excitement and lust, gently guiding his hands to evoke new feelings.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3465 /* ARAN_OUTDOOR_4_RESPONSE */
-  ++ ~[PC] You are taking advantage of me. I don't mind kissing, but get your paws off of me. NOW.~ + a3366 /* GET_OUT_EXIT */
+  ++ ~[PC] (Give way to excitement and lust, gently guiding his hands to evoke new feelings.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3465 /* ARAN_OUTDOOR_4_RESPONSE */
+  ++ ~[PC] You are taking advantage of me. I don't mind kissing, but get your paws off of me. NOW.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3366 /* GET_OUT_EXIT */
 END
 
 IF ~~ a3465 /* ARAN_OUTDOOR_4_RESPONSE */
   SAY ~[ARAN] (Lips meet lips devouring and battling in fiery ardor.)~
-  ++ ~[PC] This... this is just right. Right here, hidden away in the shadows, I could kiss you for hours.~ + a3455 /* MAKEOUT_IN_SHADOWS */
-  ++ ~[PC] Stop! I can't do this.~ + a3452 /* JUST_FRIENDS_EXIT */
-  ++ ~[PC] I need to walk away, right now, or I am going to do something that we both will regret. Well, that I will regret.~ + a3444 /* FEMALE_LEAVES */
-  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3452 /* JUST_FRIENDS_EXIT */
-  ++ ~[PC] (Put your finger over his lips, breaking contact. Slowly settle your head on his chest, his arms around you.)~ + a3463 /* ARAN_CUDDLE_ON_CHEST */
-  ++ ~[PC] One day, when you least expect it, I think I am going to let you explore every inch of me, and see how many ways you can give me pleasure. But for now, I am happy with a little more walking. You can even hold my hand.~ + a3448 /* WALK_HANDHOLDING_EXIT */
-  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3366 /* GET_OUT_EXIT */
+  ++ ~[PC] This... this is just right. Right here, hidden away in the shadows, I could kiss you for hours.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3455 /* MAKEOUT_IN_SHADOWS */
+  ++ ~[PC] Stop! I can't do this.~  DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3452 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] I need to walk away, right now, or I am going to do something that we both will regret. Well, that I will regret.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3444 /* FEMALE_LEAVES */
+  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3452 /* JUST_FRIENDS_EXIT */
+  ++ ~[PC] (Put your finger over his lips, breaking contact. Slowly settle your head on his chest, his arms around you.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3463 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] One day, when you least expect it, I think I am going to let you explore every inch of me, and see how many ways you can give me pleasure. But for now, I am happy with a little more walking. You can even hold my hand.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3448 /* WALK_HANDHOLDING_EXIT */
+  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3366 /* GET_OUT_EXIT */
 END
 
 IF ~~ a3464 /* ARAN_REASSURE_OUTDOOR */
@@ -18934,7 +18910,7 @@ IF ~~ a3464 /* ARAN_REASSURE_OUTDOOR */
   ++ ~[PC] I do not need to explain my feelings to you. (Get up and walk away.)~ + a3444 /* FEMALE_LEAVES */
   ++ ~[PC] I am not interested in any deep commitments. There is too much at stake.~ + a3452 /* JUST_FRIENDS_EXIT */
   ++ ~[PC] I... I think you only want me physically. Or perhaps all I have to offer is physical. I don't know.~ + a3460 /* ARAN_RIGHT_THEN */
-  ++ ~[PC] (Kiss his lips, drawing his face close to yours.)~ + a3463 /* ARAN_CUDDLE_ON_CHEST */
+  ++ ~[PC] (Kiss his lips, drawing his face close to yours.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3463 /* ARAN_CUDDLE_ON_CHEST */
   ++ ~[PC] I don't know what I think, but we can deal with it later. Right now, I am very, very hungry. Can we get some food?~ + a3448 /* WALK_HANDHOLDING_EXIT */
 END
 
@@ -18981,7 +18957,7 @@ IF ~~ a3470 /* ARAN_MOON_MIND */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3480 /* MOON_JUST_L3_FRIENDS */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3481 /* MOON_JUST_L4_FRIENDS */
   ++ ~[PC] (Gently lean on his shoulder for a moment, then kiss his neck, your fingers twining in his hair.)~ + a3482 /* FEMALE_MOON_LEADS2 */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3483_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a4349 /* HANDINHAND OR CONFUSED */
 END
 
 IF ~~ a3476 /* MOON_OTHER_OPTIONS */
@@ -18997,7 +18973,7 @@ IF ~~ a3476 /* MOON_OTHER_OPTIONS */
   + ~InParty(Player4) Gender(Player4,FEMALE) !HasItemEquiped("belt05",Player4) !Name("c-aran",Player4)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER4> and me into a torrid encounter.~ + a3484 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player5) Gender(Player5,FEMALE) !HasItemEquiped("belt05",Player5) !Name("c-aran",Player5)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER5> and me into a torrid encounter.~ + a3484 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player6) Gender(Player6,FEMALE) !HasItemEquiped("belt05",Player6) !Name("c-aran",Player6)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER6> and me into a torrid encounter.~ + a3484 /* WHERE_DID_THAT_IDEA */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3483_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a4349 /* HANDINHAND OR CONFUSED */
   ++ ~[PC] Be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3485 /* ARAN_MOON_NOT_PRACTICAL */
   ++ ~[PC] You could say that... or you could you could touch me.~ + a3767 /* MOON_ADVANCE_ACTION */
   ++ ~[PC] Like any girl in her right mind would want you. Hey, that is it... I know how I can get away from your clumsy advances! Next kobold encampment we encounter, we will capture a female one for you. Then you will have someone of your own level to romance!~ + a3418 /* FIGHT_EXIT */
@@ -19139,7 +19115,7 @@ IF ~~ a3492 /* MOON_ARAN_ACTS */
   ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3494 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Let's try that again.~ + a3494 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Ouch. No. I think I have had quite enough of clumsy, ugly, pain-causing ogres tonight. Go away until you develop some kind of dexterity.~ + a3418 /* FIGHT_EXIT */
-  ++ ~[PC] I... I  am a little confused.~ + a3483_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] I... I  am a little confused.~ + a4349 /* HANDINHAND OR CONFUSED */
   ++ ~[PC] That was a sign. Let's leave things just as they are, at least for now.~ + a3487 /* ARAN_MOON_FRIENDS_EXIT */
   ++ ~[PC] You are just too slow. Don't worry... I know exactly what you need. (Pull close to him, struggling with his clothing, trying to release him from his leggings.)~ + a3495 /* START_NINE_HELLS_PC_ACTION */
   ++ ~[PC] Don't patronize me. I didn't need clumsy physical attention, I just thought you needed it. I do not need someone pawing at me to feel loved.~ + a3496 /* MOON_DO_NOT */
@@ -19156,7 +19132,7 @@ IF ~~ a3483 /* MOON_RECHECK */
   ++ ~[PC] Why would I even want to entertain such a thought? There are so many men available who could be a better a lover than you.~ + a3418 /* FIGHT_EXIT */
 END
 
-IF ~~ a3483_replacement /* HANDINHAND OR CONFUSED */
+IF ~~ a4349 /* HANDINHAND OR CONFUSED */
   SAY ~[ARAN] I guess I am a mite bit confused on what you want. I'd have a right better time o' knowin' how to make you happy if you'd use some words, or gestures, or somethin' so's a lad can take some liberties but not make you angry.~
   ++ ~[PC] (Kiss him, pulling at your clothing to allow better access to your body).~ + a3497 /* ROM_ONE_WARM_LIPS */
   ++ ~[PC] I feel like this is wrong, but I want so much more....~ + a3498 /* ROM_ONE_KISS_ME_AGAIN */
@@ -24683,13 +24659,13 @@ IF ~~ a1074
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902")   AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902")   AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
    /* Temple Flirt 2 */
-   + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1196
+   + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
    /* Temple Flirt 3 */
-   + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1197
+   + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -24787,13 +24763,13 @@ IF ~~ a1075
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
   /* Temple Flirt 2 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1196
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
   /* Temple Flirt 3 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1197
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -25043,13 +25019,13 @@ IF ~~ a1076
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, help out lovers who might want to be married...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
   /* Temple Flirt 2 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1196
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships. I don't suppose you have any experience with that.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
   /* Temple Flirt 3 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1197
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples serve to formalize relationships, set up contracts, and keep records. Have you ever worked on ay of that?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",300)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + ~[PC] You know, Temples might not be so happy with you swearing inside their doors. Do you feel any wrath from the gods descending upon you?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -25677,39 +25653,16 @@ IF ~~ a1389
   ++ ~[PC] I thought the gift of a knife was unlucky, or said that we are enemies.~ + a1390
   ++ ~[PC] Why, Aran... thoughtful introspection and attention to detail? From you? I am starting to think you have some possibilities after all.~ + a737
   ++ ~[PC] Thank you.~ EXIT
-  ++ ~[PC] Has anyone ever told you you think too much? (Kiss him.)~ EXIT
-  ++ ~[PC] Then I should get you an orc's hammer - rough wooden appearance and manner, blunted mind, and difficult to keep lined up with the objective. At the same time, forceful and useful, and first into whatever needs to be done. You are useful, after a fashion.~ + a737
+  ++ ~[PC] Has anyone ever told you you think too much? (Kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+  ++ ~[PC] Then I should get you an orc's hammer - rough wooden appearance and manner, blunted mind, and difficult to keep lined up with the objective. At the same time, forceful and direct, and first into whatever needs to be done. You are useful, after a fashion.~ + a737
 END
 
-IF ~~ a1390
-  SAY ~[ARAN] Banes Barren Bones, what books have you been readin'? Why would someone send a dagger to someone what would bury it in the giver's back? Besides, it's a dagger, not a knife. Womenfolk do have some strange ideas sometimes.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1391
-  SAY ~[ARAN] Not exactly. It's a mite o' a pebble, shined up a bit. But it's tough, an' useful, an' don't attract no attention - it can wedge a door, stagger an enemy in his tracks, or cause a horse to lame. It won't break, an' it won't get stolen. I thought it might remind you o' me, somehow.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1392
-  SAY ~[ARAN] I don't know much about courtin'. Mercenary life calls more for more direct action, more beddin' wiles than courtly ways. But they were there, an' I was there, an' I thought "hey, she'd like that", an' there we are.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1393
-  SAY ~[ARAN] Well, in a way. I never did no real leatherwork, an' it took a while for me to figure out how to carve th' design. What's bloody magical is that I like you enough I kept on 'til it were finished. Never did that before.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1394
-  SAY ~[ARAN] Aye. In spite o' all the wild an' dangerous things that come along wi' followin' you around, I do think I was lucky just to have met you.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1395
-  SAY ~[ARAN] Aye, you got me there, <CHARNAME>. I guess I just will have to offer up a kiss, instead.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a1390 SAY ~[ARAN] Banes Barren Bones, what books have you been readin'? Why would someone send a dagger to someone what would bury it in the giver's back? Besides, it's a dagger, not a knife. Womenfolk do have some strange ideas sometimes.~ IF ~~ THEN EXIT END
+IF ~~ a1391 SAY ~[ARAN] Not exactly. It's a mite o' a pebble, shined up a bit. But it's tough, an' useful, an' don't attract no attention - it can wedge a door, stagger an enemy in his tracks, or cause a horse to lame. It won't break, an' it won't get stolen. I thought it might remind you o' me, somehow.~ IF ~~ THEN EXIT END
+IF ~~ a1392 SAY ~[ARAN] I don't know much about courtin'. Mercenary life calls more for more direct action, more beddin' wiles than courtly ways. But they were there, an' I was there, an' I thought "hey, she'd like that", an' there we are.~ IF ~~ THEN EXIT END
+IF ~~ a1393 SAY ~[ARAN] Well, in a way. I never did no real leatherwork, an' it took a while for me to figure out how to carve th' design. What's bloody magical is that I like you enough I kept on 'til it were finished. Never did that before.~ IF ~~ THEN EXIT END
+IF ~~ a1394 SAY ~[ARAN] Aye. In spite o' all the wild an' dangerous things that come along wi' followin' you around, I do think I was lucky just to have met you.~ IF ~~ THEN EXIT END
+IF ~~ a1395 SAY ~[ARAN] Aye, you got me there, <CHARNAME>. I guess I just will have to offer up a kiss, instead.~ IF ~~ THEN EXIT END
 
 /* Low HP hijack of flirts */
 IF ~~ a1396
@@ -25772,7 +25725,7 @@ IF ~~ a1404
   ++ ~[PC] (You lean back into his arms, resting the back of your head on his shoulder)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   ++ ~[PC] (You move away quickly, glancing about for onlookers.) Aran, don't do that in public.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   ++ ~[PC] Is that all you have in mind, sellsword? A little feel?~ GOTO a1417
-  ++ ~[PC] (You turn in his arms, holding him to you fiercely. A crush of lips, warm and full of promise, and his fingers tighten on the small of your back.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You turn in his arms, holding him to you fiercely. A crush of lips, warm and full of promise, and his fingers tighten on the small of your back.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
 END
 
 
@@ -25971,23 +25924,23 @@ But when I woke next morning, Boys,
 My instrument was sore
 As if I had been using it
 On the keyhole in her door.~
-  ++ ~[PC] Nice voice. Pity to waste it on such a silly bawdy song. I much prefer 'The Lusty Bowman'.~ + c-rightthenillstop
-  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Keep singing about having sex with other women, Aran, and my keyhole will be locked, barred, and bound with magical protection. You will never find out exactly how unlocked I can become.~ + c-rightthenillstop
-  ++ ~[PC] Nice voice. It reminds me of an orc being tortured to death.~ + c-rightthenillstop
-  ++ ~[PC] I can't believe you just sang that. I am so embarrassed!~ + c-rightthenillstop
-  ++ ~[PC] You should know me better than that. I do not enjoy crude songs, and I do not like men who ignore what I prefer just to annoy me.~ + c-rightthenillstop
-  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] That had better not be about me...~ + c-rightthenillstop
-  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Keep singing about having sex with other women, Aran, and my keyhole will be locked, barred, and bound with magical protection, never available again to the likes of you.~ + c-rightthenillstop
-  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I think we might find a nice spot for a reenactment of that song, don't you think? The reality is much more enjoyable than simply singing about it...~ + c-rightthenillstop
+  ++ ~[PC] Nice voice. Pity to waste it on such a silly bawdy song. I much prefer 'The Lusty Bowman'.~ + a4324
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Keep singing about having sex with other women, Aran, and my keyhole will be locked, barred, and bound with magical protection. You will never find out exactly how unlocked I can become.~ + a4324
+  ++ ~[PC] Nice voice. It reminds me of an orc being tortured to death.~ + a4324
+  ++ ~[PC] I can't believe you just sang that. I am so embarrassed!~ + a4324
+  ++ ~[PC] You should know me better than that. I do not enjoy crude songs, and I do not like men who ignore what I prefer just to annoy me.~ + a4324
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] That had better not be about me...~ + a4324
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Keep singing about having sex with other women, Aran, and my keyhole will be locked, barred, and bound with magical protection, never available again to the likes of you.~ + a4324
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I think we might find a nice spot for a reenactment of that song, don't you think? The reality is much more enjoyable than simply singing about it...~ + a4324
 END
 
-IF ~~ c-rightthenillstop SAY ~[ARAN] Right, then. Note to m'self... sing louder next time!~ IF ~~ THEN EXIT END
+IF ~~ a4324 SAY ~[ARAN] Right, then. Note to m'self... sing louder next time!~ IF ~~ THEN EXIT END
 
 IF ~~ a1432 /* Burned Rat and Flatbread */
    SAY ~[ARAN] I did have a right fine time wi' cookin' on th' road, both with the Flamin' Fist an' workin' freelance guardin' trade costers. This one time, though, goin' along the Trade way just north o' Beregost, things got a mite dicey. The 'Fist Lieutenant sent a few o' us to help out guardin' some pilgrims headed down toward Nashkel, an' since their cook were a blind old drunken bastard wi' only two teeth left in his head, it came to me to cook. There was a fair amount o' supplies, an' the 'Fist has a good reputation for makin' sure to travel on a full stomach, eh?~
    = ~[ARAN] Well to make a long story short, we ran into a mite bit o' trouble wi' some bandits. Unfortunately, not only were they crap fighters, they couldn't aim a flamin' arrow better than a one-armed kobold on th' run. Bastards ended up bein' run off right quick, but not before we had a nice little fire goin' - all our supplies.~
    = ~[ARAN] The Sergeant, she were a right tough old biddy, but she had no patience for civilians. If it had been up to her, she would have just told 'em all to go screw themselves, an' fed 'em hardtack an' water. But there were one or two pilgrims wi' noble patrons or merchant connections, so we got her to play nice. It fell to me to get the civilians all happy about th' situation, so I wrote up a nice little speech, which went somethin' like this...~
-   = ~[ARAN]  'Fair Ladies and Gentlemen, I bid you good morning. Please pay no attention to the minor inconveniences of last evening's disturbance. Our uninvited guests of yester-eve have passed on to other occupations, many of them involving plant fertilization. Our chef has prepared a special meal for your enjoyment; due to the small matter of our cookwagon being set ablaze last night while defending the camp, we have prevailed upon him to create a special morning repast of Frisson Rodentia and Flatbread Carbona. This way, if you please, for your morning repast.'~
+   = ~[ARAN] 'Fair Ladies and Gentlemen, I bid you good morning. Please pay no attention to the minor inconveniences of last evening's disturbance. Our uninvited guests of yester-eve have passed on to other occupations, many of them involving plant fertilization. Our chef has prepared a special meal for your enjoyment; due to the small matter of our cookwagon being set ablaze last night while defending the camp, we have prevailed upon him to create a special morning repast of Frisson Rodentia and Flatbread Carbona. This way, if you please, for your morning repast.'~
    IF ~~ THEN DO ~SetGlobal("c-arancarbonara","LOCALS",1)~ EXIT
 END
 
@@ -26266,10 +26219,8 @@ IF ~~ a1836
   ++ ~[PC] (Take hold of his chin with one hand, guiding him so that your forehead rests on his and you are looking deeply into each other's eyes... and tighten your legs, driving him deep within you.)~ + a1837
 END
 
-IF ~~ a1837 /* contemplative */
-   SAY ~[ARAN] (The sounds and cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
-   IF ~~ THEN EXIT
-END
+/* contemplative */
+IF ~~ a1837 SAY ~[ARAN] (The sounds and cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~ IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT END
 
 IF ~~ a1838
   SAY ~[ARAN] (His eyes burn with lust as he pulls away for a moment, his body still pinning yours to the side of the tub, his manhood poised on your threshold.)~
@@ -26465,7 +26416,7 @@ END
 
 IF ~~ a1862 /* petting only */
    SAY ~[ARAN] (The sounds and cries of your mutual pleasuring echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
-   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ EXIT
+   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
 END
 
 IF ~~ a1863 /* aggressive */
@@ -26474,7 +26425,7 @@ IF ~~ a1863 /* aggressive */
 END
 
 IF ~~ a1864
-   SAY ~[ARAN] Bloody hells... Now where is the fun in that, I ask you. I... You tease me half to... Well, suit yourself.~
+   SAY ~[ARAN] Bloody hells... Now where be th' fun in that, I ask you. I... You tease me half to... Well, suit yourself.~
    = ~[ARAN] I have enough self control to know "no" means "no". But that be a cold, mean, calculatin' thing to do to a lad. You take your own bath, there. I think I done saw a right fine young lady back at th' bar, an' mayhap she will be more friendly.~
    = ~[ARAN] (He climbs from the water, stretching to reach a towel, and leaves the chamber.)~
    = ~[ARAN] (The lantern light dances as you bathe alone.)~
@@ -27910,7 +27861,7 @@ IF ~RandomNum(3,1) Global("c-arantoran","GLOBAL",0)~ THEN BEGIN a2516 SAY ~[C-TO
 
 END /* of append */
 
-/* Romance Fun Encounters : The Big Valley, Fight or Flight */
+/* Romance or Fun Encounters : The Big Valley, Fight or Flight */
 CHAIN IF WEIGHT #-1 ~Global("c-arantoran","GLOBAL",2)~ THEN C-TORAN a2517
 ~[TORAN] The <PRO_MANWOMAN> here tells me you used to serve with the pukes that call themselves the Flaming Fist.~
 DO ~SetGlobal("c-arantoran","GLOBAL",3)~
@@ -27991,7 +27942,7 @@ IF ~~ a2705
 END
 
 IF ~~ a2703 SAY ~[ARAN] Well, you had me off balance, there. I be right happy we both agree. I was worried, mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN EXIT END
-IF ~~ a2704 SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly forget anythin' about us, but it sure does feel good to hear you speakin' o' us like this. I was just a mite off balance, is all. Mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN EXIT END
+IF ~~ a2704 SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly forget anythin' about us, but it sure does feel good to hear you speakin' o' us like this. I was just a mite off balance, is all. Mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT END
 
 END
 
@@ -28161,7 +28112,7 @@ IF ~~ a2542
 END
 
 IF ~~ a2543
-  SAY ~[CIVIL02] Bribing a government official is not allowed. Charming them is frowned on, and raising their hopes of a wild time on the town with you only to be left miserable and heartbroken is just plain mean. besides, you are not my type. Do you have business, or shall I call the guard?~
+  SAY ~[CIVIL02] Bribing a government official is not allowed. Charming them is frowned on, and raising their hopes of a wild time on the town with you only to be left miserable and heartbroken is just plain mean. Besides, you are not my type. Do you have business, or shall I call the guard?~
   ++ ~[PC] Whoa, I didn't mean... look, here is something from Orrin over at The Broken Sword. Can I get a receipt?~ DO ~TakePartyItem("c-awpkg1")~ + a2539
   ++ ~[PC] Forget I said anything. I have a Writ of Quarterly Bribes to BloodSucking Bloated Government Toadies. Here, take it. I will not tell you where you can put it... I leave that to your imagination.~ DO ~TakePartyItem("c-awpkg1")~ +  a2542
   ++ ~[PC] Jump to conclusions much? Here. I am not sure what this is. I was told to deliver it, and get a receipt.~ DO ~TakePartyItem("c-awpkg1")~ + a2539
@@ -28321,10 +28272,10 @@ APPEND PLAYER1
 
 IF ~Global("c-arangoaded","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3353 /* TOO_MUCH_TEASING */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
-  IF ~~ THEN EXTERN C-ARANJ a3353_transfer
+  IF ~~ THEN EXTERN C-ARANJ a4356
 END
 
-IF ~Global("c-arangoaded","GLOBAL",5) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3353_tryagain /* TOO_MUCH_TEASING_RETRY */
+IF ~Global("c-arangoaded","GLOBAL",5) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a4357 /* TOO_MUCH_TEASING_RETRY */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
   IF ~~ THEN EXTERN C-ARANJ a3361
 END
@@ -28352,22 +28303,22 @@ END
 /* Madam Nin Dialog : Playing Aran */ 
 APPEND MADAM
 
-IF WEIGHT #-1 ~Name("c-aran",LastTalkedToBy) Global("c-aranmadam","GLOBAL",0)~ THEN BEGIN c-aranmadamnin
+IF WEIGHT #-1 ~Name("c-aran",LastTalkedToBy) Global("c-aranmadam","GLOBAL",0)~ THEN BEGIN a4308
   SAY ~[MADAM] Greetings, my <LADYLORD>.  I am Madame Nin, and I am here to ensure you are pleasantly accompanied.  Are you interested in companionship, my <LADYLORD>?~
-  + ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[ARAN] Now, if I didn't already have my eye on a certain someone, I might be a bit interested, an' that be th' truth. But I was actually hopin' you might have one o' those Calshite bathin' places around here. Any luck on that?~ DO ~SetGlobal("c-aranmadam","GLOBAL",1)~ + c_one_nin 
+  + ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[ARAN] Now, if I didn't already have my eye on a certain someone, I might be a bit interested, an' that be th' truth. But I was actually hopin' you might have one o' those Calshite bathin' places around here. Any luck on that?~ DO ~SetGlobal("c-aranmadam","GLOBAL",1)~ + a4309 
   + ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + ~[ARAN] No, I think I won't rightly need anyone to help in that direction. I saw a lass up th' street what looked more like my type. You know, young... beautiful... unattainable... th' usual ego-smashin' fun a lad likes to subject himself to, eh?~ DO ~SetGlobal("c-aranmadam","GLOBAL",1)~ EXTERN MADAM 2
 END
 
-IF ~~ c_one_nin
+IF ~~ a4309
   SAY ~[MADAM] I am sorry, my <LADYLORD>.  We do not have a large enough establishment to offer such delights.~
-  IF ~~ THEN EXTERN C-ARANJ c-no_such_delights
+  IF ~~ THEN EXTERN C-ARANJ a4310
 END
 
 END
 
 APPEND C-ARANJ
 
-IF ~~ c-no_such_delights
+IF ~~ a4310
   SAY ~[ARAN] Now there be a golden opportunity wasted, you know. You ever decide to expand, an' mayhap need a hand wi' th' contracts an' such, look me up, eh? Aran Whitehand, Sword n' Pen. Trade Contracts and Copywork Drawn. Here, have one o' my broadsides. Wait, take two.~
   IF ~~ THEN EXIT
 END
@@ -28376,61 +28327,61 @@ END
 
 /* NPC Gypsy Fortunetelling */
 EXTEND_BOTTOM TRGYP02 2
-IF ~!InPartySlot(LastTalkedToBy,0) Name("c-aran",LastTalkedToBy)~ THEN EXTERN TRGYP02 c-aranfortune
+IF ~!InPartySlot(LastTalkedToBy,0) Name("c-aran",LastTalkedToBy)~ THEN EXTERN TRGYP02 a4311
 END
 
 APPEND TRGYP02
 
-IF ~~ c-aranfortune
+IF ~~ a4311
   SAY ~[TRGYP02] Your loyalty is your friend, your foe; your death, your life... it will bring you great happiness and great pain. Your sword swings wide of its mark, but your worth lies in the swing not the connection. There is little you will accomplish alone, yet you have the path of greatness open before you.~
-  IF ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ c-aranfortunetold
-  IF ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ c-aranotherfortunetold
+  IF ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ a4312
+  IF ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANJ a4313
 END
 END
 
 APPEND C-ARANJ
-IF ~~ c-aranfortunetold
+IF ~~ a4312
   SAY ~[ARAN] Gond's Great Gear, an' here all I wanted was to know if I should be bettin wi' this set o' dice, or get new ones, on account o' th' last few times they seem a mite bit cursed.~
   IF ~~ EXIT
 END
 
 /* Fun with songs! */ 
-IF ~~ c-aranotherfortunetold
+IF ~~ a4313
   SAY ~[ARAN] Gond's Great Gear, an' here all I wanted was to know if I should be sendin' nice little notes back to Erika, on account o' her bein' just about th' right stage to break up wi' that beau o' hers. Or mayhap th' young lass in Trademeet, th' one wi' th' coppery hair hangin' over her shoulder all tied up in a black velvet band. Or mayhap th' young lass outside o' Nashkel, th' bold bright black eyes what sparkled... no, no... mayhap some other lass be th' right one to be courtin' from afar.~ // Black Velvet Band, The Raven Eyed Lass
-  ++ ~[PC] Or the young woman in the stables outside the Government district? The one they call 'Mustang Sally'?~ + c_mustangsally // pickett
-  ++ ~[PC] Just don't bother with Alice. I have heard all the gilrs love Alice.~ + c_allthegirlslovealice // Elton John
-  ++ ~[PC] You always go on and on about some girl named Eileen, and how at this moment she means everything...~ + c_comeoneileen // Dexy
-  ++ ~[PC] There was that Elenor somebody you used to mutter about.~ + c_elenorrigby // Beatles
-  ++ ~[PC] What about that bardess Chiquitita? I heard she has a new song...~ + c_chiquitita // ABBA
-  ++ ~[PC] I thought you liked that barmaid in the Trade district... Sue, wasn't that her name?~ + c_runaroundsue // Dion
+  ++ ~[PC] Or the young woman in the stables outside the Government district? The one they call 'Mustang Sally'?~ + a4314 // c_mustangsally, pickett
+  ++ ~[PC] Just don't bother with Alice. I have heard all the gilrs love Alice.~ + a4315 // c_allthegirlslovealice, Elton John
+  ++ ~[PC] You always go on and on about some girl named Eileen, and how at this moment she means everything...~ + a4316 // c_comeoneileen, Dexy
+  ++ ~[PC] There was that Elenor somebody you used to mutter about.~ + a4319 // c_elenorrigby, Beatles
+  ++ ~[PC] What about that bardess Chiquitita? I heard she has a new song...~ + a4317 // c_chiquitita, ABBA
+  ++ ~[PC] I thought you liked that barmaid in the Trade district... Sue, wasn't that her name?~ + a4318 // c_runaroundsue, Dion
 END
 
-IF ~~ c_mustangsally // pickett
+IF ~~ a4314 // c_mustangsally, pickett
   SAY ~[ARAN] I tried to get that lass to spark, but all she wanted to do was ride. Now, don't you be lookin' at me that way... I mean ride th' horses around an' look at th' sights! If that were innuendo, my friend, you would not have me along. I'd be right by her side to this day!~
   IF ~~ THEN EXIT
 END
 
-IF ~~ c_allthegirlslovealice // Elton John
+IF ~~ a4315 // c_allthegirlslovealice, Elton John
   SAY ~[ARAN] Now, how were I to know she preferered th' ladies? She wore th' flower in both ears, an' seemed interested in me as much as any. No, I think I wouldn't be askin' about her.~
   IF ~~ THEN EXIT
 END
 
-IF ~~ c_comeoneileen // Dexy and the Midnight Runners 
+IF ~~ a4316 // c_comeoneileen, Dexy and the Midnight Runners 
   SAY ~[ARAN] No, I want naught o' Eileen. She ran off in th' dead o' night wi' some young lad named Dexy. That girl were a keeper, though. She could keep a lad wantin' more.~
   IF ~~ THEN EXIT
 END
   
-IF ~~ c_elenorrigby // Beatles
+IF ~~ a4319 // c_elenorrigby, Beatles
   SAY ~[ARAN] Now that were a lass to remember. last I heard, though, she up an' died. She be buried somewhere right lonely, too. Not many made th' funeral. Pity.~
   IF ~~ THEN EXIT
 END
 
-IF ~~ c_chiquitita // ABBA
+IF ~~ a4317 // c_chiquitita, ABBA
   SAY ~[ARAN] Now that be a right fine young lass. Th' way her neck moves just so, an' th' gentle curves... hells, what were I talkin' about? Oh, no. Not her. She loved th' sadness an' despondency o' broken romance. Hells, we broke up three times in one night, just on account o' she wanted to make up. Not that makin' up were hard to do...~
   IF ~~ THEN EXIT
 END
 
-IF ~~ c_runaroundsue  //  Dion
+IF ~~ a4318 // c_runaroundsue, Dion
   SAY ~[ARAN] Now don't be bringin' that evil wench into th' conversation. Chestnut hair, snub little nose, eyes set just too wide to be pretty... but a sparkin' spirit an' a body like to kill a man what looks at it. That wench done run around wi' half o' Amn, an' she kept promisin' I were her one an' only. No Sue on th' questionin' for me!~
   IF ~~ THEN EXIT
 END

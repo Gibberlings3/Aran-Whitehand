@@ -1,3 +1,16 @@
+/* tracking intimacy levels */
+/* look for incrementing relationship to kissing */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	Global("c-aranintimate","GLOBAL",1) // we kissed...
+	Global("c-aransex","GLOBAL",0) // not registered...
+	Gender(Player1,FEMALE)
+	!HasItemEquiped("belt05",Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aransex","GLOBAL",1) // we kissed.
+END
 /* look for incrementing relationship to kissing + touching */
 IF
 	InParty(Myself)
@@ -823,19 +836,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-arnRECernd","LOCALS",9)
-END
-/* tracking intimacy levels */
-/* look for incrementing relationship to kissing */
-IF
-	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	Global("c-aranintimate","GLOBAL",1) // we kissed...
-	Global("c-aransex","GLOBAL",0) // not registered...
-	Gender(Player1,FEMALE)
-	!HasItemEquiped("belt05",Player1)
-THEN
-	RESPONSE #100
-		SetGlobal("c-aransex","GLOBAL",1) // we kissed.
 END
 /* BCS Blocks for Scroll Creation */
 /* c-arSCRL15 Aran PID: Create Scroll of Protection from Petrification */

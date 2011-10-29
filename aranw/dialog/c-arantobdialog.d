@@ -2280,7 +2280,7 @@ END
 
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
-IF ~~ a3801_transfer /* TOO_MUCH_TEASING */
+IF ~~ a4351 /* TOO_MUCH_TEASING */
   SAY ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
   + ~GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... I love flirting with you. But this is a big step. I am not sure I am ready for this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't know... we have made love before. But things have changed. I am not sure I want to do this.~ DO ~SetGlobal("c-arangoaded","GLOBAL",3)~ + a3802 /* UNSURE_GOADED */
@@ -3216,7 +3216,7 @@ IF ~~ a3918 /* ARAN_MOON_MIND */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3928 /* MOON_JUST_L3_FRIENDS */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I am very lucky to have such a good friend as you are to me.~ + a3929 /* MOON_JUST_L4_FRIENDS */
   ++ ~[PC] (Gently lean on his shoulder for a moment, then kiss his neck, your fingers twining in his hair.)~ + a3930 /* FEMALE_MOON_LEADS2 */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a4336 /* HANDINHAND OR CONFUSED */
 END
 
 IF ~~ a3924 /* MOON_OTHER_OPTIONS */
@@ -3232,7 +3232,7 @@ IF ~~ a3924 /* MOON_OTHER_OPTIONS */
   + ~InParty(Player4) Gender(Player4,FEMALE) !HasItemEquiped("belt05",Player4) !Name("c-aran",Player4)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER4> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player5) Gender(Player5,FEMALE) !HasItemEquiped("belt05",Player5) !Name("c-aran",Player5)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER5> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
   + ~InParty(Player6) Gender(Player6,FEMALE) !HasItemEquiped("belt05",Player6) !Name("c-aran",Player6)~ + ~[PC] Oh, I don't know. I bet you dream of getting both <PLAYER6> and me into a torrid encounter.~ + a3933 /* WHERE_DID_THAT_IDEA */
-  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a3931_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] Easy there... just two good friends walking here, hand in hand, nothing more... ~ + a4336 /* HANDINHAND OR CONFUSED */
   ++ ~[PC] Be careful what you say or promise, Aran. I take things very seriously. When I ask for the moon, I expect to get the moon. I am practical that way.~ + a3934 /* ARAN_MOON_NOT_PRACTICAL */
   ++ ~[PC] You could say that... or you could you could touch me.~ + a4216 /* MOON_ADVANCE_ACTION */
   ++ ~[PC] Like any girl in her right mind would want you. Hey, that is it... I know how I can get away from your clumsy advances! Next kobold encampment we encounter, we will capture a female one for you. Then you will have someone of your own level to romance!~ + a3866 /* FIGHT_EXIT */
@@ -3374,13 +3374,13 @@ IF ~~ a3941 /* MOON_ARAN_ACTS */
   ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close)~ + a3943 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Let's try that again.~ + a3943 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Ouch. No. I think I have had quite enough of clumsy, ugly, pain-causing ogres tonight. Go away until you develop some kind of dexterity.~ + a3866 /* FIGHT_EXIT */
-  ++ ~[PC] I... I am a little confused.~ + a3931_replacement /* HANDINHAND OR CONFUSED */
+  ++ ~[PC] I... I am a little confused.~ + a4336 /* HANDINHAND OR CONFUSED */
   ++ ~[PC] That was a sign. Let's leave things just as they are, at least for now.~ + a3936 /* ARAN_MOON_FRIENDS_EXIT */
   ++ ~[PC] You are just too slow. Don't worry... I know exactly what you need. (Pull close to him, struggling with his clothing, trying to release him from his leggings.)~ + a3944 /* START_NINE_HELLS_PC_ACTION */
   ++ ~[PC] Don't patronize me. I didn't need clumsy physical attention, I just thought you needed it. I do not need someone pawing at me to feel loved.~ + a3945 /* MOON_DO_NOT */
 END
 
-IF ~~ a3931_replacement /* HANDINHAND OR CONFUSED */
+IF ~~ a4336 /* HANDINHAND OR CONFUSED */
   SAY ~[ARAN] I guess I am a mite bit confused on what you want. I'd have a right better time o' knowin' how to make you happy if you'd use some words, or gestures, or somethin' so's a lad can take some liberties but not make you angry.~
   ++ ~[PC] (Kiss him, pulling at your clothing to allow him better access to your body).~ + a3946 /* ROM_ONE_WARM_LIPS */
   ++ ~[PC] I feel like this is wrong, but I want so much more....~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
@@ -9561,10 +9561,10 @@ APPEND PLAYER1
 
 IF ~Global("c-arangoaded","GLOBAL",2) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3801 /* TOO_MUCH_TEASING */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
-  IF ~~ THEN EXTERN C-ARN25J a3801_transfer
+  IF ~~ THEN EXTERN C-ARN25J a4351
 END
 
-IF ~Global("c-arangoaded","GLOBAL",5) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3809_tryagain /* TOO_MUCH_TEASING_RETRY */
+IF ~Global("c-arangoaded","GLOBAL",5) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a4350 /* TOO_MUCH_TEASING_RETRY */
   SAY ~[PC] (A slight sound startles you awake. Aran's voice whispers from beside you.)~
   IF ~~ THEN EXTERN C-ARN25J a3809
 END
