@@ -3,7 +3,7 @@
 IF
   Global("c-arannightvisit","GLOBAL",1)
   InParty("c-aran")
-  !Global("B!GavRingPlaced","GLOBAL",1)
+  !Global("B!GavTalk","GLOBAL",1)
   !Global("c-aranspar","GLOBAL",1)
   !Global("c-aranspar","GLOBAL",4)
   !Global("c-arandreamstar","LOCALS",1)
@@ -17,18 +17,3 @@ THEN
 	ActionOverride(Player1,StartDialog("player1",Player1))
 END
 
-/* Night Talk: something else fired and blocked it */
-IF
-  Global("c-arannightvisit","GLOBAL",2)
-  InParty("c-aran")
-  !Global("B!GavRingPlaced","GLOBAL",1)
-  !Global("c-aranspar","GLOBAL",1)
-  !Global("c-aranspar","GLOBAL",4)
-  !Global("c-arandreamstar","LOCALS",1)
-  !StateCheck(Myself,CD_STATE_NOTVALID)
-  !StateCheck("c-aran",CD_STATE_NOTVALID)
-THEN  
-  RESPONSE #100
-	SetGlobal("c-arannightvisit","GLOBAL",1)
-	Continue()
-END

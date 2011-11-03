@@ -1,0 +1,24 @@
+c-aransex=0 flirtstart=0 => earlyflirt
+c-aransex=1 flirtstart=0 => earlyflirt
+
+c-aransex=4 flirtstart=0 => NEW (unsure but also possibly very handsy - trying to figure out the status)
+
+
+c-aransex=4 flirtstart=1 => heavy
+c-aransex=0 flirtstart=2 << can't happen; if it does, it is a bug... he has to at least kiss her, dammit
+c-aransex=1,2 flirtstart=2 => heavy
+c-aransex=3,4 flirtstart=2 => mature
+
+c-aransex=4 flirtstart=0 => NEW (unsure but also possibly very handsy - trying to figure out the status)
+
+  /*  PC Initiated Flirting;  (1) of the options should be active at any one time. None show for males. */
+  /* PC wants to initiate a flirt : early (before the 3 friendtalks and 3 lovetalks)  */
+  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a3296
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + NEW_ONE_HERE
+  /* PC Wants To Initiate A Flirt: Lightweight */
+  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1074 /* c-pcflirtsaran1 */
+  /* PC Wants To Initiate A Flirt: Heavyweight */
+  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
+  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",3) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
+  /* PC Wants To Initiate A Flirt: Mature */
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aransex","GLOBAL",2) Global("c-aranpcflirtstart","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076 /* c-pcflirtsaran3 */

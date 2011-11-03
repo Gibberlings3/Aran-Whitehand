@@ -3,10 +3,10 @@
 /* ToB Interjections and commentary */
 
 BEGIN C-ARN25A /* pre-joined ToB, just summoned */
-BEGIN C-ARN25J  /* joined ToB */
-BEGIN C-ARN25B  /* banter ToB */
-BEGIN C-ARN25P  /* post-joined ToB */
-BEGIN C-ARWRTH  /* wraith creature dialog */
+BEGIN C-ARN25J /* joined ToB */
+BEGIN C-ARN25B /* banter ToB */
+BEGIN C-ARN25P /* post-joined ToB */
+BEGIN C-ARWRTH /* wraith creature dialog */
 
 /* Volo's Talk in Saradush */
 EXTEND_BOTTOM SARVOLO 9 /* Which of your companions would you like to hear about now? */
@@ -2360,7 +2360,7 @@ IF ~~ a3812 /* ALL_I_AM_TO_YOU */
   ++ ~[PC] Yes. Any more questions, or are you going to take your conquest? I will fight you every step of the way. You show me you can handle it.~ + a3813 /* PC_WANTS_ROUGHER */
   ++ ~[PC] Since when does a man care where he tries to plant his seed? ~ + a3815 /* DO_YOU_EVEN_KNOW_ME */
   ++ ~[PC] You are so cute when you try to think. Look, Aran, I care for you. But I get more pleasure out of the excitement of risk, of being controlled. I trust you. Just do whatever you want with me, preferably a little roughly, and I will be a very happy woman.~ + a3816 /* FINE_IF_WANT_THAT_WAY */
-  ++ ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
   ++ ~[PC] I... I thought that was what you wanted. What all men want. I was trying to please you.~ + a3818 /* PLEASING_YOU_PLEASES_ME */
   ++ ~[PC] This is not working out. I should leave.~ + a3819 /* UNFULFILLED_TEASED_EXIT */
 END
@@ -3453,14 +3453,14 @@ END
 
 IF ~~ a3937 /* ARAN_MOON_PLEASEME */
   SAY ~[ARAN] How can I be pleasin' you?~
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I ... I don't know. But you could start by kissing me again.~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
   ++ ~[PC] What would grant you release without actually bedding me? I have heard that a woman can please a man with her lips...~ + a4061 /* MOON_ORAL */
   ++ ~[PC] Walking hand in hand with me, looking at the stars, just being together.~ + a4162 /* ARAN_MOON_WALK_EXIT */
@@ -3623,7 +3623,7 @@ IF ~~ a4213 /* ARAN_MOON_MAYHAP */
   ++ ~[PC] You know, I think we need to get you a girlfriend. Preferably one who can keep you in check. I will keep my eyes open and see if we can come up with someone you will be happy with.~ + a4065 /* SECOND_FIDDLE */
 END
 
-/* VI: (actually, VI through infinity) Romance Content: Intimacy Options cycling and recycling Adult Talks - consolidating a number of opportunities in-game called from things like:  In .bcs, reset to cycle through again. IF GlobalGT("c-arankisses","LOCALS",9) THEN RESPONSE #100 SetGlobal("c-arankisses","LOCALS",0). This gives a relatively large number of Aran statements, and a huge number of player choices/responses, with randomness built into the model. Hopefully, this will allow in-game "booty calls" to be unique for most of a playthrough, even for folks who want to knock boots on a regular basis. */
+/* VI: (actually, VI through infinity) Romance Content: Intimacy Options cycling and recycling Adult Talks - consolidating a number of opportunities in-game called from things like:  In .bcs, reset to cycle through again. IF GlobalGT("c-arankisses","LOCALS",9) THEN RESPONSE #100 SetGlobal("c-arankisses","GLOBAL",0). This gives a relatively large number of Aran statements, and a huge number of player choices/responses, with randomness built into the model. Hopefully, this will allow in-game "booty calls" to be unique for most of a playthrough, even for folks who want to knock boots on a regular basis. */
 
 /* step one - initiation points - 1 */
 
@@ -3839,205 +3839,205 @@ END
 
 IF ~~ a4025 /* START_LADY_OF_THE_WARM_LIPS */
   SAY ~[ARAN] What do you be wantin', now, m'lady o' th' warm lips?~
-  + ~RandomNum(3,3)~ + ~[PC] (Kiss him tenderly on the cheek and run your hand along his cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
-  + ~RandomNum(3,2)~ + ~[PC] (Grab his hand and draw it close to you.) You know you want to kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4045 /* ROM_ONE_OUCH_WHAT_GAVE_IDEA */
-  + ~RandomNum(3,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
-  + ~RandomNum(4,4)~ + ~[PC] You could kiss me. In fact, I insist that you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,3)~ + ~[PC] I... I was thinking... perhaps you would kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
-  + ~RandomNum(4,2)~ + ~[PC] My lips are actually rather cold right now. Warm them?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
-  + ~RandomNum(4,1)~ + ~[PC] Oh, nothing... I just like playing with your hair, like this...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4047 /* ROM_ONE_OUCH_DO_SAME */
-  ++ ~[PC] You spend way too much time talking. Don't you think you could find something else to do with those gorgeous lips of yours?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
-  ++ ~[PC] I need some warmth. I think you are just the right man for the job.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(5,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
-  + ~RandomNum(5,2)~ + ~[PC] (You lift his hand to your lips, kissing along his palm.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(5,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(5,4)~ + ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(5,5)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4043 /* ROM_ONE_3_HANDS */
-  ++ ~[PC] Nothing. You should leave, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] (Kiss him tenderly on the cheek and run your hand along his cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(3,2)~ + ~[PC] (Grab his hand and draw it close to you.) You know you want to kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4045 /* ROM_ONE_OUCH_WHAT_GAVE_IDEA */
+  + ~RandomNum(3,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,4)~ + ~[PC] You could kiss me. In fact, I insist that you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] I... I was thinking... perhaps you would kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,2)~ + ~[PC] My lips are actually rather cold right now. Warm them?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  + ~RandomNum(4,1)~ + ~[PC] Oh, nothing... I just like playing with your hair, like this...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4047 /* ROM_ONE_OUCH_DO_SAME */
+  ++ ~[PC] You spend way too much time talking. Don't you think you could find something else to do with those gorgeous lips of yours?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4044 /* ROM_ONE_CLEAR_SIGNAL */
+  ++ ~[PC] I need some warmth. I think you are just the right man for the job.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3947 /* ROM_ONE_KISS_ME_AGAIN */
+  + ~RandomNum(5,2)~ + ~[PC] (You lift his hand to your lips, kissing along his palm.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(5,4)~ + ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(5,5)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4043 /* ROM_ONE_3_HANDS */
+  ++ ~[PC] Nothing. You should leave, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4026 /* START_WITH_SHOULDER_PULL */
   SAY ~[ARAN] (Strong hands grip your shoulders, pulling you around, face to face with Aran.)~
-  + ~RandomNum(3,3)~ + ~[PC] Well, someone wants to overpower poor little me. I think you should act on those feelings.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(3,2)~ + ~[PC] Yes? You called, oh plunderer of my body and conquerer of my heart?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(3,1)~ + ~[PC] Are you going to wrestle, or did you perhaps want to... oh, say... kiss me?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,4)~ + ~[PC] What are you...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,3)~ + ~[PC] (Grab him fiercely, pressing ardent kisses to his lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down his chest.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  ++ ~[PC] I like a man who knows what he wants... and takes it.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  ++ ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(4,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(4,2)~ + ~[PC] (You proffer your lips to him, blushing with desire.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(4,3)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4200 /* ROM_ONE_SLAP */
-  + ~RandomNum(4,4)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
-  ++ ~[PC] Careful! I am not made of glass, but I am not a doll. I can see you want something... here, let me walk with you, hand in hand.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4043 /* ROM_ONE_3_HANDS */
-  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think you should relax. Let me go, and let's just move on, please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
+  + ~RandomNum(3,3)~ + ~[PC] Well, someone wants to overpower poor little me. I think you should act on those feelings.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,2)~ + ~[PC] Yes? You called, oh plunderer of my body and conquerer of my heart?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,1)~ + ~[PC] Are you going to wrestle, or did you perhaps want to... oh, say... kiss me?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] What are you...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Grab him fiercely, pressing ardent kisses to his lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down his chest.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] I like a man who knows what he wants... and takes it.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] (Slam yourself into his chest, wrapping your arms tightly around his body.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] (You proffer your lips to him, blushing with desire.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4200 /* ROM_ONE_SLAP */
+  + ~RandomNum(4,4)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] Careful! I am not made of glass, but I am not a doll. I can see you want something... here, let me walk with you, hand in hand.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4043 /* ROM_ONE_3_HANDS */
+  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think you should relax. Let me go, and let's just move on, please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
 END
 
 IF ~~ a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
   SAY ~[ARAN] I be needin' to hold you, to touch you... just bein' close to you drives me a mite bit crazy.~
-  + ~RandomNum(3,3)~ + ~[PC] I feel the same way. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(3,3)~ + ~[PC] If it drives you crazy, think of what I am going through. I shouldn't want you to overpower me and make me your love slave, but I get these urges...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(3,3)~ + ~[PC] There is nothing crazy about wanting me. You could even kiss me, if you would like.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,4)~ + ~[PC] Aran! Someone might... oh, we are alone... I suppose a kiss might be in order.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,3)~ + ~[PC] (Press your body close to him, lifting your face for a kiss.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down, moving closer to him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  ++ ~[PC] Perhaps we are both crazy. There is only one cure... kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3946 /* ROM_ONE_WARM_LIPS */
-  ++ ~[PC] (Start tugging at his clothes, hands flying as you seek to completely disrobe him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
-  + ~RandomNum(3,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4200 /* ROM_ONE_SLAP */
-  + ~RandomNum(3,3)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3817 /* ROM_ONE_SLAP_AVOID */
-  ++ ~[PC] Here, take my hand, and I will take your arm. We can just hold onto each other, and the feelings will pass.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4198 /* ROM_ONE_3_PASS */
-  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
+  + ~RandomNum(3,3)~ + ~[PC] I feel the same way. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,3)~ + ~[PC] If it drives you crazy, think of what I am going through. I shouldn't want you to overpower me and make me your love slave, but I get these urges...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(3,3)~ + ~[PC] There is nothing crazy about wanting me. You could even kiss me, if you would like.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] Aran! Someone might... oh, we are alone... I suppose a kiss might be in order.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Press your body close to him, lifting your face for a kiss.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] Do you want to kiss me? I think... I think I might like that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down, moving closer to him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] Perhaps we are both crazy. There is only one cure... kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3946 /* ROM_ONE_WARM_LIPS */
+  ++ ~[PC] (Start tugging at his clothes, hands flying as you seek to completely disrobe him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,1)~ + ~[PC] (You place both hands alongside his face, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4200 /* ROM_ONE_SLAP */
+  + ~RandomNum(3,3)~ + ~[PC] (Your hand flies toward his face, palm open for a resounding slap.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3817 /* ROM_ONE_SLAP_AVOID */
+  ++ ~[PC] Here, take my hand, and I will take your arm. We can just hold onto each other, and the feelings will pass.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4198 /* ROM_ONE_3_PASS */
+  ++ ~[PC] Stop. You should stop this, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3892 /* FEMALE_LEAVES */
 END
 
 IF ~~ a3944 /* START_NINE_HELLS_PC_ACTION */
   SAY ~[ARAN] <CHARNAME>, what in th' nine hells do you be doin'?~
-  + ~RandomNum(3,3)~ + ~[PC] Taking your clothes off. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
-  + ~RandomNum(3,3)~ + ~[PC] Oh, nothing... one lacing here, one little tug there... I would think my clothes opening for you would give you a slight hint.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4057 /* ROM_ONE_URGENT */
-  + ~RandomNum(3,3)~ + ~[PC] I am simply removing anything that could come between my skin and yours. Don't you want to join me?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,4)~ + ~[PC] Aran! Shhh. This is.. this is difficult enough for me. (Slowly remove your clothing, blushing face turned away from him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,3)~ + ~[PC] (Place one finger to his lips, and slowly begin disrobing.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,2)~ + ~[PC] (Hide your face in his chest, hands gently tugging and pulling as you begin disrobing him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush, but continue removing your clothing.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
-  ++ ~[PC] Grabbing you. Kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
-  ++ ~[PC] Here, take my hand, and I will take your arm. My lustful feelings will pass.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4198 /* ROM_ONE_3_PASS */
-  ++ ~[PC] Stop. We should stop this, now, before someone sees or hears us.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] Oh, a little butt slap doesn't mean anything. I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
+  + ~RandomNum(3,3)~ + ~[PC] Taking your clothes off. I want my hands to press against your bare chest, to feel your heartbeat under my palms...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,3)~ + ~[PC] Oh, nothing... one lacing here, one little tug there... I would think my clothes opening for you would give you a slight hint.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4057 /* ROM_ONE_URGENT */
+  + ~RandomNum(3,3)~ + ~[PC] I am simply removing anything that could come between my skin and yours. Don't you want to join me?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,4)~ + ~[PC] Aran! Shhh. This is.. this is difficult enough for me. (Slowly remove your clothing, blushing face turned away from him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,3)~ + ~[PC] (Place one finger to his lips, and slowly begin disrobing.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,2)~ + ~[PC] (Hide your face in his chest, hands gently tugging and pulling as you begin disrobing him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush, but continue removing your clothing.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4046 /* ROM_ONE_YOUR_WISH_MINE */
+  ++ ~[PC] Grabbing you. Kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3946 /* ROM_ONE_WARM_LIPS */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  ++ ~[PC] Here, take my hand, and I will take your arm. My lustful feelings will pass.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4198 /* ROM_ONE_3_PASS */
+  ++ ~[PC] Stop. We should stop this, now, before someone sees or hears us.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] Oh, a little butt slap doesn't mean anything. I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3892 /* FEMALE_LEAVES */
 END
 
 IF ~~ a4028 /* START_MAYHAP_I_GET_A_KISS */
   SAY ~[ARAN] Now, we do have a moment alone... mayhap I can get a kiss?~
-  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4197 /* ROM_TWO_1a */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4190 /* ROM_TWO_WONT_WAIT_THEN */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4197 /* ROM_TWO_1a */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4030 /* START_GIVE_A_LAD_A_CHANCE */
   SAY ~[ARAN] I have been dyin' to kiss you for just about forever. Give a lad a chance to show you how much you be in his heart, eh?~
-  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4040 /* START_BEARING_GIFTS */
   SAY ~[ARAN] I come bearin' gifts. Two lips. All yours. An' most o' th' rest o' this here body, if you want it, for that matter.~
-  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
-  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
-  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4197 /* ROM_TWO_1a */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4197 /* ROM_TWO_1a */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4041 /* START_SUNES_LIPS */
   SAY ~[ARAN] That cheek be rosy an' beautiful, but that mouth... gods, Sune herself be shamed. Mayhap I kiss it?~
-  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] You could. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] Why have one, when you could take two?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4029 /* START_TRY_TO_BE_PHYSICAL */
   SAY ~[ARAN] (His rough embrace closes quickly around you, his face pressing close to yours, grinning from ear to ear.)~
-  + ~RandomNum(3,3)~ + ~[PC] Now you have me at a disadvantage. I suppose next you are going to kiss me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(3,3)~ + ~[PC] How am I supposed to kiss you when you are grinning like that?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(3,3)~ + ~[PC] Tight... can't breathe... you are holding me too tight!~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,4)~ + ~[PC] What do you want?~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could kiss me. If you want to..~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,2)~ + ~[PC] I think... I think that a kiss would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look away from him.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] Now you have me at a disadvantage. I suppose next you are going to kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] How am I supposed to kiss you when you are grinning like that?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(3,3)~ + ~[PC] Tight... can't breathe... you are holding me too tight!~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,4)~ + ~[PC] What do you want?~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could kiss me. If you want to..~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,2)~ + ~[PC] I think... I think that a kiss would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4187 /* ROM_TWO_KISS_WANT_PRIVACY */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look away from him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4185 /* ROM_TWO_CHEEK_NUZZLE_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 IF ~~ a4017 /* START_LIP_EXERCISES */
   SAY ~[ARAN] I have some nice lip exercises what help wi' many different an excitin' things. Mayhap a brief lip sparrin' session be in order, eh?~
-  + ~RandomNum(3,3)~ + ~[PC] You could have a brief match with me. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] Why have one session, when you could take two, or three, or four trials...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
-  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
-  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
-  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3814 /* GET_OUT_EXIT */
-  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~  + a3892 /* FEMALE_LEAVES */
-  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3900 /* JUST_FRIENDS_EXIT */
+  + ~RandomNum(3,3)~ + ~[PC] You could have a brief match with me. In fact, I insist you do.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] Why have one session, when you could take two, or three, or four trials...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] I was waiting for you to ask that.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,4)~ + ~[PC] I... I think that would be nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,3)~ + ~[PC] If you... well... I guess you could.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,2)~ + ~[PC] Do you really want to kiss me? I think... I think that would be very nice.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4188 /* ROM_TWO_SIGHT_AND_TASTE_LIPS */
+  + ~RandomNum(4,1)~ + ~[PC] (Blush and look down at your hands.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a4189 /* ROM_TWO_KISS_DRINK_LIPS */
+  ++ ~[PC] (You let him kiss you on the mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] (You let him kiss you on the cheek.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,1)~ + ~[PC] (You kiss him gently on the lips.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,2)~ + ~[PC] (You brush your lips gently along his cheek, ending at his mouth.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  + ~RandomNum(3,3)~ + ~[PC] (You proffer your lips to him, gazing into his eyes.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a4048 /* ROM_TWO_ACTION_GUIDE_TO_LIPS */
+  ++ ~[PC] I think it would be much better if we just held hands. That could be really intimate, if we have some imagination...~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
+  ++ ~[PC] No. You should leave, now, before someone sees you.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3814 /* GET_OUT_EXIT */
+  ++ ~[PC] I think I have better things to do with my time. You can stay here for awhile if you want, but I am going to go check on the gear.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~  + a3892 /* FEMALE_LEAVES */
+  ++ ~[PC] I think the attention is nice, but we should not be doing this right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3900 /* JUST_FRIENDS_EXIT */
 END
 
 /* Intermediaries #1 */
@@ -4207,14 +4207,14 @@ IF ~~ a4057 /* ROM_ONE_URGENT */
   + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4003 /* ARAN_ON_TOP_THREE */
   + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4004 /* ARAN_ON_TOP_FOUR */
   ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a4148 /* FRONT_TO_ARAN_FINGERS */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a4069 /* ROM_FRIENDS_EXIT_FOUR */
 END
 
@@ -4411,14 +4411,14 @@ IF ~~ a4005 /* NOT_SO_TOUGH */
   + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4002 /* ARAN_ON_TOP_TWO */
   + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4003 /* ARAN_ON_TOP_THREE */
   + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a4004 /* ARAN_ON_TOP_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
   ++ ~[PC] Are you man enough to walk away, even when everything in you screams that I am here to be claimed?~ + a3997 /* MAN_OR_FOOL */
 END
 
@@ -4895,14 +4895,14 @@ IF ~~ a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
   + ~RandomNum(4,3)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4013 /* KISSING_HOLDING_THREE */
   + ~RandomNum(4,4)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a4014 /* KISSING_HOLDING_FOUR */
   ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3834 /* ARAN_AGREES_TWO_CUDDLE */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] I have disappointed you, haven't I. Well... I surrender. Do what you will with me.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] I have disappointed you, haven't I. Well... I surrender. Do what you will with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
 END
 /* these two can loop - */
 IF ~~ a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
@@ -4910,14 +4910,14 @@ IF ~~ a4074 /* ROM_ONE_TALK_ABOUT_ACCESS */
   ++ ~[PC] Is this a little better? I mean, when a lady starts undressing, shouldn't a gentleman match her garment for garment?~ + a4078 /* ROM_ONE_MATCH_STRIPPING */
   ++ ~[PC] (You offer no resistance as he bares your shoulders, his hands caressing everything his eyes can behold.)~ + a4079 /* ROM_ONE_OFFER_NO_RESISTANCE */
   ++ ~[PC] Aran, please... slow down. I... ~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
   ++ ~[PC] Sometimes it is even more fun to leave almost everything on...~ + a4080 /* SUGGEST_SMALL_ACCESS */
 END
 
@@ -4930,14 +4930,14 @@ IF ~~ a4080 /* SUGGEST_SMALL_ACCESS */
   + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a4073 /* ROM_ONE_SLOW_KISSES_ACTION */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] On second thought, I surrender. No more talk. Just make love to me..~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] On second thought, I surrender. No more talk. Just make love to me..~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
 END
 
 IF ~~ a4081 /* PC_TAKES_CHARGE */
@@ -5331,14 +5331,14 @@ END
 IF ~~ a4121 /* ROM_ONE_8 */
   SAY ~[ARAN] I told you I be matchin' you eye for eye, but I don't think I can do this much longer. I look at you, an' I burn inside like a battle were about to rage. What do you be wantin', <CHARNAME>?~
   ++ ~[PC] Aran, please... slow down. I... ~ + a4007 /* ROM_ONE_ASK_ABOUT_STOPPING */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3955 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3956 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3957 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3958 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3959 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3960 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3961 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","LOCALS",1)~ + a3962 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3955 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3956 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3957 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3958 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3959 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3960 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3961 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3962 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I can't do this. I don't want this. Stop.~ + a3965 /* SOLID_STOP3 */
   ++ ~[PC] Now there are ways of giving pleasure that are lots of fun, but cross no permanent lines. I think my hand moving along you is having quite an effect, don't you?~ + a4122 /* ARAN_FINGERS_ACTION */
   ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a4147 /* FRONT_TO_ARAN_EXPLORE */
@@ -9573,16 +9573,16 @@ END
 IF ~Global("c-arannightvisit","GLOBAL",2) GlobalGT("Chapter","GLOBAL",7)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
   SAY ~[PC] (As you prepare for your rest, you recall the words you spoke to Aran earlier.)~ 
   ++ ~[PC] (You decide that now is not a good time for a romantic encounter, and warn him off.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXIT
-  + ~Global("c-arankisses","LOCALS",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4025 /* START_LADY_OF_THE_WARM_LIPS */
-  + ~Global("c-arankisses","LOCALS",1)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4028 /* START_MAYHAP_I_GET_A_KISS */
-  + ~Global("c-arankisses","LOCALS",2)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4026 /* START_WITH_SHOULDER_PULL */
-  + ~Global("c-arankisses","LOCALS",3)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4030 /* START_GIVE_A_LAD_A_CHANCE */
-  + ~Global("c-arankisses","LOCALS",4)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
-  + ~Global("c-arankisses","LOCALS",5)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4040 /* START_BEARING_GIFTS */
-  + ~Global("c-arankisses","LOCALS",6)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a3944 /* START_NINE_HELLS_PC_ACTION */
-  + ~Global("c-arankisses","LOCALS",7)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4041 /* START_SUNES_LIPS */
-  + ~Global("c-arankisses","LOCALS",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4029 /* START_TRY_TO_BE_PHYSICAL */
-  + ~Global("c-arankisses","LOCALS",9)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4017 /* START_LIP_EXERCISES */
+  + ~Global("c-arankisses","GLOBAL",0)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4025 /* START_LADY_OF_THE_WARM_LIPS */
+  + ~Global("c-arankisses","GLOBAL",1)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4028 /* START_MAYHAP_I_GET_A_KISS */
+  + ~Global("c-arankisses","GLOBAL",2)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4026 /* START_WITH_SHOULDER_PULL */
+  + ~Global("c-arankisses","GLOBAL",3)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4030 /* START_GIVE_A_LAD_A_CHANCE */
+  + ~Global("c-arankisses","GLOBAL",4)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4023 /* START_ARAN_CUTS_TO_CHACE_VOCAL */
+  + ~Global("c-arankisses","GLOBAL",5)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4040 /* START_BEARING_GIFTS */
+  + ~Global("c-arankisses","GLOBAL",6)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a3944 /* START_NINE_HELLS_PC_ACTION */
+  + ~Global("c-arankisses","GLOBAL",7)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4041 /* START_SUNES_LIPS */
+  + ~Global("c-arankisses","GLOBAL",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4029 /* START_TRY_TO_BE_PHYSICAL */
+  + ~GlobalGT("c-arankisses","GLOBAL",8)~ + ~[PC] (Perhaps he will remember, as well.)~ DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobal("c-arankisses","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)~ EXTERN C-ARN25J a4017 /* START_LIP_EXERCISES */
 END
 
 END

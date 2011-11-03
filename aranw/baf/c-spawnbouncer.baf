@@ -3,6 +3,7 @@ IF
 THEN
   RESPONSE #100
   CreateCreature("C-AW01EP",[3300.976],15)
+  AddMapNote([3178.714],%The Broken Sword%)
   SetGlobal("c-spawnbouncer","AR0700",1)
   Continue()
 END

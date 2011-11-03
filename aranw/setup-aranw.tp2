@@ -38,10 +38,16 @@ ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
 		OUTER_SET choseninitialflirt = 1200
 		PRINT ~Initial NPC-Initiated Flirt offset by 20 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start 
-hourly FT, NPC Flirt 20 minutes later, and RT 20 minutes after that, then 20 minutes later the next FT fires. 
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits.~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+hourly FriendTalk, 
+NPC-initiated Flirt 20 minutes later, 
+RomanceTalk 20 minutes after that, 
+then 20 minutes later the next FriendTalk fires. 
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 END
 	
 
@@ -71,10 +77,16 @@ ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
 		OUTER_SET choseninitialflirt = 1200
 		PRINT ~Initial NPC-Initiated Flirt offset by 20 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start 
-hourly FT, NPC Flirt 20 minutes later, and RT 20 minutes after that, then 20 minutes later the next FT fires. 
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits.~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+hourly FriendTalk, 
+NPC Flirt 20 minutes later, 
+and RomanceTalk 20 minutes after that, 
+then 20 minutes later the next FriendTalk fires. 
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
 		APPEND ~gtimes.ids~ ~900 ARAN_FTT~
@@ -86,10 +98,16 @@ bursts of activity followed by long waits.~
 		OUTER_SET choseninitialflirt = 300
 		PRINT ~Initial NPC-Initiated Flirt offset by 5 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start  
-15 minute FT, NPC-initiated Flirt 5 minutes later, and RT 5 minutes after that, then 5 minutes later the next FT.
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits... especially when you run out of timered content!~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+15 minute FriendTalk, 
+NPC-initiated Flirt 5 minutes later, 
+and RomanceTalk 5 minutes after that, 
+then 5 minutes later the next FriendTalk fires.
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
 		APPEND ~gtimes.ids~ ~1800 ARAN_FTT~
@@ -101,10 +119,16 @@ bursts of activity followed by long waits... especially when you run out of time
 		OUTER_SET choseninitialflirt = 600
 		PRINT ~Initial NPC-Initiated Flirt offset by 10 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start  
-30 minute FT, NPC-initiated Flirt 10 minutes later, and RT 10 minutes after that, then 10 minutes later the next FT.
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits... especially when you run out of timered content!~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+30 minute FriendTalk, 
+NPC-initiated Flirt 10 minutes later, 
+and RomanceTalk 10 minutes after that, 
+then 10 minutes later the next FriendTalk fires.
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
 		APPEND ~gtimes.ids~ ~2700 ARAN_FTT~
@@ -116,10 +140,16 @@ bursts of activity followed by long waits... especially when you run out of time
 		OUTER_SET choseninitialflirt = 900
 		PRINT ~Initial NPC-Initiated Flirt offset by 15 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start  
-45 minute FT, NPC-initiated Flirt 15 minutes later, and RT 15 minutes after that, then 15 minutes later the next FT.
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits... especially when you run out of timered content!~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+45 minute FriendTalk, 
+NPC-initiated Flirt 15 minutes later, 
+and RomanceTalk 15 minutes after that, 
+then 15 minutes later the next FriendTalk fires.
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
 		APPEND ~gtimes.ids~ ~5400 ARAN_FTT~
@@ -131,10 +161,16 @@ bursts of activity followed by long waits... especially when you run out of time
 		OUTER_SET choseninitialflirt = 1800
 		PRINT ~Initial NPC-Initiated Flirt offset by 30 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start  
-90 minute FT, NPC-initiated Flirt 30 minutes later, and RT 30 minutes after that, then 30 minutes later the next FT.
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits... especially when you run out of timered content!~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+90 minute FriendTalk, 
+NPC-initiated Flirt 30 minutes later, 
+and RomanceTalk 30 minutes after that, 
+then 30 minutes later the next FriendTalk fires.
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
 		APPEND ~gtimes.ids~ ~7200 ARAN_FTT~
@@ -146,10 +182,16 @@ bursts of activity followed by long waits... especially when you run out of time
 		OUTER_SET choseninitialflirt = 2400
 		PRINT ~Initial NPC-Initiated Flirt offset by 40 minutes~
 		PRINT ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3), the timer sequence will start  
-120 minute FT, NPC-initiated Flirt 40 minutes later, and RT 40 minutes after that, then 40 minutes later the next FT.
-Please note that the timers are not exact, and variations within the game may mean 
-bursts of activity followed by long waits... especially when you run out of timered content!~
+after the lovetalks start (after friendship talk 3),
+the timer sequence will start 
+120 minute FriendTalk,
+NPC-initiated Flirt 40 minutes later, 
+and RomanceTalk 40 minutes after that, 
+then 40 minutes later the next FriendTalk fires.
+Please note that the timers are not exact, and 
+variations within the game may mean 
+bursts of activity followed by long waits...
+especially when you run out of timered content!~
 	END
 END
 
@@ -2512,6 +2554,7 @@ COPY_EXISTING ~kpsold07.cre~	 ~override/c-aw01tl.cre~	/*	 Teldra the Recruiter *
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 
 /* outside-the-bar fight (females romancing him only) */
+COPY ~aranw/media/portraits/peachplums_thug.bmp~ ~override/c-malcer.bmp~ /* Malcer, thug portrait (Peachplums)	*/
 COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~	/*	 thug 1	- L10	male fighter */
 	REMOVE_CRE_ITEM ~sw2h01~
 	REMOVE_CRE_ITEM ~plat01~
@@ -2520,7 +2563,7 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~	/*	 thug 1	- L10	male figh
 	SAY NAME1 ~Malcer~
 	SAY NAME2 ~Malcer~
 	WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
-	WRITE_BYTE 0x32 3	/* hair color (light gold) */
+	WRITE_BYTE 0x32 3 /* hair color (light gold) */
 	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8	/* give new override AI script */
 	WRITE_ASCII 0x268 ~WTASIGHT~ #8	/* give new default AI script	*/
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
