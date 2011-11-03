@@ -3790,12 +3790,6 @@ END
 /* Monster Reactions */
 
 /* Commenting on some Monster Encounters, Working for The Man/Undead */
-
-
-
-
-
-
 /* For catching general objects without regard to DVs, we can use a general catch all using the .ids entries -
  * [EA.GENERAL.RACE.CLASS]. An entry of 0 in a field will match any value.
  * For example: [ENEMY.0.0.MAGE] specifies all creatures that are enemies of the party, any general category, any race, mages.
@@ -3819,7 +3813,7 @@ END
 /* Liches Are Scary (Darios) : Initiate */
 IF
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL")
-	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -3847,7 +3841,7 @@ END
 /* Shade Lord (Darios) : Initiate */
 IF
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
-	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -3920,7 +3914,7 @@ END
 /* SoA Scenery Talks :  Aran Dragon-Slayer (Darios) :  Initiate */
 IF
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
-	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -3945,7 +3939,7 @@ END
 /* SoA Scenery Talks :  Basilisk Baiting  : Initiate */
 IF
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
-	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
+	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -4249,7 +4243,6 @@ talk not written in yet
 /* Scenery Dialog : Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight) */
 /* Temple Comment : Oghma : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranoghma","LOCALS",0)
 	AreaCheck("AR0319") // Temple of Oghma
@@ -4260,9 +4253,8 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranoghma","LOCALS",1)
 END
-/* Temple Comment : Oghma : Activate */
+/* Temple Comment : Oghma : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranoghma","LOCALS",1)
@@ -4274,7 +4266,6 @@ THEN
 END
 /* Temple Comment : Oghma : Rollback */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-aranoghma","LOCALS",1)
 	!AreaCheck("AR0319") // Temple of Oghma
 	InParty(Myself)
@@ -4284,7 +4275,6 @@ THEN
 END
 /* Temple Comment : Ilmater : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranilmater","LOCALS",0)
 	OR(2)
@@ -4299,7 +4289,6 @@ THEN
 END
 /* Temple Comment : Ilmater : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranilmater","LOCALS",1)
@@ -4312,7 +4301,6 @@ THEN
 END
 /* Temple Comment : Ilmater : Rollback */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-aranilmater","LOCALS",1)
 	!AreaCheck("AR0408") // Temple of Ilmater
 	!AreaCheck("AR0703") // Temple of Ilmater
@@ -4323,7 +4311,6 @@ THEN
 END
 /* Temple Comment : Helm : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranhelm","LOCALS",0)
 	OR(2)
@@ -4338,7 +4325,6 @@ THEN
 END
 /* Temple Comment : Helm : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranhelm","LOCALS",1)
@@ -4362,7 +4348,6 @@ THEN
 END
 /* Temple Comment : Lathander : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranlath","LOCALS",0)
 	AreaCheck("AR0902") // Temple of Lathander
@@ -4375,7 +4360,6 @@ THEN
 END
 /* Temple Comment : Lathander : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranlath","LOCALS",1)
@@ -4388,7 +4372,6 @@ THEN
 END
 /* Temple Comment : Lathander : Rollback */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-aranlath","LOCALS",1)
 	!AreaCheck("AR0902") // Temple of Lathander
 	InParty(Myself)
@@ -4398,7 +4381,6 @@ THEN
 END
 /* Temple Comment : Umberlee : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranumberlee","LOCALS",0)
 	AreaCheck("AR1604") // Temple of Umberlee
@@ -4411,7 +4393,6 @@ THEN
 END
 /* Temple Comment : Umberlee : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranumberlee","LOCALS",1)
@@ -4424,7 +4405,6 @@ THEN
 END
 /* Temple Comment : Umberlee : Rollback */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-aranumberlee","LOCALS",1)
 	!AreaCheck("AR1604") // Temple of Umberlee
 	InParty(Myself)
@@ -4434,7 +4414,6 @@ THEN
 END
 /* Temple Comment : Waukeen : Activate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranwaukeen","LOCALS",0)
 	OR(2)
@@ -4449,7 +4428,6 @@ THEN
 END
 /* Temple Comment : Waukeen : Initiate */
 IF
-	!Class(Myself,CLERIC_ALL)
 	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	Global("c-silencearan","GLOBAL",0)	// a PID - set "silencer" for folks who hate unsolicited comments
 	Global("c-aranwaukeen","LOCALS",1)
@@ -4462,7 +4440,6 @@ THEN
 END
 /* Temple Comment : Waukeen : Rollback */
 IF
-	!Class(Myself,CLERIC_ALL)
 	Global("c-aranwaukeen","LOCALS",1)
 	!AreaCheck("AR1010") // Temple of Waukeen
 	!AreaCheck("AR2008") // Temple of Waukeen
