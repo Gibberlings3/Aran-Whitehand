@@ -491,12 +491,12 @@ IF ~~ a982 SAY ~[ARAN] Right. I should o' guessed that was th' idea. Go mess wit
 /* ToB Plot Talk 1: Saradush */
 IF ~Global("c-aransaradsush","GLOBAL",1)~ THEN BEGIN a2380
   SAY ~[ARAN] That were an ugly sight, for sure. Th' whole city sacked. Enough to give anyone a right nasty set o' dreams.~
-  ++ ~[PC] I couldn't close my eyes at all. I kept seeing the city of Saradush... burning.~ + a2289
-  ++ ~[PC] I slept well enough, though I do have sympathy for those hurt because of my kind.~ + a2291
-  ++ ~[PC] What? Did I miss something? I slept like the dead.~ + a2292
-  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I had you as a distraction. I slept well enough.~ + a2295
-  ++ ~[PC] I have seen worse. Saradush is not the first time I have experienced full-scale slaughter of innocents.~ + a2296
-  ++ ~[PC] I... I do not want to talk about it.~ + a2297
+  ++ ~[PC] I couldn't close my eyes at all. I kept seeing the city of Saradush... burning.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2289
+  ++ ~[PC] I slept well enough, though I do have sympathy for those hurt because of my kind.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2291
+  ++ ~[PC] What? Did I miss something? I slept like the dead.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2292
+  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I had you as a distraction. I slept well enough.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2295
+  ++ ~[PC] I have seen worse. Saradush is not the first time I have experienced full-scale slaughter of innocents.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2296
+  ++ ~[PC] I... I do not want to talk about it.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2297
 END
 
 IF ~~ a2289
@@ -555,69 +555,36 @@ IF ~~ a2297
   ++ ~[PC] If I ever get a chance, I am going to put a stop to all this bloodshed.~ + a2298
 END
 
-IF ~~ a2293
-  SAY ~[ARAN] <CHARNAME>, I think this be not th' first time I have mentioned that you scare th' livin' crap out o' me.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2294
-  SAY ~[ARAN] Impossible. Unless you eradicate every creature on this plane o' existence, an' mayhap beyond, you won't stop somethin' as ugly, wasteful, an' horrible from happenin' again, even if you were Ao incarnate. But I sure as Helm's Ever-Seein' Eyes will back you tryin' to make sure it don't happen very often.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2298
-  SAY ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, if you say it... mayhap it will come true.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2299
-  SAY ~[ARAN] Now, that be an awful thought.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2300
-  SAY ~[ARAN] No sane one o' us could. But you have a right bit o' depth to you, <CHARNAME>. You can handle this, an' more. Just remember, right or wrong, good or bad, I'd rather have you makin' th' choices rather than th' bastards what would slaughter everyone for no reason at all. I have faith. You will prevail.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2301
-  SAY ~[ARAN] Before I met you, I tried to forget. I drank, I caroused, I swore, I did anythin' what made me feel like I had some control over a small portion o' my life.~
-  = ~[ARAN] Now that I have met you, I put those feelin's into a task, an' an idea. Basically, you be th' reason I can deal wi' everythin'. For right or wrong, when I be at your side, I have a place an' a purpose. That be enough for me.~
-  IF ~~ THEN EXIT
-END
-
 IF ~~ a2302
   SAY ~[ARAN] Th' end result would have been worse. One o' us tryin' to take on an entire army might have delayed things an hour or so. But even th' avatar of a god can be taken down when th' odds are thousands to one.~
   ++ ~[PC] Does saying that make you feel better?~ + a2303
   ++ ~[PC] I guess you are right. I just keep feeling that this is so wrong, so utterly wrong. I can't get it out of my mind.~ + a2300
 END
 
-IF ~~ a2303
-  SAY ~[ARAN] No. But it be a good thing to remind any o' us mere mortals that we are not th' center o' everythin'. An' we can look at this an' let it fuel our revenge, on account o' th' perpetrators o' this atrocity needs be hunted down an' slain like th' beasts they be.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2304
-  SAY ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, sometimes I make myself a little space in my head an' go there, all by myself, just to remember what I be fightin' for. Just... just don't be stayin' there too long, eh?~
-  = ~[ARAN] Th' problem wi' hidin' away in your head is that your head be attached to th' mortal world. An' hidin' for a little mayhap gives some respite, but it does naught for actually changin' things or protectin' us from bein' th' next target o' this bloodshed.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a2293 SAY ~[ARAN] <CHARNAME>, I think this be not th' first time I have mentioned that you scare th' livin' crap out o' me.~ IF ~~ THEN EXIT END
+IF ~~ a2294 SAY ~[ARAN] Impossible. Unless you eradicate every creature on this plane o' existence, an' mayhap beyond, you won't stop somethin' as ugly, wasteful, an' horrible from happenin' again, even if you were Ao incarnate. But I sure as Helm's Ever-Seein' Eyes will back you tryin' to make sure it don't happen very often.~ IF ~~ THEN EXIT END
+IF ~~ a2298 SAY ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, if you say it... mayhap it will come true.~ IF ~~ THEN EXIT END
+IF ~~ a2299 SAY ~[ARAN] Now, that be an awful thought.~ IF ~~ THEN EXIT END
+IF ~~ a2300 SAY ~[ARAN] No sane one o' us could. But you have a right bit o' depth to you, <CHARNAME>. You can handle this, an' more. Just remember, right or wrong, good or bad, I'd rather have you makin' th' choices rather than th' bastards what would slaughter everyone for no reason at all. I have faith. You will prevail.~ IF ~~ THEN EXIT END
+IF ~~ a2301 SAY ~[ARAN] Before I met you, I tried to forget. I drank, I caroused, I swore, I did anythin' what made me feel like I had some control over a small portion o' my life.~ = ~[ARAN] Now that I have met you, I put those feelin's into a task, an' an idea. Basically, you be th' reason I can deal wi' everythin'. For right or wrong, when I be at your side, I have a place an' a purpose. That be enough for me.~ IF ~~ THEN EXIT END
+IF ~~ a2303 SAY ~[ARAN] No. But it be a good thing to remind any o' us mere mortals that we are not th' center o' everythin'. An' we can look at this an' let it fuel our revenge, on account o' th' perpetrators o' this atrocity needs be hunted down an' slain like th' beasts they be.~ IF ~~ THEN EXIT END
+IF ~~ a2304 SAY ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, sometimes I make myself a little space in my head an' go there, all by myself, just to remember what I be fightin' for. Just... just don't be stayin' there too long, eh?~ = ~[ARAN] Th' problem wi' hidin' away in your head is that your head be attached to th' mortal world. An' hidin' for a little mayhap gives some respite, but it does naught for actually changin' things or protectin' us from bein' th' next target o' this bloodshed.~ IF ~~ THEN EXIT END
 
 
 /* NightTalk: Stars, Constancy Thereof */
 IF ~Global("c-tobnightone","GLOBAL",1)~ THEN BEGIN a4249
   SAY ~[ARAN] Now that be a sight. Those stars seem  to cover th' whole sky, or what we can see o' it.~
-  ++ ~[PC] I prefer to keep my eyes focused nearer to reality. The only good use for starlight is exposing your enemies when they are stupid enough to move across open terrain without cover.~ + a4250
-  ++ ~[PC] They do have a way of reminding us that some things never change. All we do, all we attain, all we suffer.... they just keep shining, completely untouched.~ + a4251
-  ++ ~[PC] They are very cold. Almost eyes, watching us, judging us, evaluating us.~ + a4251
-  ++ ~[PC] I think they are like small campfires, a host of ones like ours, warm in the night.~ + a4251
-  + ~Gender(Player1,MALE)~ + ~[PC] I think they seem like they are mocking me. Kind of like women, all shiny and sparkly, yet cold and distant.~ + a4251
-  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] They seem... romantic, somehow. Always there, no matter what.~ + a4251
-  + ~RandomNum(5,5)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3188 /* c-aranshutup55 */
-  + ~RandomNum(5,4)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3189 /* c-aranshutup56 */
-  + ~RandomNum(5,3)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3190 /* c-aranshutup57 */
-  + ~RandomNum(5,2)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3191 /* c-aranshutup58 */
-  + ~RandomNum(5,1)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ + a3192 /* c-aranshutup59 */
+  ++ ~[PC] I prefer to keep my eyes focused nearer to reality. The only good use for starlight is exposing your enemies when they are stupid enough to move across open terrain without cover.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4250
+  ++ ~[PC] They do have a way of reminding us that some things never change. All we do, all we attain, all we suffer.... they just keep shining, completely untouched.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
+  ++ ~[PC] They are very cold. Almost eyes, watching us, judging us, evaluating us.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
+  ++ ~[PC] I think they are like small campfires, a host of ones like ours, warm in the night.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
+  + ~Gender(Player1,MALE)~ + ~[PC] I think they seem like they are mocking me. Kind of like women, all shiny and sparkly, yet cold and distant.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
+  + ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ + ~[PC] They seem... romantic, somehow. Always there, no matter what.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
+  + ~RandomNum(5,5)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a3188 /* c-aranshutup55 */
+  + ~RandomNum(5,4)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a3189 /* c-aranshutup56 */
+  + ~RandomNum(5,3)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a3190 /* c-aranshutup57 */
+  + ~RandomNum(5,2)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a3191 /* c-aranshutup58 */
+  + ~RandomNum(5,1)~ + ~[PC] They certainly have one thing going for them. They don't stand around gawking, wasting time, and blathering.~ DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a3192 /* c-aranshutup59 */
 END
 
 IF ~~ a4250
@@ -7232,7 +7199,7 @@ END
 IF ~~ a3032 SAY ~[ARAN] Keep your shirt on, eh? I'm still workin' on it. I said how long it might be, an' I hold to my contracts, written or spoken.~ IF ~~ THEN EXIT END
 IF ~~ a3033 SAY ~[ARAN] Aye. It is finished. See, I just magically added a whole extra bunch o' time to today, an' somehow a whole week passed in an instant, an' while I was at it, I grew bunny ears an' married a Drowess.~ IF ~~ THEN EXIT END
 IF ~~ a3034 SAY ~[ARAN] No. Not done yet, eh?~ IF ~~ THEN EXIT END
-IF ~~ a3035 SAY ~[ARAN] Ilmater's Sufferin', do you ask questions like 'are we there yet?' 'how long until th' next town?' 'why is th' grass green?' 'why is Aran about to make a blighted rude gesture in your general direction?' What are you, <PRO_GIRLBOY>, a four year old?~ IF ~~ THEN EXIT END
+IF ~~ a3035 SAY ~[ARAN] Ilmater's Sufferin', do you ask questions like 'are we there yet?' 'how long until th' next town?' 'why is th' grass green?' 'why is Aran about to make a blighted rude gesture in your general direction?' What do you be, <PRO_GIRLBOY>, a four year old?~ IF ~~ THEN EXIT END
 IF ~~ a3036 SAY ~[ARAN] Now, I'm rightly a patient man. Well, sort o' patient. So I'm goin' to say this, slow - like, just in case you didn't quite understand me. N O T Y E T.~ IF ~~ THEN EXIT END
 
 IF ~~ a3037
