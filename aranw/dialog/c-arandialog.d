@@ -13890,14 +13890,14 @@ END
 
 IF ~~ a3488 /* ARAN_MOON_PLEASEME */
   SAY ~[ARAN] How can I be pleasin' you?~
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Stop wasting your time with talking. Demand me. Take me, right here, right now, and don't take no for an answer. Show me your passion.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I ... I don't know. But you could start by kissing me again.~ + a3498 /* ROM_ONE_KISS_ME_AGAIN */
   ++ ~[PC] What would grant you release without actually bedding me? I have heard that a woman can please a man with her lips...~ + a3612 /* MOON_ORAL */
   ++ ~[PC] Walking hand in hand with me, looking at the stars, just being together.~ + a3713 /* ARAN_MOON_WALK_EXIT */
@@ -14356,14 +14356,14 @@ IF ~~ a3495 /* START_NINE_HELLS_PC_ACTION */
   + ~RandomNum(4,2)~ + ~[PC] (Hide your face in his chest, hands gently tugging and pulling as you begin disrobing him.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3597 /* ROM_ONE_YOUR_WISH_MINE */
   + ~RandomNum(4,1)~ + ~[PC] (Blush, but continue removing your clothing.)~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3597 /* ROM_ONE_YOUR_WISH_MINE */
   ++ ~[PC] Grabbing you. Kiss me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3497 /* ROM_ONE_WARM_LIPS */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Take me. We are alone, and hidden enough from view. Make love to me right here, right now. Do whatever you want with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] Here, take my hand, and I will take your arm. My lustful feelings will pass.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3749 /* ROM_ONE_3_PASS */
   ++ ~[PC] Stop. We should stop this, now, before someone sees or hears us.~  DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3366 /* GET_OUT_EXIT */
   ++ ~[PC] Oh, a little butt slap doesn't mean anything. I think you should relax. I am going to walk away, now. Don't follow me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3444 /* FEMALE_LEAVES */
@@ -14656,14 +14656,14 @@ IF ~~ a3608 /* ROM_ONE_URGENT */
   + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a3554 /* ARAN_ON_TOP_THREE */
   + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a3555 /* ARAN_ON_TOP_FOUR */
   ++ ~[PC] Your fingers... they keep touching my thighs, and then my... you are driving me wild. Don't stop!~ + a3699 /* FRONT_TO_ARAN_FINGERS */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I love the feeling of you just barely in control of yourself. It is exciting. Now, for the real test... can you stop? Are you strong enough to walk away, right now?~ + a3620 /* ROM_FRIENDS_EXIT_FOUR */
 END
 
@@ -14860,14 +14860,14 @@ IF ~~ a3556 /* NOT_SO_TOUGH */
   + ~RandomNum(4,2)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a3553 /* ARAN_ON_TOP_TWO */
   + ~RandomNum(4,3)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a3554 /* ARAN_ON_TOP_THREE */
   + ~RandomNum(4,4)~ + ~[PC] I think you have forgotten who instigated this, Aran. I am not offering. I am demanding. (Drag him down until he is on top of you, lying between your thighs.)~ + a3555 /* ARAN_ON_TOP_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Make love to me right here, right now. Do whatever you want with me. I surrender completely~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] Are you man enough to walk away, even when everything in you screams that I am here to be claimed?~ + a3548 /* MAN_OR_FOOL */
 END
 
@@ -15344,14 +15344,14 @@ IF ~~ a3558 /* ROM_ONE_ASK_ABOUT_STOPPING */
   + ~RandomNum(4,3)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a3564 /* KISSING_HOLDING_THREE */
   + ~RandomNum(4,4)~ + ~[PC] No.... no, I want this. But kisses only. I just want to feel loved for awhile.~ + a3565 /* KISSING_HOLDING_FOUR */
   ++ ~[PC] I have frustrated you. I'm sorry. I don't want to hurt you... but I really don't want to do any more of this right now. Can't we just cuddle?~ + a3386 /* ARAN_AGREES_TWO_CUDDLE */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] I have disappointed you, haven't I. Well... I surrender. Do what you will with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] I have disappointed you, haven't I. Well... I surrender. Do what you will with me.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
 END
 /* these two can loop - */
 IF ~~ a3625 /* ROM_ONE_TALK_ABOUT_ACCESS */
@@ -15359,14 +15359,14 @@ IF ~~ a3625 /* ROM_ONE_TALK_ABOUT_ACCESS */
   ++ ~[PC] Is this a little better? I mean, when a lady starts undressing, shouldn't a gentleman match her garment for garment?~ + a3629 /* ROM_ONE_MATCH_STRIPPING */
   ++ ~[PC] (You offer no resistance as he bares your shoulders, his hands caressing everything his eyes can behold.)~ + a3630 /* ROM_ONE_OFFER_NO_RESISTANCE */
   ++ ~[PC] Aran, please... slow down. I... ~ + a3558 /* ROM_ONE_ASK_ABOUT_STOPPING */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] Sometimes it is even more fun to leave almost everything on...~ + a3631 /* SUGGEST_SMALL_ACCESS */
 END
 
@@ -15379,14 +15379,14 @@ IF ~~ a3631 /* SUGGEST_SMALL_ACCESS */
   + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] I know we have already gone further, but kissing feels so good. Let's just do this, please.~ + a3624 /* ROM_ONE_SLOW_KISSES_ACTION */
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] I know we have done much more than kiss, but kissing makes me feel alive, too. Just kiss me over and over again.~ + a3624 /* ROM_ONE_SLOW_KISSES_ACTION */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Aran, I know we have made love before. But sometimes, a woman just wants to be held and kissed.~ + a3624 /* ROM_ONE_SLOW_KISSES_ACTION */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] On second thought, I surrender. No more talk. Just make love to me..~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Gods... no. I want this. Take me. Take me, all the way, now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] On second thought, I surrender. No more talk. Just make love to me..~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Stop listening to me. I don't know what I want, but you know what you want. Take me, any way you please.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] I don't think this is a good idea, but I just can't stop myself. Do it. Do it now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Stop being so scared of my feelings, and just take me. Take me now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Oh, shut up. I am going to drive you deep within me and ride you like you have never been ridden before.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Will you respect me... oh, forget it. I need you, and I want you. Have your way with me, right now.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
 END
 
 IF ~~ a3632 /* PC_TAKES_CHARGE */
@@ -15780,14 +15780,14 @@ END
 IF ~~ a3672 /* ROM_ONE_8 */
   SAY ~[ARAN] I told you I be matchin' you eye for eye, but I don't think I can do this much longer. I look at you, an' I burn inside like a battle were about to rage. What do you be wantin', <CHARNAME>?~
   ++ ~[PC] Aran, please... slow down. I... ~ + a3558 /* ROM_ONE_ASK_ABOUT_STOPPING */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... shhh. Stop talking. Just make love to me, any way you want.~ DO ~IncrementGlobal("c-arankisses","GLOBAL",1)~ + a3513 /* SEX_SCENE_EIGHT */
   ++ ~[PC] I can't do this. I don't want this. Stop.~ + a3516 /* SOLID_STOP3 */
   ++ ~[PC] Now there are ways of giving pleasure that are lots of fun, but cross no permanent lines. I think my hand moving along you is having quite an effect, don't you?~ + a3673 /* ARAN_FINGERS_ACTION */
   ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a3698 /* FRONT_TO_ARAN_EXPLORE */
@@ -16078,14 +16078,14 @@ IF ~~ a3677 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
   + ~RandomNum(3,1)~ + ~[PC] (Guide his hand, tracing your thighs, then your hips, making small brushstrokes with his fingers on your breasts.)~ + a3690 /* GUIDE_HAND_UP */
   + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently paint your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a3691 /* GUIDE_HAND_DOWN */
   + ~RandomNum(3,3)~ + ~[PC] (Gently take his palm, guiding his fingers to your most intimate of places, and shift so that his fingertips lie just barely within you.)~ + a3692 /* GUIDE_HAND_IN */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
   + ~RandomNum(5,5)~ + ~[PC] (Giggle mischievously at him as you roll to your knees. You bend forward in front of him, bottom toward him, coyly peeking back over your shoulder to gauge his reaction to your body.)~ + a3520 /* PRESENT_TO_ARAN_TALK_FEAST */
   + ~RandomNum(5,4)~ + ~[PC] (You roll to your knees, coyly peeking back through your legs to gauge his reaction to your body.)~ + a3519 /* PRESENT_TO_ARAN_ACTION_TEASE */
   + ~RandomNum(5,3)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, flexing and arching your back, inviting his response.)~ + a3520 /* PRESENT_TO_ARAN_TALK_FEAST */
@@ -16150,14 +16150,14 @@ IF ~~ a3678 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
   + ~RandomNum(5,3)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, flexing and arching your back, inviting his response.)~ + a3521 /* PRESENT_TO_ARAN_ACTION_HAND_TEASE */
   + ~RandomNum(5,2)~ + ~[PC] (You roll to your knees, placing your hands on your thighs. You face away from him, running your hands along your body, down to your most intimate parts, casting a bold eye over your shoulder at him.)~ + a3520 /* PRESENT_TO_ARAN_TALK_FEAST */
   + ~RandomNum(5,1)~ + ~[PC] (You roll to your knees, then growl, wiggling your bottom at him and daring him to respond.)~ + a3519 /* PRESENT_TO_ARAN_ACTION_TEASE */
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
   + ~RandomNum(5,1)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3514 /* SOLID_STOP1 */
   + ~RandomNum(5,2)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3515 /* SOLID_STOP2 */
   + ~RandomNum(5,3)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3516 /* SOLID_STOP3 */
@@ -16168,14 +16168,14 @@ END
 
 IF ~~ a3523 /* CONTINUE_OR_STOP_ACTION */
   SAY ~[ARAN] (He ceases all motion, breath warm on your skin, frowning slightly.)~
-  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
-  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
-  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
-  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
-  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
-  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
-  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
-  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
+  + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
+  + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
+  + ~Global("c-aranpcbedding","LOCALS",2)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3508 /* SEX_SCENE_THREE */
+  + ~Global("c-aranpcbedding","LOCALS",3)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3509 /* SEX_SCENE_FOUR */
+  + ~Global("c-aranpcbedding","LOCALS",4)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3510 /* SEX_SCENE_FIVE */
+  + ~Global("c-aranpcbedding","LOCALS",5)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3511 /* SEX_SCENE_SIX */
+  + ~Global("c-aranpcbedding","LOCALS",6)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3512 /* SEX_SCENE_SEVEN */
+  + ~Global("c-aranpcbedding","LOCALS",7)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3513 /* SEX_SCENE_EIGHT */
   + ~RandomNum(5,1)~ + ~[PC] I think we have gone too far. You should go.~ + a3514 /* SOLID_STOP1 */
   + ~RandomNum(5,2)~ + ~[PC] I think we have gone too far. You should go.~ + a3515 /* SOLID_STOP2 */
   + ~RandomNum(5,3)~ + ~[PC] I think we have gone too far. You should go.~ + a3516 /* SOLID_STOP3 */
