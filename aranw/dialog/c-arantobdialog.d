@@ -491,12 +491,12 @@ IF ~~ a982 SAY ~[ARAN] Right. I should o' guessed that was th' idea. Go mess wit
 /* ToB Plot Talk 1: Saradush */
 IF ~Global("c-aransaradsush","GLOBAL",1)~ THEN BEGIN a2380
   SAY ~[ARAN] That were an ugly sight, for sure. Th' whole city sacked. Enough to give anyone a right nasty set o' dreams.~
-  ++ ~[PC] I couldn't close my eyes at all. I kept seeing the city of Saradush... burning.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2289
-  ++ ~[PC] I slept well enough, though I do have sympathy for those hurt because of my kind.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2291
-  ++ ~[PC] What? Did I miss something? I slept like the dead.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2292
-  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I had you as a distraction. I slept well enough.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2295
-  ++ ~[PC] I have seen worse. Saradush is not the first time I have experienced full-scale slaughter of innocents.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2296
-  ++ ~[PC] I... I do not want to talk about it.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",1)~ + a2297
+  ++ ~[PC] I couldn't close my eyes at all. I kept seeing the city of Saradush... burning.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2289
+  ++ ~[PC] I slept well enough, though I do have sympathy for those hurt because of my kind.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2291
+  ++ ~[PC] What? Did I miss something? I slept like the dead.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2292
+  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I had you as a distraction. I slept well enough.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2295
+  ++ ~[PC] I have seen worse. Saradush is not the first time I have experienced full-scale slaughter of innocents.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2296
+  ++ ~[PC] I... I do not want to talk about it.~ DO ~SetGlobal("c-aransaradsush","GLOBAL",2)~ + a2297
 END
 
 IF ~~ a2289
@@ -1204,7 +1204,7 @@ IF ~~ a2805 /* HALF_ELF */
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] True. Unless you work it around the other way, in which case I think we have done that... you were very, very happy.~ + a2784
   ++ ~[PC] Never doubt the strength of a determined woman. Better yet, never doubt me, regardless of my state of determination.~ + a2806
   ++ ~[PC] We need to concentrate on basics. Feeding and protecting animals, securing magical items, all of that distracts from our mission. We can't expend magic on things that we can do with our own two feet.~ + a2784
-  + ~GlobalGT("c-aranintimate","GLOBAL",1) GlobalLT("c-aranintimate","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths.~ + a2806
+  + ~GlobalGT("c-aransex","GLOBAL",1) GlobalLT("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths.~ + a2806
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths... oops. That came out wrong, didn't it?~ + a2784
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I don't mind, really. Hop on, and I will carry you. I have the strength of both human and elven blood flowing in my veins, and apparently I have hidden untapped depths...~ + a2875
 END
