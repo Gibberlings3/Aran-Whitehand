@@ -21916,7 +21916,7 @@ IF ~~ a4310 SAY ~[ARAN] Now there be a golden opportunity wasted, you know. You 
 IF ~~ a4313
   SAY ~[ARAN] Gond's Great Gear, an' here all I wanted was to know if I should be sendin' nice little notes back to Erika, on account o' her bein' just about th' right stage to break up wi' that beau o' hers. Or mayhap th' young lass in Trademeet, th' one wi' th' coppery hair hangin' over her shoulder all tied up in a black velvet band. Or mayhap th' young lass outside o' Nashkel, th' bold bright black eyes what sparkled... no, no... mayhap some other lass be th' right one to be courtin' from afar.~ // Black Velvet Band, The Raven Eyed Lass
   ++ ~[PC] Or the young woman in the stables outside the Government district? The one they call 'Mustang Sally'?~ + a4314
-  ++ ~[PC] Just don't bother with Alice. I have heard all the gilrs love Alice.~ + a4315
+  ++ ~[PC] Just don't bother with Alice. I have heard all the girls love Alice.~ + a4315
   ++ ~[PC] You always go on and on about some girl named Eileen, and how at this moment she means everything...~ + a4316
   ++ ~[PC] There was that Elenor somebody you used to mutter about.~ + a4319
   ++ ~[PC] What about that bardess Chiquitita? I heard she has a new song...~ + a4317
