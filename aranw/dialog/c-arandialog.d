@@ -7400,7 +7400,7 @@ IF ~~ a400
 END
 
 IF ~~ a401
-  SAY ~[ARAN] I studied everythin' I could, an' checked every source I could, but there's naught I could find to shed light on this havin' no soul business. Is it a good thing, or a bad thing? I mean, it might come in handy. I seen some things on a battlefield what deaden your insides right proper. Might be a kind o' freedom, in combat, not havin' to worry about nothin'.~
+  SAY ~[ARAN] I studied everythin' I could find on short notice, but there's naught I could find to shed light on this havin' no soul business. Is it a good thing, or a bad thing? I mean, it might come in handy. I seen some things on a battlefield what deaden your insides right proper. Might be a kind o' freedom, in combat, not havin' to worry about nothin'.~
   ++ ~[PC] I really do not want to talk about this. Go away, Aran.~ + a406
   ++ ~[PC] You are joking, right? I do not see the deadness I feel inside as any sort of freedom.~ + a407
   + ~Gender(Player1,MALE)~ + ~[PC] I feel nothing. That would not change my approach to combat, whether I had my soul or not.~ + a408
@@ -15766,7 +15766,7 @@ IF ~~ a3652 /* ROM_TWO_ACTION_FACE_TO_FACE */
   + ~RandomNum(7,6)~ + ~[PC] This is too intense. You should go, right now.~ + a3516 /* SOLID_STOP3 */
   + ~RandomNum(7,7)~ + ~[PC] This is too intense. You should go, right now.~ + a3518 /* FIGHT_START */
   + ~RandomNum(3,1)~ + ~[PC] (Guide his hand, tracing your thighs, then your hips, making small brushstrokes with his fingers on your breasts.)~ + a3690 /* GUIDE_HAND_UP */
-  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently paint your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a3691 /* GUIDE_HAND_DOWN */
+  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently brush your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a3691 /* GUIDE_HAND_DOWN */
   + ~RandomNum(3,3)~ + ~[PC] (Gently take his palm, guiding his fingers to your most intimate of places, and shift so that his fingertips lie just barely within you.)~ + a3692 /* GUIDE_HAND_IN */
 END
 
@@ -15912,7 +15912,7 @@ END
 /* range 2 passthrough/delay */
 
 IF ~~ a3690 /* GUIDE_HAND_UP */
-  SAY ~[ARAN] ~
+  SAY ~[ARAN] (Roughened fingers, suprisingly gentle, explore you.)~
   ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a3698 /* FRONT_TO_ARAN_EXPLORE */
   ++ ~[PC] W... wait a moment...~ + a3522 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
   ++ ~[PC] This is too much. Too fast. Wait.~ + a3522 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
@@ -15920,7 +15920,7 @@ IF ~~ a3690 /* GUIDE_HAND_UP */
 END
 
 IF ~~ a3691 /* GUIDE_HAND_DOWN */
-  SAY ~[ARAN] ~
+  SAY ~[ARAN] (His breath is a sigh, his touch warm on you.)~
   ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a3698 /* FRONT_TO_ARAN_EXPLORE */
   ++ ~[PC] (Sigh, moving against him and stretching with pleasure.)~ + a3584 /* ROM_TWO_6 */
   ++ ~[PC] W... wait a moment...~ + a3522 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
@@ -16076,7 +16076,7 @@ END
 IF ~~ a3677 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
   SAY ~[ARAN] (You feel the gentle heat radiating from his body, so close to yours.)~
   + ~RandomNum(3,1)~ + ~[PC] (Guide his hand, tracing your thighs, then your hips, making small brushstrokes with his fingers on your breasts.)~ + a3690 /* GUIDE_HAND_UP */
-  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently paint your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a3691 /* GUIDE_HAND_DOWN */
+  + ~RandomNum(3,2)~ + ~[PC] (Take one of his fingers as it it were a paintbrush, and gently brush your way down your navel, lower and lower... until you are painting your pleasure in even, slow strokes.)~ + a3691 /* GUIDE_HAND_DOWN */
   + ~RandomNum(3,3)~ + ~[PC] (Gently take his palm, guiding his fingers to your most intimate of places, and shift so that his fingertips lie just barely within you.)~ + a3692 /* GUIDE_HAND_IN */
   + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
   + ~Global("c-aranpcbedding","LOCALS",1)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3507 /* SEX_SCENE_TWO */
@@ -16474,9 +16474,9 @@ IF ~~ a3534 /* BACK_TO_ARAN_ACTION_HAND_STROKES */
   + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3518 /* FIGHT_START */
   ++ ~[PC] (Accept his length into your most intimate place, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
-  ++ ~[PC] (Move his hand to his hardness. Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3697 /* ROM_CLIMAX_CLIMB_DEEP */
+  ++ ~[PC] (With gentle touches, guide him to your most intimate place, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3697 /* ROM_CLIMAX_CLIMB_DEEP */
   ++ ~[PC] Look down, Aran. I think I put you in just the right place. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
-  ++ ~[PC] (Silence him with a kiss, moving onto him and against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
+  ++ ~[PC] (Gently place a kiss on your fingertips and brush it across his forehead... and move onto him and against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
   IF ~RandomNum(9,9) Global("c-aransecondguess","GLOBAL",0)~ THEN GOTO a3794 /* SECOND_GUESS */
 END
 
@@ -16495,10 +16495,10 @@ IF ~~ a3536 /* BACK_TO_ARAN_ACTION_HAND_INTIMATE */
   + ~RandomNum(5,4)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3518 /* FIGHT_START */
   ++ ~[PC] (Launch yourself at him, attempting to wrestle him onto his back.)~ + a3700 /* KNEES_ABOVE_ARAN_WRESTLE_ONTO_BACK */
-  ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
-  ++ ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3697 /* ROM_CLIMAX_CLIMB_DEEP */
-  ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
-  ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
+// PLACEHOLDER  : SHOULD BE TOUCHES   ++ ~[PC] (Accept his advancing thrust, rocking steadily against him, thighs gripping and releasing as you seek your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
+// PLACEHOLDER  : SHOULD BE TOUCHES    ++ ~[PC] (Draw your knees apart as wide as you can, opening yourself fully to his advances.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3697 /* ROM_CLIMAX_CLIMB_DEEP */
+// PLACEHOLDER  : SHOULD BE TOUCHES    ++ ~[PC] Look down, Aran. You are inside. Well, part of you is... oh! Yes. Now all of you.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
+// PLACEHOLDER  : SHOULD BE TOUCHES    ++ ~[PC] (Silence him with a kiss, moving against him, building your pleasure.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3639 /* ROM_PULSE_DEEP_GRUNT */
 END
 
 IF ~~ a3698 /* FRONT_TO_ARAN_EXPLORE */
@@ -16811,7 +16811,7 @@ IF ~~ a3682 /* ROM_PULSE_DEEP_ABOVE_ONE */
 END
 
 IF ~~ a3798 /* ROM_PULSE_DEEP_ABOVE_TWO */
-  SAY ~[ARAN] (His hands find purchase on the surface beneath you. His forearms are strong and muscular under each of your armpits and pressing along the sides of your breasts, holding you close as he rises above you. You can look down and see the movement you can feels as his smooth chest barely brushes your nipples, and his manhood thrusts boldly into you.)~
+  SAY ~[ARAN] (His hands find purchase on the surface beneath you. His forearms are strong and muscular under each of your armpits and pressing along the sides of your breasts, holding you close as he rises above you. You can look down and see the movement you can feel as his smooth chest barely brushes your nipples, and his manhood thrusts boldly into you.)~
   ++ ~[PC] Oh. I feel it. That is... so warm. Faster!~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ ~[PC] (Give in to your pleasure, letting the waves crash around you and through you as you find your release.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ ~[PC] (Lock your arms around his neck, wordlessly begging for a kiss as he quests inside you.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */

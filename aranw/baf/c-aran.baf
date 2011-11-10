@@ -35,7 +35,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aransex","GLOBAL",3) // we went further, but not the big one
 END
-
 /* look for incrementing relationship to full intimacy */
 IF
 	InParty(Myself)
@@ -48,7 +47,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aransex","GLOBAL",4) // shared everything
 END
-/* Watcher's Keep */
+/* Watcher's Keep : Activate */
 IF
 	Global("c-aranwatchkeep","GLOBAL",0)
 	AreaCheck("AR3000") 
@@ -63,7 +62,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranwatchkeep","GLOBAL",1)
 END
-
+/* Watcher's Keep : Initiate */
 IF
 	Global("c-aranwatchkeep","GLOBAL",1)
 	CombatCounter(0)
@@ -78,7 +77,6 @@ THEN
 		PlaySound("c-arnfth")
 		StartDialogueNoSet(Player1)
 END
-
 /* Sparring, females ; Morning After talk */
 IF
 	Global("c-aranspar","GLOBAL",7)
@@ -121,7 +119,6 @@ THEN
 		PlaySound("c-arnltl")
 		StartDialogNoSet(Player1)
 END
-
 /* Sparring, females : Morning After : disable if it doesn't fire in the morning - identify by global set to 12 */
 IF
 	Global("c-aranspar","GLOBAL",7)
@@ -159,7 +156,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranspar","GLOBAL",12)
 END
-
 /* On waking banter, after Underdark : bcs */ 
 
 IF
@@ -202,13 +198,12 @@ IF
 		AreaCheck("AR2800")
 THEN
 	RESPONSE #100
-	SetGlobal("c-aranwakeup","LOCALS",1)
-	SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
-	PlaySong(0)
-	PlaySound("c-arnfti")
-	StartDialogNoSet(Player1)
+		SetGlobal("c-aranwakeup","LOCALS",1)
+		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
+		PlaySong(0)
+		PlaySound("c-arnfti")
+		StartDialogNoSet(Player1)
 END
-
 /* If the party visits the Trademeet Bar, */
 IF
 	InParty(Myself)
@@ -222,7 +217,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranmalcer","GLOBAL",1)
 END
-
 /* then set up a spawn when you go outside into AR2000... */
 IF
 	InParty(Myself)
@@ -3216,9 +3210,10 @@ THEN
 	RESPONSE #100								// 100% of the time
 		SetGlobalTimer("c-aransmalltalk","GLOBAL",60)
 		SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
+		SetGlobalTimer("c-aranisdrunk","GLOBAL",10)  // initializes drunk talk timer
 		SetGlobal("c-aranfriendsetup","GLOBAL",1)
 		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",160)	// Minimum Real Time until SoA_FT_1	is called, unlless the player initiates PID and triggers it 
-		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghild spacer timer 
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghold spacer timer 
 END
 
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT */
@@ -3239,7 +3234,7 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",16) // set up SoA_FT_9
 		Global("c-aranfriendbg2","GLOBAL",18) // set up SoA_FT_10
 		Global("c-aranfriendbg2","GLOBAL",20) // set up SoA_FT_11
-		Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12
+// specially conditioned "soultalk" 		Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12
 		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
 		Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
  //	 Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
@@ -3247,6 +3242,17 @@ IF
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
+END
+
+/* Conditioned Friendtalks (interrupts the series if PC lingers in Chapter 2 */
+IF 
+	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+	Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12
+	GlobalGT("AsylumPlot","GLOBAL",40)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranfriendbg2","GLOBAL",23)	// move up from even to odd
 END
 
 /* Aran's FriendTalks Fire, c-aranfriendbg2, ARAN_FTT */
@@ -3371,7 +3377,7 @@ THEN
 		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
 END
 
-/*early flirt triggering */
+/* early flirt triggering */
  IF
 	Global("c-aranmatch","GLOBAL",1)	// Matched
 	Global("c-aransetupromtimers","GLOBAL",0) // Not evaluated
@@ -3726,6 +3732,7 @@ IF
 	GlobalLT("c-arandrunk","GLOBAL",4)	// shuts down sequence when finished
 	InParty(Myself)
 	CheckStatGT(Myself,40,INTOXICATION)	// Whoot - the room is moving about too much
+	GlobalTimerExpired("c-aranisdrunk","GLOBAL")
 	OR(13)
 		AreaCheck("AR0313") // Sea's Bounty
 		AreaCheck("AR0406") // Copper Coronet
@@ -3755,7 +3762,6 @@ END
 
 IF
 	GlobalLT("c-arandrunk","GLOBAL",4)	// shuts down sequence when finished
-	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)

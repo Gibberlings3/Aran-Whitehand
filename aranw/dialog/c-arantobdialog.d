@@ -6329,7 +6329,7 @@ IF ~~ a4131 /* ROM_PULSE_DEEP_ABOVE_ONE */
 END
 
 IF ~~ a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
-  SAY ~[ARAN] (His hands find purchase on the surface beneath you. His forearms are strong and muscular under each of your armpits and pressing along the sides of your breasts, holding you close as he rises above you. You can look down and see the movement you can feels as his smooth chest barely brushes your nipples, and his manhood thrusts boldly into you.)~
+  SAY ~[ARAN] (His hands find purchase on the surface beneath you. His forearms are strong and muscular under each of your armpits and pressing along the sides of your breasts, holding you close as he rises above you. You can look down and see the movement you can feel as his smooth chest barely brushes your nipples, and his manhood thrusts boldly into you.)~
   ++ ~[PC] Oh. I feel it. That is... so warm. Faster!~ + a4144 /* ROM_FINAL_TWO */
   ++ ~[PC] (Give in to your pleasure, letting the waves crash around you and through you as you find your release.)~ + a4144 /* ROM_FINAL_TWO */
   ++ ~[PC] (Lock your arms around his neck, wordlessly begging for a kiss as he quests inside you.)~ + a4144 /* ROM_FINAL_TWO */
