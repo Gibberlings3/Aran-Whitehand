@@ -114,7 +114,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranspar","GLOBAL",8)
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
 		PlaySong(0)
 		PlaySound("c-arnltl")
 		StartDialogNoSet(Player1)
@@ -157,12 +156,11 @@ THEN
 		SetGlobal("c-aranspar","GLOBAL",12)
 END
 /* On waking banter, after Underdark : bcs */ 
-
 IF
 	PartyRested()
 	InParty(Myself)
 	Global("c-aranwakeup","LOCALS",0)
-	Global("Chapter","GLOBAL",6)
+	GlobalGT("Chapter","GLOBAL",5)
 	!Global("c-aranspar","GLOBAL",7)
 	CombatCounter(0)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -199,7 +197,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranwakeup","LOCALS",1)
-		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
 		PlaySong(0)
 		PlaySound("c-arnfti")
 		StartDialogNoSet(Player1)
@@ -489,7 +486,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnREEldoth","LOCALS",9)
 END
-/* Romantic Encounters: Gaelan Bayle	*/
+/* Romantic Encounters: Gaelan Bayle */
 IF
 	InParty(Myself)
 	Global("RE_GaelanFlirt","GLOBAL",1)
@@ -537,7 +534,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnREGarren","LOCALS",9)
 END
-/* Romantic Encounters: Jarlaxle	*/
+/* Romantic Encounters: Jarlaxle */
 IF
 	InParty(Myself)
 	Global("RE_JarlaxleFlirt","GLOBAL",1)
@@ -605,7 +602,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnRELogan","LOCALS",9)
 END
-/* Romantic Encounters: Mekrath	*/
+/* Romantic Encounters: Mekrath */
 IF
 	InParty(Myself)
 	Global("RE_MekrathFlirt","GLOBAL",1)
@@ -842,14 +839,14 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		StartCutSceneMode()
+	StartCutSceneMode()
 		SetGlobal("c-arSCRL15","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL15",Myself,1,1,1)
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Petrification be finished, if you want it.~)
-		EndCutSceneMode()
+	EndCutSceneMode()
 END
-/*	c-arSCRL1B Aran PID: Create Scroll of Agannazar's Scorcher */
+/* c-arSCRL1B Aran PID: Create Scroll of Agannazar's Scorcher */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -867,7 +864,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Agannazar's Scorcher be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1C Aran PID: Create Scroll of Ghoul Touch */
+/* c-arSCRL1C Aran PID: Create Scroll of Ghoul Touch */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -885,7 +882,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghoul Touch be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1D Aran PID: Create Scroll of Clairvoyance */
+/* c-arSCRL1D Aran PID: Create Scroll of Clairvoyance */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -903,7 +900,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Clairvoyance be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1E Aran PID: Create Scroll of Dispel Magic */
+/* c-arSCRL1E Aran PID: Create Scroll of Dispel Magic */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -921,7 +918,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Dispel Magic be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1F Aran PID: Create Scroll of Flame Arrow */
+/* c-arSCRL1F Aran PID: Create Scroll of Flame Arrow */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -939,7 +936,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Flame Arrow be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1G Aran PID: Create Scroll of Fireball */
+/* c-arSCRL1G Aran PID: Create Scroll of Fireball */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -957,7 +954,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireball be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1H Aran PID: Create Scroll of Haste */
+/* c-arSCRL1H Aran PID: Create Scroll of Haste */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -975,7 +972,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Haste be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1I Aran PID: Create Scroll of Hold Person */
+/* c-arSCRL1I Aran PID: Create Scroll of Hold Person */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -993,7 +990,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Person be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1J Aran PID: Create Scroll of Invisibility 10' radius */
+/* c-arSCRL1J Aran PID: Create Scroll of Invisibility 10' radius */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1011,7 +1008,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility 10' radius be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1K Aran PID: Create Scroll of Lightning Bolt */
+/* c-arSCRL1K Aran PID: Create Scroll of Lightning Bolt */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1029,7 +1026,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Lightning Bolt be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1M Aran PID: Create Scroll of NonDetection */
+/* c-arSCRL1M Aran PID: Create Scroll of NonDetection */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1047,7 +1044,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' NonDetection be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1N Aran PID: Create Scroll of Protection from Normal Missiles */
+/* c-arSCRL1N Aran PID: Create Scroll of Protection from Normal Missiles */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1065,7 +1062,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Missiles be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1O Aran PID: Create Scroll of Slow */
+/* c-arSCRL1O Aran PID: Create Scroll of Slow */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1083,7 +1080,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Slow be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1P Aran PID: Create Scroll of Skull Trap */
+/* c-arSCRL1P Aran PID: Create Scroll of Skull Trap */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1101,7 +1098,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Skull Trap be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1Q Aran PID: Create Scroll of Vampiric Touch */
+/* c-arSCRL1Q Aran PID: Create Scroll of Vampiric Touch */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1119,7 +1116,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Vampiric Touch be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1S Aran PID: Create Scroll of Dire Charm */
+/* c-arSCRL1S Aran PID: Create Scroll of Dire Charm */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1137,7 +1134,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Dire Charm be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1T Aran PID: Create Scroll of Ghost Armor */
+/* c-arSCRL1T Aran PID: Create Scroll of Ghost Armor */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1155,7 +1152,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghost Armor be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1U Aran PID: Create Scroll of Confusion */
+/* c-arSCRL1U Aran PID: Create Scroll of Confusion */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1173,7 +1170,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Confusion be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1V Aran PID: Create Scroll of Stoneskin */
+/* c-arSCRL1V Aran PID: Create Scroll of Stoneskin */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1191,7 +1188,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Stoneskin be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1W Aran PID: Create Scroll of Fireshield (Blue) */
+/* c-arSCRL1W Aran PID: Create Scroll of Fireshield (Blue) */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1209,7 +1206,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Blue) be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1X Aran PID: Create Scroll of Ice Storm */
+/* c-arSCRL1X Aran PID: Create Scroll of Ice Storm */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1227,7 +1224,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Ice Storm be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1Y Aran PID: Create Scroll of Improved Invisibility */
+/* c-arSCRL1Y Aran PID: Create Scroll of Improved Invisibility */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1239,13 +1236,13 @@ IF
 THEN
 	RESPONSE #100
 	StartCutSceneMode()
-	SetGlobal("c-arSCRL1Y","LOCALS",0)
-	SetGlobal("c-aranscribe","GLOBAL",0)
-	GiveItemCreate("SCRL1Y",Myself,1,1,1)
-	DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Invisibility be finished, if you want it.~)
+		SetGlobal("c-arSCRL1Y","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1Y",Myself,1,1,1)
+		DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Invisibility be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
+/* c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1263,7 +1260,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Globe of Invulnerability be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL2E Aran PID: Create Scroll of Cloudkill */
+/* c-arSCRL2E Aran PID: Create Scroll of Cloudkill */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1281,7 +1278,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Cloudkill be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL2F Aran PID: Create Scroll of Cone of Cold */
+/* c-arSCRL2F Aran PID: Create Scroll of Cone of Cold */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1299,7 +1296,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Cone of Cold be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL2H Aran PID: Create Scroll of Shadow Door */
+/* c-arSCRL2H Aran PID: Create Scroll of Shadow Door */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1317,7 +1314,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Shadow Door be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL3G Aran PID: Create Scroll of Vocalize */
+/* c-arSCRL3G Aran PID: Create Scroll of Vocalize */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1335,7 +1332,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Vocalize be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5G Aran PID: Create Scroll of Remove Curse */
+/* c-arSCRL5G Aran PID: Create Scroll of Remove Curse */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1353,7 +1350,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Remove Curse be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5H Aran PID: Create Scroll of Emotion */
+/* c-arSCRL5H Aran PID: Create Scroll of Emotion */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1371,7 +1368,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Emotion be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5I Aran PID: Create Scroll of Greater Malison */
+/* c-arSCRL5I Aran PID: Create Scroll of Greater Malison */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1389,7 +1386,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Greater Malison be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5J Aran PID: Create Scroll of Otiluke's Resilient Sphere */
+/* c-arSCRL5J Aran PID: Create Scroll of Otiluke's Resilient Sphere */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1407,7 +1404,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Otiluke's Resilient Sphere be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5K Aran PID: Create Scroll of Spirit Armor */
+/* c-arSCRL5K Aran PID: Create Scroll of Spirit Armor */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1425,7 +1422,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spirit Armor be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5N Aran PID: Create Scroll of Domination */
+/* c-arSCRL5N Aran PID: Create Scroll of Domination */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1444,7 +1441,7 @@ THEN
 	EndCutSceneMode()
 END
 
-/*	c-arSCRL5P Aran PID: Create Scroll of Chaos */
+/* c-arSCRL5P Aran PID: Create Scroll of Chaos */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1462,7 +1459,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Chaos be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5Q Aran PID: Create Scroll of Feeblemind */
+/* c-arSCRL5Q Aran PID: Create Scroll of Feeblemind */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1480,7 +1477,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Feeblemind be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5T Aran PID: Create Scroll of Protection from Electricity */
+/* c-arSCRL5T Aran PID: Create Scroll of Protection from Electricity */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1498,7 +1495,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Electricity be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL5U Aran PID: Create Scroll of Reflected Image */
+/* c-arSCRL5U Aran PID: Create Scroll of Reflected Image */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1516,7 +1513,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Reflected Image be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL66 Aran PID: Create Scroll of Grease */
+/* c-arSCRL66 Aran PID: Create Scroll of Grease */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1534,7 +1531,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Grease be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL67 Aran PID: Create Scroll of Armor */
+/* c-arSCRL67 Aran PID: Create Scroll of Armor */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1552,7 +1549,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Armor be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL68 Aran PID: Create Scroll of Burning Hands */
+/* c-arSCRL68 Aran PID: Create Scroll of Burning Hands */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1570,7 +1567,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Burning Hands be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL69 Aran PID: Create Scroll of Charm Person */
+/* c-arSCRL69 Aran PID: Create Scroll of Charm Person */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1588,7 +1585,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Charm Person be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6D Aran PID: Create Scroll of Find Familiar */
+/* c-arSCRL6D Aran PID: Create Scroll of Find Familiar */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1606,7 +1603,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Find Familiar be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6E Aran PID: Create Scroll of Power Word, Sleep */
+/* c-arSCRL6E Aran PID: Create Scroll of Power Word, Sleep */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1624,7 +1621,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Sleep be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6F Aran PID: Create Scroll of Ray of Enfeeblement */
+/* c-arSCRL6F Aran PID: Create Scroll of Ray of Enfeeblement */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1642,7 +1639,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Ray of Enfeeblement be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6G Aran PID: Create Scroll of Minor Spell Deflection */
+/* c-arSCRL6G Aran PID: Create Scroll of Minor Spell Deflection */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1660,7 +1657,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Deflection be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6H Aran PID: Create Scroll of Protection from Fire */
+/* c-arSCRL6H Aran PID: Create Scroll of Protection from Fire */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1678,7 +1675,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Fire be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6I Aran PID: Create Scroll of Protection from Cold */
+/* c-arSCRL6I Aran PID: Create Scroll of Protection from Cold */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1696,7 +1693,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Cold be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6J Aran PID: Create Scroll of Spell Thrust */
+/* c-arSCRL6J Aran PID: Create Scroll of Spell Thrust */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1714,7 +1711,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Thrust be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6K Aran PID: Create Scroll of Detect Illusion */
+/* c-arSCRL6K Aran PID: Create Scroll of Detect Illusion */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1732,7 +1729,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Illusion be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6L Aran PID: Create Scroll of Hold Undead */
+/* c-arSCRL6L Aran PID: Create Scroll of Hold Undead */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1750,7 +1747,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Undead be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6M Aran PID: Create Scroll of Enchanted Weapon */
+/* c-arSCRL6M Aran PID: Create Scroll of Enchanted Weapon */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1768,7 +1765,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Enchanted Weapon be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6N Aran PID: Create Scroll of Fireshield (Red) */
+/* c-arSCRL6N Aran PID: Create Scroll of Fireshield (Red) */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1786,7 +1783,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Red) be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6O Aran PID: Create Scroll of Secret Word */
+/* c-arSCRL6O Aran PID: Create Scroll of Secret Word */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1804,7 +1801,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Secret Word be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6P Aran PID: Create Scroll of Minor Sequencer */
+/* c-arSCRL6P Aran PID: Create Scroll of Minor Sequencer */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1822,7 +1819,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Sequencer be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6S Aran PID: Create Scroll of Spell Immunity */
+/* c-arSCRL6S Aran PID: Create Scroll of Spell Immunity */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1840,7 +1837,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Immunity be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6T Aran PID: Create Scroll of Protection from Normal Weapons */
+/* c-arSCRL6T Aran PID: Create Scroll of Protection from Normal Weapons */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1858,7 +1855,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Weapons be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6U Aran PID: Create Scroll of Breach */
+/* c-arSCRL6U Aran PID: Create Scroll of Breach */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1876,7 +1873,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Breach be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6V Aran PID: Create Scroll of Lower Resistance */
+/* c-arSCRL6V Aran PID: Create Scroll of Lower Resistance */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1894,7 +1891,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Lower Resistance be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6W Aran PID: Create Scroll of Oracle */
+/* c-arSCRL6W Aran PID: Create Scroll of Oracle */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1912,7 +1909,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Oracle be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6Y Aran PID: Create Scroll of Protection from Acid */
+/* c-arSCRL6Y Aran PID: Create Scroll of Protection from Acid */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1930,7 +1927,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Acid be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL6Z Aran PID: Create Scroll of Phantom Blade */
+/* c-arSCRL6Z Aran PID: Create Scroll of Phantom Blade */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1948,7 +1945,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Phantom Blade be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL70 Aran PID: Create Scroll of Color Spray */
+/* c-arSCRL70 Aran PID: Create Scroll of Color Spray */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1966,7 +1963,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Color Spray be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL71 Aran PID: Create Scroll of Blindness */
+/* c-arSCRL71 Aran PID: Create Scroll of Blindness */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -1984,7 +1981,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Blindness be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL72 Aran PID: Create Scroll of Friends */
+/* c-arSCRL72 Aran PID: Create Scroll of Friends */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2002,7 +1999,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Friends be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL75 Aran PID: Create Scroll of Identify */
+/* c-arSCRL75 Aran PID: Create Scroll of Identify */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2020,7 +2017,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Identify be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL76 Aran PID: Create Scroll of Infravision */
+/* c-arSCRL76 Aran PID: Create Scroll of Infravision */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2038,7 +2035,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Infravision be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL77 Aran PID: Create Scroll of Magic Missile */
+/* c-arSCRL77 Aran PID: Create Scroll of Magic Missile */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2056,7 +2053,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Magic Missile be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL78 Aran PID: Create Scroll of Protection from Evil */
+/* c-arSCRL78 Aran PID: Create Scroll of Protection from Evil */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2074,7 +2071,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Evil be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL79 Aran PID: Create Scroll of Shield */
+/* c-arSCRL79 Aran PID: Create Scroll of Shield */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2092,7 +2089,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Shield be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7D Aran PID: Create Scroll of Minor Spell Turning */
+/* c-arSCRL7D Aran PID: Create Scroll of Minor Spell Turning */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2110,7 +2107,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Turning be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7F Aran PID: Create Scroll of Globe of Invulnerability */
+/* c-arSCRL7F Aran PID: Create Scroll of Globe of Invulnerability */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2128,7 +2125,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Globe of Invulnerability be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7G Aran PID: Create Scroll of Tenser's Transformation */
+/* c-arSCRL7G Aran PID: Create Scroll of Tenser's Transformation */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2146,7 +2143,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Tenser's Transformation be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7H Aran PID: Create Scroll of Flesh to Stone */
+/* c-arSCRL7H Aran PID: Create Scroll of Flesh to Stone */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2164,7 +2161,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Flesh to Stone be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7I Aran PID: Create Scroll of Death Spell */
+/* c-arSCRL7I Aran PID: Create Scroll of Death Spell */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2182,7 +2179,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Spell be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7J Aran PID: Create Scroll of Protection from Magic */
+/* c-arSCRL7J Aran PID: Create Scroll of Protection from Magic */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2200,7 +2197,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magic be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7K Aran PID: Create Scroll of Mislead */
+/* c-arSCRL7K Aran PID: Create Scroll of Mislead */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2218,7 +2215,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Mislead be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7L Aran PID: Create Scroll of Pierce Magic */
+/* c-arSCRL7L Aran PID: Create Scroll of Pierce Magic */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2236,7 +2233,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Pierce Magic be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7M Aran PID: Create Scroll of True Sight */
+/* c-arSCRL7M Aran PID: Create Scroll of True Sight */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2254,7 +2251,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' True Sight be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7O Aran PID: Create Scroll of Protection from Magical Weapons */
+/* c-arSCRL7O Aran PID: Create Scroll of Protection from Magical Weapons */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2272,7 +2269,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magical Weapons be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7P Aran PID: Create Scroll of Power Word, Silence */
+/* c-arSCRL7P Aran PID: Create Scroll of Power Word, Silence */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2290,7 +2287,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Silence be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7Q Aran PID: Create Scroll of Improved Haste */
+/* c-arSCRL7Q Aran PID: Create Scroll of Improved Haste */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2308,7 +2305,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Haste be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7R Aran PID: Create Scroll of Death Fog */
+/* c-arSCRL7R Aran PID: Create Scroll of Death Fog */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2326,7 +2323,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Fog be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7S Aran PID: Create Scroll of Chain Lightning */
+/* c-arSCRL7S Aran PID: Create Scroll of Chain Lightning */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2344,7 +2341,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Chain Lightning be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7T Aran PID: Create Scroll of Disintegrate */
+/* c-arSCRL7T Aran PID: Create Scroll of Disintegrate */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2362,7 +2359,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Disintegrate be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7U Aran PID: Create Scroll of Contingency */
+/* c-arSCRL7U Aran PID: Create Scroll of Contingency */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2380,7 +2377,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Contingency be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL7V Aran PID: Create Scroll of Spell Deflection */
+/* c-arSCRL7V Aran PID: Create Scroll of Spell Deflection */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2398,7 +2395,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Deflection be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL80 Aran PID: Create Scroll of Shocking Grasp */
+/* c-arSCRL80 Aran PID: Create Scroll of Shocking Grasp */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2416,7 +2413,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Shocking Grasp be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL81 Aran PID: Create Scroll of Sleep */
+/* c-arSCRL81 Aran PID: Create Scroll of Sleep */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2434,7 +2431,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Sleep be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL82 Aran PID: Create Scroll of Chill Touch */
+/* c-arSCRL82 Aran PID: Create Scroll of Chill Touch */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2452,7 +2449,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Chill Touch be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL83 Aran PID: Create Scroll of Chromatic Orb */
+/* c-arSCRL83 Aran PID: Create Scroll of Chromatic Orb */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2470,7 +2467,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Chromatic Orb be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL84 Aran PID: Create Scroll of Larloch's Minor Drain */
+/* c-arSCRL84 Aran PID: Create Scroll of Larloch's Minor Drain */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2488,7 +2485,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Larloch's Minor Drain be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL85 Aran PID: Create Scroll of Blur */
+/* c-arSCRL85 Aran PID: Create Scroll of Blur */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2506,7 +2503,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Blur be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL86 Aran PID: Create Scroll of Detect Evil */
+/* c-arSCRL86 Aran PID: Create Scroll of Detect Evil */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2524,7 +2521,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Evil be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL87 Aran PID: Create Scroll of Detect Invisibility */
+/* c-arSCRL87 Aran PID: Create Scroll of Detect Invisibility */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2542,7 +2539,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Invisibility be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL89 Aran PID: Create Scroll of Horror */
+/* c-arSCRL89 Aran PID: Create Scroll of Horror */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2560,7 +2557,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Horror be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL8C Aran PID: Create Scroll of Stone to Flesh */
+/* c-arSCRL8C Aran PID: Create Scroll of Stone to Flesh */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2578,7 +2575,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Stone to Flesh be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL8X Aran PID: Create Scroll of Spell Shield */
+/* c-arSCRL8X Aran PID: Create Scroll of Spell Shield */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2596,7 +2593,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Shield be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL90 Aran PID: Create Scroll of Invisibility */
+/* c-arSCRL90 Aran PID: Create Scroll of Invisibility */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2614,7 +2611,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL91 Aran PID: Create Scroll of Knock */
+/* c-arSCRL91 Aran PID: Create Scroll of Knock */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2632,7 +2629,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Knock be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL92 Aran PID: Create Scroll of Know Alignment */
+/* c-arSCRL92 Aran PID: Create Scroll of Know Alignment */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2650,7 +2647,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Know Alignment be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL93 Aran PID: Create Scroll of Luck */
+/* c-arSCRL93 Aran PID: Create Scroll of Luck */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2668,7 +2665,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Luck be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL94 Aran PID: Create Scroll of Resist Fear */
+/* c-arSCRL94 Aran PID: Create Scroll of Resist Fear */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2686,7 +2683,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Resist Fear be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL95 Aran PID: Create Scroll of Melf's Acid Arrow */
+/* c-arSCRL95 Aran PID: Create Scroll of Melf's Acid Arrow */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2704,7 +2701,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Acid Arrow be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL96 Aran PID: Create Scroll of Mirror Image */
+/* c-arSCRL96 Aran PID: Create Scroll of Mirror Image */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2723,7 +2720,7 @@ THEN
 	EndCutSceneMode()
 END
 
-/*	c-arSCRL97 Aran PID: Create Scroll of Stinking Cloud */
+/* c-arSCRL97 Aran PID: Create Scroll of Stinking Cloud */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2741,7 +2738,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Stinking Cloud be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL98 Aran PID: Create Scroll of Strength */
+/* c-arSCRL98 Aran PID: Create Scroll of Strength */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2759,7 +2756,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Strength be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRL99 Aran PID: Create Scroll of Web */
+/* c-arSCRL99 Aran PID: Create Scroll of Web */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2777,7 +2774,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Web be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA1 Aran PID: Create Scroll of Wizard Eye */
+/* c-arSCRLA1 Aran PID: Create Scroll of Wizard Eye */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2795,7 +2792,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Wizard Eye be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA2 Aran PID: Create Scroll of Deafness */
+/* c-arSCRLA2 Aran PID: Create Scroll of Deafness */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2813,7 +2810,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Deafness be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA3 Aran PID: Create Scroll of Glitterdust */
+/* c-arSCRLA3 Aran PID: Create Scroll of Glitterdust */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2831,7 +2828,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Glitterdust be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA5 Aran PID: Create Scroll of Melf's Minute Meteors */
+/* c-arSCRLA5 Aran PID: Create Scroll of Melf's Minute Meteors */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2849,7 +2846,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Minute Meteors be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA6 Aran PID: Create Scroll of Spook */
+/* c-arSCRLA6 Aran PID: Create Scroll of Spook */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2867,7 +2864,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Spook be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLA8 Aran PID: Create Scroll of Contagion */
+/* c-arSCRLA8 Aran PID: Create Scroll of Contagion */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2885,7 +2882,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Contagion be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLAJ Aran PID: Create Scroll of Farsight */
+/* c-arSCRLAJ Aran PID: Create Scroll of Farsight */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -2903,7 +2900,7 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Farsight be finished, if you want it.~)
 	EndCutSceneMode()
 END
-/*	c-arSCRLAL Aran PID: Create Scroll of Sunfire */
+/* c-arSCRLAL Aran PID: Create Scroll of Sunfire */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
 	Global("c-aranscribe","GLOBAL",1)
@@ -3818,13 +3815,12 @@ THEN
 END
 /* Liches Are Scary (Darios) : Initiate */
 IF
-	GlobalTimerExpired("c-aransmalltalk","GLOBAL")
+	Global("c-aranlich","LOCALS",1)
 	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-	Global("c-aranlich","LOCALS",1)
 THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
@@ -3846,13 +3842,12 @@ THEN
 END
 /* Shade Lord (Darios) : Initiate */
 IF
-	GlobalTimerExpired("c-aransmalltalk","GLOBAL") // Timer (game-time) has expired
+	Global("c-aranshadelord","LOCALS",1)
 	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
-	Global("c-aranshadelord","LOCALS",1)
 THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
@@ -4454,7 +4449,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranwaukeen","LOCALS",0)
 END
-/*	Gavin Raised From The Dead */
+/* Gavin Raised From The Dead */
 IF
 	GlobalGT("B!GavRaised","GLOBAL",1)
 	Global("c-argavinraised","GLOBAL",0)
@@ -4466,7 +4461,7 @@ THEN
 		SetGlobal("c-argavinraised","GLOBAL",1)
 		StartDialogueNoSet(Player1)
 END
-/* Scenery DisplayStringHead : Childish Jokes Are Almost Always Funny	*/
+/* Scenery DisplayStringHead : Childish Jokes Are Almost Always Funny */
 IF
 	Global("c-silencearan","GLOBAL",0)
 	GlobalTimerExpired("c-arananomensilly","GLOBAL")

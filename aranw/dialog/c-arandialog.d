@@ -1,4 +1,3 @@
-/* DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ */
 
 /* Initialize SoA Dialogs */
 BEGIN C-ARAN	/* Initialize SoA Dialogs : pre-joining SoA */
@@ -21,6 +20,68 @@ BEGIN C-TAMAN	/* Initialize SoA Dialogs : bar fight npc Taman */
 BEGIN C-OSKUT	/* Initialize SoA Dialogs : bar fight npc Oskut */
 
 /* SoA Interjections */
+
+/*  SoA Interjections: Salvanas Reactions : replies at bottom of C-ARANJ */
+/* 24 ~It saddens me, but if it must be so, I shall worship my goddess from afar!  Farewell, my goddess!~ */
+ALTER_TRANS SALVANAS  // file name
+BEGIN 24 END // state number (can be more than one)
+BEGIN 0 END // transition number (can be more than one)
+BEGIN // list of changes, see below for flags
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","LOCALS",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+END
+
+EXTEND_BOTTOM SALVANAS 24
+IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4362
+END
+
+/* 25 ~Prepare...?  Really?  You...um...want to get a room, here?  Well, I...I...I think I hear my captain calling!  Yes, my captain!  COMING, CAPTAIN!!~ */
+ALTER_TRANS SALVANAS  // file name
+BEGIN 25 END // state number (can be more than one)
+BEGIN 0 END // transition number (can be more than one)
+BEGIN // list of changes, see below for flags
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","GLOBAL",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+END
+
+EXTEND_BOTTOM SALVANAS 25
+IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4363
+END
+
+/* 19 ~Hmm...?  Ah, my apologies.  I was distracted by the posterior of a most lovely woman over yonder.~ */
+ALTER_TRANS SALVANAS  // file name
+BEGIN 19 END // state number (can be more than one)
+BEGIN 0 END // transition number (can be more than one)
+BEGIN // list of changes, see below for flags
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","GLOBAL",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+END
+
+EXTEND_BOTTOM SALVANAS 19
+IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4364
+END
+
+/* 26 ~Err... yes.  Hello.  My name be Salvanas... you would not have any sensuously beautiful female companions I might become familiar with, hmmm?~ */
+ALTER_TRANS SALVANAS  // file name
+BEGIN 26 END // state number (can be more than one)
+BEGIN 0 END // transition number (can be more than one)
+BEGIN // list of changes, see below for flags
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","GLOBAL",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+END
+
+EXTEND_BOTTOM SALVANAS 26
+IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4365
+END
+
+/* 27 ~I am Salvanas, conqueror of women and reknown around Faerun for my skill at love... but, obviously, you and I have nothing further to say to one another, I am sure.~ */
+ALTER_TRANS SALVANAS  // file name
+BEGIN 27 END // state number (can be more than one)
+BEGIN 0 END // transition number (can be more than one)
+BEGIN // list of changes, see below for flags
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","GLOBAL",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+END
+
+EXTEND_BOTTOM SALVANAS 27
+IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4366
+END
+
 
 /* SoA Interjections : Nalia Quest Interjection: Old Bat Blabbers */
 ADD_TRANS_ACTION DELCIA BEGIN 16 END BEGIN END ~SetGlobal("c-aranoldbat","GLOBAL",1)~
@@ -16165,7 +16226,6 @@ IF ~~ a3678 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
   + ~RandomNum(5,5)~ + ~[PC] Wait... I think we have gone too far. You should go.~ + a3518 /* FIGHT_START */
 END
 
-
 IF ~~ a3523 /* CONTINUE_OR_STOP_ACTION */
   SAY ~[ARAN] (He ceases all motion, breath warm on your skin, frowning slightly.)~
   + ~Global("c-aranpcbedding","LOCALS",0)~ + ~[PC] Aran... I want you to have me. Take me any way you want. I give you complete control.~ + a3506 /* SEX_SCENE_ONE */
@@ -16196,7 +16256,6 @@ IF ~~ a3519 /* PRESENT_TO_ARAN_ACTION_TEASE */
   + ~RandomNum(5,3)~ + ~[PC] I think we have gone too far. You should go.~ + a3516 /* SOLID_STOP3 */
   + ~RandomNum(5,4)~ + ~[PC] I think we have gone too far. You should go.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(5,5)~ + ~[PC] I think we have gone too far. You should go.~ + a3518 /* FIGHT_START */
-
 END
 
 IF ~~ a3790
@@ -17265,6 +17324,45 @@ IF ~~ a3366 /* GET_OUT_EXIT */
 END
 
 /* END OF ADULT LAND */
+
+/*  SoA Interjections: Salvanas Reactions  */
+IF ~~ a4362
+	SAY ~[ARAN] Persistent little bastard, eh? An' now you done gone an' broke his heart. I'd feel for th' lad, if he weren't such a jackass.~
+	IF ~~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4363
+	SAY ~[ARAN] Persistent little bastard, eh? But no follow through. One bold glance from you, jokin' or naught, an' he flies home to mommy on wings o' fear.~
+	IF ~~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1) ActionOverride("salvanas",EscapeArea())~ EXIT
+END
+
+IF ~~ a4364
+	SAY ~[ARAN] Well, now... I think I can help a lad out, eh?~
+	IF ~Gender(Player2,FEMALE) !Name("c-aran",Player2)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4367
+	IF ~Gender(Player3,FEMALE) !Name("c-aran",Player3)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4368
+	IF ~Gender(Player4,FEMALE) !Name("c-aran",Player4)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4369
+	IF ~Gender(Player5,FEMALE) !Name("c-aran",Player5)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4370
+	IF ~Gender(Player6,FEMALE) !Name("c-aran",Player6)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4371
+END
+
+IF ~~ a4365
+	SAY ~[ARAN] Which one? Where be th'... Oh. Aye, now there be a right fine lookin' young lass.~
+	IF ~Gender(Player1,MALE)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ EXIT
+	IF ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ EXIT
+	IF ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ GOTO a4372
+END
+
+IF ~~ a4366
+	SAY ~[ARAN] Right on th' naught to say, boyo. Any time a lad thinks he be one o' th' god's gift to women, I just have to ask... which god?~
+	IF ~~ THEN DO ~SetGlobal("c-aransalvanas","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4367 SAY ~[ARAN] By any account, have you met my friend <PLAYER2>?~ IF ~~ THEN GOTO a4372 END
+IF ~~ a4368 SAY ~[ARAN] By any account, have you met my friend <PLAYER3>?~ IF ~~ THEN GOTO a4372 END
+IF ~~ a4369 SAY ~[ARAN] By any account, have you met my friend <PLAYER4>?~ IF ~~ THEN GOTO a4372 END
+IF ~~ a4370 SAY ~[ARAN] By any account, have you met my friend <PLAYER5>?~ IF ~~ THEN GOTO a4372 END
+IF ~~ a4371 SAY ~[ARAN] By any account, have you met my friend <PLAYER6>?~ IF ~~ THEN GOTO a4372 END
+IF ~~ a4372 SAY ~[ARAN] OUCH! Blighted hells, that hurt! I were only jokin', eh?~ IF ~~ THEN EXIT END
 
 
 /* PID for SoA - LAST IN WEIGHT */
