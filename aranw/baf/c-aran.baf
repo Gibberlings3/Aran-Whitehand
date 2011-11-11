@@ -4,7 +4,7 @@ IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("c-aranintimate","GLOBAL",1) // we kissed...
-	Global("c-aransex","GLOBAL",0) // not registered...
+	GlobalLT("c-aransex","GLOBAL",1) // not registered...
 	Gender(Player1,FEMALE)
 	!HasItemEquiped("belt05",Player1)
 THEN
@@ -16,7 +16,7 @@ IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("c-aranintimate","GLOBAL",2) // kissed and touched
-	Global("c-aransex","GLOBAL",1) // not registered
+	GlobalLT("c-aransex","GLOBAL",2) // not registered
 	Gender(Player1,FEMALE)
 	!HasItemEquiped("belt05",Player1)
 THEN
@@ -28,7 +28,7 @@ IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("c-aranintimate","GLOBAL",3) // we went further, but not the big one
-	Global("c-aransex","GLOBAL",2) // not registered
+	GlobalLT("c-aransex","GLOBAL",3) // not registered
 	Gender(Player1,FEMALE)
 	!HasItemEquiped("belt05",Player1)
 THEN
@@ -40,7 +40,7 @@ IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	Global("c-aranintimate","GLOBAL",4) // shared everything
-	Global("c-aransex","GLOBAL",3)
+	GlobalLT("c-aransex","GLOBAL",4)
 	Gender(Player1,FEMALE)
 	!HasItemEquiped("belt05",Player1)
 THEN
