@@ -1,3 +1,4 @@
+/* DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ */
 
 /* Initialize SoA Dialogs */
 BEGIN C-ARAN	/* Initialize SoA Dialogs : pre-joining SoA */
@@ -14099,13 +14100,24 @@ IF ~~ a3500 /* ARAN_MOON_3_RESPOND */
 END
 
 IF ~~ a3502 /* ARAN_MOON_4_RESPOND */
-  SAY ~[ARAN] (Lips meet lips devouring and battling fiercely for supremacy)~
+  SAY ~[ARAN] (Lips meet lips devouring and battling fiercely for supremacy.)~
+  = ~[ARAN] Do we need a bit more privacy, or do you be wantin' to take a risk?~
+  ++ ~[PC] Stop! I can't do this.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3487 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] (Shyly take his arm and lead him deeper into the shadows, away from any potential onlookers.)~ + c-aranmoonprivacy
+  ++ ~[PC] I don't mind a potential audience. If you are going to make love to me, do it right here.~ + c-aranmoonprivacy
+  ++ ~[PC] This... this is just right. Right here, under these stars, I could just kiss you for hours.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3712 /* ARAN_MOON_SLEEP_1_EXIT */
+  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3487 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3366 /* GET_OUT_EXIT */
+  ++ ~[PC] We could hide over here, and continue this conversation... yes. Right here. Now, where were we?~ + c-aranmoonprivacy
+END
+
+IF ~~ c-aranmoonprivacy
+  SAY ~[ARAN] (His hands fumble about you, his breath straining in the attempt to control his desire.)~
   ++ ~[PC] I need release, but we just can't make love... not here, not now. Just touch me, and I will touch you?~ + a3765 /* ARAN_MOON_SLEEP_PASSTHROUGH */
-  ++ ~[PC] (Take his hardness and place it where it belongs, just barely inside of you.)~ + a3766 /* MOON_MOVE_ACTION */
+  ++ ~[PC] (Guide his hands about your body, untangling and undoing anything that stands in the way. Take his hardness and place it where it belongs, just barely inside of you.)~ + a3766 /* MOON_MOVE_ACTION */
   ++ ~[PC] I am ready for you. Just claim me.~ + a3766 /* MOON_MOVE_ACTION */
-  ++ ~[PC] This... this is just right. Right here, under these stars, I could kiss you for hours.~ + a3712 /* ARAN_MOON_SLEEP_1_EXIT */
-  ++ ~[PC] Stop! I can't do this.~ + a3487 /* ARAN_MOON_FRIENDS_EXIT */
-  ++ ~[PC] I have had enough of this. You should go on about your business, Aran.~ + a3487 /* ARAN_MOON_FRIENDS_EXIT */
+  ++ ~[PC] (Join his fumbling attempts, racing to make each of your bodies open to every touch, every desire. Gasp at the suddenness as he claims his prize, placing the tip of his manhood at your threshold.)~ + a3766 /* MOON_MOVE_ACTION */
+  ++ ~[PC] Slow down... This... this is just right. Right here, under these stars, I could kiss you for hours.~ + a3712 /* ARAN_MOON_SLEEP_1_EXIT */
   ++ ~[PC] Well, that was fun. I bet you will have some wild dreams tonight. I, on the other hand, am dropping you cold and seeing what other kinds of trouble I can cause.~ + a3366 /* GET_OUT_EXIT */
 END
 
