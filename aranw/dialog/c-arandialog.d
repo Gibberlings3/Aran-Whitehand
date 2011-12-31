@@ -660,7 +660,18 @@ END
 
 END
 
-/* NPC Gypsy Fortunetelling */
+/* SoA Interjections: Infiltrate the Blackguards */
+I_C_T KAYL2 12 c-kayl2aran
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] Somehow, I think th' joinin' part will be simple enough. Resolvin' this without blodd bein' spilled, though, that be a mite bit more ticklish.~
+END
+
+/* SoA Interjections: Mazzy Fenton and Gorf the Squisher */
+I_C_T MAZZYJ 41 c-gorfmazzy1 /* ~I can stand by and take your insults to myself but now you have struck an innocent merely to dishonor me. I demand satisfaction, brutish fool!~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Helm's Fist, Mazzy, let me take care o' this bastard for you. No call you mussin' yor hair none for th' likes o' him.~
+== MAZZYJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[MAZZY] I do not interfere in your business, Aran. I will not be denied. You, churlish oaf, answer me.~
+END
+
+/*  SoA Interjections: NPC Gypsy Fortunetelling */
 EXTEND_BOTTOM TRGYP02 2
 IF ~!InPartySlot(LastTalkedToBy,0) Name("c-aran",LastTalkedToBy)~ THEN EXTERN TRGYP02 a4311
 END
@@ -715,6 +726,11 @@ Maidens a' swoon at his auster."~
 DO ~SetGlobal("c-arancelvan","AR0300",1)~
 == C-ARANJ ~[ARAN] Helm's Heavy Hand, that lad knows more than be good for his health, eh? Mayhap listenin' at one too many keyholes.~
 END CELVAN 1
+
+/* Bubbles' Boyz */
+I_C_T CARBOS 2 c-aranbubblesboyz /* ~Fight over her?  What an excellent idea!  Yes, we shall fight over our beloved Bubbles!~ */
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Helm's Hard Horn, that there be a damn fool idea. Mayhap we had better wander on, an' not get too involved. No sence stickin' our d... err... No sense gettin' in th' way o' two fools who can't settle things peaceable.~
+END
 
 /* Watcher's Keep, SoA Version */
 
@@ -1901,7 +1917,7 @@ END
 INTERJECT PLAYER1 25 c-arandraggedhell
 == ~C-ARANJ~ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Honest to th' gods, I didn't touch anythin', or bust anythin', or even look crossways at naught! None o' this be my doin'!~
 END
-IF ~~ THEN EXTERN C-ARANJ c-aran_1_draggedhell
+IF ~~ THEN EXTERN C-ARANJ a4374
 
 /* SoA Commentary/Reactions, called from .bcs */
 
@@ -4650,7 +4666,7 @@ IF ~~ a176
 END
 
 /* BG2 FriendTalk 9 c-aranfriendbg2 = 17 : "Bhaalspawn, Shmalspawn. Meh.", or, Gods and Monsters. */
-IF ~Global("c-aranfriendbg2","GLOBAL",17)~ THEN BEGIN c-leadingto-a177
+IF ~Global("c-aranfriendbg2","GLOBAL",17)~ THEN BEGIN a4373
   SAY ~[ARAN] Tempus' Toasty Toes, that tears it.~ 
   IF ~~ THEN DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a177
 END
@@ -22042,7 +22058,7 @@ IF ~~ a1455 SAY ~[ARAN] Hey, I am not readin' my code correctly. Contact cmorgan
 IF ~~ c-placeholder SAY ~[ARAN] Well, I'll be a monkey's uncle. I got naught to say. Must be a writer's strike.~ IF ~~ THEN EXIT END
 
 /* Going to Hell in a Handbasket */
-IF ~~ c-aran_1_draggedhell
+IF ~~ a4374
   SAY ~[ARAN] An' this smell be none o' my doin', neither. Mayhap some trap done triggered, or somethin'. But at first glance, it looks like someone damned us straight to one o' th' planes o' hell.~
   COPY_TRANS PLAYER1 25
 END
