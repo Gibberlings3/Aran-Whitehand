@@ -9461,14 +9461,35 @@ IF ~~ a667
   SAY ~[ARAN] You haven't thought there might be somethin' to havin' someone take care o' you?~
   ++ ~[PC] I take what I want from whom I want, when I want, Aran. Why would I need one special person dedicated to what everyone can provide?~ + a677
   + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I like you, Aran. And your friendship comes with certain... benefits. But I am in love with another person. Does that mean you will stop being my special friend?~ + a677
-  + ~OR(2) Global("c-aransex","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ + ~[PC] I like you, Aran. And your friendship is special to me. I know you want more than a few kisses and flirtations, but I am in love with another person. Does that mean you will stop being my special friend?~ + a677
+  + ~GlobalLT("c-aransex","GLOBAL",3) !Global("c-aransex","GLOBAL",0)~ + ~[PC] I like you, Aran. And your friendship is special to me. I know you want more than a few kisses and flirtations, but I am in love with another person. Does that mean you will stop being my special friend?~ + a677
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I like you, Aran. And your friendship is special to me. I know you want more than... I know you want a physical relationship that I am not ready to provide. Does that mean you will stop pursuing me?~ + a677
   ++ ~[PC] I like you, Aran. But I am confused. I am not sure I know what I really want. Perhaps we should not be having this discussion.~ + a677
   ++ ~[PC] I... I think about it. But I am not really worth all that attention.~ DO ~IncrementGlobal("c-arpclowimage","LOCALS",1)~ + a672
   ++ ~[PC] I can usually look out for myself. Besides, there is something to be said for being able to look out for someone else, you know. Perhaps I want to protect and defend a certain person, instead of them protecting me.~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a668
+  ++ ~[PC] Are you offering to take care of me?~ + c-arantakecare
   ++ ~[PC] I can take care of myself. I just allow you to make yourself feel useful. Did you have anything else you wanted to discuss?~ + a668
   ++ ~[PC] Of course I think about it.~ + a668
 END
+
+IF ~~ c-arantakecare
+  SAY ~[ARAN] Now, I might just be gettin' a little ahead o' myself, here... I mean, what you be sayin' could be taken more than one way, you know.~
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I like you, Aran. And your friendship comes with certain... benefits. But I am in love with another person. Does that mean you will stop being my special friend?~ + a677
+  + ~GlobalLT("c-aransex","GLOBAL",3) !Global("c-aransex","GLOBAL",0)~ + ~[PC] I like you, Aran. And your friendship is special to me. I know you want more than a few kisses and flirtations, but I am in love with another person. Does that mean you will stop being my special friend?~ + a677
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I like you, Aran. And your friendship is special to me. I know you want more than... I know you want a physical relationship that I am not ready to provide. Does that mean you will stop pursuing me?~ + a677
+  ++ ~[PC] Which ever way you want to take it... Of course I think about it.~ + a668
+  ++ ~[PC] I can take care of myself. I just allow you to make yourself feel useful. Did you have anything else you wanted to discuss?~ + a668
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Perhaps you mean that you want to take care of any physical... needs... I might have?~ + a677
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Perhaps you mean that you want to take care of any physical... needs... I might have?~ + c-aran1needs
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Perhaps you mean that you want to take care of any physical... needs... I might have?~ + c-aran2needs
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Perhaps you mean that you want to take care of any physical... needs... I might have?~ + c-aran3needs
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Perhaps you mean that you want to take care of any physical... needs... I might have?~ + c-aran4needs
+  ++ ~[PC] I... I might like being taken care of. I mean, by you. But I am a little scared of the idea, with so much going on right now.~ + a668
+END
+
+IF ~~ c-aran1needs SAY ~[ARAN] I will be right happy volunteerin' to kiss you, any time you want. But, truth be told, I were thinkin' a mite less about physical, an' more along... oh, hells. Forget I said naught.~ IF ~~ THEN EXIT END
+IF ~~ c-aran2needs SAY ~[ARAN] I think th' kissin' an' touchin' be right fine additions to our relationship, believe you me. But, truth be told, I were thinkin' a mite less about physical, an' more along... oh, hells. Forget I said naught.~ IF ~~ THEN EXIT END
+IF ~~ c-aran3needs SAY ~[ARAN] That depends. I have taken care o' most o' th' needs what be needed, I think, though if you have pointers I can experiment a bit. Truth be told, I were thinkin' a mite less about physical, an' more along... oh, hells. Forget I said naught.~ IF ~~ THEN EXIT END
+IF ~~ c-aran4needs SAY ~[ARAN] No complaints in that department, judgin' on what happens when we be bein'... intimate. Truth be told, I were thinkin' a mite less about physical, an' more along... oh, hells. Forget I said naught.~ IF ~~ THEN EXIT END
 
 IF ~~ a668
   SAY ~[ARAN] I think about it sometimes, is all. It is hard to dream wi' out nightmares, sometimes. And there is somethin' to havin' a strong partner to help face the world.~
