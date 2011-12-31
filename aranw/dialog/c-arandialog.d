@@ -2439,7 +2439,7 @@ IF ~Gender(Player1,FEMALE) !GlobalTimerNotExpired("c-araninnflirttimer","GLOBAL"
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a796
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
-  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2913
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2340
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2907
 END
@@ -2449,7 +2449,7 @@ IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Gl
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a818
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
-  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",TEN_DAYS)~ + a2913
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2913
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2341
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ + a2907
 END
@@ -2461,13 +2461,13 @@ IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Gl
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2342
   ++ ~[PC] (You flirt shamelessly with several patrons, occasionally glancing over at him.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2907
-  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",FIVE_DAYS)~ + a2913
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2913
 END
 /* GOTO Rummage in The Pack */ 
 
 IF ~Gender(Player1,FEMALE) GlobalTimerExpired("c-araninnflirttimer","GLOBAL") Global("c-innflirts","GLOBAL",3) OR(13) AreaCheck("C-AR01") AreaCheck("AR0313") AreaCheck("AR0406") AreaCheck("AR0509") AreaCheck("AR0522") AreaCheck("AR0704") AreaCheck("AR1105") AreaCheck("AR1602") AreaCheck("AR2010") AreaCheck("AR0709") AreaCheck("AR0513") AreaCheck("AR0021") AreaCheck("AR1602")~ THEN BEGIN a765
   SAY ~[PC] (The musicians have struck up a lively dance tune, and Aran is sitting at the bar.)~
-  + ~!GlobalTimerNotExpired("c-rummagetimer","GLOBAL")~ + ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",FIVE_DAYS)~ + a2913
+  ++ ~[PC] (You take the opportunity to check through his belongings.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY) SetGlobalTimer("c-rummagetimer","GLOBAL",FIVE_DAYS)~ + a2913
   ++ ~[PC] (You go over to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-innflirts","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a3005
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You sit quietly, observing him, but not making eye contact.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-araninnflirttimer","GLOBAL",ONE_DAY)~ + a2343
@@ -2483,21 +2483,10 @@ IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk",
   + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   + ~Gender(Player1,FEMALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",3) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ EXIT
-  + ~Gender(Player1,MALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",3)~ EXIT
-  /* letter sequence, courtesy of a slightly psycho mail-reading gf I had once... this can crop up in some other areas and flirts. */
-  + ~Global("c-pcletter","LOCALS",0)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",1)~ + a3231
-  + ~Global("c-pcletter","LOCALS",1)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",2)~ + a3232
-  + ~Global("c-pcletter","LOCALS",2)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",3)~ + a3233
-  + ~Gender(Player1,MALE) GlobalGT("c-pcletter","LOCALS",2)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There are any number of odd scraps of writing and sketches to shuffle through.)~ + a3224
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3234
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3235
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3236
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3237
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3230
+  + ~Gender(Player1,MALE)~ + ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",12)~ EXIT
+  ++ ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ + a2913
 END
+
 /* GOTO Rummage in The Pack */ 
 
 /* stream bonding 2 of 2, cycles, (male) or flirt possibility (female), identical for level 1, 2, and 3 level flirts */
@@ -2507,19 +2496,7 @@ IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk",
   + ~Gender(Player1,MALE)~ + ~[PC] (You decide to follow him.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",0)  RealSetGlobalTimer("c-arstreambrotimer","GLOBAL",500)~ + a793
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ EXIT
   ++ ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",2)~ EXIT
-  /* letter sequence, courtesy of a slightly psycho mail-reading gf I had once... this can crop up in some other areas and flirts. */
-  + ~Global("c-pcletter","LOCALS",0)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There might be scraps of parchment and writing to peruse.)~ DO ~SetGlobal("c-pcletter","LOCALS",1)~ + a3231
-  + ~Global("c-pcletter","LOCALS",1)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There are always scraps of parchment and writing to peruse.)~ DO ~SetGlobal("c-pcletter","LOCALS",2)~ + a3232
-  + ~Global("c-pcletter","LOCALS",2)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There are any number of odd scraps of writing and sketches to shuffle through.)~ DO ~SetGlobal("c-pcletter","LOCALS",3)~ + a3233
-  + ~Gender(Player1,MALE) GlobalGT("c-pcletter","LOCALS",2)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There are any number of odd scraps of writing and sketches to shuffle through.)~ + a3224
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3234
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3235
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3236
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3237
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~  DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3230
+  ++ ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ + a2913
 END
 /* GOTO Rummage in The Pack */ 
 
@@ -9863,19 +9840,26 @@ END
 /* Rummage in The Pack */ 
 IF ~~ a2913
   SAY ~[ARAN] (The normal clutter of tools and gear, neatly rolled and folded clothing in oilskins, and the occasional odd trinket catch your eye, but there is little of interest you have not already seen. The scraps of parchment, though, show signs of use.)~
-  + ~Global("c-pcletter","LOCALS",0)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",1)~ + a3231
-  + ~Global("c-pcletter","LOCALS",1)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",2)~ + a3232
-  + ~Global("c-pcletter","LOCALS",2)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",3)~ + a3233
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3234
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3235
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3236
-  + ~Gender(Player1,FEMALE) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3237
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~  DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3230
-  + ~Gender(Player1,FEMALE) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3230
+  + ~Global("c-pcletter","LOCALS",0) GlobalGT("c-aranfriendbg2","GLOBAL",5)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",1)~ + a3231
+  + ~Global("c-pcletter","LOCALS",1) GlobalGT("c-aranfriendbg2","GLOBAL",9)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",2)~ + a3232
+  + ~Global("c-pcletter","LOCALS",2) GlobalGT("c-aranfriendbg2","GLOBAL",13)~ + ~[PC] (You examine his writings.)~ DO ~SetGlobal("c-pcletter","LOCALS",3)~ + a3233
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",5) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3234
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",7) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3235
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",9) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3236
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",11) CheckStatGT(Player1,12,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3237
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",5) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",3)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~  DO ~SetGlobal("c-pcletter","LOCALS",4)~ + a3230
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",7) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",4)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",5)~ + a3230
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",9) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",5)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",6)~ + a3230
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aranbg2rom","GLOBAL",11) CheckStatLT(Player1,13,INT) Global("c-pcletter","LOCALS",6)~ + ~[PC] (You take advantage of the opportunity to rummage in search of interesting things to read.)~ DO ~SetGlobal("c-pcletter","LOCALS",7)~ + a3230
   + ~Gender(Player1,MALE) GlobalGT("c-pcletter","LOCALS",2)~ + ~[PC] (You take advantage of the opportunity to rummage through his pack. There are any number of odd scraps of writing and sketches to shuffle through.)~ + a3224
+  IF ~Gender(Player1,FEMALE) !GlobalGT("c-aranbg2rom","GLOBAL",5) Global("c-pcletter","LOCALS",3)~ THEN GOTO a3224
+  IF ~Gender(Player1,FEMALE) !GlobalGT("c-aranbg2rom","GLOBAL",7) Global("c-pcletter","LOCALS",4)~ THEN GOTO a3224
+  IF ~Gender(Player1,FEMALE) !GlobalGT("c-aranbg2rom","GLOBAL",9) Global("c-pcletter","LOCALS",5)~ THEN GOTO a3224
+  IF ~Gender(Player1,FEMALE) !GlobalGT("c-aranbg2rom","GLOBAL",11) Global("c-pcletter","LOCALS",6)~ THEN GOTO a3224
   IF ~Gender(Player1,FEMALE) GlobalGT("c-pcletter","LOCALS",6)~ THEN GOTO a3224
+  IF ~Global("c-pcletter","LOCALS",2) !GlobalGT("c-aranfriendbg2","GLOBAL",13)~ THEN GOTO a3224
+  IF ~Global("c-pcletter","LOCALS",1) !GlobalGT("c-aranfriendbg2","GLOBAL",9)~ THEN GOTO a3224
+  IF ~Global("c-pcletter","LOCALS",0) !GlobalGT("c-aranfriendbg2","GLOBAL",5)~ THEN GOTO a3224
 END
 
 IF ~~ a3224
