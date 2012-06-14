@@ -2239,12 +2239,951 @@ IF ~Global("c-aranwaukeen","LOCALS",1) Global("c-silencearan","GLOBAL",0)~ THEN 
 END
 
 
+/* FLIRTS: SECOND TO LAST IN WEIGHT */
+
+/* Lots of Flirts means Player Wants Action: reply states */
+
+/* Triggered in BCS by lots of flirts */
+IF ~Global("c-aranbedflirt","GLOBAL",1)~ THEN BEGIN a4503
+  SAY ~[ARAN] Aye girl, but you be teasin' me somethin' terrible. Looks, glances, all this come-hither... I'm not so smart sometimes when it comes to womenfolk. I don't know if I'm bein' clear, here. I'm burnin' for to have you, here an' now.~ [c-aws115]
+  ++ ~[PC] Do you really think this is the right time? We have no privacy, and we are in a good deal of trouble in general. This is not the time to deal with anything like this.~ DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4498
+  ++ ~[PC] You are very mistaken. Get your hands off of me, and never flirt with me again. I thought you were man enough to control your impulses.~ DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4497
+  ++ ~[PC] I want you now, Aran. But I have another in mind, someone who would not appreciate sharing me. If you can find a way to sneak into my bedroll, I would not turn you away.~ DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4505
+  ++ ~[PC] I'm sorry, Aran. I have committed myself to another, and I will not betray his trust. I think we should just be friends.~ DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4498
+  IF ~Global("c-aranrom","GLOBAL",2)~ THEN DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ GOTO a4504
+END
+
+/* NPC Initiated Flirts */
+IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a4376
+  SAY ~(Aran's weatherbeaten face turns toward you, and he moves close by your side.)~
+ /* NPC Initiated Flirts : Random Light Flirts */
+  IF ~RandomNum(32,1)~ THEN GOTO a4377
+  IF ~RandomNum(32,2)~ THEN GOTO a4378
+  IF ~RandomNum(32,3)~ THEN GOTO a4379
+  IF ~RandomNum(32,4)~ THEN GOTO a4380
+  IF ~RandomNum(32,5)~ THEN GOTO a4381
+  IF ~RandomNum(32,6)~ THEN GOTO a4382
+  IF ~RandomNum(32,7)~ THEN GOTO a4383
+  IF ~RandomNum(32,8)~ THEN GOTO a4385
+  IF ~RandomNum(32,9)~ THEN GOTO a4386
+  IF ~RandomNum(32,10)~ THEN GOTO a4387
+  IF ~RandomNum(32,11)~ THEN GOTO a4388
+  IF ~RandomNum(32,12)~ THEN GOTO a4389
+  IF ~RandomNum(32,13)~ THEN GOTO a4390
+  IF ~RandomNum(32,14)~ THEN GOTO a4391
+  IF ~RandomNum(32,15)~ THEN GOTO a4392
+  IF ~RandomNum(32,16)~ THEN GOTO a4393
+  IF ~RandomNum(32,17)~ THEN GOTO a4394
+  IF ~RandomNum(32,18)~ THEN GOTO a4395
+  IF ~RandomNum(32,19)~ THEN GOTO a4396
+  IF ~RandomNum(32,20)~ THEN GOTO a4397
+  IF ~RandomNum(32,21)~ THEN GOTO a4398
+  IF ~RandomNum(32,22)~ THEN GOTO a4399
+  IF ~RandomNum(32,23)~ THEN GOTO a4400
+  IF ~RandomNum(32,24)~ THEN GOTO a4401
+  IF ~RandomNum(32,25)~ THEN GOTO a4402
+  IF ~RandomNum(32,26)~ THEN GOTO a4403
+  IF ~RandomNum(32,27)~ THEN GOTO a4404
+  IF ~RandomNum(32,28)~ THEN GOTO a4405
+  IF ~RandomNum(32,29)~ THEN GOTO a4406
+  IF ~RandomNum(32,30)~ THEN GOTO a4407
+  IF ~RandomNum(32,31)~ THEN GOTO a4408
+  IF ~RandomNum(32,32)~ THEN GOTO a4409
+ /* NPC Initiated Flirts : Jewelry Light Flirt Additions:  */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL04",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a4410 /* Studded Necklace with Zios Gems */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL05",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a4411 /* Bluestone Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL06",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a4412 /*  Agni Mani Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a4413 /*  Rainbow Obsidian Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL08",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a4414 /*  Tiger Cowrie Shell Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a4415 /*  Silver Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a4416 /*  Gold Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL11",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a4417 /*  Pearl Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL16",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a4418 /* Amulet of Metaspell Influence (+1 2nd level spell) */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL18",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a4419 /*  Wolfsbane Charm +2 vs Lycanthropes */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL22",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a4420 /*  Periapt of Proof Against Poison */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a4421 /*  Necklace of Missiles */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL12",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a4422 /* Laeral's Tear Necklace (3000 gp) */
+  IF ~RandomNum(2,1) HasItemEquiped("RE_valm",Player1) Global("c-aljewelv","LOCALS",0)~ THEN GOTO a4423 /* Romantic Encounters: Valygar item */
+  IF ~RandomNum(2,1) HPPercentLT(Player1,40)~ THEN GOTO a4458
+END
+
+/* NPC Initiated Flirts : Random Heavy Flirts */
+IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a4459
+  SAY ~[ARAN] (He settles his belt with one thumb)~
+  IF ~RandomNum(36,36)~ THEN GOTO a4398
+  IF ~RandomNum(36,35)~ THEN GOTO a4399
+  IF ~RandomNum(36,34)~ THEN GOTO a4400
+  IF ~RandomNum(36,33)~ THEN GOTO a4401
+  IF ~RandomNum(36,32)~ THEN GOTO a4402
+  IF ~RandomNum(36,31)~ THEN GOTO a4403
+  IF ~RandomNum(36,30)~ THEN GOTO a4404
+  IF ~RandomNum(36,29)~ THEN GOTO a4405
+  IF ~RandomNum(36,28)~ THEN GOTO a4406
+  IF ~RandomNum(36,27)~ THEN GOTO a4407
+  IF ~RandomNum(36,26)~ THEN GOTO a4408
+  IF ~RandomNum(36,25)~ THEN GOTO a4409
+  IF ~RandomNum(36,24)~ THEN GOTO a4409
+  IF ~RandomNum(36,23)~ THEN GOTO a4409
+  IF ~RandomNum(36,22)~ THEN GOTO a4424
+  IF ~RandomNum(36,21)~ THEN GOTO a4425
+  IF ~RandomNum(36,20)~ THEN GOTO a4426
+  IF ~RandomNum(36,19)~ THEN GOTO a4427
+  IF ~RandomNum(36,18)~ THEN GOTO a4428
+  IF ~RandomNum(36,17)~ THEN GOTO a4429
+  IF ~RandomNum(36,16)~ THEN GOTO a4430
+  IF ~RandomNum(36,15)~ THEN GOTO a4431
+  IF ~RandomNum(36,14)~ THEN GOTO a4432
+  IF ~RandomNum(36,13)~ THEN GOTO a4433
+  IF ~RandomNum(36,12)~ THEN GOTO a4434
+  IF ~RandomNum(36,11)~ THEN GOTO a4435
+  IF ~RandomNum(36,10)~ THEN GOTO a4436
+  IF ~RandomNum(36,9)~ THEN GOTO a4437
+  IF ~RandomNum(36,8)~ THEN GOTO a4438
+  IF ~RandomNum(36,7)~ THEN GOTO a4439
+  IF ~RandomNum(36,6)~ THEN GOTO a4440
+  IF ~RandomNum(36,5)~ THEN GOTO a4441
+  IF ~RandomNum(36,4)~ THEN GOTO a4442
+  IF ~RandomNum(36,3)~ THEN GOTO a4443
+  IF ~RandomNum(36,2)~ THEN GOTO a4444
+  IF ~RandomNum(36,1)~ THEN GOTO a4445
+  IF ~AreaType(OUTDOOR) TimeOfDay(NIGHT) Global("c-aranstarflirt","GLOBAL",0)~ THEN GOTO a4446 /* c-aranstarflirt */
+  IF ~AreaType(CITY) Global("c-arancityflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arancityflirt","GLOBAL",1)~ GOTO a4447 /* c-arancityflirt */
+  IF ~AreaType(DUNGEON) Global("c-arandungeonflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arandungeonflirt","GLOBAL",1)~ GOTO a4448  /* c-arandungeonflirt */
+  /* Jewelry Light Flirt Additions:  */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL04",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4410 /* Studded Necklace with Zios Gems */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL05",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4411 /* Bluestone Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL06",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4412 /* Agni Mani Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4413 /*  Rainbow Obsidian Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL08",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4414 /* Tiger Cowrie Shell Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a4415 /*  Silver Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a4416 /*  Gold Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL11",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a4417 /* Pearl Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL16",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a4418 /* Amulet of Metaspell Influence (+1 2nd level spell) */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL18",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a4419 /* Wolfsbane Charm +2 vs Lycanthropes */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL22",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a4420 /* Periapt of Proof Against Poison */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a4421 /*  Necklace of Missiles */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL12",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a4422 /*  Laeral's Tear Necklace (3000 gp) */
+  IF ~RandomNum(2,1) HasItemEquiped("RE_valm",Player1) Global("c-aljewelv","LOCALS",0)~ THEN GOTO a4423 /* Romantic Encounters: Valygar item */
+  IF ~HPPercentLT(Player1,40)~ THEN GOTO a4449
+END
+
+IF ~~ a4377
+  SAY ~[ARAN] (You notice Aran's gaze lingering on you. He grins...) Aye, there are some sights always worth seein', you know.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4378
+  SAY ~[ARAN] <CHARNAME>, you are a fine figure o' a woman. Let me know if I can help out some way, eh?~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4379
+  SAY ~[ARAN] I'm just checkin'. Your eyes are a damn sight finer than I ever did see.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4380
+  SAY ~[ARAN] (His gaze lingers on your form, until he realizes that you are watching him...)~
+  = ~[ARAN] (...and his eyes snap up to meet yours as his face flushes a dusky red.)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4381
+  SAY ~[ARAN] There, now, you got a strap caught... hold on...~
+  = ~[ARAN] Errr... well, perhaps you'd better move it yourself. I don't want to get slapped for my trouble, touchin' you there.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4382
+  SAY ~[ARAN] Sune's Bounty, you have legs what... hey... was I speakin' out loud? Sorry. Shuttin' up an' gettin' back to business.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4383
+  SAY ~[ARAN] (He hesitates, then lightly rests his hand on your shoulder for a moment.)~
+  = ~[ARAN] Aye, I do believe we are doin' passably well.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4384
+  SAY ~[ARAN] So, what do ye call a male Drow without a girlfriend?~
+  =  ~[ARAN] Homeless!~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4385
+  SAY ~[ARAN] I'd be drinkin' to your beauty, <CHARNAME>. Problem is, there's not enough Rashemi Firewine in th' whole of Amn to do you justice.~
+  = ~[ARAN] I'd sure like to try, though.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4386
+  SAY ~[ARAN] (His eyes trace your neck, and drop lower...)~
+  = ~[ARAN] I had somethin' to say, I really did. Just can't remember exactly what right now.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4387
+  SAY ~[ARAN] A drop o' ink may make a thousand men think. But one look at you, an' I can't think o' writin' anythin' at all.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4388
+  SAY ~[ARAN] I'm no bard, to be writin' poems. I work mostly balance sheets an' contracts. All I can say is, you are as pretty as an iron tight trade bond, wi' a 30 percent profit.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4389
+  SAY ~[ARAN] Just seein' what a big bad Bhaalspawn looks like when she's got a smudge o' food on her left cheek.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4390
+  SAY ~[ARAN] This is some adventure, eh? Most folks don't get past th' grand adventure o' "hey darlin', what's for dinner?", an yet here we all are wonderin' what's goin' to have *us* for dinner.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4391
+  SAY ~[ARAN] Right now, I bet you are askin' yourself what to do. My advice is get some darned good food, a bottle o' wine, an' perhaps a quick washup... don't mean no offense, but that last critter we took down left a trail o' blood or slime or somethin' right across your left sleeve there.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4392
+  SAY ~[ARAN] I'd pull your hair an' tease you, but I figure you'd take offense. So just pretend to be apprentice-age, an' I just pulled your hair. Wait a sec... Candlekeep, right? Never mind. You probably had your head in some book. Probably never kissed no boy nohow.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4393
+  SAY ~[ARAN] What a blighted great place to be fightin' for our lives at every turn. So do you come here often? How's the food? Know any available converts o' Sune? You thinkin' o' convertin'?~
+  IF ~!Global("c-heartwarder","GLOBAL",1)~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~Global("c-heartwarder","GLOBAL",1)~ THEN GOTO a4450
+END
+
+IF ~~ a4450
+  SAY ~[ARAN] Just askin', you know...~
+  ++ ~[PC] Stop joking about Sune, Aran. Sensuality is Her great gift.~ + a4451
+  + ~RandomNum(3,1)~ + ~[PC] Why yes, I happen to know a few young ladies who would be very interested, Aran. Of course, I would need to make sure that you were well trained...~ + a4452
+  + ~RandomNum(3,2)~ + ~[PC] Why yes, I happen to know a few young ladies who would be very interested, Aran. Of course, I would need to make sure that you were well trained...~ + a4453
+  + ~RandomNum(3,3)~ + ~[PC] Why yes, I happen to know a few young ladies who would be very interested, Aran. Of course, I would need to make sure that you were well trained...~ + a4454
+  + ~RandomNum(3,1)~ + ~[PC] My darling boy, you know very well I am a Heartwarder. If you show enough maturity, I would gladly show you the path to enlightenment. And a few other paths, as well.~ + a4455
+  + ~RandomNum(3,2)~ + ~[PC] My darling boy, you know very well I am a Heartwarder. If you show enough maturity, I would gladly show you the path to enlightenment. And a few other paths, as well.~ + a4457
+  + ~RandomNum(3,3)~ + ~[PC] My darling boy, you know very well I am a Heartwarder. If you show enough maturity, I would gladly show you the path to enlightenment. And a few other paths, as well.~ + a4456
+  ++ ~[PC] (sigh) Big talk, but little action.~ + a4451
+END
+
+IF ~~ a4451
+  SAY ~[ARAN] Shar's Silent Shadow, I didn't mean no... I mean, I don't... I mean, I...  Oh, hells. There I go takin' one huge foot out o' my mouth, just so's I can put th' other in its place.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Inside joke for Domi */
+IF ~~ a4452
+  SAY ~[ARAN] Well now, that sounds right fine. I'm ready for my initiation. Unless o' course you think I would die of erotic onslaught...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Inside joke for berelinde */
+IF ~~ a4453
+  SAY ~[ARAN] Well now, that is unexpectedly fun. I know this Lathanderite who could use a bit o' loosenin' up, too. You think there's someplace we could go what's padded, an' less likely for bruises? He's kind o' clumsy, an' all.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4454
+  SAY ~[ARAN] Now, don't get all bent out o'... wait a sec. You said yes. Bloody hells, I wasn't prepared for that.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Inside joke for RavenBlack */
+IF ~~ a4455
+  SAY ~[ARAN] Now, I can be a right smart pupil. I take decent notes, an' surely have an affinity for th' subject!~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Inside joke for Jastey */
+IF ~~ a4457
+  SAY ~[ARAN] I... I... Hold on a sec. Sorry. I just had this vision o' you an' me, standin' around wi' our children, tryin' to get them to keep their cloaks on. Killed the mood right quick, it did.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4456
+  SAY ~[ARAN] Right then. I'm strippin' for action. You go grab a bush, an' I'll go rinse my teeth. Hey, this time, can we check to make sure the bush's not poison? I was itchin' for a week last time...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4394
+  SAY ~[ARAN] You know, I think I hate you. Reasonably good lookin', pretty confident, commandin' all these powers, on your way to th' top... yep. Reminds me I ought to get off my sorry arse an' do some work for a change. Definitely hate you.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4395
+  SAY ~[ARAN] Say, have you seen a woman around here, about *so* high, about *so* for a figure, an' generally more dangerous an' beautiful than your average dragon? Oh, there you are, <CHARNAME>!~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4396
+  SAY ~[ARAN] I need to stand here more often. I look right good bein' your sword an' shield, so to speak.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Low HP hijack of flirts early flirts */
+IF ~~ a4458
+  SAY ~[ARAN] <CHARNAME>, you are hurt. Let me take a look at that, will you?~
+  IF ~RandomNum(5,1)~ THEN GOTO a4460
+  IF ~RandomNum(5,2)~ THEN GOTO a4461
+  IF ~RandomNum(5,3)~ THEN GOTO a4462
+  IF ~RandomNum(5,4)~ THEN GOTO a4463
+  IF ~RandomNum(5,5)~ THEN GOTO a4464
+END
+
+IF ~~ a4460
+  SAY ~[ARAN] (Aran's rough hands are warm and gentle as he brushes them across your calves, searching for damage)~
+  = ~[ARAN] Bloody hells, <CHARNAME>. I'm supposed to be protectin' you from this.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4461
+  SAY ~[ARAN] (Aran hesitates, careful not to touch you as he looks for damage)~
+  = ~[ARAN] Clangedden's Hammer, you are hurt right proper, you are. I'd massage you a mite, to reduce the stiffness, but not wi' those bruises.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4462
+  SAY ~[ARAN] (Aran's hands move across your shoulders, but his eyes catch yours and he stops suddenly.)~
+  = ~[ARAN] Selune herself is not so beautiful. Even wi' all this damage, I'm too distracted to think straight. We need to get you healed right quick...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4463
+  SAY ~[ARAN] (His face draws close to your knees as he kneels and checks for cuts and bruises. His breath is warm and close.)~
+  = ~[ARAN] I'd be a sight happier inspectin' for damage without all this clothin' in the way...~
+  = ~[ARAN] (Aran's face turns scarlet.) *Ahem*. Right, then... hand me that strip o' bandage until we get you some real healin'.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4464
+  SAY ~[ARAN] (Aran's hands move close along your ribcage, his fingers gently but insistently probing.)~
+  = ~[ARAN] (Suddenly slipping through a torn section of clothing, his hand is close, warm, and intimate on your skin, rough but tender.)~
+  = ~[ARAN] I'm sorry. Didn't mean to be so forward. Just checkin' what's hurt, an all. I could kiss some o' that better, I think...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4397
+  SAY ~[ARAN] There be times when I don't rightly know why I decided to sign up for all this. Then again, when you move just that way, I guess it's not so hard to figure out.~
+  ++ ~[PC] So, it is all about my body?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4465
+  ++ ~[PC] And here I thought it was all about the coin.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4465
+  ++ ~[PC] I know better. It is really the thrill of adventure that excites you, isn't it~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4465
+END
+
+IF ~~ a4465 SAY ~[ARAN] No. But it does help a mite!~ IF ~~ THEN EXIT END
+
+IF ~~ a4398
+  SAY ~[ARAN] There's some Sunite sayin' about 'a fair face may fade, but a beautiful soul lasts forever'. I don't know about all that when I look at you, though. There's a power there I think is raw, an' excitin'. It makes me want to be man enough to catch your attention.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4399
+  SAY ~[ARAN] (He stands beside you for a time, silent, staring away into the distance.)~
+  = ~[ARAN] (Looking directly into your eyes, he nods once, and moves on.)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4400
+  SAY ~[ARAN] I think I just lost somethin'. Yep. Looked too deep into your eyes, an' now I have to go swimmin' in there after my soul.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4401
+  SAY ~[ARAN] (He leans close to you, face to face, concentrating fiercely)~
+  = ~[ARAN] Were we alone, <CHARNAME>, I might just challenge you to a wrestlin' match. We could fight fair, lips versus lips, no cheatin'.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4402
+  SAY ~[ARAN] (He gently places his hands aside your pack, lifting the weight from you back for a moment, and then stands away)~
+  = ~[ARAN] I'd lift more burdens for you, if I could. But I don't trust myself that close to you. My eyes keep followin' some dangerous curves, an' my hands itch to follow where my eyes have been.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4403
+  SAY ~[ARAN] Hold on a second, <CHARNAME>... lift that foot, will you?~
+  = ~[ARAN] Hold it steady... here, let me help.~
+  = ~[ARAN] No, it must have been th' light. Thought you had some repair needed on your footwear, but everythin' about your legs looks good. Looks great, in fact.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4404
+  SAY ~[ARAN] (He reaches across to brush your hair gently back from your eyes, and catches a strand, staring as if charmed)~
+  =  ~[ARAN] The gods were messin' with menfolk to create such beauty. 'T ain't natural.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4405
+  SAY ~[ARAN] I did have a friend once what was the prize o' the Waterdeep lasses. He taught me a thing or two, he did. Not personally, o' course, but by talkin'. I'd be happy to pass some ideas along sometime, perhaps, if you've a mind for some experimentin'.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4406
+  SAY ~[ARAN] <CHARNAME>, Don't say naught. Just look my way a minute, will you?~
+  = ~[ARAN] Aye, thanks. That's reward enough for any man.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4407
+  SAY ~[ARAN] Don't look at me, <CHARNAME>. I had this great idea that we'd be housed up in a nice inn, just you and me, all cosy and comfy. But you said somethin' about savin' the world, or takin' it over, or somethin' like that, and I had to go say "sure, sounds like a fun tenday".~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4408
+  SAY ~[ARAN] Here, <CHARNAME>, I can't quite make this writin' out. Read this over, eh? ~
+  = ~[ARAN] (He peers over your shoulder, cheek to cheek, and you are not quite sure where he is looking... but it is not at the parchment.)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Flirt Gifts Sequence */
+IF ~~ a4409
+  SAY ~[ARAN] Right, then, <CHARNAME>. I'd be a fool not to know that the ladies like to see... err... I know th' fairer sex wants to know a man appreciates them. An' it usually goes by givin' gifts. So, I got you somethin'. Here - take it.~
+  IF ~Global("c-arangift","GLOBAL",0)~ THEN REPLY ~[PC] Why... thank you, I think... a dagger. Just what I always wanted. A curious choice. Why a blade?~ DO ~SetGlobal("c-arangift","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4482
+  IF ~Global("c-arangift","GLOBAL",1)~ THEN REPLY ~[PC] Is this some sort of gem?~ DO ~SetGlobal("c-arangift","GLOBAL",2) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4484
+  IF ~Global("c-arangift","GLOBAL",2)~ THEN REPLY ~[PC] A wild flower.~ DO ~SetGlobal("c-arangift","GLOBAL",3) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4485
+  IF ~Global("c-arangift","GLOBAL",3)~ THEN REPLY ~[PC] The carving on this leather bracer is... interesting.~ DO ~SetGlobal("c-arangift","GLOBAL",4) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4486
+  IF ~Global("c-arangift","GLOBAL",4)~ THEN REPLY ~[PC] Thank you... a four-leaf clover. For luck?~ DO ~SetGlobal("c-arangift","GLOBAL",5) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4487
+  IF ~Global("c-arangift","GLOBAL",5)~ THEN REPLY ~[PC] Aran, you are not holding anything.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4488
+END
+
+IF ~~ a4424
+  SAY ~[ARAN] I keep tryin' to write what I want to say to you, but the words don't flow so well.~
+  IF ~~ THEN GOTO a4467
+  IF ~Alignment(Player1,MASK_EVIL)~ THEN GOTO a4466
+  IF ~Alignment(Player1,MASK_GOOD)~ THEN GOTO a4467
+  IF ~!Alignment(Player1,MASK_GOOD) !Alignment(Player1,MASK_EVIL)~ THEN GOTO a4468
+END
+
+IF ~~ a4425
+  SAY  ~[ARAN] I need to see your face full on, once in awhile. It reminds me who... it reminds me what I'm doin' all this for.~
+  = ~[ARAN] O' course, it also reminds me I'm a complete sentimental idiot, but then I knew that goin' in, now, didn't I.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4426
+  SAY ~[ARAN] (You smell the sharp spicy tang of cooking spices, with a hint of mint.)~
+  = ~[ARAN] (Aran glances at you quickly, then looks away.)~
+  = ~[ARAN] Aye, I know. You did mention I might clean up a little, you know. It's a criminal waste o' food preparation materials, but I thought you might like a break from the whole "slowly rottin' creature guts" theme, eh? I probably overdid it a bit. Didn't mean to smell like some Calimshan Pleasure House.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4427
+  SAY ~[ARAN] (He hesitates, then fusses over your pack and gear, tugging lightly here and there)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4428
+  SAY ~[ARAN] Right then, love o' me life, guardian o' my destiny, leader among leaders... if you got a plan, now's the time to share it. Somethin' better than that whole "run screamin' into disaster" plan I thought of yesterday, I bet.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4429
+  SAY ~[ARAN] Is it warm around here? Or is it just on account of you bein' so desirable?~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4430
+  SAY ~[ARAN] So help me out, here. There's this right fine woman, strong, pretty, knows her own mind. Any ideas on how to attract her attention a bit?~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4466
+  SAY ~[ARAN] I don't think I'll be tryin' to write in my own heart's blood, though. I don't know about what contract that might bind me to. Although I suspect I can be had, for th' right price.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4467
+  SAY ~[ARAN] I keep tryin' to say such, but it comes out either all flowery an' fake or downright rude. I'll have to keep on tryin'.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4468
+  SAY ~[ARAN] I don't think I'll be tryin' to write in my own heart's blood, an' all, like they do on some o' th' distant isles we always here talk about. Don't think you would appreciate it. I'll stick to regular ink.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4431
+  SAY ~[ARAN] I like you right fine, <CHARNAME>. I like you well enough I even tried to write you somethin', though I'm not so fair as a Hanali- blessed bard.~
+  ++ ~[PC] A song. Or is it a poem? Written on rather expensive vellum.~ + a4470
+  ++ ~[PC] You know I can't read your writing, Aran. Read it to me.~ + a4472
+  ++ ~[PC] A letter. In what looks like ancient dwarven.~ + a4471
+END
+
+IF ~~ a4470 SAY ~[ARAN] Aye, though the writin's not worthy o' the velum it's on. Look, I did my best, but to be right truthful, I do balance sheets, not beddin' sheets. I did a bunch o' drafts, an' the best I could come up with was that.~ IF ~~ THEN EXIT END
+
+IF ~~ a4471
+  SAY ~[ARAN] Oh, Selune's Monthly Tides... here. Gave you th' wrong letter. Here, this is the right one.~
+  IF ~~ THEN GOTO a4472
+END
+
+IF ~~ a4472
+  SAY ~[ARAN]  'Roses be red, cornflowers be blue
+Mithral shines with the strength of you.'~
+  + ~Global("c-aranpoetry","GLOBAL",0)~ + ~[PC] Aran, that is...~ DO ~IncrementGlobal("c-aranpoetry","GLOBAL",1)~ + a4473
+  + ~GlobalGT("c-aranpoetry","GLOBAL",0)~ + ~[PC] Aran, you did this already...~ DO ~IncrementGlobal("c-aranpoetry","GLOBAL",1)~ + a4474
+END
+
+IF ~~ a4473
+  SAY ~[ARAN] Absolutely stupid, I know. Hey, I had a really good one, first...~
+  = ~[ARAN] 'Thine eyes, like the golden gleam of torchlight
+On the armor of my heart
+Lights my love.
+
+Thy breath, like the dusk breezes
+On the shield of my soul
+Warms my love.
+
+Thy lips, like the gentle red rose
+On the helm of my destiny
+Inflames my love.
+
+I light, I warm, I burn for you,
+For you are my soul's own desire.'~
+  = ~[ARAN] I would have told you that one, but I figured you would think I were puttin' on airs, instead o' talkin' from th' heart. Besides, I near ran out o' ink.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Race Flirt */
+IF ~~ a4432
+  SAY ~[ARAN] Well, now. You have me at a might o' a disadvantage, <CHARNAME>. How do I let you know that I think you're just the right woman for me?~
+  IF ~Race(Player1,1)~ THEN GOTO a4475
+  IF ~Race(Player1,2)~ THEN GOTO a4476
+  IF ~Race(Player1,3)~ THEN GOTO a4477
+  IF ~Race(Player1,4)~ THEN GOTO a4478
+  IF ~Race(Player1,5)~ THEN GOTO a4479
+  IF ~Race(Player1,6)~ THEN GOTO a4480
+  IF ~Race(Player1,7)~ THEN GOTO a4481
+END
+
+IF ~~ a4475
+  SAY ~[ARAN] If you were some lovely lass at Feldepost's Inn, I'd be fine wi' "Hey there. You want to get some exercise? I can teach you a little swordplay, you can teach me a little back, we have a long, slow duel, an' we can name the kids whatever you want..." ~
+  = ~[ARAN] But that just won't do the job justice, wi' you.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4476
+  SAY ~[ARAN] I could compliment you on your age, I guess, an' say you don't look a day over 100. Or I could say how interestin' those ears are. I wish I'd paid more attention back when I was servin' wi' Moonshae, as there were some elven archers there. But those ladies were a might standoffish, an' we knew better than to flirt wi' someone who could put an arrow where the sun don't shine at 400 paces, day or night...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4477
+  SAY ~[ARAN] You are so different, it makes me ache funny. There's times when you look just like th' girls I grew up with, an' then you turn your face an' those eyes pierce my soul quick as an elven arrow splits an orc's forehead.~
+  = ~[ARAN] Mielikki's Quick Tongue, I did it again. I was tryin' to compliment you, an' it ends up all blood an' war. Never mind.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4478
+  SAY ~[ARAN I've served wi' a fair share o' dwarves, but how they decide when they like each other is a mite o' a mystery. There's some back an' knee slappin', it looked like, an' some insults flyin' quick and true - an' then suddenly, the happy couple is missin' from around th' campfire.~
+  = ~[ARAN] Don't quite see a way o' slappin' your back or knee right now, though.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4479
+  SAY ~[ARAN] If I was Han, this would be easy. But I never did find out how to tell a halfling lass she was "just th' bees knees", which in human-folk parlance is "damn fine", but in shortfolk parlance might be just a little to close to the truth for comfort, I bet.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4480
+  SAY ~[ARAN]  I did once talk to some follower o' Deneir, a young lassie named Finch. She seemed to think that I was supposed to woo a gnomish lass wi' books an' knowledge.~
+  = ~[ARAN] I'm not so sure, though. I did some readin' up on Deneir, an' it seems like there's a fair bit o' forward behavior involved. Somethin' about big families, an' practicin' to make 'em. I suspect I shouldn't get that forward wi' you, though.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4481
+  SAY ~[ARAN] I'd make some joke about mixed heritage an' all, but I really don't know how you'd take it. How about we just say I like strong women who know what it is to be pushed aside most o' the time, an' who don't pay so much attention to what the mob thinks.~
+  = ~[ARAN] Then again, puttin' "mob" an' "think" in the same sentence, well, it don't fit so well. An' it more brings pitchforks an' torches to mind, rather than lust.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4482
+  SAY ~[ARAN] Well, you've a sharp mind, keen beauty, mithral will, an' a I think there's a might bit o' truth there on th' other side, too... a sharp tongue to keep me in line, your temper's a might short at times, an' sometimes I just don't see you comin' until you are right (thumps his chest) here.~
+  ++ ~[PC] I thought the gift of a knife was unlucky, or said that we are enemies.~ + a4483
+  ++ ~[PC] Why, Aran... thoughtful introspection and attention to detail? From you? I am starting to think you have some possibilities after all.~ + a4550
+  ++ ~[PC] Thank you.~ EXIT
+  ++ ~[PC] Has anyone ever told you you think too much? (Kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+  ++ ~[PC] Then I should get you an orc's hammer - rough wooden appearance and manner, blunted mind, and difficult to keep lined up with the objective. At the same time, forceful and direct, and first into whatever needs to be done. You are useful, after a fashion.~ + a4550
+END
+
+IF ~~ a4483 SAY ~[ARAN] Banes Barren Bones, what books have you been readin'? Why would someone send a dagger to someone what would bury it in the giver's back? Besides, it's a dagger, not a knife. Womenfolk do have some strange ideas sometimes.~ IF ~~ THEN EXIT END
+IF ~~ a4484 SAY ~[ARAN] Not exactly. It's a mite o' a pebble, shined up a bit. But it's tough, an' useful, an' don't attract no attention - it can wedge a door, stagger an enemy in his tracks, or cause a horse to lame. It won't break, an' it won't get stolen. I thought it might remind you o' me, somehow.~ IF ~~ THEN EXIT END
+IF ~~ a4485 SAY ~[ARAN] I don't know much about courtin'. Mercenary life calls more for more direct action, more beddin' wiles than courtly ways. But they were there, an' I was there, an' I thought "hey, she'd like that", an' there we are.~ IF ~~ THEN EXIT END
+IF ~~ a4486 SAY ~[ARAN] Well, in a way. I never did no real leatherwork, an' it took a while for me to figure out how to carve th' design. What's bloody magical is that I like you enough I kept on 'til it were finished. Never did that before.~ IF ~~ THEN EXIT END
+IF ~~ a4487 SAY ~[ARAN] Aye. In spite o' all the wild an' dangerous things that come along wi' followin' you around, I do think I was lucky just to have met you.~ IF ~~ THEN EXIT END
+IF ~~ a4488 SAY ~[ARAN] Aye, you got me there, <CHARNAME>. I guess I just will have to offer up a kiss, instead.~ IF ~~ THEN EXIT END
+
+/* Low HP hijack of flirts */
+IF ~~ a4449
+  SAY ~[ARAN] <CHARNAME>, you are hurt. Let me take a look at that, will you?~
+  IF ~RandomNum(5,1)~ THEN GOTO a4489
+  IF ~RandomNum(5,2)~ THEN GOTO a4490
+  IF ~RandomNum(5,3)~ THEN GOTO a4491
+  IF ~RandomNum(5,4)~ THEN GOTO a4492
+  IF ~RandomNum(5,5)~ THEN GOTO a4493
+END
+
+IF ~~ a4489
+  SAY ~[ARAN] (Aran's rough hands are warm and gentle as he brushes them across your calves, searching for damage.)~
+  = ~[ARAN] (His hands follow up your thighs, and suddenly are closer and higher than propriety demands.)~
+  = ~[ARAN] (Blushes) No damage there, I think.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4490
+  SAY ~[ARAN] (Aran's face is drawn tight as his hands catch under your chin, lifting your face toward the light.)~
+  = ~[ARAN] Bane's Bloody Bones, this be more than a kiss from me would fix, eh? You need a healin' potion or spell.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4491
+  SAY ~[ARAN] (Aran's hands begin to roam across you, but his eyes catch yours and he stops suddenly.)~
+  = ~[ARAN] Selune herself be not so beautiful. Even wi' all this damage, I'm too distracted to think straight. We need to get you healed right quick...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4492
+  SAY ~[ARAN] (His face draws close to your knees as he kneels and checks for cuts and bruises. His breath is warm and close.)~
+  = ~[ARAN] I'd be a sight happier inspectin' for damage without all this clothin' in the way...~
+  = ~[ARAN] (Aran's face turns scarlet.) *Ahem*. Right, then... hand me that strip o' bandage until we get you some real healin'.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4493
+  SAY ~[ARAN] (Aran's hands move close along your ribcage, his fingers gently but insistently probing.)~
+  = ~[ARAN] (Suddenly slipping through a torn section of clothing, his hand is close, warm, and intimate on your skin, rough but tender.)~
+  = ~[ARAN] I'm sorry. Didn't mean to be so forward. Just checkin' what's hurt, an all. I could kiss some o' that better, I think...~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4474
+  SAY ~[ARAN] I did? By Clangeddin's Beard, so I did. Same damned poem, too, full o' words you dread. All this combat must have addled my head.~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* Aran-Initiated Physical Flirts */
+IF ~~ a4433
+  SAY ~[ARAN] (He loses his balance, his arm flying around your waist as he stumbles on a loose stone.)~
+  ++ ~[PC] (You stabilize him briefly, then push him away with a warning glance.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You catch his hand against your side, holding him close for a moment.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You turn quickly, suddenly face to face, and hold him against you for a moment.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4434
+  SAY ~[ARAN] (A rough palm gently covers the back of your hand as Aran pulls you back against his chest)~
+  ++ ~[PC] (You lean back into his arms, resting the back of your head on his shoulder)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You move away quickly, glancing about for onlookers.) Aran, don't do that in public.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] Is that all you have in mind, sellsword? A little feel?~ GOTO a4495
+  ++ ~[PC] (You turn in his arms, holding him to you fiercely. A crush of lips, warm and full of promise, and his fingers tighten on the small of your back.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4435
+  SAY ~[ARAN] (He pulls gently at your collar, edging it back into position. His hand slips behind your neck and squeezes briefly.)~
+  ++ ~[PC] (You lean forward, catching him off guard, and kiss him lightly on the lips.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You smile briefly, then disengage his hand and move away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You frown at Aran, and push his wrist away from your neck.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4436
+  SAY ~[ARAN] (You catch his eyes measuring you, eyebrows raised, covering every aspect of your body.)~
+  ++ ~[PC] (You pirouette quickly, giving him a full appreciation of your charms... and watch the blush rise on his neck with a mischievous smile.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You ignore him, pointedly looking in the other direction, but smile.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You ignore him completely.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (Your eyes glitter frostily at him, and you step close whispering fiercely...) Keep your eyes on your work. I'm no barmaid, to be ogled.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4437
+  SAY ~[ARAN] (Standing behind you, he gently and absentmindedly encircles your waist with his arms.)~
+  ++ ~[PC] (You step gently on his instep, increasing the pressure until he realizes what he is doing and moves away with a muttered oath.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~EXIT
+  ++ ~[PC] (You cross your arms over his encircling hands, leaning backward into his embrace.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You turn in his embrace, tipping your head back to look at him before leaning your cheek against his.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4438
+  SAY ~[ARAN] (He gently and awkwardly pats your hand a moment, opening his palm as he moves along with you.)~
+  ++ ~[PC] (You take his hand, nestling palm in palm, fingers intertwining.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You ignore him and move away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You shake his hand firmly, smiling at him before moving away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4439
+  SAY ~[ARAN] (He leans close, and whispers in your ear) I can hear your heart racin' from way over there.~
+  ++ ~[PC] If we were alone, you could feel it racing.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] It certainly is not related to your presence, Aran.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You glance around to make sure of privacy, and quickly cradle his hand to your chest.) You seem to have that effect on me.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] Leave me alone, Aran.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4440
+  SAY ~[ARAN] (He takes you firmly by the hips, pulling you close.) I do think you are in need o' a kiss, <CHARNAME>.~
+  ++ ~[PC] If we were sure we were completely alone, you could be right. But not now, when anyone could be watching.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] Interesting. I, on the other hand, think you should kiss my ass. I have a donkey around here somewhere...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (Your eyes do the talking, your fingers do the walking, and the rest of the moment is a haze of warm lips matching warm lips, racing pulses, and disheveled hair.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] I need more than that, Aran.~ + a4494
+END
+
+IF ~~ a4441
+  SAY ~[ARAN] (Grinning, he grabs your shoulder and pulls you close as if to whisper a private joke.)~
+  = ~[ARAN] (Warm lips press suddenly, fiercely behind your ear, and he steps away quickly.)~
+  ++ ~[PC] (You smile sweetly... and dump your waterskin over his head.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You scowl at him, and move away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You shake your index finger at him, and then beckon him to move closer. When he does, you return his action with equal fervor.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4442
+  SAY ~[ARAN] (Arm draped across your shoulders, he hugs you tightly, whispering as if to himself.) I'm not sure anyone's got th' right to be this happy just to be near you, girl.~
+  ++ ~[PC] (You gently disengage his arm and move away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You squeeze his hand, and whisper back.) I feel the same way.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You squeeze his hand, and whisper back.) If you touch me in public again, you may not be near me for very long. And you most assuredly will not be happy.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4443
+  SAY ~[ARAN] (He holds your shoulders gently, looking into your face.) I may not be no noble, or even much more than a hired sword. But by Tyr's Eye, I am right glad to be *your* sword, so to speak.~
+  ++ ~[PC] I appreciate the sentiment, Aran. Because I am going to use you however I see fit.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You cup his cheek, and reward his speech with a gentle kiss.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You smile.) I am glad you are, too, Aran.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You smile tightly.) Unfortunately, you seem to think that being my "sword" entitles you to touch me without my permission...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4444
+  SAY ~[ARAN] (He reaches out and grabs your waist, pulling you into a sudden dance move, ending with a deep dip.)~
+  ++ ~[PC] (You laugh, and kiss him quickly and intensely, eyes sparkling.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You follow through the dip with an unexpected twist, sending him hurtling to the ground, pinning him beneath you.) A little rough-housing? Or combat training? Hmmm... perhaps more combat training is in order.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You twist suddenly, sending him hurtling to the ground and pinning him beneath you. Your grip on his neck tightens warningly until he winces.) Cute. Perhaps you would like to try that move on our next enemy. It seems inefficient and wasteful, but if you really think it works, then I can't stop you from killing yourself.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4445
+  SAY ~[ARAN] (There is no time to react - his kiss is rough, deep, and full of passion.)~
+  ++ ~[PC] (Your arms fly about his neck, and your body melts into his embrace as you return the kiss.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You stand stunned, watching him move away.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You return his kiss fiercely, and catch his lower lip in your teeth, biting him until he stops and moves back.) Not bad, for a sellsword. With the right training, you could be a passable pleasure slave.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (Your hand flies hard to his cheek, but in your anger you are not sure if it is your open palm or your fist. Either way, your message is very clear.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4494
+  SAY ~[ARAN] (Bright teeth nip and play at your neck, and your fingers curl up through his hair as you pull him to you. His fevered kisses rain onto your neck and collarbone, then lower - and lower - ~
+  = ~[ARAN] ( ...and you spring apart before lust overcomes prudence.)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4495
+  SAY ~[ARAN] (Aran's grin threatens to split his face, but he moves away.)~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4504
+  SAY ~[ARAN] I know we have been talkin' about what we mean to each other, an' all, but I am bein' driven as mad as stallion in spring.~
+  ++ ~[PC] You already know you are special to me, Aran. Come this evening. Or come as soon as you can find a discreet way to be with me.~ + a4499
+  ++ ~[PC] No, I do not think that would be a good idea. You should stop flirting with me, Aran.~ + a4497
+  ++ ~[PC] Aran, this is too sudden, too soon. We need to know more about each other.~ + a4497
+  ++ ~[PC] Aran... I am... I am not ready for that. I like flirting with you, but no more than that for now, please.~ + a4506
+  ++ ~[PC] I want your arms around me, lifting me, holding me. I would not turn you away. I would welcome you.~ + a4499
+  ++ ~[PC] I would play mare to your stallion, Aran.~ + a4499
+  ++ ~[PC] Do you really think this is the right time? We have no privacy, and we are in a good deal of trouble in general. This is not the time to deal with anything like this.~ + a4498
+END
+
+IF ~~ a4498
+  SAY ~[ARAN] What if I find a way o' visitin' you quiet-like, some evenin'? Would you have room for me as a partner, if only for a night?~
+  ++ ~[PC] No, I do not think that would be a good idea. You should stop flirting with me, Aran.~ + a4497
+  ++ ~[PC] I want your arms around me, lifting me, holding me. I would not turn you away. I would welcome you.~ + a4499
+  ++ ~[PC] I have been following you about, making faces and generally hinting that I want you as a lover for ages now. I want you to find a way to my bedroll. And you can leave the clothes behind.~ + a4499
+  ++ ~[PC] Aran... I am... I am not ready for that. I like flirting with you, but no more than that for now, please.~ + a4506
+  ++ ~[PC] I'm sorry, Aran. I have committed myself to another, and I will not betray his trust. I think we should just be friends.~ + a4500
+  ++ ~[PC] You have the wrong idea about our relationship. When and if I want you, I will command you to obey. Until then, stop thinking with the wrong head.~ + a4497
+END
+
+IF ~~ a4497
+  SAY ~[ARAN] By Sune's... aye, that tears it. I must have misunderstood all o' that flirtin'. Fine, then. You know how I feel. I'll leave you alone for a bit.~
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+/* set the night visit here: Global("c-arangoaded","GLOBAL",1) */
+IF ~~ a4499
+  SAY ~[ARAN] (Aran's grip is tight, catching your hand with sudden intensity, his eyes searching yours keenly.)~
+  = ~Aye, I will find a way. You are like a fire in my heart, <CHARNAME>. An' I can't find aught to cool the flames.~
+  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",2) SetGlobal("c-arangoaded","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4500
+  SAY ~[ARAN] By all the gods anywhere on th' Great Wheel, you wait to tell me this now plain an' straight. It would have hurt less, an' been more like a friend, to let me down early. Or to cut me cold awhile back.~
+  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",3) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",1)~ EXIT
+END
+
+/* End of action wanting #1 */
+
+IF ~~ a4446 /* c-aranstarflirt */
+  SAY ~[ARAN] (Aran stands beside you for a moment, looking up into the night sky. His hand gently brushes yours, fingertips lightly stroking your palm.)~
+  = ~[ARAN] (After a quiet moment, he clears his throat and moves away, settling his gear.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranstarflirt","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4447 /* c-arancityflirt */
+  SAY ~[ARAN] There's plenty o' privacy to be had around here, <CHARNAME>. I think it might be a right good idea for us to go get a drink, or somethin'. Just you an' me, see, to talk strategy an' such.~
+  ++ ~[PC] Why, Aran. Are you asking me on a date? I do not see any flower behind your ear. I thought that was the custom to announce you are interested.~ + a4501
+  ++ ~[PC] I think whatever you have to discuss can be said right here, Aran. But you can go get a drink or a willing female on your own time.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] How about we skip the bar, and you come and find me over in that private garden. I think we can find something quite... physical, to entertain just the two of us, don't you think?~ + a4502
+  ++ ~[PC] I might be persuaded to have a drink with you. Perhaps I will see you later on. But there is a good deal to be done, so don't count on it - I might catch up with you sometime soon.~ + a4501
+  ++ ~[PC] Aran... forget it.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4501
+  SAY ~[ARAN] I don't have no flower handy. But I understand this be business first, an' we see what pops up, eh?~
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+END
+
+IF ~~ a4502
+  SAY ~[ARAN] I think I can rightly oblige. It might be right rude to keep a lady waitin' around, eh?~
+  IF ~~ THEN DO ~SetGlobal("c-arangardenmakeout","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT /* PLACEHOLDER */
+END
+
+/* NOTE TO  BCS - CUTSCENE OVERRIDE  */
+
+IF ~~ a4448 /* c-arandungeonflirt */
+  SAY ~[ARAN] Hey, it be a mite cold in here. You want to share some body heat?~
+  ++ ~[PC] Come over here, and I will warm your hands up. (You gently take his hands, chafing them, playing with his fingers.)~ DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] No.~ DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] I am sure we can get a Burning Hands spell somewhere around here... no? Suit yourself.~ DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] (You run your hands across Aran's shoulders, down his sides, and then to the center of his chest.) You have enough body heat all on your own, Aran. But if I need some, I will let you know.~ DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ ~[PC] Absolutely. (You thrust your hands down Aran's front.)~ DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4507
+END
+
+/* set the night visit here: Global("c-arangoaded","GLOBAL",1) */
+IF ~~ a4505
+  SAY ~[ARAN] (Aran's grip is tight, catching your hand with sudden intensity, his eyes searching yours keenly.)~
+  = ~Aye, I will find a way. You are like a fire in my heart, <CHARNAME>. An' I can't find aught to cool the flames.~
+  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",2) SetGlobal("c-arangoaded","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a4506 SAY ~[ARAN] Understood.~ IF ~~ THEN EXIT END
+IF ~~ a4507 SAY ~[ARAN] Istishia's Icicles! Your hands are blighted cold! You can harm a lad that way!~ IF ~~ THEN EXIT END
+
+IF ~~ a4422 /* Laeral's Tear Necklace (3000 gp) */
+  SAY ~[ARAN] (He leans forward slightly, studying the Laeral's Tear necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4532 /* expensive */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4533 /* expensive */
+END
+
+IF ~~ a4421 /* Necklace of Missiles */
+  SAY ~[ARAN] (He leans forward slightly, studying the Necklace of Missiles necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4535 /* missiles */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4536 /* missiles */
+END
+
+IF ~~ a4410 /* Studded Necklace with Zios Gems */
+  SAY ~[ARAN] (He leans forward slightly, studying the zios gems embedded in the necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4538 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4539 /* clunky */
+END
+
+IF ~~ a4411 /* Bluestone Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the bluestone necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4538 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4539 /* clunky */
+END
+
+IF ~~ a4412 /* Agni Mani Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the angi mani necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4538 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4539 /* clunky */
+END
+
+IF ~~ a4413 /* Rainbow Obsidian Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the obsidian necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4538 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4539 /* clunky */
+END
+
+IF ~~ a4414 /* Tiger Cowrie Shell Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the cowrie shell necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4538 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4539 /* clunky */
+END
+
+IF ~~ a4415 /* Silver Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the silver necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4540 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4541 /* simple */
+END
+
+IF ~~ a4416 /* Gold Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the gold necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4540 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4541 /* simple */
+END
+
+IF ~~ a4417 /* Pearl Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the pearl necklace you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4540 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4541 /* simple */
+END
+
+IF ~~ a4418 /* Amulet of Metaspell Influence (+1 2nd level spell) */
+  SAY ~[ARAN] (He leans forward slightly, studying the amulet you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4542 /* magical */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4543 /* magical */
+END
+
+IF ~~ a4419 /* Wolfsbane Charm +2 vs Lycanthropes */
+  SAY ~[ARAN] (He leans forward slightly, studying the wolfsbane charm you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4544 /* anti-wolf  */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4545 /* anti-wolf  */
+END
+
+IF ~~ a4420 /* Periapt of Proof Against Poison */
+  SAY ~[ARAN] (He leans forward slightly, studying the periapt you are wearing.)~
+  IF ~~ THEN GOTO a4534 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a4546 /* anti-poison */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a4547 /* anti-poison */
+END
+
+/* light replies for necklace flirts */
+IF ~~ a4532 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' your eyes.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
+IF ~~ a4535 SAY ~[ARAN] (Hesitantly, he reaches one hand out to touch it...) OUCH! That there necklace done bit me! Hells, <CHARNAME>, you could have warned me th' bloody thing was leakin' some o' that missile-energy.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
+IF ~~ a4540 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you.~ IF ~~ THEN DO ~SetGlobal("c-aljewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
+IF ~~ a4546 SAY ~[ARAN] Good protection. You might want to keep in on tonight, eh? On account o' I am cookin' wi' some new spices, an' I am not sure I have the amount just right.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
+IF ~~ a4544 SAY ~[ARAN] Now, you may think that charm will keep th' likes o' me away. Problem is, I'm no wolf. I just act like one!~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
+IF ~~ a4542 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
+IF ~~ a4538 SAY ~[ARAN] Now, that be alright for some women, but I am not so sure when it comes to you. I think it sets off your eyes right nice, but I think it be a mite clunky. Here. This pearl necklace might be better.~ IF ~~ THEN DO ~GiveItemCreate("AMUL11",Player1,0,0,0) SetGlobal("c-aljewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+/* heavy replies for necklace flirts */
+IF ~~ a4533 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' th' curve o' your inner thigh, or the way your body moves... hells, now I need a cold bath, eh?.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
+IF ~~ a4536 SAY ~[ARAN] (He reaches one hand out to touch it gently...) Tingles. An' I mean it tingles, as well as th' effect touching your collarbone makes me feel, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
+IF ~~ a4541 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you. In fact, I can't rightly help myself... too bloody kissable.~ = ~[ARAN] (His lips lightly brush your neck.)~ IF ~~ THEN DO ~SetGlobal("c-ahjewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
+IF ~~ a4547 SAY ~[ARAN] Good protection. If you were to die, I'd rather it would be on account o' you or I wore each other out in th' bedchamber, not on account o' some stupid poison.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
+IF ~~ a4545 SAY ~[ARAN] Glad to see th' protections in place. Though if you want a partner for play-actin' wolf an' wolfess, I be your man...~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
+IF ~~ a4543 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
+IF ~~ a4539 SAY ~[ARAN] I think you should wear that more often. O' course, I'd prefer it even more if you would wear *only* that, but it might make it a bit cold walkin' around in your birthday suit. Plus, I want that vision all to myself, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+
+/* Romantic Encounters: Valygar item */
+IF ~~ a4423
+  SAY ~[ARAN] That be a right fine piece o' jewelry you be wearin', <CHARNAME>. Now, where did you get it, eh?~
+  IF ~InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a4548
+  IF ~!InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a4549
+END
+
+IF ~~ a4548 SAY ~[ARAN] Valygar seems to like it right fine, too. At least, he has an eye out for it when it be on you.~ IF ~~ THEN EXIT END
+IF ~~ a4549 SAY ~[ARAN] I just never did see when you got it, or where, or why. But it suits you right well, it does. Hey, why th' red face?~ IF ~~ THEN EXIT END
+IF ~~ a4534 SAY ~[ARAN] Hey, I am not readin' my code correctly. Contact cmorgan at www.gibberlings3.net, on account o' somethin' is not right. Line a4534 is playin' out in dialog, which means No Valid Links Or Replies.~ IF ~~ THEN EXIT END
+IF ~~ a4550 SAY ~[ARAN] Well, that be a relief. I think.~ IF ~~ THEN EXIT END
+
 /* Adult - Land. Attempting to have some fun, Romantic Encounters-style. */
 
 /* moved up to emulate dreamscript eval  IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3800 START_ARAN_PC_BOOTY_CALL */
 
  
-
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
 IF ~~ a4351 /* TOO_MUCH_TEASING */
@@ -3796,7 +4735,7 @@ IF ~~ a4038 /* ARAN_STOP_RIGHT_NOW */
 END
 
 IF ~~ a4049 /* START_HOLD_OUT_HANDS */
-  SAY ~[ARAN] (Aran's quick steps mark his movements as he paces back an forth. His back is to you as you approach him. You are alone together for what brief time you can find.)~
+  SAY ~[ARAN] (Aran's quick steps mark his movements as he paces back and forth. His back is to you as you approach him. You are alone together for what brief time you can find.)~
   ++ ~[PC] So, what did my shining knight bring me?~ + a4040 /* START_BEARING_GIFTS */
   ++ ~[PC] (Hold both hands out to him, his palms taking yours into a gentle embrace.)~ + a4030 /* START_GIVE_A_LAD_A_CHANCE */
   ++ ~[PC] Why are you looking at me like that?~ + a4041 /* START_SUNES_LIPS */

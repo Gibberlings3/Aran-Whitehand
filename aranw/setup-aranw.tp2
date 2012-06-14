@@ -2288,43 +2288,42 @@ ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
 	PRINT ~Installing ToB dialog...~
 	COMPILE ~aranw/dialog/c-arantobdialog.d~
 
-
 	/* Epilogue 1:	Low Rep, regardless of friendship or romance status */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE0.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~The years of following in <CHARNAME>'s shadow took their toll on Aran, though not a single instance of him complaining is recorded. After a time, he withdrew from <PRO_HISHER> side, claiming injury, and set out for the wild coast of Maztican. Rejoining the Flaming Fist there gave him one last brush with glory - his name still graces the List of Brotherhood in the Flaming Fist training facilities there. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers, but their persistence in trying to get Aran to speak of those days went unanswered. Of <CHARNAME> <PRO_HIMHER>self, Aran refused to speak.~
 
 	/* PC Refused Godhood, Friendship */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE1.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. As Aran tells it, the greatest moment in Aran's life came when his eldest daughter took up the way of the sword and pledged herself to <CHARNAME>'s protection. The second best moment was when his new wife finally managed to teach him to speak with correct pronunciation (though she never did erase his swearing completely).~
 
 	/* PC Became God, Friendship */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE2.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. Though he never claimed worship of <CHARNAME>, his children relate that the new oaths and blasphemies used when they did something particularly right or particularly wrong seemed to indicate he was profoundly aware of <CHARNAME>'s godhood.~
 
 	/* PC Refused Godhood, Romance */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE3.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. Though the histories never indicate precisely the nature of their romance, there is no question of his loyalty. His final act of devotion came giving up his life in order to protect her. There are no reliable sources, but bard's tales say that his last words were "Blighted hells, <CHARNAME>... did we have to come Planewalkin' here?"~
 
 	/* PC Accepted Godhood, Romance, Good or Neutral */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE4.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving as Her right hand on Faerun. His constant work furthering her causes helped develop a respectable following, and his willingness to travel anywhere in Her name led others to regard him as some sort of high priest... a notion that often was dispelled in a barrage of blasphemy. As the histories recount, his last days on this mortal plane were spent comfortably on Evermeet, attempting to arrange a joint project between the followers of <CHARNAME> and Hanali Celanil's Order of the Ruby Rose to commemorate what would have been <CHARNAME>'s eightieth mortal birth-day celebration.~
 
 	/* PC Accepted Godhood, Romance, Evil */
-
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. His constant work furthering her causes eventually corrupted him completely, though later writings indicate growing fear and desolation as his mortality left him increasingly unable to serve <CHARNAME> in the manner she wished. It is a mark of their love that when a Paladin of Helm finally ended Aran's life, <CHARNAME> Herself personally blasted the woman into nothingness, causing a minor skirmish in the wars of the gods.~
 
+	PRINT ~Installing ToB creature...~
+	COPY_EXISTING ~kpgate02.cre~	 ~override/c-arwrth.cre~	/*	 The Ghost Of PTSD	- L10	male fighter */
+		SAY NAME1 ~Stedd~
+		SAY NAME2 ~Stedd~
+		LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+		
 END /* of ToB installation */
 
 /* items */
