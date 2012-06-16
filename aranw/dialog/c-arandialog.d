@@ -83,7 +83,6 @@ EXTEND_BOTTOM SALVANAS 27
 IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aransalvanas","GLOBAL",0)~ THEN EXTERN C-ARANJ a4366
 END
 
-
 /* SoA Interjections : Nalia Quest Interjection: Old Bat Blabbers */
 ADD_TRANS_ACTION DELCIA BEGIN 16 END BEGIN END ~SetGlobal("c-aranoldbat","GLOBAL",1)~
 
@@ -731,6 +730,91 @@ END CELVAN 1
 /* Bubbles' Boyz */
 I_C_T CARBOS 2 c-aranbubblesboyz /* ~Fight over her?  What an excellent idea!  Yes, we shall fight over our beloved Bubbles!~ */
 == C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Helm's Hard Horn, that there be a damn fool idea. Mayhap we had better wander on, an' not get too involved. No sence stickin' our d... err... No sense gettin' in th' way o' two fools who can't settle things peaceable.~
+END
+
+/* SoA  Interjections : Wellyn's Teddy Bear in the Graveyard */
+I_C_T WELLYN 3 c-aranWellynBear /* ~It's my favorite bear, Littleman...the bad man who came into our house...he, he hurt me and he took Littleman with everything else...  (sob!)  I can never go to sleep without Littleman!~ */
+  == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Cyric's Blazing Bum. Now I have seen it all. A ghostly apparition lookin' for his teddy bear. What's next, a demi-lich missing his baby rattle?~
+  == WELLYN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[WELLYN] (sob!) I want my bear.~
+END
+
+/* SoA Interjections: HaerD'alis search: started */
+I_C_T RAELIS 53 c-aranraelistrickier /* ~Fly, then...fetch our brother away from his captor however you might, and return to us soon.  My prayers go with you, my good <MANWOMAN>.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Aye, we are in for an adventure, for sure. Bards are trickier than illusionists. Mostly more entertaining, though.~
+== RAELIS IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[RAELIS] Why, thank you, sweet boy. That sounds like a high compliment.~
+END
+
+/* SoA Interjections: HaerD'alis search: reaction */
+I_C_T RAELIS 52 c-aranaelisdragon /* ~(sigh)  It is as I feared.  If you change your mind, child, please do return... I have a feeling Haer'Dalis will not return soon to our side, otherwise.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Your call, o' course, <CHARNAME>. Sounds like a good thing to do. Then again, most bards could talk a dragon into givin' up a scale or two , an' sell it back to him.~
+== RAELIS IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[RAELIS] Ah! Someone in the Company has been telling that old tale again... ~
+END
+
+/* SoA Interjections: Aran Linvale Reactions: state 4 */
+I_C_T ARAN 4 c-aranvlinvailcontract /* ~Good hunting. Report to me if anything happens. Oh, and the bonus we talked of... Take these items. You will find them useful, I am sure.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You are playin' a dangerous game, <CHARNAME>, pickin' up work here. There won't be a contract to scribe on this one, I think.~
+== ARAN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[LINVALE] What a charming young man. What a quaint concept... a written contract for work outside of the traditional guild structure. It almost amuses me.~
+END
+
+/* SoA Interjections: Aran Linvale Reactions: state 20 */
+I_C_T ARAN 20 c-aranvLinvailCareful /* ~They may prove unreasonable, so prepare yourself for hostility. Return when you have the information we need.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] I don't hold much by off th' books work wi' a Thieves' Guildmaster. But you are leader, <CHARNAME>. I'd be careful, is all. Most knives play both ends against the middle. And they play permanent-like.~
+== ARAN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[LINVALE] <CHARNAME>, you simply must let this man visit more often. I am sure that we can find suitable acommodations for him.~
+END
+
+/* SoA Interjections: Aran Linvale Reactions: state 49 */
+I_C_T ~ARAN~ 49 c-aranvlinvalehonor /* ~I apologize if you feel you have been done wrong. I assure you, all that you have paid is being put to good use.~ */
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] That was not part o' the agreement. I know there wasn't a contract scribed, but this stinks. Honor among theives, my bloody arse.~
+== ARAN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[LINVALE] I am sure a healer can help you with that condition. If you are quite finished playing lawyer, I shall continue.~
+END
+
+/* SoA Interjections: Aran Linvale Reactions: state 51 */
+I_C_T ARAN 51 c-aranvlinvalecreative /* ~First and foremost, you will be compensated for the gold you have paid.  I will give you several magical items; they are yours to keep regardless of what comes.~ */
+  == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Gifts, eh? Looks like downpayment for a contract extension to me. Fighter's Guild wouldn't do this, nor Merchant's Guild.~
+  == ARAN IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[LINVALE] Those guilds are slightly less... creative in their conduct, shall we say? Perhaps you would consider being silent. I could quote something about 'as the grave' , but we are all friends here.~
+END
+
+/* Arriving in Brynnlaw */
+I_C_T PPSAEM 14 c-aranBrynnlaw
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Teos' Breath. These bast... err, I mean I am glad to be leavin' this fine crew far behind. I've lost more coin on their dice then I want to admit. And all my gear smells worse than the bilgewater.~
+== PPSAEM IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HAVAREAN] So sorry about that, friend Aran. We were a bit cramped for space, and since your gear already was less than pleasant smelling, I thought you really wouldn't mind. We stored it in the bilge.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Thanks ever so much. I'll be cleaning it for a week.~
+== PPSAEM IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HAVAREAN] Don't worry. A small bit of time on this island, and you will think of bilge as sweet perfume.~
+END
+
+I_C_T PPSAEM 53 c-aranBrynnlaw
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Teos' Breath. These bast... err, I mean I am glad to be leavin' this fine crew far behind. I've lost more coin on their dice then I want to admit. And all my gear smells worse than the bilgewater.~
+== PPSAEM IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HAVAREAN] So sorry about that, friend Aran. We were a bit cramped for space, and since your gear already was less than pleasant smelling, I thought you really wouldn't mind. We stored it in the bilge.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Thanks ever so much. I'll be cleaning it for a week.~
+== PPSAEM IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HAVAREAN] Don't worry. A small bit of time on this island, and you will think of bilge as sweet perfume.~
+END
+
+/* S. Havarian, Traitor */
+I_C_T PPSAEM 59 c-aranSaemonTraitor
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] If this be no joke, I'll split you open like a rotten melon, you Cyric-buggerin' bastard. A contract's a contract.~
+== PPSAEM IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[HAVAREAN] I had no contract directly with you, my friend. Besides, sometimes the gods send us things that simply cannot be avoided.~
+END
+
+/* Keeping Up (Drow) Appearances */
+I_C_T3 UDSILVER 37 c-aranDrowAppearance
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Well, never thought I'd be hidin' behind this kind o' visage. Luckily, I make almost everything look good.~
+== IMOEN2J IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("imoen2") InMyArea("imoen2") !StateCheck("imoen2",CD_STATE_NOTVALID)~ THEN ~[IMOEN] And yer modest, too.~
+== VICONJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Shar's Breath, the jalup should be whipped. Remember your place, male. Do not speak unles spoken to, or no amount of illusion will save us from detection.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID) !Global("c-aranRomanceActive","GLOBAL",2)~ THEN ~[ARAN] You have to admit, Viconia. I do look good even as a stinking drow. Come on, you know you want me.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID) Global("c-aranRomanceActive","GLOBAL",2)~ THEN ~[ARAN] You have to admit, Viconia. I do look good even as a stinking drow. Pity I am all into <CHARNAME>, or you would be all over me in a flash.~
+== VICONJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Silence this male, <CHARNAME>. Or I shall have his kidneys served as breakfast.~
+END
+
+/* Ployhar and Yoshimo and Aran */
+I_C_T3 JAHEIRAJ 34 c-aranjaheiraployer
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Poison or curse or disease, it's just not right. Fight in the open, or ambush, that's fair. But all that rotting away from hiding is just wrong.~
+== YOSHJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[YOSHIMO] A worthy adversary knows his options, Aran. Perhaps Jaheira is too powerful an adversary, and he seeks to regain balance.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[ARAN] Cyric's Left Wrist, you would do this?~
+== YOSHJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[YOSHIMO] No. I may capture or detain, but there is never profit in such ventures. This smells of pointless vendetta. That calls for an assassin, not a bounty hunter.~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[ARAN] Is there a bloody difference?~
+== YOSHJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[YOSHIMO] Yes. You speak truly. 'Bloody' is the correct difference.~
+== JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Yoshimo, Aran, if you are both finished sidetracking this conversation, could we  get back to the point... ~
+== JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] There is no serving of anything save vendetta here. A slaver would of course use such tactics. ~
 END
 
 /* Watcher's Keep, SoA Version */
@@ -20921,7 +21005,7 @@ IF ~~ a4529
 END
 
 IF ~~ a1813
-  SAY ~[ARAN] Now where is the fun in that, I ask you. But I guess I am bein' a mite forward, at that.~
+  SAY ~[ARAN] Now where be th' fun in that, I ask you. But I guess I am bein' a mite forward, at that.~
   ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. After all, we are just here, two grown people, getting washed up together.~ + a1822
   ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. (Begin running the washcloth over his body, working your way below the bathwater.)~ + a1830
   ++ ~[PC] This... this is a little too much. Let's just have a quick bath, and get clean.~ + a1817
@@ -20958,7 +21042,7 @@ IF ~~ a1816
 END
 
 IF ~~ a1817
-  SAY ~[ARAN] Now where is the fun in that, I ask you. Well, suit yourself. (The lantern light dances as you both share the bath, modestly, discreetly, and chastely. Calm and comfort follow.)~
+  SAY ~[ARAN] Now where be th' fun in that, I ask you. Well, suit yourself. (The lantern light dances as you both share the bath, modestly, discreetly, and chastely. Calm and comfort follow.)~
   IF ~~ THEN GOTO a1859
 END
 
