@@ -1229,6 +1229,13 @@ IF ~~ a2875
   IF ~~ THEN GOTO a2806
 END
 
+
+
+
+
+
+
+
 END /* append C-ARN25J */
 
 /* BEGIN C-ARN25P is covered in initial dialog compilation. */
@@ -9550,151 +9557,78 @@ IF ~~ a2849
   IF ~~ THEN EXIT
 END
 
-END /* of append to C-ARN25J */
+/* ToB FriendTalk 2 : "Digression" */
 
-CHAIN ~C-ARN25J~ a2792
-~[ARAN] I was goin' through some old letters o' Elena... you know, my sister what be in th' Waterdeep Mage Academy? I guess I get worried I won't be around for to protect her, th' way you did your sister.~
-== BKORGA25 IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] You dinna tell me you had a sister.~
-== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Writing, journaling, tender sibling communications drawing a web of gossamer conversation across the miles... missives flying back and forth, and yet you do not introduce me, or send my warmest regards.~
-== C-ARN25J IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[ARAN] Can you blighted well blame me, you lecherous shortaxe?~
-== C-ARN25J IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[ARAN] As for introducin' a smooth talkin' amorous bard, I have my own reasons for delayin' that eventuality.~
-== BKORGA25 IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] Aye. When a buxom wench finds me attractive, there is no stopping me.~
-== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Alas, this poor sparrow finds truth in your words, my friend. But think of how much she could have learned, under my gentle protective wing...~
-== BCERND25 IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[CERND] There are times to be protective of your family, and times when you are unable to be there when you are needed most. Nature is not always kind.~
-== BJAN25 IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN ~[JAN] None of my family writes to me. I think it has to do with the last set of letters I replied to being sent with my latest invention, a new form of self-erasing ink. It seems to have caught itself on fire. Perhaps when Uncle Harald's fingers are healed, he will write to me again.~
+IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a4551
+	SAY ~[ARAN] Aye, now. I just had a thought.~
+	++ ~[PC] I don't believe you! Aran? A thought?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4552
+	++ ~[PC] So, what is it?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4553
+	++ ~[PC] I have thoughts too. They usually don't get communicated that well without actually saying them out loud.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4553
+	++ ~[PC] Tell me later. Right now, I don't need the distraction.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4566
+	++ ~[PC] If it is about supplies, I already have the full list. Did you want to add something to it?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4553
 END
-++ ~[PC] I was not around for Imoen, and it turned out alright. I had to chase an insane mage across the entire Sword Coast and beyond just to find her, but we could do the same for yours, if necessary.~ + a2810
-+ ~Gender(Player1,MALE)~ + ~[PC] You seem to be protective of me, too. I wonder if you see me as a little sister. It would explain so much...~ + a2808
-+ ~Gender(Player1,FEMALE)~ + ~[PC] You seem to be protective of me, too. I wonder if you see me as a little sister. It would explain so much...~ + a2809
-++ ~[PC] Well, I worry about that, too, with the number of times you seem to need to be healed. You could try actually dodging a blow or two, you know.~ + a2810
-++ ~[PC] Families are strange that way. We try to be there when we can, and worry when we can't.~ + a2810
-++ ~[PC] I have a great idea... we swing north, pick her up, and start a small theater troupe. We can call it "Whitehand's Weird World". Or do you think that might interfere with the whole Prophecy thing? I suppose it would.~ + a2810
 
+IF ~~ a4552 SAY ~[ARAN] Now, I do have thoughts sometimes, just on rare occasions, you know.~ IF ~~ THEN GOTO a4553 END
+IF ~~ a4553 SAY ~[ARAN] Well, I did have a thought, but it be gone now.~ IF ~~ THEN GOTO a4554 END
 
-CHAIN ~C-ARN25J~ a2810
-~[ARAN] True enough. Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+IF ~~ a4554
+	SAY ~[ARAN] All this wanderin' about must be messin' wi' my brain. Either that, or that blighted planar hideaway done messed wi' my memory.~
+	++ ~[PC] It does not seem to have had any effect on me.~ + a4555
+	++ ~[PC] Your brain was messed up long before we began popping in and out of planar hideaways.~ + a4556
+	++ ~[PC] I think this conversation is over.~ + a4566
+	++ ~[PC] Well, when you think of what it was you wanted to say, you let me know.~ + a4566
+	++ ~[PC] Well, when you think of what it was you wanted to say, remember to keep it to yourself.~ + a4566
 END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2812
-~[ARAN] You do have a point there. I just let my imagination get th' better o' me, is all.~
-== BANOME25 IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] Your lack of discipline and coarse breeding triumphs again.~
-== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Imagination is a useful trait in a warrior, but it can lead you astray very quickly.~
-== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] I think we should go and check on how she is doing.~
+IF ~~ a4555 SAY ~[ARAN] Well, it be your place, not mine.~ IF ~~ THEN GOTO a4557 END
+IF ~~ a4556 SAY ~[ARAN] Aye, true enough. But it certainly do be a bit more pronounced. I'd say mayhap there be one o' them correlations, eh?~ IF ~~ THEN GOTO a4557 END
+
+IF ~~ a4557
+	SAY ~[ARAN] Besides, you be part god or goddess or some such thing. Mayhap th' place just don't rightly give you no problems. Me, on th' other hand, no one will be mistakin' me for no god any time soon.~
+	++ ~[PC] Perhaps we can set you up with a nice comfortable place when this is all over. One without the stresses and strains of inter-planar travel.~ + a4558
+	++ ~[PC] I suppose you would prefer a more comfortable place, perhaps an inn or some tavern...~ + a4558
+	++ ~[PC] I know it is not the best in accomodations, but it is safe and instantly accessible. And right now that is what we need.~ + a4559
+	++ ~[PC] I may have some divine blod, but I am not as powerful as you think. We may not survive our next challenge, you know. Nothing is written in stone.~ + a4565
+	++ ~[PC] That's going a little far, don't you think? You could be mistaken for the God of Irrelevant Digression.~ + a4566
 END
-++ ~[PC] Nothing is stopping you from visiting her.~ + a2813
-++ ~[PC] Having an imagination is a good thing. We could always set aside a little time, go north, and hang around the Academy for awhile, seeing the sights... but I probably should stay here.~ + a2813
-++ ~[PC] No, no... you are probably right. You should get there, before she ends up... oh, the horrors... *kissing* some *boy*. Even worse, having fun! Go, flex that incredible Whitehand command of Common.~ + a2813
-++ ~[PC] If you feel that she is in danger, you should go. Family is family.~ + a2813
-++ ~[PC] You are a good person to have around, Aran. Then again, your sister is probably a lot smarter than you. Perhaps you could switch places with her. I think we can find a polymorph spell someplace...~ + a2813
 
-CHAIN ~C-ARN25J~ a2813
-~[ARAN] I'll not lightly leave your side.~
-== BEDWIN25 IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN ~[EDWIN] Go, go, by all means, go.~
-== BMINSC25 IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~[MINSC] No, Aran, we are you and and me and Boo, Boo and you and me... we should go together!~
+IF ~~ a4558 SAY ~[ARAN] Now that sounds right nice. Someplace where th' most travellin' be from th' mug bein' on th' table to it bein' on my lips sounds right fine by me.~ IF ~~ THEN GOTO a4560 END
+IF ~~ a4559 SAY ~[ARAN] Aye. Like it or no, there be no place safer right now. But when this mess all be over, I think th' best base o' operations for yours truly might be a nice cottage somewhere th' hells away from everythin' an' anythin'.~ IF ~~ THEN GOTO a4560 END
+
+IF ~~ a4560
+	SAY ~[ARAN] You could even visit, you know. We could lift a glass o' somethin' nice to toast old times, eh?~
+	++ ~[PC] I don't think this will ever be over, Aran. Every time it looks like we have won, another challenge shows up knocking on my door.~ + a4563
+	++ ~[PC] Haven't we already had this discussion? I thought we talked about what might happen if we survive all this.~ + a4562
+	++ ~[PC] You're going to have to learn to live without me. Even if you make it through all of this, there is no guarantee I will be around.~ + a4565
+	++ ~[PC] I think I would like that. We can sit around and talk about how tough it was, and how adventurers these days have it so easy.~ + a4561
+	++ ~[PC] I rather suspect that the only visiting I will be doing is to stand over your eventual grave.~ + a4565
 END
-++ ~[PC] That is up to you. I'm not pushing you.~ + a2849
-++ ~[PC] I am very glad to have you on my side.~ + a2849
-++ ~[PC] Awww... just what I always wanted. A pack mule with a sense of honor and camaraderie! For that, I will give you a carrot. But I do appreciate it, you know.~ + a2849
-++ ~[PC] I am glad you are on my team, Aran. Even if it means more burning hot curry and that incessant whistling.~ + a2849
-+ ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Just my side? I am pretty sure you wouldn't likely leave any part of me, judging by the amount of time your hands spend checking that all my body parts are still intact.~ + a2849
-+ ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] Lightly, heavily, modestly, boldly... you could just say "I won't leave you alone because I like you", you know.~ + a2849
-+ ~Gender(Player1,MALE)~ + ~[PC] Besides, we could all head up there together, and you could introduce me to your sister. Does she like pretty silk underthings? I am quite the ladies man, you know.~ + a2849
 
-CHAIN ~C-ARN25J~ a2885 /* no touching; hint */
-~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
-== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+IF ~~ a4561
+	SAY ~[ARAN] Aye. 'Back in th' days when REAL adventurin' happened, we had to lug weapons around what shattered in our hands. But did we complain? No, we forged twigs an' branches together an' whacked th' enemy 'til they ran. An' we were happy to do it, to!'~
+	++ ~[PC] That is a little too close to the truth, given the joys of dealing with Nashkel Iron. On second thought, I do not think I want to remember all of this. Too many have died. I may not even make it through all of this, anyways.~ + a4563
+	++ ~[PC] And I will tell stories about how Aran would start conversations and then not remember what he wanted to say.~ + a4566
+	++ ~[PC] You know, we have been doing this so long that we are starting to repeat our conversations. Gorion was like that. He would tell the same stories, and start the same conversations again and again. Perhaps you are getting old.~ + a4565
 END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2886 /* kissing */
-~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'... I think that kissin' you feels nothin' like kissin' a sister.~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
-== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+IF ~~ a4562 SAY ~[ARAN] See, that proves m' point. That blighted plane o' yours has me all addled an' not thinkin' straight!~ IF ~~ THEN GOTO a4564 END
+
+IF ~~ a4563
+	SAY ~[ARAN] Sune's Sweet Song, don't be talkin' that way! There be an end to everythin'. An' given our past history, we will end up on top no matter what th' Fates decide to send our way.~
+	++ ~[PC] We may end up on top, but someone always gets hurt in the process. You can't make an omlette without breaking eggs.~ + a4564
+	++ ~[PC] Fates don't decide anything, Aran. We have to build our future as we go along. So, in essense, you are personally responsible for your own destiny.~ + a4565
+    ++ ~[PC] You know, we have been doing this so long that we are starting to repeat our conversations. Gorion was like that. He would tell the same stories, and start the same conversations again and again. Perhaps you are getting old.~ + a4565	
 END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-CHAIN ~C-ARN25J~ a2887 /* touching */
-~[ARAN] Well, now, we done pursued some o' that thought together already, eh? Th' touchin', that is, not you bein' my little sister, or anythin'...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? You are displaying early signs of mating rituals, and this is not the time or place for such behavior.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
-== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+IF ~~ a4564
+	SAY ~[ARAN] An' here, that blighted well did remind me o' why I were startin' this whole conversation. Addled. Eggs. Scrambled eggs. We need to get someplace where we can stock up on supplies.~
+	++ ~[PC] No, I think we should stick with hardtack and water for the time being.~ + a4565
+	++ ~[PC] I think that is a great idea. Just as long as I do the cooking.~ + a4565
+	++ ~[PC] Sometimes it is a wonder your mind works at all. Your jaws and lungs work overtime, but your mind seems to be missing.~ + a4566
 END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
 
-
-CHAIN ~C-ARN25J~ a2888 /* petting */
-~[ARAN] Well, now, that be a good line o' thought to pursue. If I do recollect, we have done our share o' explorin' that topic, too. Th' touchin', that is, not you bein' my little sister, or anythin'...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
-== C-ARN25J ~[ARAN] No, no... this got all sidetracked already. Look, th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
-END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
-
-CHAIN ~C-ARN25J~ a2889 /* sex */
-~[ARAN] Well, now, that came out right fine in my hearin'. I do seem to have some troubles wi' not constantly touchin' you whenever I can find a way to.~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
-== C-ARN25J ~[ARAN] No, no... this got all sidetracked already. Look, th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
-== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
-== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
-== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
-== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
-END
-++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
-++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
-++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
-++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
-++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
-
-
-
-/* ToB FriendTalk 2 : "  ", GOES_RIGHT_HERE */
-
-APPEND C-ARN25J
+IF ~~ a4565 SAY ~[ARAN] Blighted hells, you know how to bring a lad down, eh? Mayhap I will go wander on an' think o' more happy thoughts, like bein' captured by Drow an' tortured. Or bein' th' appetizer for some dragon.~ IF ~~ THEN EXIT END
+IF ~~ a4566 SAY ~[ARAN] Aye, I do tend to talk too much. Which probably be why I done forgot what it were I had on my mind to begin with. Mayhap I should start scribblin' down my thoughts before I satrt talkin'. Or mayhap I'll just wander along an' see if I can remember on my own.~ IF ~~ THEN EXIT END
 
 /* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires */
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",1)~ THEN BEGIN a2850  /* neutral/shy */
@@ -9863,7 +9797,146 @@ IF ~~ c-tobplaceholder
   IF ~~ THEN EXIT
 END
 
+END /* of append to C-ARN25J */
+
+CHAIN ~C-ARN25J~ a2792
+~[ARAN] I was goin' through some old letters o' Elena... you know, my sister what be in th' Waterdeep Mage Academy? I guess I get worried I won't be around for to protect her, th' way you did your sister.~
+== BKORGA25 IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] You dinna tell me you had a sister.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Writing, journaling, tender sibling communications drawing a web of gossamer conversation across the miles... missives flying back and forth, and yet you do not introduce me, or send my warmest regards.~
+== C-ARN25J IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[ARAN] Can you blighted well blame me, you lecherous shortaxe?~
+== C-ARN25J IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[ARAN] As for introducin' a smooth talkin' amorous bard, I have my own reasons for delayin' that eventuality.~
+== BKORGA25 IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] Aye. When a buxom wench finds me attractive, there is no stopping me.~
+== BHAERD25 IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Alas, this poor sparrow finds truth in your words, my friend. But think of how much she could have learned, under my gentle protective wing...~
+== BCERND25 IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[CERND] There are times to be protective of your family, and times when you are unable to be there when you are needed most. Nature is not always kind.~
+== BJAN25 IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN ~[JAN] None of my family writes to me. I think it has to do with the last set of letters I replied to being sent with my latest invention, a new form of self-erasing ink. It seems to have caught itself on fire. Perhaps when Uncle Harald's fingers are healed, he will write to me again.~
 END
+++ ~[PC] I was not around for Imoen, and it turned out alright. I had to chase an insane mage across the entire Sword Coast and beyond just to find her, but we could do the same for yours, if necessary.~ + a2810
++ ~Gender(Player1,MALE)~ + ~[PC] You seem to be protective of me, too. I wonder if you see me as a little sister. It would explain so much...~ + a2808
++ ~Gender(Player1,FEMALE)~ + ~[PC] You seem to be protective of me, too. I wonder if you see me as a little sister. It would explain so much...~ + a2809
+++ ~[PC] Well, I worry about that, too, with the number of times you seem to need to be healed. You could try actually dodging a blow or two, you know.~ + a2810
+++ ~[PC] Families are strange that way. We try to be there when we can, and worry when we can't.~ + a2810
+++ ~[PC] I have a great idea... we swing north, pick her up, and start a small theater troupe. We can call it "Whitehand's Weird World". Or do you think that might interfere with the whole Prophecy thing? I suppose it would.~ + a2810
+
+
+CHAIN ~C-ARN25J~ a2810
+~[ARAN] True enough. Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
+CHAIN ~C-ARN25J~ a2812
+~[ARAN] You do have a point there. I just let my imagination get th' better o' me, is all.~
+== BANOME25 IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] Your lack of discipline and coarse breeding triumphs again.~
+== BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Imagination is a useful trait in a warrior, but it can lead you astray very quickly.~
+== BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] I think we should go and check on how she is doing.~
+END
+++ ~[PC] Nothing is stopping you from visiting her.~ + a2813
+++ ~[PC] Having an imagination is a good thing. We could always set aside a little time, go north, and hang around the Academy for awhile, seeing the sights... but I probably should stay here.~ + a2813
+++ ~[PC] No, no... you are probably right. You should get there, before she ends up... oh, the horrors... *kissing* some *boy*. Even worse, having fun! Go, flex that incredible Whitehand command of Common.~ + a2813
+++ ~[PC] If you feel that she is in danger, you should go. Family is family.~ + a2813
+++ ~[PC] You are a good person to have around, Aran. Then again, your sister is probably a lot smarter than you. Perhaps you could switch places with her. I think we can find a polymorph spell someplace...~ + a2813
+
+CHAIN ~C-ARN25J~ a2813
+~[ARAN] I'll not lightly leave your side.~
+== BEDWIN25 IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN ~[EDWIN] Go, go, by all means, go.~
+== BMINSC25 IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN ~[MINSC] No, Aran, we are you and and me and Boo, Boo and you and me... we should go together!~
+END
+++ ~[PC] That is up to you. I'm not pushing you.~ + a2849
+++ ~[PC] I am very glad to have you on my side.~ + a2849
+++ ~[PC] Awww... just what I always wanted. A pack mule with a sense of honor and camaraderie! For that, I will give you a carrot. But I do appreciate it, you know.~ + a2849
+++ ~[PC] I am glad you are on my team, Aran. Even if it means more burning hot curry and that incessant whistling.~ + a2849
++ ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Just my side? I am pretty sure you wouldn't likely leave any part of me, judging by the amount of time your hands spend checking that all my body parts are still intact.~ + a2849
++ ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] Lightly, heavily, modestly, boldly... you could just say "I won't leave you alone because I like you", you know.~ + a2849
++ ~Gender(Player1,MALE)~ + ~[PC] Besides, we could all head up there together, and you could introduce me to your sister. Does she like pretty silk underthings? I am quite the ladies man, you know.~ + a2849
+
+CHAIN ~C-ARN25J~ a2885 /* no touching; hint */
+~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
+== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
+CHAIN ~C-ARN25J~ a2886 /* kissing */
+~[ARAN] Well, now, that be a good line o' thought to pursue. Th' touchin', that is, not you bein' my little sister, or anythin'... I think that kissin' you feels nothin' like kissin' a sister.~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran?~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
+== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
+CHAIN ~C-ARN25J~ a2887 /* touching */
+~[ARAN] Well, now, we done pursued some o' that thought together already, eh? Th' touchin', that is, not you bein' my little sister, or anythin'...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? You are displaying early signs of mating rituals, and this is not the time or place for such behavior.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Why is Aran blushing?~
+== C-ARN25J ~[ARAN] Th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
+
+CHAIN ~C-ARN25J~ a2888 /* petting */
+~[ARAN] Well, now, that be a good line o' thought to pursue. If I do recollect, we have done our share o' explorin' that topic, too. Th' touchin', that is, not you bein' my little sister, or anythin'...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
+== C-ARN25J ~[ARAN] No, no... this got all sidetracked already. Look, th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
+CHAIN ~C-ARN25J~ a2889 /* sex */
+~[ARAN] Well, now, that came out right fine in my hearin'. I do seem to have some troubles wi' not constantly touchin' you whenever I can find a way to.~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] Have I described to you the definition and usage of the word 'subtle' to you yet, Aran? There is little chance of keeping your privacy when you are constantly so bold.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] I... I am not sure we should be hearing all of this.~
+== C-ARN25J ~[ARAN] No, no... this got all sidetracked already. Look, th' worry wi' Elena be more on account o' lads sniffin' 'round than overbearin' evil twisted villainous mages... wait a moment... that blighted Mage's Academy be probably chock full o' power-hungry lads wi' slippery morals...~
+== BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN ~[JAHEIRA] You have a very large imagination, Aran. Then again, you are probably thinking that her peers are as earthy as you are.~
+== BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN ~[AERIE] Oh, I am sure everything is fine. There are many ways a woman mage has to protect herself.~
+== BVICON25 IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Surfacers always say such amusing things. The least of our Houses would easily best a Surfacer academy. Your sister sounds weak.~
+== BVALYG25 IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] Another child warped by the unnatural influence of magic. Perhaps you should forbid her attendance, and get her away from that corruption.~
+END
+++ ~[PC] I don't think it is likely that they would become another Irenicus.~ + a2812
+++ ~[PC] Just a little overprotective, aren't you? How cute. Has she seen twelve summers yet, or only nine?~ + a2812
+++ ~[PC] I hadn't realized she was in need of such intense protectiveness. I should have realized that apples don't fall far from trees, and since you both fell from the same tree... come on, Aran. She is a grown woman.~ + a2812
+++ ~[PC] I think the Academy is far safer a place for her than on the road with you, don't you? I understand your worry, but you would be far more distracted if you were trying to do your job and protect her at the same time.~ + a2812
+++ ~[PC] If she is anything like you, I would be more worried about the virtues of the poor boys trying to court her.~ + a2812
+
 
 /* ToB Banters */
 
