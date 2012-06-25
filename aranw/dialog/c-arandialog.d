@@ -7858,9 +7858,9 @@ IF ~~ a428
   SAY ~[ARAN] Well, it does not rightly matter, as long as it is somethin' besides death an' doom, eh?~
   ++ ~[PC] Perhaps you have a better story to tell me.~ + a450
   /* Cervantes */
-  + ~InParty("anomen") !InParty("c-ajantis")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a434
-  + ~!InParty("anomen") InParty("c-ajantis")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a435
-  + ~!InParty("anomen") !InParty("c-ajantis")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a436
+  + ~InParty("anomen") !InParty("c#ajantis") !InParty("7XAJAN")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a434
+  + ~!InParty("anomen") OR(2) InParty("c#ajantis") InParty("7XAJAN")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a435
+  + ~!InParty("anomen") !InParty("c#ajantis") !InParty("7XAJAN")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a436
   ++ ~[PC] Why are you wasting my time with all this lighthearted banter? Surely there are more important things to be talking about. Even advice to share.~ + a440
   /* Scott - I can't stand the book, get tangled up in his prose, but the line is great - */
   ++ ~[PC] Try this story on for size - 'Oh! young Lochinvar is come out of the west, Through all the wide Border his steed was the best; And save his good broadsword he weapons had none. He rode all unarmed and he rode all alone.'~ + a444
@@ -17603,18 +17603,12 @@ IF ~!IsGabber(Player1)~ THEN a870
   IF ~OR(12) IsGabber("KIARA") IsGabber("KINDREK") IsGabber("Kiyone") IsGabber("Kova") IsGabber("LRIRENIC") IsGabber("M#AMBER") IsGabber("MTS#Shy") IsGabber("MWAriena") IsGabber("MWKido") IsGabber("SUHESSA") IsGabber("t#dace") IsGabber("TASHIA")~ GOTO a875
   IF ~OR(12) IsGabber("NATH") IsGabber("Ninde") IsGabber("O#TIAX") IsGabber("O#XAN") IsGabber("P#DEHER") IsGabber("P#KIVAN") IsGabber("R#ALLIS") IsGabber("R#Kitanya") IsGabber("Rylorn") IsGabber("SAERILETH") IsGabber("SDNPC")  IsGabber("SUBRU")~ GOTO a876
   IF ~OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye")~ GOTO a878
+  IF ~OR(17) IsGabber("7XAJAN") IsGabber("7XAlora") IsGabber("7XBRAN") IsGabber("CORAN") IsGabber("7XELDOT") IsGabber("7XGAR") IsGabber("7Xkaga") IsGabber("7XKIVA") IsGabber("7XMONT") IsGabber("7XQUAY") IsGabber("7XSafa") IsGabber("7Xshar") IsGabber("7XSKI") IsGabber("7XTIAX") IsGabber("7XXAN") IsGabber("7XXZAR") IsGabber("7XYES")~ GOTO a4567
   IF ~OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo")~ GOTO a877
 END
 
-IF ~~ a1686
-  SAY ~[ARAN] Bane's Blood, am I a jumpy one or what? Here I be, talkin' to myself. An' worse, I seem to be answerin' back. Must o' had too many sips o' liquid courage back there.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1511
-  SAY ~[ARAN] No offense, <GABBER>, I just don't rightly have much to say to you right now.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a1686 SAY ~[ARAN] Bane's Blood, am I a jumpy one or what? Here I be, talkin' to myself. An' worse, I seem to be answerin' back. Must o' had too many sips o' liquid courage back there.~ IF ~~ THEN EXIT END
+IF ~~ a1511 SAY ~[ARAN] No offense, <GABBER>, I just don't rightly have much to say to you right now.~ IF ~~ THEN EXIT END
 
 /* block 1 : OR(12) IsGabber("ADANGEL") IsGabber("Anishai") IsGabber("Azure") IsGabber("B!Gavin2") IsGabber("b!haldamir") IsGabber("BIDDE") IsGabber("Britt") IsGabber("BWTOUCHX") IsGabber("CALLISTO") IsGabber("WILLYB") IsGabber("WLBRAN") IsGabber("WxJon")*/
 IF ~~ a871
@@ -17718,7 +17712,7 @@ IF ~~ a876
   IF ~IsGabber("SUBRU")~ GOTO a940
 END
 
-/* block 7, the Expansion Block NPCs : OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") */
+/* block 7, the Expansion Block NPCs : OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") IsGabber("C#Ajantis")*/
 IF ~~ a878
   SAY ~[ARAN] Can this wait a bit?~
   IF ~IsGabber("SIME")~ GOTO a941
@@ -17727,7 +17721,43 @@ IF ~~ a878
   IF ~IsGabber("SOLAUFEIN")~ GOTO a944
   IF ~IsGabber("xulaye") !Global("LK#XulayeKnows","GLOBAL",1)~ GOTO a945
   IF ~IsGabber("xulaye") Global("LK#XulayeKnows","GLOBAL",1)~ GOTO a946
+  IF ~IsGabber("C#Ajantis")~ GOTO a4568 // new
 END
+
+/* block 7a, the BioWare Pack Added by Smiling Imp's BG1 NPCs In SoA, second evaluated : OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo") */
+IF ~~ a4567
+  SAY ~[ARAN] Can this wait a bit?~
+  IF ~IsGabber("7XAJAN")~ GOTO a4568 // new
+  IF ~IsGabber("7XAlora")~ GOTO a893
+  IF ~IsGabber("7XBRAN")~ GOTO a900
+  IF ~IsGabber("CORAN")~ GOTO a897
+  IF ~IsGabber("7XELDOT")~ GOTO a4569 // new
+  IF ~IsGabber("7XGAR")~ GOTO a4570 // new
+  IF ~IsGabber("7Xkaga")~ GOTO a4571 // new
+  IF ~IsGabber("7XKIVA")~ GOTO a934
+  IF ~IsGabber("7XMONT")~ GOTO a4572 // new
+  IF ~IsGabber("7XQUAY")~ GOTO a4573 // new
+  IF ~IsGabber("7XSafa")~ GOTO a4574 // new
+  IF ~IsGabber("7Xshar")~ GOTO a4575 // new
+  IF ~IsGabber("7XSKI")~ GOTO a4576 // new
+  IF ~IsGabber("7XTIAX")~ GOTO a931
+  IF ~IsGabber("7XXAN")~ GOTO a932
+  IF ~IsGabber("7XXZAR")~ GOTO a4577 // new
+  IF ~IsGabber("7XYES")~ GOTO a4578 // new
+END
+
+IF ~~ a4568 SAY ~[ARAN] I'd be right happy to spar wi' you later, though, Ajantis. But on that whole 'squires clean tack an' gear' thing, I think I be givin' it a pass, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4569 SAY ~[ARAN] Unless o' course it be about th' coin you owe me. An' in that case, payin' up beats talkin'. Actions speak louder than words, that be my motto.~ IF ~~ THEN EXIT END
+IF ~~ a4570 SAY ~[ARAN] No, no, I have not finished that transcription you be wantin'. You have a way wi' words, boyo, but your handwritten notes, they need one o' them Scrolls o' Identify to figure out whay your scrawl be sayin'. I should charge you extra for th' headaches.~ IF ~~ THEN EXIT END
+IF ~~ a4571 SAY ~[ARAN] An' if this be about th' coin I owe you, stick it up Clangedden's Arse. Next time, we use my dice, instead o' your cheatin' ham-isted stealin' ways. I mean than nice-like, you know. But if you were goin'
+ to steal from me, just whack me on th' head an' take my purse, eh? No need for th' cheat.~ IF ~~ THEN EXIT END
+IF ~~ a4572 SAY ~[ARAN] An' stop pawin' my belongin's lookin' for things to eat. Or not eat. Or whatever. I swear, Montaron, you'd think you were raised in a pack o' insane wolves.~ IF ~~ THEN EXIT END
+IF ~~ a4573 SAY ~[ARAN] An' yes, I do realise you be far more intelligent than I be, Quayle. But th' whole teachin' me how to clean up my speechifyin' habits, well... don't you have naught else to do?~ IF ~~ THEN EXIT END
+IF ~~ a4574 SAY ~[ARAN] An' no, I will not carry that pack for you, Safana. Unless, o' course, you decided to model some o' those lightweight magical armors what leave absolutely nothin' to th' imagi... OUCH! Blighted hells, that hurt!~ IF ~~ THEN EXIT END
+IF ~~ a4575 SAY ~[ARAN] I know we be overdue for a rematch on th' sparrin' front, Shar-Teel, but you have to give a lad a few days what to heal both bruised ego an' bruised body, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4576 SAY ~[ARAN] Skie, I know most o' my gear don't rightly majke th' best fashion statement. But then again, it gets a mite bit covered in gore an' blood on a semi-regular basis. So th' whole commentin' on how my appearence could be improved be one hells o' a wast o' breath, darlin'.~ IF ~~ THEN EXIT END
+IF ~~ a4577 SAY ~[ARAN] An' don't you be lookin' at me wi' those cold speculative eyes, there, Xzar. I done had enough o' th' unannounced 'testin' you do to me. Gives me th' shivers, it do. An' mayhap more than just a few shivers up th' spine, if I am not very careful, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4578 SAY ~[ARAN] You could say a prayer or two for me, though, Yeslick. Not that I be thinkin' o' convertin'. But it would be right handy to have th' Axe think kindly on us, eh? ~ IF ~~ THEN EXIT END
 
 /* block 8, the BioWare Pack, first evaluated : OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo") */
 IF ~~ a877
