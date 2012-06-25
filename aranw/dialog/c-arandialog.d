@@ -1265,7 +1265,7 @@ CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-aranhaerdalis","GLOBAL",0)
 DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == BHAERDA ~[HAERDALIS] I revel in the change and cadence of your speech, my eagle. You blend the accents of a dozen cultures in one sentence. What is it you wish?~
 == C-ARANB ~[ARAN] I can read this stuff here, but I can't remember it. I keep trying, but I just can't get it memorized. You seem to remember everything, an' your lifespan's a mite longer than mine. How do you do it?~
-== BHAERDA ~[HAERDALIS] Mnemonics. The occult study of memorization by association. For instance, I think of Artless Aran. That brings a mental picture of you, and assists my recall of all sorts of interesting things. Here, try it yourself. Look at a person, and think of a description mirroring the name. it will serve you well.~
+== BHAERDA ~[HAERDALIS] Mnemonics. The occult study of memorization by association. For instance, I think of Artless Aran. That brings a mental picture of you, and assists my recall of all sorts of interesting things. Here, by fledgeling, try it yourself. Look at a person, and think of a description mirroring the name. It will serve you well.~
 == C-ARANB ~[ARAN] OK, let me give it a shot. How about 'Happy Haer'Dalis'?~
 == BHAERDA ~[HAERDALIS] While this poor sparrow is not always happy, I think you have the idea, Aran. A huge generalization that acts as an index to memory. But keep your voice low, my friend. Not everyone is amused by playing such games with their names.~
 == C-ARANB IF ~InParty("Jaheira")~ THEN ~[ARAN] Jabbing Jaheira. Pokes everyone all day with those elbows an' that tongue. Means well enough, though.~
@@ -1292,19 +1292,19 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("BWTOUCHX")~ THEN ~[ARAN] Twiggy Touchstone. That reminds me. I need to get th' boy a bath, an' right quick. There's bein' part o' nature, sure, but once in awhile it might be a good idea to wash some o' it off.~
 == C-ARANB IF ~InParty("CALLISTO")~ THEN ~[ARAN] Crazed Callisto. You don't rightly want to be around when she gets enraged, eh? There's no tellin' where her weapons get pointed.~
 == C-ARANB IF ~InParty("CHLOE")~ THEN ~[ARAN] Chaotic Chloe. I'm not sayin' no more.~
-== C-ARANB IF ~InParty("CMALORA")~ THEN ~[ARAN] Affable Alora. Tymora's Smile, that halflin' lass is th' sprightliest an' happiest bein' I know!~
+== C-ARANB IF ~OR(2) InParty("CMALORA") InParty("7XAlora")~ THEN ~[ARAN] Affable Alora. Tymora's Smile, that halflin' lass is th' sprightliest an' happiest bein' I know!~
 == C-ARANB IF ~InParty("CMGMIRIAM")~ THEN ~[ARAN] Malevolent Miriam. Damned bloodsucker. I need to get me a now holy symbol an' some more garlic.~
 == C-ARANB IF ~InParty("CMNIKITA")~ THEN ~[ARAN] Nimble Nikitalleria. Lathander's Light, what that girl can do wi' her fingers...~
 == C-ARANB IF ~InParty("CMNINAF")~ THEN ~[ARAN] Naughty Ninafer. Well, she's not, really, but a lad can hope for change, can't he? Pity she looks right through me, as if I'm not there.~
 == C-ARANB IF ~InParty("CORAN")~ THEN ~[ARAN] Cunning Coran. The boy's got charm, an' he's sharp, he is. But not much else goin' on, I think.~
 == C-ARANB IF ~InParty("D#Silver")~ THEN ~[ARAN] Senseless SilverStar. I would run wi' 'sychotic', but it's not rightly spelled that way, now, eh?~
 == C-ARANB IF ~InParty("D0Alassa")~ THEN ~[ARAN] Amoral Alassa. Now I know amoral an' evil aren't rightly th' same thing, but it be close enough for me.~
-== C-ARANB IF ~InParty("DL#BWN")~ THEN ~[ARAN] Beautiful Branwen. That Tempus-lovin' girl is a sight for sore eyes, she is.~
+== C-ARANB IF ~OR(2) InParty("DL#BWN") InParty("7XBRAN")~ THEN ~[ARAN] Beautiful Branwen. That Tempus-lovin' girl is a sight for sore eyes, she is.~
 == C-ARANB IF ~InParty("DYNAHEIR")~ THEN ~[ARAN] Delicate Dynaheir. I don't rightly know no 'd' words for aristocratic, an' she's not dainty. In fact, she's not rightly delicate. Let's change that, eh? Make it Determined Dynaheir.~
 == C-ARANB IF ~InParty("E3Fade")~ THEN ~[ARAN] Forceful Fade. She be th' kind what sees what she wants, an' gets it.~
 == C-ARANB IF ~InParty("FHLAND")~ THEN ~[ARAN] Artless Andrei. It don't rightly fit completely, on account o' him bein' a smart lad, just a raw recruit. A bit sheltered. But close enough.~
 == C-ARANB IF ~InParty("FHLSEB")~ THEN ~[ARAN] Slippery Sebastian. I 'm not rightly sure I have gotten a straight answer out o' that one. Nine times out o' ten, I think he knows more than he lets on, eh?~
-== C-ARANB IF ~InParty("FINIREN")~ THEN ~[ARAN] Insane Irenicus. Bloody mad, an' evil. But I guess <CHARNAME> can handle him~
+== C-ARANB IF ~InParty("FINIREN")~ THEN ~[ARAN] Insane Irenicus. Bloody mad, an' evil. But I guess <CHARNAME> can handle him.~
 == C-ARANB IF ~InParty("FWGhareth")~ THEN ~[ARAN] Good-natured Ghareth. He tells some nice stories, he does. Good lad.~
 == C-ARANB IF ~InParty("G#CASS")~ THEN ~[ARAN] Chatty Cassius. Mask's Left Hand, the skald never shuts up, eh? Hey, don't be lookin' at me like that, Haer'Dalis! I shut up. Occasionally. When th' wind is right.~
 == C-ARANB IF ~InParty("GOZALOTH")~ THEN ~[ARAN] Goey Gozaloth. That floatin' eyeball never did say what all that goo was. And I'm not rightly sure I wan to know, anyways.~
@@ -1330,10 +1330,10 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("MWKido")~ THEN ~[ARAN] Killer Kido. Bloody evil Cyric Lovin' naysayer.~
 == C-ARANB IF ~InParty("NATH")~ THEN ~[ARAN] Friendly 'Fletcher. Good lad. An' it be a mite easier to find 'f' words what rhyme.~
 == C-ARANB IF ~InParty("Ninde")~ THEN ~[ARAN] Naughty Ninde. Or Necrophiliac Ninde; but for a spook-lover, she's right lively. I do enjoy watchin' her... err... back?~
-== C-ARANB IF ~InParty("O#TIAX")~ THEN ~[ARAN] Troublesome Tiax. Terrible Tiax's Troubles Tried Tempers Twice Today, Together T'will Tip Tiax' Top Toward Total Torture. There, I got me a blighted tongue twister.~
-== C-ARANB IF ~InParty("O#XAN")~ THEN ~[ARAN] Xenophobic Xan, on account o' him bein' a Moonblade wielder an' all? No, it don't rightly fit. What's another 'X' word. Xysterous, like them healer's tools? No. Ok, how about wigglin' th' rules, an' goin' wi' Zealous Xan? He talks all doom an' gloom, but he doesn't back off from no fights.~
+== C-ARANB IF ~OR(2) InParty("O#TIAX") InParty("7XTIAX")~ THEN ~[ARAN] Troublesome Tiax. Terrible Tiax's Troubles Tried Tempers Twice Today, Together T'will Tip Tiax' Top Toward Total Torture. There, I got me a blighted tongue twister.~
+== C-ARANB IF ~OR(2) InParty("O#XAN") InParty("7XXAN")~ THEN ~[ARAN] Xenophobic Xan, on account o' him bein' a Moonblade wielder an' all? No, it don't rightly fit. What's another 'X' word. Xysterous, like them healer's tools? No. Ok, how about wigglin' th' rules, an' goin' wi' Zealous Xan? He talks all doom an' gloom, but he doesn't back off from no fights.~
 == C-ARANB IF ~InParty("P#DEHER")~ THEN ~[ARAN] Dutiful Deheriana. She stayed true to Kivan right past th' changes on th' great wheel. But that was love, not duty. How about Deep, on account o' her deep love? Have to keep on thinkin' on that one.~
-== C-ARANB IF ~InParty("P#KIVAN")~ THEN ~[ARAN] Keen-Eyed Kivan. He can put an arrow on target when I can't rightly see th' target, or th' horse th' target's ridin' or even th' stretch o' road th' target's movin' along.~
+== C-ARANB IF ~OR(2) InParty("P#KIVAN") InParty("7XKIVA")~ THEN ~[ARAN] Keen-Eyed Kivan. He can put an arrow on target when I can't rightly see th' target, or th' horse th' target's ridin' or even th' stretch o' road th' target's movin' along.~
 == C-ARANB IF ~InParty("R#ALLIS")~ THEN ~[ARAN] Animal Allison, on account o' her love for all them furry little creatures. An' the not so furry ones, too.~
 == C-ARANB IF ~InParty("R#Kitanya")~ THEN ~[ARAN] Kiirar Kitanya's right out, o' course, as I am th' Chronicler, so to speak. Let's find another elven word what describes her. How about Koron en' naur Kitanya? She's a fireball, all right.~
 == C-ARANB IF ~InParty("Rylorn")~ THEN ~[ARAN] Ravaging Rylorn. He'd love to see all Toril run wi' blood.~
@@ -1355,6 +1355,19 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("YASRAENA")~ THEN ~[ARAN] Yasraena. Nothin'. I got naught. I'll have to come back to her another day, eh~
 == C-ARANB IF ~InParty("ZAIYA")~ THEN ~[ARAN] Zaiya. You gotta be jokin', right? This one's a mite harder than most. Zany don't quite do th' job. Nope, I got nothin'. Wait a second... Zealous Zaiya. I think I might be gettin' the hang o' this.~
 == C-ARANB IF ~InParty("Z_MODDY")~ THEN ~[ARAN] Now then, miss foxy lass, Moddy. How about Munchin' Moddie, on account o' her love for nice things what's to eat. No, I think it might be Vivacious Vixen, as she sure does keep close to her animal instincts.~
+== C-ARANB IF ~OR(2) InParty("7XAJAN") InParty("C#Ajantis")~ THEN ~[ARAN] Able Ajantis. That don't catch th' whole honor an' knighly side o' things, but th' buy can swing a sword right fine, he can.~
+== C-ARANB IF ~InParty("7XELDOT")~ THEN ~[ARAN] Eggregious Eldoth. Do that be a word, 'eggregious'? I'd say 'slimy twisted bastard Eldoth', but it don't rightly rhyme, now, do it.~
+== C-ARANB IF ~InParty("7XGAR")~ THEN ~[ARAN] Garrulous Garrick. That boy just don't rightly know when to shut up an' listen, eh? Why, Th' other day, we were just tryin' to get a good set o words in, an'... ~
+== BHAERDA IF ~InParty("7XGAR")~ THEN ~[HAERDALIS] The falcon is circling far from the nest...~
+== C-ARANB IF ~InParty("7XGAR")~ THEN ~[ARAN] Right, sorry - got a bit sidetracked, eh? Let's see...~
+== C-ARANB IF ~InParty("7Xkaga")~ THEN ~[ARAN] Coarse Kagain. Now, I know that be more alliteration than th' spellin' o' it, but it fits right fine, it does!~
+== C-ARANB IF ~InParty("7XMONT")~ THEN ~[ARAN] Mumblin' Montaron. He goes about all over th' place speakin' to himself in hushed tones. At least, I hope it be that an' not a spell he be about to put on me, eh?~
+== C-ARANB IF ~InParty("7XQUAY")~ THEN ~[ARAN] Quayle. Mystra's Mantle, Haer'Dalis, you make things a bit hard for a lad, eh? ~
+== C-ARANB IF ~InParty("7XSafa")~ THEN ~[ARAN] Silvery Safana. She likes th' jewelry, she does, an' she can talk you out o' or into just about anythin', so that silvery goes for th' tongue, too.~
+== C-ARANB IF ~InParty("7Xshar")~ THEN ~[ARAN] Stern Shar-Teel. Aye, that works. She don't so much stare, really, as smack you between th' eyes wi' a glare.~
+== C-ARANB IF ~InParty("7XSKI")~ THEN ~[ARAN] Sweet Skie, on account o' she be a right fine lady, an' easy on th' eyes. Mayhap a bit high maintainence, but sometimes that be a turn on, eh?~
+== C-ARANB IF ~InParty("7XXZAR")~ THEN ~[ARAN] Xzar. Hmmm. Nope. Naught in th' way o' help there. Mayhap I can come up wi' somethin in another language, but I be stumped on him.~
+== C-ARANB IF ~InParty("7XYES")~ THEN ~[ARAN] Mayhap 'Yarn-spinnin' Yeslick', on account o' all those stories he be spinnin' out.~
 == BHAERDA ~[HAERDALIS] This is more entertaining than I thought it might be.~
 == C-ARANB ~[ARAN] <CHARNAME>. Hmm. Not so sure I can guide on <PRO_HIMHER> so easily.~
 == BHAERDA ~[HAERDALIS] Ah, my fine friend, there are exceptions to every rule. You need not create a mnemonic for <CHARNAME>. In <PRO_HISHER> case, <PRO_HESHE> is quite unforgettable.~
