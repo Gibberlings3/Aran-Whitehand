@@ -1368,6 +1368,8 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("7XSKI")~ THEN ~[ARAN] Sweet Skie, on account o' she be a right fine lady, an' easy on th' eyes. Mayhap a bit high maintainence, but sometimes that be a turn on, eh?~
 == C-ARANB IF ~InParty("7XXZAR")~ THEN ~[ARAN] Xzar. Hmmm. Nope. Naught in th' way o' help there. Mayhap I can come up wi' somethin in another language, but I be stumped on him.~
 == C-ARANB IF ~InParty("7XYES")~ THEN ~[ARAN] Mayhap 'Yarn-spinnin' Yeslick', on account o' all those stories he be spinnin' out.~
+== C-ARANB IF ~InParty("Arath") !InParty("ADANGEL")~ THEN  ~[ARAN] Adventurous Arath, mayhap? It fits his wanderin' ways. I wish I had th' knowledge to tie in 'animal', on account o' his other wanderin' ways, or mayhap becasue he watches out for 'em.~
+== C-ARANB IF ~InParty("Arath") InParty("ADANGEL")~ THEN  ~[ARAN] Adevnturous Arath, mayhap? No, I done used that for Angelo. Mayhap we swap Arse-kickin' on Angelo's, an' keep this for Arath. It fits his wanderin' ways. I wish I had th' knowledge to tie in 'animal', on account o' his other wanderin' ways, or mayhap becasue he watches out for 'em.~
 == BHAERDA ~[HAERDALIS] This is more entertaining than I thought it might be.~
 == C-ARANB ~[ARAN] <CHARNAME>. Hmm. Not so sure I can guide on <PRO_HIMHER> so easily.~
 == BHAERDA ~[HAERDALIS] Ah, my fine friend, there are exceptions to every rule. You need not create a mnemonic for <CHARNAME>. In <PRO_HISHER> case, <PRO_HESHE> is quite unforgettable.~
@@ -17615,7 +17617,7 @@ IF ~!IsGabber(Player1)~ THEN a870
   IF ~OR(12) IsGabber("J#Kelsey") IsGabber("JCBruce") IsGabber("K#Auren") IsGabber("K#Bana") IsGabber("K#Sarah") IsGabber("K#SHEENA") IsGabber("KACHIKO") IsGabber("Kari") IsGabber("Keto") IsGabber("TSUJATH") IsGabber("Valen") IsGabber("Z_MODDY")~ GOTO a874
   IF ~OR(12) IsGabber("KIARA") IsGabber("KINDREK") IsGabber("Kiyone") IsGabber("Kova") IsGabber("LRIRENIC") IsGabber("M#AMBER") IsGabber("MTS#Shy") IsGabber("MWAriena") IsGabber("MWKido") IsGabber("SUHESSA") IsGabber("t#dace") IsGabber("TASHIA")~ GOTO a875
   IF ~OR(12) IsGabber("NATH") IsGabber("Ninde") IsGabber("O#TIAX") IsGabber("O#XAN") IsGabber("P#DEHER") IsGabber("P#KIVAN") IsGabber("R#ALLIS") IsGabber("R#Kitanya") IsGabber("Rylorn") IsGabber("SAERILETH") IsGabber("SDNPC")  IsGabber("SUBRU")~ GOTO a876
-  IF ~OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye")~ GOTO a878
+  IF ~OR(7) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") IsGabber("C#Ajantis") IsGabber("Arath")~ GOTO a878
   IF ~OR(17) IsGabber("7XAJAN") IsGabber("7XAlora") IsGabber("7XBRAN") IsGabber("CORAN") IsGabber("7XELDOT") IsGabber("7XGAR") IsGabber("7Xkaga") IsGabber("7XKIVA") IsGabber("7XMONT") IsGabber("7XQUAY") IsGabber("7XSafa") IsGabber("7Xshar") IsGabber("7XSKI") IsGabber("7XTIAX") IsGabber("7XXAN") IsGabber("7XXZAR") IsGabber("7XYES")~ GOTO a4567
   IF ~OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo")~ GOTO a877
 END
@@ -17725,7 +17727,7 @@ IF ~~ a876
   IF ~IsGabber("SUBRU")~ GOTO a940
 END
 
-/* block 7, the Expansion Block NPCs : OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") IsGabber("C#Ajantis")*/
+/* block 7, the Expansion Block NPCs : OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye")  IsGabber("C#Ajantis") IsGabber("Arath") */
 IF ~~ a878
   SAY ~[ARAN] Can this wait a bit?~
   IF ~IsGabber("SIME")~ GOTO a941
@@ -17735,6 +17737,7 @@ IF ~~ a878
   IF ~IsGabber("xulaye") !Global("LK#XulayeKnows","GLOBAL",1)~ GOTO a945
   IF ~IsGabber("xulaye") Global("LK#XulayeKnows","GLOBAL",1)~ GOTO a946
   IF ~IsGabber("C#Ajantis")~ GOTO a4568 // new
+  IF ~IsGabber("Arath")~ GOTO a4579 // new
 END
 
 /* block 7a, the BioWare Pack Added by Smiling Imp's BG1 NPCs In SoA, second evaluated : OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo") */
@@ -17770,7 +17773,8 @@ IF ~~ a4574 SAY ~[ARAN] An' no, I will not carry that pack for you, Safana. Unle
 IF ~~ a4575 SAY ~[ARAN] I know we be overdue for a rematch on th' sparrin' front, Shar-Teel, but you have to give a lad a few days what to heal both bruised ego an' bruised body, eh?~ IF ~~ THEN EXIT END
 IF ~~ a4576 SAY ~[ARAN] Skie, I know most o' my gear don't rightly majke th' best fashion statement. But then again, it gets a mite bit covered in gore an' blood on a semi-regular basis. So th' whole commentin' on how my appearence could be improved be one hells o' a wast o' breath, darlin'.~ IF ~~ THEN EXIT END
 IF ~~ a4577 SAY ~[ARAN] An' don't you be lookin' at me wi' those cold speculative eyes, there, Xzar. I done had enough o' th' unannounced 'testin' you do to me. Gives me th' shivers, it do. An' mayhap more than just a few shivers up th' spine, if I am not very careful, eh?~ IF ~~ THEN EXIT END
-IF ~~ a4578 SAY ~[ARAN] You could say a prayer or two for me, though, Yeslick. Not that I be thinkin' o' convertin'. But it would be right handy to have th' Axe think kindly on us, eh? ~ IF ~~ THEN EXIT END
+IF ~~ a4578 SAY ~[ARAN] You could say a prayer or two for me, though, Yeslick. Not that I be thinkin' o' convertin'. But it would be right handy to have th' Axe think kindly on us, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4579 SAY ~[ARAN] If it be that trade you wanted to do, Arath, I be in for it. I can make th' carvin' out o' deadwood, an' you just have at th' design. I never did like bloodsuckers nohow, an' I think a custom carved stake be just th' ticket for a permanent-like cleanup o' th' undead.~ IF ~~ THEN EXIT END
 
 /* block 8, the BioWare Pack, first evaluated : OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo") */
 IF ~~ a877
