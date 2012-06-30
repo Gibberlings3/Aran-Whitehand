@@ -7468,7 +7468,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21)~ THEN a388
   SAY ~[ARAN] We keep runnin' around, battling' various foes, an' collectin' artifacts, treasures, an' knowledge. Cyric's Dark Heart, do you think we are ever goin' to slow down? Or ever just claim victory?~ [c-aws095]
   ++ ~I think that we shall prevail. After all, we have made it this far. Things should be getting better any day now.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a389
   ++ ~I do not think we shall survive this. Fighting against so many foes, for so long, how can the outcome be anything but death and destruction?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a390
-  ++ ~Perhaps we shall win. Perhaps we shall lose. But really, we don't have much of a choice in the matter -êthe fates decide our destiny.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a391
+  ++ ~Perhaps we shall win. Perhaps we shall lose. But really, we don't have much of a choice in the matter. The fates decide our destiny.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a391
   ++ ~We are here. We have not lost yet. Speculating on the future just wastes our time and energy.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a392
   ++ ~That depends. Are you worried that you're running out of oaths?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a392
   + ~RandomNum(3,1)~ + ~Now is not a good time to talk, Aran.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
@@ -10663,41 +10663,1771 @@ IF ~~ a3001  SAY ~[ARAN] Well, now, to correctly appreciate your view o' such th
 IF ~~ a3002  SAY ~[ARAN] True enough. Luckily, th' alcohol kills anythin' what th' boots might bring in, an' th' food tastes like th' inside o' a shoe, so I be improvin' th' place, eh?~  IF ~~ THEN EXIT END
 IF ~~ a3003  SAY ~[ARAN] Mayhap never. You know, some might say this be my strong suit. I may sound like trade-speakin' riffraff, but that just puts people in th' mind that I be poor o' education an' thinkin' power. An' when they let their guard down, whammo - I twist 'em up right proper in their own contract's words, goin' 'Oh, me? I just be th' hired help, is all. I didn't rightly realize that it meant I get three bonus shares an' first call on your daughter if you done backed out!'.~  IF ~~ THEN EXIT END
 
+/* Top States For Baths */
 
-IF ~~ a2273 /* L0 BATH FLIRT  PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
+/* Bath Panel */ 
+
+IF ~~ a2270 /* BATH : Repeater  */
+  SAY ~[ARAN] (The wooden doors to the baths are warped with moisture, but open readily enough.)~
+  /* No Actions Taken */
+  IF ~Global("c-aranbathing","LOCALS",0) Global("c-aransex","GLOBAL",0)~ THEN GOTO a4580
+  IF ~Global("c-aranbathing","LOCALS",1) Global("c-aransex","GLOBAL",0)~ THEN GOTO a4581
+  IF ~Global("c-aranbathing","LOCALS",2) Global("c-aransex","GLOBAL",0)~ THEN GOTO a4582
+  /* Kissing */        
+  IF ~Global("c-aranbathing","LOCALS",0) Global("c-aransex","GLOBAL",1)~ THEN GOTO a4583
+  IF ~Global("c-aranbathing","LOCALS",1) Global("c-aransex","GLOBAL",1)~ THEN GOTO a4584
+  IF ~Global("c-aranbathing","LOCALS",2) Global("c-aransex","GLOBAL",1)~ THEN GOTO a4585
+  /* More Than Kissing */           
+  IF ~Global("c-aranbathing","LOCALS",0) Global("c-aransex","GLOBAL",2)~ THEN GOTO a4586
+  IF ~Global("c-aranbathing","LOCALS",1) Global("c-aransex","GLOBAL",2)~ THEN GOTO a4587
+  IF ~Global("c-aranbathing","LOCALS",2) Global("c-aransex","GLOBAL",2)~ THEN GOTO a4588
+  /* Much More Than Kissing But Not Everything */             
+  IF ~Global("c-aranbathing","LOCALS",0) Global("c-aransex","GLOBAL",3)~ THEN GOTO a4589
+  IF ~Global("c-aranbathing","LOCALS",1) Global("c-aransex","GLOBAL",3)~ THEN GOTO a4590
+  IF ~Global("c-aranbathing","LOCALS",2) Global("c-aransex","GLOBAL",3)~ THEN GOTO a4591  
+  /* Serious Lovers */             
+  IF ~Global("c-aranbathing","LOCALS",0) Global("c-aransex","GLOBAL",4)~ THEN GOTO a4592
+  IF ~Global("c-aranbathing","LOCALS",1) Global("c-aransex","GLOBAL",4)~ THEN GOTO a4593
+  IF ~Global("c-aranbathing","LOCALS",2) Global("c-aransex","GLOBAL",4)~ THEN GOTO a4594
+  IF ~RandomNum(6,5)~ THEN GOTO a4523
+  IF ~RandomNum(6,6)~ THEN GOTO a4595
 END
 
-IF ~~ a2274 /* L1 BATH FLIRT 2 PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
+/* Bath Entries From Flirts */
+
+IF ~~ a2273 /* BATH #2: L0 BATH FLIRT  */
+  SAY ~[ARAN] (A quick pair of iron tradebars to the attendant changes hands, and the man leaves quickly. Aran gestures grandly towards the waiting baths.)~
+  = ~[ARAN] After you, <CHARNAME>. Not that you be more dirty or anythin'. Just ladies first, eh? Only one thing, though - should I be watchin' th' door, or just standin' outside?~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+  ++ ~[PC] Watch the door, watch me, it makes no difference.~ + a4603
+  ++ ~[PC] I wanted to take a bath with you. After all, I need someone to scrub my back.~  + a4629
+  ++ ~[PC] I know this is moving very quickly for you, but a woman has needs. And right now, I need kissing.~ + a4607
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here.~ + a4617
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
 END
 
-IF ~~ a2275 /*  L2 BATH FLIRT 3 PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
+IF ~~ a2274 /* BATH #2: L1 BATH FLIRT 2 */
+  SAY ~[ARAN] (A quick pair of iron tradebars to the attendant changes hands, and the man leaves quickly. Aran gestures grandly towards the waiting baths.)~
+  = ~[ARAN] After you, <CHARNAME>. Not that you be more dirty or anythin'. Just ladies first, eh? Only one thing, though - were you talkin' about bathin'? I could use a kiss from those lips o' yours.~
+  ++ ~[PC] I have already had a taste of what you call "steamy pursuits", Aran. I am not interested in repeating that experience right now.~ + a4616
+  ++ ~[PC] You wash my back, I wash yours - no touching, no 'slipping on the soap' - just a nice, quiet bath where I can trust that nothing and no one will disturb me. I cannot be alert all day and night forever, you know.~ + a4631
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+  ++ ~[PC] I very much enjoyed our last time together, so I won't rule out anything just yet. We should just see what happens.~ + a4604
+  ++ ~[PC] Watch the door, watch me, it makes no difference.~ + a4603
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
 END
 
-IF ~~ a2276 /*  L3 BATH FLIRT 4 PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
+IF ~~ a2275 /* BATH #2:  L2 BATH FLIRT 3 */
+  SAY ~[ARAN] (A quick pair of iron tradebars to the attendant changes hands, and the man leaves quickly. Aran gestures grandly towards the waiting baths.)~
+  = ~[ARAN] After you, <CHARNAME>. I do want to be clear, though, on one thing - were you talkin' about bathin', or more steamy pursuits? I have been dreamin' o' th' feel o' you. Mayhap we could do more than just splash about.~
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+  ++ ~[PC] Hmmm... perhaps that water should be a little colder. I see you may need to calm down a little.~ + a4608
+  ++ ~[PC] You wash my back, I wash yours - no touching, no 'slipping on the soap' - just a nice, quiet bath where I can trust that nothing and no one will disturb me. I cannot be alert all day and night forever, you know.~ + a4631
+  ++ ~[PC] What do you think? (Slowly disrobe, taking care to fold your clothes, settle yourself gently into the bath, allow the soap bubbles to trail along your body...)~ + a4630
+  ++ ~[PC] I have already had a taste of what you call "steamy pursuits", Aran. I am not interested in repeating that experience right now.~ + a4616
 END
 
-IF ~~ a2277 /*  L4 BATH FLIRT 5 PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
+IF ~~ a2276 /*  BATH #2: L3 BATH FLIRT 4 */
+  SAY ~[ARAN] (A quick pair of iron tradebars to the attendant changes hands, and the man leaves quickly. Aran gestures grandly towards the waiting baths.)~
+  = ~[ARAN] After you, <CHARNAME>. I do want to be clear, though. Mayhap we could do more than just splash about. But th' sight o' you an' th' intimacy o' th' bath, well... it will be right hard for me, no pun intended. I think I want more than what we have been doin'.~
+  ++ ~[PC] Aran... I... No. I want to be with you, but not... not do everything that we can do.~ + a4601
+  ++ ~[PC] I trust you. If we both want something more to happen, it will. If I feel like we are going too far, you can stop.~ + a4629
+  ++ ~[PC] I have already had a taste of what you call "steamy pursuits", Aran. I am not interested in repeating that experience right now.~ + a4616
+  ++ ~[PC] I knew this was a mistake. I am already involved with someone else, but you keep pushing. You will completely expose our affair if we do anything in here at all. Are you capable of being a good friend, or should you leave now?~ + a4601
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+  ++ ~[PC] (Slowly disrobe, folding your clothes carefully, leaning over to run your hands over each ankle and stretch langorously... Settle yourself gently into the bath, allow the soap bubbles to trail along your body...)~ + a4630
 END
+
+IF ~~ a2277 /* BATH #2:  L4 BATH FLIRT 5 */
+  SAY ~[ARAN] (A quick pair of iron tradebars to the attendant changes hands, and the man leaves quickly. Aran gestures grandly towards the waiting baths.)~
+  = ~[ARAN] Right, then, m'lady, do you be teasin' me, or do you want more than a splash o' water? Or do I be readin' everythin' wrong, an' do you really truly want a bath?~
+  ++ ~[PC] Hmmm... perhaps that water should be a little colder. I see you may need to calm down a little.~ + a4608
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+  ++ ~[PC] Aran... we are completely alone, and I want you as much as you want me.~ + a4613
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ + a4616
+  ++ ~[PC] I knew this was a mistake. I am already involved with someone else, but you keep pushing. You will completely expose our affair if we do anything in here at all. Are you capable of being a good friend, or should you leave now?~ + a4601
+END
+
+IF ~~ a4523 /* Alternate (Original) Bathing State, for more Variety */
+  SAY ~[ARAN] (The trip is a short one. He looks keenly about, seeing the baths deserted, and quickly loops his belt to seal the door behind you both.) Aye, then, <CHARNAME>. Only I am a mite particular about security an' all, this bein' so public.~
+  = ~[ARAN] (He keeps his eyes averted from you as he strips, his back toward you, then in a quick motion leaps over the side of the tub and into the steamy water...)~
+  = ~[ARAN] (...and laughs when the resulting wave splashes around your feet and scatters across the floor.)~
+  = ~(The tub is a small space for more than two, but there is sufficient room for you both to only occasionally brush each other in passing, and the dense steam preserves some modesty.)~
+  ++ ~[PC] What are you doing? Get out of the tub this instant. You were supposed to watch the door and protect me.~ + a1809
+  ++ ~[PC] (Remove your clothing slowly, and hesitate over a button.) Aran... I could use your help, here. I seem to be having some trouble disrobing.~ + a1810
+  ++ ~[PC] (Turn your back to him, but disrobe completely, slipping into the water carefully).~ + a1811
+  ++ ~[PC] You are absolutely no fun. (Drop your clothing where it falls, and step into the tub quickly, wrapping your arms around his neck and sliding your body down his chest).~ + a1812
+  ++ ~[PC] (Turn your back to him and strip down to your underclothing, slipping into the water carefully and discreetly).~ + a1813
+END
+
+/* Escape State And Followup For Baths Not Available (Delayed Gratification) */
+IF ~~ a4595
+  SAY ~[ARAN] (There is little enough space in the crowded room, and many other bathers turn when you enter. Aran stands uncertainly at the door.)~
+  = ~[ARAN] Well, this be a right unhappy occurrence. I were hopin'...~
+  ++ ~[PC] Too crowded. I think we might try this another time.~ + a4596
+  ++ ~[PC] It is just a bath, Aran. What, did you think we were going to strip down and make wild love in the middle of a public area?~ + a4597
+  ++ ~[PC] Don't tell me the rough and ready Aran Whitehand is a litle shy.~ + a4598
+  ++ ~[PC] Oh, come on. It will be fun. Just think of all those people, watching our every move. Isn't it... exciting?~ + a4599
+  ++ ~[PC] (Hesitate, then turn and walk away without another word.)~ + a4600
+END
+
+IF ~~ a4596 SAY ~[ARAN] Blighted good idea. I think I will come back later on when things be a mite less crowded. If this were down south an' west a ways, mayhap it would be fine, but this crowd looks a little too interested in other people's business for my tastes, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4597 SAY ~[ARAN] Mayhap I was a mite bit silly thinkin' so, but you can't harm a lad for havin' wild thoughts, eh? As for what I was really thinkin'...~ IF ~~ THEN EXIT END
+IF ~~ a4598 SAY ~[ARAN] Well, I won't rightly say it, then. I think I will come back later on when things be a mite less crowded. If this were down south an' west a ways, mayhap it would be fine, but this crowd looks a little too interested in other people's business for my tastes.~ IF ~~ THEN EXIT END
+IF ~~ a4599 SAY ~[ARAN] Not really. Not for me, anyways. If you want to go on an' bathe, you go ahead. But me, I am goin' to stay out. If you do go in, I'll keep my eyes open an' watch out for your safety. Things get this crowded, some folks start thinkin' a stray hand can be gotten away wi', an' I won't rightly have that go unpunished.~ IF ~~ THEN EXIT END
+IF ~~ a4600 SAY ~[ARAN] Aye, that be th' right idea. I be right behind you.~ IF ~~ THEN EXIT END
+
+/* Escape : Aran Leaving The Area */ 
+IF ~~ a4601
+  SAY ~[ARAN] Right. I done misunderstood. I am sorry, I must o' misjudged. I will watch th' door from the other side, an' make sure no one disturbs you.~
+  IF ~~ THEN GOTO a4689
+END
+
+IF ~~ a4602
+  SAY ~[ARAN] But I... you...~
+  = ~[ARAN] Aye. I understand. There be times when anyone needs a mite bit o' alone time. I'll be about my business, then.~
+  IF ~~ THEN GOTO a4689
+END
+
+/* Getting To Know You - Or Not. */
+
+IF ~~ a4580
+  SAY ~[ARAN] (The baths are steaming hot. With no one else in attendance, you have the entire place to yourselves.)~
+  = ~[ARAN] Now, that be a right fine sight. A tall tub, a pile o' soft towels, an' enough steam to soften th' skin right fine.~
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4617
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4621
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4622
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4623
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4629
+  ++ ~[PC] You could.... you could help me undress. If you wanted to.~  DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4606
+  ++ ~[PC] (Slowly remove your clothing, 'accidentally' showing enough of your charms to pique his interest.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4605
+END
+
+IF ~~ a4581
+  SAY ~[ARAN] (The lantern light flickers in the steam from the water, casting a warm glow about the room. You are completely alone.)~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4629
+  + ~RandomNum(5,1)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~RandomNum(5,5)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3575 /* KISS_CATCH_HANDS */
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4617
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4630
+END
+
+IF ~~ a4582
+  SAY ~[ARAN] (Your towels are rough but clean, piled high beside the waiting water. You have the entire place to yourselves.)~
+  = ~[ARAN] A good soak be just th' right thing to wash away th' cares o' th' world, eh?~
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4629
+  ++ ~[PC] (Walk up to him and take his hands, guiding them to begin removing your clothing.)~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4606
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4601
+  + ~RandomNum(5,5)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3575 /* KISS_CATCH_HANDS */
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4623
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4624
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4625
+END
+
+/* Getting To Know You - a Little Bit. */
+
+IF ~~ a4583
+  SAY ~[ARAN] (The baths are steaming hot. With no one else in attendance, you have the entire place to yourselves.)~
+  = ~[ARAN] Now, that be a right fine sight. A tall tub, a pile o' soft towels, an' enough steam to soften th' skin right fine.~
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here. I mean, you are... I am... oh, never mind.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4617
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I promise, I won't stare. Much.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4621
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I promise, I won't stare. Much.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4622
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I promise, I won't stare. Much.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4623
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But... nothing else, Aran. I like you. But I am not ready for more than a bath right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4629
+  ++ ~[PC] You could.... you could help me undress. If you wanted to.~  DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4606
+  ++ ~[PC] (Slowly remove your clothing, 'accidentally' showing enough of your charms to pique his interest.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4605
+END
+
+IF ~~ a4584
+  SAY ~[ARAN] (The lantern light flickers in the steam from the water, casting a warm glow about the room. You are completely alone.)~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4629
+  + ~RandomNum(5,1)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~RandomNum(5,5)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] I don't know if this is moving too quickly for you, but the bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3575 /* KISS_CATCH_HANDS */
+  ++ ~[PC] I... I do not know why I asked you here. I think you are... interesting. But I don't want to do anything more than have a bath.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4617
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4630
+END
+
+IF ~~ a4585
+  SAY ~[ARAN] (Your towels are rough but clean, piled high beside the waiting water. You have the entire place to yourselves.)~
+  = ~[ARAN] A good soak be just th' right thing to wash away th' cares o' th' world, eh?~
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran. I like you. I am not denying the attraction. But I am not ready for more.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4629
+  ++ ~[PC] (Walk up to him and take his hands, guiding them to begin removing your clothing.)~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4606
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4601
+  + ~RandomNum(5,5)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3575 /* KISS_CATCH_HANDS */
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4623
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4624
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4625
+END
+
+/* Getting To Know You - A Little More. */
+
+IF ~~ a4586
+  SAY ~[ARAN] (The baths are steaming hot. With no one else in attendance, you have the entire place to yourselves.)~
+  = ~[ARAN] Now, that be a right fine sight. A tall tub, a pile o' soft towels, an' enough steam to soften th' skin right fine.~
+  ++ ~[PC] I... I know that things are happening between us... but I do not know why I asked you here right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4617
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I hear the view might be good.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4621
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I hear the view might be good.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4622
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I hear the view might be good.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4623
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran. I know we have flirted, and kissed, but I am not ready for more right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4629
+  ++ ~[PC] You could.... you could help me undress. If you wanted to.~  DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4606
+  ++ ~[PC] (Slowly remove your clothing, 'accidentally' showing enough of your charms to pique his interest.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4605
+END
+
+IF ~~ a4587
+  SAY ~[ARAN] (The lantern light flickers in the steam from the water, casting a warm glow about the room. You are completely alone.)~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran. I don't know if I trust myself to stick to just kissing right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4629
+  + ~RandomNum(5,1)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. I always wanted to see what you look like when you aren't covered in grime and dust.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. I always wanted to see what you look like when you aren't covered in grime and dust.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. I always wanted to see what you look like when you aren't covered in grime and dust.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. I always wanted to see what you look like when you aren't covered in grime and dust.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. I always wanted to see what you look like when you aren't covered in grime and dust.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~RandomNum(5,5)~ + ~[PC] Oh, silly.. the bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And perhaps a liitle more.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] Oh, silly.. the bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And perhaps a liitle more.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] Oh, silly.. the bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And perhaps a liitle more.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] Oh, silly.. the bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And perhaps a liitle more.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] Oh, silly.. the bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And perhaps a liitle more.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3575 /* KISS_CATCH_HANDS */
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here. Actually, I do... but I don't trust either of us to keep from going too far.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4617
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4630
+END
+
+IF ~~ a4588
+  SAY ~[ARAN] (Your towels are rough but clean, piled high beside the waiting water. You have the entire place to yourselves.)~
+  = ~[ARAN] A good soak be just th' right thing to wash away th' cares o' th' world, eh?~
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran. Not right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4629
+  ++ ~[PC] (Walk up to him and take his hands, guiding them to begin removing your clothing.)~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4606
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4601
+  + ~RandomNum(5,5)~ + ~[PC] Aran... The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] Aran... The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] Aran... The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] Aran... The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] Aran... The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3575 /* KISS_CATCH_HANDS */
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. Take your clothes off, by all means. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4623
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. Take your clothes off, by all means. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4624
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. Take your clothes off, by all means. I will just sit here and keep lookout.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4625
+END
+
+/* Getting To Know You - Much More. */
+
+IF ~~ a4589
+  SAY ~[ARAN] (The baths are steaming hot. With no one else in attendance, you have the entire place to yourselves.)~
+  = ~[ARAN] Now, that be a right fine sight. A tall tub, a pile o' soft towels, an' enough steam to soften th' skin right fine.~
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout. You do have an interesting body, and it might be fun to explore with just my eyes for once.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4621
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout. You do have an interesting body, and it might be fun to explore with just my eyes for once.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4622
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout. You do have an interesting body, and it might be fun to explore with just my eyes for once.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4623
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4629
+  ++ ~[PC] You could.... you could help me undress. If you wanted to.~  DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4606
+  ++ ~[PC] (Slowly remove your clothing, 'accidentally' showing enough of your charms to pique his interest.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4605
+END
+
+IF ~~ a4590
+  SAY ~[ARAN] (The lantern light flickers in the steam from the water, casting a warm glow about the room. You are completely alone.)~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4629
+  + ~RandomNum(5,1)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. Sometimes it is fun just to watch you move, you know.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. Sometimes it is fun just to watch you move, you know.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. Sometimes it is fun just to watch you move, you know.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. Sometimes it is fun just to watch you move, you know.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] Go ahead, Aran. I think I will just sit here and keep lookout. Sometimes it is fun just to watch you move, you know.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~RandomNum(5,5)~ + ~[PC] What bath? Oh, that was a cunning ruse. A woman has needs. And right now, I need kissing. And perhaps to feel very, very needed.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] What bath? Oh, that was a cunning ruse. A woman has needs. And right now, I need kissing. And perhaps to feel very, very needed.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] What bath? Oh, that was a cunning ruse. A woman has needs. And right now, I need kissing. And perhaps to feel very, very needed.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] What bath? Oh, that was a cunning ruse. A woman has needs. And right now, I need kissing. And perhaps to feel very, very needed.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] What bath? Oh, that was a cunning ruse. A woman has needs. And right now, I need kissing. And perhaps to feel very, very needed.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3575 /* KISS_CATCH_HANDS */
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4630
+END
+
+IF ~~ a4591
+  SAY ~[ARAN] (Your towels are rough but clean, piled high beside the waiting water. You have the entire place to yourselves.)~
+  = ~[ARAN] A good soak be just th' right thing to wash away th' cares o' th' world, eh?~
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4629
+  ++ ~[PC] (Walk up to him and take his hands, guiding them to begin removing your clothing.)~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4606
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4601
+  + ~RandomNum(5,5)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3575 /* KISS_CATCH_HANDS */
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I refuse to answer what I am looking at, though.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4623
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I refuse to answer what I am looking at, though.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4624
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout. I refuse to answer what I am looking at, though.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4625
+END
+
+/* I Know You. Do You Want To "Know Me" biblically? If I am in the mood, that is... */
+
+IF ~~ a4592
+  SAY ~[ARAN] (The baths are steaming hot. With no one else in attendance, you have the entire place to yourselves.)~
+  = ~[ARAN] Now, that be a right fine sight. A tall tub, a pile o' soft towels, an' enough steam to soften th' skin right fine.~
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here. Hey, be careful with that! I might want to play with it later!~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4621
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here. Hey, be careful with that! I might want to play with it later!~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4622
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here. Hey, be careful with that! I might want to play with it later!~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4623
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4630
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But I am not really in a romantic mood, Aran.~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4629
+  ++ ~[PC] You could.... you could help me undress. If you wanted to. You know how, and th e way your fingers feel on me...~  DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4606
+  ++ ~[PC] (Slowly remove your clothing, 'accidentally' showing enough of your charms to pique his interest.)~ DO ~SetGlobal("c-aranbathing","LOCALS",1)~ + a4605
+END
+
+IF ~~ a4593
+  SAY ~[ARAN] (The lantern light flickers in the steam from the water, casting a warm glow about the room. You are completely alone.)~
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran... I am not in the mood right now.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4629
+  + ~RandomNum(5,1)~ + ~[PC] Go ahead, Aran. I think I will just sit here. There is so much to see...~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] Go ahead, Aran. I think I will just sit here. There is so much to see...~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] Go ahead, Aran. I think I will just sit here. There is so much to see...~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] Go ahead, Aran. I think I will just sit here. There is so much to see...~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] Go ahead, Aran. I think I will just sit here. There is so much to see...~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~RandomNum(5,5)~ + ~[PC] Forget the bath. A woman has needs, and I want to feel very, very loved.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] Forget the bath. A woman has needs, and I want to feel very, very loved.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] Forget the bath. A woman has needs, and I want to feel very, very loved.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] Forget the bath. A woman has needs, and I want to feel very, very loved.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] Forget the bath. A woman has needs, and I want to feel very, very loved.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a3575 /* KISS_CATCH_HANDS */
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4630
+END
+
+IF ~~ a4594
+  SAY ~[ARAN] (Your towels are rough but clean, piled high beside the waiting water. You have the entire place to yourselves.)~
+  = ~[ARAN] A good soak be just th' right thing to wash away th' cares o' th' world, eh?~
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran. Not tonight.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4629
+  ++ ~[PC] (Walk up to him and take his hands, guiding them to begin removing your clothing.)~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4606
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4601
+  + ~RandomNum(5,5)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And touching. And feeling.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4641 
+  + ~RandomNum(5,4)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And touching. And feeling.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3569 /* KISS_TIP_CHIN */
+  + ~RandomNum(5,3)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And touching. And feeling.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3570 /* KISS_PRESS_SALTY */
+  + ~RandomNum(5,2)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And touching. And feeling.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3573 /* KISS_SILENCE_STRAIGHTEN */
+  + ~RandomNum(5,1)~ + ~[PC] The bath was just a way to get you alone. A woman has needs. And right now, I need kissing. And touching. And feeling.~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a3575 /* KISS_CATCH_HANDS */
+  + ~RandomNum(3,1)~ + ~[PC] Go ahead. I will just sit here and keep lookout. Turnabout is fair play. I think you have seen, touched or kissed almost all of my body. Well, almost all...~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4623
+  + ~RandomNum(3,2)~ + ~[PC] Go ahead. I will just sit here and keep lookout. Turnabout is fair play. I think you have seen, touched or kissed almost all of my body. Well, almost all...~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4624
+  + ~RandomNum(3,3)~ + ~[PC] Go ahead. I will just sit here and keep lookout. Turnabout is fair play. I think you have seen, touched or kissed almost all of my body. Well, almost all...~ DO ~SetGlobal("c-aranbathing","LOCALS",0)~ + a4625
+END
+
+/* Reactions, Delays... From Initiating States */
+
+IF ~~ a4603
+  SAY ~[ARAN] It makes a fair bit o' difference to me, it does. But if there be any question o' permissions, I will take th' better part o' valor, an' just watch you.~
+  ++ ~[PC] Given that your gaze seems to have trouble rising above my neck, I take it the view pleases you?~ + a4604
+  ++ ~[PC] The way you are looking at me is making me uncomfortable. Perhaps you should go.~ + a4601
+  ++ ~[PC] (Blush and turn away from him, hiding your charms.)~ + a4601
+  ++ ~[PC] (Blush and lower your eyelashes... but step into the tub, making sure that he can view your body to its best advantage.)~ + a4630
+  ++ ~[PC] Oh, no you don't. I have taken most of my clothes off already, and this water feels great. If I am to be wet and naked in front of you, then turnablout is fair play. Off with the clothes, boyo.~ + a4630
+END
+
+IF ~~ a4604
+  SAY ~[ARAN] I... err... W-what did you be sayin'?~
+  ++ ~[PC] I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601
+  ++ ~[PC] I want to take a bath with you. After all, I need someone to scrub my back. But nothing else, Aran.~ + a4629
+  ++ ~[PC] You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+  ++ ~[PC] I said, 'don't you want to get more comfortable, and join me in this nice warm water?''~ + a4630
+  + ~RandomNum(5,1)~ + ~[PC] (Cover your shoulders with a towel, and find a place to sit down.) I said I think I will just sit here and keep lookout.~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] (Cover your shoulders with a towel, and find a place to sit down.) I said I think I will just sit here and keep lookout.~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] (Cover your shoulders with a towel, and find a place to sit down.) I said I think I will just sit here and keep lookout.~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] (Cover your shoulders with a towel, and find a place to sit down.) I said I think I will just sit here and keep lookout.~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] (Cover your shoulders with a towel, and find a place to sit down.) I said I think I will just sit here and keep lookout.~ + a4625
+END
+
+IF ~~ a4605
+  SAY ~[ARAN] (Aran's face burns with a fiery blush, and he coughs and quickly turns away.)~
+  ++ ~[PC] (Slip into the water.)~ + a4630
+  + ~RandomNum(5,1)~ + ~[PC] (Cover yourself with a towel, and find a place to sit down.) Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] (Cover yourself with a towel, and find a place to sit down.) Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] (Cover yourself with a towel, and find a place to sit down.) Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] (Cover yourself with a towel, and find a place to sit down.) Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] (Cover yourself with a towel, and find a place to sit down.) Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4625
+  ++ ~[PC] (Giggle and turn to face him, submerging yourself except fr your face, peering coyly out of the water at him.)~ + a4630
+  ++ ~[PC] I think your eyes are about to fall out of your head. Come on in, the water is fine.~ + a4630
+END
+
+IF ~~ a4606
+  SAY ~[ARAN] (His roughened hands are gentle as they tug and pull, freeing your body from the protection of your clothing.)~
+  ++ ~[PC] (Smile at him and gently move away, entering the water.)~ + a4630 
+  ++ ~[PC] (Slip into the water.)~ + a4630
+  ++ ~[PC] Just a bath, Aran. You can scrub my back.~ + a4630
+  ++ ~[PC] Out. Go away. Wait... Stay. No. Curse this whole situation...~ + a4617
+  ++ ~[PC] I... I just want to be kissed. Please?~ + a4607
+  ++ ~[PC] HAH! I knew you were a born servant. You next training will be to scrub my back. Hurry up, I'm already half in the water...~ + a4630
+END
+
+IF ~~ a4607
+  SAY ~[ARAN] Now that be an idea that I can sign on to right proper, I think.~
+  IF ~RandomNum(4,4)~ THEN GOTO a3575 /* KISS_CATCH_HANDS */
+  IF ~RandomNum(4,3)~ THEN GOTO a3569 /* KISS_TIP_CHIN */
+  IF ~RandomNum(4,2)~ THEN GOTO a3570 /* KISS_PRESS_SALTY */
+  IF ~RandomNum(4,1)~ THEN GOTO a3573 /* KISS_SILENCE_STRAIGHTEN */
+END
+
+IF ~~ a4608
+  SAY ~[ARAN] Hey, sorry, I done misunderstood, is all. I can control myself right fine. I have had some experience in that department.~
+  ++ ~[PC] Experience?~ + a4609
+  ++ ~[PC] Good. And all that talk has let me get into this bath relatively modestly. Get in here and get some of the grime off of yourself.~ + a4631
+  ++ ~[PC] It may take some control on my part, too, but it is for the best. We do not want to start anything we can't finish. Or worse, we don't want to finish things already started.~ + a4611
+  ++ ~[PC] Look, bathing in a public bathhouse, no matter how deserted, just does not always mix well with romance. It just does not appeal to me. Find some other way of courting me, Aran.~ + a4601
+  ++ ~[PC] I see the way you look at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601
+END
+
+IF ~~ a4609
+  SAY ~[ARAN] Look, this wouldn't be th' first time a lad found his blood runnin' hot, an' th' lass in question were less than interested.~
+  ++ ~[PC] And you have found ways of controlling yourself? I find that hard to believe. You can't even control your swearing.~ + a4610
+  ++ ~[PC] I think I will take a bath without all the talking about your past confusions and failures, thank you.~ + a4616
+  ++ ~[PC] Oh, I don't know... sometimes I want to be pushed, just a little.~ + a4611
+  ++ ~[PC] So I... I get your blood running hot?~ + a4614
+  ++ ~[PC] Who said I was less than interested?~ + a4612  
+END
+  
+IF ~~ a4610
+  SAY ~[ARAN] That be naught in th' way o' fair. Swearin' don't rightly hurt nobody. Touchin' when it is not wanted, that hurts everybody, most o' all th' relationship between th' two in question, eh?~
+  ++ ~[PC] Oh, I don't know... sometimes I want to be pushed, just a little.~ + a4611
+  ++ ~[PC] So I... I get your blood running hot?~ + a4614
+  + ~RandomNum(5,1)~ + ~[PC] I think... I think I should sit this one out. Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] I think... I think I should sit this one out. Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] I think... I think I should sit this one out. Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] I think... I think I should sit this one out. Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] I think... I think I should sit this one out. Go ahead, Aran. I think I will just sit here and keep lookout.~ + a4625
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] Who said I was fair? Sometimes a girl just wants to have fun. Or tease a sellsword until he goes crazy.~ + a4612
+END
+
+IF ~~ a4611
+  SAY ~[ARAN] Now, I don't rightly play that way. I mean, if we both be havin' fun, I am not one to press th' issue about others bein' involved, but if there be a question o' you feelin' uncomfortable, or if it be a situation where I be takin' unwanted liberties, then I will back right off.~
+  ++ ~[PC] What if they were wanted liberties?~ + a4612
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+  ++ ~[PC] (Slowly remove most of your clothing until your modesty is barely preserved by your smallclothes, and slip into the bathwater.)~ + a4634
+  ++ ~[PC] Look, bathing in a public bathhouse, no matter how deserted, just does not always mix well with romance. It just does not appeal to me. Find some other way of courting me, Aran.~ + a4601
+  ++ ~[PC] I see the way you look at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601
+END
+
+IF ~~ a4612
+  SAY ~[ARAN] Then I say get th' last o' those coverin's off, an' let's get in this water wi' me right now!~ 
+  ++ ~[PC] (Turn your back to Aran, coyly peeking back over your shoulder as you disrobe. Cover your chest with your arms as you lower yourself into the warm water.)~ + a4630
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+  ++ ~[PC] (Slowly remove most of your clothing until your modesty is barely preserved by your smallclothes, and slip into the bathwater.)~ + a4630
+  ++ ~[PC] Look, bathing in a public bathhouse, no matter how deserted, just does not always mix well with romance. It just does not appeal to me. Find some other way of courting me, Aran.~ + a4601
+  ++ ~[PC] I see the way you look at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601  
+END
+
+IF ~~ a4613
+  SAY ~[ARAN] Now, that be nice to hear. An' even if you still have your slip on, once you are in that water it leaves not much to th' imagination.~
+  ++ ~[PC] What do you want to do?~ + a4639
+  ++ ~[PC] What slip?~ + a4644
+  ++ ~[PC] What does your imagination see?~ + a4684
+  + ~GlobalGT("c-aransex","GLOBAL",1)~ + ~[PC] Your tunic and trousers dropping away like that leaves little for me to imagine, either, but then again, I have seen it before.~ + a4701
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Your tunic dropping away like that leaves little for me to imagine. And your trousers... I really excite you, don't I?~ + a4701
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I know I said I want you, but I should have some self-control. I have someone else I have a relationship with, and I should be faithful.~ + a4616
+  ++ ~[PC] No, I can't do this. This is all wrong. You need to leave~ + a4601
+END
+
+IF ~~ a4701
+  SAY ~[ARAN] You do have a gift o' understatement, eh?~
+  + ~RandomNum(5,1)~ + ~[PC] On second thought, you bathe. I will stand watch.~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] On second thought, you bathe. I will stand watch.~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] On second thought, you bathe. I will stand watch.~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] On second thought, you bathe. I will stand watch.~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] On second thought, you bathe. I will stand watch.~ + a4625
+  ++ ~[PC] What about me makes your blood run hot, Aran?~ + a4615
+  ++ ~[PC] Well, join me in the bath, then. I am already in here. Let's just see what happens.~ + a4640
+  ++ ~[PC] Aran... I... You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+END
+
+IF ~~ a4614
+  SAY ~[ARAN] Aye.~
+  ++ ~[PC] What about me makes your blood run hot, Aran?~ + a4615
+  ++ ~[PC] (Blush, and look down.)~ + a4626
+  ++ ~[PC] Well, join me in the bath, then. I am already in here. Let's just see what happens.~ + a4640
+  ++ ~[PC] Aran... I... You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+END
+
+IF ~~ a4615
+  SAY ~[ARAN] Dearest gods, what a blighted question! Right, then... it be everythin'. Th' way you move. Th' way th' side o' your mouth turns when you be concentratin'. The curve o' your... err...~
+  ++ ~[PC] That is nice, Aran. It is nice to be admired, physically. But let's stick to getting clean, and save any physical attraction for when I am feeling more like a person and less like a wring out dishrag.~ + a4616 
+  ++ ~[PC] (Blush, and look down.)~ + a4626
+  ++ ~[PC] Well, join me in the bath, then. I am already in here. I trust you. Let's just see what happens.~ + a4640
+  ++ ~[PC] Aran... I... You wait outside and make sure no one comes in. I need some time alone.~ + a4601
+END
+
+/* Confusion States and followup */ 
+
+IF ~~ a4616
+  SAY ~[ARAN]  Right. Not that I be thrilled by that news, but I understand. We slip into th' water, an' I watch the door, not you.~
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] No, you do not understand. You need to leave.~ + a4601
+  + ~GlobalGT("c-aransex","GLOBAL",0)~  + ~[PC] No, you do not understand. You need to leave.~ + a4602
+  ++ ~[PC] You are so easy to manipulate. Why don't you take a look at what I am doing, not what I am saying?~ + a4617
+  + ~RandomNum(5,1)~ + ~[PC] On second thought, you bathe. I will stand watch.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4621
+  + ~RandomNum(5,2)~ + ~[PC] On second thought, you bathe. I will stand watch.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4622
+  + ~RandomNum(5,3)~ + ~[PC] On second thought, you bathe. I will stand watch.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4623
+  + ~RandomNum(5,4)~ + ~[PC] On second thought, you bathe. I will stand watch.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4624
+  + ~RandomNum(5,5)~ + ~[PC] On second thought, you bathe. I will stand watch.~ DO ~SetGlobal("c-aranbathing","LOCALS",2)~ + a4625
+  + ~GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] Can't take a joke? I very much enjoyed our last time together, so I won't rule out anything just yet. We should just see what happens.~ + a4640
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I think we are going to leave things exactly as they are. Getting physically involved would cause too many complications. Perhaps this is a bad idea.~ + a4617
+  ++ ~[PC] I... I think I have lost my nerve. I do not know why I asked you here.~ + a4617
+  ++ ~[PC] (Strip quickly and efficently, lowering yourself into the warm water of the bath.)~ + a4630
+END
+
+IF ~~ a4617
+  SAY ~[ARAN] Now you done got me confused. Do you want me to stay, or do you want me to go?~
+  ++ ~[PC] Well, my arm pointing towards the door, the look on my face, and my trying to keep myself completely covered... any clues yet? Or are all men just completely dense?~ + a4601
+  ++ ~[PC] I say what I want, and I mean what I say, except when I mean something different. Gods, look at your face... you are so fun to tease! Oh, I will have mercy on you. Go on, guard the door.~  + a4601
+  ++ ~[PC] I see the way you look at me, Aran, and it flatters me. I guess I just need to feel wanted. But I am spoken for, and I intend to be faithful.~ + a4601
+  ++ ~[PC] Out. Now.~ + a4601
+  ++ ~[PC] Both. I want you, but I don't want you.~ + a4618
+  ++ ~[PC] (Slowly remove most of your clothing until your modesty is barely preserved by your smallclothes, and slip into the bathwater.)~ + a4634
+  ++ ~[PC] Gods! This water is way too hot. I think I have scalded my legs already, and I am not sure I should get all the way in. How can you stand it?~ + a4649
+END
+
+IF ~~ a4618
+  SAY ~[ARAN] That don't help on th' whole clarifyin' thing, eh?~
+  ++ ~[PC] Perhaps you can gain a clue about what I want from the way am looking at you. Or perhaps the way that one little nipple is peeking at you from between my fingers, just daring you to kiss it...~ + a4700
+  ++ ~[PC] My hands brushing across those lean hard stomach muscles might give you a hint. Or the fact that they seem to drift south to find something much harder...~ + a4700
+  ++ ~[PC] It is hard to miss a woman holding her nude body pressed against yours, even though you seem to have troubles with subtlety like that.~ + a4619
+  ++ ~[PC] I think you should go away. Now.~ + a4601
+END
+
+IF ~~ a4619
+  SAY ~[ARAN] True enough. I have some troubles wi' subtlety. For instance, I know th' feel o' you pressed up against me like this be a gift o' th' gods. But there be this bath, an' I still don't rightly know if th' bath be a ruse or jut for afterwards, eh?~
+  ++ ~[PC] (Smile at him and gently move away, entering the water.)~ + a4630  
+  ++ ~[PC] Just a bath, Aran. Come on, I am halfway into the water already. You can scrub my back. That was fun. You have such interesting reactions to my body.~ + a4630
+  ++ ~[PC] Wait... I have changed my mind. I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Shall I be forward? I want you to forget all about the bath, and just kiss me.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Shall I be forward? I want you to forget all about the bath, and just kiss me. I think my flirting with you has given you some sort of permission, don't you?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. There is a nice pile of towels over there. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. There is a nice pile of towels over there. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. There is a nice pile of towels over there. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] (Fling your arms arond his neck and kiss him vigorously.)~ + a4651
+END
+
+IF ~~ a4620 
+  SAY ~[ARAN] Sune's Kisses. I done read th' situation wrong again. Though to be fair, th' whole friend thing gets muddy when there be bathin' in th picture. Probably my dirty mind, which won't rightly clean wi' water.~
+  = ~[ARAN] I'll just finish up here an' then we will switch. I'm right sorry, I am.~ 
+  IF ~~ THEN GOTO a4688
+END
+
+/* PC wants Aran to get in water */
+
+IF ~~ a4621
+  SAY ~[ARAN] Aye then, suit yourself. I have a right solid urge to soak for as long as I can.~
+  IF ~~ THEN GOTO a4627
+END
+
+IF ~~ a4622
+  SAY ~[ARAN] Do you be sure? Th' water looks right fine, it do. Mayhap do you some good.~
+  IF ~~ THEN GOTO a4627
+END
+
+IF ~~ a4623
+  SAY ~[ARAN] Oh, to be sure. There always needs to be a lookout, eh, on account o' that devious towel-monster what creeps up on an unsuspectin' lad an' gets him. I'll be much safer wi' you on duty, eh?~
+  IF ~~ THEN GOTO a4627
+END
+
+IF ~~ a4624
+  SAY ~[ARAN] I'd think you were just lookin' for a show, but somehow I think you got better ways o' elicitin' that kind o' thing, an' finer men what to see. But suit yourself.~
+  IF ~~ THEN GOTO a4627
+END
+
+IF ~~ a4625
+  SAY ~[ARAN] Now that do take some o' th' fun out o' it for me, but I guess that be th' point, mayhap.~
+  IF ~~ THEN GOTO a4627
+END
+
+IF ~~ a4626
+  SAY ~[ARAN] An' th' way you blush, too. That sets me afire, it do. But you didn't ask for all this talk, now, did you. Shall we get that bath started?~
+  ++ ~[PC] I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4628
+  ++ ~[PC] Grow up, Aran. I bathe, you bathe, we all keep our hands to ourselves. No peeking!~ + a1817  // modestly discreetly
+  ++ ~[PC] I think... I think right now I will keep my smallclothes on, and concentrate on getting clean.~ + a1817  // modestly discreetly
+  ++ ~[PC] (Disrobe carefully, and lower yourself into the water.)~ + a4638
+  ++ ~[PC] (Wince as you step into the water, casually tossing aside your clothing.) Gods! This water is way too hot. I think I have scalded my legs already, and I am not sure I should get all the way in. How can you stand it?~ + a4649
+  ++ ~[PC] I see you are already in the water. I'll join you, but just for a bath, please.~ + a4631
+END
+
+/* Aran Gets In Water Alone */
+
+IF ~~ a4627
+  SAY ~[ARAN] (There is a tremendous splashing as he throws himself into the water, his clothing strewn about haphazardly beside the pile of towels nearby.)~
+  ++ ~[PC] I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4628
+  + ~RandomNum(3,1)~ + ~[PC] Good to see you happy and getting clean. You definitely needed the relaxation.~ + a4686
+  + ~RandomNum(3,2)~ + ~[PC] There is more water, but it would be easier if you just kept the contents of that bath from covering the entire floor, you know.~ + a4687
+  + ~RandomNum(3,3)~ + ~[PC] Well, that was quite an entrance.~ + a4688
+  + ~RandomNum(3,1)~ + ~[PC] (Watch him move in the water, idly picking at your nails and adjusting your hair.)~ + a4686
+  + ~RandomNum(3,2)~ + ~[PC] (Let your gaze wander about the room, occasionally glancing at his movements in the bath.)~ + a4687
+  + ~RandomNum(3,3)~ + ~[PC] (Study his form closely, watching him move in the water.)~ + a4688
+  ++ ~[PC] (Remove the rest of your clothing and move into the water beside him. Hand him soap and a cloth, gathering your hair off of your neck and turning your back to him.)~ + a4648
+  ++ ~[PC] Oh, fine. Here... I will take these things off and get in there too. It looks too inviting.~ + a4631
+  ++ ~[PC] (Slowly remove most of your clothing until your modesty is barely preserved by your smallclothes, and slip into the bathwater.)~ + a4634
+END
+
+IF ~~ a4628
+  SAY ~[ARAN] Aye, I do understand. It just seems to be my overactive imagination, on account o' I think I see hunger in your eyes when you be lookin' at me. A lad can dream, I guess. But IO am behavin' right proper, I am. See, this be me, just takin' a bath.~
+  IF ~RandomNum(3,1)~ THEN GOTO a4686
+  IF ~RandomNum(3,2)~ THEN GOTO a4687
+  IF ~RandomNum(3,3)~ THEN GOTO a4688
+END
+
+IF ~~ a4629
+  SAY ~[ARAN] Right then. First one in's a blighted kobold, eh?~
+  = ~[ARAN] (There is little finesse in the removal of clothing, and the splash resulting from his exuberant entrance threatens to swamp the floor.)~
+  ++ ~[PC] Grow up, Aran. I bathe, you bathe, we all keep our hands to ourselves. No peeking!~ + a1817  // modestly discreetly
+  ++ ~[PC] (Disrobe carefully, and lower yourself into the water.)~ + a4638
+  ++ ~[PC] (Slowly remove most of your clothing until your modesty is barely preserved by your smallclothes, and slip into the bathwater.)~ + a4634
+  ++ ~[PC] Gods! This water is way too hot. I think I have scalded my legs already, and I am not sure I should get all the way in. How can you stand it?~ + a4649
+END
+
+/* PC is in the water without Aran */
+  
+/* Aran Joins PC In Water */
+
+IF ~~ a4630
+  SAY ~[ARAN] (There is a tremendous splashing as he joins you, his clothing strewn about haphazardly beside the pile of towels nearby.)~
+  ++ ~[PC] I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~ + a4601
+  ++ ~[PC] (Hand him soap and a cloth, gathering your hair off of your neck and turning your back to him.)~ + a4648
+  ++ ~[PC] Here. You have a huge welt on your back. Let me clean that up a little.~ + a4632
+  ++ ~[PC] (Gently begin cleaning his face, your fingers turning his jaw from side to side.)~ + a4633
+END
+
+/* PC and Aran Have A Bath */
+IF ~~ a4631
+  SAY ~[ARAN] (The water streams from the washcloth as you share the space, though you notice Aran's attention tends to stray your way from time to time.)~
+  ++ ~[PC] (Hand him soap and a cloth, gathering your hair off of your neck and turning your back to him.)~ + a4648
+  ++ ~[PC] (Surreptitiously watch him from the corner of your eye, admiring the play of water on his body.)~ + a4637
+  ++ ~[PC] (Cup your hands together and fill them with water, splashing and smoothing your hair back from your face.)~ + a4638
+END
+
+IF ~~ a4632
+  SAY ~[ARAN] (The warm water splashes gently as you work, his bronzed back moving slightly under your tender ministrations.)~
+  IF ~~ THEN GOTO a1857
+END
+
+IF ~~ a4633
+  SAY ~[ARAN] (The warm water splashes gently as you work, his bronzed back moving slightly under your tender ministrations.)~
+  IF ~~ THEN GOTO a1857
+END
+	
+IF ~~ a4634
+  SAY ~[ARAN] Aye, well... I will try not to look, on account o' th' water be doin' some wonderful things to those smallclothes, eh?~
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] I... I don't mind. If you look, I mean.~ + a4635
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Well... things do seem to be exposed, don't they?~ + a4635
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Hey, I want to be admired for my mind, not my body. Well, at least both my mind and body.~ + a4635
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] You just want all of this wet cloth off so you can explore more of my body.~ + a4636
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] So you like the way i look? Should I do this more often?~ + a4636
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Blush and look down, hands moving to cover what the water has revealed.)~ + a4635
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Blush and look down, pulling your shift out a little, making little attempt to hide yourself.)~ + a4635
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Smile at him, arching your back and stretching, wwriggling a little to resettle the wet cloth.)~ + a4636
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Smile at him, and make a show of removing the smallclothes, slowly and deliberately exposing yourself to his admiring gaze.)~ + a4636 
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Smile sweetly at him, and toss the smallclothes at his head.)~ + a4636
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Sit on the edge, holding your hands out to him. Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Sit on the edge, holding your hands out to him. Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Sit on the edge, holding your hands out to him. Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Sit on the edge, holding your hands out to him. Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Sit on the edge, holding your hands out to him. Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+END
+
+/* smallclothes passthroughs */
+
+IF ~~ a4635
+  SAY ~[ARAN] You do know you be havin' a strong effect on me, right? I am havin' troubles thinkin' o' bathin'.~
+  ++ ~[PC] Why don't you get into the water with me and we can get washed up? Here, I can help with those. And... oh. Now I am really blushing.~ + a4637
+  ++ ~[PC] You splashed lots of water over the side when you got in, you know. I think I want to... HEY. Careful of where those hands are!~ + a4638
+  ++ ~[PC] (Bite your lower lip, and stand up fully in the water, pulling you smallclothes up over your head.)~ + a4637
+  ++ ~[PC] Aran... shhh. I just want a bath. This is too much for me, too fast.~ + a1817
+  ++ ~[PC] Control yourself, and think only of bathing.~ + a1817
+END
+
+IF ~~ a4636
+  SAY ~[ARAN] I think you were placed on Toril to drive me mad wi' lust.~
+  IF ~RandomNum(3,1)~ GOTO a4637
+  IF ~RandomNum(3,2)~ GOTO a4638
+  IF ~RandomNum(3,3)~ GOTO a4639
+END
+
+/* Aran Makes A Pass */
+
+IF ~~ a4637 /* FROM ENTRY */
+  SAY ~[ARAN] You look right beautiful, all that water cascadin' everywhere. Mayhap... look, can I be a mite forward, an' kiss you?~
+  ++ ~[PC] I wish you would.~ + a4651
+  ++ ~[PC] (Nod silently, looking down and blushing.)~ + a4652
+  ++ ~[PC] Out. Get out and watch the door. I wanted a bath, not flirtation.~ + a4601
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Sit on the edge, holding your hands out to him. Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Sit on the edge, holding your hands out to him. Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Sit on the edge, holding your hands out to him. Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Sit on the edge, holding your hands out to him. Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Sit on the edge, holding your hands out to him. Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] (Fling your arms around his neck, dragging him to the side and pulling yourself free of the bath. Kiss him vigorously.)~ + a4651
+  ++ ~[PC] No. Hey, you seem to be getting the wrong idea. You bathe. I will stand watch.~ + a4620
+  ++ ~[PC] I bathe, you bathe, we all keep our hands to ourselves. No peeking!~ + a1817  // modestly discreetly
+END
+
+IF ~~ a4638
+  SAY ~[ARAN] Now, that be a sight for sober eyes. Th' way th' water clings to you, an' th' way you move... I think you need a mite bit o' kissin', you do.~
+  ++ ~[PC] I think I do.~ + a4651
+  ++ ~[PC] (Nod silently, looking down and blushing.)~ + a4652
+  ++ ~[PC] Out. Get out and watch the door. I wanted a bath, not flirtation.~ + a4601
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Don't you think it is about time that you back that talk up with some action?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Yes. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] We could start there. Then I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. There is a nice pile of towels over there. I think we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] On second thought, I am getting out. You bathe. I will stand watch.~ + a4688
+  ++ ~[PC] I bathe, you bathe, we all keep our hands to ourselves. No peeking!~ + a1817  // modestly discreetly
+END
+	
+IF ~~ a4639
+  SAY ~[ARAN] Well, my clothes aren't much in th' way anymore, seein' as I damned near ripped 'em apart gettin' in here wi' you. I think I want to kiss that curve o' your neck right there, like this... ~
+  ++ ~[PC] (Laugh) Hey, that tickles!~ + a4647
+  ++ ~[PC] That feels... good. What else to you want to kiss?~ + a4681
+  + ~GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] Come on, I want more than kisses. Relieve my tension. You know I like it rough and energetic.~ + a4683
+  + ~GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] Where is the romance? I think you know what I like. When did all this become so playful? Slow down, and let's enjoy this together.~ + a4681
+  ++ ~[PC] I want more than kisses. Slow down, though, and be gentle. Good things come to he who waits... pun intended.~ + a4681
+  ++ ~[PC] Come on, I want more than kisses. Push my boundaries. Make me yours.~ + a4676
+  ++ ~[PC] Hey, too fast! I asked you what you wanted, but I did not say act on it. What were you thinking?~ + a4602
+END
+	
+IF ~~ a4640
+  SAY ~[ARAN] Now, you know, you might be makin' a mistake, thinkin' we can just see what comes up. If you could see what I be thinkin', you might not feel so safe.~
+  ++ ~[PC] Then don't tell me. I have had a rough time, and all I want is a safe, friendly bath. I feel safer with you being on guard. I do not need to know about your various lusts - only that you can control them.~ + a4601
+  ++ ~[PC] What does your imagination see?~ + a4684
+  ++ ~[PC] I know what happens. In fact, I can see it happening right now. Don't you think you should sheath that dagger?~ + a4693
+END
+	
+/* Delayed Gratification/Teasing */
+
+IF ~~ a4641
+  SAY ~[ARAN] An' ol' Aran here be just a plaything for your amusement, eh? What if I told you I didn't want to kiss you right now?~
+  ++ ~[PC] You would be lying.~ + a4642
+  ++ ~[PC] (Turn away, hiding your face.)~ + a4643
+  + ~InParty(Player2) Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] Well, perhaps I should just ask <PLAYER2>...~ + a4642
+  + ~InParty(Player3) Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] Well, perhaps I should just ask <PLAYER3>...~ + a4642
+  + ~InParty(Player4) Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] Well, perhaps I should just ask <PLAYER4>...~ + a4642
+  + ~InParty(Player5) Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] Well, perhaps I should just ask <PLAYER5>...~ + a4642
+  + ~InParty(Player6) Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] Well, perhaps I should just ask <PLAYER6>...~ + a4642
+  ++ ~[PC] I would go take a bath. Probably a cold one.~ + a4642
+  ++ ~[PC] I would insist that you do. Orders are orders, after all. We can't have dissention in the ranks, now, can we?~ + a4642
+  ++ ~[PC] I would go take a bath. Probably a nice warm one, where I could lather my body with soap, and stretch myself out langorously, leaning like this, and then like this...~ + a4642
+  ++ ~[PC] I would tell you to get out.~ + a4642
+END
+	
+IF ~~ a4642
+  SAY ~[ARAN] Heh! Called my bluff right proper, you did. Only a blighted fool would turn down th' opportunity, an' I may be many things, but I be no fool. At least, most o' th' time.~
+  IF ~RandomNum(4,4)~ THEN GOTO a3575 /* KISS_CATCH_HANDS */
+  IF ~RandomNum(4,3)~ THEN GOTO a3569 /* KISS_TIP_CHIN */
+  IF ~RandomNum(4,2)~ THEN GOTO a3570 /* KISS_PRESS_SALTY */
+  IF ~RandomNum(4,1)~ THEN GOTO a3573 /* KISS_SILENCE_STRAIGHTEN */
+END
+
+IF ~~ a4643
+  SAY ~[ARAN] Now, no call to turn away. I am right sorry I tried to be funny. I would enjoy kissin' you, I would.~
+  IF ~RandomNum(4,4)~ THEN GOTO a3575 /* KISS_CATCH_HANDS */
+  IF ~RandomNum(4,3)~ THEN GOTO a3569 /* KISS_TIP_CHIN */
+  IF ~RandomNum(4,2)~ THEN GOTO a3570 /* KISS_PRESS_SALTY */
+  IF ~RandomNum(4,1)~ THEN GOTO a3573 /* KISS_SILENCE_STRAIGHTEN */
+END
+
+/* PC is not bathing */
+IF ~~ a4644
+  SAY ~[ARAN] Do you be sure you want that bath? On account o' that pile o' towels just seems right for some more interestin' reconnoiterin'. That be a big word for explorin'.~
+  ++ ~[PC] This set of towels? The one I am curled up in, waiting lke a cat, ready to pounce on her mouse?~ + a4700
+  ++ ~[PC] Oh, of course I want a bath. But perhaps I need to get a little dirty, first.~ + a4700
+  ++ ~[PC] I think these towels are warm, and well placed. And I think that you are advancing towards me with a very determined glint in your eye.~ + a4700
+  ++ ~[PC] Oooh, they are soft. And warm. They even tickle my front a little, and make my bottom wiggle. See?~ + a4700
+  ++ ~[PC] A bath. Look, I need to stop. I thought this would be fun, but it is making me very uncomfortable.~ + a4617
+  ++ ~[PC] Who taught you such a big word?~ + a4645
+END
+
+IF ~~ a4700 /* passthrough */
+  SAY ~[ARAN] Now that be enough o' that, m'lady liar. You done got me here on false pretence, I think. But mayhap we should get that bath, an' then retire to someplace more comfortable, eh?~
+  + ~RandomNum(3,1)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4686
+  + ~RandomNum(3,2)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4687
+  + ~RandomNum(3,3)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4688
+  ++ ~[PC] Who taught you to be so stubborn and single-minded?~ + a4645
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Sit on the edge, holding your hands out to him. Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Sit on the edge, holding your hands out to him. Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Sit on the edge, holding your hands out to him. Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Sit on the edge, holding your hands out to him. Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Sit on the edge, holding your hands out to him. Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+END
+
+IF ~~ a4645
+  SAY ~[ARAN] You did, I think. But that be niether here nor there. Now do you want to get a bath, or are you goin' to just sit there?~
+  + ~RandomNum(3,1)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4686
+  + ~RandomNum(3,2)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4687
+  + ~RandomNum(3,3)~ + ~[PC] I think I will just sit here. You go ahead.~ + a4688
+  /* advance talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. Don't you think it is about time that you kiss me?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we need more lip practice. You start.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I want to feel your body under my fingertips again. I know you do, too, judging by the way your hand seems to be creeping up my thigh.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I think we both need to get a little pleasure... or  lot of pleasure...~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] Forget the bath. Come with me... sit on the edge, here. I wish we could find a way to be completely together right this very minute.~ + a3446 /* ARAN_LEAD_1_ACTION */
+  /* advance no talking */
+  + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] (Sit on the edge, holding your hands out to him. Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",1)~ + ~[PC] (Sit on the edge, holding your hands out to him. Smile at him, bringing your nose to touch his, eye to eye, lips almost touching.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",2)~ + ~[PC] (Sit on the edge, holding your hands out to him. Press your lips towards his as a distraction, while your fingers trace small circles along his body until you find a way to feel his warm bare skin under your fingertips.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] (Sit on the edge, holding your hands out to him. Proffer your lips to him, your hands moving where they can find his bare skin, pulling him into an intimate embrace.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] (Sit on the edge, holding your hands out to him. Bite your lip and look down the entire length of his body, blushing... and then look directly into his eyes, promising all.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] ~ + a4647
+  ++ ~[PC] ~ + a4647
+  ++ ~[PC] Oh, fine. I am getting in right now. But I bathe, you bathe, and we all keep our hands to ourselves. No peeking!~ + a1817  // modestly discreetly
+END
+
+IF ~~ a4646
+  SAY ~[ARAN] Oh, not that, on account o' I like th' way a true partner looks, feels an' tastes when they be havin' some joyfulness.~
+  IF ~~ THEN GOTO a4693
+END
+	
+/* Bathing Together */
+
+IF ~~ a4647
+  SAY ~[ARAN] Right, then. To work. Now, mind th' lather. It do tend to fly about when I be scrubbin' vigorous-like.~
+  ++ ~[PC] Whoa! Too rough! You will scrub right through my skin!~ + a4650
+  ++ ~[PC] Oh, scratch there... no, higher.... HIGHER. Almost got it...~ + a4650
+  ++ ~[PC] That feels very good. Too much adventuring, not enough creature comforts.~ + a4657
+  ++ ~[PC] It is nice to know you can just be friendly, without always pushing for more.~ + a4656
+  ++ ~[PC] (Sigh gently as the lather begins to build.)~ + a1857
+END
+
+IF ~~ a4648
+  SAY ~[ARAN] (Strong hands scrub carefully at your neck and shoulders, the warm cloth slapping into the water and sending rivulets streaming down your body.)~
+  ++ ~[PC] (Relax under his ministrations, gradually lowering yourself until you are resting against him.)~ + a4637
+  ++ ~[PC] (Sigh gently as the lather begins to build.)~ + a1857
+  ++ ~[PC] It is nice to know you can just be friendly, without always pushing for more.~ + a4656
+END
+
+IF ~~ a4649
+  SAY ~[ARAN] Th' key is to get in right quick, an' let th' stingin' subside a mite bit afterwards. Here...~
+  = ~[ARAN] (With a quick tug, you are dunked fully under the water.)~ 
+  IF ~~ THEN GOTO a4650
+END
+
+IF ~~ a4650
+  SAY ~[ARAN] Now, in Calimport, they done got people what study this. For a job, too. When they scrub, they blighted well peel th' skin o' you clean, an' make a lad feel right happy. I got no trainin', but if you tell me what works for you, I can give it a go, eh?~
+  ++ ~[PC] You take way too many liberties. I did not want to be manhandled and fussed over. I just wanted a bath.~ + a4661
+  ++ ~[PC] This water does feel good. You could work on my lower back now, if you wanted. Just be gentle.~ + a4657
+  ++ ~[PC] Heat, lather, and a vigorous rubdown. All I need is a massage, and everything would be right with the world.~ + a1816
+  ++ ~[PC] (Sigh gently as the lather begins to build.)~ + a1857
+END
+
+IF ~~ a4651
+  SAY ~[ARAN] Aye, then. I do like a woman what knows her needs an' wants.~
+  IF ~~ THEN GOTO a4652
+END
+
+IF ~~ a4652
+  SAY ~[ARAN] (Aran's kiss is warm and gentle on your lips.)~
+  IF ~~ THEN GOTO a4653
+END
+
+IF ~~ a4653
+  SAY ~[ARAN] Now, that were right nice. An' pay no attention to that hand o' mine what be takin' advantage o' th' situation...~
+  ++ ~[PC] (Gently guide his hand up and away from its explorations.)~ + a4654
+  ++ ~[PC] Be careful where you explore. Some places are not particularly designed for soap.~ + a4654
+  ++ ~[PC] (You let your hands wander across his smooth chest, soap bubbles trailing after your touches, exploring his body.)~ + a4655
+  ++ ~[PC] I'm not comfortable with that.~ + a4660
+  ++ ~[PC] Put that wandering hand to good use. Here, scrub my back.~ + a4647
+  ++ ~[PC] (Gently guide his hand across your body, gathering your pleasure with his fingertips.)~ + a4654
+  ++ ~[PC] I know we started something here, but I have changed my mind. Can you just hold me, and make me feel special?~ + a1860  // holding only 
+END
+
+IF ~~ a4654
+  SAY ~[ARAN] Th' feel o' this curve, right... here. Now, th' feel o' this, it be heaven itself.~
+  IF ~~ THEN GOTO a4662
+END
+
+IF ~~ a4655
+  SAY ~[ARAN] Hey, watch that.... it be a mite bit ticklish where you be tracin' those designs!~
+  IF ~~ THEN GOTO a4662
+END
+
+IF ~~ a4656
+  SAY ~[ARAN] Good thing you said that, on account o' I was about to try for a slip o' th' hand. But no worry on that account. Sometimes a right fine bath be as welcome as more amorous pursuits, an' just as relaxin'.~
+  IF ~~ THEN GOTO a4650
+END
+
+IF ~~ a4657
+  SAY ~[ARAN] Well, I learn somethin' new about you every day. Never did figure you to be a creature o' comforts. Too much time wanderin' around th' face of Faerun swattin' at enemies for you to have th' real beauty treatments.~
+  ++ ~[PC] Don't stop scrubbing. It feels very, very good to finally get clean.~ + a4689
+  ++ ~[PC] Are you saying that I need beauty treatments?~ + a4659
+  ++ ~[PC] If I could find a way to have the comforts I never had in Candlekeep around me all the time, I would. There is just this pesky little problem of enemies... it is enough to make a girl quite piqued. Vexed, even.~ + a4658
+END
+
+IF ~~ a4658
+  SAY ~[ARAN] Well, for a little bit o' time, I think I can take th' place o' a house servant, an' do a right fine job o' relaxin' you. No wild amorous things, just a good scrub an' some work on those lower calves o' yours.~
+  ++ ~[PC] You can do better than that. (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] I really was hoping for a more... adventurous ending?~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] I would enjoy that very much.~ + a4690
+  ++ ~[PC] (Smile at him, nod gently, and turn your back to him, piling your hair on the top of your head.)~ + a4690
+  ++ ~[PC] No, thank you. I can bathe myself. And I intend to, before this scalding hot water goes stone cold.~ + a4689
+END
+
+IF ~~ a4659
+  SAY ~[ARAN] Sune's Smile, I didn't... I mean, that... hells. I done put my foot right in my mouth again, eh?~
+  ++ ~[PC] You should apologise. (Tilt your head, pouting your lips slightly, and tip your face towards his.)~ + a3446 /* ARAN_LEAD_1_ACTION */
+  ++ ~[PC] No matter. I think I would like to be pampered, though. I would enjoy being bathed, I think.~ + a4690
+  ++ ~[PC] Not really, but I think I have had enough talk. I can bathe myself. And I intend to, before this scalding hot water goes stone cold.~ + a4689
+  ++ ~[PC] Yes. You have. (Turn your back to him, and begin washing.)~ + a4689
+  ++ ~[PC] Well, I think you have had enough excitement for now.~ + a4660
+END
+
+IF ~~ a4660
+  SAY ~[ARAN] I guess I just misunderstood what you be wantin', is all. I'll be outside, while you finish up. An' don't forget to scrub behind th' ears, eh?~
+  IF ~~ THEN GOTO a4689
+END
+
+IF ~~ a4661
+  SAY ~[ARAN] I guess I just misunderstood what you be wantin'. Here, I'll turn around, an' you scrub my back. An' don't forget to scrub behind th' ears, eh?~
+  IF ~~ THEN GOTO a4689
+END
+
+IF ~~ a4662
+  SAY ~[ARAN] One o' us or th' other will have to give in to our baser natures soon enough, you know.~
+  ++ ~[PC] What base nature? What if I just wrapped my fingers around the base of...this?~ + a4663
+  ++ ~[PC] (You offer no resistance as his hands beging exploring he more intimate parts of your body.)~ + a4664
+  ++ ~[PC] That is far enough, don't you think?~ + a4661
+  ++ ~[PC] I... I can't do this! I need to leave, right now!~ + a1861  // pc runs for it
+  ++ ~[PC] No, I think you are too base for my nature. Go away, little boy. I am finished playing with you.~ + a1864
+END
+
+IF ~~ a4663
+  SAY ~[ARAN] Now gettin' to th' root o' th' problem be right appreciated. Only be right careful, on account o' I hold that body part a bit dear to my heart. O'course, you're goin' to have to let me return th' favor.~
+  IF ~~ THEN GOTO a4665
+END
+
+IF ~~ a4664
+  SAY ~[ARAN] Now, that be a fine silky feelin'. ~
+  IF ~~ THEN GOTO a4666
+END
+
+IF ~~ a4665
+  SAY ~[ARAN] (His hands are warm on your skin.)~
+  IF ~~ THEN GOTO a4666
+END
+
+IF ~~ a4666
+  SAY ~[ARAN] Things seem to be movin' along right quick. Somehow this bath turned out to be right interestin'. Just how interestin' do you want it to become, eh?~
+  ++ ~[PC] I have things well enough in hand. I think that with some careful application of... oooh! He jumped!~ + a4667
+  ++ ~[PC] This... this is enough for me. Just this touching. You can keep doing that, you know.~ + a4668
+  ++ ~[PC] Control yourself. If I wanted more, I would have said so.~ + a4691
+  ++ ~[PC] (Kiss him and lie back in the water, opening yourself fully to his advances.)~ + a4671
+  ++ ~[PC] We can pleasure each other well enough by just continuing this, you know.~ + a4669
+  ++ ~[PC] I... I can't do this! I need to leave, right now!~ + a1861  // pc runs for it
+END
+
+IF ~~ a4667
+  SAY ~[ARAN] I think I have th' idea. Especially as your hands seems to be takin' over th' movements right quick.~
+  IF ~~ THEN GOTO a4670
+END
+
+IF ~~ a4668
+  SAY ~[ARAN] I think I have th' idea. Especially as your body seems to be matchin' my movements right quick.~
+  IF ~~ THEN GOTO a4670
+END
+
+IF ~~ a4669
+  SAY ~[ARAN] When you said bath, I... had naught in th' way o'... ~
+  IF ~~ THEN GOTO a4673
+END
+
+IF ~~ a4670
+  SAY ~[ARAN] I think I am not goin' to be able to hold on much longer. If you want to stop, best be sayin' so now. Or mahap we could take things to th' next level?~
+  ++ ~[PC] I have no intention of stopping you. I think you should just relax, and let yourself go. I want to experience your pleasure.~ + a4673
+  ++ ~[PC] By the gods, don't stop now.~ + a4673
+  ++ ~[PC] (You remain silent, encouraging him to continue his motions with a kiss.)~ + a4674
+  ++ ~[PC] (Kiss him and lie back in the water, guiding him home and opening yourself fully to his advances.)~ + a4671
+  ++ ~[PC] Stop! This is too much!~ + a4691
+END
+
+IF ~~ a4671
+  SAY ~[ARAN] (A moment of fumbling, and his fingers press against you. You feel the very tip of his manhood part your petals.... and then he slips in the soapy water and splashes water everywhere.)~
+  = ~[ARAN] Gods blighted... can't rightly get no grip wi' all th' soap about. Mayhap this be a bad idea.~
+  ++ ~[PC] Clumsy. Get out, and let me clean up. That spoilt the mood.~ + a4696
+  ++ ~[PC] I think I can find a better way... (Push gently on his chest until he is lying back in the water, and settle yourself onto his length.)~ + a4672
+  ++ ~[PC] Actually, I think we are moving too fast anyways. Here... just hold me. We can rest here together, and just relax.~ + a3707
+END
+
+IF ~~ a4672
+  SAY ~[ARAN] (His eyes narrow in concentration as he studies your face, his hands guiding your hips into gentle circular motions as your warmth envelopes his strength.)~
+  IF ~~ THEN GOTO a4674
+END
+
+IF ~~ a4673
+  SAY ~[ARAN] Sune's... ~
+  IF ~~ THEN GOTO a4674
+END
+
+IF ~~ a4674
+  SAY ~[ARAN] (There is a sudden tension that runs through him, his face alight with desire, and a look of wonder crosses his face.)~
+  ++ ~[PC] (Look deeply into his eyes, smile, and begin moving your pelvis very rapidly.)~ + a4675
+  ++ ~[PC] I think you are about to... oh. You are getting even thicker.~ + a4675
+  ++ ~[PC] I think we have gone a little too far. From the feel of things, you might be about to lose control. No more of this. Let's just share the bath.~ + a1817  // modestly discreetly
+  ++ ~[PC] (You shake your head at him, and move off of him quickly. You grasp his manhood in your palm, striving to bring him to completion.)~ + a3689
+  ++ ~[PC] (You rise quickly, climb out of the tub, and blow him a kiss as you begin to dry off.)~ + a4691
+END
+
+IF ~~ a4675
+  SAY ~[ARAN] (He tries to hold back, to match what he feels inside of you, but his pleasure comes quickly. If yours follows, it is a match made by the gods.)~
+  IF ~~ THEN GOTO a4692
+END
+
+IF ~~ a4676
+  SAY ~[ARAN] Well, it would be rude not to, eh? Hey, stop squirmin' an' carrryin' on. I am just tossin' you on that pile o' towels. Any last words, afore I have my way wi' you?~
+  ++ ~[PC] Beast. Cad. Evil man. Taking advantage of a maiden with her face buried in towels, on her knees, vulnerable and exposed before you, ready like a mare in heat...~ + a4694
+  ++ ~[PC] Only one request. Position me a bit to the left, so I can count the ceiling tiles while you get on with it.~ + a4677
+  ++ ~[PC] You have no imagination. No biting, no whips, no leather, no chains, no name-calling... When did you take up paladinhood?~ + a4685
+  ++ ~[PC] I want you. But be gentle, please. The way your muscles are flexing, that look in your eyes, your movements... everything. It frightens me a little.~ + a4679
+  ++ ~[PC] Aran... wait. I have had enough for right now. You should leave.~ + a4601
+  ++ ~[PC] (A sudden flash of rage flies through you at his forwardness.) Put me down now or I swear I will kill you!~ + a1835
+  ++ ~[PC] How dare you manhandle me in such a fashion! Put me down or you will rue the day you were born!~ + a1835
+END
+
+IF ~~ a4677
+  SAY ~[ARAN] Get on wi' it? Count ceilin' tiles? If I didn't think I see that giggle hidin' behind there, I'd be right pissed off, eh? What are you doin' to me, anyways?~
+  ++ ~[PC] Make me think of nothing but you, Aran. I don't want any boundaries between us.~ + a4685
+  ++ ~[PC] I was giggling at you. You are so easy to tease. So easy to manipulate. Here, I have you all hot and bothered, and I can get up and walk away. Now that is power.~ + a4678
+  ++ ~[PC] I was not joking. All this fuss about some simple biology, which means very little to me and seems to mean so much to you. Here, let me explain some of the basics to you...~ + a4685
+  ++ ~[PC] I'm sorry. Look, let's just have a bath. Here, scrub my back.~ + a4647
+  ++ ~[PC] And on that note, you had better get out. I don't mind leading you around by the nose, but right now I have no interest in leading you around by certain other appendages. Go watch the door.~ + a4602
+END
+
+IF ~~ a4678
+  SAY ~[ARAN]  Aye. An' I fell right into it. Right. Look, play mind games wi' someone else. This cat an' mouse game is too much for any man. Have fun on your own, <CHARNAME>. I'll pick up my dice, an' move on to another table.~
+  ++ ~[PC] Oh, come on. You know you want me. Just come back here, and lie with me a little.~ + a4695
+  ++ ~[PC] If you were worthy of bedding me, you would prove it by ignoring my words, and just taking what you want.~ + a4679
+  ++ ~[PC] Go on, then. Good riddance. I will find someone who is man enough to fulfill my desires.~ + a4699
+  ++ ~[PC] I'm sorry. Look, let's just have a bath. Here, scrub my back.~ + a4647
+END
+
+IF ~~ a4679
+  SAY ~[ARAN] Well, if that be th' way you want it, how be this...~
+  ++ ~[PC] GODS. Are you about to... hey!~ + a4680
+  ++ ~[PC] Hey, what are you... Beast! I don't deserve to be thrown face first on a pile of towe... oh. Oh. Gods... I think I...~ + a4680
+  ++ ~[PC] It will have to do, I guess. HEY! That is much, much better... Go on. I am all yours, every inch of me, ev... ev... oh.~ + a4680
+  ++ ~[PC] I'm sorry... this isn't really what I want. Look, let's just have a bath. Here, the water is nice enough, and we can share. Just scrub my back, ok?~ + a4647
+  ++ ~[PC] Aran. Stop. I said you were scaring me. Just wash my back, please. Or i will get out right now and leave.~ + a4647
+END
+
+IF ~~ a4680
+  SAY ~[ARAN] Now then, there be a little matter o' a push to be completely intimate. So do I go on, or shoud we just play about, like this... or this...~
+  ++ ~[PC] Too late. I seem to have started the action before you finished speaking... don't stop... don... d... d...~ +  a4698
+  ++ ~[PC] (Look deeply into his eyes and gently work him into your most intimate place, moving to build your pleasure.)~ + a4698
+  ++ ~[PC] Shut up and kiss me. Everywhere. Especially where you seem to keep looking.~ + a4681
+  ++ ~[PC] Good to see you desire me. I like having that kind of power over you. Now, stop all this silliness immediately and go watch the door.~ + a4695
+END
+
+IF ~~ a4681
+  SAY ~[ARAN] Well, judgin' by that little sound you just made, I chose th' right place to lick. I know they be a mite sensitive, but they taste like fine wine. Me, though, I think I might like to move along down here, an' down here...~
+  ++ ~[PC] Your lips... oh, now that is much, much more... can you even breathe?~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4682
+  ++ ~[PC] Did someone light a fire in here? My cheeks seem to be getting a bit warm. Among other... places.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4693
+  ++ ~[PC] Hey. Stop that. That tickles!~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4647
+  ++ ~[PC] You are a merciless tease. Take pity on me, and just have your way with my body, won't you?~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4693
+END
+
+IF ~~ a4682
+  SAY ~[ARAN] That be my business. Don't be interuptin' a man on a mission, eh? Unless my shave be causin' you distress.~
+  ++ ~[PC] Careful... a little like sandpaper between my thighs, but nothing compared to the pleasure when you do what you are doing...~ + a4698
+  ++ ~[PC] OUCH. Yes. Too rough. That is better. Slow down...~ + a4698
+  ++ ~[PC] It is a nice kind of pain. Stop talking, though, it is distracting me.~ + a4698
+  ++ ~[PC] Please stop. Come up here, where we can be together.~ + a4696
+  ++ ~[PC] Please stop. I have already gone too far.~ + a4696
+END
+
+IF ~~ a4683
+  SAY ~[ARAN] So short on th' foreplay? I thought that...~
+  ++ ~[PC] You talk to much. I want you deep inside me, right now. I need you, I want you, and I will have you.~ + a4693
+  ++ ~[PC] Thinking is overrated. Doing, on the other hand, suits me just fine.~ + a4693
+  ++ ~[PC] Oh, I thought... yes, slow down, please. I thought you wanted a quick lay, and you wouldn't be interested in making it more fun for me.~ + a4693
+  ++ ~[PC] Well, do you have any ideas?~ + a4684
+  ++ ~[PC] Look... this is nice, but let's have that bath.~ + a4690
+END
+
+IF ~~ a4684
+  SAY ~[ARAN] Well, in my mind, I see you, in just a bit o' white silk runnin' from here... to here. An' I see me runnin' my hands over your body, gentle an' nice, pausin' to remove that bit o' silk, an' followin' every curve o' your body with kisses.~
+  ++ ~[PC] You don't see yourself tying that bit of silk as a blindfold, to cover my eyes?~ + a4646
+  ++ ~[PC] You don't see yourself binding my hands with that bit of silk and having your way with me unopposed?~ + a4646
+  ++ ~[PC] You have quite an imagination.~ + a4693
+  ++ ~[PC] Is that all you see?~ + a4693
+  ++ ~[PC] I see many things in my mind, Aran. Many, many more things. Things I... well, I can't do them. Not here, not now.~ + a4693
+  ++ ~[PC] I see many things in my mind, Aran. Many, many more things. Things I just can't do, and remain faithful.~ + a4693
+END
+
+IF ~~ a4685
+  SAY ~[ARAN] This be far enough boundary-breakin' education for me. An' judging by your response, it might be just enough for you, too. Nothin' turns a man on like th' sounds o' pleasure. But this water be gettin' cold, an' we have time enough to play about in other venues, eh? What say we continue this another time, when there be less itchy bitter soap gettin' into places where it has no business bein'.~
+  ++ ~[PC] Kisses aren't boundary-breaking, are they? To leave me all excited, that seems downright evil.~ + a4694
+  ++ ~[PC] I... oh, actually, you are right. This is a little bit less comfortable than I thought it would be. You should never have allowed this to happen, you know.~ + a4694
+  ++ ~[PC] No pain, no gain. Well, in this case, uncomfortable rather than pain, but you get the idea. I didn't know you had such a mean streak in you, putting me in this position.~ + a4694
+  ++ ~[PC] Hey, who is in control here, anyways? I thought I called all the shots.~ + a4694
+  ++ ~[PC] Spoilsport. I wonder what you would look like in a tight black leather outfit, with a few properly positioned spikes... OUCH! Beast! You will pay for that!~ + a4694
+END
+
+/* from: female PC request for a bath */
+/* With thanks to berelinde! */
+IF ~~ a1808
+  SAY ~[ARAN] Aye, I do believe we can find what you want.~
+  IF ~~ THEN GOTO a2270
+END
+
+IF ~~ a1809
+  SAY ~[ARAN] Now where is the fun in that, I ask you. Well, suit yourself. (He climbs from the water, stretching to reach a towel, and settles himself at the door looking away from you.)~
+  = ~[ARAN] (The lantern light dances as you bathe, and Aran sits, carefully watching the door, wrapped in his towel.)~
+  IF ~~ THEN GOTO a1859
+END
+
+IF ~~ a1810
+  SAY ~[ARAN] (He stands in the water, reaching for your clothing. His callused fingers deftly pluck your clothes free, and he casts stray glances at his work, though he tries to hide it.)~
+  = ~[ARAN] Well, now, am I supposed to be watchin', or washin'? Though you are about the most beautiful sight I ever did see, I must admit.~
+  ++ ~[PC] (blush) Thank you. I think you have seen enough, though. Turn around, please, and I will do the same.~ + a1814
+  ++ ~[PC] Are you sure you have gotten every last thing undone, Aran? You may have to search a little closer. (Step into the tub and move into his embrace, your hands guiding his exactly where you want them.)~ + a1815
+  ++ ~[PC] Hey, eyes up here! I asked for some help, but you are taking in a little too much scenery! Just massage my back once I'm settled in the tub.~ + a1816
+  ++ ~[PC] This... this is a little too much. Turn your back, please. I'm going to get into the tub now... No peeking!... and then we'll just have a quick bath.~ + a1817
+  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I'm all for a little romp in the tub, but I already have something special with someone else, and if they find out, there will be complications.~ + a1818
+END
+
+IF ~~ a1811
+  SAY ~[ARAN] Here, I'll get your back, eh?~
+  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1822
+  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1830
+  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1830
+  ++ ~[PC] Aran... whatever we are doing, or not doing, or... Look. Fun is fun, but I already have something special with someone else, and if they find out...~ + a1818
+  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
+  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.)~ + a1820
+  ++ ~[PC] I would much rather you do my front...~ + a1821
+END
+
+IF ~~ a1812
+  SAY ~[ARAN] (Soap bubbles froth up between you. Suddenly, you feel something quite hard resisting your downward progress.) OUCH! Bloody hells, <CHARNAME>, easy... I don't bend that way, eh? Hey, I thought this were a nice friendly bath...~
+  ++ ~[PC] Why, certainly. A nice, cosy bath, all snuggly and warm... and hard... and I think you will find I am *very* friendly...~ + a1830
+  ++ ~[PC] (Push away quickly) Of course! What else were you expecting? Here, do my back, please. The soap, over there. Yes, that is the one.~ + a1858
+  ++ ~[PC] (Push away gently, and begin scrubbing at him with the washcloth.) Sorry! I do not know why I did that. Just a friendly bath, right?~ + a1830
+  ++ ~[PC] Well, if you are not interested, I guess I can find someone else to have a little fun with.~ + a1816
+  ++ ~[PC] (Smile seductively) Oh, poor baby... Shall I kiss it and make it better?~ + a4529
+  ++ ~[PC] I just don't know what came over me. I am so sorry - I... I... (grab the towels and your clothes, and make a run for the door.)~ EXIT
+  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
+END
+
+IF ~~ a4529
+  SAY ~[ARAN] Now I would not be opposed to that action. In fact, just th' thought seems to have distracted me right proper. Th' thing is, I am never quite sure when you be jokin' an' when you be serious.~
+  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. After all, we are just here, two grown people, getting washed up together.~ + a1822
+  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. (Begin running the washcloth over his body, working your way below the bathwater.)~ + a1830
+  ++ ~[PC] This... this is a little too much. Let's just have a quick bath, and get clean.~ + a1817
+  ++ ~[PC] This is just for fun, Aran. I already have something special with someone else, and if they find out, there will be complications.~ + a1831
+  ++ ~[PC] How is this for an answer? (Pull yourself close to him, and begin kissing your way down his neck and chest.)~ + a1832
+  ++ ~[PC] I thought I wanted this, but I really shouldn't... I can't do this. We should just have a quick bath.~ + a1817
+END
+
+IF ~~ a1813
+  SAY ~[ARAN] Now where be th' fun in that, I ask you. But I guess I am bein' a mite forward, at that.~
+  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. After all, we are just here, two grown people, getting washed up together.~ + a1822
+  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. (Begin running the washcloth over his body, working your way below the bathwater.)~ + a1830
+  ++ ~[PC] This... this is a little too much. Let's just have a quick bath, and get clean.~ + a1817
+  ++ ~[PC] This is just for fun, Aran. I already have something special with someone else, and if they find out, there will be complications.~ + a1831
+  ++ ~[PC] How is this for forward? (Pull yourself close to him, and begin kissing your way down his neck and chest.)~ + a1832
+  ++ ~[PC] I thought I wanted this, but I really shouldn't... I can't do this. We should just have a quick bath.~ + a1817
+END
+
+IF ~~ a1814
+  SAY ~[ARAN] No, no, thank you right kindly. Here, I'll get your back, eh?~
+  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1813
+  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1819
+  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1819
+  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~ + a1820
+  ++ ~[PC] I would much rather you do my front....~ + a1821
+  ++ ~[PC] This... this is important, Aran. Whatever we are doing, or not doing. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
+END
+
+IF ~~ a1815
+  SAY ~[ARAN] Let me see, now... this feels undone... an' this feels undone... an' this... gods, this feels more than a might undone...~
+  ++ ~[PC] Hey, careful... I am not a toy!~ + a1822
+  ++ ~[PC] This... this is a little too much. Turn your back, please. Let's just have a quick bath.~ + a1823
+  ++ ~[PC] I am afraid...  I am... coming a little... unDONE myself... OUCH! sharp fingernail!~ + a1824
+  ++ ~[PC] And I am undone. Slower, please, for the love of Sune... keep touching me like that.~ + a1825
+  ++ ~[PC] Stop... too far, too fast... STOP!~ + a1826
+  ++ ~[PC] Just friends, just friends... touching, but no more.~ + a1827
+END
+
+IF ~~ a1816
+  SAY ~[ARAN] Well, now, I can't refuse a direct order, now can I. I can do th' job. (The lantern light dances as his hands gently follow your contours, trailing soap bubbles into all sorts of interesting places. Though his interest is manifest, the slow and gentle rhythm of caresses soon moves from sensual to relaxing.)~
+  =  ~[ARAN]  (As his attentions move to your calves and heels, you lay back in the water, and eventually sleep claims you.)~
+  =  ~[ARAN]  Aye then, did my job too well, eh? Right, you just relax. I'll bundle you up right proper an' carry you up. Get some rest. There'll be other times.~
+  IF ~~ THEN DO ~RestParty()~ EXIT /* or rest cutscene */
+END
+
+IF ~~ a1817
+  SAY ~[ARAN] Now where be th' fun in that, I ask you. Well, suit yourself. (The lantern light dances as you both share the bath, modestly, discreetly, and chastely. Calm and comfort follow.)~
+  IF ~~ THEN GOTO a1859
+END
+
+IF ~~  a1818
+  SAY ~[ARAN] I done held by a right firm 'ask naught, tell naught' policy forever. But you be goin' through a good bit right now... how do you want this to play out, eh?~
+  ++ ~[PC] I just wanted some protection, and now I want some respect as a friend. I am a grown woman. I can wash myself. You wash yourself, and watch the door.~ + a1817
+  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to surrender to your advances.~ + a1830
+  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to surrender to your advances.~ + a1830
+  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~  + a1820
+  ++ ~[PC] I play, you stand very, very still. Unless, of course, you think that this is too much for us to handle, being friends with benefits. We are friends, aren't we?~ + a1822
+  ++ ~[PC] I would much rather you stop asking questions, and do my front....~ + a1816
+END
+
+IF ~~ a1819
+  SAY ~[ARAN] Here, I'll get your back, eh?~
+  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1822
+  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1830
+  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1830
+  ++ ~[PC] Aran... whatever we are doing, or not doing, or... Look. Fun is fun, but I already have something special with someone else, and if they find out...~ + a1818
+  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
+  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~ + a1820
+  ++ ~[PC] I would much rather you do my front...~ + a1821
+END
+
+IF ~~ a1820
+  SAY ~[ARAN] (His body heat radiates into your back as you press closer together, his hands kneading and stretching your back and shoulder muscles. His arousal is no secret.)~
+  ++ ~[PC] (You nestle back, feeling his strength and warmth, adjusting yourself so that no more intimate touches can happen - accidental or otherwise.)~ + a1825
+  ++ ~[PC] (You nestle back and wiggle a little, feeling his strength, guiding his hands around to cup you gently. Draping your head on one of his shoulders, you let out a contented sigh.)~ + a1845
+  ++ ~[PC] (You turn slowly in his arms, and reward him with both a full view of your charms and a passionate kiss.)~ + a1821
+  ++ ~[PC] Now that feels wonderful. Here, wash my back, and then you can continue that massage.~ + a1856
+  ++ ~[PC] Hey. Control yourself. Stop poking me.~ + a1835
+END
+
+IF ~~ a1821
+  SAY ~[ARAN] (His hands follow your contours, mapping you in detail. His lips begin to follow, with rising intensity and heat.)~
+  ++ ~[PC] (Kiss his lips softly, shyly coaxing him to greater boldness.)~ + a1845
+  ++ ~[PC] (Rest your head on his chest, feeling his heart beat.) This is all I want. Just this. For now.~ + a1849
+  ++ ~[PC] (Gently settle yourself onto him, knees tight to his waist, chin on the top of his head as he devours you.)~ + a1846
+  ++ ~[PC] I think you may have to help me a little. I want you to make love to me.~ + a1847
+  ++ ~[PC] Show some spirit. You say you want me? Prove it.~ + a1850
+END
+
+IF ~~ a1822
+  SAY ~[ARAN] Well, now, that be a matter o' interpretation, eh? (His arms reach out to surround you.)~
+  ++ ~[PC] Cad. For that, you will have to be punished. (Grab his neck and force his head under the water.)~ + a1841
+  ++ ~[PC] (Shudder and pull yourself away from him, closing your eyes and resting back against the rough texture of the bath.)~ + a1840
+  ++ ~[PC] (Laugh and pull yourself away from him, granting him the freedom to explore your body.)~ + a1825
+  ++ ~[PC] (Return his attentions, reaching out to hold him under the water.)~ + a1830
+  ++ ~[PC] Are you implying that I am not a grown woman? Now, how do I convince you of the error of your ways... would I be a grown woman if I did this?~ + a1832
+  ++ ~[PC] So you think I am a toy? An object to be possessed and controlled?~ + a1842
+END
+
+IF ~~ a1823
+  SAY ~[ARAN] Your wish be my command.~
+  IF ~~ THEN GOTO a1857
+END
+
+IF ~~ a1824
+  SAY ~[ARAN] Sorry. Sune's Blood, I didn't mean for to hurt you. Should I kiss it better? Or just touch you right here... and here...~
+  ++ ~[PC] Why yes, I think you should kiss me better. But I don't know if it is a good idea for you to be so carefree with me, sir. After all, you appear to have a very funny way of talking - no clue if you know how to use your tongue correctly!~ + a1828
+  ++ ~[PC] I have other ideas. But you need to slow down, Aran, and go softly. Good things come to those who can bring pleasure gently... (Lean forward and brush your lips against his ear, guiding his hands to your thighs.)~ + a1825
+  ++ ~[PC] No. You spoiled the mood. Go watch the door. Or just stay here and have a bath, if you like, but no more touching, ogling, or comments.~ + a1817
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and put this right... there...~ + a1829
+  ++ ~[PC] That's alright. We were getting a little carried away anyway. Friends, remember? This is farther than I ever intended to go. I think you should watch the door before something happens we both may regret.~ + a1809
+END
+
+IF ~~ a1825
+  SAY ~[ARAN] (Gentle, soft caresses fill your senses as his hands move under the water. Warm fingers work their way slowly down your body, exploring your legs, and then hesitantly moving slightly higher...)~
+  ++ ~[PC] Cad. You have very, very naughty fingers. For that, you will have to be punished. (Duck his head under the water.)~ +  a1841
+  ++ ~[PC] I want more, Aran. What are you waiting for, permission? The strong take what they want.~ + a1828
+  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
+  ++ ~[PC] My turn. I intend to explore every inch of your body. But Aran... just touching, nothing more.~ + a1827
+END
+
+IF ~~ a1826 /* second thoughts, panic */
+  SAY ~[ARAN] (Aran wrests himself away, flinging himself apart from you, breathing heavily.) What? Sune's Lips, what!~
+  ++ ~[PC] Nothing, just a momentary panic. I thought I heard someone at the door. (Move within his arms, pulling him over you and gripping him tightly with your thighs.) Now, where were we... oh! There you are!~ + a1837
+  ++ ~[PC] Out. I have had what I wanted. You are on fire for me, just as you should be. That was fun. Now go watch the door while I bathe. No peeking.~ + a1864
+  ++ ~[PC] I got what release I wanted, and see no reason to give you anything. Don't forget to wash behind your ears.~ + a1861
+  ++ ~[PC] I... I am not sure this is the right thing, but gods, I cannot stop now. I am yours, all yours, at least for now.~ + a1837
+  ++ ~[PC] No. I need no self doubt. I deserve this. I want this. I want you.~ + a1837
+  ++ ~[PC] No. My... I want you, but I can't do this. I should be in someone else's arms. (You struggle free, pick up your clothes, and leave.)~ + a1861
+  ++ ~[PC] Listen to me. I want to be with you, but you are not allowed to force yourself on me. Either abide by that ground rule or it's over between us. Can you do that?~ + a4530
+END
+
+IF ~~ a4530
+  SAY ~[ARAN] I don't want naught in th' way o' force between us. I... I thought I was followin' your lead right proper. Hells, <CHARNAME>, th' last thing I want to do be to force myself on you.~
+  = ~[ARAN] This be goin' all wrong. Somehow, I am not rightly readin' what you want. If it be you, or if it be me, there is naught in th' difference. I think I'd better leave.~ 
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a1827
+  SAY ~[ARAN] I can keep my word, <CHARNAME>... an' just play, not beddin' you. Though it might just kill me to do it.~
+  IF ~~ THEN GOTO a1862
+END
+
+IF ~~ a1828
+  SAY ~[ARAN] (He growls low in his throat, a rumbling animal sound, and he spins you about in the bath as if you are dancing. Grinning, he catches you round your waist and lifts you out of the water, rivulets of bathwater running down his arms.)~
+  ++ ~[PC] (You laugh and flip your wet hair back from your brow.) Put me down, I insist!~ + a1849
+  ++ ~[PC] (With your bodies held apart by his supporting arms, you cradle his face, bringing your lips to his.) Put me down. I think I know what I want. In fact, I insist.~ + a1849
+  ++ ~[PC] About time you showed some spirit. You say you want me? Prove it.~ + a1850
+  ++ ~[PC] (Giggling) Oh, are we done with our bath so soon?~ + a4531
+  ++ ~[PC] I sleep with the strongest of arm, mind, or spirit, even if it is just a pleasurable fling to relieve tension. Are you strong? Do you have what it takes?~ + a1850
+  ++ ~[PC] (You scream in mock terror, clasping his head close to your chest, and begin kissing the top of his head.)~ + a1846
+  ++ ~[PC] (A sudden flash of rage flies through you at his forwardness.) Put me down now or I swear I will kill you!~ + a1835
+  ++ ~[PC] How dare you manhandle me in such a fashion! Put me down or you will rue the day you were born!~ + a1835
+  ++ ~[PC] NO! Put me down...NOW!~ + a1835
+END
+
+IF ~~ a4531
+  SAY ~[ARAN] (He holds you apart from him for a moment, catching every sight possible of your charms.)~
+  = ~[ARAN] Now, that depends on what you be after, eh?~
+  ++ ~[PC] (You laugh and flip your wet hair back from your brow.) Put me down, I insist!~ + a1849
+  ++ ~[PC] (With your bodies held apart by his supporting arms, you cradle his face, bringing your lips to his.) Put me down. I think I know what I want. In fact, I insist.~ + a1849
+  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
+  ++ ~[PC] My turn. I intend to view every inch of your body. But Aran... just touching, nothing more.~ + a1827
+  ++ ~[PC] (Gently slide down his body until your arms are about his neck, his arms are encircling you, and your most intimate parts are just barely touching.)~ + a1830
+END
+
+IF ~~ a1829
+  SAY ~[ARAN] Gods, <CHARNAME>...~
+  ++ ~[PC] Less talk. Much, much more touching and kissing.~ + a1837
+  ++ ~[PC] I want more.~ + a1828
+  ++ ~[PC] I want more, Aran. What are you waiting for, permission? The strong take what they want.~ + a1828
+  ++ ~[PC] ... oh gods, Aran... no sex. Just this, all right?~ + a1827
+  ++ ~[PC] Aran... Aran. ARAN. We have to... we have to stop. Now.~ + a1826
+  ++ ~[PC] STOP!~ + a1826
+END
+
+IF ~~ a1830
+  SAY ~[ARAN] Now, just how friendly did you want to get, eh? (His hands grip hard around your waist, holding you tightly.)~
+  ++ ~[PC] Oh, just two friends having a great deal of fun, I think... (wrap your legs around him, holding him tightly so that neither of you can move.)~ + a1821
+  ++ ~[PC] Very. (Move forward, thrusting yourself onto him, heels digging hard into his buttocks.)~ + a1853
+  ++ ~[PC] All talk and no action makes for no fun at all. Too late, I am no longer in the mood. But you can rub my back.~ + a1851
+  ++ ~[PC] You know, there are lots of ways of relieving tension. Things can get very friendly, without doing everything.~ + a1827
+END
+
+IF ~~ a1831
+  SAY ~[ARAN] Mystra's Magic, th' way th' water trickles down your...~
+  ++ ~[PC] I am not taking anything more off, Aran. We can play about together, but I do not intend to go too far. Do you understand?~ + a1833
+  ++ ~[PC] (Pull the last of your undergarments off, turning slowly to entice him further.)~ + a1830
+  ++ ~[PC] So, now that you have me completely at your mercy, what do you intend to do with me?~ + a1834
+  ++ ~[PC] I don't know what to do next, Aran. But I think you can see what I want. Can you help me?~ + a1815
+  ++ ~[PC] Well, here I am, just a few thin scraps of cloth between you and what you want. What are you going to do about it?~ + a1834
+  ++ ~[PC] This... this is a little too much. I can't do this. We should just have a quick bath.~ + a1817
+END
+
+IF ~~ a1832
+  SAY ~[ARAN] Ah... er...~
+  ++ ~[PC] Shall I do... this? (You brush your lips down his body to the waterline. As if guessing your intention, he leans back against the side of the tub, lifting his body to meet you.)~ + a1854
+  ++ ~[PC] Shall I do... this? (Stroke his smoothly muscled body down to the waterline and below, working gently.)~ + a1853
+  ++ ~[PC] Feels nice, doesn't it? Now... hands right there, on each side of my waist, thumbs digging in. That is it. The lower back muscles are always the worst. (Glance over your shoulder at him, with a sultry smile.)~ + a1851
+  ++ ~[PC] Gods, what am I doing? I just don't know what came over me. I am so sorry - I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
+END
+
+IF ~~ a1833
+  SAY ~[ARAN] I understand th' contract. No bedding, no matter what, just touchin'. An' I always keep a policy o' "naught asked, naught told, naught to worry noone". But gods, <CHARNAME>... I want you so much right now I'd do anythin' to make love to you, right here an' now.~
+  ++ ~[PC] I think if we keep doing this, we might not be able to stop, and I am not ready for that. What you just said convinced me this will be too much temptation. You have to trust me and wait. Go on... watch the door.~ + a1809
+  ++ ~[PC] This is all I want. Just this closeness. For now. Just hold me.~ + a1860
+  ++ ~[PC] I am not sure, but it is a little late, seeing as I am already... you are already... oh, gods...~ + a1837
+  ++ ~[PC] I want you, and you want me. But there are other ways of pleasuring each other. Just touching, outside?~ + a1827
+  ++ ~[PC] I think I am... I... Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
+END
+
+IF ~~ a1834
+  SAY ~[ARAN] (His hands clasp behind the back of your neck, pulling you into a fierce kiss. They pull down across your shoulders, gripping the cloth of your undergarments tightly...~
+  = ~[ARAN] (...and his long, lean muscles harden under your touch. With a low growl, he tears your underclothing away, pressing his bare chest to yours.)~
+  ++ ~[PC] HEY! Those clothes cost me a good deal of coin! What do you think you are doing?~ + a1835
+  ++ ~[PC] Stop... too far, too fast... STOP!~ + a1826
+  ++ ~[PC] (Grabbing his manhood, you twist.) Don't you ever do anything like that again!~ + a1835
+  ++ ~[PC] (Push him away in disgust.) You have a lot of nerve! Stay away from me until you can treat me with respect!~ + a1835
+  ++ ~[PC] (Claw and tear at the remaining scraps of cloth, drawing your legs up around him and enfolding him in your arms.)~ + a1836
+  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
+  ++ ~[PC] (Kiss his lips, his neck, his chest, whispering his name.)~ + a1829
+END
+
+IF ~~ a1835
+  SAY ~[ARAN] Bane's Bones, what did I do?~
+  ++ ~[PC] (Dart him an angry glare and leave.)~ + a1861
+  ++ ~[PC] I can't believe that you don't know what you did. You can bathe alone.~ + a1861
+  ++ ~[PC] Men! Gods, are all of you this dense? Don't bother...I already know the answer. Good night.~ EXIT
+  ++ ~[PC] Next time... IF you are lucky enough to HAVE a next time... treat me with more respect. Here is your belt... (splash) and here are your clothes... (splash).~ + a1861
+  ++ ~[PC] I am not sure. I know you did not mean any harm, but I am most definitely not in the mood for being this close to you.~ + a1861
+  ++ ~[PC] I came within inches of destroying my relationship with my love, and you almost let me. I thought we were better friends than that.~ + a1861
+  ++ ~[PC] Nothing. You did nothing. I did nothing. This is just very, very confusing.~ + a1861
+END
+
+IF ~~ a1836
+  SAY ~[ARAN] Now, who be th' aggressor, you or me? On account o' you move even a little, an' things will be where nature done intended...~
+  ++ ~[PC] Oh. OH. I... I seem to have already moved. And you are moving, too... don't stop!~ + a1837
+  ++ ~[PC] Gods, take me...~ + a1838
+  ++ ~[PC] How in the nine hells do you fit all that under your armor, anyways? Not that... I am... complaining... mind you...~ + a1838
+  ++ ~[PC] Wait. I cannot do this. Aran, stop. STOP.~ + a1826
+  ++ ~[PC] You take, I take, I give, you give... why are we talking? Gods, just press forward!~ + a1839
+  ++ ~[PC] (Take hold of his chin with one hand, guiding him so that your forehead rests on his and you are looking deeply into each other's eyes... and tighten your legs, driving him deep within you.)~ + a1837
+END
+
+/* contemplative */
+IF ~~ a1837 SAY ~[ARAN] (The sounds and cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~ IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT END
+
+IF ~~ a1838
+  SAY ~[ARAN] (His eyes burn with lust as he pulls away for a moment, his body still pinning yours to the side of the tub, his manhood poised on your threshold.)~
+  = ~[ARAN] Th' gods will not be takin' you today, <CHARNAME>. But by all their names, I will.~
+  IF ~~ THEN GOTO a1837
+END
+
+IF ~~ a1839
+  SAY ~[ARAN] (His eyes burn with lust as he pulls away for a moment, his body still pinning yours to the side of the tub, his manhood poised on your threshold.)~
+  = ~[ARAN] Th' gods will not be takin' you today, <CHARNAME>. But by all their names, I will.~
+  IF ~~ THEN GOTO a1863
+END
+
+IF ~~ a1840
+  SAY ~[ARAN] Now, you be pullin' away from me. Do you want I should stop, or should I continue?~
+  ++ ~[PC] I think I have had enough of this right now. You bathe. I am going to rest.~ + a1857
+  ++ ~[PC] If I wanted you to stop, I would had said so. Just go gently, please. I like it when you touch me.~ +  a1825
+  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
+  ++ ~[PC] My calves ache, and my heels. Do you think you could do something about that?~ + a1816
+  ++ ~[PC] You should get out and watch the door, while I finish bathing.~ + a1809
+END
+
+IF ~~ a1841
+  SAY ~[ARAN] (Bubbles of air break the surface as you force his head under the water, suddenly tickling your bare flesh as he wrestles close to your torso. Warm lips tease you as he blows gently on the sensitive skin of your belly and breasts, then he surfaces with a spray of water that drenches your face completely.)~
+  ++ ~[PC] HEY! Stop that! That tickles! Get over here. I have better uses for those lips of yours.~ + a1829
+  ++ ~[PC] I want more, Aran. The strong take what they want.~ + a1828
+  ++ ~[PC] Well, that was fun. Hey grab the soap, and wash my back, will you?~ + a1851
+  ++ ~[PC] Playing about is for children. Do you want me, or are you just going to gawk at my body while I lie here, all vulnerable and available to you?~ + a1850
+  ++ ~[PC] You know, when I stop laughing, you are going to be in so much trouble...~ + a1840
+  ++ ~[PC] I like you, even when you are an insufferable flirt! Hold me, Aran. Nothing else. Just come over here, calm down, and hold me.~ + a1860
+END
+
+IF ~~ a1842
+  SAY ~[ARAN] More like lusted after an' molested, eh?~
+  ++ ~[PC] You have such a beautiful bottom. Pity you use it to think, too. For that, you will have to be punished. (Grab his neck and force his head under the water.)~ + a1841
+  ++ ~[PC] If you're going to be doing any lusting, you're going to need a better view. You may have to move a little closer. Or deeper. (Move closer into his embrace, arms creeping around his neck.)~ + a1815
+  ++ ~[PC] Lust is good. Anything more serious, well, why don't we stick with lust for awhile and see how it goes.~ + a1830
+  ++ ~[PC] I am not an object, and I do not choose to be molested. You, on the other hand, are subject to my every whim. Just tell me 'no', and I will stop...~ + a1843
+  ++ ~[PC] If that was a joke, I am not amused. Get out of this tub, this instant.~ + a1835
+  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER2> instead, but you will have to do...~ + a1844
+  + ~Gender(Player3,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER3> instead, but you will have to do...~ + a1844
+  + ~Gender(Player4,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER4> instead, but you will have to do...~ + a1844
+  + ~Gender(Player5,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER5> instead, but you will have to do...~ + a1844
+  + ~Gender(Player6,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER6> instead, but you will have to do...~ + a1844
+END
+
+IF ~~ a1843
+  SAY ~[ARAN] (Aran's laughter echoes across the chamber, his voice darkened with lust.) Never saw myself in quite that way, but if th' lady insists, I'll be a toy. Question is, do you want me to follow through like a man, or are you just playin' wi' me?~
+  ++ ~[PC] Silly sellsword. It is I who shall do the playing. And the taking. And I intend for you to be very, very... gods... taken...~ + a1837
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
+  ++ ~[PC] Perfect choice of words...~ +  a1829
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this big thing goes right here, or at least he starts there... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse.)~ + a1837
+  ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
+  ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
+  ++ ~[PC] Oh, playing of course, my handsome friend. But, I play for keeps. (Move onto him, his breath roughening as he enters you.)~ + a1839
+END
+
+IF ~~ a1844
+  SAY ~[ARAN] (Aran's laughter echoes across the chamber, his voice darkened with lust.) That may be, but right now it be just th' two o' us, alone. Question is, do you want me to follow through, or are you playin' wi' me?~
+  ++ ~[PC] Silly sellsword. It is I who shall do the taking. And I intend for you to be very, very... (Move onto him, his breath roughening as he enters you.) ...taken...~ + a1837
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
+  ++ ~[PC] Perfect choice of words...~ + a1829
+  ++ ~[PC] Oh, playing of course, my handsome friend. But, I play for keeps. (Move onto him, his breath roughening as he enters you.)~ + a1839
+  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and the tip of this big boy goes right here... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse).~ + a1837
+  ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
+  ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
+END
+
+IF ~~ a1845
+  SAY ~[ARAN] I'd stay like this for hours, but I need to know. I am on fire for you, an' in a position to do somethin' about it. Literally. What do you be wantin' to do?~
+  ++ ~[PC] Nothing else. This is all I want. Just this. For now.~ + a1849
+  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
+  ++ ~[PC] Oh, I don't know. Perhaps a game of chess? You seem to be moving that slowly...~ + a1828
+  ++ ~[PC] I am not sure. But I want you, and you want me. There are other ways of pleasuring each other, though. Just touching, outside?~ + a1827
+END
+
+IF ~~ a1846
+  SAY ~[ARAN] (His face turns upward to yours, eyes bright.) I'd stay like this for hours, an' do a mite more than this, too. I am on fire for you, an' in a position to do somethin' about it. Literally. What do you be wantin' to do?~
+  ++ ~[PC] Nothing else. This is all I want. Just this. For now.~ + a1849
+  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
+  ++ ~[PC] (Kiss him.) I want to feel you inside of me. Now, what do *you* be wantin' to do?~ + a1838
+  ++ ~[PC] Oh, I don't know. Perhaps you are not man enough to just do it.~ + a1848
+  ++ ~[PC] I am not sure. But I want you, and you want me. There are other ways of pleasuring each other, though. Just touching, outside?~ + a1827
+END
+
+IF ~~ a1847
+  SAY ~[ARAN] Well, what are we doin' right now?~
+  ++ ~[PC] I... I don't know. Part of me wants to, but part of me... I think we are... I think I am going too far.~ + a1849
+  ++ ~[PC] My mind says we are getting too intimate, but my body says otherwise. If we were smart, we would stop.~ + a1849
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] We are about to change our relationship forever. I think I am ready for that.~ + a1849
+  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] We are about to have another really great time together. I think I am ready for that.~ + a1849
+  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
+  ++ ~[PC] Oh, I don't know. Perhaps you are not man enough to just do it.~ + a1848
+END
+
+IF ~~ a1848
+  SAY ~[ARAN] I need no encouragement. Mayhap actions will show stronger than words.~
+  ++ ~[PC] Oh. OH. I... just keep going, and never stop.~ + a1837
+  ++ ~[PC] Gods, take me...~ + a1838
+  ++ ~[PC] How in the nine hells do you fit all that under your armor, anyways? Not that... I am... complaining... mind you...~ + a1838
+  ++ ~[PC] Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
+  ++ ~[PC] Stop right there, boyo. I think I have had enough fun. Now, hand me a towel, and get out of here.~ + a1864
+END
+
+IF ~~ a1849
+  SAY ~[ARAN] Are you sure? I want you so much right now I'd do anythin' to make love to you, right here an' now.~
+  ++ ~[PC] I think if we keep doing this, we might not be able to stop, and I am not ready for that. You have to trust me and wait. Go on... watch the door.~ + a1809
+  ++ ~[PC] This is all I want. Just this closeness. For now. Just hold me.~ + a1860
+  ++ ~[PC] I am not sure, but it is a little late, seeing as I am already... you are already... oh, gods...~ + a1837
+  ++ ~[PC] I want you, and you want me. But there are other ways of pleasuring each other. Just touching, outside?~ + a1827
+  ++ ~[PC] I think I am... I... Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
+END
+
+IF ~~ a1850
+  SAY ~[ARAN] Malar's Sharp Teeth, I will have what I want. An' that be you.~
+  = ~[ARAN] (He pulls you down into his arms, towering over you. His rough cheek scrapes along your body. His hips twist your knees apart as you wrestle, lips locked in battle.)~
+  ++ ~[PC] Gods, take me...~ + a1839
+  ++ ~[PC] (You bite down hard on his lip, then push him away from you.) The hells, you will! If you ever try anything like that again, I swear I will kill you!~ + a1864
+  ++ ~[PC] (Growl fiercely, biting him and scratching him.)~ + a1863
+  ++ ~[PC] (Twist away suddenly.) Aran. ARAN. STOP.~ + a1826
+  ++ ~[PC] Well, you have the right idea, but I changed my mind. Good energy, but I want it applied properly, not like a beast in heat...~ + a1865
+END
+
+IF ~~ a1851
+  SAY ~[ARAN] Teasin' me a mite, or are you really askin' for just a backrub an' a bit o' help wi' th' washin'?~
+  ++ ~[PC] I really want that backrub. Just dig those fingers in deep, and work the knots out, please.~ + a1856
+  ++ ~[PC] (Reach back and pull him close, nestling until his gasp of surprise matches your groan of delight.) What do you think?~ + a1852
+  ++ ~[PC] Maybe both. But right now, I can feel you beneath my fingertips, and you can feel me practically everywhere. But Aran... no sex. Just this, all right?~ + a1827
+  ++ ~[PC] I am teasing you, and teasing me. Put your hand right there. Can't you feel... this?~ + a1852
+END
+
+IF ~~ a1852
+  SAY ~[ARAN] I think if you keep that up, one or more o' us will become very, very, happy, an' we will make a mite bit o' a mess.~
+  ++ ~[PC] (Lean back in his arms, his chin resting on your shoulder, and move your hips slowly back and forth to your mutual and increasing pleasure.) There. All comfy now?~ + a1854
+  ++ ~[PC] (Move carefully to him and sit back, eliciting another gasp from both of you.) There. I always believe a sword should be sheathed correctly.~ + a1855
+  ++ ~[PC] Now then, we can't have that. (Move away from him and turn in his arms, capturing his hips between your thighs.)~ + a1853
+  ++ ~[PC] Aran... We have to stop. Hey. Stop moving. I mean it. We have to stop now.~ + a1826
+  ++ ~[PC] Well, ooooh... OH. Ok, enough. I have had plenty of fun.  Out of the tub. Move it, sellsword.~ + a1826
+END
+
+IF ~~ a1853
+  SAY ~[ARAN] <CHARNAME>...~
+  ++ ~[PC] Aran... ARAN. We have to stop.~ + a1826
+  ++ ~[PC] When you say my name like that, as if it were a prayer, how can I resist. Take me all the way, right now. I want you.~ + a1837
+  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
+  ++ ~[PC] (Move with him, letting your desire and excitement match his.)~ + a1837
+  ++ ~[PC] Hey, relax... touching only. I am not ready to go all of the way.~ + a1827
+END
+
+IF ~~ a1854
+  SAY ~[ARAN] Oh gods...~
+  ++ ~[PC] Or mmmmph?~ + a1853
+  ++ ~[PC] Or this... (Brush the tips of your breasts down his skin, your body moving with his, your breath matching his.)~ + a1853
+  ++ ~[PC] ... oh gods, Aran... no sex. Just this, all right?~ + a1827
+  ++ ~[PC] Now that felt really, really good. OK, enough. Out of the tub. Move it.~ + a1826
+END
+
+IF ~~ a1855
+  SAY ~[ARAN] I can feel every bit o' you. I don't want to stop, not now, not ever.~
+  ++ ~[PC] Then don't stop, for anything, for any reason.~ + a1837
+  ++ ~[PC] I can feel every bit of you, too. I know this will cause problems, but it feels so good...~ + a1837
+  ++ ~[PC] Oh, Aran, fill me completely. I am yours, and only yours.~ + a1837
+  ++ ~[PC] Harder. Faster. I want more. Gods, I want more.~ + a1863
+  ++ ~[PC] I... I don't want to stop, but I have to. We have to. Aran, stop. We have gone too far. ARAN.~ + a1826
+  ++ ~[PC] Get away from me. Now.~ + a1826
+END
+
+IF ~~ a1865
+  SAY ~[ARAN] <CHARNAME>... so warm, so close...~
+  ++ ~[PC] Aran... ARAN. We have to stop.~ + a1826
+  ++ ~[PC] Take me all the way, right now. I want you.~ + a1837
+  ++ ~[PC] (Move with him, letting your desire and excitement match his.)~ + a1837
+  ++ ~[PC] Whoa, slow down... There are other ways of pleasuring each other. Just touching, outside?~ + a1827
+END
+
+/* passthroughs */
+IF ~~ a1856
+  SAY ~[ARAN]  Your wish be my command.~
+  IF ~~ THEN GOTO a1858
+END
+
+IF ~~ a1857
+  SAY ~[ARAN] (The lantern light dances as you both share the bath, modestly and discreetly. The swishing of the soapy cloth on his back makes a soft counterpoint to the distant voices and snippets of music that creep under the door.)~
+  IF ~~ THEN GOTO a1859
+END
+
+IF ~~ a1858
+  SAY ~(The lantern light dances as you both share the bath, modestly and discreetly. After a while, the swishing of the soapy cloth on your back gives way to a gentle and thorough massage.)~
+  IF ~~ THEN GOTO a1859
+END
+
+/* Bathing Exits */
+
+/* Aran bathes Alone Exits */
+
+IF ~~ a4686
+  SAY ~[ARAN] (Long, lean muscles ripple as he moves about his ministrations, the occasional glimse of a black tattoo winking at you from time to time as he works the washcloth along his body. A quick duck under the surface, and he rises streaming with water and suds, shaking his head vigorously. He looks at you, and a huge grin spills across his face.)~
+  = ~[ARAN] If you be starin' at me like that, mayhap I should charge admission, m'girl. Either that, or turnabout be fair play!~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4687
+  SAY ~[ARAN] (His back remains towards you for the most part, but there is plenty to see. He is not bashful, but suprisingly modest.)~
+  = ~[ARAN] (His glances your way do not stop his progress, and at last he is finished. He climbs out, water streaming onto the floor, and vigourously towels himself dry.)~
+  = ~[ARAN] Your turn, if you want it, eh?~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4688
+  SAY ~[ARAN] Right, then. I won't wait for naught, on account o' water an' me, we have a right close relationship.~
+  = ~[ARAN] (His muscles ripple along his form as he moves in the water, an occasional stretch to reach his back causing a cascade of water to fly off around the room.)~
+  = ~[ARAN] (The cares of adventuring drift away for a time as quiet motion and soft sound wash over your senses.)~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+/* Escape : PC Bathes Alone */
+IF ~~ a4689
+  SAY ~[ARAN] (A quiet bath sweeps the grime of adventuring away, clearing your head and relaxing your body.)~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+/* Bathing (*cough*) Together */
+
+IF ~~ a4690
+  SAY ~[ARAN] Aye, then.~
+  = ~[ARAN] (Hot soapy cloth slapping hard against your back. The slow, casual cascade of suds running down your body, tickling but relaxing. Strong arms move you, lift you, comfort you. Gentle hands pull at your tight muscles, clearing strain and care.)~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4691
+  SAY ~[ARAN] Malar's Sharp Teeth, I can tell when I'm not blighted wanted. I don't know what I did wrong, but it be a hells o' a thing to lead me on like this an' then just stop. I need to go find somewhere to relieve th' tension, I guess.~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4692
+  SAY ~[ARAN] Now, that were an experience to repeat. Mayhap you can settle into my arms, an' just rest a bit. I think we need a bath from havin' a bath, eh?~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END 
+
+IF ~~ a4693
+  SAY ~[ARAN] Sune's Delight, I think I'd better stop on this. Always leave 'em wantin' more, I always say. Now, I'm goin' to get that bath, an' you... hey... HEY! You can harm a lad doin' that, you know!~
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4694
+  SAY ~[ARAN] I am just one evil, evil man, takin' advantage o' you like this. Here, rinse that bit, right there...~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4695
+  SAY ~[ARAN] No, I think I be done for th' night. There be towels over there. Th' door locks from th' inside, too. Have fun all by yourself.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4696
+  SAY ~[ARAN] Your wish be my command. But some other time, I think we should finish what we started, eh?~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4697 // unlinked
+  SAY ~[ARAN] Your wish be my command.~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4698
+  SAY ~[ARAN] Well, I know I done my job proper, on account o' you have a right blissful look on your face. An' it be a mite dusky red, both there an' on your chest. That, an' your thighs are like to break me in half, an' there be a nice little moan from those perfect lips o' yours. Now, time for that bath, I do belive...~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
+END
+
+IF ~~ a4699
+  SAY ~[ARAN] You know, for a mighty attractive woman, you be a right cold bitch. Screw you. Gods know I won't be, any time soon.~
+  IF ~~ DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~  EXIT
+END
+
+IF ~~ a1859
+  SAY ~[ARAN] (The cares of adventuring drift away for a short time.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a1860 /* holding only, no matter how frustrating */
+  SAY ~[ARAN] (You hold each other gently, relaxing in the water as the faint wisps of music and laughter creep under the door. For a time, the cares of adventuring drift away.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
+END
+
+IF ~~ a1861 /* PC runs for it */
+  SAY ~[ARAN] (The door slams shut as your back slams against it. You drape your towel around your body and attempt to regain your composure. Muted cursing and splashing filters from behind you as you seek the privacy of your room to dry off.)~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a1862 /* petting only */
+  SAY ~[ARAN] (The sounds and cries of your mutual pleasuring echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
+END
+
+IF ~~ a1863 /* aggressive */
+  SAY ~[ARAN] (The harsh sounds and loud cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
+END
+
+IF ~~ a1864
+  SAY ~[ARAN] Bloody hells... Now where be th' fun in that, I ask you. I... You tease me half to... Well, suit yourself.~
+  = ~[ARAN] I have enough self control to know "no" means "no". But that be a cold, mean, calculatin' thing to do to a lad. You take your own bath, there. I think I done saw a right fine young lady back at th' bar, an' mayhap she will be more friendly.~
+  = ~[ARAN] (He climbs from the water, stretching to reach a towel, and leaves the chamber.)~
+  = ~[ARAN] (The lantern light dances as you bathe alone.)~
+  IF ~~ THEN EXIT
+END
+
+/* end of new bathing section : last one is a4701 */
 
 /* Inn Flirts: [PC]  "Teach me to scribe something new"  - Starts with PC and Aran on chair, PC on his lap */
 
@@ -10785,10 +12515,7 @@ END
 IF ~~ a2062
   SAY ~[ARAN] (His free arm sneaks around your waist, holding you tightly. Your armor protects you from the pressure of his grip, but you can feel his intensity as your arm drops to cover his.)~
   ++ ~[PC] (You lean your head back against his shoulder, moving the quill gently across the page as his steady hand guides your scribing.)~ + a2100
-  + ~Global("c-aranbathf1","LOCALS",1) Global("c-aranbathf2","LOCALS",1)~ + ~[PC] Oh, I am smearing the ink. Perhaps we should go get a bath and wash it all off.~ + a2067
-  + ~!Global("c-aranbathf1","LOCALS",1) Global("c-aranbathf2","LOCALS",1)~ + ~[PC] Oh, I am smearing the ink. Perhaps we should go get a bath and wash it all off.~ + a2067
-  + ~Global("c-aranbathf1","LOCALS",1) !Global("c-aranbathf2","LOCALS",1)~ + ~[PC] Oh, I am smearing the ink. Perhaps we should go get a bath and wash it all off.~ + a2270 /* BATH 2 PLACEHOLDER - FINISH THIS - hidden in Adult land: bath2 */
-  + ~!Global("c-aranbathf1","LOCALS",1) !Global("c-aranbathf2","LOCALS",1)~ + ~[PC] Oh, I am smearing the ink. Perhaps we should go get a bath and wash it all off.~ + a1808
+  ++ ~[PC] Oh, I am smearing the ink. Perhaps we should go get a bath and wash it all off.~ + a2067
   ++ ~[PC] Hey, back off, sellsword. If I wanted my armor loosened, I would have done it myself.~ + a2087
   + ~OR(3) Class(Player1,CLERIC_ALL) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ + ~[PC] You do realize I lied, right? I can scribe very well all by myself.~ + a2089
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] This is nice. But I think I want us to have a little more privacy. Just the two of us, if... well, you know what I mean.~ + a2078
@@ -10863,10 +12590,7 @@ IF ~~ a4514
   ++ ~[PC] I was trying to figure out what kept prodding my back. I... I didn't really think this through. I should go, now.~ + a2098
 END
 
-IF ~~ a4515
-	SAY ~[ARAN] (His hand falls between your thighs, tentatively touching your hand... then pulls it away from his manhood.)~
-	IF ~~ THEN GOTO a2072
-END
+IF ~~ a4515 SAY ~[ARAN] (His hand falls between your thighs, tentatively touching your hand... then pulls it away from his manhood.)~ IF ~~ THEN GOTO a2072 END
 
 IF ~~ a4516 
 	SAY ~[ARAN] Hold on, there... you have things growin' a mite close together for public consumption, don't you think? Not that I be complainin' much.~
@@ -10887,30 +12611,31 @@ IF ~~ a4517
 	SAY ~[ARAN] I think you have all th' control right now. Just, by th' god's hearts, don't do more than what you be doin', on account o' I may end up causin' a mess...~
 	++ ~[PC] Well, we can't have that. We should just scribe, then. Show me how it all works.~ + a2087
 	++ ~[PC] I suppose that would be bad.~ + a4520
-	++ ~[PC] I suppose that would be... bad?~ + c-devilinabluedress
-	++ ~[PC] Oh, you mean more mess? Don't worry. I'm sure we can find a way to clean you up.~ + c-devilinabluedress
-	++ ~[PC] Oh. On second thought, just buy me a drink.~ + c-devilinabluedress
+	++ ~[PC] I suppose that would be... bad?~ + a4702
+	++ ~[PC] Oh, you mean more mess? Don't worry. I'm sure we can find a way to clean you up.~ + a4702
+	++ ~[PC] Oh. On second thought, just buy me a drink.~ + a4702
 END
-	
-IF ~~ a4518 SAY ~[ARAN] (His breath sighs past your ears, and the warm rod between your thighs becomes even warmer and harder.)~ IF ~~ THEN GOTO c-devilinabluedress END
 
-IF ~~ c-devilinabluedress
+IF ~~ a4518 SAY ~[ARAN] (His breath sighs past your ears, and the warm rod between your thighs becomes even warmer and harder.)~ IF ~~ THEN GOTO a4702 END
+
+IF ~~ a4702
 	SAY ~[ARAN] You are just tryin' to kill me, you know. It would be a mite bit easier if you would just drive a dagger between m' ribs an' be done wi' it.~
 	= ~[ARAN] An' don't get smart wi' me, niether. I saw that look - no wordplay on daggers, an' drivin', an' any such thing. It be takin' all my self control just to be still an' not ravage you right here an' now.~
 	IF ~~ THEN EXIT
 END
-	
-	
+
+
 ////////////// FINDME
-	
+
 
 IF ~~ a4519
 	SAY ~[ARAN] Wait a bit. Think this through. If we be likely to do somethin' here, I want to be able to enjoy it right proper, not all furtive an' in public.~
 	++ ~[PC] But I wanted...~ + a4520
 	+ ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] I have decided our first time will be right here, right now.~ + a4520
 	+ ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] I have decided my first time will be right here, right now.~ + a4520
-	+ ~Global("c-aransex","GLOBAL",3)~ + ~[PC] PLACEHOLDER~ + c-placeholder
-	+ ~Global("c-aransex","GLOBAL",3)~ + ~[PC] PLACEHOLDER~ + c-placeholder
+	+ ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] There are too many clothes in the way. We should take care of that.~ + a4520
+	+ ~GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] I think I am having fun doing just what we are doing right now...~ + a4520
+    ++ ~[PC] I think that is enough, for now. I just wanted to get your attention.~ + a2092
 END
 	
 IF ~~ a4520	
@@ -10931,7 +12656,7 @@ IF ~~ a4522
 	SAY ~[ARAN] Gods. What now! This be teasin' me somethin' fierce... see, he be leapin' an' jumpin' inside o' you.~
 	++ ~[PC] Now we sit very, very still, and we see how long you can stay right where you are without moving or anything else.~ + a4526
 	++ ~[PC] Just enjoy the sensations. Don't do anything rash, or lose control. Just enjoy.~ + a4524
-	++ ~[PC] Now, we sneak away and we try this again, with as many variations as we can think of.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4523
+	++ ~[PC] Now, we sneak away and we try this again, with as many variations as we can think of.~ DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a2097
 	++ ~[PC] (Begin rocking harder, letting the sensations play about, reveling in the feel of him.)~ + a4524
 	++ ~[PC] I can't believe I just did this. I... look. Forget this ever happened. I'm serious. It never happened.~ + c-placeholder
 END
@@ -10941,6 +12666,7 @@ IF ~~ a4524
 	++ ~[PC] (Stand up swiftly, hiding both of your activities, and leave the room.)~ EXIT
 	++ ~[PC] (Redouble your efforts, slamming the heels of both your hands onto the tabletop as you move on him.)~ + a4525
 	++ ~[PC] (Relax as your own waves begin to rise, your pleasure blinding and passionate.)~ + a4525
+	++ ~[PC] PLACEHOLDER~ + c-placeholder
 END
 
 IF ~~ a4525
@@ -10948,7 +12674,7 @@ IF ~~ a4525
 	++ ~[PC] (Stand up swiftly, hiding both of your activities, and leave the room.)~ EXIT
     ++ ~[PC] PLACEHOLDER~ + c-placeholder
 END
-	
+
 IF ~~ a4526
   SAY ~[ARAN] Now, I can hold out as long as you can. Mayhap more. I think it would be right fun to see how many little gasps I can bring out while you be concentratin' on scribin'. Wi' any luck, we both will win.~
   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) RestParty()~ EXIT
@@ -11073,10 +12799,10 @@ IF ~~ a2087 SAY ~[ARAN] Right. Hey, you be a mite bit heavy on my lap, an' mayha
 IF ~~ a2088
   SAY ~[ARAN] Shar's Kiss... well, I be right sorry I said anythin'. Here, let me help wi' some o' this washin' an' then I will clear out right quick.~
   = ~[ARAN] There. All cleaned up, as much as can be done. No harm, no foul. Sorry I misread you. I'll head back downstairs.~
-  IF ~~ THEN EXIT
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
-IF ~~ a2089   SAY ~[ARAN] Aye, I do know. But where be th' fun in that. Workin' together, my chin on your shoulder, now that be a fine way to scribe.~ IF ~~ THEN GOTO a2096 END
+IF ~~ a2089 SAY ~[ARAN] Aye, I do know. But where be th' fun in that. Workin' together, my chin on your shoulder, now that be a fine way to scribe.~ IF ~~ THEN GOTO a2096 END
 IF ~~ a2090 SAY ~[ARAN] Mayhap I be a bit too forward at times. Sorry. This does feel nice, though.~ IF ~~ THEN GOTO a2096 END
 IF ~~ a2091 SAY ~[ARAN] Ma'am, yes ma'am! Sorry, I done read you wrong again. I'll just concentrate on helpin' you scribe.~ IF ~~ THEN GOTO a2096 END
 IF ~~ a2092 SAY ~[ARAN] Well, m'Lady, mission accomplished. You can add happy, interested, aroused, an' thoroughly uncomfortable to that list if you want, too. But I'd best be helpin' you wi' scribin', on account o' we might be attractin' a few looks here an' there.~ IF ~~ THEN GOTO a2096 END
@@ -11085,17 +12811,16 @@ IF ~~ a2093 SAY ~[ARAN] An' here I thought my wayward charm was workin' its magi
 IF ~~ a2094 
 	SAY ~[ARAN] Accidents do happen, they do. Right now, though, I think I might be a bit better off if you practice a bit. An' me, I... well, I think I needs best be gettin' a good drink. Or a solid splash o' ice-cold water. Or both.~ 
 	= ~[ARAN] See you tomorrow, eh?~
-	IF ~~ THEN DO ~RestParty()~ EXIT 
+	IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT 
 END
 
 IF ~~ a2095 SAY ~[ARAN] Well, thank you right kindly. It were a mite bit small for so large a healin' touch, but I do appreciate it. I think I needs best be gettin' a good drink, or mayhap a bit o' cold water to slow th' swellin'. Hey, no gigglin'!~ IF ~~ THEN EXIT END
 IF ~~ a2096 SAY ~[ARAN] (You work together for a time, his strong hands guiding yours over copywork again and again, shaping and moving words and figures, until at last the ink is spent.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2097 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN EXIT END
-IF ~~ a4523 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN EXIT END
 IF ~~ a4339 SAY ~[ARAN] It would be rude not to oblige, m'lady. I think I can assist you wi' that.~ IF ~~ THEN GOTO a4508 END
-IF ~~ a2098 SAY ~[ARAN] I never did have so much fun doin' absolutely nothin'. Just be careful, eh? On account o' you are completely intoxicatin'.~ IF ~~ THEN DO ~RestParty()~ EXIT END
-IF ~~ a2099 SAY ~[ARAN] Shar's Spite an' Spit, you do like harmin' a lad, don't you. Fine. I got better things to be doin' than this.~ IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END
-IF ~~ a2100 SAY ~[ARAN] *cough* Oh, now, what did I be talkin' about? Right, I do remember. That line was just fine. Now you need to just practice a bit. An' me, I... well, I think I needs best be gettin' a good drink. Or a solid splash o' ice-cold water. Or both.~ IF ~~ THEN EXIT END
+IF ~~ a2098 SAY ~[ARAN] I never did have so much fun doin' absolutely nothin'. Just be careful, eh? On account o' you are completely intoxicatin'.~ IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
+IF ~~ a2099 SAY ~[ARAN] Shar's Spite an' Spit, you do like harmin' a lad, don't you. Fine. I got better things to be doin' than this.~ IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT) StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
+IF ~~ a2100 SAY ~[ARAN] *cough* Oh, now, what did I be talkin' about? Right, I do remember. That line was just fine. Now you need to just practice a bit. An' me, I... well, I think I needs best be gettin' a good drink. Or a solid splash o' ice-cold water. Or both.~ IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
 
 IF ~~ a2101
   SAY ~[ARAN] A little too good, I think... but then again, who am I to be judgin' what be good and bad.~
@@ -11122,13 +12847,6 @@ IF ~~ a4340
   ++ ~[PC] (Wiggle a bit on his lap, adjusting yourself and making a show of picking up the quill.)~ + a3257
   ++ ~[PC] How do you hold this thing, anyways?~ + a2059
   ++ ~[PC] Just keep your hands above the table. This looks like delicate work, based on the amount of time you spend on just one tracing.~ + a2059
-END
-
-IF ~~ a2270 /* BATH 2 PLACEHOLDER - FINISH THIS */
-  SAY ~[ARAN] PLACEHOLDER ~
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER~  EXIT /* PLACEHOLDER */
 END
 
 IF ~~ a2271
@@ -11160,12 +12878,12 @@ END
 
 IF ~~ a3258
   SAY ~[ARAN] Want to? Yes. Comfortable doin' so? Well, let's just be sayin' that I am a mite bit goal-oriented, an' right now that goal be to leave here before I get a mite bit too excited for my own good.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a3259
   SAY ~[ARAN] I do appreciate that. You can do this any time you might want to, an' I would be right happy for th' experience. But right now I am feelin' a mite bit too good, an' a mite bit too interested for a public area.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a2279
@@ -11356,7 +13074,9 @@ IF ~~ a2286
   + ~Global("c-aransex","GLOBAL",3)~ + ~[PC] Hmmm. From the feel of things, I think you are remembering our last little experimentation.~ + a2287
   + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] I already know what will 'come up', and you are in all the wrong clothing for that to be very comfortable. Perhaps later, if you are a very good little boy.~ + a2288
   ++ ~[PC] No, thank you.~ + a2288
+  ++ ~[PC] As a friend, I should tell you that your clumsy attempt at flirting is about as appealing as Luscan stew.~ + a2288
   ++ ~[PC] If you had anything worth my time hidden under that codpiece, I might think about it.~ + a2288
+  ++ ~[PC] Forget it. I am tired, I ache, and I have had it with all this mess. Just get me a drink, please.~ + a2972
 END
 
 IF ~~ a2914 SAY ~[ARAN] It has naught in th' way o' reinforcement... oh. Right. It might o' just got some. Perils o' havin' a ferociously fine female on a lad's lap, I guess.~ IF ~~ THEN EXIT END
@@ -11378,6 +13098,7 @@ IF ~~ a2283
   ++ ~[PC] I will tell you what... if you don't flinch when I hit you, you can kiss my neck.~ + a2285
   ++ ~[PC] No, thank you. I am happy enough with things just the way they are.~ + a150
   ++ ~[PC] Just my neck? I would bet several silver that your hands would attempt to cover all sorts of territory, and your kisses...~ + a2915
+  ++ ~[PC] Forget it. I am tired, I ache, and I have had it with all this mess. Just get me a drink, please.~ + a2972
 END
 
 IF ~~ a2915 SAY ~[ARAN] Aye, guilty as charged. But given how just one look at your profile drives any male an' even some females right mad wi' lust, you have to admit that only be natural.~ IF ~~ THEN EXIT END
@@ -11471,27 +13192,17 @@ IF ~~ a3246
   ++ ~[PC] (Slap him hard across the cheek)~ + a3248
 END
 
-IF ~~ a3247
- SAY ~[ARAN] Now, that were not th' endin' I was hopin' for.~
- IF ~~ THEN EXIT
-END
+IF ~~ a3247 SAY ~[ARAN] Now, that were not th' endin' I was hopin' for.~ IF ~~ THEN EXIT END
 
-IF ~~ a3248 /* unlinked - only once linked */
+IF ~~ a3248 /* only once linked */
   SAY ~[ARAN] Ouch! Blighted...~
   IF ~RandomNum(3,1)~ THEN GOTO a1967 /* c-aranshutup61 */
   IF ~RandomNum(3,2)~ THEN GOTO a1968 /* c-aranshutup62 */
   IF ~RandomNum(3,3)~ THEN GOTO a1969 /* c-aranshutup63 */
 END
 
-IF ~~ a3249
- SAY ~[ARAN] Wouldn't dream o' it. Well, actually, that be a big fat lie. Mayhap I should say I'm happy enough wi' what you let me do.~
- IF ~~ THEN EXIT
-END
-
-IF ~~ a3250
-  SAY ~[ARAN] Good gods, woman... I am havin' a mite bit o' trouble keepin' all this hidden from view, eh? Not that I be complainin' so loudly, whisperin' close to you like this.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3249 SAY ~[ARAN] Wouldn't dream o' it. Well, actually, that be a big fat lie. Mayhap I should say I'm happy enough wi' what you let me do.~ IF ~~ THEN EXIT END
+IF ~~ a3250 SAY ~[ARAN] Good gods, woman... I am havin' a mite bit o' trouble keepin' all this hidden from view, eh? Not that I be complainin' so loudly, whisperin' close to you like this.~ IF ~~ THEN EXIT END
 
 IF ~~ a3251
   SAY ~[ARAN] Well, I'm right sorry, I am. I didn't mean to hurt you none. Is there somethin' I can do to make up for it?~
@@ -11502,20 +13213,9 @@ IF ~~ a3251
   ++ ~[PC] I like emeralds. Rubies, too. Sometimes a diamond, or a rogue stone can really make an apology stick.~ + a3252
 END
 
-IF ~~ a3252
-  SAY ~[ARAN] Now, you don't beat around th' bush, so to speak, do you? Right, then. I'll be on th' lookout for somethin' like that.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3253
-  SAY ~[ARAN] What can I say? I always did be a slow learner.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3254
-  SAY ~[ARAN] Aye, that I can do.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3252 SAY ~[ARAN] Now, you don't beat around th' bush, so to speak, do you? Right, then. I'll be on th' lookout for somethin' like that.~ IF ~~ THEN EXIT END
+IF ~~ a3253 SAY ~[ARAN] What can I say? I always did be a slow learner.~ IF ~~ THEN EXIT END
+IF ~~ a3254 SAY ~[ARAN] Aye, that I can do.~ IF ~~ THEN EXIT END
 
 IF ~~ a806
   SAY ~[ARAN] If that be what you want, <CHARNAME>, then by Malar's Sharp Teeth that's what you be gettin'. I'll see to it as soon as I be able.~
@@ -20987,530 +22687,6 @@ END
 
 IF ~~ a1779 SAY ~[ARAN] I don't rightly think a little bit o' moisture is goin' to hurt anythin' around here. An' dust be dust, city or country. But I take your point, it were blighted rude o' me.~ IF ~~ THEN EXIT END
 IF ~~ a1782 SAY ~[ARAN] Ah, that be th' call o' th' Wild Recruiter. "Join th' Army! Coin, Wine, Women, Song, Travel!" I'd be changin' that around, a mite. "Join th' Army! Lice! Weeks Of Tedious Boredom Punctuated By Moments O' Sheer Terror An' Mortal Danger! All th' Ditches you can Dig! Travel to New Places, Meet New People, Then Kill 'Em! Wine, Women, an' Song subject to your own coin, an' we don't pay for none o' th' problems what result." Then again, it probably wouldn't bring in young idiots what think duty in a far-flung colony be a walk in th' park.~ IF ~~ THEN EXIT END
-
-/* from: female PC request for a bath */
-/* With thanks to berelinde! */
-IF ~~ a1808
-  SAY ~[ARAN] Aye, I do believe we can find what you want.~
-  = ~(The trip is a short one. He looks keenly about, seeing the baths deserted, and quickly loops his belt to seal the door behind you both.) Aye, then, <CHARNAME>. Only I am a mite particular about security an' all, this bein' so public.~
-  = ~[ARAN] (He keeps his eyes averted from you as he strips, his back toward you, then in a quick motion leaps over the side of the tub and into the steamy water...)~
-  = ~[ARAN] (...and laughs when the resulting wave splashes around your feet and scatters across the floor.)~
-  = ~(The tub is a small space for more than two, but there is sufficient room for you both to only occasionally brush each other in passing, and the dense steam preserves some modesty.)~
-  ++ ~[PC] What are you doing? Get out of the tub this instant. You were supposed to watch the door and protect me.~ DO ~SetGlobal("c-aranbathf1","LOCALS",1)~ + a1809
-  ++ ~[PC] (Remove your clothing slowly, and hesitate over a button.) Aran... I could use your help, here. I seem to be having some trouble disrobing.~ DO ~SetGlobal("c-aranbathf1","LOCALS",1)~ + a1810
-  ++ ~[PC] (Turn your back to him, but disrobe completely, slipping into the water carefully).~ DO ~SetGlobal("c-aranbathf1","LOCALS",1)~ + a1811
-  ++ ~[PC] You are absolutely no fun. (Drop your clothing where it falls, and step into the tub quickly, wrapping your arms around his neck and sliding your body down his chest).~ DO ~SetGlobal("c-aranbathf1","LOCALS",1)~ + a1812
-  ++ ~[PC] (Turn your back to him and strip down to your underclothing, slipping into the water carefully and discreetly).~ DO ~SetGlobal("c-aranbathf1","LOCALS",1)~ + a1813
-END
-
-IF ~~ a1809
-  SAY ~[ARAN] Now where is the fun in that, I ask you. Well, suit yourself. (He climbs from the water, stretching to reach a towel, and settles himself at the door looking away from you.)~
-  = ~[ARAN] (The lantern light dances as you bathe, and Aran sits, carefully watching the door, wrapped in his towel.)~
-  IF ~~ THEN GOTO a1859
-END
-
-IF ~~ a1810
-  SAY ~[ARAN] (He stands in the water, reaching for your clothing. His callused fingers deftly pluck your clothes free, and he casts stray glances at his work, though he tries to hide it.)~
-  = ~[ARAN] Well, now, am I supposed to be watchin', or washin'? Though you are about the most beautiful sight I ever did see, I must admit.~
-  ++ ~[PC] (blush) Thank you. I think you have seen enough, though. Turn around, please, and I will do the same.~ + a1814
-  ++ ~[PC] Are you sure you have gotten every last thing undone, Aran? You may have to search a little closer. (Step into the tub and move into his embrace, your hands guiding his exactly where you want them.)~ + a1815
-  ++ ~[PC] Hey, eyes up here! I asked for some help, but you are taking in a little too much scenery! Just massage my back once I'm settled in the tub.~ + a1816
-  ++ ~[PC] This... this is a little too much. Turn your back, please. I'm going to get into the tub now... No peeking!... and then we'll just have a quick bath.~ + a1817
-  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I'm all for a little romp in the tub, but I already have something special with someone else, and if they find out, there will be complications.~ + a1818
-END
-
-IF ~~ a1811
-  SAY ~[ARAN] Here, I'll get your back, eh?~
-  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1822
-  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1830
-  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1830
-  ++ ~[PC] Aran... whatever we are doing, or not doing, or... Look. Fun is fun, but I already have something special with someone else, and if they find out...~ + a1818
-  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
-  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.)~ + a1820
-  ++ ~[PC] I would much rather you do my front...~ + a1821
-END
-
-IF ~~ a1812
-  SAY ~[ARAN] (Soap bubbles froth up between you. Suddenly, you feel something quite hard resisting your downward progress.) OUCH! Bloody hells, <CHARNAME>, easy... I don't bend that way, eh? Hey, I thought this were a nice friendly bath...~
-  ++ ~[PC] Why, certainly. A nice, cosy bath, all snuggly and warm... and hard... and I think you will find I am *very* friendly...~ + a1830
-  ++ ~[PC] (Push away quickly) Of course! What else were you expecting? Here, do my back, please. The soap, over there. Yes, that is the one.~ + a1858
-  ++ ~[PC] (Push away gently, and begin scrubbing at him with the washcloth.) Sorry! I do not know why I did that. Just a friendly bath, right?~ + a1830
-  ++ ~[PC] Well, if you are not interested, I guess I can find someone else to have a little fun with.~ + a1816
-  ++ ~[PC] (Smile seductively) Oh, poor baby... Shall I kiss it and make it better?~ + a4529
-  ++ ~[PC] I just don't know what came over me. I am so sorry - I... I... (grab the towels and your clothes, and make a run for the door.)~ EXIT
-  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
-END
-
-IF ~~ a4529
-  SAY ~[ARAN] Now I would not be opposed to that action. In fact, just th' thought seems to have distracted me right proper. Th' thing is, I am never quite sure when you be jokin' an' when you be serious.~
-  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. After all, we are just here, two grown people, getting washed up together.~ + a1822
-  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. (Begin running the washcloth over his body, working your way below the bathwater.)~ + a1830
-  ++ ~[PC] This... this is a little too much. Let's just have a quick bath, and get clean.~ + a1817
-  ++ ~[PC] This is just for fun, Aran. I already have something special with someone else, and if they find out, there will be complications.~ + a1831
-  ++ ~[PC] How is this for an answer? (Pull yourself close to him, and begin kissing your way down his neck and chest.)~ + a1832
-  ++ ~[PC] I thought I wanted this, but I really shouldn't... I can't do this. We should just have a quick bath.~ + a1817
-END
-
-IF ~~ a1813
-  SAY ~[ARAN] Now where be th' fun in that, I ask you. But I guess I am bein' a mite forward, at that.~
-  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. After all, we are just here, two grown people, getting washed up together.~ + a1822
-  ++ ~[PC] Here - you seem to need some guidance. Stand still, and I will help you wash up. (Begin running the washcloth over his body, working your way below the bathwater.)~ + a1830
-  ++ ~[PC] This... this is a little too much. Let's just have a quick bath, and get clean.~ + a1817
-  ++ ~[PC] This is just for fun, Aran. I already have something special with someone else, and if they find out, there will be complications.~ + a1831
-  ++ ~[PC] How is this for forward? (Pull yourself close to him, and begin kissing your way down his neck and chest.)~ + a1832
-  ++ ~[PC] I thought I wanted this, but I really shouldn't... I can't do this. We should just have a quick bath.~ + a1817
-END
-
-IF ~~ a1814
-  SAY ~[ARAN] No, no, thank you right kindly. Here, I'll get your back, eh?~
-  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1813
-  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1819
-  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1819
-  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~ + a1820
-  ++ ~[PC] I would much rather you do my front....~ + a1821
-  ++ ~[PC] This... this is important, Aran. Whatever we are doing, or not doing. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
-END
-
-IF ~~ a1815
-  SAY ~[ARAN] Let me see, now... this feels undone... an' this feels undone... an' this... gods, this feels more than a might undone...~
-  ++ ~[PC] Hey, careful... I am not a toy!~ + a1822
-  ++ ~[PC] This... this is a little too much. Turn your back, please. Let's just have a quick bath.~ + a1823
-  ++ ~[PC] I am afraid...  I am... coming a little... unDONE myself... OUCH! sharp fingernail!~ + a1824
-  ++ ~[PC] And I am undone. Slower, please, for the love of Sune... keep touching me like that.~ + a1825
-  ++ ~[PC] Stop... too far, too fast... STOP!~ + a1826
-  ++ ~[PC] Just friends, just friends... touching, but no more.~ + a1827
-END
-
-IF ~~ a1816
-  SAY ~[ARAN] Well, now, I can't refuse a direct order, now can I. I can do th' job. (The lantern light dances as his hands gently follow your contours, trailing soap bubbles into all sorts of interesting places. Though his interest is manifest, the slow and gentle rhythm of caresses soon moves from sensual to relaxing.)~
-  =  ~[ARAN]  (As his attentions move to your calves and heels, you lay back in the water, and eventually sleep claims you.)~
-  =  ~[ARAN]  Aye then, did my job too well, eh? Right, you just relax. I'll bundle you up right proper an' carry you up. Get some rest. There'll be other times.~
-  IF ~~ THEN DO ~RestParty()~ EXIT /* or rest cutscene */
-END
-
-IF ~~ a1817
-  SAY ~[ARAN] Now where be th' fun in that, I ask you. Well, suit yourself. (The lantern light dances as you both share the bath, modestly, discreetly, and chastely. Calm and comfort follow.)~
-  IF ~~ THEN GOTO a1859
-END
-
-IF ~~  a1818
-  SAY ~[ARAN] I done held by a right firm 'ask naught, tell naught' policy forever. But you be goin' through a good bit right now... how do you want this to play out, eh?~
-  ++ ~[PC] I just wanted some protection, and now I want some respect as a friend. I am a grown woman. I can wash myself. You wash yourself, and watch the door.~ + a1817
-  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to surrender to your advances.~ + a1830
-  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to surrender to your advances.~ + a1830
-  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~  + a1820
-  ++ ~[PC] I play, you stand very, very still. Unless, of course, you think that this is too much for us to handle, being friends with benefits. We are friends, aren't we?~ + a1822
-  ++ ~[PC] I would much rather you stop asking questions, and do my front....~ + a1816
-END
-
-IF ~~ a1819
-  SAY ~[ARAN] Here, I'll get your back, eh?~
-  ++ ~[PC] No thank you. I am a grown woman. I can wash myself.~ + a1822
-  + ~!Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless little <PRO_RACE> to do... I do think I shall just have to take you up on that offer.~ + a1830
-  + ~Race(Player1,HUMAN)~ + ~[PC] Well, what is a helpless young lady to do... I do think I shall just have to take you up on that offer.~ + a1830
-  ++ ~[PC] Aran... whatever we are doing, or not doing, or... Look. Fun is fun, but I already have something special with someone else, and if they find out...~ + a1818
-  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
-  ++ ~[PC] (As his hands begin to lather your spine, you shiver slightly, pressing back into his hard palms.) You can start there.~ + a1820
-  ++ ~[PC] I would much rather you do my front...~ + a1821
-END
-
-IF ~~ a1820
-  SAY ~[ARAN] (His body heat radiates into your back as you press closer together, his hands kneading and stretching your back and shoulder muscles. His arousal is no secret.)~
-  ++ ~[PC] (You nestle back, feeling his strength and warmth, adjusting yourself so that no more intimate touches can happen - accidental or otherwise.)~ + a1825
-  ++ ~[PC] (You nestle back and wiggle a little, feeling his strength, guiding his hands around to cup you gently. Draping your head on one of his shoulders, you let out a contented sigh.)~ + a1845
-  ++ ~[PC] (You turn slowly in his arms, and reward him with both a full view of your charms and a passionate kiss.)~ + a1821
-  ++ ~[PC] Now that feels wonderful. Here, wash my back, and then you can continue that massage.~ + a1856
-  ++ ~[PC] Hey. Control yourself. Stop poking me.~ + a1835
-END
-
-IF ~~ a1821
-  SAY ~[ARAN] (His hands follow your contours, mapping you in detail. His lips begin to follow, with rising intensity and heat.)~
-  ++ ~[PC] (Kiss his lips softly, shyly coaxing him to greater boldness.)~ + a1845
-  ++ ~[PC] (Rest your head on his chest, feeling his heart beat.) This is all I want. Just this. For now.~ + a1849
-  ++ ~[PC] (Gently settle yourself onto him, knees tight to his waist, chin on the top of his head as he devours you.)~ + a1846
-  ++ ~[PC] I think you may have to help me a little. I want you to make love to me.~ + a1847
-  ++ ~[PC] Show some spirit. You say you want me? Prove it.~ + a1850
-END
-
-IF ~~ a1822
-  SAY ~[ARAN] Well, now, that be a matter o' interpretation, eh? (His arms reach out to surround you.)~
-  ++ ~[PC] Cad. For that, you will have to be punished. (Grab his neck and force his head under the water.)~ + a1841
-  ++ ~[PC] (Shudder and pull yourself away from him, closing your eyes and resting back against the rough texture of the bath.)~ + a1840
-  ++ ~[PC] (Laugh and pull yourself away from him, granting him the freedom to explore your body.)~ + a1825
-  ++ ~[PC] (Return his attentions, reaching out to hold him under the water.)~ + a1830
-  ++ ~[PC] Are you implying that I am not a grown woman? Now, how do I convince you of the error of your ways... would I be a grown woman if I did this?~ + a1832
-  ++ ~[PC] So you think I am a toy? An object to be possessed and controlled?~ + a1842
-END
-
-IF ~~ a1823
-  SAY ~[ARAN] Your wish be my command.~
-  IF ~~ THEN GOTO a1857
-END
-
-IF ~~ a1824
-  SAY ~[ARAN] Sorry. Sune's Blood, I didn't mean for to hurt you. Should I kiss it better? Or just touch you right here... and here...~
-  ++ ~[PC] Why yes, I think you should kiss me better. But I don't know if it is a good idea for you to be so carefree with me, sir. After all, you appear to have a very funny way of talking - no clue if you know how to use your tongue correctly!~ + a1828
-  ++ ~[PC] I have other ideas. But you need to slow down, Aran, and go softly. Good things come to those who can bring pleasure gently... (Lean forward and brush your lips against his ear, guiding his hands to your thighs.)~ + a1825
-  ++ ~[PC] No. You spoiled the mood. Go watch the door. Or just stay here and have a bath, if you like, but no more touching, ogling, or comments.~ + a1817
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and put this right... there...~ + a1829
-  ++ ~[PC] That's alright. We were getting a little carried away anyway. Friends, remember? This is farther than I ever intended to go. I think you should watch the door before something happens we both may regret.~ + a1809
-END
-
-IF ~~ a1825
-  SAY ~[ARAN] (Gentle, soft caresses fill your senses as his hands move under the water. Warm fingers work their way slowly down your body, exploring your legs, and then hesitantly moving slightly higher...)~
-  ++ ~[PC] Cad. You have very, very naughty fingers. For that, you will have to be punished. (Duck his head under the water.)~ +  a1841
-  ++ ~[PC] I want more, Aran. What are you waiting for, permission? The strong take what they want.~ + a1828
-  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
-  ++ ~[PC] My turn. I intend to explore every inch of your body. But Aran... just touching, nothing more.~ + a1827
-END
-
-IF ~~ a1826 /* second thoughts, panic */
-  SAY ~[ARAN] (Aran wrests himself away, flinging himself apart from you, breathing heavily.) What? Sune's Lips, what!~
-  ++ ~[PC] Nothing, just a momentary panic. I thought I heard someone at the door. (Move within his arms, pulling him over you and gripping him tightly with your thighs.) Now, where were we... oh! There you are!~ + a1837
-  ++ ~[PC] Out. I have had what I wanted. You are on fire for me, just as you should be. That was fun. Now go watch the door while I bathe. No peeking.~ + a1864
-  ++ ~[PC] I got what release I wanted, and see no reason to give you anything. Don't forget to wash behind your ears.~ + a1861
-  ++ ~[PC] I... I am not sure this is the right thing, but gods, I cannot stop now. I am yours, all yours, at least for now.~ + a1837
-  ++ ~[PC] No. I need no self doubt. I deserve this. I want this. I want you.~ + a1837
-  ++ ~[PC] No. My... I want you, but I can't do this. I should be in someone else's arms. (You struggle free, pick up your clothes, and leave.)~ + a1861
-  ++ ~[PC] Listen to me. I want to be with you, but you are not allowed to force yourself on me. Either abide by that ground rule or it's over between us. Can you do that?~ + a4530
-END
-
-IF ~~ a4530
-  SAY ~[ARAN] I don't want naught in th' way o' force between us. I... I thought I was followin' your lead right proper. Hells, <CHARNAME>, th' last thing I want to do be to force myself on you.~
-  = ~[ARAN] This be goin' all wrong. Somehow, I am not rightly readin' what you want. If it be you, or if it be me, there is naught in th' difference. I think I'd better leave.~ 
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1827
-  SAY ~[ARAN] I can keep my word, <CHARNAME>... an' just play, not beddin' you. Though it might just kill me to do it.~
-  IF ~~ THEN GOTO a1862
-END
-
-IF ~~ a1828
-  SAY ~[ARAN] (He growls low in his throat, a rumbling animal sound, and he spins you about in the bath as if you are dancing. Grinning, he catches you round your waist and lifts you out of the water, rivulets of bathwater running down his arms.)~
-  ++ ~[PC] (You laugh and flip your wet hair back from your brow.) Put me down, I insist!~ + a1849
-  ++ ~[PC] (With your bodies held apart by his supporting arms, you cradle his face, bringing your lips to his.) Put me down. I think I know what I want. In fact, I insist.~ + a1849
-  ++ ~[PC] About time you showed some spirit. You say you want me? Prove it.~ + a1850
-  ++ ~[PC] (Giggling) Oh, are we done with our bath so soon?~ + a4531
-  ++ ~[PC] I sleep with the strongest of arm, mind, or spirit, even if it is just a pleasurable fling to relieve tension. Are you strong? Do you have what it takes?~ + a1850
-  ++ ~[PC] (You scream in mock terror, clasping his head close to your chest, and begin kissing the top of his head.)~ + a1846
-  ++ ~[PC] (A sudden flash of rage flies through you at his forwardness.) Put me down now or I swear I will kill you!~ + a1835
-  ++ ~[PC] How dare you manhandle me in such a fashion! Put me down or you will rue the day you were born!~ + a1835
-  ++ ~[PC] NO! Put me down...NOW!~ + a1835
-END
-
-IF ~~ a4531
-  SAY ~[ARAN] (He holds you apart from him for a moment, catching every sight possible of your charms.)~
-  = ~[ARAN] Now, that depends on what you be after, eh?~
-  ++ ~[PC] (You laugh and flip your wet hair back from your brow.) Put me down, I insist!~ + a1849
-  ++ ~[PC] (With your bodies held apart by his supporting arms, you cradle his face, bringing your lips to his.) Put me down. I think I know what I want. In fact, I insist.~ + a1849
-  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
-  ++ ~[PC] My turn. I intend to view every inch of your body. But Aran... just touching, nothing more.~ + a1827
-  ++ ~[PC] (Gently slide down his body until your arms are about his neck, his arms are encircling you, and your most intimate parts are just barely touching.)~ + a1830
-END
-
-IF ~~ a1829
-  SAY ~[ARAN] Gods, <CHARNAME>...~
-  ++ ~[PC] Less talk. Much, much more touching and kissing.~ + a1837
-  ++ ~[PC] I want more.~ + a1828
-  ++ ~[PC] I want more, Aran. What are you waiting for, permission? The strong take what they want.~ + a1828
-  ++ ~[PC] ... oh gods, Aran... no sex. Just this, all right?~ + a1827
-  ++ ~[PC] Aran... Aran. ARAN. We have to... we have to stop. Now.~ + a1826
-  ++ ~[PC] STOP!~ + a1826
-END
-
-IF ~~ a1830
-  SAY ~[ARAN] Now, just how friendly did you want to get, eh? (His hands grip hard around your waist, holding you tightly.)~
-  ++ ~[PC] Oh, just two friends having a great deal of fun, I think... (wrap your legs around him, holding him tightly so that neither of you can move.)~ + a1821
-  ++ ~[PC] Very. (Move forward, thrusting yourself onto him, heels digging hard into his buttocks.)~ + a1853
-  ++ ~[PC] All talk and no action makes for no fun at all. Too late, I am no longer in the mood. But you can rub my back.~ + a1851
-  ++ ~[PC] You know, there are lots of ways of relieving tension. Things can get very friendly, without doing everything.~ + a1827
-END
-
-IF ~~ a1831
-  SAY ~[ARAN] Mystra's Magic, th' way th' water trickles down your...~
-  ++ ~[PC] I am not taking anything more off, Aran. We can play about together, but I do not intend to go too far. Do you understand?~ + a1833
-  ++ ~[PC] (Pull the last of your undergarments off, turning slowly to entice him further.)~ + a1830
-  ++ ~[PC] So, now that you have me completely at your mercy, what do you intend to do with me?~ + a1834
-  ++ ~[PC] I don't know what to do next, Aran. But I think you can see what I want. Can you help me?~ + a1815
-  ++ ~[PC] Well, here I am, just a few thin scraps of cloth between you and what you want. What are you going to do about it?~ + a1834
-  ++ ~[PC] This... this is a little too much. I can't do this. We should just have a quick bath.~ + a1817
-END
-
-IF ~~ a1832
-  SAY ~[ARAN] Ah... er...~
-  ++ ~[PC] Shall I do... this? (You brush your lips down his body to the waterline. As if guessing your intention, he leans back against the side of the tub, lifting his body to meet you.)~ + a1854
-  ++ ~[PC] Shall I do... this? (Stroke his smoothly muscled body down to the waterline and below, working gently.)~ + a1853
-  ++ ~[PC] Feels nice, doesn't it? Now... hands right there, on each side of my waist, thumbs digging in. That is it. The lower back muscles are always the worst. (Glance over your shoulder at him, with a sultry smile.)~ + a1851
-  ++ ~[PC] Gods, what am I doing? I just don't know what came over me. I am so sorry - I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
-END
-
-IF ~~ a1833
-  SAY ~[ARAN] I understand th' contract. No bedding, no matter what, just touchin'. An' I always keep a policy o' "naught asked, naught told, naught to worry noone". But gods, <CHARNAME>... I want you so much right now I'd  do anythin' to make love to you, right here an' now.~
-  ++ ~[PC] I think if we keep doing this, we might not be able to stop, and I am not ready for that. What you just said convinced me this will be too much temptation. You have to trust me and wait. Go on... watch the door.~ + a1809
-  ++ ~[PC] This is all I want. Just this closeness. For now. Just hold me.~ + a1860
-  ++ ~[PC] I am not sure, but it is a little late, seeing as I am already... you are already... oh, gods...~ + a1837
-  ++ ~[PC] I want you, and you want me. But there are other ways of pleasuring each other. Just touching, outside?~ + a1827
-  ++ ~[PC] I think I am... I... Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
-END
-
-IF ~~ a1834
-  SAY ~[ARAN] (His hands clasp behind the back of your neck, pulling you into a fierce kiss. They pull down across your shoulders, gripping the cloth of your undergarments tightly...~
-  = ~[ARAN] (...and his long, lean muscles harden under your touch. With a low growl, he tears your underclothing away, pressing his bare chest to yours.)~
-  ++ ~[PC] HEY! Those clothes cost me a good deal of coin! What do you think you are doing?~ + a1835
-  ++ ~[PC] Stop... too far, too fast... STOP!~ + a1826
-  ++ ~[PC] (Grabbing his manhood, you twist.) Don't you ever do anything like that again!~ + a1835
-  ++ ~[PC] (Push him away in disgust.) You have a lot of nerve! Stay away from me until you can treat me with respect!~ + a1835
-  ++ ~[PC] (Claw and tear at the remaining scraps of cloth, drawing your legs up around him and enfolding him in your arms.)~ + a1836
-  ++ ~[PC] This... this is important, Aran. This is just for fun, understand? I already have something special with someone else, and if they find out, there will be complications.~ + a1818
-  ++ ~[PC] (Kiss his lips, his neck, his chest, whispering his name.)~ + a1829
-END
-
-IF ~~ a1835
-  SAY ~[ARAN] Bane's Bones, what did I do?~
-  ++ ~[PC] (Dart him an angry glare and leave.)~ + a1861
-  ++ ~[PC] I can't believe that you don't know what you did. You can bathe alone.~ + a1861
-  ++ ~[PC] Men! Gods, are all of you this dense? Don't bother...I already know the answer. Good night.~ EXIT
-  ++ ~[PC] Next time... IF you are lucky enough to HAVE a next time... treat me with more respect. Here is your belt... (splash) and here are your clothes... (splash).~ + a1861
-  ++ ~[PC] I am not sure. I know you did not mean any harm, but I am most definitely not in the mood for being this close to you.~ + a1861
-  ++ ~[PC] I came within inches of destroying my relationship with my love, and you almost let me. I thought we were better friends than that.~ + a1861
-  ++ ~[PC] Nothing. You did nothing. I did nothing. This is just very, very confusing.~ + a1861
-END
-
-IF ~~ a1836
-  SAY ~[ARAN] Now, who be th' aggressor, you or me? On account o' you move even a little, an' things will be where nature done intended...~
-  ++ ~[PC] Oh. OH. I... I seem to have already moved. And you are moving, too... don't stop!~ + a1837
-  ++ ~[PC] Gods, take me...~ + a1838
-  ++ ~[PC] How in the nine hells do you fit all that under your armor, anyways? Not that... I am... complaining... mind you...~ + a1838
-  ++ ~[PC] Wait. I cannot do this. Aran, stop. STOP.~ + a1826
-  ++ ~[PC] You take, I take, I give, you give... why are we talking? Gods, just press forward!~ + a1839
-  ++ ~[PC] (Take hold of his chin with one hand, guiding him so that your forehead rests on his and you are looking deeply into each other's eyes... and tighten your legs, driving him deep within you.)~ + a1837
-END
-
-/* contemplative */
-IF ~~ a1837 SAY ~[ARAN] (The sounds and cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~ IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT END
-
-IF ~~ a1838
-  SAY ~[ARAN] (His eyes burn with lust as he pulls away for a moment, his body still pinning yours to the side of the tub, his manhood poised on your threshold.)~
-  = ~[ARAN] Th' gods will not be takin' you today, <CHARNAME>. But by all their names, I will.~
-  IF ~~ THEN GOTO a1837
-END
-
-IF ~~ a1839
-  SAY ~[ARAN] (His eyes burn with lust as he pulls away for a moment, his body still pinning yours to the side of the tub, his manhood poised on your threshold.)~
-  = ~[ARAN] Th' gods will not be takin' you today, <CHARNAME>. But by all their names, I will.~
-  IF ~~ THEN GOTO a1863
-END
-
-IF ~~ a1840
-  SAY ~[ARAN] Now, you be pullin' away from me. Do you want I should stop, or should I continue?~
-  ++ ~[PC] I think I have had enough of this right now. You bathe. I am going to rest.~ + a1857
-  ++ ~[PC] If I wanted you to stop, I would had said so. Just go gently, please. I like it when you touch me.~ +  a1825
-  ++ ~[PC] Too much, too fast. Let's just have that bath, and save the other forms of entertainment for another time.~ + a1817
-  ++ ~[PC] My calves ache, and my heels. Do you think you could do something about that?~ + a1816
-  ++ ~[PC] You should get out and watch the door, while I finish bathing.~ + a1809
-END
-
-IF ~~ a1841
-  SAY ~[ARAN] (Bubbles of air break the surface as you force his head under the water, suddenly tickling your bare flesh as he wrestles close to your torso. Warm lips tease you as he blows gently on the sensitive skin of your belly and breasts, then he surfaces with a spray of water that drenches your face completely.)~
-  ++ ~[PC] HEY! Stop that! That tickles! Get over here. I have better uses for those lips of yours.~ + a1829
-  ++ ~[PC] I want more, Aran. The strong take what they want.~ + a1828
-  ++ ~[PC] Well, that was fun. Hey grab the soap, and wash my back, will you?~ + a1851
-  ++ ~[PC] Playing about is for children. Do you want me, or are you just going to gawk at my body while I lie here, all vulnerable and available to you?~ + a1850
-  ++ ~[PC] You know, when I stop laughing, you are going to be in so much trouble...~ + a1840
-  ++ ~[PC] I like you, even when you are an insufferable flirt! Hold me, Aran. Nothing else. Just come over here, calm down, and hold me.~ + a1860
-END
-
-IF ~~ a1842
-  SAY ~[ARAN] More like lusted after an' molested, eh?~
-  ++ ~[PC] You have such a beautiful bottom. Pity you use it to think, too. For that, you will have to be punished. (Grab his neck and force his head under the water.)~ + a1841
-  ++ ~[PC] If you're going to be doing any lusting, you're going to need a better view. You may have to move a little closer. Or deeper. (Move closer into his embrace, arms creeping around his neck.)~ + a1815
-  ++ ~[PC] Lust is good. Anything more serious, well, why don't we stick with lust for awhile and see how it goes.~ + a1830
-  ++ ~[PC] I am not an object, and I do not choose to be molested. You, on the other hand, are subject to my every whim. Just tell me 'no', and I will stop...~ + a1843
-  ++ ~[PC] If that was a joke, I am not amused. Get out of this tub, this instant.~ + a1835
-  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER2> instead, but you will have to do...~ + a1844
-  + ~Gender(Player3,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER3> instead, but you will have to do...~ + a1844
-  + ~Gender(Player4,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER4> instead, but you will have to do...~ + a1844
-  + ~Gender(Player5,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER5> instead, but you will have to do...~ + a1844
-  + ~Gender(Player6,MALE) !Name("c-aran",Player2)~ + ~[PC] A joker, eh? Two can play that game. I have always wanted <PLAYER6> instead, but you will have to do...~ + a1844
-END
-
-IF ~~ a1843
-  SAY ~[ARAN] (Aran's laughter echoes across the chamber, his voice darkened with lust.) Never saw myself in quite that way, but if th' lady insists, I'll be a toy. Question is, do you want me to follow through like a man, or are you just playin' wi' me?~
-  ++ ~[PC] Silly sellsword. It is I who shall do the playing. And the taking. And I intend for you to be very, very... gods... taken...~ + a1837
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
-  ++ ~[PC] Perfect choice of words...~ +  a1829
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this big thing goes right here, or at least he starts there... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse.)~ + a1837
-  ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
-  ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
-  ++ ~[PC] Oh, playing of course, my handsome friend. But, I play for keeps. (Move onto him, his breath roughening as he enters you.)~ + a1839
-END
-
-IF ~~ a1844
-  SAY ~[ARAN] (Aran's laughter echoes across the chamber, his voice darkened with lust.) That may be, but right now it be just th' two o' us, alone. Question is, do you want me to follow through, or are you playin' wi' me?~
-  ++ ~[PC] Silly sellsword. It is I who shall do the taking. And I intend for you to be very, very... (Move onto him, his breath roughening as he enters you.) ...taken...~ + a1837
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and this.. and you see if you can follow my next order. Ready? Get out now and watch the door.~ + a1826
-  ++ ~[PC] Perfect choice of words...~ +  a1829
-  ++ ~[PC] Oh, playing of course, my handsome friend. But, I play for keeps. (Move onto him, his breath roughening as he enters you.)~ + a1839
-  ++ ~[PC] Let's have a little test. I run my hands over you, like so... and the tip of this big boy goes right here... and you see if you can follow my next order. Ready? (Dig your heels into him as if riding a horse).~ + a1837
-  ++ ~[PC] You... you are laughing at me? I cannot believe you are laughing at me, when I... get out. Get out of the water right now.~ + a1835
-  ++ ~[PC] I am playing with you, of course. Friends, remember? I know you want me, but this is as far as we can go. I think you should watch the door before something happens we both may regret.~ + a1864
-END
-
-IF ~~ a1845
-  SAY ~[ARAN] I'd stay like this for hours, but I need to know. I am on fire for you, an' in a position to do somethin' about it. Literally. What do you be wantin' to do?~
-  ++ ~[PC] Nothing else. This is all I want. Just this. For now.~ + a1849
-  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
-  ++ ~[PC] Oh, I don't know. Perhaps a game of chess? You seem to be moving that slowly...~ + a1828
-  ++ ~[PC] I am not sure. But I want you, and you want me. There are other ways of pleasuring each other, though. Just touching, outside?~ + a1827
-END
-
-IF ~~ a1846
-  SAY ~[ARAN] (His face turns upward to yours, eyes bright.) I'd stay like this for hours, an' do a mite more than this, too. I am on fire for you, an' in a position to do somethin' about it. Literally. What do you be wantin' to do?~
-  ++ ~[PC] Nothing else. This is all I want. Just this. For now.~ + a1849
-  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
-  ++ ~[PC] (Kiss him.) I want to feel you inside of me. Now, what do *you* be wantin' to do?~ + a1838
-  ++ ~[PC] Oh, I don't know. Perhaps you are not man enough to just do it.~ + a1848
-  ++ ~[PC] I am not sure. But I want you, and you want me. There are other ways of pleasuring each other, though. Just touching, outside?~ + a1827
-END
-
-IF ~~ a1847
-  SAY ~[ARAN] Well, what are we doin' right now?~
-  ++ ~[PC] I... I don't know. Part of me wants to, but part of me... I think we are... I think I am going too far.~ + a1849
-  ++ ~[PC] My mind says we are getting too intimate, but my body says otherwise. If we were smart, we would stop.~ + a1849
-  + ~GlobalLT("c-aransex","GLOBAL",3)~ + ~[PC] We are about to change our relationship forever. I think I am ready for that.~ + a1849
-  + ~Global("c-aransex","GLOBAL",4)~ + ~[PC] We are about to have another really great time together. I think I am ready for that.~ + a1849
-  ++ ~[PC] I think you were about to ravish me, and I was about to start encouraging you...~ + a1848
-  ++ ~[PC] Oh, I don't know. Perhaps you are not man enough to just do it.~ + a1848
-END
-
-IF ~~ a1848
-  SAY ~[ARAN] I need no encouragement. Mayhap actions will show stronger than words.~
-  ++ ~[PC] Oh. OH. I... just keep going, and never stop.~ + a1837
-  ++ ~[PC] Gods, take me...~ + a1838
-  ++ ~[PC] How in the nine hells do you fit all that under your armor, anyways? Not that... I am... complaining... mind you...~ + a1838
-  ++ ~[PC] Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
-  ++ ~[PC] Stop right there, boyo. I think I have had enough fun. Now, hand me a towel, and get out of here.~ + a1864
-END
-
-IF ~~ a1849
-  SAY ~[ARAN] Are you sure? I want you so much right now I'd  do anythin' to make love to you, right here an' now.~
-  ++ ~[PC] I think if we keep doing this, we might not be able to stop, and I am not ready for that. You have to trust me and wait. Go on... watch the door.~ + a1809
-  ++ ~[PC] This is all I want. Just this closeness. For now. Just hold me.~ + a1860
-  ++ ~[PC] I am not sure, but it is a little late, seeing as I am already... you are already... oh, gods...~ + a1837
-  ++ ~[PC] I want you, and you want me. But there are other ways of pleasuring each other. Just touching, outside?~ + a1827
-  ++ ~[PC] I think I am... I... Wait. WAIT. I cannot do this. Aran, stop.~ + a1826
-END
-
-IF ~~ a1850
-  SAY ~[ARAN] Malar's Sharp Teeth, I will have what I want. An' that be you.~
-  = ~[ARAN] (He pulls you down into his arms, towering over you. His rough cheek scrapes along your body. His hips twist your knees apart as you wrestle, lips locked in battle.)~
-  ++ ~[PC] Gods, take me...~ + a1839
-  ++ ~[PC] (You bite down hard on his lip, then push him away from you.) The hells, you will! If you ever try anything like that again, I swear I will kill you!~ + a1864
-  ++ ~[PC] (Growl fiercely, biting him and scratching him.)~ + a1863
-  ++ ~[PC] (Twist away suddenly.) Aran. ARAN. STOP.~ + a1826
-  ++ ~[PC] Well, you have the right idea, but I changed my mind. Good energy, but I want it applied properly, not like a beast in heat...~ + a1865
-END
-
-IF ~~ a1851
-  SAY ~[ARAN] Teasin' me a mite, or are you really askin' for just a backrub an' a bit o' help wi' th' washin'?~
-  ++ ~[PC] I really want that backrub. Just dig those fingers in deep, and work the knots out, please.~ + a1856
-  ++ ~[PC] (Reach back and pull him close, nestling until his gasp of surprise matches your groan of delight.) What do you think?~ + a1852
-  ++ ~[PC] Maybe both. But right now, I can feel you beneath my fingertips, and you can feel me practically everywhere. But Aran... no sex. Just this, all right?~ + a1827
-  ++ ~[PC] I am teasing you, and teasing me. Put your hand right there. Can't you feel... this?~ + a1852
-END
-
-IF ~~ a1852
-  SAY ~[ARAN] I think if you keep that up, one or more o' us will become very, very, happy, an' we will make a mite bit o' a mess.~
-  ++ ~[PC] (Lean back in his arms, his chin resting on your shoulder, and move your hips slowly back and forth to your mutual and increasing pleasure.) There. All comfy now?~ + a1854
-  ++ ~[PC] (Move carefully to him and sit back, eliciting another gasp from both of you.) There. I always believe a sword should be sheathed correctly.~ + a1855
-  ++ ~[PC] Now then, we can't have that. (Move away from him and turn in his arms, capturing his hips between your thighs.)~ + a1853
-  ++ ~[PC] Aran... We have to stop. Hey. Stop moving. I mean it. We have to stop now.~ + a1826
-  ++ ~[PC] Well, ooooh... OH. Ok, enough. I have had plenty of fun.  Out of the tub. Move it, sellsword.~ + a1826
-END
-
-IF ~~ a1853
-  SAY ~[ARAN] <CHARNAME>...~
-  ++ ~[PC] Aran... ARAN. We have to stop.~ + a1826
-  ++ ~[PC] When you say my name like that, as if it were a prayer, how can I resist. Take me all the way, right now. I want you.~ + a1837
-  ++ ~[PC] I just don't know what came over me. I am so sorry. I... I... (grab the towels and your clothes, and make a run for the door.)~ + a1861
-  ++ ~[PC] (Move with him, letting your desire and excitement match his.)~ + a1837
-  ++ ~[PC] Hey, relax... touching only. I am not ready to go all of the way.~ + a1827
-END
-
-IF ~~ a1854
-  SAY ~[ARAN] Oh gods...~
-  ++ ~[PC] Or mmmmph?~ + a1853
-  ++ ~[PC] Or this... (Brush the tips of your breasts down his skin, your body moving with his, your breath matching his.)~ + a1853
-  ++ ~[PC] ... oh gods, Aran... no sex. Just this, all right?~ + a1827
-  ++ ~[PC] Now that felt really, really good. OK, enough. Out of the tub. Move it.~ + a1826
-END
-
-IF ~~ a1855
-  SAY ~[ARAN] I can feel every bit o' you. I don't want to stop, not now, not ever.~
-  ++ ~[PC] Then don't stop, for anything, for any reason.~ + a1837
-  ++ ~[PC] I can feel every bit of you, too. I know this will cause problems, but it feels so good...~ + a1837
-  ++ ~[PC] Oh, Aran, fill me completely. I am yours, and only yours.~ + a1837
-  ++ ~[PC] Harder. Faster. I want more. Gods, I want more.~ + a1863
-  ++ ~[PC] I... I don't want to stop, but I have to. We have to. Aran, stop. We have gone too far. ARAN.~ + a1826
-  ++ ~[PC] Get away from me. Now.~ + a1826
-END
-
-IF ~~ a1856
-  SAY ~[ARAN]  Your wish be my command.~
-  IF ~~ THEN GOTO a1858
-END
-
-IF ~~ a1857
-  SAY ~[ARAN] (The lantern light dances as you both share the bath, modestly and discreetly. The swishing of the soapy cloth on his back makes a soft counterpoint to the distant voices and snippets of music that creep under the door.)~
-  IF ~~ THEN GOTO a1859
-END
-
-IF ~~ a1858
-  SAY ~(The lantern light dances as you both share the bath, modestly and discreetly. After a while, the swishing of the soapy cloth on your back gives way to a gentle and thorough massage.)~
-  IF ~~ THEN GOTO a1859
-END
-
-IF ~~ a1859
-  SAY ~[ARAN] (The cares of adventuring drift away for a short time.)~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1860 /* holding only, no matter how frustrating */
-  SAY ~[ARAN] (You hold each other gently, relaxing in the water as the faint wisps of music and laughter creep under the door. For a time, the cares of adventuring drift away.)~
-  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ EXIT
-END
-
-IF ~~ a1861 /* PC runs for it */
-  SAY ~[ARAN] (The door slams shut as your back slams against it. You drape your towel around your body and attempt to regain your composure. Muted cursing and splashing filters from behind you as you seek the privacy of your room to dry off.)~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1862 /* petting only */
-  SAY ~[ARAN] (The sounds and cries of your mutual pleasuring echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
-  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ EXIT
-END
-
-IF ~~ a1863 /* aggressive */
-  SAY ~[ARAN] (The harsh sounds and loud cries of your lovemaking echo throughout the chamber, drowning out the faint wisps of music and laughter creeping under the door. For a time, the cares of adventuring drift away.)~
-  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ EXIT
-END
-
-IF ~~ a1864
-  SAY ~[ARAN] Bloody hells... Now where be th' fun in that, I ask you. I... You tease me half to... Well, suit yourself.~
-  = ~[ARAN] I have enough self control to know "no" means "no". But that be a cold, mean, calculatin' thing to do to a lad. You take your own bath, there. I think I done saw a right fine young lady back at th' bar, an' mayhap she will be more friendly.~
-  = ~[ARAN] (He climbs from the water, stretching to reach a towel, and leaves the chamber.)~
-  = ~[ARAN] (The lantern light dances as you bathe alone.)~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a1865
-  SAY ~[ARAN] <CHARNAME>... so warm, so close...~
-  ++ ~[PC] Aran... ARAN. We have to stop.~ + a1826
-  ++ ~[PC] Take me all the way, right now. I want you.~ + a1837
-  ++ ~[PC] (Move with him, letting your desire and excitement match his.)~ + a1837
-  ++ ~[PC] Whoa, slow down... There are other ways of pleasuring each other. Just touching, outside?~ + a1827
-END
 
 /* Gog Story */
 
