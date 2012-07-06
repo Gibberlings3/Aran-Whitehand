@@ -729,7 +729,7 @@ END CELVAN 1
 
 /* Bubbles' Boyz */
 I_C_T CARBOS 2 c-aranbubblesboyz /* ~Fight over her?  What an excellent idea!  Yes, we shall fight over our beloved Bubbles!~ */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Helm's Hard Horn, that there be a damn fool idea. Mayhap we had better wander on, an' not get too involved. No sence stickin' our d... err... No sense gettin' in th' way o' two fools who can't settle things peaceable.~
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Helm's Hard Horn, that there be a damn fool idea. Mayhap we had better wander on, an' not get too involved. No sense stickin' our d... err... No sense gettin' in th' way o' two fools who can't settle things peaceable.~
 END
 
 /* SoA  Interjections : Wellyn's Teddy Bear in the Graveyard */
@@ -2649,7 +2649,7 @@ IF ~~ a1933 /* c-aranshutup27 */ SAY ~[ARAN] Aye, then. Kelemvor's Dry Breath, b
 IF ~~ a1934 /* c-aranshutup28 */ SAY ~[ARAN] Bugger all. Bane's Bones, <PRO_MANWOMAN>. Just makin' conversation.~ IF ~~ THEN EXIT END
 IF ~~ a1935 /* c-aranshutup29 */ SAY ~[ARAN] Sweet merciful patience... by Mystra's Pale Cheeks, all I was sayin' was... never mind.~ IF ~~ THEN EXIT END
 IF ~~ a1936 /* c-aranshutup30 */ SAY ~[ARAN] Torm's Mailed Fist, you slammed that conversation shut solid.~ IF ~~ THEN EXIT END
-IF ~~ a1937 /* c-aranshutup31 */ SAY ~[ARAN] Sons of the Seldarine, you know how to close up a conversation right quick.~ IF ~~ THEN EXIT END
+IF ~~ a1937 /* c-aranshutup31 */ SAY ~[ARAN] Sons of the Seldarine, you know how to close up a conversation right quick.~ IF ~~ THEN EXIT END // UNUSED - PLACEHOLDER - FIX THIS
 IF ~~ a1938 /* c-aranshutup32 */ SAY ~[ARAN] Daughters of the Seldarine, I'll just shut my mouth tight, then.~ IF ~~ THEN EXIT END
 IF ~~ a1939 /* c-aranshutup33 */ SAY ~[ARAN] Larethian's Sharp Sword, you got a bad case o' attitude, eh?~ IF ~~ THEN EXIT END
 IF ~~ a1940 /* c-aranshutup34 */ SAY ~[ARAN] Larethian's Mighty Bow, you be in a sharp mood. Fine, shuttin' up.~  IF ~~ THEN EXIT END
@@ -2976,7 +2976,7 @@ IF ~~ a1793
   IF ~~ THEN GOTO a1791
 END
 
-IF ~~ a1794
+IF ~~ a1794 // UNUSED REFERENCE - PLACEHOLDER - FIX THIS
   SAY ~[ARAN] Cyric's Black Heart, I don't run out on contracts. But you smell worse than a charnelhouse. If I throw up, you will be knowin' why.~
   IF ~~ THEN GOTO a1791
 END
@@ -6361,7 +6361,7 @@ IF ~~ a303
   ++ ~[PC] I think I would rather not spar tonight, Aran. I am going to turn in.~ + a273
 END
 
-IF ~~ a304
+IF ~~ a304  // UNLINKED - PLACEHOLDER - FIX THIS
   SAY ~[ARAN] There you go. Nothin' to it. You dance right fine, an' duelin's just like dancin', only with a point, eh? I mean, a point system. I guess there be a point to dancin', too.~
   ++ ~[PC] (Lean your head back onto his shoulder and offer your lips to him.)~ + a296
   ++ ~[PC] That will do. I can take it from here - let's spar.~ + a309
@@ -9816,7 +9816,7 @@ IF ~~ a695
   ++ ~[PC] Then tell me - why do you love me?~ + a705
 END
 
-IF ~~ a696
+IF ~~ a696 // UNLINKED - FIX THIS - PLACEHOLDER
   SAY ~[ARAN] There be little or no difference between th' two, in th' first stages. But in terms o' th' words...~
   IF ~~ THEN GOTO a688
 END
@@ -12379,7 +12379,7 @@ IF ~~ a4696
   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",3) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
-IF ~~ a4697 // unlinked
+IF ~~ a4697 // UNLINKED - PLACEHOLDER - FIX THIS
   SAY ~[ARAN] Your wish be my command.~
   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
@@ -13313,7 +13313,7 @@ END
 IF ~~ a821 SAY ~[ARAN] I'm not sure I'm understandin', <CHARNAME>, but if you are sayin' what I think you are sayin', well, I'd be a fool not to want to. But I'd better not right now. There's complications what I got to think out, first.~ IF ~~ THEN EXIT END
 IF ~~ a822 SAY ~[ARAN] (Aran looks wistfully at you as you leave, his gaze lingering for as long as he can see you.)~ IF ~~ THEN DO ~RestParty()~ EXIT END
 
-IF ~~ a823
+IF ~~ a823 // UNLINKED - PLACEHOLDER - FIX THIS
   SAY ~[ARAN] Aye, then, that I will. Have fun!~
   = ~[ARAN] (Aran soon engages another to play chess, but you notice his constant glances are keeping close watch of what you are doing.)~
   ++ ~[PC] (You flirt discreetly with a bar patron)~ + a869
@@ -15134,7 +15134,7 @@ IF ~~ a3375 /* PC_IS_ON_BACK */
 END
 
 /* III. From Within Inn Flirts: Looking */
-IF ~~ a3413 /* PC_1_LOOKING */
+IF ~~ a3413 /* PC_1_LOOKING */ // UNLINKED - FIX THIS - PLACEHOLDER
   SAY ~[ARAN] Were you lookin' at somethin' in particular, or were you just tryin' to get my attention?~
   ++ ~[PC] It took you long enough to notice. I think I want to kiss you.~ + a3414 /* FEM_LEAD_1 */
   ++ ~[PC] (Blush and look down at your hands)~ + a3415 /* MALE_LEAD_1 */
@@ -21988,8 +21988,8 @@ IF ~~ a1321
   IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
 END
 
-IF ~~ a1322
-  SAY ~[ARAN] So, what do ye call a male Drow without a girlfriend?~
+IF ~~ a1322 // UNLINKED - FIX THIS - PLACEHOLDER
+  SAY ~[ARAN] So, what do ye call a male Drow wi' out naught in th' way o' a girlfriend?~
   =  ~[ARAN] Homeless!~
   IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
 END
@@ -29640,4 +29640,4 @@ END
 /* + ~!Class("c-aran",BARD_ALL)~ + ~[PC] This is depressing and dark. Come on, Aran, liven things up a bit. Tell me a story.~ + a1672 */
 /* + ~Class("c-aran",BARD_ALL)~ + ~[PC] This is depressing and dark. Come on, Aran, liven things up a bit. Tell me a story.~ + a1671 */
 /* + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + ~[PC] Hey, Aran, I remember you telling a story... can you tell it to me again?~ + a1673 */
-/* + ~Global("c-aranfistfight","LOCALS",1)~ + ~[PC] Oh no you don't... you stay back here and get those fire arrows ready. You don't want a repeat of that whole Ice troll incident, now do you?~ + a1385 */
+/* + ~Global("c-aranfistfight","LOCALS",1)~ + ~[PC] Oh no you don't... you stay back here and get those fire arrows ready. You don't want a repeat of that whole Ice troll incident, now do you?~ + a1385  PL:ACEHOLDER - UNUSED STATE - FIX THIS */
