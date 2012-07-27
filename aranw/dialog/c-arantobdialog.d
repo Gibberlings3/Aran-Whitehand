@@ -858,7 +858,7 @@ Global("c-ArSisterBranch","GLOBAL",5) = smart selfish
 Global("c-ArSisterBranch","GLOBAL",6) = talk skipped - "hey, you wanna talk now?"
 
 */
-/* ToB FriendTalk 1 : "Sisters"  : goto followup */
+/* ToB FriendTalk 1 : "Sisters"  : goto followup1 */
 
 /* ToB FriendTalk 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : initial  */
 IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a2764 /*  7 options */
@@ -875,7 +875,7 @@ IF ~Global("c-aranfriendtob","GLOBAL",3)~ THEN BEGIN a2764 /*  7 options */
   + ~RandomNum(3,2)~ + ~[PC] Less complaining, or I will cut out your tongue and use it as fishbait.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3147 /* c-aranshutup14 ~[ARAN] Umberlee's Fickle Breath, I'll shut my blighted mouth, then.~ */
   + ~RandomNum(3,3)~ + ~[PC] Were you talking, or did you just break wind?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3148 /* c-aranshutup15 ~[ARAN] Malar's Sharp Teeth. Shuttin' up an' soldierin'.~ */
 END
-/* ToB FriendTalk 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : goto followup  */
+/* ToB FriendTalk 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : goto followup2  */
 
 /* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires */
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",1)~ THEN BEGIN a2850  /* neutral/shy */
@@ -927,7 +927,7 @@ IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",6)~ 
   ++ ~[PC] What are you so worried about?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2873
   ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
 END
-/* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : goto followup */
+/* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : goto followup3 */
 
 /* ToB FriendTalk 4 : "Digression" */
 IF ~Global("c-aranfriendtob","GLOBAL",7)~ THEN BEGIN a4551
@@ -938,11 +938,24 @@ IF ~Global("c-aranfriendtob","GLOBAL",7)~ THEN BEGIN a4551
 	++ ~[PC] Tell me later. Right now, I don't need the distraction.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4566
 	++ ~[PC] If it is about supplies, I already have the full list. Did you want to add something to it?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4553
 END
-/* ToB FriendTalk 4 : "Digression" : goto followup */
+/* ToB FriendTalk 4 : "Digression" : goto followup4 */
 
+/* ToB FriendTalk 5 : "Worrying" */
+IF ~Global("c-aranfriendtob","GLOBAL",9)~ THEN BEGIN a4702
+  SAY ~[ARAN] You know, I be a mite bit worried.~
+  ++ ~[PC] You think too much.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4703
+  ++ ~[PC] What are you worried about now?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4704
+  ++ ~[PC] You should be.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4705
+  ++ ~[PC] I am worried, too.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4706
+  + ~RandomNum(5,5)~ + ~[PC] Is there any way I could persuade you to just shut the hells up? Short of physical violence, I mean.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3173 /* c-aranshutup40 */
+  + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3174 /* c-aranshutup41 */
+  + ~RandomNum(5,3)~ + ~[PC] I would stuff your gear in your mouth to shut off the noise, but somehow I think you would still find a way to blather on about nothing.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3175 /* c-aranshutup42 */
+  + ~RandomNum(5,2)~ + ~[PC] Silence is golden. Pay yourself. Or perhaps I can pay you to SHUT THE HELLS UP.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3176 /* c-aranshutup43 */
+  + ~RandomNum(5,1)~ + ~[PC] Just leave me alone, ok? I wouldn't want to disturb your industrious scratching of various body parts. Go back to doing whatever it is you were doing.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3177 /* c-aranshutup44 */
+END
+/* ToB FriendTalk 5 : "Worrying" : goto followup5 */
 
-
-/* ToB FriendTalk 1 : "Sisters"  : followup */
+/* ToB FriendTalk 1 : "Sisters"  : followup1 */
 IF ~~ a2791
   SAY ~[ARAN] Aye, I understand. But you grew up wi' her, and it seems like th' bond is more than many feel for their own true sisters.~
   ++ ~[PC] I thought you had a sister for whom you cared deeply.~ + a2796
@@ -1367,7 +1380,7 @@ IF ~~ a2849
   IF ~~ THEN EXIT
 END
 
-/* ToB 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : followup */
+/* ToB 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : followup2 */
 IF ~~ a2765
   SAY ~[C-ARAN] Well, it does, a bit. We could move a might faster, you know.~
   IF ~~ THEN GOTO a2770
@@ -1745,7 +1758,7 @@ IF ~~ a2875
   IF ~~ THEN GOTO a2806
 END
 
-/* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : followup */ 
+/* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : followup3 */ 
 IF ~~ a2856
   SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
   ++ ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with other men about their sisters.~ + c-tobplaceholder /* PLACEHOLDER */
@@ -1856,7 +1869,7 @@ IF ~~ a2874
   IF ~~ THEN EXIT
 END
 
-/* ToB FriendTalk 4 : "Digression" :  followup */
+/* ToB FriendTalk 4 : "Digression" :  followup4 */
 IF ~~ a4552 SAY ~[ARAN] Now, I do have thoughts sometimes, just on rare occasions, you know.~ IF ~~ THEN GOTO a4553 END
 IF ~~ a4553 SAY ~[ARAN] Well, I did have a thought, but it be gone now.~ IF ~~ THEN GOTO a4554 END
 
@@ -1918,6 +1931,107 @@ END
 
 IF ~~ a4565 SAY ~[ARAN] Blighted hells, you know how to bring a lad down, eh? Mayhap I will go wander on an' think o' more happy thoughts, like bein' captured by Drow an' tortured. Or bein' th' appetizer for some dragon.~ IF ~~ THEN EXIT END
 IF ~~ a4566 SAY ~[ARAN] Aye, I do tend to talk too much. Which probably be why I done forgot what it were I had on my mind to begin with. Mayhap I should start scribblin' down my thoughts before I satrt talkin'. Or mayhap I'll just wander along an' see if I can remember on my own.~ IF ~~ THEN EXIT END
+
+
+/* ToB FriendTalk 5 : "Worrying"  : followup5 */
+IF ~~ a4703
+  SAY ~[ARAN] Aye. That be another thing what worries me. Ever since I started workin' wi' you, I start thinkin' when I should be actin', an' actin' when I should be thinkin'.~
+  + ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] So you have a little crush on me?~ + a4707
+  + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] So you have a little crush on me?~ + a4707
+  + ~Gender(Player1,MALE)~ + ~[PC] So you have a little crush on me? I thought you said you prefer women.~ + a4710
+  ++ ~[PC] You think too much.~ + a4703
+  ++ ~[PC] Oh, and here I thought you were worried that we keep running into all sorts of powerful adversaries, and understanding that it is only a matter of time before one of them rends us limb from limb.~ + a4710
+  ++ ~[PC] There is nothing to worry about, Aran. We are a pretty good team.~ + a4709
+  ++ ~[PC] You keep your eyes open and be ready for whatever comes next. Let me do the worrying.~ + a4709
+  + ~RandomNum(5,5)~ + ~[PC] I am trying to think up a random insult to hurl your way, but I'm fresh out of ideas.~ + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + ~[PC] I would insult you, but I have rules against taking advantage of idiots.~ + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3181 /* c-aranshutup48 */
+  + ~RandomNum(5,1)~ + ~[PC] To quote a Rashemite insult, thou art a warped ill-nurtured gibberling.~ + a3182 /* c-aranshutup49 */
+END
+
+IF ~~ a4704
+  SAY ~[ARAN] Just about everythin', I think.~
+  ++ ~[PC] You really do think too much.~ + a4703
+  ++ ~[PC] Oh, and here I thought you were worried that we keep running into all sorts of powerful adversaries, and understanding that it is only a matter of time before one of them rends us limb from limb.~ + a4710
+  ++ ~[PC] There is nothing to worry about, Aran. We are a pretty good team.~ + a4709
+  ++ ~[PC] You keep your eyes open and be ready for whatever comes next. Let me do the worrying.~ + a4709
+  ++ ~[PC] Why worry? What happens, happens. All we can do is be prepared to the worst.~ + a4705
+  + ~RandomNum(5,5)~ + ~[PC] I am trying to think up a random insult to hurl your way, but I'm fresh out of ideas.~ + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + ~[PC] I would insult you so that you would stop talking to me and leave me alone, but I have rules against taking advantage of idiots.~ + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3181 /* c-aranshutup48 */
+  + ~RandomNum(5,1)~ + ~[PC] To quote a Rashemite insult, thou art a warped ill-nurtured gibberling.~ + a3182 /* c-aranshutup49 */
+END
+
+IF ~~ a4705
+  SAY ~[ARAN] That be what bothers me th' most. So far, every time I think o' th' worst situation we could face, an' prepare myself, it turns out that things be far worse than I could ever o' imagined. I be startin' to get th' twitches, watchin' each little child what walks by just in case they be a demon or dragon or lich or some other gods-blighted creature o' myth an' legend.~
+  ++ ~[PC] Your biggest worry should be how to procure curry powder and store it without accidentally getting it into your smallclothes.~ + a4710
+  ++ ~[PC] There is nothing to worry about, Aran. We are a pretty good team.~ + a4709
+  ++ ~[PC] You keep your eyes open and be ready for whatever comes next. Let me do the worrying.~ + a4709
+  + ~OR(27) AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Hey, we are wandering about a huge trapped guarded stone fortress with unspeakably horrendous adversaries lurking at every turn. What could possibly go wrong?~ + a4710
+  + ~AreaCheck("AR4500")~ + ~[PC] I think we are safe here. There is less to worry about when you are tucked away in a planar pocket. Unless, of course, this is just a dream, and when I wake up the whole bubble just disappears with you inside it.~ + a4710
+  + ~AreaCheck("AR5000")~ + ~[PC] Perhaps we should talk about being worried when we are not in a city that has had Fire giants slamming huge rocks into it. I think some of the timers over there look a little worse for the wear...~ + a4710
+  + ~AreaCheck("AR5003")~ + ~[PC] I think you need a drink. If we are going to sit around in the Tankard Tree worrying about beams damaged by seigework, and the possibility of the roof falling in on us, we need to do it while drunk.~ + a4710
+  + ~AreaCheck("AR5501")~ + ~[PC] I think you need to order us drinks. If we are going to sit around and worry about who is spying on us right this very minute and plotting our slow death by unspeakable tortures, we need to do it while drunk.~ + a4710
+  + ~AreaCheck("AR5004")~ + ~[PC] Do not fret, Aran. Waukeen will protect Her temple. Unless she really is gone, and a new goddess is just messing about giving her worshipers powers...~ + a4710
+  + ~AreaCheck("AR5006") AreaCheck("AR5016")~ + ~[PC] It must be the prison surroundings making you all upset. Just think, you could have been imprisoned here ages ago, and I could be meeting you for the first time right now, and wondering why the sellsword in the corner cell has a beard that goes past his knees.~ + a4710
+  + ~AreaCheck("AR5005") AreaCheck("AR5015")~ + ~[PC] It must be the barracks. It must remind you of what your life would have been like if you had stayed in the Flaming Fist. Just think - you might have made it all the way up to Captain!~ + a4710
+  + ~AreaCheck("AR5013")~ + ~[PC] It must be the smell of these sewers. Or perhaps it is the thought of slimy little creatures dripping on the back of your neck...~ + a4710
+  + ~OR(9) AreaCheck("AR6102") AreaCheck("AR6103") AreaCheck("AR6104") AreaCheck("AR6105") AreaCheck("AR6106") AreaCheck("AR6107") AreaCheck("AR6108") AreaCheck("AR6109") AreaCheck("AR6110")~ + ~[PC] Oh, come on. What are a few legion Drow, some minor hirelings, and a minor risk the eye of Lolth glances our way? Nothing to worry about at all.~ + a4710
+  + ~AreaCheck("AR5509")~ + ~[PC] Oh, come on. We are just wandering about in a crypt. Nothing bad ever happens in one of these places, right?~ + a4710
+  + ~OR(4) AreaCheck("AR5200") AreaCheck("AR5201") AreaCheck("AR5203") AreaCheck("AR5204")~ + ~[PC] Oh, come on. We are just wandering about in a place guarded by Fire Giants. Nothing bad ever happens in one of these places, right?~ + a4710
+  ++ ~[PC] Now you have me worried.~ + a4710
+END
+
+IF ~~ a4706
+  SAY ~[ARAN] Well, you blighted well hide it well.~
+  + ~RandomNum(5,5)~ + ~[PC] I am trying to think up a random insult to hurl your way, but I'm fresh out of ideas. Just stop talking, please.~ + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + ~[PC] I would insult you so that you would stop talking to me and leave me alone, but I have rules against taking advantage of idiots.~ + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + ~[PC] Forget it. And stop yammering on, will you? Give it a rest.~ + a3181 /* c-aranshutup48 */
+  + ~OR(27) AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + ~[PC] Hey, we are wandering about a huge trapped guarded stone fortress with unspeakably horrendous adversaries lurking at every turn. What could possibly go wrong?~ + a4710
+  + ~AreaCheck("AR4500")~ + ~[PC] I think we are safe here. There is less to worry about when you are tucked away in a planar pocket. Unless, of course, this is just a dream, and when I wake up the whole bubble just disappears with you inside it.~ + a4710
+  + ~AreaCheck("AR5000")~ + ~[PC] Perhaps we should talk about being worried when we are not in a city that has had Fire giants slamming huge rocks into it. I think some of the timers over there look a little worse for the wear...~ + a4710
+  + ~AreaCheck("AR5003")~ + ~[PC] I think you need a drink. If we are going to sit around in the Tankard Tree worrying about beams damaged by seigework, and the possibility of the roof falling in on us, we need to do it while drunk.~ + a4710
+  + ~AreaCheck("AR5501")~ + ~[PC] I think you need to order us drinks. If we are going to sit around and worry about who is spying on us right this very minute and plotting our slow death by unspeakable tortures, we need to do it while drunk.~ + a4710
+  + ~AreaCheck("AR5004")~ + ~[PC] Do not fret, Aran. Waukeen will protect Her temple. Unless she really is gone, and a new goddess is just messing about giving her worshipers powers...~ + a4710
+  + ~AreaCheck("AR5006") AreaCheck("AR5016")~ + ~[PC] It must be the prison surroundings making you all upset. Just think, you could have been imprisoned here ages ago, and I could be meeting you for the first time right now, and wondering why the sellsword in the corner cell has a beard that goes past his knees.~ + a4710
+  + ~AreaCheck("AR5005") AreaCheck("AR5015")~ + ~[PC] It must be the barracks. It must remind you of what your life would have been like if you had stayed in the Flaming Fist. Just think - you might have made it all the way up to Captain!~ + a4710
+  + ~AreaCheck("AR5013")~ + ~[PC] It must be the smell of these sewers. Or perhaps it is the thought of slimy little creatures dripping on the back of your neck...~ + a4710
+  + ~OR(9) AreaCheck("AR6102") AreaCheck("AR6103") AreaCheck("AR6104") AreaCheck("AR6105") AreaCheck("AR6106") AreaCheck("AR6107") AreaCheck("AR6108") AreaCheck("AR6109") AreaCheck("AR6110")~ + ~[PC] Oh, come on. What are a few legion Drow, some minor hirelings, and a minor risk the eye of Lolth glances our way? Nothing to worry about at all.~ + a4710
+  + ~AreaCheck("AR5509")~ + ~[PC] Oh, come on. We are just wandering about in a crypt. Nothing bad ever happens in one of these places, right?~ + a4710
+  + ~OR(4) AreaCheck("AR5200") AreaCheck("AR5201") AreaCheck("AR5203") AreaCheck("AR5204")~ + ~[PC] Oh, come on. We are just wandering about in a place guarded by Fire Giants. Nothing bad ever happens in one of these places, right?~ + a4710
+  ++ ~[PC] I am not sure I hide it well at all. But so far, we have been able to prevail.~ + a4709
+  ++ ~[PC] Your biggest worry should be how to procure curry powder and store it without accidentally getting it into your smallclothes.~ + a4710
+  ++ ~[PC] There is nothing to worry about, Aran. We are a pretty good team.~ + a4709
+  ++ ~[PC] You keep your eyes open and be ready for whatever comes next. Let me do the worrying.~ + a4709
+END
+
+IF ~~ a4707
+  SAY ~[ARAN] Hells, this has naught to do wi' any romance or such. It be more a matter o' skills. Or mayhap direction. Or, hells... ~
+  IF ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN GOTO a4704
+  IF ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN GOTO a4708
+END
+
+IF ~~ a4708
+  SAY ~[ARAN] ...well, mayhap it be a little about th' way you make me feel. But it be more about somethin'... ~
+  IF ~~ GOTO a4704
+END
+
+IF ~~ a4709
+  SAY ~[ARAN] Well, mayhap we be a good team, an' so far we have come out only a mite bit worse for th' wear. Mayhap you be right. You worry, I watch.~
+  ++ ~[PC] Absolutely. After all, there is nothing we can do. Our fate has been set into stone since the beginning of time. When our eventual doom befalls us, it is just the natural course of events.~ + a4710
+  ++ ~[PC] Absolutely. Your biggest worry should be how to procure curry powder and store it without accidentally getting it into your smallclothes.~ + a4710
+  ++ ~[PC] Now you have me worried.~ + a4710
+  ++ ~[PC] I am glad we have that all settled. Now, did I remember to tell you that we are almost out of ale?~ + a4710
+  ++ ~[PC] I never worry. I just know you will step in front of whatever tries to harm me. No matter how many pieces it tears you into.~ + a4710
+END
+
+IF ~~ a4710
+  SAY ~[ARAN] Kelemvor's Sharp Scythe... now, why did you go an' say that? Now I'll be havin' naught in th' way o' sleep, on account o' th' nightmares!~
+  IF ~~ THEN EXIT
+END
 
 
 END /* append C-ARN25J */
