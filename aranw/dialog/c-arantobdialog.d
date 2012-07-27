@@ -955,6 +955,22 @@ IF ~Global("c-aranfriendtob","GLOBAL",9)~ THEN BEGIN a4702
 END
 /* ToB FriendTalk 5 : "Worrying" : goto followup5 */
 
+/* ToB FriendTalk 6 : "Fear and Courage" */
+IF ~Global("c-aranfriendtob","GLOBAL",11)~ THEN BEGIN a4711
+  SAY ~[ARAN] Bane's Bones, all this wanderin' gets to a lad. Come on, pass th' time wi' me, eh? What scares you most in all th' world?~
+  ++ ~[PC] Nothing. Nothing scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4719
+  ++ ~[PC] The thought of having to continue this conversation with you scares the hells out of me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4712
+  ++ ~[PC] Losing control of my actions or thoughts scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4713
+  ++ ~[PC] Being powerless scares me most.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4714
+  ++ ~[PC] This may sound strange, but death scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4715
+  ++ ~[PC] Bhaal regaining his Essence scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4716
+  ++ ~[PC] Forgetting my friendships, and letting people I care about down scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4717
+  ++ ~[PC] Forgetting which of my many lovers I am with, and crying out the wrong name in the heat of the moment scares me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4718
+  ++ ~[PC] You know what scares me already. You tell me what scares you the most.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4720
+END
+/* ToB FriendTalk 6 : "Fear and Courage" : goto followup6 */
+
+
 /* ToB FriendTalk 1 : "Sisters"  : followup1 */
 IF ~~ a2791
   SAY ~[ARAN] Aye, I understand. But you grew up wi' her, and it seems like th' bond is more than many feel for their own true sisters.~
@@ -2033,6 +2049,263 @@ IF ~~ a4710
   IF ~~ THEN EXIT
 END
 
+/* ToB FriendTalk 6 : "Fear and Courage" : followup6 */
+IF ~~ a4712
+  SAY ~[ARAN] You done put up wi' my random blather long enough where I be knowin' you be jokin', eh?~
+  ++ ~[PC] Well, if you really want to talk about this, you should tell me what scares you.~ + a4720
+  ++ ~[PC] Of course. Besides, you know absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4713
+  SAY ~[ARAN] Now I rightly agree on that. Losin' control wi' out consent be a scary thing. Though sometimes, it almost seems like worryin' about that might you hesitate when it be more prudent to take th' risk.~
+  ++ ~[PC] Are you questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4714
+  SAY ~[ARAN] Now that be interestin'. Me, not so much on that point, on account o' I never will have quite th' power you do, so there will always be somethin' I will have naught in th' way o' control over. Some folks can almost take that whole power thing too far, though.~
+  ++ ~[PC] Are you saying I am seeking too much power? Are you questioning my courage, my ability to wield authority?~ + a4729
+  ++ ~[PC] I think I have proven my courage and my ability often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4715
+  SAY ~[ARAN] Now I agree on that. There be nothin' like wonderin' just before you go down if there will be a way to come back, or if this be th' end o' this part o' th' journey on th' Great Wheel. That rightly scares most creatures, I expect.~
+  ++ ~[PC] What does my being scared have to do with what we are facing? Are you questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4716
+  SAY ~[ARAN] Now I agree that be a dangerous thing, but you have been fightin' that prophecy for a long time now. An' so far, you have risen to meet th' challenge.~
+  ++ ~[PC] So far? Are you questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4717
+  SAY ~[ARAN] Which be why there be many who will follow you to th' ends o' th' Planes themselves. But sometime soon you may have to let one o' us be sacrificed to get th' job done, you know.~
+  ++ ~[PC] Are you questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4718
+  SAY ~[ARAN] Now I will say, that be not as bad as I once thought. It done happened to me once or twice, an' it be survivable. O' course, when th' current lover be a cute little assassin, you got to watch your food an' drink for a few months, but usually there be a way to make it up to them.~
+  = ~[ARAN] Stop lookin' at me like that. It be a story for another day an' time. Besides, I almost think you be jokin' wi' me, anyways.~ 
+  ++ ~[PC] Almost? Of course I was. I thought you were joking, too. Were you actually questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4719
+  SAY ~[ARAN]  Now I almost believe that.~
+  ++ ~[PC] Almost? Are you questioning my courage?~ + a4729
+  ++ ~[PC] I think I have proven my courage often enough. I have never backed away from doing what needed to be done.~ + a4729
+  ++ ~[PC] So, what really scares you?~ + a4720
+  ++ ~[PC] You are so easy to fool. You should know by now that absolutely nothing scares me.~ + a4719
+  + ~RandomNum(5,5)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + ~[PC] Can a <PRO_GIRLBOY> get a little peace and quiet around here?~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + ~[PC] Look, just shut up already. You talk too much.~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + ~[PC] I am not joking. I have had enough of you talking. Leave me alone, please.~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + ~[PC] I was not joking. And stop yammering on, will you? Give it a rest.~ + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a4720
+  SAY ~[ARAN] Well, I am not sure I have an answer what will serve. There be a fair number o' things that scare me. What be th' context you want to know, eh?~
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationGT(Player1,16)~ + ~[PC] What scares you about me?~ + a4741 //  hard to believe you are real billy joel blonde over blue 
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationLT(Player1,17) ReputationGT(Player1,7)~ + ~[PC] What scares you about me?~ + a4721 // scary but fun dangerous undertow lady gaga bad romance
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationLT(Player1,8)~ + ~[PC] What scares you about me?~ + a4722 // scary and self-destructive bruno mars grenade
+  + ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",2)~ + ~[PC] What scares you about me?~ + a4723 // so much potential, so much prettiness and strength katy perry firework
+  + ~Gender(Player1,MALE)~ + ~[PC] What scares you about me?~ + a4724 // lead follow get out of the way... I always follow but you don't have all the answers 
+  ++ ~[PC] What causes you nightmares when you go to sleep?~ + a4725
+  ++ ~[PC] What monster are you scared to face in combat?~ + a4726
+  + ~InParty(Player2) !Name("c-aran",PLAYER2)~ + ~[PC] What scares you about <PLAYER2>?~ + a4728
+  + ~InParty(Player3) !Name("c-aran",PLAYER3)~ + ~[PC] What scares you about <PLAYER3>?~ + a4728
+  + ~InParty(Player4) !Name("c-aran",PLAYER4)~ + ~[PC] What scares you about <PLAYER4>?~ + a4728
+  + ~InParty(Player5) !Name("c-aran",PLAYER5)~ + ~[PC] What scares you about <PLAYER5>?~ + a4728
+  + ~InParty(Player6) !Name("c-aran",PLAYER6)~ + ~[PC] What scares you about <PLAYER6>?~ + a4728
+END
+
+IF ~~ a4721
+  SAY ~[ARAN] Well, for starters, it be hard to breathe when you look at me. You be th' most dangerous, alluring creature I ever did see. But you can smash me like an eggshell if you choose. That won't stop me carin' for you, though.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4722
+  SAY ~[ARAN] You be th' most dangerous, alluring creature I ever did see. An' for whatever reason th' gods give, I would die for you in an instant. Be tortured, kill, destroy... anythin'. But you... I have a deep fear you wouldn't do th' same unless it helped you in some way. Yet I won't rightly be runnin from you any time soon.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4723
+  SAY ~[ARAN] You be th' most dangerous, alluring creature I ever did see. I wish things were more serious between th' two o' us, but I understand why they are not. But I live in fear o' th' day when you decide I am not needed. It don't rightly stop me, though.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4724
+  SAY ~[ARAN] Well, to tell th' whole truth o' it, you were born to lead, an' I were born to follow. Sometimes I start thinkin' I could do th' leadership job better than you, an' then we hit th' next challenge, an' I says to myself, "self, there be no way you could do what he does". Sometimes it be a little scary to see you take on what any other creature on Toril would run screamin' from. So I stay beside you, though I be a mite fearful at times.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4725
+  SAY ~[ARAN] Not much, as I been on campaign long enough to never, ever catch up on rest. Mayhap too much spicy food, where I end up tossin' an' turnin'. But usually th' time for my worryin' be when I be awake.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4726
+  SAY ~[ARAN] You blighted well know I hate th' Great Wyrms. Spiders, snakes, slime, insects, Drow... they be pains in th' arse, an' things to be wary around. But dragons...~
+  = ~[ARAN] Dragons be smarter, stronger, trickier, older, massively powerful, conniving, manipulative, an' most times just plain mean. They look at you wi' those eyes, an' the outcome usually be in their favor.~
+  ++ ~[PC] We have fought dragons and won. Doesn't that help salve your fears?~ + a4729
+  ++ ~[PC] Overgrown snakes with attitude problems really bother you that much?~ + a4727
+  ++ ~[PC] Not all dragons are evil, Aran. Do you fear even the good ones?~ + a4727
+  ++ ~[PC] I have not seen you allow your fears to hold you back from fighting them.~ + a4734
+  ++ ~[PC] Hey, I didn't mean to be so serious. Come on, lighten up. Play a game with me... courage is to fear as light is to...~ + a4730
+END
+  
+IF ~~ a4727
+  SAY ~[ARAN] Aye.~
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4728
+  SAY ~[ARAN] Not much, I think. An' mayhap that be gettin' off th' subject I were talkin' about, anyways.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4729
+  SAY ~[ARAN] Hells, no. Courage an' fear, they be related, but I'll tell you this right true - no one what be fearless has ever been courageous.~
+  ++ ~[PC] That is ridiculous. Fearlessness *is* courage.~ + a4732
+  ++ ~[PC] So you think you have to overcome your fear to become courageous?~ + a4733
+  ++ ~[PC] You have got to be joking. Are you trying to make me angry? Are you implying I am not courageous?~ + a4739
+  ++ ~[PC] Now there is a good game - courage is to fear as light is to...~ + a4730
+  + ~!InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks the Waterdeep dresses show too much cleavage?~ + a4738
+  + ~InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks Boo is actually a Giant Space Hamster?~ + a4737
+END
+
+IF ~~ a4730
+  SAY ~[ARAN] Flame?~
+  ++ ~[PC] Ooooh, good one. Try this one. Wind is to mouth as discussion is to...~ + a4739
+  ++ ~[PC] I would have said "fire", but that is about right. What about pen is to ink as spell is to...~ + a4731
+  + ~!InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks the Waterdeep dresses show too much cleavage?~ + a4738
+  + ~InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks Boo is actually a Giant Space Hamster?~ + a4737
+END
+
+IF ~~ a4731
+  SAY ~[ARAN] Now that one be a trick, eh? On account o' there be multiple answers. You could be sayin' "...as spell be to faith", or "...as spell be to component", or "...as spell be to th' Weave". How about this...~
+  = ~[ARAN] Salt be to Earth as...~
+  ++ ~[PC] ...spice is to meat?~ + a4736
+  ++ ~[PC] ...Aran is to Toril?~ + a4736
+  ++ ~[PC] I think I have had enough of playing this game. Besides, it is sidestepping your point; I think fearlessness is a requisite for courage.~ + a4732
+  ++ ~[PC] I think I have had enough of playing this game. Besides, it is sidestepping your point; I think courage is only shown when one overcomes fear.~ + a4732
+  ++ ~[PC] I like things with multiple answers. Life is not always definitive. So perhaps you should loosen your ideas about the relationship between fearlessness and courage.~ + a4739
+  + ~!InParty("minsc")~ + ~[PC] Oh, forget it. This is a boring game. Couldn't we talk about lighter topics, like the weather, or who thinks the Waterdeep dresses show too much cleavage?~ + a4738
+  + ~InParty("minsc")~ + ~[PC] Oh, forget it. This is a boring game. Couldn't we talk about lighter topics, like the weather, or who thinks Boo is actually a Giant Space Hamster?~ + a4737
+END
+
+IF ~~ a4732
+  SAY ~[ARAN] I disagree on that point, I do.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4733
+  SAY ~[ARAN] Aye, I do.~ 
+  IF ~~ THEN GOTO a4734
+END
+
+IF ~~ a4734
+  SAY ~[ARAN] I knew a lad what were truly fearless once, back on the Moonsheas. He'd charge right in an' do what he felt were required, regardless o' cost. But th' true courage I found to be found in th' men an' women what followed him.~
+  = ~[ARAN] See, since he were fearless, he never rightly understood what he could lose. To him, death an' life, acceptable losses, collateral damage, all those were just words. They had no power over him, an' gave him no reason to evaluate his actions. But those who followed, they had to go into combat realizin' they were expendable pawns. They had to overcome their fears, an' fight when they knew an' felt exactly how much those "words" would mean to them in th' here an' now.~
+  ++ ~[PC] He sounds like a good war leader.~ + a4735
+  ++ ~[PC] He sounds a little like me.~ + a4740
+  ++ ~[PC] He sounds like a fool, if he never reevaluated his plans or looked at the true cost of his actions.~ + a4735
+  ++ ~[PC] He sounds like he was doing what he had to do when faced with difficult decisions.~ + a4735
+  ++ ~[PC] I would not want to serve under a man like that.~ + a4735
+  ++ ~[PC] I would never want one of my companions to behave like that.~ + a4735
+END
+
+IF ~~ a4735
+  SAY ~[ARAN] Well, mayhap yes, mayhap no... there be power in just actin', an' he certainly won his share o' battles. An' when he gave his life, it were a powerful thing he did, savin' men an' women he considered more important to th' long term objective than himself. Th' point is, he never had no chance to show true courage. For him, it were all percentages, all a calculation wi' no appreciation o' th' stakes he were playin'.~
+  = ~[ARAN] I think fear gives us a reason to appreciate th' costs o' what is to be done, an' courage is doin' what needs to be done even when you be deathly afraid.~
+  ++ ~[PC] I disagree.~ + a4739
+  ++ ~[PC] Well, on that point, I think we can agree.~ + a4739
+  ++ ~[PC] So, when did you start your lecture series on the nature of human existence?~ + a4739
+  ++ ~[PC] For small talk, you sure use heavy subjects.~ + a4739
+  + ~!InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks the Waterdeep dresses show too much cleavage?~ + a4738
+  + ~InParty("minsc")~ + ~[PC] I don't mind the discussion, Aran, but couldn't we talk about lighter topics, like the weather, or who thinks Boo is actually a Giant Space Hamster?~ + a4737
+END
+
+IF ~~ a4736
+  SAY ~[ARAN] Now that be a right good answer. I will have to be goin' off an' thinkin' up more o' these!~
+  = ~[ARAN] An' blighted hells if I didn't clean forget what I were sayin' in th' first place. Well, it weren't naught o' importance anyways.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4737
+  SAY ~[ARAN] Why, surely! My apologies. Though we'd best stay wi' topics what could actually have a discussion. Everyone knows Boo is a Giant Space Hamster. Th' real question is, what the hells be Minsc?~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4738
+  SAY ~[ARAN] Why, surely! My apologies. Though we'd best stay wi' topics what could actually have a discussion. Everyone knows there can never be too much cleavage.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4739
+  SAY ~[ARAN]  Mystra's Mouth, I were just makin' conversation. I guess I do get a mite pedantic at times. Long forced marches make for plenty o' time to think deep philosophy. Even deeper, if you have had a few extra drinks on th' road!~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4740
+  SAY ~[ARAN] Aye, true enough, at times. But I understood that up front. Like him, you have to do what you have to do. An' th' gods only know why, but I am relatively sure you won't waste my life needlessly. Usefully, I can deal wi', an' Tymora will be tickled I took th' gamble o' backin' you to th' death. It be nice to have a purposeful death, you know. Makes a lad feel like he made a difference.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4741
+  SAY ~[ARAN] What be scary about you? Well... have you ever seen somethin' so beautiful it actually hurts to look at? Or so important there be naught else what could be more pressin'?~
+  = ~[ARAN] There be so much ugliness in th' world. But you shine like a blighted star, from th' inside. An' when your light turns on, I feel like my heart be about to explode. That kind o' power, that kind o' pain... it be a pedestal what I put you on. An' it scares me. But I still won't rightly be scared off.~
+  IF ~~ THEN GOTO a4734
+END
 
 END /* append C-ARN25J */
 
