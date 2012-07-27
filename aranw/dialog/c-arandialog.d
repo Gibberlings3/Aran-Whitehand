@@ -5544,12 +5544,12 @@ END
 
 IF ~~ a238
   SAY ~[ARAN] Aye, then, same to you. I think I am goin' to go get some energy worked out o' my system, eh? I will see you back at camp.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a239
   SAY ~[ARAN] A man never lived what has too many girlfriends, as long as he be careful to keep them separate. Wives, it might be that just one be too many, but girlfriends, that be a different story. I think I am goin' to go get some energy worked out o' my system, eh? I will see you back at camp.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a240
@@ -6307,19 +6307,19 @@ END
 IF ~~ a4248
   SAY ~[ARAN] <CHARNAME>, I can do that, I can. I can hold your hand right proper. An' I value your friendship above any treasure what's been thought of.~
   = ~[ARAN] (You stand together for a time holding hands, watching the stars and the moonlight, before returning to camp.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a298
   SAY ~[ARAN] <CHARNAME>, I can do that, I can. I can hold you right proper. An' I value your friendship above any treasure what's been thought of.~
   = ~[ARAN] (You stand together for a time in the moonlight holding each other, before returning to camp.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 /* A page from RL - everyone walks away muttering sometimes, and sometimes the partner challenges them on it... */
 IF ~~ a299
   SAY ~[ARAN] Did you say somethin', <CHARNAME>?~
-  ++ ~[PC] No, not a thing. Good night, Aran.~ DO ~RestParty()~ EXIT
+  ++ ~[PC] No, not a thing. Good night, Aran.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
   ++ ~[PC] I said, 'damned males, anyways... they never clean up after themselves, and never have the good sense to kiss a girl goodnight when she is practically throwing herself at them'.~  + a289
   ++ ~[PC] I said, 'If Aran does not kiss me right this minute, I will make his life a living hell for all eternity'.~ + a289
 END
@@ -6348,6 +6348,7 @@ IF ~~ a302
   ++ ~[PC] Just like this? (Move into his arms, awkwardly holding the foil at arms length.)~ + a303
   ++ ~[PC] Just like this? (Move into his arms, nestling back into his chest.)~ + a303
   ++ ~[PC] Just like this? (Nervously stand in front of him, holding the foil down.)~ + a305
+  ++ ~[PC] This is a little like dancing. Only you are behind me, instead of in front of me.~ + a304
   ++ ~[PC] Just like this? (Smile sweetly at him, and punch him hard in the gut.)~ + a281
   ++ ~[PC] HEY. Hands off, Aran. I am interested in friendship, nothing more. Are we going to spar, or are you going to keep making passes at me?~ + a309
 END
@@ -6359,13 +6360,15 @@ IF ~~ a303
   ++ ~[PC] It would be very nice, except your hands keep wandering. I am interested in friendship, nothing more. Are we going to spar, or talk?~ + a309
   ++ ~[PC] (Rest your head back on his shoulder, nuzzling his neck.)~ + a296
   ++ ~[PC] I think I would rather not spar tonight, Aran. I am going to turn in.~ + a273
+  ++ ~[PC] This is a little like dancing.~ + a304
 END
 
-IF ~~ a304  // UNLINKED - PLACEHOLDER - FIX THIS
+IF ~~ a304 
   SAY ~[ARAN] There you go. Nothin' to it. You dance right fine, an' duelin's just like dancin', only with a point, eh? I mean, a point system. I guess there be a point to dancin', too.~
   ++ ~[PC] (Lean your head back onto his shoulder and offer your lips to him.)~ + a296
   ++ ~[PC] That will do. I can take it from here - let's spar.~ + a309
   ++ ~[PC] Enough. Interesting approach, but I have had enough of it. But I do think there are some things you can do for me. Let's see... there are still some cooking pots you have not cleaned, and there is firewood to gather.~ + a283
+  ++ ~[PC] I think I would rather not spar tonight, Aran. I am going to turn in.~ + a273
 END
 
 IF ~~ a305
@@ -7178,13 +7181,13 @@ END
 /* Damn, girl, you are teasing him way hard, then dropping the whole "but I am not sure," thing - put the poor bugger out if his misery, already ! */
 IF ~~ a357
   SAY ~[ARAN] (His face hardens, breath coming in short fierce bursts) Aye. You can, if you want to. But you don't want to, so I needs be controllin' myself. This sparrin' be over, I think.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a358
   SAY ~[ARAN] Well, my friendship be not rightly for sale, <CHARNAME>, an' I prize it a mite higher than most do, I wager. But I already done given you th' whole contract on it, no strings attached. I must be somethin' right stupid in my actions not to have shown that by now.~
   = ~[ARAN] Let's get you back to camp, an' get somethin' nice an' warm in your stomach. I bet we could find a mite bit o' Firewine to warm up th' tea, an' lighten your mood. You go on ahead. I'll clear this gear away right proper.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a359
@@ -12663,7 +12666,7 @@ END
 
 IF ~~ a4524
 	SAY ~[ARAN] If you don't stop, I am goin' to fill you wi' everythin' I have. I won't be able t'... to stop.~
-	++ ~[PC] (Stand up swiftly, hiding both of your activities, and leave the room.)~ EXIT
+	++ ~[PC] (Stand up swiftly, hiding both of your activities, and leave the room.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 	++ ~[PC] (Redouble your efforts, slamming the heels of both your hands onto the tabletop as you move on him.)~ + a4525
 	++ ~[PC] (Relax as your own waves begin to rise, your pleasure blinding and passionate.)~ + a4525
 	++ ~[PC] PLACEHOLDER~ + c-placeholder
@@ -12677,7 +12680,7 @@ END
 
 IF ~~ a4526
   SAY ~[ARAN] Now, I can hold out as long as you can. Mayhap more. I think it would be right fun to see how many little gasps I can bring out while you be concentratin' on scribin'. Wi' any luck, we both will win.~
-  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) RestParty()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",4) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2072
@@ -14041,37 +14044,37 @@ END
 
 IF ~~ a4347
   SAY ~[ARAN] Aye. Now that be a right powerful truth.~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4352
   SAY ~[ARAN] For a moment there, sound, thought, an' even time all seemed a might bit unimportant. Your face... well, it be more beautiful even than them there stars.~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4341
   SAY ~[ARAN] Well, that were a moment. Come to think of it, I get right tired o' lookin' at things outside o' my grasp. What I needs be doin' right now is tryin' to figure out how to get me a woman. Have a good night, eh?~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4342
   SAY ~[ARAN] Mayhap you be right. For one thing, there was this barmaid in Calimport, one o' them young ladies what dance, see? She had jewels all over her most interestin' areas what sparkled like those stars. Th' difference was, when you took off those stars, she were a sight more beautiful. Plus she were in arm's reach, so to speak.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4343
   SAY ~[ARAN] Hells, no. Lust, mayhap, but that be a healthy thing for a young lad to be in, eh? Come to think of it, I should be writin' a nice letter to her right now, so's to warm her up for when I come callin'. Have a good night. I'll go find me a good light to work by.~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4344
   SAY ~[ARAN] Hells, man. Give us a few more years, an th' two o' us will be stridin' between 'em like two boys on a lark, an' gatherin' 'em up to hand over to adorin' admirers. After all, we done faced more powerful bein's than most folks know exist. An' on that happy thought, I'm off to bed. Your turn at watch, I think.~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a4348
   SAY ~[ARAN] Hells, a man has to look up at th' sky just to tell him that there be more than th' dirt, eh? Way to spoil th' mood. An' on that happy thought, I'm off to bed. Your turn at watch, I think.~ 
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 
@@ -14410,12 +14413,12 @@ END
 IF ~~ a2215
   SAY ~[ARAN] (His kisses are ferocious, demanding yours with rising passion. His hands hold your face, cupping you to his lips like a man driven by desperate thirst.)~
   = ~[ARAN] (Only the gentle knocking on the door reminds you that you have duties and appointments waiting before you can sleep, and you hastily compose yourself before Aran slips out of the door. The Captain of the Guard raises one eyebrow while requesting orders, but he is far too professional to inquire. When you catch a glimpse in the mirror, you see that your cheeks and lips are not quite as calm and composed as the Protector of the Keep might be expected to be.)~
-  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2216
   SAY ~[ARAN] Now, that be a nice image, there. I can see why I know you will be a great leader. An' why I might just be fallin' for you, too.~
-  IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
+  IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2217 /* males */
@@ -14425,17 +14428,17 @@ END
 
 IF ~~ a2218 /* females  */
   SAY ~[ARAN] By Th' Red Knight's Sword, you are a sorry pain in th' arse. I thought I know where I stood wi' you. I guess I was wrong. Apparently, I stand somewhere south o' th' dungheap out by th' Keep's privy.~
-  IF ~~ THEN DO ~SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
+  IF ~~ THEN DO ~SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2219
   SAY ~[ARAN] Aye, then. No curry... err... Right. I'll be sendin' somethin' up quick as a flash.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2220
   SAY ~[ARAN] Right, then. I'll be leavin' you alone. Have a good night.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2221
@@ -14453,7 +14456,7 @@ END
 
 IF ~~ a2223
   SAY ~[ARAN] I don't rightly know. I never did run out on no contract. But I suppose we all have a breakin' point somewhere, eh? Probably just leave. Mayhap fight you, mayhap just kill you. Fair warnin', an' all. But I suspect you will know long before I do. No sense thinkin' about it until it happens, on account o' I'm not blighted well likely to survive th' experience, eh?~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a2224
@@ -14463,7 +14466,7 @@ END
 
 IF ~~ a2225
   SAY ~[ARAN] Now, that be a nice idea, there. I can see why I think you will be a great leader, someday. Well, mayhap already.~
-  IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 /* from  C-ARAN.BCS */
@@ -23006,19 +23009,19 @@ END
 
 IF ~~ a1524
   SAY ~[ARAN] Shun's... Zune's.. hells, whatever-her-name-is' Schlippery Schlopes. I want you, an' you say yes, an' then it all falls apart on account o' I am just about to...~
-  ++ ~[PC] Aran? Aran? Wake up, Aran...~ DO ~RestParty()~ EXIT
-  ++ ~[PC] Gods. The man has passed out. Quick, go through his pockets and see if he has anything valuable.~ DO ~RestParty()~ EXIT
-  ++ ~[PC] Of all the nerve. How dare you pass out when things were about to get interesting.~ DO ~RestParty()~ EXIT
+  ++ ~[PC] Aran? Aran? Wake up, Aran...~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+  ++ ~[PC] Gods. The man has passed out. Quick, go through his pockets and see if he has anything valuable.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+  ++ ~[PC] Of all the nerve. How dare you pass out when things were about to get interesting.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1523
   SAY ~[ARAN] Shun's... Zune's.. hells, whatever-her-name-is' Schlippery Schlopes. You go on wi' out me. I'm goin' to fall ashleep on this nish, comfy table.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1525
   SAY ~[ARAN] Th... that were a mite quick, wi' all... all those drinks. You be one hell o' a strong <PRO_MANWOMAN>. I'd be on my arse. Gotta drink. <CHARNAME>? Nope, <PRO_HESHE>'s out cold. Hey, I have a conshtit... conshititz.. blargzlubm... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1526
@@ -23119,10 +23122,10 @@ END
 
 IF ~~ a1535
   SAY ~[ARAN] Shun's... Zune's.. hells, whatever-her-name-is' Schlippery Schlopes.~
-  ++ ~[PC] Aran? Aran? Wake up, Aran...~ DO ~RestParty()~ EXIT
-  ++ ~[PC] Gods. The man has passed out. Quick, go through his pockets and see if he has anything valuable.~ DO ~RestParty()~ EXIT
-  ++ ~[PC] Of all the nerve. How dare you pass out when things were about to get interesting.~ DO ~RestParty()~ EXIT
-  ++ ~[PC] I think I am going to be sick.~ DO ~RestParty()~ EXIT
+  ++ ~[PC] Aran? Aran? Wake up, Aran...~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+  ++ ~[PC] Gods. The man has passed out. Quick, go through his pockets and see if he has anything valuable.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+  ++ ~[PC] Of all the nerve. How dare you pass out when things were about to get interesting.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
+  ++ ~[PC] I think I am going to be sick.~ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1536
@@ -23167,7 +23170,7 @@ END
 
 IF ~~ a1541
   SAY ~[ARAN] Good shtuff. D... Don't you worry, <CHARNAME>. I have a conshtit... conshititz.. blargzlubm... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1542
@@ -23233,17 +23236,17 @@ END
 
 IF ~~ a1551
   SAY ~[ARAN] Bane's Blood. I think I just punched a wall.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1552
   SAY ~[ARAN] Bane's Bones. Wish I'd h... have known th.. that earlier, on acc... 'count o' I just punched him.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1553
   SAY ~[ARAN] Um... <CHARNAME>? Where did they go? On account o' I think we be leanin' ag... against each other, an... I don't ri... rightly see no opp... ponents. You look like hell. An' I think I shall now throw up.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1554
@@ -23276,7 +23279,7 @@ END
 
 IF ~~ a1556
   SAY ~[ARAN] Th... that were a mite quick, wi' only o... one drink. <CHARNAME>? Nope, out cold. Hey, I have a conshtit... conshititz.. blargzlubm... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1557
@@ -23295,37 +23298,37 @@ END
 
 IF ~~ a1558
   SAY ~[ARAN] I think I done won, eh... <PRO_HESHE> just gave up, eh? I'll follow <PRO_HIMHER> out. Hey, th' ceilin' be shpinnin' too fasht, an' blgblshiri, nozzing brlip... (thud.) ~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1559
   SAY ~[ARAN] Blgblshiri, nozzing brlip... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1560
   SAY ~[ARAN] I think I done won, eh... <PRO_HESHE> just hit th' floor. Or it hit <PRO_HIMHER>. Hey, th' ceilin' be shpinnin' too fasht, an' blgblshiri, nozzing brlip... (thud.) ~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1561
   SAY ~[ARAN] Th... that were a good run, it w... were.  <CHARNAME>...  you all be all fuzzy lookin'. All both o' you. Shtop that. We might both be about to... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1562
   SAY ~[ARAN] Who do we be kiddin'. We both have conshtit... conshititz.. blargzlubm... (thud.)~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1563
   SAY ~[ARAN] Tymora's Bright Coin, I thought I said 'You are cute'. But thinkin' about it, that sign be close to 'how much for th' night'. Or mayhap somethin' about her bust size. Hells, I am d... drunk, how am I supposed to know?~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1564
   SAY ~[ARAN] Tymora's Bright Coin. Wi' friends like you, who bloody well needs enemies.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1565
@@ -23370,7 +23373,7 @@ END
 IF ~~ a1590
   SAY ~[ARAN] Oh no... I'm not playin' that game. You be th' only sight for me, <CHARNAME>, whether we be involved an' r... romantic or not. Th' last time some p... pretty little redhead set her cap for m... me, I lost my purse an' didn't even have a k... kiss for th' coin. An' th' time before that, well, it were how you met me, eh? K.. kicked out o' a nice job.~
   = ~[ARAN] I done learned my l... lesson. Womenfolk, they be trouble. P... present company included, mayhap.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~ EXIT
 END
 
 IF ~~ a1647
@@ -23401,17 +23404,17 @@ END
 IF ~~ a1593
   SAY ~[ARAN] Boyo, if you be lookin' at her fingers, I am here to tell you that there be somethin' wrong in that there head o' yours.~
   = ~[ARAN] Besides... I can't feel naught for toes. If I was to stand up, I'd be heels over arse. You go on an' give it a try, eh? An' don't waste your time on complimentin' no fingers.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1594
   SAY ~[ARAN] Not enough by far to wash away th' taste o' that last battle.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 IF ~~ a1595
   SAY ~[ARAN] Good on you. Remember, keep y... your shield up, an' wait for th' right opportunity t... to strike. Then when it be least exshp... echxsp... you know what to do.~
-  IF ~~ THEN DO ~RestParty()~ EXIT
+  IF ~~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~ EXIT
 END
 
 /*  Aran Dragon-Slayer Replies */
