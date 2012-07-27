@@ -2052,7 +2052,6 @@ THEN
 		DisplayStringHead(Myself,~Aye, now, that scroll o' Mirror Image be finished, if you want it.~)
 	EndCutSceneMode()
 END
-
 /*	c-arSCRL97 Aran PID: Create Scroll of Stinking Cloud */
 IF
 	GlobalTimerExpired("c-aranscribing","GLOBAL")
@@ -2252,7 +2251,6 @@ THEN
 	EndCutSceneMode()
 END
 
-
 /* end of scroll scribing blocks */
 
 /* Plot Talks */
@@ -2362,7 +2360,6 @@ THEN
 END
 
 /* Saradush Sacked */
-
 IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -2447,78 +2444,78 @@ END
 
 // /* Friend Talks Sequence */
 
-// /* Friend Talks Setup	*/
-// IF
-	// Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
-	// InParty(Myself)						// Aran is here
-	// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
-	// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
-// THEN
-	// RESPONSE #100								// 100% of the time
-		// SetGlobal("c-aranfriendtob","GLOBAL",1)		 //	set up ToB_FT_1
-		// RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",10)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
-// END
+/* Friend Talks Setup	*/
+IF
+	Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
+	InParty(Myself)						// Aran is here
+	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+THEN
+	RESPONSE #100								// 100% of the time
+		SetGlobal("c-aranfriendtob","GLOBAL",1)		 //	set up ToB_FT_1
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",600)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
+END
 
-// /* Aran's FriendTalks Aim, c-aranfriendtob, ARAN_FTT */
-// /* This block takes the even variables set in dialog, and advances them to the odd */
-// IF
-// GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
-// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-// OR(15)
-// Global("c-aranfriendtob","GLOBAL",2)	// set up ToB_FT_2
-// Global("c-aranfriendtob","GLOBAL",4)	// set up ToB_FT_3
-// Global("c-aranfriendtob","GLOBAL",6)	// set up ToB_FT_4
-// Global("c-aranfriendtob","GLOBAL",8)	// set up ToB_FT_5
-// Global("c-aranfriendtob","GLOBAL",10) // set up ToB_FT_6
-// Global("c-aranfriendtob","GLOBAL",12) // set up ToB_FT_7
-// Global("c-aranfriendtob","GLOBAL",14) // set up ToB_FT_8
-// Global("c-aranfriendtob","GLOBAL",16) // set up ToB_FT_9
-// Global("c-aranfriendtob","GLOBAL",18) // set up ToB_FT_10
-// Global("c-aranfriendtob","GLOBAL",20) // set up ToB_FT_11
-// Global("c-aranfriendtob","GLOBAL",22) // set up ToB_FT_12
-// Global("c-aranfriendtob","GLOBAL",24) // set up ToB_FT_13
-// Global("c-aranfriendtob","GLOBAL",26) // set up ToB_FT_14
-// Global("c-aranfriendtob","GLOBAL",28) // set up ToB_FT_15
-// Global("c-aranfriendtob","GLOBAL",30) // set up ToB_FT_16
-// THEN
-// RESPONSE #100
-// IncrementGlobal("c-aranfriendtob","GLOBAL",1)	// move up from even to odd
-// END
+/* Aran's FriendTalks Aim, c-aranfriendtob, ARAN_FTT */
+/* This block takes the even variables set in dialog, and advances them to the odd */
+IF
+	GlobalLT("c-aranfriendtob","GLOBAL",10)	// shuts down sequence when finished
+	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+	OR(5)
+	Global("c-aranfriendtob","GLOBAL",2)	// set up ToB_FT_2
+	Global("c-aranfriendtob","GLOBAL",4)	// set up ToB_FT_3
+	Global("c-aranfriendtob","GLOBAL",6)	// set up ToB_FT_4
+	Global("c-aranfriendtob","GLOBAL",8)	// set up ToB_FT_5
+	Global("c-aranfriendtob","GLOBAL",10) // set up ToB_FT_6
+	// Global("c-aranfriendtob","GLOBAL",12) // set up ToB_FT_7
+	// Global("c-aranfriendtob","GLOBAL",14) // set up ToB_FT_8
+	// Global("c-aranfriendtob","GLOBAL",16) // set up ToB_FT_9
+	// Global("c-aranfriendtob","GLOBAL",18) // set up ToB_FT_10
+	// Global("c-aranfriendtob","GLOBAL",20) // set up ToB_FT_11
+	// Global("c-aranfriendtob","GLOBAL",22) // set up ToB_FT_12
+	// Global("c-aranfriendtob","GLOBAL",24) // set up ToB_FT_13
+	// Global("c-aranfriendtob","GLOBAL",26) // set up ToB_FT_14
+	// Global("c-aranfriendtob","GLOBAL",28) // set up ToB_FT_15
+	// Global("c-aranfriendtob","GLOBAL",30) // set up ToB_FT_16
+THEN
+	RESPONSE #100
+	IncrementGlobal("c-aranfriendtob","GLOBAL",1)	// move up from even to odd
+END
 
-// /* Aran's FriendTalks Fire, c-aranfriendtob, ARAN_FTT */
-// /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
-// IF
-// GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
-// !Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-// RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-// InParty(Myself)						// Aran is here
-// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
-// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
-// !ActuallyInCombat()
-// !See([ENEMY])	// Can't see any enemies
-// OR(16)
-// Global("c-aranfriendtob","GLOBAL",1)	 // fire ToB_FT_1
-// Global("c-aranfriendtob","GLOBAL",3)	 // fire ToB_FT_2
-// Global("c-aranfriendtob","GLOBAL",5)	 // fire ToB_FT_3
-// Global("c-aranfriendtob","GLOBAL",7)	 // fire ToB_FT_4
-// Global("c-aranfriendtob","GLOBAL",9)	 // fire ToB_FT_5
-// Global("c-aranfriendtob","GLOBAL",11)	// fire ToB_FT_6
-// Global("c-aranfriendtob","GLOBAL",13)	// fire ToB_FT_7
-// Global("c-aranfriendtob","GLOBAL",15)	// fire ToB_FT_8
-// Global("c-aranfriendtob","GLOBAL",17)	// fire ToB_FT_9
-// Global("c-aranfriendtob","GLOBAL",19)	// fire ToB_FT_10
-// Global("c-aranfriendtob","GLOBAL",21)	// fire ToB_FT_11
-// Global("c-aranfriendtob","GLOBAL",23)	// fire ToB_FT_12
-// Global("c-aranfriendtob","GLOBAL",25)	// fire ToB_FT_13
-// Global("c-aranfriendtob","GLOBAL",27)	// fire ToB_FT_14
-// Global("c-aranfriendtob","GLOBAL",29)	// fire ToB_FT_15
-// Global("c-aranfriendtob","GLOBAL",31)	// fire ToB_FT_16
-// THEN
-// RESPONSE #100
-// PlaySong(0)	// play a blank reference, stoping the soundtrack
-// PlaySound("c-arnftu") // play a .wav or .wavc file
-// StartDialogueNoSet(Player1)	// Yo, we are talkin', here...
-// END
+/* Aran's FriendTalks Fire, c-aranfriendtob, ARAN_FTT */
+/* This block takes the odd variables set by the last block, and tries to fire them off. */
+IF
+	GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
+	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+	InParty(Myself)						// Aran is here
+	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+	!ActuallyInCombat()
+	!See([ENEMY])	// Can't see any enemies
+	OR(6)
+	Global("c-aranfriendtob","GLOBAL",1)	 // fire ToB_FT_1
+	Global("c-aranfriendtob","GLOBAL",3)	 // fire ToB_FT_2
+	Global("c-aranfriendtob","GLOBAL",5)	 // fire ToB_FT_3
+	Global("c-aranfriendtob","GLOBAL",7)	 // fire ToB_FT_4
+	Global("c-aranfriendtob","GLOBAL",9)	 // fire ToB_FT_5
+	Global("c-aranfriendtob","GLOBAL",11)	// fire ToB_FT_6
+	// Global("c-aranfriendtob","GLOBAL",13)	// fire ToB_FT_7
+	// Global("c-aranfriendtob","GLOBAL",15)	// fire ToB_FT_8
+	// Global("c-aranfriendtob","GLOBAL",17)	// fire ToB_FT_9
+	// Global("c-aranfriendtob","GLOBAL",19)	// fire ToB_FT_10
+	// Global("c-aranfriendtob","GLOBAL",21)	// fire ToB_FT_11
+	// Global("c-aranfriendtob","GLOBAL",23)	// fire ToB_FT_12
+	// Global("c-aranfriendtob","GLOBAL",25)	// fire ToB_FT_13
+	// Global("c-aranfriendtob","GLOBAL",27)	// fire ToB_FT_14
+	// Global("c-aranfriendtob","GLOBAL",29)	// fire ToB_FT_15
+	// Global("c-aranfriendtob","GLOBAL",31)	// fire ToB_FT_16
+THEN
+	RESPONSE #100
+		PlaySong(0)	// play a blank reference, stoping the soundtrack
+		PlaySound("c-arnftu") // play a .wav or .wavc file
+		StartDialogueNoSet(Player1)	// Yo, we are talkin', here...
+END
 
 
 /* ROMANCE TALKS */
