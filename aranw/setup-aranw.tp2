@@ -9,9 +9,9 @@ AUTHOR ~cmorgan~
  * 4. enjoy the mod. If you run into problmes, find me at G3 or start an issue ticket on GitHub!
 */
 
-VERSION ~Beta_1~
+VERSION ~Beta_2~
 
-BEGIN ~Install Aran Whitehand beta 1~
+BEGIN ~Install Aran Whitehand Beta 2 for SoA and ToB~
 
 /* extra regexp vars */
 INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
