@@ -623,10 +623,7 @@ IF ~~ a4253
   ++ ~[PC] You are so... stupid. And pushy. Go away and leave me in peace.~ + a3866 /* FIGHT_EXIT */
 END
 
-IF ~~ a4254
-  SAY ~[ARAN] Well, I'm off. Got th' first watch anyhow. Have a dream or two for me.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4254 SAY ~[ARAN] Well, I'm off. Got th' first watch anyhow. Have a dream or two for me.~ IF ~~ THEN EXIT END
 
 
 /* ToB Plot Talk : Sarevok chosen as companion: Activate after a week */
@@ -800,10 +797,7 @@ IF ~~ a2259
   IF ~~ THEN EXIT
 END
 
-IF ~~ a2260
-  SAY ~[ARAN] Aye.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a2260 SAY ~[ARAN] Aye.~ IF ~~ THEN EXIT END
 
 
 /* for followup: BCS
@@ -878,54 +872,54 @@ END
 /* ToB FriendTalk 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : goto followup2  */
 
 /* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires */
+
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",1)~ THEN BEGIN a2850  /* neutral/shy */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  + ~Gender(Player1,MALE)~ + ~[PC] Is there something wrong with me?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2856
-  + ~Gender(Player1,FEMALE)~ + ~[PC] Is there something wrong with me?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2857
-  ++ ~[PC] What are you thinking about now?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2858
-  ++ ~[PC] I think you have been thinking about the past too much.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2859
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  + ~Gender(Player1,MALE)~ + ~[PC] Is there something wrong with me?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2856 /* neutral/shy male */ 
+  + ~Gender(Player1,FEMALE)~ + ~[PC] Is there something wrong with me?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2857 /* neutral/shy female */ 
+  ++ ~[PC] What are you thinking about now?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2858 /* neutral/shy */
+  ++ ~[PC] I... I think you have been thinking about the past too much.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2859 /* fun group */ /* neutral/shy */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874 /* neutral/shy */
 END
 
-/* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires */
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",2)~ THEN BEGIN a2851 /* fun group */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  ++ ~[PC] You seem particularly fascinated with the whole 'sister' topic. Is there something I should be aware of?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2859
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2860
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2861
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  ++ ~[PC] You seem particularly fascinated with the whole 'sister' topic. Is there something I should be aware of?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2859 /* fun group */ /* neutral/shy */
+  ++ ~[PC] Family is family. They tend to be part of your life, whether you want them to be or not. That is what makes it a fun challenge... trying to support them without clobbering them.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2861 /* fun group */
+  ++ ~[PC] Sisters. You can trust them to do exactly what they want, regardless of what you think is right. We would have been better off having a pet hamster.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2861 /* fun group */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874 /* fun group */
 END
 
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",3)~ THEN BEGIN a2852 /* rigid */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  ++ ~[PC] If this is a prelude to asking me about Imoen's relationship status so that you can flirt with her, don't bother. You are not relly suitable for her~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2862
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2863
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2864
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  ++ ~[PC] If this is a prelude to asking me about Imoen's relationship status so that you can flirt with her, don't bother. You are not really suitable for her.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2862 /* rigid */
+  ++ ~[PC] I think that the tasks we face are serious ones. You should not be letting family become a distraction.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2863  /* rigid */
+  ++ ~[PC] You can gain better focus by concentrating on your duties, and setting aside some time each night for personal worries. I find that helps me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2864  /* rigid */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874  /* rigid */
 END
 
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",4)~ THEN BEGIN a2853 /* strong selfish */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  ++ ~[PC] You know, I would rather you talk about something much more interesting, like perhaps... me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2865
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2866
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2867
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  ++ ~[PC] You know, I would rather you talk about something much more interesting, like perhaps... me.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2865 /* strong selfish */
+  ++ ~[PC] You should spend more time thinking on how to save them from my adversaries, should we lose.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2866 /* strong selfish */
+  ++ ~[PC] If this is about going and seeing your sister, I think you should reevaluate your ideas.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2867 /* strong selfish */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874 /* strong selfish */
 END
 
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",5)~ THEN BEGIN a2854 /* smart selfish */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  ++ ~[PC] Now, why are you talking about sisters again? I am a much more fascinating topic of conversation.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2868
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2869
-  ++ ~[PC] ~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2870
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  ++ ~[PC] Now, why are you talking about sisters again? I am a much more fascinating topic of conversation.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2868 /* smart selfish */
+  ++ ~[PC] Is this some kind of ploy to get me to open up about my childhood?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2869 /* smart selfish */
+  ++ ~[PC] Are you talking about Imoen and Elena?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2870 /* smart selfish */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874 /* smart selfish */
 END
 
 IF ~Global("c-aranfriendtob","GLOBAL",5) Global("c-ArSisterBranch","GLOBAL",6)~ THEN BEGIN a2855 /* talk skipped - "hey, you wanna talk now?" */
   SAY ~[ARAN] I be havin' a right hard time keepin' my mind off o' th' sisters. Yours an' mine, I mean.~
-  ++ ~[PC] Why are you pressing this? Do you have feelings for Imoen or something?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2871
-  ++ ~[PC] I thought I made it clear last time that I was not interested in discussing Imoen, or Elena.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2872
-  ++ ~[PC] What are you so worried about?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2873
-  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874
+  ++ ~[PC] Why are you pressing this? Do you have feelings for Imoen or something?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2871 /* talk skipped - "hey, you wanna talk now?" */
+  ++ ~[PC] I thought I made it clear last time that I was not interested in discussing Imoen, or Elena.~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2872 /* talk skipped - "hey, you wanna talk now?" */
+  ++ ~[PC] What are you so worried about?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2873 /* talk skipped - "hey, you wanna talk now?" */
+  ++ ~[PC] Another letter? How do you get mail service around here?~ DO ~SetGlobal("c-aranfriendtob","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2874 /* talk skipped - "hey, you wanna talk now?" */
 END
 /* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : goto followup3 */
 
@@ -1770,119 +1764,232 @@ IF ~~ a2807
 END
 
 IF ~~ a2875
-  SAY ~[ARAN] Now look who be makin' sly innuendo! I do think we done explored some o' those depths, m'lady. Unless all that noise you were makin' was snorin'?~
+  SAY ~[ARAN] Now look who be makin' sly innuendo! I do think we done explored some o' those depths, m'lady. Unless all that noise you were makin' were snorin'?~
   IF ~~ THEN GOTO a2806
 END
 
+/*
+
+Global("c-ArSisterBranch","GLOBAL",1) = neutral/shy
+Global("c-ArSisterBranch","GLOBAL",2) = fun group
+Global("c-ArSisterBranch","GLOBAL",3) = fun rigid
+Global("c-ArSisterBranch","GLOBAL",4) = strong selfish
+Global("c-ArSisterBranch","GLOBAL",5) = smart selfish
+Global("c-ArSisterBranch","GLOBAL",6) = talk skipped - "hey, you wanna talk now?"
+
+*/
+
 /* ToB FriendTalk 3 : "Sisters Redux", 6 "pathway" talks, only 1 fires : followup3 */ 
-IF ~~ a2856
+IF ~~ a2856 /* neutral/shy male */ 
   SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
-  ++ ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with other men about their sisters.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] PLACEHOLDER ~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with other men about their sisters.~ + a4742
+  ++ ~[PC] I really do not want to talk about this now. Or did you have something very specific, strictly about Imoen and her relationship to the goals I want to accomplish?~ + a2032
+  ++ ~[PC] What is bringing all of this right now?~ + a2858
+  ++ ~[PC] You write your sister often. But you very rarely speak of her. Have things changed? Is she in some kind of danger?~ + a2860
+  ++ ~[PC] Nothing. Forget I said anything.~ + a4742
+  ++ ~[PC] Perhaps we should change the subject. Better yet, perhaps we should pass the time watching our surroundings, rather than talking on, and on, and on...~ + a1893
 END
 
-IF ~~ a2857
-  SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
-  + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder /* PLACEHOLDER */
-  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. We... we are involved, aren't we? Usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + c-tobplaceholder /* PLACEHOLDER */
+IF ~~ a4742
+  SAY ~[ARAN] I were comparin', I think. You an' me, an' sisters an' such.~
+  IF ~~ THEN GOTO a4743
 END
 
-IF ~~ a2858
-  SAY ~[ARAN] Oh, nothin' much. Just th' whole set o' Bhaalspawn tryin' to take power makes me wonder if they have any family feelin's at all. Wholesale slaughter o' innocents seems like it be born o' not havin' a sister around to keep you straight.~
-  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] Are you talking about me?~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] You don't know how much of a curse having a god's blood course through your veins can be. It is a constant struggle, and one mistake can turn every friend you ever had into an enemy. No Bhaalspawn has an easy childhood.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] I was lucky. Imoen kept me grounded, even if we were not really siblings. At least, back when we did not realize we were related in any way.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] I never really had that close a relationship with Imoen.~ + c-tobplaceholder /* PLACEHOLDER */
+IF ~~ a2857 /* neutral/shy female */ 
+  SAY ~[ARAN] No, there be naught wrong wi' you. What brought that on?~
+  + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. I know that I am not always the center of the conversation, but usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + a2860 /* neutral/shy female */
+  + ~Global("c-aranrom","GLOBAL",2)~ + ~[PC] I am a little confused. We... we are involved, aren't we? Usually men don't talk with a lady about their sisters, unless they are asking about courting her.~ + a2860 /* neutral/shy female */
+  ++ ~[PC] You write your sister often. But you very rarely speak of her. Have things changed? Is she in some kind of danger?~ + a2860
+  ++ ~[PC] Nothing. Forget I said anything.~ + a4742
+  ++ ~[PC] Perhaps we should just wander on, and not talk about our families. Unless we start talking about fathers. In which case, the subject would scare any sane being into silence anyways.~ + a3071
+  ++ ~[PC] What is bringing all of this right now?~ + a2858
+END
+
+IF ~~ a2858 /* neutral/shy */
+  SAY ~[ARAN] Oh, nothin' much. I think too much in general, I be guessin'. But...~
+  IF ~~ THEN GOTO a4743
 END
 
 IF ~~ a2859
-  SAY ~[ARAN] Oh, I think th' amount o' death an' destruction around right now be makin' me a mite nostalgic for happier times. You must be thinkin' somethin' similar, eh?~
+  SAY ~[ARAN] Oh, I think th' amount o' death an' destruction around right now be makin' me a mite nostalgic for happier times.~
+  IF ~~ THEN GOTO a4743
 END
 
 IF ~~ a2860
- SAY ~PLACEHOLDER~
- IF ~~ THEN EXIT
+  SAY ~[ARAN] Now, there be nothin' in th' way o' that sort o' thing. I were just speakin' what be on my mind. Family gets into your head like naught else in th' world, in truth.~
+  ++ ~[PC] There is no harm in speaking your mind.~ + a4743
+  ++ ~[PC] Perhaps we should change the subject. Better yet, perhaps we should pass the time looking for a place to dig a privy...~ + a1882
+  ++ ~[PC] Instead of gossiping about our sisters, we should get everyone together into one big communal circle, have a good talk bout the importance of love and peace and friendship and family, and we could solve all the world's problems.~ + a2298
+  ++ ~[PC} So, what is bothering you?~ + a4743
+  ++ ~[PC] Family gets into your mind. Controls you. Stifles you. Puts you out into the world and makes you pay attention, instead of letting you hide in a nice book and shut out the world.~ + a2862
 END
 
-IF ~~ a2861
- SAY ~PLACEHOLDER~
- IF ~~ THEN EXIT
+IF ~~ a2861 /* fun group */
+ SAY ~[ARAN] Now that be th' truth, eh? Elena done wrote on how things were doin' around Waterdeep, an' how th' whole place be in an uproar about prophecies an' war an' such.~
+  ++ ~[PC] Perhaps we should change the subject. Better yet, perhaps we should pass the time watching our surroundings, rather than talking on, and on, and on...~ + a1893
+  ++ ~[PC] Instead of gossiping about our sisters, we should get everyone together into one big communal circle, have a good talk bout the importance of love and peace and friendship and family, and we could solve all the world's problems.~ + a2298
+  + ~!Global("c-aranrom","GLOBAL",2)~ + ~[PC] I think that you have a little crush on Imoen... is that a blush I see? Oh, this is going to be great!~ + a1880
+  ++ ~[PC] And here I thought she was writing about how smashingly interesting I am, how brilliant you are, and how we can all come home and have tea because every one of our adversaries has surrendered.~ + a4744
+  ++ ~[PC] She didn't send any stories or interesting gossip?~ + a4745
 END
 
-IF ~~ a2862
- SAY ~PLACEHOLDER~
- IF ~~ THEN EXIT
+IF ~~ a4744
+  SAY ~[ARAN] I think th' amount o' death an' destruction around right now be makin' you a mite bit snarky, eh? There be naught to worry about. We will kick their sorry arses back to wherever they be comin' from, no fear.~
+  IF ~~ THEN GOTO a4743
 END
 
-IF ~~ a2863
- SAY ~PLACEHOLDER~
- IF ~~ THEN EXIT
+IF ~~ a4745
+  SAY ~[ARAN] Actually, there be a little gem about a servin' maid an' one o' th' Masked Ladies bein' caught in a compromisin' position, so to speak, but that be a story for another time. Right now, I don't rightly know if it matters, but...~
+  IF ~~ THEN GOTO a4743
 END
 
-IF ~~ a2864
- SAY ~PLACEHOLDER~
- IF ~~ THEN EXIT
+IF ~~ a2862 /* rigid */
+  SAY ~[ARAN] Have you been at th' drink? Wherever that came from, send it back, eh? I were just about to say that I done got a letter. Elena wrote on how things were doin' around Waterdeep, an' how th' whole place be in an uproar about prophecies an' war an' such.~
+  ++ ~[PC] Perhaps we should just wander on, and not talk about our families. Unless we start talking about fathers. In which case, the subject would scare any sane being into silence anyways.~ + a3071
+  ++ ~[PC] And the subjects of war and death and prophecy made you think about our sisters?~ + a4743
+  ++ ~[PC] She didn't send any stories or interesting gossip?~ + a4745
+  ++ ~[PC] Important or not, you seem to have something to say. So spit it out or stop wasting time.~ + a4743
 END
 
-IF ~~ a2865
+IF ~~ a2863 /* rigid */
+ SAY ~[ARAN] Th' thing is, my family be naught in th' way o' distraction, so much as somethin' of importance to me.~
+  ++ ~[PC] Perhaps we should change the subject. Unless we start talking about fathers. In which case, it might be a good idea to stop talking anyways. Speaking that name might bring even more unwanted attention...~ + a2299
+  ++ ~[PC] I understand that Elena is important to you. But what does she have to do with what we are facing right now?~ + a4743
+  ++ ~[PC] She didn't send any stories or interesting gossip?~ + a4745
+  ++ ~[PC] Important or not, you seem to have something to say. So spit it out or stop wasting time.~ + a4743
+END
+
+IF ~~ a2864 /* rigid */
+ SAY ~[ARAN] Mayhap you be right. But her letter done got me thinkin' an' now I have to get th' idea out o' my head.~
+  ++ ~[PC] Perhaps we should just wander on, and not talk about our families. Unless we start talking about fathers. In which case, the subject would scare any sane being into silence anyways.~ + a3071
+  ++ ~[PC] I understand that Elena is important to you. But what does she have to do with what we are facing right now?~ + a4743
+  ++ ~[PC] She didn't send any stories or interesting gossip?~ + a4745
+  ++ ~[PC] If it will let you concentrate, then by all means, talk it out.~ + a4743
+END
+
+IF ~~ a2865 /* strong selfish */
   SAY ~[ARAN] Oh, come on now. You must have some right nice things to remember about family.~
-  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~  + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] I have memories, but choose not to share them with you.~ + c-tobplaceholder /* PLACEHOLDER */
-  ++ ~[PC] I try not to think about any of that.~ + c-tobplaceholder /* PLACEHOLDER */
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2866
- SAY ~PLACEHOLDER~
- IF ~~ THEN GOTO c-tobplaceholder
+IF ~~ a2866 /* strong selfish */
+  SAY ~[ARAN] True enough.~
+  = ~[ARAN] But sometimes a lad thinks on th' past, not th' future. Especially when it be about families. Don't you have naught in th' way o' memories?~
+  ++ ~[PC] Perhaps we should just wander on, and not talk about our families. Unless we start talking about fathers. In which case, the subject would scare any sane being into silence anyways.~ + a3071
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things, like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2867
- SAY ~PLACEHOLDER~
- IF ~~ THEN GOTO c-tobplaceholder
+IF ~~ a2867 /* strong selfish */
+  SAY ~[ARAN] Hells, no. I done figured out she be safer a mite farther away from th' real action ages ago.~
+  = ~[ARAN] But sometimes a lad thinks on th' past, not th' future. Especially when it be about families. Don't you have naught in th' way o' memories? ~
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2868
-  SAY ~[ARAN] Why, you do be right fascinatin'. I bet you have some good stories o' when you an' Imoen were back in Candlekeep.~
+IF ~~ a2868 /* smart selfish */
+  SAY ~[ARAN] Why, you do be right fascinatin'. But I bet you have some good stories o' when you an' Imoen were back in Candlekeep.~
+  ++ ~[PC] Perhaps we should change the subject. Unless we start talking about fathers. In which case, it might be a good idea to stop talking anyways. Speaking that name might bring even more unwanted attention...~ + a2299
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2869
- SAY ~PLACEHOLDER~
- IF ~~ THEN GOTO c-tobplaceholder
+IF ~~ a2869 /* smart selfish */
+ SAY ~[ARAN] Mayhap. But not th' way you think. I'm not rightly interested in scorin' no points wi' you.~
+  = ~[ARAN] But sometimes a lad thinks on th' past, not th' future. Especially when it be about families. Don't you have naught in th' way o' memories? ~
+  ++ ~[PC] Perhaps we should just wander on, and not talk about our families. Unless we start talking about fathers. In which case, the subject would scare any sane being into silence anyways.~ + a3071
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2870
- SAY ~PLACEHOLDER~
- IF ~~ THEN GOTO c-tobplaceholder
+IF ~~ a2870 /* smart selfish */
+ SAY ~[ARAN] Aye. But more than them, I think. I know it be a silly notion, but I think families give a lad a leg up in makin' choices. mayhap you think th' same.~
+  ++ ~[PC] Perhaps we should change the subject. Unless we start talking about fathers. In which case, it might be a good idea to stop talking anyways. Speaking that name might bring even more unwanted attention...~ + a2299
+  ++ ~[PC] You don't know how much of a blessing having a god's blood course through your veins can be. It frees me from the need to care about lesser things, like family or friendship, and concentrate on the important things like gaining power.~ + a2293
+  ++ ~[PC] I remember Imoen torturing me and teasing me, bothering me, and generally taking up the attention that was rightfully mine.~ + a2293
+  ++ ~[PC] If by 'family' you mean the man who fostered me and kept me from my true heritage, and the girl who weighed me down all the time, no.~ + a2293
+  ++ ~[PC] I do have some happy memories of that time. Imoen was particularly easy to bend to my will. I once had her brainwashed into curtsying every time she began speaking. It was fun.~ + a2293
+  ++ ~[PC] I have memories, but choose not to share them with you.~ + a4743
+  ++ ~[PC] I try not to think about any of that.~ + a4743
 END
 
-IF ~~ a2871
+IF ~~ a4743
+  SAY ~[ARAN] Just th' whole set o' Bhaalspawn tryin' to take power makes me wonder if they have any family feelin's at all. Wholesale slaughter o' innocents seems like it be born o' not havin' a sister around to keep you straight.~
+  ++ ~[PC] Are you talking about me?~ + a4746
+  ++ ~[PC] You don't know how much of a curse having a god's blood course through your veins can be. It is a constant struggle, and one mistake can turn every friend you ever had into an enemy. No Bhaalspawn has an easy childhood. Even when they don't realize they are one.~ + a4747  
+  + ~OR(2) Global("c-ArSisterBranch","GLOBAL",1) Global("c-ArSisterBranch","GLOBAL",6)~ + ~[PC] I was lucky. Imoen kept me grounded, even if we were not really siblings. At least, back when we did not realize we were related in any way.~ + a4747
+  + ~Global("c-ArSisterBranch","GLOBAL",2)~ + ~[PC] I was lucky. Imoen kept me from tlooking at things too seriously, even if we were not really siblings. At least, back when we did not realize we were related in any way.~ + a4747
+  + ~Global("c-ArSisterBranch","GLOBAL",3)~ + ~[PC] I was lucky. Imoen understood the need for order in my life, even when she had little in her own. Even if we were not really siblings, she behaved as if we were family. At least, back when we did not realize we were related in any way.~  + a4747 
+  + ~Global("c-ArSisterBranch","GLOBAL",4)~ + ~[PC] I was lucky. Imoen followed my every command, even if we were not really siblings. At least, back when we did not realize we were related in any way.~  + a4747
+  + ~Global("c-ArSisterBranch","GLOBAL",5)~ + ~[PC] I was lucky. Imoen kept me guessing, planning... I had to stay one step ahead of her if I wanted her to do what I needed done. Even if we were not really siblings, she was comitted to keeping our relationship alive.~ + a4747
+  ++ ~[PC] I never really had that close a relationship with Imoen. People become who they become because of the choices they make, regardless of what thier environment is or who is part of it.~ + a4747
+END
+
+IF ~~ a4747
+  SAY ~[ARAN] That be true enough, I wager.~
+  ++ ~[PC] Perhaps the Bhaalspawn honestly believe that they must destroy anything in their path and sieze power, and that by doing so they restore the natural order of things.~ + a2299
+  ++ ~[PC] Somehow, I think having a sister has little to do with how anyone percieves the world. But the path we are on becomes much more important when you consider what will happen to either of our sisters if they win, and I do not.~ + a3071
+  ++ ~[PC] Look, sisters are fun to chat about. But Elena is not here, and you are. And the best way to make sure she is safe is to focus on what we need to do. ~ + a2260
+  ++ ~[PC] Your memories of your family are important, Aran, as are mine. They help us define who we are. Worrying about whether or not our adversaries had a bad childhood is kind of pointless, isn't it? We still have to face them. ~ + a2260
+  ++ ~[PC] I'll tell you another truth. I have heard Bhaal created children with many creatures. So somewhere out there, I might just have a sister who is a gibberling.~ + a2299
+END
+
+IF ~~ a2871 /* talk skipped - "hey, you wanna talk now?" */
   SAY ~[ARAN] Hells, no. I don't have no special feelin's for Imoen, not th' way you seem to mean. Nor Elena, for that matter. I was just sharin' how things were goin', is all.~
   IF ~~ THEN GOTO a2873
 END
 
-IF ~~ a2872
+IF ~~ a2872 /* talk skipped - "hey, you wanna talk now?" */
   SAY ~[ARAN] I know you done said as much, but it be gnawin' at my mind. There be more about this feelin' than just th' sisters, I think. Mayhap I just don't really know you as well as I think I do.~
   IF ~~ THEN GOTO a2873
 END
 
-IF ~~ a2873
+IF ~~ a2873 /* talk skipped - "hey, you wanna talk now?" */
   SAY ~[ARAN] I just don't rightly know how you dealt wi' th' feelin's about that Irenicus bastard takin' that sister o' yours. It be one thing to have things pushed on you, but on family, that be a heavy burden to carry.~
   ++ ~[PC] She... she isn't really my sister by blood. Or, she is, but not by mortal blood, you know.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",1)~ +  a2791
   ++ ~[PC] Sisters, sisters... can't live with them, can't live without them. Don't worry, We set him straight. Or rather, we chopped him into little pieces. Why the deep sibling introspection?.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",2)~ +  a2792
   ++ ~[PC] Sometimes the greater good requires some sacrifices, but where Imoen is concerned, I think less about the big picture and more about making sure she is safe.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",3)~ + a2793
-  + ~RandomNum(3,3)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3204 /* already 6 */
-  + ~RandomNum(3,2)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3205 /* already 6 */
-  + ~RandomNum(3,1)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3206 /* already 6 */
+  + ~RandomNum(3,3)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3204 
+  + ~RandomNum(3,2)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3205 
+  + ~RandomNum(3,1)~ + ~[PC] This is a bit too personal for me. Just move along, and cut the chatter, Aran.~ + a3206 
   ++ ~[PC] Stop rehashing old history. Irenicus transgressed, I hit back with everything I had, and now I am here and he no longer has any power at all.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",4)~ + a2794
   ++ ~[PC] There is always more at play than it seems, Aran. I wanted Imoen back, but there was far more to be gained by hunting down Irenicus then simply rescuing my 'sister'.~ DO ~SetGlobal("c-ArSisterBranch","GLOBAL",5)~ + a2795
 END
 
-IF ~~ a2874
+IF ~~ a2874 /* all pathways */
   SAY ~[ARAN] Elena an' me, we work on a strict "don't ask, don't tell" policy when it comes to gettin' letters to each other. I don't ask, and she don't rightly tell. This one just showed up in my backpack, though what spell she done used sure beat th' heck out o' me.~
-  IF ~~ THEN EXIT
+  = ~[ARAN] But her letter done got me thinkin'. I know it be a bit silly...~
+  IF ~~ THEN GOTO a4743
+END
+
+IF ~~ a4746
+  SAY ~[ARAN] Oh, hells... no, I were talkin' about them. Not you.~
+  ++ ~[PC} It didn't sound like it. It sounded like you think we share a common bond because we have people in our lives who see us for what we are, and the other Bhaalspawn may not have the same experience.~ + a4747
+  ++ ~[PC] Good. Because I would have been offended if you had been talking about me that way.~ + a4747
+  ++ ~[PC] Look, sisters are fun to chat about. But Elena is not here, and you are. And the best way to make sure she is safe is to focus on what we need to do. ~ + a2260
+  ++ ~[PC] You don't have to hide from me. I realize that Imoen's struggles and desires help inform who I can become.~ + a4747
+  ++ ~[PC] You know I don't like all of this heavy philosophical talk.~ + a4747
 END
 
 /* ToB FriendTalk 4 : "Digression" :  followup4 */
@@ -10126,15 +10233,8 @@ IF ~~ a3222
   ++ ~[PC] No. I think you have it just the way I want it. Thank the gods for memory lapses.~ + a3221
 END
 
-IF ~~ a3221
-  SAY ~[ARAN] Well, you had me off balance, there. I be right happy we both agree. I was worried, mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3218
-  SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly forget anythin' about us, but it sure does feel good to hear you speakin' o' us like this. I was just a mite off balance, is all. Mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3221 SAY ~[ARAN] Well, you had me off balance, there. I be right happy we both agree. I was worried, mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN EXIT END
+IF ~~ a3218 SAY ~[ARAN] I can stop you right there, with a kiss. I can't rightly forget anythin' about us, but it sure does feel good to hear you speakin' o' us like this. I was just a mite off balance, is all. Mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~ IF ~~ THEN EXIT END
 
 END /* of APPEND */
 
