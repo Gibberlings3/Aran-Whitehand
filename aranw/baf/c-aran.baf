@@ -3185,6 +3185,25 @@ THEN
 		StartDialogueNoSet(Player1)
 END
 
+/* Harpers are Not Always Good For Business : Activate */
+/* LUSETTE 11 ~Begone, and hopefully your next dealings with the Harpers will be more pleasant.~ */
+IF
+  InParty(Myself)
+  !StateCheck(Myself,CD_STATE_NOTVALID)
+  !StateCheck(Player1,CD_STATE_NOTVALID)
+  !See([ENEMY])
+  !ActuallyInCombat()
+  Global("LyrosJob","GLOBAL",3)
+  Global("c-aranlyrosjob","LOCALS",0)
+THEN RESPONSE #100
+  SetGlobal("c-aranlyrosjob","LOCALS",1)
+END
+
+IF
+  Global("c-aranlyrosjob","LOCALS",1)
+THEN RESPONSE #100
+  StartDialogNoSet(Player1)
+END
 
 /* FRIEND TALKS
  * OK let's start with the Friend Talks. The idea here is to set the friendtalks up on a BCS <> DLG "bounce", so
@@ -4512,6 +4531,34 @@ THEN
 		SetGlobal("c-arlettertaken","GLOBAL",2)
 		StartDialogueNoSet(Player1)
 END 
+
+/* Scenery Dialog : Stronghold Gains and Losses */
+IF
+    Global("c-aranextort","LOCALS",1)
+	GlobalTimerExpired("c-aranextorttalk","GLOBAL")
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranextort","GLOBAL",2)
+		StartDialogueNoSet(Player1)
+END 
+
+/* Scenery Dialog : Aran Apologizes */
+IF
+	GlobalTimerExpired("c-aranismad","GLOBAL")
+    Global("c-aranfight","GLOBAL",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	    SetGlobal("c-aranfight","GLOBAL",0)
+		SetGlobal("c-aranapology","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END 
+
 /* Night Talk Reset: something else fired and blocked it */
 IF
   Global("c-arannightvisit","GLOBAL",2)

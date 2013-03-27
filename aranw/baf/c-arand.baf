@@ -166,7 +166,7 @@ IF
 		AreaCheck("AR2800")
 THEN  
 	RESPONSE #100
-		SetGlobal("c-arandreamstar","GLOBAL",1)
+		SetGlobal("c-arandreamstar","LOCALS",1)
 		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)	
 		PlaySong(0)
 		PlaySound("c-arnfti")

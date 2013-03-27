@@ -2465,8 +2465,8 @@ IF
 	Global("c-aranfriendtob","GLOBAL",2)	// set up ToB_FT_2
 	Global("c-aranfriendtob","GLOBAL",4)	// set up ToB_FT_3
 	Global("c-aranfriendtob","GLOBAL",6)	// set up ToB_FT_4
-	Global("c-aranfriendtob","GLOBAL",8)	// set up ToB_FT_5
-	Global("c-aranfriendtob","GLOBAL",10) // set up ToB_FT_6
+	// Global("c-aranfriendtob","GLOBAL",8)	// set up ToB_FT_5
+	// Global("c-aranfriendtob","GLOBAL",10)  // set up ToB_FT_6
 	// Global("c-aranfriendtob","GLOBAL",12) // set up ToB_FT_7
 	// Global("c-aranfriendtob","GLOBAL",14) // set up ToB_FT_8
 	// Global("c-aranfriendtob","GLOBAL",16) // set up ToB_FT_9
@@ -2498,8 +2498,8 @@ IF
 	Global("c-aranfriendtob","GLOBAL",3)	 // fire ToB_FT_2
 	Global("c-aranfriendtob","GLOBAL",5)	 // fire ToB_FT_3
 	Global("c-aranfriendtob","GLOBAL",7)	 // fire ToB_FT_4
-	Global("c-aranfriendtob","GLOBAL",9)	 // fire ToB_FT_5
-	Global("c-aranfriendtob","GLOBAL",11)	// fire ToB_FT_6
+	// Global("c-aranfriendtob","GLOBAL",9)	 	// fire ToB_FT_5
+	// Global("c-aranfriendtob","GLOBAL",11)	// fire ToB_FT_6
 	// Global("c-aranfriendtob","GLOBAL",13)	// fire ToB_FT_7
 	// Global("c-aranfriendtob","GLOBAL",15)	// fire ToB_FT_8
 	// Global("c-aranfriendtob","GLOBAL",17)	// fire ToB_FT_9
@@ -2530,65 +2530,65 @@ END
 /* Berelinde: Please consider staggering your flirts and your dialogues. Flirts are nice when they break up long stretches between LTs. 
  * cmorgan: OK, great idea - let's make it really complicated, and base the first timer on the player's choice of overall speed of progress...
  */
+/* Love Talk Initial Check */
+IF	
+	Global("c-aranmatch","GLOBAL",0)		 // Not evaluated
+	Global("c-arantobrom","GLOBAL",0)		// no other LTs have played
+	InParty(Myself)						// Aran is here
+	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+	Gender(Player1,FEMALE)				 // Player1 is female
+	!HasItemEquiped("belt05",Player1)		 // Girdle of sex change not on Player1
+THEN
+	RESPONSE #100								// 100% of the time
+	SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
+	SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
+	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom% )	// Minimum Real Time until first LT
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt% ) // Tee up flirt timer
+END
 
-// IF	
-	// Global("c-aranmatch","GLOBAL",0)		 // Not evaluated
-	// Global("c-arantobrom","GLOBAL",0)		// no other LTs have played
-	// InParty(Myself)						// Aran is here
-	// !StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
-	// !StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
-	// Gender(Player1,FEMALE)				 // Player1 is female
-	// !HasItemEquiped("belt05",Player1)		 // Girdle of sex change not on Player1
-// THEN
-	// RESPONSE #100								// 100% of the time
-	// SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
-	// SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
-	// RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom% )	// Minimum Real Time until first LT
-	// RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt% ) // Tee up flirt timer
-// END
+/* LOVE TALKS */
+/* Romance Talks Sequence */
 
-// /* LOVE TALKS */
-// /* Romance Talks Sequence */
-
-// /* Aran's Romance LoveTalks Aim, c-arantobrom, ARAN_LTT */
-// /* This block takes the even variables set in dialog, and advances them to the odd */
-// IF
-	// GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
-	// RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
-	// !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-	// OR(15)
-	// Global("c-arantobrom","GLOBAL",2)	// set up ToB_LT_2
-	// Global("c-arantobrom","GLOBAL",4)	// set up ToB_LT_3
+/* Aran's Romance LoveTalks Aim, c-arantobrom, ARAN_LTT */
+/* This block takes the even variables set in dialog, and advances them to the odd */
+IF
+	GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
+	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
+	OR(15)
+	Global("c-arantobrom","GLOBAL",2)	// set up ToB_LT_2
+	Global("c-arantobrom","GLOBAL",4)	// set up ToB_LT_3
 	// Global("c-arantobrom","GLOBAL",6)	// set up ToB_LT_4
 	// Global("c-arantobrom","GLOBAL",8)	// set up ToB_LT_5
-	// Global("c-arantobrom","GLOBAL",10) // set up ToB_LT_6
-	// Global("c-arantobrom","GLOBAL",12) // set up ToB_LT_7
-	// Global("c-arantobrom","GLOBAL",14) // set up ToB_LT_8
-	// Global("c-arantobrom","GLOBAL",16) // set up ToB_LT_9
-	// Global("c-arantobrom","GLOBAL",18) // set up ToB_LT_10
-	// Global("c-arantobrom","GLOBAL",20) // set up ToB_LT_11
-	// Global("c-arantobrom","GLOBAL",22) // set up ToB_LT_12
-	// Global("c-arantobrom","GLOBAL",24) // set up ToB_LT_13
-	// Global("c-arantobrom","GLOBAL",26) // set up ToB_LT_14
-	// Global("c-arantobrom","GLOBAL",28) // set up ToB_LT_15
-	// Global("c-arantobrom","GLOBAL",30) // set up ToB_LT_16
-// THEN
-	// RESPONSE #100
-	// IncrementGlobal("c-arantobrom","GLOBAL",1)
-// END
+	// Global("c-arantobrom","GLOBAL",10) 	// set up ToB_LT_6
+	// Global("c-arantobrom","GLOBAL",12) 	// set up ToB_LT_7
+	// Global("c-arantobrom","GLOBAL",14) 	// set up ToB_LT_8
+	// Global("c-arantobrom","GLOBAL",16) 	// set up ToB_LT_9
+	// Global("c-arantobrom","GLOBAL",18) 	// set up ToB_LT_10
+	// Global("c-arantobrom","GLOBAL",20) 	// set up ToB_LT_11
+	// Global("c-arantobrom","GLOBAL",22) 	// set up ToB_LT_12
+	// Global("c-arantobrom","GLOBAL",24) 	// set up ToB_LT_13
+	// Global("c-arantobrom","GLOBAL",26) 	// set up ToB_LT_14
+	// Global("c-arantobrom","GLOBAL",28) 	// set up ToB_LT_15
+	// Global("c-arantobrom","GLOBAL",30) 	// set up ToB_LT_16
+THEN
+	RESPONSE #100
+	IncrementGlobal("c-arantobrom","GLOBAL",1)
+END
 
-// /* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
-// /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
-// IF
-	// GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
-	// RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
-	// !HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-	// CombatCounter(0)	// Not in combat
-	// !See([ENEMY])	// Can't see any enemies
-	// OR(16)
-	// Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
-	// Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
-	// Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3
+/* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
+/* This block takes the odd variables set by the last block, and tries to fire them off.	*/
+IF
+	GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
+	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
+	CombatCounter(0)	// Not in combat
+	!See([ENEMY])	// Can't see any enemies
+	OR(16)
+	Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
+	Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
+	Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3
 	// Global("c-arantobrom","GLOBAL",7)	 // fire ToB_LT_4
 	// Global("c-arantobrom","GLOBAL",9)	 // fire ToB_LT_5
 	// Global("c-arantobrom","GLOBAL",11)	// fire ToB_LT_6
@@ -2602,12 +2602,12 @@ END
 	// Global("c-arantobrom","GLOBAL",27)	// fire ToB_LT_14
 	// Global("c-arantobrom","GLOBAL",29)	// fire ToB_LT_15
 	// Global("c-arantobrom","GLOBAL",31)	// fire ToB_LT_16
-// THEN
-	// RESPONSE #100
-	// PlaySong(0)
-	// PlaySound("c-arnltl")
-	// StartDialogueNoSet(Player1)
-// END
+THEN
+	RESPONSE #100
+	PlaySong(0)
+	PlaySound("c-arnltl")
+	StartDialogueNoSet(Player1)
+END
 
 /* NPC-Initiated Flirts: */
 
@@ -2616,8 +2616,8 @@ IF
 	Global("c-aranpcflirtstart","GLOBAL",0)
 	Gender(Player1,FEMALE)
 	OR(2)
-	Global("c-aranrom","GLOBAL",1)
-	Global("c-aranrom","GLOBAL",2)
+	  Global("c-aranrom","GLOBAL",1)
+	  Global("c-aranrom","GLOBAL",2)
 THEN
 	RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
@@ -2739,6 +2739,20 @@ RESPONSE #100
 	SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 	StartDialogNoSet(Player1)
 END
+
+/* Scenery Dialog : Aran Apologizes */
+IF
+	GlobalTimerExpired("c-aranismad","GLOBAL")
+    Global("c-aranfight","GLOBAL",1)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+	    SetGlobal("c-aranfight","GLOBAL",0)
+		SetGlobal("c-aranapology","GLOBAL",1)
+		StartDialogueNoSet(Player1)
+END 
 
 IF
 	Allegiance(Myself,ENEMY)
