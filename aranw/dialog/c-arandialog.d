@@ -123,7 +123,7 @@ I_C_T HENDAK 19 c-aranhendak19 /* ~I know nothing of the defenses of the place i
 END
 
 I_C_T HAEGAN 0 c-aranhaegan0 /* ~You! How dare you! We were doin' good business in this town before you took out my partner, Lehtinan at the Copper Coronet! Why are you out to ruin me?~ */
-== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Oh, we just dropped by to get rid o' th' vermin. An' when you turned out to be such a Cyric-kissed piece of shite, we just figured it were th' right thing to do. Good for th' neighborhood, an' all. You first, then th' piece o' crud you call 'Lehtinan'. Got any other names you want to drop, while we be all cozy an' chatty?~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Oh, we just dropped by to get rid o' th' vermin. An' when you turned out to be such a Cyric-kissed piece of shite, we just figured it were th' right thing to do. Good for th' neighborhood, an' all. Got any other names you want to drop, while we be all cozy an' chatty?~
 END
 
 I_C_T HAEGAN 4 c-aranhaegan4 /* ~Who in the Nine Hells are you? Why have you barged in here with drawn weapons and attacked my men? If you want to be buying some slaves from me you're going about it the wrong way.~ */
@@ -8393,18 +8393,17 @@ END
 
 IF ~~ a4759 SAY ~[ARAN] Why, sure enough. I can see th' whole thing might have put you off thinkin' or talkin', so I be right happy you let me chatter on. Passes th' time, it does.~ IF ~~ THEN GOTO a4761 END
 IF ~~ a4760 SAY ~[ARAN] You do have an active imagination, eh? No matter. You successfully got me clean off topic an' now I forgot what we be talkin' about.~ IF ~~ THEN GOTO a4761 END
-IF ~~ a4761 SAY ~[ARAN] I'd best be gettin' on wi' what we are doin', anyways.~ IF ~~ THEN EXIT END
-
-// FIX THIS _ MULTIPLE TALKS ABOVE!!!  
+IF ~~ a4761 SAY ~[ARAN] I'd best be gettin' on wi' what we are doin', anyways.~ IF ~~ THEN EXIT END 
 
 /* BG2 Love Talk 1 : Mary Chapin Carpenter - I Take My Chances : c-aranbg2rom = 1 > 2  c-aranromtimer, ARAN_LTT  */
 
 IF ~Global("c-aranbg2rom","GLOBAL",1)~ THEN BEGIN a505
-  SAY ~[ARAN] Do you be needin' somethin', <CHARNAME>?~ [c-aws099]
-  ++ ~[PC] No. Why do you ask?~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a506
+  SAY ~[ARAN] That strap there looks a bit worse for th' wear. Here, let me...~
+  = ~[ARAN] ..err... that were a mistake, I think. Now, how did that hand make itself so familiar?~ [c-aws099]
+  ++ ~[PC] No offense taken. Why would you think so?~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a506
   ++ ~[PC] I was about to ask you the same question.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a507
-  ++ ~[PC] Yes. After I box your ears. Touch me again without my permission, and I will do far worse.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a508
-  ++ ~[PC] Yes, I do. I need you to watch our surroundings, and stop watching me.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a509
+  ++ ~[PC] No offense taken... after I box your ears. Touch me again without my permission, and I will do far worse.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a508
+  ++ ~[PC] Do not touch me. I need you to watch our surroundings, and stop watching me.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a509
   ++ ~[PC] You flatter yourself, boyo.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a510
   + ~RandomNum(4,1)~ + ~[PC] Now is not a good time to talk, Aran.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1934 /* c-aranshutup28 */
   + ~RandomNum(4,2)~ + ~[PC] Can we move along? Each time we get close to accomplishing something, some idiot begins interrupting my concentration on killing things...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1935 /* c-aranshutup29 */
@@ -8413,7 +8412,7 @@ IF ~Global("c-aranbg2rom","GLOBAL",1)~ THEN BEGIN a505
 END
 
 IF ~~ a506
-  SAY ~[ARAN] Well, you keep strayin' your eyes my way, is all. An' I do believe I was a mite forward, back there, with my hands. You should box my ears but good. Sune knows I deserve it.  Or was you goin' to tell me that I have permission to be a scoundrel?~
+  SAY ~[ARAN] Well, I wasn't rightly sure you were receptive, is all. An' I do believe I was a mite forward with my hands. You should box my ears but good. Sune knows I deserve it.  Or was you goin' to tell me that I have permission to be a scoundrel?~
   ++ ~[PC] You have my permission, Aran. If you are man enough for the task.~ + a513
   ++ ~[PC] Scoundrel. Aran, you surprise me. You actually know a word longer than 'aye'.~ + a514
   ++ ~[PC] Again with the romance. Some men don't take a hint. Look, drop it, Aran. And touch me again and you will be very sorry.~ + a516
@@ -8424,8 +8423,8 @@ IF ~~ a506
 END
 
 IF ~~ a507
-  SAY ~[ARAN] Well, I hinted back there, is all. My eyes be strayin' your way too, I guess. An' you didn't box my ears back there when my hand kinda wandered a bit.~
-  ++ ~[PC] Touch my rear again without my permission, and I will do far worse.~ + a508
+  SAY ~[ARAN] Well, I didn't mean to, but I am naught in th' way o' sorry it happened. An' I notice you didn't box my ears when my hand kinda wandered off course.~
+  ++ ~[PC] Touch me again without my permission, and I will do far worse.~ + a508
   ++ ~[PC] You have my permission, Aran. If you are man enough for the task.~ + a513
   ++ ~[PC] You flatter yourself, boyo.~ + a510
   + ~RandomNum(3,1)~ + ~[PC] Now is not a good time to talk, Aran.~ + a1933 /* c-aranshutup27 */
@@ -8448,7 +8447,7 @@ END
 
 IF ~~ a509
   SAY ~[ARAN] Well, I do admit you are a sight to be watched, <CHARNAME>. But I can watch you an' keep lookout too.~
-  ++ ~[PC] You misunderstand me. If you think I am watching because you are attractive, you flatter yourself, boyo. I just can't trust you to keep your mind on the job.~ + a510
+  ++ ~[PC] You misunderstand me. If you think I am watching because you are attractive, you flatter yourself. I just can't trust you to keep your mind on the job.~ + a510
   ++ ~[PC] I don't mind the glances, Aran. But there is a time and place.~ + a512
   ++ ~[PC] Oh, Aran, my dearest love, come and we shall frolic freely among the stars, and be one together for all eternity...~ + a511
   + ~RandomNum(3,1)~ + ~[PC] I think I have had enough of both glances and talking. Keep your mouth shut and your eyes on the job.~ + a1921 /* c-aranshutup15 */
@@ -8512,7 +8511,7 @@ IF ~~ a516
 END
 
 IF ~~ a517
-  SAY ~[ARAN] Selune's Sweet Breath, you are mockin' me! Well, now, can't say as I blame you. I did come on a bit strong.~
+  SAY ~[ARAN] Selune's Sweet Breath, you be mockin' me! Well, now, can't say as I blame you. I did come on a bit strong.~
   IF ~~ THEN GOTO a518
 END
 
@@ -14041,7 +14040,7 @@ END
 IF ~Global("c-arants","LOCALS",1)~ THEN BEGIN a1502
   SAY ~[ARAN] Well, <CHARNAME>, you done got yourself a nice little operation to run. Gamblin', prostitution, light theft, "protection", spyin', an' a cute little trainin' program to boot. Question is, what are you goin' to do with it.~ [c-aws123]
   ++ ~[PC] Anything I want.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1503 /* c-anythingiwant */
-  ++ ~[PC] Whatever serves the greater good.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1504 /* a1548everservesgood */
+  ++ ~[PC] Whatever serves the greater good.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1504
   + ~Class("c-aran",THIEF_ALL)~ + ~[PC] Are you jealous? After all, you have some minor skills in gathering either information or whatever is not tied down. Strike that. Especially things that are tied down.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1505 /* c-tieddown */
   + ~Class("c-aran",MAGE_ALL)~ + ~[PC] I am not sure you would understand, all wrapped up in your books and scribing. It takes coin to keep you in quills, parchment, and spell components.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1506 /* c-takescoin */
   + ~Class("c-aran",CLERIC_ALL)~ + ~[PC] Say a prayer or two for me. I want this as a base of operations and an income stream, but I hear that there is only one way out of the Guild, and it involves me having a minor accident.~ DO ~SetGlobal("c-arants","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1507 /* c-minoraccident */
@@ -14272,7 +14271,7 @@ IF ~~ a2205
   + ~Class(Player1,FIGHTER_ALL)~ + ~[PC] I am well versed in fighting. All we need is the strength to hold this place for awhile. You are too interested in the details.~ + a2224
   + ~Class(Player1,MAGE_ALL)~ + ~[PC] If you think it will help, go bother with all that petty detail. All I am really interested is wandering the library, and checking for spell components.~ + a2224
   + ~OR(2) Class(Player1,CLERIC_ALL) Class(Player1,PALADIN_ALL)~ + ~[PC] I am sure you mean well, but I don't have time to concentrate on the details. What I really need is time to pray to my god and gather my strength.~ + a2224
-  + ~Class(Player1,THIEF_ALL)~ + ~[PC All we need is the illusion of strength to hold this place for awhile. Being pinned down to a fortress is not my idea of being subtle. Do I really need to be bothered with all these details?~ + a2224
+  + ~Class(Player1,THIEF_ALL)~ + ~[PC] All we need is the illusion of strength to hold this place for awhile. Being pinned down to a fortress is not my idea of being subtle. Do I really need to be bothered with all these details?~ + a2224
   + ~Class(Player1,BARD_ALL)~ + ~[PC] I am more interested in the stories, songs, and poetry that our conquest of this place will inspire. I need some time and space to sit down and concentrate. Do I really need to be bothered with all these details?~ + a2224
 END
 
@@ -20671,10 +20670,9 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   /* PC Wants To Initiate A Flirt: Lightweight */
   + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1074 /* c-pcflirtsaran1 */
   /* PC Wants To Initiate A Flirt: Heavyweight */
-  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
-  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",3) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
+  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) OR(2) Global("c-aranpcflirtstart","GLOBAL",2) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
   /* PC Wants To Initiate A Flirt: Mature */
-  + ~Gender(Player1,FEMALE) GlobalGT("c-aransex","GLOBAL",2) Global("c-aranpcflirtstart","GLOBAL",2) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076 /* c-pcflirtsaran3 */
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) GlobalGT("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076 /* c-pcflirtsaran3 */
   /* 2d - PC Wants To Initiate A Flirt, But Aran Is Angry - handled within submenu  */
   ++ ~[PC] Before we go any further, Aran... what do you think our "relationship" is?~ + a2699
   /* PID Scribing Scrolls Blocks */
