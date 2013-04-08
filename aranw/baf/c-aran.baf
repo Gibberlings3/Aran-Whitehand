@@ -2940,6 +2940,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranas","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Bards : Activate */
@@ -2954,11 +2955,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranbs","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Bards : Initiate */
 IF
 	Global("c-aranbs","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -2986,11 +2989,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-arancs","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Clerics : Initiate */
 IF
 	Global("c-arancs","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3015,11 +3020,13 @@ IF
 THEN 
 	RESPONSE #100
 		SetGlobal("c-arands","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Druids : Activate */
 IF
 	Global("c-arands","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3044,11 +3051,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranfs","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Fighters : Initiate */
 IF
 	Global("c-aranfs","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3073,11 +3082,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranms","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Mages : Initiate */
 IF
 	Global("c-aranms","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3102,11 +3113,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranps","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Paladins : Initiate */
 IF
 	Global("c-aranps","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3131,11 +3144,13 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranrs","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Rangers : Initiate */
 IF
 	Global("c-aranrs","LOCALS",1)
+	RealGlobalTimerExpired("c-aranstrong","GLOBAL")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -3167,6 +3182,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranas","LOCALS",1)
+		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
 /* Got All Strongholds : Initiate */
