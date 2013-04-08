@@ -14029,10 +14029,12 @@ END
 IF ~~ a2234 SAY ~[ARAN] We don't have to be in Underdark for that to be true, eh? If danger be th' spice o' life, then I think we have had one hells of a strong curry, topped wi' hotsauce an' mayhap some liquid fire.~ IF ~~ THEN GOTO a1801 END
 
 /* Dream Talks : Stone Walls, Stone Hearts, Stone Heads : Dream Script, de'Arnise Keep (Stronghold) Dialog  - Set from  C-ARAND after keep is owned - Day */
-IF ~Global("c-arandreamstone","GLOBAL",1) TimeOfDay(DAY)~ THEN BEGIN a2194
-  SAY ~[ARAN] There you are. I thought you might be off tryin' to get some sleep. Hells, there be a shortage o' candles in this place, eh? It be daylight outside, but in here it be gloomier than a one legged man at a dancin' contest. Anyways, I needed to bend your ear a mite.~ [c-aws112]
+IF ~Global("c-arandreamstone","GLOBAL",1)~ THEN BEGIN a2194
+  SAY ~[ARAN] There you are. I thought you might be off tryin' to get some sleep. Hells, there be a shortage o' candles in this place, eh? It be gloomier than a one legged man at a dancin' contest. Anyways, I needed to bend your ear a mite.~ [c-aws112]
   IF ~~ THEN DO ~SetGlobal("c-arandreamstone","GLOBAL",2)~ GOTO a2196
 END
+/* Dream Talks : Stone Walls, Stone Hearts, Stone Heads : Dream Script, de'Arnise Keep (Stronghold) Dialog  - Set from  C-ARAND after keep is owned - Night */
+// available for use =  a2195
 
 /* Gaining Stronghold Responses : set from .bcs */
 /* 1 possible if played without mods, 2 or 3 for multiclass PC's with mods, all of them if one of the multi-stronghold tweaks are installed */
@@ -14174,12 +14176,6 @@ IF ~~ a1495 SAY ~[ARAN] Waukeen's Wanderin' Worshipers, you never did no communi
 IF ~~ a1496 SAY ~[ARAN] Sure, sure... kick a man when he be down. Right. I can fix it up. You go on conquerin' Faerun, an' I'll just be in th' back, sortin' out supply requisitions.~ IF ~~ THEN EXIT END
 IF ~~ a1497 SAY ~[ARAN] Right you are. Tymora's Bright Smile, I done had worse troubles to iron out, like that time th' 'Fist accidentally took a contract for both protectin' an' sackin' the same fiefdom. No worries. I will take a breather, an' get back on it as soon as my head clears.~ IF ~~ THEN EXIT END
 IF ~~ a1498 SAY ~[ARAN] Hey, I studied enough magic to know how important that blighted Gond-Meets-Mystrul-an'-Mystra construct be. I just don't rightly see how you are goin' to be able to leverage it against th' bastards we are fightin' right now. You can't hide in an' among th' Planes when your opponents have eyes everywhere, an' when we don't know where they are, we can't just drop in unannounced. But I guess you be right. It is a damned fine place to take a nap, at least.~ IF ~~ THEN EXIT END
-
-/* Dream Talks : Stone Walls, Stone Hearts, Stone Heads : Dream Script, de'Arnise Keep (Stronghold) Dialog  - Set from  C-ARAND after keep is owned - Night */
-IF ~Global("c-arandreamstone","GLOBAL",1) TimeOfDay(NIGHT)~ THEN BEGIN a2195
-  SAY ~[ARAN] There you are. I thought you might be off tryin' to get some sleep. Hells, there be a shortage o' candles in this place, eh? It be night outside so you'd think they would run out some good lanterns or a spell or two an' brighten th' place up, but in here it be gloomier than a one legged man at a dancin' contest. Anyways, I needed to bend your ear a mite.~ [c-aws112]
-  IF ~~ THEN DO ~SetGlobal("c-arandreamstone","GLOBAL",2)~ GOTO a2196
-END
 
 IF ~~ a2196
   SAY ~[ARAN] Now that you have a solid defensible position, mayhap you want to gather an army, an' get settled a mite before takin' on th' rest of the world, eh? Not that you have to listen to me, tryin' to tell you what to do. I just keep these lips flappin' way too much.~
