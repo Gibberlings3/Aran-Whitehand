@@ -2461,7 +2461,7 @@ END
 IF
 	GlobalLT("c-aranfriendtob","GLOBAL",10)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	OR(5)
+	OR(3)
 	Global("c-aranfriendtob","GLOBAL",2)	// set up ToB_FT_2
 	Global("c-aranfriendtob","GLOBAL",4)	// set up ToB_FT_3
 	Global("c-aranfriendtob","GLOBAL",6)	// set up ToB_FT_4
@@ -2485,15 +2485,14 @@ END
 /* Aran's FriendTalks Fire, c-aranfriendtob, ARAN_FTT */
 /* This block takes the odd variables set by the last block, and tries to fire them off. */
 IF
-	GlobalLT("c-aranfriendtob","GLOBAL",32)	// shuts down sequence when finished
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	GlobalLT("c-aranfriendtob","GLOBAL",8)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	!ActuallyInCombat()
 	!See([ENEMY])	// Can't see any enemies
-	OR(6)
+	OR(4)
 	Global("c-aranfriendtob","GLOBAL",1)	 // fire ToB_FT_1
 	Global("c-aranfriendtob","GLOBAL",3)	 // fire ToB_FT_2
 	Global("c-aranfriendtob","GLOBAL",5)	 // fire ToB_FT_3
@@ -2513,7 +2512,7 @@ IF
 THEN
 	RESPONSE #100
 		PlaySong(0)	// play a blank reference, stoping the soundtrack
-		PlaySound("c-arnftu") // play a .wav or .wavc file
+		PlaySound("c-arnfth") // play a .wav or .wavc file
 		StartDialogueNoSet(Player1)	// Yo, we are talkin', here...
 END
 
@@ -2553,10 +2552,10 @@ END
 /* Aran's Romance LoveTalks Aim, c-arantobrom, ARAN_LTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-	OR(15)
+	OR(2)
 	Global("c-arantobrom","GLOBAL",2)	// set up ToB_LT_2
 	Global("c-arantobrom","GLOBAL",4)	// set up ToB_LT_3
 	// Global("c-arantobrom","GLOBAL",6)	// set up ToB_LT_4
@@ -2580,12 +2579,12 @@ END
 /* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-arantobrom","GLOBAL",32)	// shuts down sequence when finished
+	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	CombatCounter(0)	// Not in combat
 	!See([ENEMY])	// Can't see any enemies
-	OR(16)
+	OR(3)
 	Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
 	Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
 	Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3

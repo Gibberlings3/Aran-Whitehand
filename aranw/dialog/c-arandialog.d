@@ -4184,7 +4184,7 @@ IF ~~ a62
   ++ ~[PC] I'm familiar with the concept. That's why I have you as a meat-shield.~ + a64
   ++ ~[PC] We really do not have the coin to spare for things like that.~ + a65
   ++ ~[PC] You might be right.~ + a70
-  ++ ~[PC] Are you sure you want more competition? I mean, all those extra swords about might make you less useful to me.~ + a66_new
+  ++ ~[PC] Are you sure you want more competition? I mean, all those extra swords about might make you less useful to me.~ + a4846
   + ~Global("c-aranmatch","GLOBAL",1) GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] Are you sure you want more competition? I mean, all those extra choices... I might be tempted.~ + a66
 END
 
@@ -4207,7 +4207,7 @@ IF ~~ a66
   IF ~~ THEN GOTO a63
 END
 
-IF ~~ a66_new
+IF ~~ a4846
   SAY ~[ARAN] If I can't hold my own against the rest, <CHARNAME>, I don't deserve th' space in th' party. I say bring 'em on, an' I'll take all comers.~
   IF ~~ THEN GOTO a63
 END
@@ -8961,9 +8961,9 @@ IF ~Global("c-aranbg2rom","GLOBAL",7)~ THEN BEGIN a575
   ++ ~[PC] I like to play games with rude sellsword's emotions until they are driven insane with desire, and then dump them.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a577
   ++ ~[PC] I find many things pleasurable. But I have not had any time to do much beyond survive, lately.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a578
   + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579_flirt
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a4844
   + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580_flirt
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a4845
   ++ ~[PC] I think that is my own business, not yours.~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a581
 END
 
@@ -9011,7 +9011,7 @@ IF ~~ a579
   ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
 END
 
-IF ~~ a579_flirt
+IF ~~ a4844
   SAY ~[ARAN] That sounds right nice, it does. I like sittin' down in an older section o' a library, an' huntin' through as many illustrated manuscripts as time will allow me. Unfortunately, it sounds absolutely nothin' like what we are doin' here, trekkin' about an' fightin' over an' over again. An' you have an eye for a mite bit o' fun, on account o' we have had a flirt or two pass between us. But riddle me this - you ever think about sparkin' more serious-like? Courtin'?~
   ++ ~[PC] I have not given it much thought.~ + a587
   + ~RandomNum(3,1)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1931 /* c-aranshutup25 */
@@ -9037,7 +9037,7 @@ IF ~~ a580
   ++ ~[PC] I play games to win. I do not waste my time with what you call 'fun'.~ + a583
 END
 
-IF ~~ a580_flirt
+IF ~~ a4845
   SAY ~[ARAN] That sounds right nice, it does. I like a good solid meal, both th' preparin' an' th' sharin'. There's few drinks I met I didn't like, too. Unfortunately, it sounds absolutely nothin' like what we are doin' here, trekkin' about an' fightin' over an' over again. An' you have an eye for a mite bit o' fun, on account o' we have had a flirt or two pass between us. But riddle me this - you ever think about sparkin' more serious-like? Courtin'?~
   ++ ~[PC] I have not given it much thought.~ + a587
   + ~RandomNum(4,1)~ + ~[PC] I think you are getting too personal. Get your mind back on the job, Aran.~ + a1934 /* c-aranshutup28 */
@@ -9058,9 +9058,9 @@ IF ~~ a581
   ++ ~[PC] Life so far has left me little time or inclination for courting.~ + a578
   ++ ~[PC] I have courted, loved, and lost. That part of my life is over, at least for now.~ + a582
   + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a579
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a579_flirt
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] A quiet, warm, calm place, a good book, and something nice to drink.~ + a4844
   + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a580
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a580_flirt
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + ~[PC] Oh, you know, the usual. Wine, song, feasts, a little more wine...~ + a4845
   ++ ~[PC] I like romance, Aran. Do you like courting?~ + a587
   ++ ~[PC] I think you are being a little slow, Aran. I have already set my heart on someone, and it is not you.~ + a594
 END
@@ -14154,6 +14154,17 @@ IF ~Global("c-aranas","LOCALS",1)~ THEN BEGIN a1478
   ++ ~[PC] You asked to help, remember? Don't come crying to me now.~ DO ~SetGlobal("c-aranas","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1496
   ++ ~[PC] You have done a good job, and you will get through this. Just clear your head, take a day or two off, and then focus on getting things back in order.~ DO ~SetGlobal("c-aranas","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1497
   ++ ~[PC] If you can't handle it, we will find someone else to do the job.~ DO ~SetGlobal("c-aranas","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1510
+END
+
+/* SoA Stronghold Commentary : PC Owns Keep */
+
+IF ~Global("c-aranpckeep","LOCALS",1)~ THEN BEGIN a4847
+  SAY ~[ARAN] I do believe right about now we should go back an' inspect that whole Keep you have under your command. If I had a wish, I'd spend it on that. I would even volunteer to check all th' beds, one at a time. A lad can never get enough comfort or sleep, eh?~
+  ++ ~[PC] Tired of living the exciting life of travel and adventure?~ DO ~SetGlobal("c-aranpckeep","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ + a4360
+  ++ ~[PC] Oh, come on. You would waste a wish on traveling to a dusty old stronghold, just to lie in a comfortable feather bed?~ DO ~SetGlobal("c-aranpckeep","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ + a4360
+  ++ ~[PC] I bet you two iron tradebars that your first wish would actually be something about women or alcohol.~ DO ~SetGlobal("c-aranpckeep","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ + a4360
+  ++ ~[PC] If this is another complaint about your feet hurting from all the walking, then keep your whining to yourself.~ DO ~SetGlobal("c-aranpckeep","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ + a2928
+  ++ ~[PC] I agree. But you should check out the storerooms. I'll check out the beds. Some tasks are too important to delegate.~ DO ~SetGlobal("c-aranpckeep","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ + a4360
 END
 
 IF ~~ a1479 SAY ~[ARAN] Right, then. Note to self... don't mess wi' a ranger and <PRO_HISHER> territory, on account o' they will be right snippy about it. I will be goin' about my business, eh?~ IF ~~ THEN EXIT END

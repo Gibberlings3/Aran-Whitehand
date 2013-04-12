@@ -3051,6 +3051,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranfs","LOCALS",1)
+		SetGlobalTimer("c-aranhometalk","GLOBAL",FIVE_DAYS)
 		RealSetGlobalTimer("c-aranstrong","GLOBAL",20)
 END
 
@@ -3067,6 +3068,42 @@ THEN
 	RESPONSE #100
 		PlaySong(0)
 		PlaySound("c-arnfth")
+		StartDialogueNoSet(Player1)
+END
+
+/* Stronghold Commentary */
+
+/* SoA Stronghold Commentary : PC Owns Keep */
+IF
+	Global("PCKeepOwner","GLOBAL",1)
+	Global("c-silencearan","GLOBAL",0) // PID - set silencer
+	Global("c-aranpckeep","LOCALS",0)
+	GlobalTimerExpired("c-aranhometalk","GLOBAL")
+	!AreaCheck("AR1305")
+	!AreaCheck("AR1306")
+	!AreaCheck("AR1307")
+	!AreaCheck("AR0021")		 // Crooked Crane, 1st floor
+	!AreaCheck("AR0313")		 // Sea's Bounty, 1st floor
+	!AreaCheck("AR0406")		 // Copper Coronet
+	!AreaCheck("AR0509")		 // Five Flagons, 1st floor
+	!AreaCheck("AR0513")		 // Delosar's, 1st floor
+	!AreaCheck("AR0522")		 // Five Flagons, 1st floor (stronghold)
+	!AreaCheck("AR0704")		 // Mithrest Inn
+	!AreaCheck("AR0709")		 // Den of the Seven Vales
+	!AreaCheck("AR1105")		 // Imnesvale Inn
+	!AreaCheck("AR1602")		 // Vulgar Monkey
+	!AreaCheck("AR2010")		 // Trademeet Inn
+	!AreaCheck("C-AR01")		 // The Broken Sword	
+	Global("c-silencearan","GLOBAL",0) // PID - set silencer
+	Global("c-aranpckeep","LOCALS",0)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	CombatCounter(0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranpckeep","LOCALS",1)
 		StartDialogueNoSet(Player1)
 END
 
@@ -3737,24 +3774,6 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("c-aranvamped","GLOBAL",5)
-		StartDialogueNoSet(Player1)
-END
-
-/* Stronghold Commentary */
-
-/* SoA Stronghold Commentary : PC Owns Keep */
-IF
-	Global("PCKeepOwner","GLOBAL",1)
-	Global("c-silencearan","GLOBAL",0) // PID - set silencer
-	Global("c-aranpckeep","LOCALS",0)
-	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	!StateCheck(Player1,CD_STATE_NOTVALID)
-	CombatCounter(0)
-	!See([ENEMY])
-THEN
-	RESPONSE #100
-		SetGlobal("c-aranpckeep","LOCALS",1)
 		StartDialogueNoSet(Player1)
 END
 

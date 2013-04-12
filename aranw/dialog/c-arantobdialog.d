@@ -10675,10 +10675,7 @@ APPEND C-ARN25J
 
 /* temporary state for missing content. */
 
-IF ~~ c-tobplaceholder
-  SAY ~[ARAN] Well, I'll be a monkey's uncle. I got naught to say. Must be a writer's strike.~
-  IF ~~ THEN EXIT
-END
+IF ~~ c-tobplaceholder SAY ~[ARAN] Well, I'll be a monkey's uncle. I got naught to say. Must be a writer's strike.~ IF ~~ THEN EXIT END
 
 END /* of append to C-ARN25J */
 
