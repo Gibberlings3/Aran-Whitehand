@@ -107,8 +107,30 @@ IF
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		SetGlobal("c-arnRESarevok","LOCALS",9)
+		SetGlobal("c-arnRESarev","LOCALS",9)
 END
+
+IF 
+    InParty(Myself) 
+    Global("RE_SarevokSex","GLOBAL",1) 
+    Global("c-arnRESarev","LOCALS",0)
+    AreaCheck("AR5003")
+    !StateCheck(Myself,CD_STATE_NOTVALID)  
+THEN 
+    RESPONSE #100 
+        SetGlobal("c-arnRESarev","LOCALS",1) 
+END 
+
+IF 
+    InParty(Myself)
+    Global("c-arnRESarev","LOCALS",1) 
+    !StateCheck(Myself,CD_STATE_NOTVALID) 
+    CombatCounter(0) 
+    !See([ENEMY]) 
+THEN 
+    RESPONSE #100 
+        StartDialogueNoSet(Player1)  
+END 
 
 /* tracking intimacy levels */
 /* look for incrementing relationship to kissing */

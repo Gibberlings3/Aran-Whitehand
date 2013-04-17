@@ -1,8 +1,11 @@
 IF
 	!RealGlobalTimerNotExpired("RE_DreamTimer","GLOBAL")
+	!RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
 	Global("c-arangoaded","GLOBAL",1)
 	!Global("c-aranspar","GLOBAL",1)
 	!Global("c-aranspar","GLOBAL",4)
+	!Global("c-aranspar","GLOBAL",7)
+	!Global("c-aranspar","GLOBAL",10)
 	!Global("c-arandreamstar","LOCALS",1)
 	InParty("c-aran")
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
@@ -14,10 +17,13 @@ END
 
 IF
 	!RealGlobalTimerNotExpired("RE_DreamTimer","GLOBAL")
+	!RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
 	GlobalTimerExpired("c-arangoadedtime","GLOBAL")
 	Global("c-arangoaded","GLOBAL",4)
 	!Global("c-aranspar","GLOBAL",1)
 	!Global("c-aranspar","GLOBAL",4)
+	!Global("c-aranspar","GLOBAL",7)
+	!Global("c-aranspar","GLOBAL",10)
 	!Global("c-arandreamstar","LOCALS",1)
 	InParty("c-aran")
 	!StateCheck("c-aran",CD_STATE_NOTVALID)

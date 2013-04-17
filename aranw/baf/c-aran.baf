@@ -77,7 +77,7 @@ THEN
 		PlaySound("c-arnfth")
 		StartDialogueNoSet(Player1)
 END
-/* Sparring, females ; Morning After talk */
+/* Sparring, females ; Morning After talk : heavy making out or bedding */
 IF
 	Global("c-aranspar","GLOBAL",7)
 	InParty(Myself)
@@ -118,12 +118,55 @@ THEN
 		PlaySound("c-arnltl")
 		StartDialogNoSet(Player1)
 END
-/* Sparring, females : Morning After : disable if it doesn't fire in the morning - identify by global set to 12 */
+/* Sparring, females ; Morning After talk : kissing or making out */
 IF
-	Global("c-aranspar","GLOBAL",7)
+	Global("c-aranspar","GLOBAL",10)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
+	OR(27)
+		AreaCheck("AR0085")
+		AreaCheck("AR1100")
+		AreaCheck("AR1101")
+		AreaCheck("AR1102")
+		AreaCheck("AR1104")
+		AreaCheck("AR1105")
+		AreaCheck("AR1106")
+		AreaCheck("AR1107")
+		AreaCheck("AR1200")
+		AreaCheck("AR1204")
+		AreaCheck("AR1300")
+		AreaCheck("AR1304")
+		AreaCheck("AR1400")
+		AreaCheck("AR1404")
+		AreaCheck("AR1700")
+		AreaCheck("AR1800")
+		AreaCheck("AR1900")
+		AreaCheck("AR1901")
+		AreaCheck("AR1902")
+		AreaCheck("AR1904")
+		AreaCheck("AR1905")
+		AreaCheck("AR2500")
+		AreaCheck("AR2600")
+		AreaCheck("AR2602")
+		AreaCheck("AR2603")
+		AreaCheck("AR2700")
+		AreaCheck("AR2800")
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranspar","GLOBAL",11)
+		PlaySong(0)
+		PlaySound("c-arnltl")
+		StartDialogNoSet(Player1)
+END
+/* Sparring, females : Morning After : disable if it doesn't fire in the morning - identify by global set to 15 */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	OR(2)
+	  Global("c-aranspar","GLOBAL",7)
+	  Global("c-aranspar","GLOBAL",10)
 	!AreaCheck("AR0085")
 	!AreaCheck("AR1100")
 	!AreaCheck("AR1101")
@@ -153,7 +196,7 @@ IF
 	!AreaCheck("AR2800")
 THEN
 	RESPONSE #100
-		SetGlobal("c-aranspar","GLOBAL",12)
+		SetGlobal("c-aranspar","GLOBAL",15)
 END
 /* On waking banter, after Underdark : bcs */ 
 IF
@@ -3281,17 +3324,17 @@ THEN
 		SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
 		SetGlobalTimer("c-aranisdrunk","GLOBAL",10)  // initializes drunk talk timer
 		SetGlobal("c-aranfriendsetup","GLOBAL",1)
-		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",160)	// Minimum Real Time until SoA_FT_1	is called, unlless the player initiates PID and triggers it 
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",180)	// Minimum Real Time until SoA_FT_1	is called, unlless the player initiates PID and triggers it 
 		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghold spacer timer 
 END
 
-/* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT */
+/* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available any time */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",27)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",21)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-	OR(14)
+	OR(11)
 		Global("c-aranfriendbg2","GLOBAL",0)	// set up SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",2)	// set up SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",4)	// set up SoA_FT_3
@@ -3303,25 +3346,27 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",16) // set up SoA_FT_9
 		Global("c-aranfriendbg2","GLOBAL",18) // set up SoA_FT_10
 		Global("c-aranfriendbg2","GLOBAL",20) // set up SoA_FT_11
-		Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12  // specially conditioned "soultalk" PLACEHOLDER well really a rewrite needed
-		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
+THEN
+	RESPONSE #100
+		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
+END
+
+/* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available after chapter 5 */
+/* This block takes the even variables set in dialog, and advances them to the odd */
+IF
+	GlobalLT("c-aranfriendbg2","GLOBAL",27)	// shuts down sequence when finished
+	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+	GlobalGT("Chapter","GLOBAL",5) // Not in Underdark, and must fire post-losing-soul
+	OR(3)
+
+		Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12 
+		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13 // "soultalk"
 		Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
  //	 Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
  //	 Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
-END
-
-/* Conditioned Friendtalks (interrupts the series if PC lingers in Chapter 2 */
-IF 
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12
-	GlobalGT("AsylumPlot","GLOBAL",40)
-THEN
-	RESPONSE #100
-		SetGlobal("c-aranfriendbg2","GLOBAL",23)	// move up from even to odd
 END
 
 /* Aran's FriendTalks Fire, c-aranfriendbg2, ARAN_FTT */
@@ -3359,8 +3404,21 @@ THEN
 		StartDialogueNoSet(Player1)	// Yo, we are talkin', here...
 END
 
+
+/* Aran's Underdark FriendTalks Aim, c-aranfriendud, ARAN_FTT : Setup */
+/* This block sets up the underdark talks */
+IF
+	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
+	Global("c-aranfriendsetud","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranfriendsetud","GLOBAL",1)
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",600) // 15 minutes real-time minimum
+END
+
 /* Aran's Underdark FriendTalks Aim, c-aranfriendud, ARAN_FTT */
 /* This block takes the even variables set in dialog, and advances them to the odd */
+
 IF
 	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
 	GlobalLT("c-aranfriendud","GLOBAL",9)	// shuts down sequence when finished
@@ -3879,6 +3937,18 @@ THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
 END
+/* Shade Lord (Darios) : Rollback */
+IF
+	Global("c-aranshadelord","LOCALS",1)
+	!AreaCheck("AR1400") // Temple ruins
+	!AreaCheck("AR1404") // Temple ruins restored
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranshadelord","LOCALS",0)
+END
 /* Shade Lord (Darios) : Activate */
 IF
 	Killed([0.UNDEAD.SHADOW.SHADOW.0.FEMALE]) // Shade Lord
@@ -3906,17 +3976,40 @@ THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
 END
-/* Shade Lord (Darios) : Rollback */
+/* SoA Scenery Talks : Shadow Dragon seen c-arshaddrag : Escape if not played */
 IF
-	Global("c-aranshadelord","LOCALS",1)
-	!AreaCheck("AR1400") // Temple ruins
-	!AreaCheck("AR1404") // Temple ruins restored
+	Global("c-arshaddragseen","GLOBAL",1)
 	InParty(Myself)
-	!StateCheck(Myself,CD_STATE_NOTVALID)
-	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!AreaCheck("AR1402")	
 THEN
 	RESPONSE #100
-		SetGlobal("c-aranshadelord","LOCALS",0)
+		SetGlobal("c-arshaddragseen","GLOBAL",5)
+END
+/* SoA Scenery Talks : Shadow Dragon seen c-arshaddrag : Activate */
+IF
+	Global("c-arshaddragseen","GLOBAL",0)
+	AreaCheck("AR1402")
+	!Dead("ShaDra01")
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+THEN
+	RESPONSE #100
+		SetGlobal("c-arshaddragseen","GLOBAL",1)
+END
+/* SoA Scenery Talks : Shadow Dragon seen c-arshaddrag : Initiate */
+IF
+	Global("c-arshaddragseen","GLOBAL",1)
+	!ActuallyInCombat()
+	!Dead("ShaDra01")
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
 END
 /* SoA Scenery Talks : Shadow Dragon clobbered c-arshaddrag : Activate */
 IF
@@ -4272,7 +4365,32 @@ THEN
 		SetGlobal("c-arangravecomment","LOCALS",0)
 END
 
-/* SoA Scenery Talks  :  Git the Guild  : Activate  */
+/* SoA Commentary/Reactions, called from .bcs : Auntie Is a PITA :  set from ICT */
+/* SoA Scenery Talks  : Auntie Is a PITA  : Initiate */
+IF
+	Global("c-aranoldbat","GLOBAL",1)
+	AreaCheck("AR1303")
+	!See("DELCIA")
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+END 
+/* SoA Scenery Talks  : Auntie Is a PITA  : Rollback */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+	!AreaCheck("AR1303")
+	Global("c-aranoldbat","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranoldbat","GLOBAL",2)
+END
+
+/* SoA Scenery Talks  :  Git the Guild  : Activate  
 IF
 	Global("PlayerThiefGuild","GLOBAL",1)
 	Global("c-aranguild","LOCALS",0)
@@ -4282,7 +4400,7 @@ THEN
 		SetGlobal("c-aranguild","LOCALS",1)
 END
 
-/* SoA Scenery Talks  :  Git the Guild  : Initiate  
+SoA Scenery Talks  :  Git the Guild  : Initiate  
 IF
 	Global("PlayerThiefGuild","GLOBAL",1)
 	Global("c-aranguild","LOCALS",0)

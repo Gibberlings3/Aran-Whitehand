@@ -399,6 +399,13 @@ EXIT
 
 APPEND C-ARN25J
 
+/* ToB Scenery Dialog : Romantic Encounters Reactions */
+/* Sarevok and PC "disappear" for awhile */
+IF ~Global("c-arnRESarev","LOCALS",1)~ THEN BEGIN a4872
+   SAY ~[ARAN] It be lookin' like you just took a run down a hillside an' tripped a few times, eh? You must o' had another nightmare.~
+   IF ~~ THEN EXIT
+END
+
 /* In Watcher's Keep, ToB  - both C-ARANJ and C-ARN25J triggered from Global("c-aranwatchkeep","GLOBAL",1) and closed to 2 in dlg */
 
 IF ~Global("c-aranwatchkeep","GLOBAL",1)~ THEN BEGIN a973
@@ -3908,7 +3915,7 @@ IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a4459
   IF ~RandomNum(36,2)~ THEN GOTO a4444
   IF ~RandomNum(36,1)~ THEN GOTO a4445
   IF ~AreaType(OUTDOOR) TimeOfDay(NIGHT) Global("c-aranstarflirt","GLOBAL",0)~ THEN GOTO a4446 /* c-aranstarflirt */
-  IF ~AreaType(CITY) Global("c-arancityflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arancityflirt","GLOBAL",1)~ GOTO a4447 /* c-arancityflirt */
+  IF ~AreaType(CITY) AreaType(OUTDOOR) Global("c-arancityflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arancityflirt","GLOBAL",1)~ GOTO a4447 /* c-arancityflirt */
   IF ~AreaType(DUNGEON) Global("c-arandungeonflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arandungeonflirt","GLOBAL",1)~ GOTO a4448  /* c-arandungeonflirt */
   /* Jewelry Light Flirt Additions:  */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL04",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a4410 /* Studded Necklace with Zios Gems */
@@ -5243,7 +5250,6 @@ END
 
 IF ~~ a3871 /* LOOKING_1_UNSURE */
   SAY ~[ARAN] I don't want naught in th' way o' pressurin' you right now. I was just thinkin' that we be two souls what might need some physical comfort, an' might find it together.~
-  ++ ~[PC] I have no soul.~ + a3872 /* SOUL_PASSTHROUGH */
   ++ ~[PC] I feel like I have no soul.~ + a3872 /* SOUL_PASSTHROUGH */
   ++ ~[PC] That is a nice thought, but... I am not ready for romance of any kind right now. Why don't you just sit here with me, and hold my hand?~ + a3869 /* JUST_FRIENDS_INN_EXIT */
   ++ ~[PC] I think I could use some comforting. If I was to sit on your lap, and perhaps you could hold me close, and we could kiss a little, I would like that.~ + a3873 /* MAKEOUT_INN_EXIT */
@@ -8877,7 +8883,7 @@ END
 
 IF ~~ a4158 /* LADIES_FIRST_PLEASE */
   SAY ~[ARAN] Oh no, m'lady, I won't. Not before you do. I can... outlast...~
-  = ~[ARAN] (His eyes widen as he watches yo, seeking to delay until he feels your pleasure peak.)~
+  = ~[ARAN] (His eyes widen as he watches you, seeking to delay until he feels your pleasure peak.)~
   = ~[ARAN] (His pace quickens, as does his breathing. He drives deep within you, suddenly stilling all motion, all time. The heat of his release fills you, his arms bands of iron holding you close as he shudders his delight.)~
   IF ~~ THEN EXIT
 END
