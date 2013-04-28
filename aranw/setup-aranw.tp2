@@ -1296,36 +1296,49 @@ has provided an accounting of the buisnesses present and monetary exchanges made
 Signed,
 Ferrin DeLorea, Clerk, City Revenue Department~
 
-/* .cre population */
+/* mycre.cre population */
 
-/* resources */
+/* resources : portraits : bg2 */
+COPY ~aranw/media/portraits_bg2/nix_default_bg2l.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2/nix_default_bg2m.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2/nix_default_bg2s.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2/peachplums_manson_bg2s.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_gerald_bg2s.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_cheris_bg2s.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_kavain_bg2s.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-aw01bp.bmp~ /* Area C-AW01 Toran (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
+/* Area C-AW01 Tavern Keeper Orrin	*/
+COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~ ~override/c-malcer.bmp~ /* Malcer, thug portrait (Peachplums)*/
+/* Oskut - L10	male fighter */
+/* Taman - L10	male fighter */
 
-COPY ~aranw/media/portraits/nix_defaultl.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait	 (Nix, default) */
-COPY ~aranw/media/portraits/nix_defaultm.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait	(Nix, default) */
-COPY ~aranw/media/portraits/nix_defaults.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait	(Nix, default) */
+/* ACTION_IF will be needed when bg2:ee comes out */
+/* resources : portraits : bg2:ee */
 
-COPY ~aranw/media/portraits/peachplums_jeremys.bmp~ 	~override/c-aw01ep.bmp~
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~	 /* Area C-AW01 Entry Point - Bouncer on Promenade	*/
+
+/* creatures */
+/* Area C-AW01 Entry Point - Manson - Bouncer on Promenade	*/
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~	 
 	SAY NAME1 ~Manson~
 	SAY NAME2 ~Manson~
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY ~aranw/media/portraits/peachplums_blaisev2s.bmp~ 	~override/c-toran.bmp~
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	 /* Area C-AW01 fight creature	*/
+/* Area C-AW01 bar/barfight - Toran */
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01bp.cre~	
 	SAY NAME1 ~Toran~
 	SAY NAME2 ~Toran~
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~	 /* Area C-AW01 Tavern Keeper Orrin	*/
+/* Area C-AW01 Tavern Keeper - Orrin	*/
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~	
 	SAY NAME1 ~Orrin~
 	SAY NAME2 ~Orrin~
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY ~aranw/media/portraits/peachplums_erika.bmp~ ~override/c-aw01w1.bmp~ /* Erika's portrait (Peachplums) */
-COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~	/*	 server 1	- Erika */
+/* Area C-AW01 Tavern Waitress - Erika */
+COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~
 	SAY NAME1 ~Erika~
 	SAY NAME2 ~Erika~
 	WRITE_BYTE 0x2C 35 // metal color
@@ -1336,35 +1349,33 @@ COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~	/*	 server 1	- Erika */
 	WRITE_BYTE 0x31 40 // armor color
 	WRITE_BYTE 0x32 3 // hair color
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY_EXISTING ~kpgate02.cre~	 ~override/c-aw01p1.cre~	/*	 patron 1	- L10	male fighter */
+/*  Area C-AW01 Tavern Patron - Gerald the Strong - L10 male fighter */
+COPY_EXISTING ~kpgate02.cre~	 ~override/c-aw01p1.cre~
 	SAY NAME1 ~Gerald the Strong~
 	SAY NAME2 ~Gerald the Strong~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY ~aranw/media/portraits/peachplums_halforcfemv2S.bmp~ 	~override/c-aw01p2.bmp~
-COPY_EXISTING ~kpsold02.cre~	 ~override/c-aw01p2.cre~	/*	 patron 2	- L3 female fighter */
+/* Area C-AW01 Tavern Patron Cheris	*/
+COPY_EXISTING ~kpsold02.cre~	 ~override/c-aw01p2.cre~	
 	SAY NAME1 ~Cheris Nothar~
 	SAY NAME2 ~Cheris Nothar~
 	WRITE_BYTE 0x2E 45 // major color
 	WRITE_BYTE 0x2F 37 // skin color
 	WRITE_BYTE 0x32 29 // hair color
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY ~aranw/media/portraits/peachplums_kavain.bmp~ ~override/c-aw01p3.bmp~ /* Kavain, Cleric Merc portrait (Peachplums)	*/
-COPY_EXISTING ~kpchap01.cre~	 ~override/c-aw01p3.cre~	/*	 patron 3	- L10 male priest */
+/* Area C-AW01 Tavern Patron Kavain - L10 male priest */
+COPY_EXISTING ~kpchap01.cre~	 ~override/c-aw01p3.cre~	
 	SAY NAME1 ~Kavain~
 	SAY NAME2 ~Kavain~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-
-COPY_EXISTING ~kpsold07.cre~	 ~override/c-aw01tl.cre~	/*	 Teldra the Recruiter */
+/* Area C-AW01 Tavern - Teldra the Recruiter */
+COPY_EXISTING ~kpsold07.cre~	 ~override/c-aw01tl.cre~	
 	SAY NAME1 ~Teldra~
 	SAY NAME2 ~Teldra~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 
 /* outside-the-bar fight (females romancing him only) */
-COPY ~aranw/media/portraits/peachplums_thug.bmp~ ~override/c-malcer.bmp~ /* Malcer, thug portrait (Peachplums)	*/
-COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~	/*	 thug 1	- L10	male fighter */
+ /* Malcer - L10 male fighter */
+COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~
 	REMOVE_CRE_ITEM ~sw2h01~
 	REMOVE_CRE_ITEM ~plat01~
 	REMOVE_CRE_ITEM ~helm01~
@@ -1378,8 +1389,8 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~	/*	 thug 1	- L10	male figh
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld06~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~sw1h41~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
-
-COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~	/*	 thug 2	- L10	male fighter */
+/* Oskut - L10	male fighter */
+COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~	
 	REMOVE_CRE_ITEM ~sw2h01~
 	REMOVE_CRE_ITEM ~plat01~
 	REMOVE_CRE_ITEM ~helm01~
@@ -1394,8 +1405,8 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~	/*	 thug 2	- L10	male fight
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~sw1h05~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
-
-COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~	/*	 thug 3	- L10	male fighter */
+/* Taman - L10	male fighter */
+COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~	
 	REMOVE_CRE_ITEM ~sw2h01~
 	REMOVE_CRE_ITEM ~plat01~
 	REMOVE_CRE_ITEM ~helm01~
@@ -1410,6 +1421,7 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~	/*	 thug 3	- L10	male fight
 	ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~blun21~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
 
+/* resources : romance vampiric abduction */
 /* Vamp'd Aran's Body */ 
 COPY_EXISTING ~miscbm.itm~ ~override/c-avbody.itm~
 	SAY NAME1 ~Aran's Body~
@@ -1429,7 +1441,7 @@ COPY_EXISTING ~vampano.cre~ ~override/c-arnvmp.cre~
 	WRITE_ASCIIE 0x280 ~%DEST_RES%~ #32 /* death variable */
 	ADD_CRE_ITEM ~c-avbody~ #0 #0 #0 IDENTIFIED QITEM1
 
-/* stores */
+/* resources : stores */
 
 COPY ~aranw/media/stores/c-awtav1.sto~ ~override~
 	PATCH_IF SOURCE_SIZE > 0x9b BEGIN
@@ -1548,7 +1560,7 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4	/* Bloodstone Amulet */
 	END
 
-/* area creation */
+/* resources : area creation */
 COPY ~aranw/areas/c-ar01.are~ 	~override~
 COPY ~aranw/areas/c-ar01.tis~ 	~override~
 COPY ~aranw/areas/c-ar01.mos~ 	~override~
@@ -2089,24 +2101,23 @@ OUTER_SPRINT ~arportrait~ ~There are many alternate portraits from which to choo
 OUTER_WHILE (!(IS_AN_INT ~arportrait~) OR (~arportrait~ > 0xd) OR (~arportrait~ < 0x1)) BEGIN
 	PRINT ~Please enter your choice and press return:
 [1] Keep Nix's "Default" portrait set (fair hair, fair complexion)
-[2] berelinde's "Boromir" style (dark brown hair, fair complexion)
-[3] berelinde's "Dragon Age" style (dark hairr, dark complexion)
-[4] berelinde's "Scruffy" style (light brown hair, fair complexion)
-[5] McMazey's "Don Pedro" style (dark hair, dark complexion)
+[2] Peachplum's "Latest" style (dark brown hair, fair complexion)
+[3] berelinde's "Boromir" style (dark brown hair, fair complexion)
+[4] berelinde's "Dragon Age" style (dark hairr, dark complexion)
+[5] berelinde's "Scruffy" style (light brown hair, fair complexion)
+[6] McMazey's "Don Pedro" style (dark hair, dark complexion)
 [6] McMazey's "Fantasy Photo" style (long brown hair, light complexion)
-[7] McMazey's "Bearded" style (dark hair, light complexion)
-[8] McMazey's "No Beard" style (dark hair, light complexion)
-[9] McMazey's "Horatio Photo" style (dark hair, light complexion)
-[10] Peachplums' "Young Fighter" style (red hair, fair complexion)
-[11] piperb's "Stalwort Bearded Young" style (light brown hair, fair complexion)
-[12] piperb's "Mature Bearded" style (dark brown hair, medium complexion)
-[13] piperb's "Stalwort Young" style (light brown hair, fair complexion) ~
+[8] McMazey's "Bearded" style (dark hair, light complexion)
+[9] McMazey's "No Beard" style (dark hair, light complexion)
+[10] McMazey's "Horatio Photo" style (dark hair, light complexion)
+[11] Peachplums' "Young Fighter" style (red hair, fair complexion)
+[12] piperb's "Stalwort Bearded Young" style (light brown hair, fair complexion)
+[13] piperb's "Mature Bearded" style (dark brown hair, medium complexion)
+[14] piperb's "Stalwort Young" style (light brown hair, fair complexion) ~
 	ACTION_READLN ~arportrait~
 END
 ACTION_IF ("arportrait" = 0x1) THEN BEGIN /* Nix's "Default" portrait set ( fair hair, fair complexion) */
-	COPY ~aranw/media/portraits/nix_defaultl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/nix_defaultm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/nix_defaults.bmp~ ~override/c-aranws.bmp~
+	/* portraits already copied into place as standard resources */
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
@@ -2118,14 +2129,14 @@ ACTION_IF (("arportrait" = 0x1) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x2) THEN BEGIN /*	Berelinde's "Boromir" style (dark brown hair, fair complexion) */
-	COPY ~aranw/media/portraits/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/berelinde_borm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/berelinde_bors.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x2) THEN BEGIN /* Pechplum's "Latest" portrait set ( brown hair, fair complexion) */
+	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2l.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2m.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2s.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT ~Berelinde's "Boromir" style (dark brown hair, fair complexion) installed.~
+	PRINT ~Pechplum's "Latest" portrait set (fair hair, fair complexion) installed.~
 END
 ACTION_IF (("arportrait" = 0x2) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
@@ -2133,74 +2144,74 @@ ACTION_IF (("arportrait" = 0x2) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x3) THEN BEGIN	/*	Berelinde's "Dragon Age" style (dark hair, dark complexion) */
-	COPY ~aranw/media/portraits/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/berelinde_dam.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/berelinde_das.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x3) THEN BEGIN /*	Berelinde's "Boromir" style (dark brown hair, fair complexion) */
+	COPY ~aranw/media/portraits_bg2/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_borm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_bors.bmp~ ~override/c-aranws.bmp~
+	COPY_EXISTING ~c-aran7.cre~ ~override~
+		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+		WRITE_BYTE 0x32 3	/* hair color (light gold) */
+	PRINT ~Berelinde's "Boromir" style (dark brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0x3) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+	COPY_EXISTING ~c-aran13.cre~ ~override~
+		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+		WRITE_BYTE 0x32 3	/* hair color (light gold) */
+	PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0x4) THEN BEGIN	/*	Berelinde's "Dragon Age" style (dark hair, dark complexion) */
+	COPY ~aranw/media/portraits_bg2/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_dam.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_das.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
 	PRINT ~Berelinde's "Dragon Age" style (dark hair, dark complexion) installed.~
 END
-ACTION_IF (("arportrait" = 0x3) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+ACTION_IF (("arportrait" = 0x4) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x4) THEN BEGIN /*	Berelinde's "Scruffy" style (light brown hair, fair complexion)	*/
-	COPY ~aranw/media/portraits/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/berelinde_scruffym.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/berelinde_scruffys.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x5) THEN BEGIN /*	Berelinde's "Scruffy" style (light brown hair, fair complexion)	*/
+	COPY ~aranw/media/portraits_bg2/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_scruffym.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/berelinde_scruffys.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	PRINT ~Berelinde's "Scruffy" style (light brown hair, fair complexion) installed.~
 END
-ACTION_IF (("arportrait" = 0x4) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+ACTION_IF (("arportrait" = 0x5) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x5) THEN BEGIN	/*	Macmazey's	"Don Pedro" style (dark hair, dark complexion) */
-	COPY ~aranw/media/portraits/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/macmazey_donpedrom.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/macmazey_donpedros.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x6) THEN BEGIN	/*	Macmazey's	"Don Pedro" style (dark hair, dark complexion) */
+	COPY ~aranw/media/portraits_bg2/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/macmazey_donpedrom.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/macmazey_donpedros.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
 	PRINT ~Macmazey's "Don Pedro" style (dark hair, dark complexion) installed.~
 END
-ACTION_IF (("arportrait" = 0x5) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+ACTION_IF (("arportrait" = 0x6) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x6) THEN BEGIN	/*	Macmazey's "Fantasy Photo" style (long brown hair, light complexion) */
-	COPY ~aranw/media/portraits/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/macmazey_longhairm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/macmazey_longhairs.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x7) THEN BEGIN	/*	Macmazey's "Fantasy Photo" style (long brown hair, light complexion) */
+	COPY ~aranw/media/portraits_bg2/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/macmazey_longhairm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/macmazey_longhairs.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~Macmazey's "Fantasy Photo" style (long brown hair, light complexion) installed.~
-END
-ACTION_IF (("arportrait" = 0x6) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
-	COPY_EXISTING ~c-aran13.cre~ ~override~
-		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
-		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT ~ToB file patched to match.~
-END
-ACTION_IF ("arportrait" = 0x7) THEN BEGIN /*	Macmazey's	"Bearded" style (dark hair, light complexion) */
-	COPY ~aranw/media/portraits/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/mcmazey_beardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/mcmazey_beards.bmp~ ~override/c-aranws.bmp~
-	COPY_EXISTING ~c-aran7.cre~ ~override~
-		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
-		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT ~Macmazey's	"Bearded" style (dark hair, light complexion) installed.~
 END
 ACTION_IF (("arportrait" = 0x7) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
@@ -2208,14 +2219,14 @@ ACTION_IF (("arportrait" = 0x7) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x8) THEN BEGIN	/*	Macmazey's "No Beard" style (dark hair, light complexion) */
-	COPY ~aranw/media/portraits/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/mcmazey_nobeardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/mcmazey_nobeards.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x8) THEN BEGIN /*	Macmazey's	"Bearded" style (dark hair, light complexion) */
+	COPY ~aranw/media/portraits_bg2/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_beardm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_beards.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT ~Macmazey's "No Beard" style (dark hair, light complexion) installed.~
+	PRINT ~Macmazey's	"Bearded" style (dark hair, light complexion) installed.~
 END
 ACTION_IF (("arportrait" = 0x8) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
@@ -2223,14 +2234,14 @@ ACTION_IF (("arportrait" = 0x8) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0x9) THEN BEGIN	/*	Macmazey's "Horatio Photo" style (dark hair, light complexion) */
-	COPY ~aranw/media/portraits/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/mcmazey_photo_hm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/mcmazey_photo_hs.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0x9) THEN BEGIN	/*	Macmazey's "No Beard" style (dark hair, light complexion) */
+	COPY ~aranw/media/portraits_bg2/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_nobeardm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_nobeards.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT ~Macmazey's "Horatio Photo" style (dark hair, light complexion)installed.~
+	PRINT ~Macmazey's "No Beard" style (dark hair, light complexion) installed.~
 END
 ACTION_IF (("arportrait" = 0x9) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
@@ -2238,40 +2249,55 @@ ACTION_IF (("arportrait" = 0x9) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0xa) THEN BEGIN /*	Peachplum's "Young Fighter" style (red hair, fair comlpexion) */
-	COPY ~aranw/media/portraits/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/peachplums_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/peachplums_youngs.bmp~ ~override/c-aranws.bmp~
-	COPY_EXISTING ~c-aran7.cre~ ~override~
-		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
-		WRITE_BYTE 0x32 4	/* hair color (auburn) */
-	PRINT ~Peachplum's "Young Fighter" style (red hair, fair comlpexion) installed.~
-END
-ACTION_IF (("arportrait" = 0xa) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
-	COPY_EXISTING ~c-aran13.cre~ ~override~
-		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
-		WRITE_BYTE 0x32 4	/* hair color (auburn) */
-	PRINT ~ToB file patched to match.~
-END
-ACTION_IF ("arportrait" = 0xb) THEN BEGIN /*	piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) */
-	COPY ~aranw/media/portraits/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/piper_beard_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/piper_beard_youngs.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0xa) THEN BEGIN	/*	Macmazey's "Horatio Photo" style (dark hair, light complexion) */
+	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hs.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
-		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT ~piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) installed.~
+		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
+	PRINT ~Macmazey's "Horatio Photo" style (dark hair, light complexion)installed.~
 END
-ACTION_IF (("arportrait" = 0xb) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+ACTION_IF (("arportrait" = 0xa) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0xc) THEN BEGIN	/*	piper's "Mature Bearded" style (dark brown hair, medium complexion) */
-	COPY ~aranw/media/portraits/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/piper_darker_beardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/piper_darker_beards.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0xb) THEN BEGIN /*	Peachplum's "Young Fighter" style (red hair, fair comlpexion) */
+	COPY ~aranw/media/portraits_bg2/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/peachplums_youngm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/peachplums_youngs.bmp~ ~override/c-aranws.bmp~
+	COPY_EXISTING ~c-aran7.cre~ ~override~
+		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
+		WRITE_BYTE 0x32 4	/* hair color (auburn) */
+	PRINT ~Peachplum's "Young Fighter" style (red hair, fair comlpexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xb) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+	COPY_EXISTING ~c-aran13.cre~ ~override~
+		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
+		WRITE_BYTE 0x32 4	/* hair color (auburn) */
+	PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xc) THEN BEGIN /*	piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) */
+	COPY ~aranw/media/portraits_bg2/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_beard_youngm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_beard_youngs.bmp~ ~override/c-aranws.bmp~
+	COPY_EXISTING ~c-aran7.cre~ ~override~
+		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+		WRITE_BYTE 0x32 3	/* hair color (light gold) */
+	PRINT ~piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) installed.~
+END
+ACTION_IF (("arportrait" = 0xc) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+	COPY_EXISTING ~c-aran13.cre~ ~override~
+		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
+		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
+	PRINT ~ToB file patched to match.~
+END
+ACTION_IF ("arportrait" = 0xd) THEN BEGIN	/*	piper's "Mature Bearded" style (dark brown hair, medium complexion) */
+	COPY ~aranw/media/portraits_bg2/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_darker_beardm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_darker_beards.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 84 /* skin color (peachy) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
@@ -2283,16 +2309,16 @@ ACTION_IF (("arportrait" = 0xd) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN B
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
 	PRINT ~ToB file patched to match.~
 END
-ACTION_IF ("arportrait" = 0xd) THEN BEGIN	 /*	piper's "Stalwort Young" style (light brown hair, fair complexion) */
-	COPY ~aranw/media/portraits/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits/piper_nobeard_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits/piper_nobeard_youngs.bmp~ ~override/c-aranws.bmp~
+ACTION_IF ("arportrait" = 0xe) THEN BEGIN	 /*	piper's "Stalwort Young" style (light brown hair, fair complexion) */
+	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngm.bmp~ ~override/c-aranwm.bmp~
+	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngs.bmp~ ~override/c-aranws.bmp~
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	PRINT ~piper's "Stalwort Young" style (light brown hair, fair complexion) installed.~
 END
-ACTION_IF (("arportrait" = 0xd) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
+ACTION_IF (("arportrait" = 0xe) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */

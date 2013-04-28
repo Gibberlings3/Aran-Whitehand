@@ -3034,7 +3034,7 @@ END
 /* stream bonding 2 of 3, cycles, cycles, female */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk","GLOBAL",1) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a767
   SAY ~[PC] (You look around for Aran, but he is not to be seen. It looks like he has headed for nearby water.)~
-  ++ ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a792
+  ++ ~[PC] (You decide to follow him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a792 // pc_c_b aw_u_w
   ++ ~[PC] (You decide you have had enough him for right now, and carry on about your business.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT 
   ++ ~[PC] (You decide you would never intrude on his privacy by following him down to the water.)~ DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
   ++ ~[PC] (You take advantage of the opportunity to rummage through his pack.)~ DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a2913
@@ -14134,11 +14134,11 @@ CHAIN C-ARANJ a790
 == C-ARANJ IF ~CheckStatGT(Player1,8,DEX) CheckStatLT(Player1,16,DEX)~ THEN ~[ARAN] (...and your recovery might have been possible through the counterbalance of your wildly flailing arms, were it not for rough hands gripping your waist and tossing you directly into the crystal water.)~
 == C-ARANJ IF ~CheckStatLT(Player1,9,DEX)~  THEN ~[ARAN] (...and you resign yourself to the inevitable clumsy sprawl in the mud. Surprisingly, you feel strong hands gripping your waist and tossing you farther out into the crystal water.)~
 END
-++ ~[PC] (Gather your dignity, standing up, water cascading from your body) Very funny, Aran. This water is cold!~ + a1596
-++ ~[PC] (Stand quickly, spitting water toward Aran) I think it is about time I thrashed you.~ + a1597
-++ ~[PC] (Swim deeper, holding your breath in the icy water)~ + a1598
-++ ~[PC] (Push up to the surface after grabbing a clod of mud in your hand)~ + a1599
-++ ~[PC] (Surface quickly, turning your back to Aran, fumbling at your wet clothing) C-c-cold... cold.. so cold...~ + a1600
+++ ~[PC] (Gather your dignity, standing up, water cascading from your body) Very funny, Aran. This water is cold!~ + a1596 // pc_c_w aw_c_b
+++ ~[PC] (Stand quickly, spitting water toward Aran) I think it is about time I thrashed you.~ + a1597 // pc_c_w aw_c_b
+++ ~[PC] (Swim deeper, holding your breath in the icy water)~ + a1598 // pc_c_w aw_c_b
+++ ~[PC] (Push up to the surface after grabbing a clod of mud in your hand)~ + a1599 // pc_c_w aw_c_b
+++ ~[PC] (Surface quickly, turning your back to Aran, fumbling at your wet clothing) C-c-cold... cold.. so cold...~ + a1600 // pc_c_w aw_c_b
 /* GOTO stream 1 female replies */
 
 
@@ -19432,58 +19432,58 @@ IF ~~ a4371 SAY ~[ARAN] By any account, have you met my friend <PLAYER6>?~ IF ~~
 IF ~~ a4372 SAY ~[ARAN] OUCH! Blighted hells, that hurt! I were only jokin', eh?~ IF ~~ THEN EXIT END
 
 /* stream 1 female replies */
-IF ~~ a1596
+IF ~~ a1596 // pc_c_w aw_c_b
   SAY ~[ARAN] Well, wi' the way that cloth clings right tight in th' bodice, I can tell that, now, can't I. Just be glad you were wearin' naught in th' way o' armor, or you might have had some problems gettin' out o' trouble.~
-  ++ ~[PC] Hey! Keep your eyes up here! This isn't some seedy brothel. Show some respect!~ + a1601
-  ++ ~[PC] C.. c.. cold...~ + a1600
-  ++ ~[PC] You are a monster. I will make my own way back to camp, and you can go to the nine hells.~ + a2973
-  ++ ~[PC] Less talk, and more 'pull the freezing woman out of the icy water before she goes numb'.~ + a2973
+  ++ ~[PC] Hey! Keep your eyes up here! This isn't some seedy brothel. Show some respect!~ + a1601 // pc_c_w aw_c_b
+  ++ ~[PC] C.. c.. cold...~ + a1600 // pc_c_w aw_c_b
+  ++ ~[PC] You are a monster. I will make my own way back to camp, and you can go to the nine hells.~ + a2973 // pc_c_w aw_c_b
+  ++ ~[PC] Less talk, and more 'pull the freezing woman out of the icy water before she goes numb'.~ + a2973 // pc_c_w aw_c_b
   ++ ~[PC] Well, I am here now. I might as well make the best of it and go for a swim.~ + a4737
 END
 
-IF ~~ a2973
+IF ~~ a2973 // pc_c_w aw_c_b
   SAY ~[ARAN] I suppose now be not th' right time to say that th' vision o' you comin' out o' th' water be a right fine work o' erotic art, eh?~
   IF ~~ THEN EXIT
 END
 
-IF ~~ a2974
+IF ~~ a2974 // pc_c_w aw_c_b
   SAY ~[ARAN] Oh, blighted hells, I am about to catch it right powerful for this, eh? I'd best get some potions o' healin' ready for when you be finished tearin' me up.~
   IF ~~ THEN EXIT
 END
 
-IF ~~ a1597
+IF ~~ a1597 // pc_c_w aw_c_b
   SAY ~[ARAN] Big words, big words. Now, how do you intend to thrash me, eh?~
-  ++ ~[PC] Oh, I can think of something.~ + a2973
-  ++ ~[PC] Oh, my poor clothing... ruined... all muddy... I...~ + a2973
-  ++ ~[PC] I don't know. But stop grinning like that, and help me out of here, please.~ + a2974
-  ++ ~[PC] You take too many liberties. I will make my own way back to camp, and you can go to the nine hells.~ + a2973
+  ++ ~[PC] Oh, I can think of something.~ + a2973 // pc_c_w aw_c_b
+  ++ ~[PC] Oh, my poor clothing... ruined... all muddy... I...~ + a2973 // pc_c_w aw_c_b
+  ++ ~[PC] I don't know. But stop grinning like that, and help me out of here, please.~ + a2974 // pc_c_w aw_c_b
+  ++ ~[PC] You take too many liberties. I will make my own way back to camp, and you can go to the nine hells.~ + a2973 // pc_c_w aw_c_b
   ++ ~[PC] I shall take my time in coming up with a suitable answer to that, sirrah. I am here now. I might as well make the best of it and go for a swim.~ + a4737
 END
 
-IF ~~ a1598
+IF ~~ a1598 // pc_c_w aw_c_b
   SAY ~[ARAN] Hey, <CHARNAME>, are you there? Do you be in any trouble?~
-  ++ ~[PC] (Swim deeper, and remain silent)~ + a1603
-  ++ ~[PC] (Surface gracefully, and swim for toward land)~ + a4375
-  ++ ~[PC] (Surface quickly, splashing water and mud over him).~ + a1602
+  ++ ~[PC] (Swim deeper, and remain silent)~ + a1603 // pc_c_w aw_c_b
+  ++ ~[PC] (Surface gracefully, and swim for toward land)~ + a4375 // pc_c_w aw_c_b
+  ++ ~[PC] (Surface quickly, splashing water and mud over him).~ + a1602 // pc_c_w aw_c_b
   ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772
   ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4737
 END
 
-IF ~~ a4375
+IF ~~ a4375 // pc_c_w aw_c_b
   SAY ~[ARAN] Right then. That be th' silent treatment. I done been on th' wrong side o' that before. I'll just get cleaned up an' back to business, right quick, I will.~
   IF ~~ THEN EXIT
 END
 
-IF ~~ a1599
+IF ~~ a1599 // pc_c_w aw_c_b
   SAY ~[ARAN] Hey, you had me a mite worried, there. Do you be in once piece?~
-  ++ ~[PC] (Throw the clod of mud at Aran.)~ + a1602
-  ++ ~[PC] (Glare at him from the surface of the water.)~ + a4375
+  ++ ~[PC] (Throw the clod of mud at Aran.)~ + a1602 // pc_c_w aw_c_b
+  ++ ~[PC] (Glare at him from the surface of the water.)~ + a4375 // pc_c_w aw_c_b
   ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772
   ++ ~[PC] Now my clothes are all wet.~ + a4737
   ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4737
 END
 
-IF ~~ a1600
+IF ~~ a1600 // pc_c_w aw_c_b
   SAY ~[ARAN] Here, now, I'm right sorry there. I didn't mean no harm. Here, let me warm you up mite.~
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. You have 'helped' me enough for one day. You go on about your business, and I will go on about mine.~ + a1961 /* c-aranshutup55 */
   + ~RandomNum(3,2)~ + ~[PC] No, thank you. You have 'helped' me enough for one day. You go on about your business, and I will go on about mine.~ + a1962 /* c-aranshutup56 */
@@ -19498,7 +19498,7 @@ IF ~~ a1600
   ++ ~[PC] No, thank you. I'm headed back to camp.~ + a3278
 END
 
-IF ~~ a1601
+IF ~~ a1601 // pc_c_w aw_c_b
   SAY ~[ARAN] I can tell you right now, I be right respectful. I do appreciate great works o' art, I do. Here, let me help you brush some o' that mud off...~
   + ~RandomNum(3,1)~ + ~[PC] Get your paws off of me. And walk downstream around the bend before you start washing yourself off. I have had enough of your 'humor'.~ + a1964 /* c-aranshutup58 */
   + ~RandomNum(3,2)~ + ~[PC] Get your paws off of me. And walk downstream around the bend before you start washing yourself off. I have had enough of your 'humor'.~ + a1965 /* c-aranshutup59 */
@@ -19516,18 +19516,18 @@ IF ~~ a1601
   ++ ~[PC] No, thank you. I'm headed back to camp.~ + a3278
 END
 
-IF ~~ a1602
+IF ~~ a1602 // pc_c_w aw_c_b
   SAY ~[ARAN] HEY! Now, that be war, eh?~
   ++ ~[PC] Aran. Put down that mud, Aran. Put it down right NOW. ARAN! Yuch. Now I really do need to get cleaned up.~ + a4798
   ++ ~[PC] And I just won. You look so silly!~ + a4796
   ++ ~[PC] If it were war, you would have been in need of healing. The only thing wounded right now is dignity and pride.~ + a4797
   ++ ~[PC] No war. Just revenge.~ + a4799
-  ++ ~[PC] No war. Besides, I have ways of distracting your attention. Like these clothes of mine, and how they seem to have found their way off of my body and flown up onto the bank all by themselves.~ + a4738
+  ++ ~[PC] No war. Besides, I have ways of distracting your attention. Like these clothes of mine, and how they seem to have found their way off of my body and flown up onto the bank all by themselves.~ + a4738 // pc_u_w aw_u_w
 END
 
-IF ~~ a1603
+IF ~~ a1603 // pc_c_w aw_c_b
   SAY ~[ARAN] (There is a tremendous splash as Aran dives in close to you. His strong hands grip your your torso as he rapidly lifts you out of the water.)~
-  ++ ~[PC] (Spit a long stream of water into his face, and grin.)~ + a1602
+  ++ ~[PC] (Spit a long stream of water into his face, and grin.)~ + a1602 // pc_c_w aw_c_b
   ++ ~[PC] (Slap him.)~ + a3248
   ++ ~[PC] Now my clothes are all wet.~ + a4737
   ++ ~[PC] That is more than enough roughhousing, thank you. I'm headed back to camp.~ + a3278
@@ -19536,10 +19536,10 @@ END
 /* end of stream 1 female */ 
 
 /* stream 2 female */
-IF ~~ a792
+IF ~~ a792 // pc_c_b aw_u_w
   SAY ~[ARAN] (The bank is slippery, with rocks strewn haphazardly about. There is little to see, until the sharp sound of singing draws your attention. Aran calls out to you as he treads water...)~
   = ~[ARAN] Hey, warn a lad, eh? I didn't rightly hear you.~
-  ++ ~[PC] Going for a swim?~ + a3261
+  ++ ~[PC] Going for a swim?~ + a3261 // pc_c_b aw_u_w
   ++ ~[PC] That looks very... inviting.~ + a3262
   ++ ~[PC] That looks very... cold.~ + a3263
   ++ ~[PC] Tactical error on your part, I think. This bundle of clothes seems to belong to you, yet you are all the way over there.~ + a3264
@@ -19550,7 +19550,7 @@ END
 /* stream 3 female */
 IF ~~ a4811
   SAY ~[ARAN] (There is a small pile of gear tidily set a comfortable distance from the edge of the water. Aran is splashing about and singing lustily, with lyrics not usually meant for polite company...)~
-  ++ ~[PC] Splashing about all alone, are we?~ + a3261
+  ++ ~[PC] Splashing about all alone, are we?~ + a3261 // pc_c_b aw_u_w
   ++ ~[PC] That looks very... inviting.~ + a3262
   ++ ~[PC] That looks very... cold.~ + a3263
   ++ ~[PC] Hmmm. This bundle of clothes seems to belong to you, yet you are all the way over there.~ + a3264
@@ -19560,10 +19560,10 @@ END
 
 /* stream 2 and 3 female responses */
 
-IF ~~ a3261
+IF ~~ a3261 // pc_c_b aw_u_w
   SAY ~[ARAN] Well, it surely do look that way, eh? You could join me, but I figure I ought to warn you I wasn't expectin' no company. So I didn't take naught in th' way o' precautions for modesty.~
-  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a3266
-  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267
+  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a3266 // pc_u_w aw_u_w
+  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267 // pc_u_w aw_u_w
   ++ ~[PC] Tactical error on your part, I think. This bundle of clothes seems to belong to you, yet you are all the way over there.~ + a3264
   ++ ~[PC] (Sit on the bank, watching him.)~ + a3265
   ++ ~[PC] That looks very... inviting.~ + a3268
@@ -19576,8 +19576,8 @@ IF ~~ a3262
   ++ ~[PC] (Sit on the bank, watching him.)~ + a3265
   ++ ~[PC] It looks like it might be fun.~ + a3268
   ++ ~[PC] That also looks very... cold.~ + a3268
-  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a4738
-  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267
+  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a4738 // pc_u_w aw_u_w
+  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267 // pc_u_w aw_u_w
 END
 
 IF ~~ a3263
@@ -19586,16 +19586,16 @@ IF ~~ a3263
   ++ ~[PC] (Sit on the bank, watching him.)~ + a3265
   ++ ~[PC] That looks very... inviting.~ + a3268
   ++ ~[PC] Very cold, I think.~ + a3268
-  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a3266
-  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267
+  ++ ~[PC] Modesty is overrated. (Strip off your clothing and dive into the water next to him.)~ + a3266 // pc_u_w aw_u_w
+  ++ ~[PC] I don't mind. (Strip down to your underthings and carefully wade out into the water.)~ + a3267 // pc_u_w aw_u_w
 END
 
 IF ~~ a3264
   SAY ~[ARAN] You wouldn't.~
   ++ ~[PC] (Grin at him, and pick up the bundle of clothes.)~ + a3269
-  ++ ~[PC] Perhaps I might, perhaps I might not. But to assure you I am a woman of good conscience, I will leave some hostages as a token of my goodwill. (Strip slowly, carefully, putting your clothes next to his before wading in toward him.)~ + a4738
+  ++ ~[PC] Perhaps I might, perhaps I might not. But to assure you I am a woman of good conscience, I will leave some hostages as a token of my goodwill. (Strip slowly, carefully, putting your clothes next to his before wading in toward him.)~ + a4738 // pc_u_w aw_u_w
   ++ ~[PC] I wouldn't do anything as rash as... ooops. Sorry. I think they fell in the water.~ + a3275
-  ++ ~[PC] (Strip off your clothing and dive into the water next to him.)~ + a3266
+  ++ ~[PC] (Strip off your clothing and dive into the water next to him.)~ + a3266 // pc_u_w aw_u_w
   ++ ~[PC] No, I wouldn't. But you should have seen your face. (Sit on the bank, watching him.)~ + a3265
   ++ ~[PC] I might. Then again, I might not.~ + a4789
 END
@@ -19610,17 +19610,17 @@ IF ~~ a3265 /* pc on bank */
   ++ ~[PC] (Watch him carefully, idly playing with a leather strap on his gear)~ + a4789
 END
 
-IF ~~ a3266
+IF ~~ a3266 // pc_u_w aw_u_w
   SAY ~[ARAN] Now I don't know whether to be happy on account o' you have th' most beautiful breasts a man ever did see, or unhappy on account o' you just splashed me.~
-  ++ ~[PC] You know, that was a little forward. We are just having a swim.~ + a3267
+  ++ ~[PC] You know, that was a little forward. We are just having a swim.~ + a3267 // pc_u_w aw_u_w
   ++ ~[PC] (Swim to him and snuggle close to his back.) There. Now you can't see anything. Modesty is preserved.~ + a4773
   ++ ~[PC] (Swim to him and face him, wrapping your arms around his neck.) Are you sure they are beautiful?~ + a4792
   ++ ~[PC] (Swim to him and wrap your arms around his neck.)~ + a4793
-  ++ ~[PC] (Swim slowly around him.)~ + a4738
+  ++ ~[PC] (Swim slowly around him.)~ + a4738 // pc_u_w aw_u_w
   ++ ~[PC] Oh, forget it. You always spoil things with your clumsy passes. I'm headed back to camp.~ + a3278
 END
 
-IF ~~ a3267 /* pc in water */
+IF ~~ a3267 // pc_u_w aw_u_w /* pc in water */
   SAY ~[ARAN] (His grin is broad as he swims away from you, long lean arms flicking a fine spray of water droplets into the air.)~
   = ~[ARAN] (He settles into a steady rhythm for awhile, powerful stokes speeding him along, occasionally exposing a brief flash of buttock as he turns. Eventually, he slows and treads water, studying you.)~
   ++ ~[PC] What are you looking at?~ + a3272
@@ -19631,8 +19631,8 @@ END
 
 IF ~~ a3268
   SAY ~[ARAN] Well, are you goin' to join me, or just be on th' look out?~
-  ++ ~[PC] (Strip off your clothing and dive into the water next to him.)~ + a4738
-  ++ ~[PC] (Strip down to your underthings and carefully wade out into the water.)~ + a3267
+  ++ ~[PC] (Strip off your clothing and dive into the water next to him.)~ + a4738 // pc_u_w aw_u_w
+  ++ ~[PC] (Strip down to your underthings and carefully wade out into the water.)~ + a3267 // pc_u_w aw_u_w
   ++ ~[PC] You enjoy yourself. I'm headed back to camp. Don't catch cold.~ + a3278
   ++ ~[PC] You go ahead and swim. I will just keep watch.~ + a3277
 END
@@ -19641,7 +19641,7 @@ IF ~~ a3269
   SAY ~[ARAN] Now, wait a blighted second, here. You wouldn't be so mean as to make me come out an' get 'em, would you?~
   ++ ~[PC] (Hide the clothes behind your back, and nod.)~ + a3270
   ++ ~[PC] You wouldn't dare. You don't have any clothes on.~ + a3270
-  ++ ~[PC] Perhaps I might, perhaps I might not. But to assure you I am a woman of good conscience, I will leave some hostages as a token of my goodwill. (Strip slowly, carefully, putting your clothes next to his before wading in toward him.)~ + a3266
+  ++ ~[PC] Perhaps I might, perhaps I might not. But to assure you I am a woman of good conscience, I will leave some hostages as a token of my goodwill. (Strip slowly, carefully, putting your clothes next to his before wading in toward him.)~ + a3266 // pc_u_w aw_u_w
   ++ ~[PC] No, I wouldn't. But you should have seen your face. (Sit on the bank, watching him.)~ + a3265
 END
 
@@ -19887,7 +19887,7 @@ END
 
 IF ~~ a4789
   SAY ~[ARAN] Now, do it be fair that you be out o' th' water, an' holdin' my clothes hostage?~
-  ++ ~[PC] No, I don't think so. Perhaps I should join you. (Strip off your clothing and dive into the water next to him.)~ + a4738
+  ++ ~[PC] No, I don't think so. Perhaps I should join you. (Strip off your clothing and dive into the water next to him.)~ + a4738 // pc_u_w aw_u_w
   ++ ~[PC] No, I don't think so. Perhaps you should join me.~ + a4703
   ++ ~[PC] (Smile at him, lowering your eyelashes.)~ + a4705
   ++ ~[PC] (Frown at him, turning your face to the side and averting your gaze.)~ + a4705
@@ -20020,7 +20020,7 @@ IF ~~ a4737
   ++ ~[PC] I think that quick dip was enough for me. I need to get out and get dried off.~ + a4769
 END
 
-IF ~~ a4738
+IF ~~ a4738 // pc_u_w aw_u_w
   SAY ~[ARAN] Now that be a fair bit disappointin'. All that beauty revealed to nature, an' I can see naught o' you under th' water.~
   ++ ~[PC] I have little or no control over the reflective and refractive properties of water. Besides, you shouldn't really be looking.~ + a4739
   ++ ~[PC] Hey. Keep your eyes and your comments to yourself.~ + a4740
@@ -20871,17 +20871,20 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   + ~Gender(Player1,FEMALE) Global("c-aranflirtstop","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] You do not pay attention to me the way you used to, Aran. I miss your company.~ + a1155 /* c-aranrestartflirts */
   /* PC Wants NPC Initiated Flirts but Aran is Mad */
   + ~Gender(Player1,FEMALE) Global("c-aranflirtstop","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",1)~ + ~[PC] You do not pay attention to me the way you used to, Aran. I miss your company.~ + a1156 /* c-aranrestartflirtsmad */
-  /*  PC Initiated Flirting;  only one should be active at any given time. None show for males. */
-  /* PC wants to initiate a flirt : early (before the 3 friendtalks and 3 lovetalks)  */
-  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a3296
-  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076
-  /* PC Wants To Initiate A Flirt: Lightweight */
-  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1074 /* c-pcflirtsaran1 */
-  /* PC Wants To Initiate A Flirt: Heavyweight */
-  + ~Gender(Player1,FEMALE) GlobalLT("c-aransex","GLOBAL",4) OR(2) Global("c-aranpcflirtstart","GLOBAL",2) Global("c-aranpcflirtstart","GLOBAL",1) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1075 /* c-pcflirtsaran2 */
-  /* PC Wants To Initiate A Flirt: Mature */
-  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",4) GlobalGT("c-aranpcflirtstart","GLOBAL",0) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2) Global("c-aranfight","GLOBAL",0)~ + ~[PC] (You decide to flirt with Aran)~ + a1076 /* c-pcflirtsaran3 */
-  /* 2d - PC Wants To Initiate A Flirt, But Aran Is Angry - handled within submenu  */
+  /* PC Initiated Flirting;  only one should be active at any given time. None show for males. */
+  /* PCIF 1 : PC wants to initiate a flirt : early (before the 3 friendtalks and lovetalks) : no action yet)  */ 
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) GlobalLT("c-aransex","GLOBAL",4) GlobalLT("c-aranbg2rom","GLOBAL",3)~ + ~[PC] (You decide to flirt with Aran)~ + a3296
+  /* PCIF 2 : PC wants to initiate a flirt : early (before the 3 friendtalks and lovetalks) : PC bedded him already) */   
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aransex","GLOBAL",4) GlobalLT("c-aranbg2rom","GLOBAL",3)~ + ~[PC] (You decide to flirt with Aran)~ + a1074
+  /* PCIF 3 : PC Wants To Initiate A Flirt : Broken Up */       
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ + ~[PC] (You decide to flirt with Aran)~ + a3296
+  /* PCIF 4 : PC Wants To Initiate A Flirt : Lightweight */ 
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aransex","GLOBAL",1) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + ~[PC] (You decide to flirt with Aran)~ + a1074
+  /* PCIF 5 : PC Wants To Initiate A Flirt : Heavyweight */
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) OR(2) Global("c-aransex","GLOBAL",2) Global("c-aransex","GLOBAL",3) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + ~[PC] (You decide to flirt with Aran)~ + a1075
+  /* PCIF 6 : PC Wants To Initiate A Flirt : Mature */        
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aransex","GLOBAL",4) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + ~[PC] (You decide to flirt with Aran)~ + a1076
+  /* PCIF 7 : PC Wants To Initiate A Flirt : But Aran Is Angry (handled within submenu) */ 
   ++ ~[PC] Before we go any further, Aran... what do you think our "relationship" is?~ + a2699
   /* PID Scribing Scrolls Blocks */
   + ~Global("c-arnscrollwork","GLOBAL",0) Global("c-aranscribe","GLOBAL",0)~ + ~[PC] Can you scribe a scroll for me?~ + a1045
@@ -22156,31 +22159,104 @@ IF ~~ a1072
 END
 
 /* Flirt SubMenu: Lightweight, Early Flirts for Impatient Players */
-IF ~~ a3296
+IF ~~ a3296  // 1 escape, 10 early flirting options available at any one time
  SAY ~[ARAN] (Aran is near you, watching the surrounding area carefully.)~
+ /* escape if unwanted 0 */
   ++ ~[PC] (You decide to leave Aran alone.)~ EXIT
-  /* hugs 1 */
-  + ~RandomNum(5,1)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(5,2)~ + ~[PC] (Rest your face gently on his back, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
-  + ~RandomNum(5,3)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(5,4)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(5,5)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  /* kisses 1 */
-  + ~RandomNum(4,1)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
-  + ~RandomNum(4,2)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
-  + ~RandomNum(4,3)~ + ~[PC] (Pick up his hand and kiss the back of his hand.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(4,4)~ + ~[PC] (Brush your lips across his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
-  /* touching 1 */
-  + ~RandomNum(4,1)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(4,2)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
-  + ~RandomNum(4,3)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(4,4)~ + ~[PC] Come here, Aran. You have some tangles in your hair.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3299
-  /* praises 1 */
-  + ~RandomNum(4,1)~ + ~[PC] So, do all the men in your family have such big... shoulders?~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3300
-  + ~RandomNum(4,2)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  + ~RandomNum(4,3)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3300
-  + ~RandomNum(4,4)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
-  /* Manipulative/Autocratic/Demanding */
+  /* hugs early 1 */
+  + ~RandomNum(9,1)~ + ~[PC] (Rest your face gently on his back, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(9,2)~ + ~[PC] (Rest your face gently on his back, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(9,3)~ + ~[PC] (Rest your face gently on his chest, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(9,4)~ + ~[PC] (Rest your face gently on his chest, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4885
+  + ~RandomNum(9,5)~ + ~[PC] (Rest your face gently on his shoulder, pressing close to him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(9,6)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4883
+  + ~RandomNum(9,7)~ + ~[PC] (Wrap your arms around Aran's shoulders, and pull him close.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4881
+  + ~RandomNum(9,8)~ + ~[PC] (Wrap your arms around Aran's waist, and pull him close.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4882
+  + ~RandomNum(9,9)~ + ~[PC] (Wrap your arms around Aran's sword arm, and pull him close.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  /* hugs early 2 */
+  + ~RandomNum(16,1)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(16,2)~ + ~[PC] (Drape his arm around your waist, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(16,3)~ + ~[PC] (Grab his arm, pulling him toward you, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(16,4)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(16,5)~ + ~[PC] (Drape your arm across his shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(16,6)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4883
+  + ~RandomNum(16,7)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(16,8)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(16,9)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(16,10)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(16,11)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(16,12)~ + ~[PC] (Gently place your hand on his back.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4884
+  + ~RandomNum(16,13)~ + ~[PC] (Gently place your hand on his chest.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4883
+  + ~RandomNum(16,14)~ + ~[PC] (Gently place your hand on his belt.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4884
+  + ~RandomNum(16,15)~ + ~[PC] (Gently place your hand on his rear.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4885
+  + ~RandomNum(16,16)~ + ~[PC] (Gently place your hand on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  /* kisses early 3 */
+  + ~RandomNum(7,1)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(7,2)~ + ~[PC] (Quietly press a kiss on his forehead.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(7,3)~ + ~[PC] (Quietly press a kiss on the back of his neck.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4885
+  + ~RandomNum(7,4)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4875
+  + ~RandomNum(7,5)~ + ~[PC] (Quietly press a kiss on his forehead.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(7,6)~ + ~[PC] (Quietly press a kiss on the back of his neck.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4878
+  + ~RandomNum(7,7)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  /* kisses early 4 */
+  + ~RandomNum(14,1)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(14,2)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4881
+  + ~RandomNum(14,3)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(14,4)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4883
+  + ~RandomNum(14,5)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(14,6)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4878
+  + ~RandomNum(14,7)~ + ~[PC] (Brush a quick kiss on his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  + ~RandomNum(14,8)~ + ~[PC] (Brush your lips across his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4885
+  + ~RandomNum(14,9)~ + ~[PC] (Brush your lips across his cheek.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(14,10)~ + ~[PC] (Brush your lips across his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4882
+  + ~RandomNum(14,11)~ + ~[PC] (Brush your lips across his shoulder.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4875
+  + ~RandomNum(14,12)~ + ~[PC] (Brush your lips across his forehead.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(14,13)~ + ~[PC] (Brush your lips across his forehead.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4878
+  + ~RandomNum(14,14)~ + ~[PC] (Brush your lips across his forehead.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  /* kisses early 5 */
+  + ~RandomNum(8,1)~ + ~[PC] (Pick up his hand and kiss the back of it.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(8,2)~ + ~[PC] (Pick up his hand and kiss the back of it.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4876
+  + ~RandomNum(8,3)~ + ~[PC] (Pick up his hand and kiss the back of it.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(8,4)~ + ~[PC] (Pick up his hand and kiss the back of it.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(8,5)~ + ~[PC] (Pick up his hand and kiss his palm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4885
+  + ~RandomNum(8,6)~ + ~[PC] (Pick up his hand and kiss his palm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(8,7)~ + ~[PC] (Pick up his hand and kiss his palm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4878
+  + ~RandomNum(8,8)~ + ~[PC] (Pick up his hand and kiss his palm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  /* touching early 6 */
+  + ~RandomNum(12,1)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(12,2)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4881
+  + ~RandomNum(12,3)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(12,4)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4875
+  + ~RandomNum(12,5)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4880
+  + ~RandomNum(12,6)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3298
+  + ~RandomNum(12,7)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4880
+  + ~RandomNum(12,8)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4882
+  + ~RandomNum(12,9)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(12,10)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4875
+  + ~RandomNum(12,11)~ + ~[PC] Come here, Aran. You have some tangles in your hair.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3299
+  + ~RandomNum(12,12)~ + ~[PC] Come here, Aran. You have some tangles in your hair.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4880
+  /* touching early 7 */
+  + ~RandomNum(5,1)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(5,2)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4881
+  + ~RandomNum(5,3)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(5,4)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4883
+  + ~RandomNum(5,5)~ + ~[PC] (Gently put one hand on his upper arm.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  /* praises early 8 */
+  + ~RandomNum(6,1)~ + ~[PC] So, do all the men in your family have such big... shoulders?~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3300
+  + ~RandomNum(6,2)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(6,3)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4882
+  + ~RandomNum(6,4)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(6,5)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4877
+  + ~RandomNum(6,6)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4879
+  /* praises early 9 */
+  + ~RandomNum(7,1)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3300
+  + ~RandomNum(7,2)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4873
+  + ~RandomNum(7,3)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4874
+  + ~RandomNum(7,4)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3297
+  + ~RandomNum(7,5)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4886
+  + ~RandomNum(7,6)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4887
+  + ~RandomNum(7,7)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a4878
+  /* Manipulative/Autocratic/Demanding 10 */
   + ~RandomNum(5,1)~ + ~[PC] Aran, I am bored. Let's see if you can liven things up. Entertain me.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3301
   + ~RandomNum(5,2)~ + ~[PC] Oh, I have dropped my pouch. Pick it up for me, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3302
   + ~RandomNum(5,3)~ + ~[PC] I want something pretty, Aran.~ DO ~IncrementGlobal("c-aranearlyflirt","LOCALS",1)~ + a3300
@@ -22193,28 +22269,33 @@ IF ~~ a3296
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,4)~ THEN GOTO a1759 /* c-aranmad4 */
 END
 
-IF ~~ a3297 SAY ~[ARAN] (His easy smile is bright on his face, but he moves away from you and adjusts his belt.)~ IF ~~ THEN EXIT END
-IF ~~ a3298 SAY ~[ARAN] (He smiles at you, but moves away and rubs one hand behind his neck briskly.)~ IF ~~ THEN EXIT END
-IF ~~ a3299 SAY ~[ARAN] Do I, now? Right. I can comb that out myself. I'll be gettin' right on it.~ IF ~~ THEN EXIT END
-IF ~~ a3300 SAY ~[ARAN] Well, now, I may or may not have an answer to that. But mayhap I'd better wait until we know each other a mite bit better before I commit to a response what might get me dropped out o' th' party right quick, eh?~ IF ~~ THEN EXIT END
-IF ~~ a3301 SAY ~[ARAN] I... Well, I rightly don't know how to answer that just yet. I have some ideas, but... Sometimes a lad can hang himself right quick if he don't fully know where th' lady be comin' from, eh?~ IF ~~ THEN EXIT END
-IF ~~ a3302 SAY ~[ARAN] (He quickly retrieves your belongings, brusquely tucking them into your gear.)~ = ~[ARAN] Aye, then. That should fix it.~ IF ~~ THEN EXIT END
-
 /* Flirt SubMenu: Lightweight */
-IF ~~ a1074
+IF ~~ a1074 // 1 escape, 9 or 10 flirting options available at any one time
  SAY ~[ARAN] (Aran is near you, watching the surrounding area carefully.)~
   ++ ~[PC] (You decide to leave Aran alone.)~ EXIT
  /* hugs 1 */
-  + ~RandomNum(5,1)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1157
-  + ~RandomNum(5,2)~ + ~[PC] (Rest your face gently on his back, pressing close to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1158
-  + ~RandomNum(5,3)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1159
-  + ~RandomNum(5,4)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1160
-  + ~RandomNum(5,5)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a2983
+  + ~RandomNum(11,1)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1157
+  + ~RandomNum(11,2)~ + ~[PC] (Rest your face gently on his back, pressing close to him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1158
+  + ~RandomNum(11,3)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1159
+  + ~RandomNum(11,4)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1160
+  + ~RandomNum(11,5)~ + ~[PC] (Lean against him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a2983
+  + ~RandomNum(11,6)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4873
+  + ~RandomNum(11,7)~ + ~[PC] (Gently place your hand on his back.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4884
+  + ~RandomNum(11,8)~ + ~[PC] (Gently place your hand on his chest.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4883
+  + ~RandomNum(11,9)~ + ~[PC] (Gently place your hand on his belt.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4886
+  + ~RandomNum(11,10)~ + ~[PC] (Gently place your hand on his rear.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4885
+  + ~RandomNum(11,11)~ + ~[PC] (Gently place your hand on his cheek.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4886
   /* kisses 1 */
-  + ~RandomNum(4,1)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1161
-  + ~RandomNum(4,2)~ + ~[PC] (Kiss him on the cheek.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1162
-  + ~RandomNum(4,3)~ + ~[PC] (Pick up his hand and kiss the back of his hand.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1163
-  + ~RandomNum(4,4)~ + ~[PC] (Brush your lips across his cheek.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1164
+  + ~RandomNum(10,1)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1161
+  + ~RandomNum(10,2)~ + ~[PC] (Kiss him on the cheek.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1162
+  + ~RandomNum(10,3)~ + ~[PC] (Pick up his hand and kiss the back of his hand.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1163
+  + ~RandomNum(10,4)~ + ~[PC] (Brush your lips across his cheek.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1164
+  + ~RandomNum(10,5)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4889
+  + ~RandomNum(10,6)~ + ~[PC] (Quietly press a kiss on the back of his neck.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4885
+  + ~RandomNum(10,7)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4875
+  + ~RandomNum(10,8)~ + ~[PC] (Quietly press a kiss on his forehead.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4877
+  + ~RandomNum(10,9)~ + ~[PC] (Quietly press a kiss on the back of his neck.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4890
+  + ~RandomNum(10,10)~ + ~[PC] (Quietly press a kiss on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4879
   /* touching 1 */
   + ~RandomNum(5,1)~ + ~[PC] (Run your fingers through his hair.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1165
   + ~RandomNum(5,2)~ + ~[PC] (Brush his hair back from his brow.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1166
@@ -22222,10 +22303,14 @@ IF ~~ a1074
   + ~RandomNum(5,4)~ + ~[PC] Come here, Aran. You have some tangles in your hair.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1168
   + ~RandomNum(5,5)~ + ~[PC] My, you do seem to have some tension. Perhaps this will help...~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1169
   /* praises 1 */
-  + ~RandomNum(4,1)~ + ~[PC] So, do all the men in your family have such big... shoulders?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1170
-  + ~RandomNum(4,2)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1171
-  + ~RandomNum(4,3)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1172
-  + ~RandomNum(4,4)~ + ~[PC] (Smile boldly, and lower your eyelashes glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1173
+  + ~RandomNum(8,1)~ + ~[PC] So, do all the men in your family have such big... shoulders?~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1170
+  + ~RandomNum(8,2)~ + ~[PC] I think you are a good friend, Aran. A really good friend.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1171
+  + ~RandomNum(8,3)~ + ~[PC] I like that color on you, Aran.~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1172
+  + ~RandomNum(8,4)~ + ~[PC] (Smile boldly, and lower your eyelashes glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1173
+  + ~RandomNum(8,5)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a3297
+  + ~RandomNum(8,6)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4886
+  + ~RandomNum(8,7)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4887
+  + ~RandomNum(8,8)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4878
   /* teasing 1 */
   + ~RandomNum(4,1)~ + ~[PC] (Tug Aran's hair firmly.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1174
   + ~RandomNum(4,2)~ + ~[PC] (Lightly punch him in the shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1175
@@ -22279,13 +22364,17 @@ IF ~~ a1074
 END
 
 /* Flirt SubMenu: Heavyweight  */
-IF ~~ a1075
+IF ~~ a1075 // 1 escape, 10 or 11 flirting options available at any one time
   SAY ~[ARAN] (Aran is near you, watching the surrounding area carefully.)~
   ++ ~[PC] (You decide to leave Aran alone.)~ EXIT
-  + ~RandomNum(4,1)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1159
-  + ~RandomNum(4,2)~ + ~[PC] (Lightly punch him in the shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1217
-  + ~RandomNum(4,3)~ + ~[PC] (Quietly watch him out of the corner of your eye, tracing his form with your eyes.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1220
-  + ~RandomNum(4,4)~ + ~[PC] (Gently smooth your hair and twist one strand of it around a finger, casting glances at him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1221
+  + ~RandomNum(8,1)~ + ~[PC] (Wrap your arms around Aran's neck, and pull him close.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1159
+  + ~RandomNum(8,2)~ + ~[PC] (Lightly punch him in the shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1217
+  + ~RandomNum(8,3)~ + ~[PC] (Quietly watch him out of the corner of your eye, tracing his form with your eyes.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1220
+  + ~RandomNum(8,4)~ + ~[PC] (Gently smooth your hair and twist one strand of it around a finger, casting glances at him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1221
+  + ~RandomNum(8,5)~ + ~[PC] (Smile boldly, and lower your eyelashes glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4891
+  + ~RandomNum(8,6)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4892
+  + ~RandomNum(8,7)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4886
+  + ~RandomNum(8,8)~ + ~[PC] (Smile boldly and lower your eyelashes, glancing down his body when he looks at you.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a4888
   /* hugs H */
   + ~RandomNum(5,1)~ + ~[PC] (Drape his arm across your shoulders, and lean into him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1160
   + ~RandomNum(5,2)~ + ~[PC] (Gently place your hand on his shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1199
@@ -22382,179 +22471,9 @@ IF ~~ a1075
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,4)~ THEN GOTO a1759 /* c-aranmad4 */
 END
 
-IF ~~ a1284 SAY ~[ARAN] (His nod and grin send you both wandering away together for a brief time, contemplating your surroundings.)~ = ~[ARAN] (As you walk, your hand seems to find its way into his strong calloused palm, your fingers intertwining with his.)~ IF ~~ THEN EXIT END
-IF ~~ a1285 SAY ~[ARAN] (His hands caress your torso gently, teasing, touching, and exploring everything, matching you movement for movement.)~ = ~[ARAN] (Eventually, he breaks away, breathing as if he had just run a mile.) Easy, there... much more, an' we might just need to get a room, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1286 SAY ~[ARAN] (His arms encircle you, holding you close and stopping you from motion of any kind.)~ = ~[ARAN] Easy, easy now... I look at you, I feel th' same way about every hour or so. It will pass, an' we can always have some fun later, eh? Just not here, not all exposed - like.~ IF ~~ THEN EXIT END
-IF ~~ a1287 SAY ~[ARAN] If that be an invitation to explore you wi' my mouth, just say th' word, <CHARNAME>. I promise I won't nip. Well, at least not much, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1288 SAY ~[ARAN] Nope.~ IF ~~ THEN EXIT END
-IF ~~ a1289 SAY ~[ARAN] Better protected from outside problems, yes. But I might find it a mite bit harder to protect you from me.~ IF ~~ THEN EXIT END
-IF ~~ a1290 SAY ~[ARAN] (Warm lips brush gently along the top of your spine, then up behind your ear. His voice whispers roughly...) No, naught but little ol' me, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1291 SAY ~[ARAN] (With a muffled oath, he scoops you up in his arms, carrying you forward.) Slow, eh? Slow but steady wins th' race. But wiggle some more, eh? On account o' I already got my hands right where I want 'em...~ IF ~~ THEN EXIT END
-IF ~~ a1292 SAY ~[ARAN] Mayhap next time we get to an inn, or somewhere we can get some o' the right supplies, I can make you a decent chocolate mousse. But wi' these supplies, the closest I can come be either hardtack bars or whipped parfait o' grasshoppers.~ IF ~~ THEN EXIT END
-IF ~~ a1293 SAY ~[ARAN] I do my own, thank you very much. Except for th' buttons. Somehow, I be so much better at undoin' buttons than sewin' them into place.~ IF ~~ THEN EXIT END
-IF ~~ a1294 SAY ~[ARAN] Like hells I do. I got me a teasin' armful o' hellcat what makes me right crazy, that be what I got!~ IF ~~ THEN EXIT END
-IF ~~ a1295 SAY ~[ARAN] (Aran drops his pack and stretches, but his attention is consumed with a thorough analysis of every inch of your body artistically arranged on the ground. When he catches you looking at him, he grins.)~ IF ~~ THEN EXIT END
-IF ~~ a1296 SAY ~[ARAN] (He follows your motions, captivated and intent.) Would that I be a cloth, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1297 SAY ~[ARAN] Oh, sorry, <CHARNAME>... I didn't rightly mean to have my hand right there. Mayhap you would find less in your way if you sat on my lap? Or mayhap more...~ IF ~~ THEN EXIT END
-IF ~~ a1298 SAY ~[ARAN] (His hands twine gently with yours, palm to palm, and he brings you chest to chest with him looking deeply into your eyes.)~ = ~[ARAN] (For a moment, time seems to stop, breathlessly suspended between you.)~ IF ~~ THEN EXIT END
-IF ~~ a1299 SAY ~[ARAN] Well, part o' why I like you is you can ask that question. I be skippin' over all the physical charms, like the way your lips curve, or the bewichin' rise an' fall o' your throat where it meets your chest, or th' way your breasts nestle in... err... what was I sayin'?~ IF ~~ THEN EXIT END
-IF ~~ a1300 SAY ~[ARAN] I can't take my eyes off o' you.~ IF ~~ THEN EXIT END
-IF ~~ a1301 SAY ~[ARAN] Your left eye be just as beautiful as a shinin' star. But your right eye, it can pierce th' depths o' a man's soul, it can.~ IF ~~ THEN EXIT END
-IF ~~ a1302 SAY ~[ARAN] I could quit all this, an' just be happy makin' love to you every time you wanted. Probably more.~ IF ~~ THEN EXIT END
-IF ~~ a1303 SAY ~[ARAN] Now, m'lady, no call for that kind o' talk. A man's got some principles, eh? I sign on for partnerships, not raw matin' like gibberlin's in heat. Though I do be a mite tempted...~ IF ~~ THEN EXIT END
-IF ~~ a1304 SAY ~[ARAN] Well, to tell th' truth, there was this one half-elven lass, a Sensate... no, she were right forward, an' could drive a man to distraction, but it were all glitter an' sex. Wi' you, there be so much more.~ IF ~~ THEN EXIT END
-IF ~~ a1305 SAY ~[ARAN] This be th' smartest grin I know. You want to school my lips a mite? On account o' a mild lipwrestlin' session might be just the ticket.~ IF ~~ THEN EXIT END
-IF ~~ a1306 SAY ~[ARAN] Now, I don't think that means what you want to say, eh? Sounds like you want me to cut off your hands, but I suspect what you be meanin' to say is that you want me to take my hands off these beautiful hips o' yours.~ IF ~~ THEN EXIT END
-IF ~~ a1307 SAY ~[ARAN] Believe me, <CHARNAME>, I find myself over you, the last thing I'll be thinkin' about will be sleepin'.~ IF ~~ THEN EXIT END
-IF ~~ a1308 SAY ~[ARAN] Well, it be right effective at treatin' localized high blood pressure in males...~ IF ~~ THEN EXIT END
-IF ~~ a1309 SAY ~[ARAN] Oh, no you don't... what, you look so surprised I shoved you, eh? I can give as good as I get, an' don't you be forgettin' it.~ IF ~~ THEN EXIT END
-IF ~~ a1310 SAY ~[ARAN] Bane's Blighted Bones, that be drawin' blood. Keep it up, an' I'll be givin' you a right sound wallop, I will.~ IF ~~ THEN EXIT END
-IF ~~ a1311 SAY ~[ARAN] By Malar's sharp Teeth, you do enjoy causin' a mite bit o' pain, don't you. (His arms wrap you securely. Small angry nips rain along your neck, sharp and painful, ending with a love bite that raises a welt.)~ = ~[ARAN] If we be markin' territory, I had other ideas on where to be leavin' those hickeys. Mayhap next time you get playful, I'll be more adventurous.~ IF ~~ THEN EXIT END
-IF ~~ a1312 SAY ~[ARAN] Shars' Dark Caress, that be drawin' blood. Let me try that... oho, runnin' away, eh? Weaklin'.~ IF ~~ THEN EXIT END
-IF ~~ a1313 SAY ~[ARAN] Let me see... what be th' best, most vicious torture I could give you... I know! I'll bloody well ignore you. That'll fix your wagon, eh?~ IF ~~ THEN EXIT END
-IF ~~ a1434 SAY ~[ARAN] Oho, sharp wit, m'girl. Be careful, though - all that sharpened steel mind be right pretty, but if you look at it another way, you got a cold, dead piece o' metal for a brain.~ IF ~~ THEN EXIT END
-IF ~~ a1435 SAY ~[ARAN] Why, <CHARNAME>... I'm right touched, I am. You are not feelin' as sharp as usual. I noticed th' improvement right away! Now, th' kind' o 'playin' horse' I have in mind involves a bit less talkin' an' a lot less clothes... but you can neigh an' buck all you like.~ IF ~~ THEN EXIT END
-IF ~~ a1436 SAY ~[ARAN] An' you my love, you be th' happy target o' many, many well-wishers. There be few who meet you who don't wish to immediately throw you down th' nearest well.~ IF ~~ THEN EXIT END
-IF ~~ a1437 SAY ~[ARAN] Now, dearest love, I'd have been adopted by your mother, on account o' my face bein' much prettier than your tongue. But then it would be all awkward, tryin' to bed my step-sister. Kind o' excitin', though...~ IF ~~ THEN EXIT END
-IF ~~ a1438 SAY ~[ARAN] An' I shall never forget th' first time I met you, m'girl... the wasp tongue, th' complete disdain for moral judgment, th' icy frigid way you cloistered yourself yet lusted after anythin' that would put somethin' warm inside you to quell th' cold... an' here, you have made it all th' way up to caring enough about someone else to think up ugly insults. Next thing you know, you might even grow a heart!~ IF ~~ THEN EXIT END
-IF ~~ a1439 SAY ~[ARAN] Sure thing. I done peeled a few some months back, then run 'em through a cloth to filter, an' set up a mite bit o' a recipe for fermentation. Try this wineskin. I think it might do th' trick, meanin' I didn't go blind.~ IF ~~ THEN EXIT END
-IF ~~ a1440 SAY ~[ARAN] Well, let's see... how is this for entertainment? (His hands dart around your body, seeking intimate touches, and you are forced to parry and counter his every move or they will surely molest your virtue...)~ = ~[ARAN] It be a mite more fun when there be less clothes, an ' we can play hide an' seek under some covers.~ IF ~~ THEN EXIT END
-IF ~~ a1441 SAY ~[ARAN] Shar's Spiky Spit, I don't rightly want naught to do wi' a weapon what turns to dust in sunlight. I know it be powerful an' magical, but give me a solid surface weapon an' I'd be a mite happier.~ IF ~~ THEN DO ~SetGlobal("c-arandroweq","LOCALS",1)~ EXIT END
-IF ~~ a2983 SAY ~[ARAN] (He leans back, steadily increasing pressure on you, until you are off balance. His snort of laughter is muted by his sudden fit of coughing.)~ IF ~~ THEN EXIT END
-IF ~~ a2984 SAY ~[ARAN] Yep.~ IF ~~ THEN EXIT END
-IF ~~ a2985 SAY ~[ARAN] Blighted hells... I just had my turn at th' launderin', too! Well, lucky me... at least this time I don't have to clean it.~ IF ~~ THEN EXIT END
-IF ~~ a2986 SAY ~[ARAN] Well, now. I could say that th' curve o' your jaw be nice, too, but I think you know that I admire more o' your curves than just that one, eh?~ IF ~~ THEN EXIT END
-IF ~~ a2987 SAY ~[ARAN] Do you feel reasonably fine? That be cute an' all, but it be a mite strange thing to do to a lad.~ IF ~~ THEN EXIT END
-IF ~~ a2988 SAY ~[ARAN] Whoa, there... if we be in a tumbled pile, then I might just take some liberties, an' then you might, an' before we know it we be deep into it, pun intended.~ IF ~~ THEN EXIT END
-
-IF ~~ a1442 /* Laeral's Tear Necklace (3000 gp) */
-  SAY ~[ARAN] (He leans forward slightly, studying the Laeral's Tear necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1456 /* expensive */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1463 /* expensive */
-END
-
-IF ~~ a1443 /* Necklace of Missiles */
-  SAY ~[ARAN] (He leans forward slightly, studying the Necklace of Missiles necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1457 /* missiles */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1464 /* missiles */
-END
-
-IF ~~ a1444 /* Studded Necklace with Zios Gems */
-  SAY ~[ARAN] (He leans forward slightly, studying the zios gems embedded in the necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
-END
-
-IF ~~ a1445 /* Bluestone Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the bluestone necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
-END
-
-IF ~~ a1446 /* Agni Mani Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the angi mani necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
-END
-
-IF ~~ a1447 /* Rainbow Obsidian Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the obsidian necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
-END
-
-IF ~~ a1448 /* Tiger Cowrie Shell Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the cowrie shell necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
-END
-
-IF ~~ a1449 /* Silver Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the silver necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
-END
-
-IF ~~ a1450 /* Gold Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the gold necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
-END
-
-IF ~~ a1451 /* Pearl Necklace */
-  SAY ~[ARAN] (He leans forward slightly, studying the pearl necklace you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
-END
-
-IF ~~ a1452 /* Amulet of Metaspell Influence (+1 2nd level spell) */
-  SAY ~[ARAN] (He leans forward slightly, studying the amulet you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1461 /* magical */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1468 /* magical */
-END
-
-IF ~~ a1453 /* Wolfsbane Charm +2 vs Lycanthropes */
-  SAY ~[ARAN] (He leans forward slightly, studying the wolfsbane charm you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1460 /* anti-wolf  */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1467 /* anti-wolf  */
-END
-
-IF ~~ a1454 /* Periapt of Proof Against Poison */
-  SAY ~[ARAN] (He leans forward slightly, studying the periapt you are wearing.)~
-  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
-  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1459 /* anti-poison */
-  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1466 /* anti-poison */
-END
-
-/* light replies for necklace flirts */
-IF ~~ a1456 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' your eyes.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
-IF ~~ a1457 SAY ~[ARAN] (Hesitantly, he reaches one hand out to touch it...) OUCH! That there necklace done bit me! Hells, <CHARNAME>, you could have warned me th' bloody thing was leakin' some o' that missile-energy.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
-IF ~~ a1458 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you.~ IF ~~ THEN DO ~SetGlobal("c-aljewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
-IF ~~ a1459 SAY ~[ARAN] Good protection. You might want to keep in on tonight, eh? On account o' I am cookin' wi' some new spices, an' I am not sure I have the amount just right.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
-IF ~~ a1460 SAY ~[ARAN] Now, you may think that charm will keep th' likes o' me away. Problem is, I'm no wolf. I just act like one!~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
-IF ~~ a1461 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
-IF ~~ a1462 SAY ~[ARAN] Now, that be alright for some women, but I am not so sure when it comes to you. I think it sets off your eyes right nice, but I think it be a mite clunky. Here. This pearl necklace might be better.~ IF ~~ THEN DO ~GiveItemCreate("AMUL11",Player1,0,0,0) SetGlobal("c-aljewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
-/* heavy replies for necklace flirts */
-IF ~~ a1463 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' th' curve o' your inner thigh, or the way your body moves... hells, now I need a cold bath, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
-IF ~~ a1464 SAY ~[ARAN] (He reaches one hand out to touch it gently...) Tingles. An' I mean it tingles, as well as th' effect touching your collarbone makes me feel, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
-IF ~~ a1465 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you. In fact, I can't rightly help myself... too bloody kissable.~ = ~[ARAN] (His lips lightly brush your neck.)~ IF ~~ THEN DO ~SetGlobal("c-ahjewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
-IF ~~ a1466 SAY ~[ARAN] Good protection. If you were to die, I'd rather it would be on account o' you or I wore each other out in th' bedchamber, not on account o' some stupid poison.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
-IF ~~ a1467 SAY ~[ARAN] Glad to see th' protections in place. Though if you want a partner for play-actin' wolf an' wolfess, I be your man...~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
-IF ~~ a1468 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
-IF ~~ a1469 SAY ~[ARAN] I think you should wear that more often. O' course, I'd prefer it even more if you would wear *only* that, but it might make it a bit cold walkin' around in your birthday suit. Plus, I want that vision all to myself, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
-
-/* Romantic Encounters: Valygar item */
-IF ~~ a1499
-  SAY ~[ARAN] That be a right fine piece o' jewelry you be wearin', <CHARNAME>. Now, where did you get it, eh?~
-  IF ~InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a1500
-  IF ~!InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a1501
-END
-
-IF ~~ a1500 SAY ~[ARAN] Valygar seems to like it right fine, too. At least, he has an eye out for it when it be on you.~ IF ~~ THEN EXIT END
-IF ~~ a1501 SAY ~[ARAN] I just never did see when you got it, or where, or why. But it suits you right well, it does. Hey, why th' red face?~ IF ~~ THEN EXIT END
-IF ~~ a1503 SAY ~[ARAN] Bane's Broken Bones, you be a right strong <PROMANWOMAN>. Got it. I'll set to checkin' how we can raise coin out o' this here operation right quick.~ IF ~~ THEN EXIT END
-IF ~~ a1504 SAY ~[ARAN] Well, you be powerful enough to use it as a tool for whatever you want to accomplish, eh? Have someone send over th' contracts an' paperwork, an' I'll get right on seein' what be what.~ IF ~~ THEN EXIT END
-IF ~~ a1505 SAY ~[ARAN] Jealous? Sons o' th' Seldarine, what gave you that bloody idea? I don't want no target on my back, an' all those decisions. Hells, if I wanted that, I would have struck out on my own and built my own little mercenary company! There be enough hassles just bein' on staff, let alone runnin' th' show!~ IF ~~ THEN EXIT END
-IF ~~ a1506 SAY ~[ARAN] Ubtao's Great Beginnin', I understand right fine. I don't question the decision, I just wanted to know what you be wantin' to do. When you take charge o' somethin' there always be paperwork. That's where havin' me along comes in right handy, eh?~  IF ~~ THEN EXIT END
-IF ~~ a1507 SAY ~[ARAN] Velsharoon's Vicious Vampires, I'll be sayin' more than a prayer or two. Those "minor accidents" usually come in th' form o' stabbin' yourself while ingestin' poison, havin' tied yourself to a chair, an' fallin' out a third story window two or mayhap three times.~ IF ~~ THEN EXIT END
-IF ~~ a1508 SAY ~[ARAN] Well, I have your sword arm to back me up. Sometimes, a little subtle action is useful. Other times, the situation calls for the trademark "Whitehand Technique"...  kill anything that moves, and then resurrect anyone who we did not mean to kill.~ IF ~~ THEN EXIT END
-IF ~~ a1509 SAY ~[ARAN] Look, <CHARNAME> you don't owe me no reasons. I just thought I should kick in wi' handlin' the paperwork, is all.~  IF ~~ THEN EXIT END
-IF ~~ a1510 SAY ~[ARAN] Good. Talona's Mericless Poisons, I thought handlin' a trade coster or a mercenary regiment was tough. This... well, let's just say I'd rather you strip me down an' send me arse first into a nest o' kobolds.~  IF ~~ THEN EXIT END
 
 /* Flirt SubMenu: Mature */
-IF ~~ a1076
+IF ~~ a1076 // 1 escape, 10 or 11 options at any one time
   SAY ~[ARAN] (Aran is near you, watching the surrounding area carefully.)~
   ++ ~[PC] (You decide to leave Aran alone.)~ EXIT
   /* hugs M */
@@ -22632,14 +22551,105 @@ IF ~~ a1076
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,4)~ THEN GOTO a1759 /* c-aranmad4 */
 END
 
-IF ~~ a1161
-  SAY ~[ARAN] (Aran has obviously not felt your kiss, but turns to see why you are so close, bumping your nose in the process. As your eyes water, he grabs both of your shoulders and peers intently into your eyes, fishing a cloth from his belt pouch.)~
-  = ~[ARAN] Now then you don't have no call for th' cryin', there. That's not like you one bit, eh? Hold still - you got somethin' goin' wrong wi' your nose. Must be somethin' bloomin'.~
-  ++ ~[PC] (You smile at him as he rubs the rough cloth across your face.)~ + a1167
-  ++ ~[PC] (You snarl at him, pushing his hands away from your face and walking away.)~ EXIT
-  ++ ~[PC] I'm not crying, idiot. You just bumped my nose. Go do something useful, and leave me alone!~ EXIT
-  ++ ~[PC] I can take care of myself, thank you. (You take the cloth from his hands, and motion for him to go about his business.)~ EXIT
-END
+
+IF ~~ a1284 SAY ~[ARAN] (His nod and grin send you both wandering away together for a brief time, contemplating your surroundings.)~ = ~[ARAN] (As you walk, your hand seems to find its way into his strong calloused palm, your fingers intertwining with his.)~ IF ~~ THEN EXIT END
+IF ~~ a1285 SAY ~[ARAN] (His hands caress your torso gently, teasing, touching, and exploring everything, matching you movement for movement.)~ = ~[ARAN] (Eventually, he breaks away, breathing as if he had just run a mile.) Easy, there... much more, an' we might just need to get a room, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1286 SAY ~[ARAN] (His arms encircle you, holding you close and stopping you from motion of any kind.)~ = ~[ARAN] Easy, easy now... I look at you, I feel th' same way about every hour or so. It will pass, an' we can always have some fun later, eh? Just not here, not all exposed - like.~ IF ~~ THEN EXIT END
+IF ~~ a1287 SAY ~[ARAN] If that be an invitation to explore you wi' my mouth, just say th' word, <CHARNAME>. I promise I won't nip. Well, at least not much, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1288 SAY ~[ARAN] Nope.~ IF ~~ THEN EXIT END
+IF ~~ a1289 SAY ~[ARAN] Better protected from outside problems, yes. But I might find it a mite bit harder to protect you from me.~ IF ~~ THEN EXIT END
+IF ~~ a1290 SAY ~[ARAN] (Warm lips brush gently along the top of your spine, then up behind your ear. His voice whispers roughly...) No, naught but little ol' me, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1291 SAY ~[ARAN] (With a muffled oath, he scoops you up in his arms, carrying you forward.) Slow, eh? Slow but steady wins th' race. But wiggle some more, eh? On account o' I already got my hands right where I want 'em...~ IF ~~ THEN EXIT END
+IF ~~ a1292 SAY ~[ARAN] Mayhap next time we get to an inn, or somewhere we can get some o' the right supplies, I can make you a decent chocolate mousse. But wi' these supplies, the closest I can come be either hardtack bars or whipped parfait o' grasshoppers.~ IF ~~ THEN EXIT END
+IF ~~ a1293 SAY ~[ARAN] I do my own, thank you very much. Except for th' buttons. Somehow, I be so much better at undoin' buttons than sewin' them into place.~ IF ~~ THEN EXIT END
+IF ~~ a1294 SAY ~[ARAN] Like hells I do. I got me a teasin' armful o' hellcat what makes me right crazy, that be what I got!~ IF ~~ THEN EXIT END
+IF ~~ a1295 SAY ~[ARAN] (Aran drops his pack and stretches, but his attention is consumed with a thorough analysis of every inch of your body artistically arranged on the ground. When he catches you looking at him, he grins.)~ IF ~~ THEN EXIT END
+IF ~~ a1296 SAY ~[ARAN] (He follows your motions, captivated and intent.) Would that I be a cloth, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1297 SAY ~[ARAN] Oh, sorry, <CHARNAME>... I didn't rightly mean to have my hand right there. Mayhap you would find less in your way if you sat on my lap? Or mayhap more...~ IF ~~ THEN EXIT END
+IF ~~ a1298 SAY ~[ARAN] (His hands twine gently with yours, palm to palm, and he brings you chest to chest with him looking deeply into your eyes.)~ = ~[ARAN] (For a moment, time seems to stop, breathlessly suspended between you.)~ IF ~~ THEN EXIT END
+IF ~~ a1299 SAY ~[ARAN] Well, part o' why I like you is you can ask that question. I be skippin' over all the physical charms, like the way your lips curve, or the bewichin' rise an' fall o' your throat where it meets your chest, or th' way your breasts nestle in... err... what was I sayin'?~ IF ~~ THEN EXIT END
+IF ~~ a1300 SAY ~[ARAN] I can't take my eyes off o' you.~ IF ~~ THEN EXIT END
+IF ~~ a1301 SAY ~[ARAN] Your left eye be just as beautiful as a shinin' star. But your right eye, it can pierce th' depths o' a man's soul, it can.~ IF ~~ THEN EXIT END
+IF ~~ a1302 SAY ~[ARAN] I could quit all this, an' just be happy makin' love to you every time you wanted. Probably more.~ IF ~~ THEN EXIT END
+IF ~~ a1303 SAY ~[ARAN] Now, m'lady, no call for that kind o' talk. A man's got some principles, eh? I sign on for partnerships, not raw matin' like gibberlin's in heat. Though I do be a mite tempted...~ IF ~~ THEN EXIT END
+IF ~~ a1304 SAY ~[ARAN] Well, to tell th' truth, there was this one half-elven lass, a Sensate... no, she were right forward, an' could drive a man to distraction, but it were all glitter an' sex. Wi' you, there be so much more.~ IF ~~ THEN EXIT END
+IF ~~ a1305 SAY ~[ARAN] This be th' smartest grin I know. You want to school my lips a mite? On account o' a mild lipwrestlin' session might be just the ticket.~ IF ~~ THEN EXIT END
+IF ~~ a1306 SAY ~[ARAN] Now, I don't think that means what you want to say, eh? Sounds like you want me to cut off your hands, but I suspect what you be meanin' to say is that you want me to take my hands off these beautiful hips o' yours.~ IF ~~ THEN EXIT END
+IF ~~ a1307 SAY ~[ARAN] Believe me, <CHARNAME>, I find myself over you, the last thing I'll be thinkin' about will be sleepin'.~ IF ~~ THEN EXIT END
+IF ~~ a1308 SAY ~[ARAN] Well, it be right effective at treatin' localized high blood pressure in males...~ IF ~~ THEN EXIT END
+IF ~~ a1309 SAY ~[ARAN] Oh, no you don't... what, you look so surprised I shoved you, eh? I can give as good as I get, an' don't you be forgettin' it.~ IF ~~ THEN EXIT END
+IF ~~ a1310 SAY ~[ARAN] Bane's Blighted Bones, that be drawin' blood. Keep it up, an' I'll be givin' you a right sound wallop, I will.~ IF ~~ THEN EXIT END
+IF ~~ a1311 SAY ~[ARAN] By Malar's sharp Teeth, you do enjoy causin' a mite bit o' pain, don't you. (His arms wrap you securely. Small angry nips rain along your neck, sharp and painful, ending with a love bite that raises a welt.)~ = ~[ARAN] If we be markin' territory, I had other ideas on where to be leavin' those hickeys. Mayhap next time you get playful, I'll be more adventurous.~ IF ~~ THEN EXIT END
+IF ~~ a1312 SAY ~[ARAN] Shars' Dark Caress, that be drawin' blood. Let me try that... oho, runnin' away, eh? Weaklin'.~ IF ~~ THEN EXIT END
+IF ~~ a1313 SAY ~[ARAN] Let me see... what be th' best, most vicious torture I could give you... I know! I'll bloody well ignore you. That'll fix your wagon, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1434 SAY ~[ARAN] Oho, sharp wit, m'girl. Be careful, though - all that sharpened steel mind be right pretty, but if you look at it another way, you got a cold, dead piece o' metal for a brain.~ IF ~~ THEN EXIT END
+IF ~~ a1435 SAY ~[ARAN] Why, <CHARNAME>... I'm right touched, I am. You are not feelin' as sharp as usual. I noticed th' improvement right away! Now, th' kind' o 'playin' horse' I have in mind involves a bit less talkin' an' a lot less clothes... but you can neigh an' buck all you like.~ IF ~~ THEN EXIT END
+IF ~~ a1436 SAY ~[ARAN] An' you my love, you be th' happy target o' many, many well-wishers. There be few who meet you who don't wish to immediately throw you down th' nearest well.~ IF ~~ THEN EXIT END
+IF ~~ a1437 SAY ~[ARAN] Now, dearest love, I'd have been adopted by your mother, on account o' my face bein' much prettier than your tongue. But then it would be all awkward, tryin' to bed my step-sister. Kind o' excitin', though...~ IF ~~ THEN EXIT END
+IF ~~ a1438 SAY ~[ARAN] An' I shall never forget th' first time I met you, m'girl... the wasp tongue, th' complete disdain for moral judgment, th' icy frigid way you cloistered yourself yet lusted after anythin' that would put somethin' warm inside you to quell th' cold... an' here, you have made it all th' way up to caring enough about someone else to think up ugly insults. Next thing you know, you might even grow a heart!~ IF ~~ THEN EXIT END
+IF ~~ a1439 SAY ~[ARAN] Sure thing. I done peeled a few some months back, then run 'em through a cloth to filter, an' set up a mite bit o' a recipe for fermentation. Try this wineskin. I think it might do th' trick, meanin' I didn't go blind.~ IF ~~ THEN EXIT END
+IF ~~ a1440 SAY ~[ARAN] Well, let's see... how is this for entertainment? (His hands dart around your body, seeking intimate touches, and you are forced to parry and counter his every move or they will surely molest your virtue...)~ = ~[ARAN] It be a mite more fun when there be less clothes, an ' we can play hide an' seek under some covers.~ IF ~~ THEN EXIT END
+IF ~~ a1441 SAY ~[ARAN] Shar's Spiky Spit, I don't rightly want naught to do wi' a weapon what turns to dust in sunlight. I know it be powerful an' magical, but give me a solid surface weapon an' I'd be a mite happier.~ IF ~~ THEN DO ~SetGlobal("c-arandroweq","LOCALS",1)~ EXIT END
+/* light replies for necklace flirts */
+IF ~~ a1456 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' your eyes.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
+IF ~~ a1457 SAY ~[ARAN] (Hesitantly, he reaches one hand out to touch it...) OUCH! That there necklace done bit me! Hells, <CHARNAME>, you could have warned me th' bloody thing was leakin' some o' that missile-energy.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
+IF ~~ a1458 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you.~ IF ~~ THEN DO ~SetGlobal("c-aljewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
+IF ~~ a1459 SAY ~[ARAN] Good protection. You might want to keep in on tonight, eh? On account o' I am cookin' wi' some new spices, an' I am not sure I have the amount just right.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
+IF ~~ a1460 SAY ~[ARAN] Now, you may think that charm will keep th' likes o' me away. Problem is, I'm no wolf. I just act like one!~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
+IF ~~ a1461 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
+IF ~~ a1462 SAY ~[ARAN] Now, that be alright for some women, but I am not so sure when it comes to you. I think it sets off your eyes right nice, but I think it be a mite clunky. Here. This pearl necklace might be better.~ IF ~~ THEN DO ~GiveItemCreate("AMUL11",Player1,0,0,0) SetGlobal("c-aljewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+/* heavy replies for necklace flirts */
+IF ~~ a1463 SAY ~[ARAN] Now, I do think that piece o' jewelry matches you. But on full account, there be few pieces, no matter how expensive, what can do justice to th' beauty o' th' curve o' your inner thigh, or the way your body moves... hells, now I need a cold bath, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
+IF ~~ a1464 SAY ~[ARAN] (He reaches one hand out to touch it gently...) Tingles. An' I mean it tingles, as well as th' effect touching your collarbone makes me feel, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
+IF ~~ a1465 SAY ~[ARAN] Perfect. Simple, attractive, understated, an' nearly as beautiful as you. In fact, I can't rightly help myself... too bloody kissable.~ = ~[ARAN] (His lips lightly brush your neck.)~ IF ~~ THEN DO ~SetGlobal("c-ahjewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
+IF ~~ a1466 SAY ~[ARAN] Good protection. If you were to die, I'd rather it would be on account o' you or I wore each other out in th' bedchamber, not on account o' some stupid poison.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
+IF ~~ a1467 SAY ~[ARAN] Glad to see th' protections in place. Though if you want a partner for play-actin' wolf an' wolfess, I be your man...~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
+IF ~~ a1468 SAY ~[ARAN] (He gently caresses it with the tip of one finger, then shivers and shakes his hand.) Now, that done give me a set o' goosebumps. Either it did, or th' curve o' your neck did. Either way, I think I might want to repeat th' experience.~ IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
+IF ~~ a1469 SAY ~[ARAN] I think you should wear that more often. O' course, I'd prefer it even more if you would wear *only* that, but it might make it a bit cold walkin' around in your birthday suit. Plus, I want that vision all to myself, eh?~ IF ~~ THEN DO ~SetGlobal("c-ahjewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+/* misc. exits from other states */
+IF ~~ a1500 SAY ~[ARAN] Valygar seems to like it right fine, too. At least, he has an eye out for it when it be on you.~ IF ~~ THEN EXIT END
+IF ~~ a1501 SAY ~[ARAN] I just never did see when you got it, or where, or why. But it suits you right well, it does. Hey, why th' red face?~ IF ~~ THEN EXIT END
+IF ~~ a1503 SAY ~[ARAN] Bane's Broken Bones, you be a right strong <PROMANWOMAN>. Got it. I'll set to checkin' how we can raise coin out o' this here operation right quick.~ IF ~~ THEN EXIT END
+IF ~~ a1504 SAY ~[ARAN] Well, you be powerful enough to use it as a tool for whatever you want to accomplish, eh? Have someone send over th' contracts an' paperwork, an' I'll get right on seein' what be what.~ IF ~~ THEN EXIT END
+IF ~~ a1505 SAY ~[ARAN] Jealous? Sons o' th' Seldarine, what gave you that bloody idea? I don't want no target on my back, an' all those decisions. Hells, if I wanted that, I would have struck out on my own and built my own little mercenary company! There be enough hassles just bein' on staff, let alone runnin' th' show!~ IF ~~ THEN EXIT END
+IF ~~ a1506 SAY ~[ARAN] Ubtao's Great Beginnin', I understand right fine. I don't question the decision, I just wanted to know what you be wantin' to do. When you take charge o' somethin' there always be paperwork. That's where havin' me along comes in right handy, eh?~  IF ~~ THEN EXIT END
+IF ~~ a1507 SAY ~[ARAN] Velsharoon's Vicious Vampires, I'll be sayin' more than a prayer or two. Those "minor accidents" usually come in th' form o' stabbin' yourself while ingestin' poison, havin' tied yourself to a chair, an' fallin' out a third story window two or mayhap three times.~ IF ~~ THEN EXIT END
+IF ~~ a1508 SAY ~[ARAN] Well, I have your sword arm to back me up. Sometimes, a little subtle action is useful. Other times, the situation calls for the trademark "Whitehand Technique"...  kill anything that moves, and then resurrect anyone who we did not mean to kill.~ IF ~~ THEN EXIT END
+IF ~~ a1509 SAY ~[ARAN] Look, <CHARNAME> you don't owe me no reasons. I just thought I should kick in wi' handlin' the paperwork, is all.~  IF ~~ THEN EXIT END
+IF ~~ a1510 SAY ~[ARAN] Good. Talona's Mericless Poisons, I thought handlin' a trade coster or a mercenary regiment was tough. This... well, let's just say I'd rather you strip me down an' send me arse first into a nest o' kobolds.~  IF ~~ THEN EXIT END
+/* early and light flirts */
+IF ~~ a2983 SAY ~[ARAN] (He leans back, steadily increasing pressure on you, until you are off balance. His snort of laughter is muted by his sudden fit of coughing.)~ IF ~~ THEN EXIT END
+IF ~~ a2984 SAY ~[ARAN] Yep.~ IF ~~ THEN EXIT END
+IF ~~ a2985 SAY ~[ARAN] Blighted hells... I just had my turn at th' launderin', too! Well, lucky me... at least this time I don't have to clean it.~ IF ~~ THEN EXIT END
+IF ~~ a2986 SAY ~[ARAN] Well, now. I could say that th' curve o' your jaw be nice, too, but I think you know that I admire more o' your curves than just that one, eh?~ IF ~~ THEN EXIT END
+IF ~~ a2987 SAY ~[ARAN] Do you feel reasonably fine? That be cute an' all, but it be a mite strange thing to do to a lad.~ IF ~~ THEN EXIT END
+IF ~~ a2988 SAY ~[ARAN] Whoa, there... if we be in a tumbled pile, then I might just take some liberties, an' then you might, an' before we know it we be deep into it, pun intended.~ IF ~~ THEN EXIT END
+IF ~~ a3297 SAY ~[ARAN] (His easy smile is bright on his face, but he moves away from you and adjusts his belt.)~ IF ~~ THEN EXIT END
+IF ~~ a3298 SAY ~[ARAN] (He smiles at you, but moves away and rubs one hand behind his neck briskly.)~ IF ~~ THEN EXIT END
+IF ~~ a3299 SAY ~[ARAN] Do I, now? Right. I can comb that out myself. I'll be gettin' right on it.~ IF ~~ THEN EXIT END
+IF ~~ a3300 SAY ~[ARAN] Well, now, I may or may not have an answer to that. But mayhap I'd better wait until we know each other a mite bit better before I commit to a response what might get me dropped out o' th' party right quick, eh?~ IF ~~ THEN EXIT END
+IF ~~ a3301 SAY ~[ARAN] I... Well, I rightly don't know how to answer that just yet. I have some ideas, but... Sometimes a lad can hang himself right quick if he don't fully know where th' lady be comin' from, eh?~ IF ~~ THEN EXIT END
+IF ~~ a3302 SAY ~[ARAN] (He quickly retrieves your belongings, brusquely tucking them into your gear.)~ = ~[ARAN] Aye, then. That should fix it.~ IF ~~ THEN EXIT END
+IF ~~ a4873 SAY ~[ARAN] (A light blush creeps across his weatherbeaten face, and he smiles.) ~ IF ~~ THEN EXIT END
+IF ~~ a4874 SAY ~[ARAN] (He coughs and turns away quickly, the back of his neck flushing dusky red.) ~ IF ~~ THEN EXIT END
+IF ~~ a4875 SAY ~[ARAN] Aye, now, that were a right nice gesture, it was.~ IF ~~ THEN EXIT END
+IF ~~ a4876 SAY ~[ARAN] Hold on a moment, eh? On account o' that hand be a mite bit less than clean.~ IF ~~ THEN EXIT END
+IF ~~ a4877 SAY ~[ARAN] Do this be part o' th' fine print written in th' bottom o' th' contract? I'd be right happy if it were.~ IF ~~ THEN EXIT END
+IF ~~ a4878 SAY ~[ARAN] Keep that up, an' a lad might get ideas. Mayhap right, mayhap wrong, but definitely ideas.~ IF ~~ THEN EXIT END
+IF ~~ a4879 SAY ~[ARAN] I do appreciate that. An' I think th' feelin' be mutual.~ IF ~~ THEN EXIT END
+IF ~~ a4880 SAY ~[ARAN] Blighted bangs. Always strayin' into whatever they shouldn't. I'd cut it all off, but wearin' a helm while bald be right uncomfortable, even wi' paddin'.~ IF ~~ THEN EXIT END
+IF ~~ a4881 SAY ~[ARAN] (He starts to say something, but coughs suddenly and turns away.)~ IF ~~ THEN EXIT END
+IF ~~ a4882 SAY ~[ARAN] (He looks at you with a curious expession, then suddenly smiles.)~ IF ~~ THEN EXIT END
+IF ~~ a4883 SAY ~[ARAN] Well, now I done lost my train o' thought. You do know you be right distractin', eh?~ IF ~~ THEN EXIT END
+IF ~~ a4884 SAY ~[ARAN] What? Do I have somethin' tied wrong, or some strap missin? Be a good friend an' tell a lad, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4885 SAY ~[ARAN] Easy there, on account o' that seems a mite bit familiar for public consumption, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4886 SAY ~[ARAN] (He looks at you with a curious expession, then suddenly smiles.)~ IF ~~ THEN EXIT END
+IF ~~ a4887 SAY ~[ARAN] You know how to get a lad's attention, you do.~ IF ~~ THEN EXIT END
+IF ~~ a4888 SAY ~[ARAN] (He looks at you, then points to his face, raising his eyebrows.)~ IF ~~ THEN EXIT END
+IF ~~ a4889 SAY ~[ARAN] (His arm loops around your waist, giving you a quick squeeze, before he moves on.)~ IF ~~ THEN EXIT END
+IF ~~ a4890 SAY ~[ARAN] Hey, that tickles, it do! Not that I mind, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4891 SAY ~[ARAN] (His returning glance starts at your ankles, and moves ever slowly up every inch of your form, until it reaches your face. His smile promises everything.)~ IF ~~ THEN EXIT END
+IF ~~ a4892 SAY ~[ARAN] I have no worries about that look, m'lady, but just beware... what be good for th' goose, be good for th' gander!~ IF ~~ THEN EXIT END
 
 IF ~~ a1800 SAY ~[ARAN] Well, I like you on account o' when my hand goes right... there, you make a little sound in th' back ' th' throat. An' when I kiss you right... here, you make a little groan what makes parts o' me stand at attention right quick. An' when I move against you like... this... I think th' rest o' this conversation might be better off carried out in a bedroll, on account o' it be hard to show you. No pun intended, o' course.~ IF ~~ THEN EXIT END
 IF ~~ a1078 SAY ~[ARAN] Well, first things first... th' Cowled wizards are not supposed to be the ones in charge o' this land, but think about it - anyone who can do magic here legally has a huge tactical advantage. So first thing I'd bloody well do is go pay th' bastards in th' Government District for a license, or we will be pickin' up shattered, paralyzed, stony fragments of our arses off the cobblestones soon enough.~ IF ~~ THEN EXIT END
@@ -22813,6 +22823,113 @@ IF ~~ a1245 SAY ~[ARAN] Now you be playin' wi' me, right? On account o' you done
 IF ~~ a1246 SAY ~[ARAN] Gond's Mischievous Machinations, you be treatin' me like a toy. I am drawn to you, like a moth to a flame, but by th' gods, this be torture. You could be kind, an' just kill me.~ IF ~~ THEN EXIT END
 IF ~~ a1282 SAY ~[ARAN] (His body warms to your touch, and his lips capture yours for a brief but fervent kiss.)~ IF ~~ THEN EXIT END
 IF ~~ a1283 SAY ~[ARAN] (He bends you backward slightly, mouth warm and alive on yours, until his tongue darts out to briefly tease your lips.)~ IF ~~ THEN EXIT END
+
+IF ~~ a1442 /* Laeral's Tear Necklace (3000 gp) */
+  SAY ~[ARAN] (He leans forward slightly, studying the Laeral's Tear necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1456 /* expensive */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1463 /* expensive */
+END
+
+IF ~~ a1443 /* Necklace of Missiles */
+  SAY ~[ARAN] (He leans forward slightly, studying the Necklace of Missiles necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1457 /* missiles */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1464 /* missiles */
+END
+
+IF ~~ a1444 /* Studded Necklace with Zios Gems */
+  SAY ~[ARAN] (He leans forward slightly, studying the zios gems embedded in the necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
+END
+
+IF ~~ a1445 /* Bluestone Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the bluestone necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
+END
+
+IF ~~ a1446 /* Agni Mani Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the angi mani necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
+END
+
+IF ~~ a1447 /* Rainbow Obsidian Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the obsidian necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
+END
+
+IF ~~ a1448 /* Tiger Cowrie Shell Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the cowrie shell necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /* I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1462 /* clunky */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1469 /* clunky */
+END
+
+IF ~~ a1449 /* Silver Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the silver necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
+END
+
+IF ~~ a1450 /* Gold Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the gold necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
+END
+
+IF ~~ a1451 /* Pearl Necklace */
+  SAY ~[ARAN] (He leans forward slightly, studying the pearl necklace you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1458 /* simple */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1465 /* simple */
+END
+
+IF ~~ a1452 /* Amulet of Metaspell Influence (+1 2nd level spell) */
+  SAY ~[ARAN] (He leans forward slightly, studying the amulet you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1461 /* magical */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1468 /* magical */
+END
+
+IF ~~ a1453 /* Wolfsbane Charm +2 vs Lycanthropes */
+  SAY ~[ARAN] (He leans forward slightly, studying the wolfsbane charm you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1460 /* anti-wolf  */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1467 /* anti-wolf  */
+END
+
+IF ~~ a1454 /* Periapt of Proof Against Poison */
+  SAY ~[ARAN] (He leans forward slightly, studying the periapt you are wearing.)~
+  IF ~~ THEN GOTO a1455 /*I GOT HERE BECAUSE SOMETHING IS BROKEN */
+  IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN GOTO a1459 /* anti-poison */
+  IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN GOTO a1466 /* anti-poison */
+END
+
+/* Romantic Encounters: Valygar item */
+IF ~~ a1499
+  SAY ~[ARAN] That be a right fine piece o' jewelry you be wearin', <CHARNAME>. Now, where did you get it, eh?~
+  IF ~InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a1500
+  IF ~!InParty("valygar")~ THEN DO ~SetGlobal("c-aljewelv","LOCALS",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)~ GOTO a1501
+END
+
+IF ~~ a1161
+  SAY ~[ARAN] (Aran has obviously not felt your kiss, but turns to see why you are so close, bumping your nose in the process. As your eyes water, he grabs both of your shoulders and peers intently into your eyes, fishing a cloth from his belt pouch.)~
+  = ~[ARAN] Now then you don't have no call for th' cryin', there. That's not like you one bit, eh? Hold still - you got somethin' goin' wrong wi' your nose. Must be somethin' bloomin'.~
+  ++ ~[PC] (You smile at him as he rubs the rough cloth across your face.)~ + a1167
+  ++ ~[PC] (You snarl at him, pushing his hands away from your face and walking away.)~ EXIT
+  ++ ~[PC] I'm not crying, idiot. You just bumped my nose. Go do something useful, and leave me alone!~ EXIT
+  ++ ~[PC] I can take care of myself, thank you. (You take the cloth from his hands, and motion for him to go about his business.)~ EXIT
+END
 
 IF ~~ a1315
   SAY ~[ARAN] (You notice Aran's gaze lingering on you. He grins...) Aye, there are some sights always worth seein', you know.~

@@ -3598,7 +3598,7 @@ END
 /* Set up flirting for initial entries - Set through PID flirting a bunch of times */
 IF
 	Global("c-aranpcflirtstart","GLOBAL",0)
-	GlobalGT("c-aranearlyflirt","LOCALS",12)// try this value - may be too high or too low
+	GlobalGT("c-aranearlyflirt","LOCALS",14)// try this value - may be too high or too low
 	GlobalLT("c-aranfriendbg2","GLOBAL",7)
 	GlobalLT("c-aranbg2rom","GLOBAL",7)
 	OR(2)
