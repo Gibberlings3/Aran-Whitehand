@@ -2098,7 +2098,7 @@ BEGIN ~Choose Aran's Portrait~
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ ~Aran Whitehand must be installed for this to work.~
 
 OUTER_SPRINT ~arportrait~ ~There are many alternate portraits from which to choose. You may want to consult the ReadMe before choosing.~
-OUTER_WHILE (!(IS_AN_INT ~arportrait~) OR (~arportrait~ > 0xd) OR (~arportrait~ < 0x1)) BEGIN
+OUTER_WHILE (!(IS_AN_INT ~arportrait~) OR (~arportrait~ > 0xe) OR (~arportrait~ < 0x1)) BEGIN
 	PRINT ~Please enter your choice and press return:
 [1] Keep Nix's "Default" portrait set (fair hair, fair complexion)
 [2] Peachplum's "Latest" style (dark brown hair, fair complexion)

@@ -1263,10 +1263,10 @@ DO ~SetGlobal("c-haerdalisaran","GLOBAL",1)~
 == C-ARANB ~[ARAN] I'd trade fair an' square with you, Haer'Dalis, but I've only got simple stories.~
 == BHAERDA ~[HAERDALIS] Ah, but the simplest are often the best. Come, tell me a tale. Entertain this poor sparrow, before he begins tearing at the nest in boredom and ennui!~
 == C-ARANB ~[ARAN] Well, I did hear tell of a bard who got bored one day. So he turns to his friend, and says, 'Fred, tell us a story.'~
-== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did here tell of a bard who go bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
-== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did here tell of a bard who go bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
+== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did hear tell of a bard who got bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
+== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did hear tell of a bard who got bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
 == BHAERDA ~[HAERDALIS] Aran.~
-== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did here tell of a bard who go bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
+== C-ARANB ~[ARAN] So Fred, he gets up and he says, 'Well, I did hear tell of a bard who got bored one day. So he turns to his friend, and says, 'Fred, tell us a story.''~
 == BHAERDA ~[HAERDALIS] ARAN.~
 == C-ARANB ~[ARAN] Yes, my friend?~
 == BHAERDA ~[HAERDALIS] I do believe that I understand the story. Perhaps we should explore song, instead, my eagle.~
@@ -7509,10 +7509,7 @@ IF ~~ a4869
   IF ~~ THEN GOTO a4870
 END
 
-IF ~~ a4870
-  SAY ~[ARAN] Well, on th' whole, it were just about th' nicest night o' my life.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4870 SAY ~[ARAN] Well, on th' whole, it were just about th' nicest night o' my life.~ IF ~~ THEN EXIT END
 
 /* SoA Scenery Talk : Sparring: The Morning After Extra-Curricular Activity : Mature Replies */
 
@@ -7847,6 +7844,13 @@ IF ~~ a401
   + ~Gender(Player1,MALE)~ + ~[PC] I feel nothing. That would not change my approach to combat, whether I had my soul or not.~ + a408
   + ~Gender(Player1,FEMALE)~ + ~[PC] I feel nothing. That would not change my approach to combat, whether I had my soul or not.~ + a409
   ++ ~[PC] What have you have seen on the battlefield that might be similar to what I have gone through?~ + a410
+
+//  ++ ~[PC] I do not feel any different.~ + FINDME PLACEHOLDER
+//  ++ ~[PC] I do not feel any different. I can still sing songs of heroic virtue, as befits a Skald.~ + FINDME PLACEHOLDER
+//  ++ ~[PC] I do not feel any different. They say comedy is built out of sadness and an attempt to avoid the hole in your being, and I am great at comedy, so perhaps I never really had a soul.~ + FINDME PLACEHOLDER
+//  ++ ~[PC] I do not feel any different. I am not sure I truly understand what I am missing.~ + FINDME PLACEHOLDER
+//  ++ ~[PC] I do not feel any different. I have studied the nature of the soul for much of my life, and even I am not sure I truly understand what it is I am missing.~ +  FINDME PLACEHOLDER 
+  
 END
 
 IF ~~ a402
@@ -8141,7 +8145,7 @@ IF ~~ a427
 END
 
 IF ~~ a428
-  SAY ~[ARAN] Well, it does not rightly matter, as long as it is somethin' besides death an' doom, eh?~
+  SAY ~[ARAN] Well, it does not rightly matter, as long as it be somethin' besides death an' doom, eh?~
   ++ ~[PC] Perhaps you have a better story to tell me.~ + a450
   /* Cervantes */
   + ~InParty("anomen") !InParty("c#ajantis") !InParty("7XAJAN")~ + ~[PC] 'Somewhere in the Dale Lands, in a place whose name I do not care to remember, a gentleman lived not long ago, one of those who has a lance and ancient shield on a shelf and keeps a skinny nag and a greyhound for racing...'~ + a434
@@ -8218,7 +8222,7 @@ END
 
 IF ~~ a441 SAY ~[ARAN] I be bloody well serious on this one - listen to yourself. If you be screamin' rage an' fear inside, that be fine. I am watchin' your back, an' I will be there to help out. But if you be screamin' rage an' hate an' power, let me know, on account o' I want to be out o' target range when you decide to smash th' world into rivers o' blood.~ IF ~~ THEN EXIT END
 IF ~~ a443 SAY ~[ARAN] Torm's Stalwart Fist, now you be talkin' th' right kind o' story! You keep on, an' I'll just listen. I just hope it be havin' a happy endin', like they be elves smitin' th' crap out o' a whole pile o' Drow bastards...~ IF ~~ THEN EXIT END
-IF ~~ a444 SAY ~[ARAN] Torm's Tangled Banner,that lad be in for a mite bit o' hurt. An' it don't rightly make sense, neither. Did he take his broadsword, or was he all unarmed, eh? or is it one o' those symbolic stories... oh, hells, I'll be just shuttin' up an' listenin'. You go on.~ IF ~~ THEN EXIT END
+IF ~~ a444 SAY ~[ARAN] Torm's Tangled Banner, that lad be in for a mite bit o' hurt. An' it don't rightly make sense, neither. Did he take his broadsword, or was he all unarmed, eh? Or do it be one o' those symbolic stories... oh, hells, I'll be just shuttin' up an' listenin'. You go on.~ IF ~~ THEN EXIT END
 IF ~~ a446 SAY ~[ARAN] Bloody hells, no! I want naught to do wi' horror or some mad wizard experimentin' on poor unsuspectin' souls wi' polymorph spells! Forget it. I'd rather just think up some stories myself, anyways. Let me see... so a handsome, modest sellsword meets this really cute lass...~ IF ~~ THEN EXIT END
 IF ~~ a447 SAY ~[ARAN] Bloody hells, no! I want naught to do wi' horror or some cold knife bein' tossed about! Forget it. I'd rather just think up some stories myself, anyways. Let me see... so a handsome, modest sellsword meets this really cute lass...~ IF ~~ THEN EXIT END
 
@@ -9635,20 +9639,9 @@ IF ~~ a614
   ++ ~[PC] What would you do if I said 'no', but did this... (Lean forward provocatively, allowing a decidedly intimate view.)~ + a617
 END
 
-IF ~~ a615
-  SAY ~[ARAN] I would be right sorry, an' respect that you feel that way right now. But I am not known to be anythin' but stubborn, an' I know my own interests. I will be right here, on your shield arm, hopin' you change your mind.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a616
-  SAY ~[ARAN] Alive.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a617
-  SAY ~[ARAN] I would say by th' gods an' goddesses, you vixen, you be teasin' me somethin' fierce.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a615 SAY ~[ARAN] I would be right sorry, an' respect that you feel that way right now. But I am not known to be anythin' but stubborn, an' I know my own interests. I will be right here, on your shield arm, hopin' you change your mind.~ IF ~~ THEN EXIT END
+IF ~~ a616 SAY ~[ARAN] Alive.~ IF ~~ THEN EXIT END
+IF ~~ a617 SAY ~[ARAN] I would say by th' gods an' goddesses, you vixen, you be teasin' me somethin' fierce.~ IF ~~ THEN EXIT END
 
 /* BG2 Love Talk 6 :  ABBA - Take A Chance On Me : c-aranrombg2 = 11 > 12 c-aranromtimer,ARAN_LTT */
 IF ~Global("c-aranbg2rom","GLOBAL",11)~ THEN BEGIN a618
@@ -12739,7 +12732,7 @@ IF ~~ a4702
 END
 
 
-////////////// FINDME
+////////////// FINDME and recheck
 
 
 IF ~~ a4519
@@ -13317,8 +13310,8 @@ IF ~~ a3246
   ++ ~[PC] Only if turnabout is fair play... hmmm. Silky smooth. Warm.~ + a3250
   ++ ~[PC] Yes. Remove that hand or lose it.~ + a2880
   ++ ~[PC] Aran... I... This is making me feel very uncomfortable.~ + a3251
-  ++ ~[PC] (Slap him hard across the cheek)~ + a3248
-END
+  ++ ~[PC] (Slap him hard across the cheek)~ + a3248  // all conditions
+END 
 
 IF ~~ a3247 SAY ~[ARAN] Now, that were not th' endin' I was hopin' for.~ IF ~~ THEN EXIT END
 
@@ -14128,7 +14121,7 @@ EXIT
 
 /* stream 1 female */
 CHAIN C-ARANJ a790
-~[ARAN] Right behind me, eh? Right, then, I do be guessin' there's a mite bit o' muck about me. I thought I'd be cleanin' some off, but company might be nice. Lead on, oh fearless leader.~
+~[ARAN] Right behind me, eh? Right, then, I do be guessin' there's a mite bit o' muck about me. I thought I'd be cleanin' some off, but company might be nice.~
 == C-ARANJ ~[ARAN] (The bank of the stream is muddy and slippery, but the water runs clear and deep. Before you can think of even partially disrobing, you feel yourself slipping down the bank... )~
 == C-ARANJ IF ~CheckStatGT(Player1,15,DEX)~ THEN ~[ARAN] (...and your recovery would be perfect, as usual, one foot balanced delicately along a ready branch, were it not for rough hands gripping your waist and tossing you directly into the crystal water.)~
 == C-ARANJ IF ~CheckStatGT(Player1,8,DEX) CheckStatLT(Player1,16,DEX)~ THEN ~[ARAN] (...and your recovery might have been possible through the counterbalance of your wildly flailing arms, were it not for rough hands gripping your waist and tossing you directly into the crystal water.)~
@@ -14809,9 +14802,7 @@ END
 
 /* moved  to PLAYER1D dreamscript eval  :  IF ~Global("c-arannightvisit","GLOBAL",2)~ THEN BEGIN a3799  START_ARAN_PC_BOOTY_CALL  */
 
-/* I. Player Teases with lots and lots of flirts - from .bcs */
-
-/* moved to PLAYER1D dreamscript eval : IF ~Global("c-arangoaded","GLOBAL",2)~ THEN BEGIN a3353 TOO_MUCH_TEASING */
+/* I. Player Teases with lots and lots of flirts - from PLAYER1D dreamscript .bcs */
 
 IF ~~ a4356
   SAY ~[ARAN] Now, you have been teasin' me somethin' fierce, flirtin' away. Mayhap you want more than that, and mayhap not, but I do need to know. Do you want some company tonight, or should I go?~
@@ -19438,7 +19429,12 @@ IF ~~ a1596 // pc_c_w aw_c_b
   ++ ~[PC] C.. c.. cold...~ + a1600 // pc_c_w aw_c_b
   ++ ~[PC] You are a monster. I will make my own way back to camp, and you can go to the nine hells.~ + a2973 // pc_c_w aw_c_b
   ++ ~[PC] Less talk, and more 'pull the freezing woman out of the icy water before she goes numb'.~ + a2973 // pc_c_w aw_c_b
-  ++ ~[PC] Well, I am here now. I might as well make the best of it and go for a swim.~ + a4737
+  ++ ~[PC] Well, I am here now. I might as well make the best of it and go for a swim.~ + a4980 // pc_c_w aw_c_b was a4737
+END
+
+IF ~~ a4980 // pc_c_w aw_c_b
+  SAY ~[ARAN] (Water crashes around you as Aran dives in.)~
+  IF ~~ THEN GOTO a4737 // pc_c_w aw_c_w
 END
 
 IF ~~ a2973 // pc_c_w aw_c_b
@@ -19457,7 +19453,7 @@ IF ~~ a1597 // pc_c_w aw_c_b
   ++ ~[PC] Oh, my poor clothing... ruined... all muddy... I...~ + a2973 // pc_c_w aw_c_b
   ++ ~[PC] I don't know. But stop grinning like that, and help me out of here, please.~ + a2974 // pc_c_w aw_c_b
   ++ ~[PC] You take too many liberties. I will make my own way back to camp, and you can go to the nine hells.~ + a2973 // pc_c_w aw_c_b
-  ++ ~[PC] I shall take my time in coming up with a suitable answer to that, sirrah. I am here now. I might as well make the best of it and go for a swim.~ + a4737
+  ++ ~[PC] I shall take my time in coming up with a suitable answer to that, sirrah. I am here now. I might as well make the best of it and go for a swim.~ + a4980 // pc_c_w aw_c_b
 END
 
 IF ~~ a1598 // pc_c_w aw_c_b
@@ -19465,8 +19461,8 @@ IF ~~ a1598 // pc_c_w aw_c_b
   ++ ~[PC] (Swim deeper, and remain silent)~ + a1603 // pc_c_w aw_c_b
   ++ ~[PC] (Surface gracefully, and swim for toward land)~ + a4375 // pc_c_w aw_c_b
   ++ ~[PC] (Surface quickly, splashing water and mud over him).~ + a1602 // pc_c_w aw_c_b
-  ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772
-  ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4737
+  ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772 // pc_c_w aw_c_b
+  ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4980 // pc_c_w aw_c_b
 END
 
 IF ~~ a4375 // pc_c_w aw_c_b
@@ -19478,9 +19474,9 @@ IF ~~ a1599 // pc_c_w aw_c_b
   SAY ~[ARAN] Hey, you had me a mite worried, there. Do you be in once piece?~
   ++ ~[PC] (Throw the clod of mud at Aran.)~ + a1602 // pc_c_w aw_c_b
   ++ ~[PC] (Glare at him from the surface of the water.)~ + a4375 // pc_c_w aw_c_b
-  ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772
-  ++ ~[PC] Now my clothes are all wet.~ + a4737
-  ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4737
+  ++ ~[PC] No, I am fine. Don't you want to come and find me?~ + a4772 // pc_c_w aw_c_b
+  ++ ~[PC] Now my clothes are all wet.~ + a4980 // pc_c_w aw_c_b
+  ++ ~[PC] Well, on the one hand, I am fine. On the other, I am wet. But as I am here now, I might as well make the best of it and go for a swim.~ + a4980 // pc_c_w aw_c_b
 END
 
 IF ~~ a1600 // pc_c_w aw_c_b
@@ -19518,18 +19514,18 @@ END
 
 IF ~~ a1602 // pc_c_w aw_c_b
   SAY ~[ARAN] HEY! Now, that be war, eh?~
-  ++ ~[PC] Aran. Put down that mud, Aran. Put it down right NOW. ARAN! Yuch. Now I really do need to get cleaned up.~ + a4798
-  ++ ~[PC] And I just won. You look so silly!~ + a4796
-  ++ ~[PC] If it were war, you would have been in need of healing. The only thing wounded right now is dignity and pride.~ + a4797
-  ++ ~[PC] No war. Just revenge.~ + a4799
+  ++ ~[PC] Aran. Put down that mud, Aran. Put it down right NOW. ARAN! Yuch. Now I really do need to get cleaned up.~ + a4798 // all conditions
+  ++ ~[PC] And I just won. You look so silly!~ + a4796 // all conditions
+  ++ ~[PC] If it were war, you would have been in need of healing. The only thing wounded right now is dignity and pride.~ + a4797 // all conditions
+  ++ ~[PC] No war. Just revenge.~ + a4799 // all conditions
   ++ ~[PC] No war. Besides, I have ways of distracting your attention. Like these clothes of mine, and how they seem to have found their way off of my body and flown up onto the bank all by themselves.~ + a4738 // pc_u_w aw_u_w
 END
 
 IF ~~ a1603 // pc_c_w aw_c_b
   SAY ~[ARAN] (There is a tremendous splash as Aran dives in close to you. His strong hands grip your your torso as he rapidly lifts you out of the water.)~
   ++ ~[PC] (Spit a long stream of water into his face, and grin.)~ + a1602 // pc_c_w aw_c_b
-  ++ ~[PC] (Slap him.)~ + a3248
-  ++ ~[PC] Now my clothes are all wet.~ + a4737
+  ++ ~[PC] (Slap him.)~ + a3248 // all conditions
+  ++ ~[PC] Now my clothes are all wet.~ + a4980 // pc_c_w aw_c_b
   ++ ~[PC] That is more than enough roughhousing, thank you. I'm headed back to camp.~ + a3278
 END
 
@@ -19687,15 +19683,8 @@ IF ~~ a3274
   ++ ~[PC] Look, let's just get back to camp. This whole conversation is not really interesting me at all.~ + a3278
 END
 
-IF ~~ a3275
-  SAY ~[ARAN] Sune's Sounds an' Scents! (His diving and crashing toward his clothes sends odd echoes bouncing everywhere.)~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a3276
-  SAY ~[ARAN] Coward!~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3275 SAY ~[ARAN] Sune's Sounds an' Scents! (His diving and crashing toward his clothes sends odd echoes bouncing everywhere.)~ IF ~~ THEN EXIT END
+IF ~~ a3276 SAY ~[ARAN] Coward!~ IF ~~ THEN EXIT END
 
 IF ~~ a3277
   SAY ~[ARAN] Suit yourself. I won't be much longer.~
@@ -19703,10 +19692,7 @@ IF ~~ a3277
   IF ~~ THEN EXIT
 END
 
-IF ~~ a3278
-  SAY ~[ARAN] I'll be along in a bit. I needs be gettin' dried off an' dressed, but I have to stretch out a mite bit more first.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3278 SAY ~[ARAN] I'll be along in a bit. I needs be gettin' dried off an' gather my gear, but I have to stretch out a mite bit more first.~ IF ~~ THEN EXIT END
 
 IF ~~ a3279
   SAY ~[ARAN] Sometimes I do, an' sometimes I don't.~
@@ -19721,10 +19707,7 @@ IF ~~ a3280
   ++ ~[PC] I don't know how to ask for what I want.~ + a3282
 END
 
-IF ~~ a3281
-  SAY ~[ARAN] (Aran swims to the bank and pulls his towel free of his clothing, wrapping himself as he comes out of the water. In a few quick strides he is beside you, his arms enfolding you in a comfortable embrace. You stand there together for a time, the world held at bay, with the occasional drip of water droplets falling against your cheek.)~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3281 SAY ~[ARAN] (Aran swims to the bank and pulls his towel free of his clothing, wrapping himself as he comes out of the water. In a few quick strides he is beside you, his arms enfolding you in a comfortable embrace. You stand there together for a time, the world held at bay, with the occasional drip of water droplets falling against your cheek.)~ IF ~~ THEN EXIT END
 
 IF ~~ a3282
   SAY ~[ARAN] What be wrong wi' just plain askin' it?~
@@ -19749,23 +19732,16 @@ IF ~~ a3283
   ++ ~[PC] You don't understand. That figures. Look, I can't have this conversation. You stay here. I will see you back at camp.~ + a3284
 END
 
-IF ~~ a3284
-  SAY ~[ARAN] Now, wait...~
-  = ~[ARAN] Blighted hells. I just don't rightly understand women, naught a single one, not one bit.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a3284 SAY ~[ARAN] Now, wait...~ = ~[ARAN] Blighted hells. I just don't rightly understand women, naught a single one, not one bit.~ IF ~~ THEN EXIT END
 
 IF ~~ a3285
   SAY ~[ARAN] (Aran swims to the bank and pulls his towel free of his clothing, wrapping himself as he comes out of the water. In a few quick strides he is beside you, his arms enfolding you in a comfortable embrace. His lips meet yours, warmth contracting with the chilled water droplets that fall about you.)~
   IF ~~ THEN GOTO a4771
 END
 
-IF ~~ a4771
-  SAY ~[ARAN] (You stand there together for a time, the world held at bay.)~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4771 SAY ~[ARAN] (You stand there together for a time, the world held at bay.)~ IF ~~ THEN EXIT END
 
-IF ~~ a4772
+IF ~~ a4772 // pc_c_w aw_c_b
   SAY ~[ARAN] Now, that be a right good idea, but there is not much time to be playin' about. Come to shore, an' let's get back to camp.~
   ++ ~[PC] What is your rush? Are you scared of being alone with me?~ + a4800
   ++ ~[PC] Well, I seem to be removing anything that stands between us. And the water is very nice. And I think it would be very interesting if you were to come and hold me in your arms. Or are you scared of me?~ + a4800
@@ -19780,10 +19756,7 @@ IF ~~ a4773
   ++ ~[PC] You seem to be interested, but you are holding back. Are you scared of being alone with me?~ + a4800
 END
 
-IF ~~ a4790
-  SAY ~[ARAN] Well, that be open to some interpretation, eh? I think I would have naught in th' way o' objection to bein' corrupted, a little.~ 
-  IF ~~ THEN EXIT
-END
+IF ~~ a4790 SAY ~[ARAN] Well, that be open to some interpretation, eh? I think I would have naught in th' way o' objection to bein' corrupted, a little.~  IF ~~ THEN EXIT END
 
 IF ~~ a4791
   SAY ~[ARAN] Oi! Careful! You can harm a lad that way, you know.~
@@ -19793,10 +19766,7 @@ IF ~~ a4791
   ++ ~[PC] Well, time to get back to camp. I suspect you will dream of me tonight, won't you?~ + a4805
 END
 
-IF ~~ a4792
-  SAY ~[ARAN] Well, now, I'd have to check right careful, wouldn't I? An' I do believe that falls into my duties as contracted. But mayhap we want to go someplace a bit warmer, drier, an' mayhap less likely to leave mud an' sand in awkward places, eh?~
-  IF ~~ EXIT
-END
+IF ~~ a4792 SAY ~[ARAN] Well, now, I'd have to check right careful, wouldn't I? An' I do believe that falls into my duties as contracted. But mayhap we want to go someplace a bit warmer, drier, an' mayhap less likely to leave mud an' sand in awkward places, eh?~ IF ~~ EXIT END
 
 IF ~~ a4793
   SAY ~[ARAN] Now, this be right fine. Mayhap you want to move somewhere more comfortable, an' commence some serious negotiations?~
@@ -19819,38 +19789,15 @@ IF ~~ a4795
   ++ ~[PC] I... I agree. But I intend to follow up on this train of thought later on. Though I have this feeling you will not let me forget I was interested...~ + a4805
   ++ ~[PC] My body, my needs, my rules. Are you denying me what I want?~ + a4802
   ++ ~[PC] Well, time to get back to camp. I suspect you will dream of me tonight, won't you?~ + a4805
-  ++ ~[PC] I live for danger.~ + a4798
+  ++ ~[PC] I live for danger.~ + a4798 // all conditions
 END
 
-IF ~~ a4796
-  SAY ~[ARAN] Well, havin' a big sloppin' pile o' mud on my face does a lad some harm to his dignity, eh?~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4797
-  SAY ~[ARAN] I think I lost both o' those a long, long time ago.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4798
-  SAY ~[ARAN] Now that, that be a truth.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4799
-  SAY ~[ARAN] Somehow, I think my life just got a bit more interestin'' than I wanted it to be, eh?~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4800
-  SAY ~[ARAN] No, not scared. In fact it be downright excitin'. But seein' as I just saw somethin' movin' under this water, I think th' more prudent course o' action is to get th' nine hells out o' there, before we end up wi' yet another battle wi' some rare an' powerful creature which thinks you be th' sweetest meal ever created, eh?~ 
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4801
-  SAY ~[ARAN] True enough, true enough. An' I' think I'd do a mite bit better travelin' about wi' somethin' coverin' me up. Though I did hear tell o' a tribe or two o' berserkers what fight naked. Somehow, th' thought o' that be more appealin' than the reality, I expect.~ 
-  IF ~~ THEN EXIT
-END
+IF ~~ a4796 SAY ~[ARAN] Well, havin' a big sloppin' pile o' mud on my face does a lad some harm to his dignity, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4797 SAY ~[ARAN] I think I lost both o' those a long, long time ago.~ IF ~~ THEN EXIT END
+IF ~~ a4798 SAY ~[ARAN] Now that, that be a truth.~ IF ~~ THEN EXIT END
+IF ~~ a4799 SAY ~[ARAN] Somehow, I think my life just got a bit more interestin'' than I wanted it to be, eh?~ IF ~~ THEN EXIT END
+IF ~~ a4800 SAY ~[ARAN] No, not scared. In fact it be downright excitin'. But seein' as I just saw somethin' movin' under this water, I think th' more prudent course o' action is to get th' nine hells out o' there, before we end up wi' yet another battle wi' some rare an' powerful creature which thinks you be th' sweetest meal ever created, eh?~  IF ~~ THEN EXIT END
+IF ~~ a4801 SAY ~[ARAN] True enough, true enough. An' I' think I'd do a mite bit better travelin' about wi' somethin' coverin' me up. Though I did hear tell o' a tribe or two o' berserkers what fight naked. Somehow, th' thought o' that be more appealin' than the reality, I expect.~  IF ~~ THEN EXIT END
 
 IF ~~ a4802
   SAY ~[ARAN] Now, do I have naught in' th' way o' a say in this matter?~ 
@@ -19869,15 +19816,8 @@ IF ~~ a4803
   ++ ~[PC] Trust me. You do not want to find out what the penalty phase entails. Some things are just too hideous to contemplate.~ + a4804
 END
 
-IF ~~ a4804
-  SAY ~[ARAN] An' here I thought mayhap this would turn out like some o' th' wild romantic wanton sex what happens in bard's tales. Then again, I am not sure havin' fun in th' mud an' rocks an' such be actually romantic. More like painful an' itchy, eh?~ 
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4805
-  SAY ~[ARAN] You know me so well, you do.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4804 SAY ~[ARAN] An' here I thought mayhap this would turn out like some o' th' wild romantic wanton sex what happens in bard's tales. Then again, I am not sure havin' fun in th' mud an' rocks an' such be actually romantic. More like painful an' itchy, eh?~  IF ~~ THEN EXIT END
+IF ~~ a4805 SAY ~[ARAN] You know me so well, you do.~ IF ~~ THEN EXIT END
 
 IF ~~ a4806
   SAY ~[ARAN] Now, that rightly depends on how angry you get, eh? When you start to get angry, there be a litle extra sparkle in your eyes, an' your lower lip does this thing where...~
@@ -20004,17 +19944,14 @@ IF ~~ a4714
   ++ ~[PC] (Frown slightly and shake your head as you stand up and brush yourself off.)~ + a4715  
 END
 
-IF ~~  a4715
-  SAY ~[ARAN] Mayhap I'd better get back to camp an' get some dry things for th' both o' us. Don't look now, but you have one solid smear o' mud, right th'... well... in a very conspicuous place, eh?~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4715 SAY ~[ARAN] Mayhap I'd better get back to camp an' get some dry things for th' both o' us. Don't look now, but you have one solid smear o' mud, right th'... well... in a very conspicuous place, eh?~ IF ~~ THEN EXIT END
 
 /* swim together */
-IF ~~ a4737
+IF ~~ a4737 // pc_c_w aw_c_w
   SAY ~[ARAN] Are you goin' to be swimmin' wi' all those clothes on, or do you think you might want to shed a few?~
   ++ ~[PC] Oh, I think I could dispense with a few things. Like this old thing... and this... and this...~ + a4739
   ++ ~[PC] Don't be rude. I am fine swimming as I am.~ + a4740
-  ++ ~[PC] Oh, I think I have the strength to swim while keeping this on. I can see you like to share the sight of your body to any passing stranger.~ + a4741
+  ++ ~[PC] Oh, I think I have the strength to swim while keeping this on. You may like to share the sight of your body to any passing stranger, but I have a little thing called modesty.~ + a4741
   ++ ~[PC] (Shyly duck your head and shed your clothes slowly, turning halfway away from him.)~ + a4742
   ++ ~[PC] (Shake your head quickly, and swim out away from him.)~ + a4743
   ++ ~[PC] I think that quick dip was enough for me. I need to get out and get dried off.~ + a4769
@@ -20126,17 +20063,10 @@ IF ~~ a4762
   ++ ~[PC] (Frown at him, swimming away.)~ + a4769 
 END
 
-IF ~~  a4763
-  SAY ~[ARAN] Well, if I could make a career out o' flirtin' wi' you, I'd sign on right quick. But right now, I needs be gettin' th' kinks out o' my muscles. I be headed for that section over there, right quick. Catch me if you can!~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4763 SAY ~[ARAN] Well, if I could make a career out o' flirtin' wi' you, I'd sign on right quick. But right now, I needs be gettin' th' kinks out o' my muscles. I be headed for that section over there, right quick. Catch me if you can!~ IF ~~ THEN EXIT END
+IF ~~ a4764 SAY ~[ARAN] Aye. I can do that. An' then we'd best get back to camp. I hear th' lady what be in charge o' this adventure be a right harsh taskmistress, an' I want naught in th' way o' trouble from her.~ IF ~~ THEN EXIT END
 
-IF ~~  a4764
-  SAY ~[ARAN] Aye. I can do that. An' then we'd best get back to camp. I hear th' lady what be in charge o' this adventure be a right harsh taskmistress, an' I want naught in th' way o' trouble from her.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~  a4765
+IF ~~ a4765
   SAY ~[ARAN] Now that feel right good, it do. An' I would return th' gesture, as I somehow think it were wanted...~
   IF ~RandomNum(3,1)~ THEN GOTO a4766
   IF ~RandomNum(3,2)~ THEN GOTO a4767
@@ -20153,15 +20083,8 @@ IF ~~ a4767
   IF ~~ THEN GOTO a4769
 END
 
-IF ~~ a4768
-  SAY ~[ARAN] Unfortunately, it looks like our swim be over. I think th' wildlife be investigatin' up on th' bank, an' I for one want naught in th' way o'creatures nibblin' on my gear!~
-  IF ~~ THEN EXIT
-END
-
-IF ~~  a4769
-  SAY ~[ARAN] Mayhap we just swim for a bit longer, then, an' rest. It seems like th' worries are crowdin' up in your head. We'll wash 'em out, eh?~
-  IF ~~ THEN EXIT
-END
+IF ~~ a4768 SAY ~[ARAN] Unfortunately, it looks like our swim be over. I think th' wildlife be investigatin' up on th' bank, an' I for one want naught in th' way o'creatures nibblin' on my gear!~ IF ~~ THEN EXIT END
+IF ~~ a4769 SAY ~[ARAN] Mayhap we just swim for a bit longer, then, an' rest. It seems like th' worries are crowdin' up in your head. We'll wash 'em out, eh?~ IF ~~ THEN EXIT END
 
 
 /* PID for SoA - LAST IN WEIGHT */
@@ -21009,65 +20932,18 @@ IF ~~ a2960
   ++ ~[PC] Well, that was a bit of useless trivia I will forget as fast as I can.~ + a2977
 END
 
-IF ~~ a2961
-  SAY ~[ARAN] Flirt, aye. Sleep wi', no. Besides, she can handle herself just fine.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2962
-  SAY ~[ARAN] Aye, she might just. Orrin has much less sense o' humor than she does, though. He sees her as both a surrogate daughter an' a definite draw for business. Some say he thinks o' her as a prize jewel, to be shown off but never, ever touched. I never tried, on account o' people who cross Orrin sometimes end up takin' long journeys. You know... th' kind where your head travels to Neverwinter, your arms to Calimport, your eyes to Waterdeep, your heart to Silverymoon...~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2963
-  SAY ~[ARAN] That she does. I knew her when her mother was alive. Blighted shame about that. Another reason not to have a family when you be on campaigns. Orrin took her in an' started trainin' her up several years ago. Last time I saw her, th' sharp tongue was th' same, but she were not much larger than a halflin'. Spritely little girl, too.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2964
-  SAY ~[ARAN] No need. Teldra has had th' rovin' eye, some say, but you have to be somethin' right special. She is one o' th' youngest recruiters out there, but she don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2965
-  SAY ~[ARAN] Hey, now, I didn't mean naught in th' way o' harm. Teldra an' I have had our moments, but they were decidedly non-romantic. She is one o' th' youngest recruiters out there, but she don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2966
-  SAY ~[ARAN] I come recommended right highly. Besides, beggars can't be choosers, eh? I be Guild, fair and square.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2967
-  SAY ~[ARAN] Now, that be right kind o' you to... HEY! Wait a mite bit. I think you be insultin' me, there!~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2968
-  SAY ~[ARAN] Teldra? She don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client. You would have to get some serious work done for her before she would even crack a smile at th' suggestion.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2975
-  SAY ~[ARAN] Well I be right glad to share it, then.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2976
-  SAY ~[ARAN] True enough, true enough. Decent sort, for an innkeeper.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2977
-  SAY ~[ARAN] Well, you asked.~
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2978
-  SAY ~[ARAN] I think he has had some setbacks. I done tried to get a mite bit o' credit, an' he shut me down cold. You could try, but I think he done invested overmuch in th' Maztican Expeditions, an' most o' his coin be tied up in sellswords who are out fightin'. He'll be flush when they come back. Or not.~
-  IF ~~ THEN EXIT
-END
+IF ~~ a2961 SAY ~[ARAN] Flirt, aye. Sleep wi', no. Besides, she can handle herself just fine.~ IF ~~ THEN EXIT END
+IF ~~ a2962 SAY ~[ARAN] Aye, she might just. Orrin has much less sense o' humor than she does, though. He sees her as both a surrogate daughter an' a definite draw for business. Some say he thinks o' her as a prize jewel, to be shown off but never, ever touched. I never tried, on account o' people who cross Orrin sometimes end up takin' long journeys. You know... th' kind where your head travels to Neverwinter, your arms to Calimport, your eyes to Waterdeep, your heart to Silverymoon...~ IF ~~ THEN EXIT END
+IF ~~ a2963 SAY ~[ARAN] That she does. I knew her when her mother was alive. Blighted shame about that. Another reason not to have a family when you be on campaigns. Orrin took her in an' started trainin' her up several years ago. Last time I saw her, th' sharp tongue was th' same, but she were not much larger than a halflin'. Spritely little girl, too.~ IF ~~ THEN EXIT END
+IF ~~ a2964 SAY ~[ARAN] No need. Teldra has had th' rovin' eye, some say, but you have to be somethin' right special. She is one o' th' youngest recruiters out there, but she don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client.~ IF ~~ THEN EXIT END
+IF ~~ a2965 SAY ~[ARAN] Hey, now, I didn't mean naught in th' way o' harm. Teldra an' I have had our moments, but they were decidedly non-romantic. She is one o' th' youngest recruiters out there, but she don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client.~ IF ~~ THEN EXIT END
+IF ~~ a2966 SAY ~[ARAN] I come recommended right highly. Besides, beggars can't be choosers, eh? I be Guild, fair and square.~ IF ~~ THEN EXIT END
+IF ~~ a2967 SAY ~[ARAN] Now, that be right kind o' you to... HEY! Wait a mite bit. I think you be insultin' me, there!~ IF ~~ THEN EXIT END
+IF ~~ a2968 SAY ~[ARAN] Teldra? She don't rightly mix business wi' pleasure. Th' only time I done seen her involved, it were wi' a very successful client. You would have to get some serious work done for her before she would even crack a smile at th' suggestion.~ IF ~~ THEN EXIT END
+IF ~~ a2975 SAY ~[ARAN] Well I be right glad to share it, then.~ IF ~~ THEN EXIT END
+IF ~~ a2976 SAY ~[ARAN] True enough, true enough. Decent sort, for an innkeeper.~ IF ~~ THEN EXIT END
+IF ~~ a2977 SAY ~[ARAN] Well, you asked.~ IF ~~ THEN EXIT END
+IF ~~ a2978 SAY ~[ARAN] I think he has had some setbacks. I done tried to get a mite bit o' credit, an' he shut me down cold. You could try, but I think he done invested overmuch in th' Maztican Expeditions, an' most o' his coin be tied up in sellswords who are out fightin'. He'll be flush when they come back. Or not.~ IF ~~ THEN EXIT END
 
 /* APOLOGY: PC approaches ARAN while TIMERNOTEXPIRED - PC is seeking him out for an apology, either given or rec'd */
 /* Aran Is Mad PID Responses  (4 random) */
@@ -22650,7 +22526,6 @@ IF ~~ a4889 SAY ~[ARAN] (His arm loops around your waist, giving you a quick squ
 IF ~~ a4890 SAY ~[ARAN] Hey, that tickles, it do! Not that I mind, eh?~ IF ~~ THEN EXIT END
 IF ~~ a4891 SAY ~[ARAN] (His returning glance starts at your ankles, and moves ever slowly up every inch of your form, until it reaches your face. His smile promises everything.)~ IF ~~ THEN EXIT END
 IF ~~ a4892 SAY ~[ARAN] I have no worries about that look, m'lady, but just beware... what be good for th' goose, be good for th' gander!~ IF ~~ THEN EXIT END
-
 IF ~~ a1800 SAY ~[ARAN] Well, I like you on account o' when my hand goes right... there, you make a little sound in th' back ' th' throat. An' when I kiss you right... here, you make a little groan what makes parts o' me stand at attention right quick. An' when I move against you like... this... I think th' rest o' this conversation might be better off carried out in a bedroll, on account o' it be hard to show you. No pun intended, o' course.~ IF ~~ THEN EXIT END
 IF ~~ a1078 SAY ~[ARAN] Well, first things first... th' Cowled wizards are not supposed to be the ones in charge o' this land, but think about it - anyone who can do magic here legally has a huge tactical advantage. So first thing I'd bloody well do is go pay th' bastards in th' Government District for a license, or we will be pickin' up shattered, paralyzed, stony fragments of our arses off the cobblestones soon enough.~ IF ~~ THEN EXIT END
 IF ~~ a1079 SAY ~[ARAN] Well, workin' wi' the likes o' Aran Linvail is kind o' like dancin' wi' a porcupine. You are goin' to get stuck, no matter how gentle you proceed. So I say we need to find us some alternatives, or else dance right carefully.~ IF ~~ THEN EXIT END
@@ -23833,7 +23708,7 @@ IF ~~ a2934
   ++ ~[PC] (Glare at the men.)~ + a2935
   ++ ~[PC] You are so right. But don't bother with taking trophies. Just dispose of these vermin.~ EXTERN C-MALCER a2941
   ++ ~[PC] Aran... deal with these idiots, please, before I do something I might regret.~ EXTERN C-MALCER a2941
-  ++ ~[PC] No, no, no. I'll do it myself. You kill everything too slowly. I want this to be a long, drawn out process.~ + a2935
+  ++ ~[PC] No, no, no. I'll do it myself. You kill everything too quickly. I want this to be a long, drawn out process.~ + a2935
 END
 
 IF ~~ a2935
@@ -23897,6 +23772,7 @@ IF ~~ a1584 SAY ~[ARAN] I don't. Should I? I mean, he be right fine lookin', but
 IF ~~ a1585 SAY ~[ARAN] Not th' sharpest o' tacks, though he claims a good bit o' intelligence. What sort o' idiot wanders Toril in th' company o' a mixed group o' adventurers, followin' some young adventurin' Bhaalspawn to certain death an' destruction, probably by a slow an' painful means? I mean, really, come on. Any smart adventurer would say "Screw this. I'm hittin' th' nearest tavern, an' not leavin' until someone comes up wi' an adventure what don't pit me against opponents what be gods".~ IF ~~ THEN EXIT END
 IF ~~ a1586 SAY ~[ARAN] I think if I hadn't met you, naught but boredom an' ennui would o' happened for me. Well, sometimes I think that. Other times, I'm just starin' at you an' imaginin' you naked.~ IF ~~ THEN EXIT END
 IF ~~ a1587 SAY ~[ARAN] I think if I hadn't met you, naught but boredom an' ennui would o' happened for me. Don't rightly know whether to thank you for that, or tell you to stick Helm's Fist up your arse an' give it a good twist.~ IF ~~ THEN EXIT END
+
 /* Drunk1 Dialog Replies */
 
 IF ~~ a1513
@@ -29001,15 +28877,14 @@ CHAIN C-ARANJ a2936
 == C-OSKUT ~[C-OSKUT] Yeah, yeah... I know you are all edjumucated and such. I think he will go down in the first few swings.~
 END
 IF ~NumInPartyLT(4)~ THEN DO ~SetGlobal("c-arbarfight","LOCALS",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
-IF ~NumInPartyGT(3)~ THEN EXTERN C-OSKUT notgood_time
+IF ~NumInPartyGT(3)~ THEN EXTERN C-OSKUT a4979
 
-CHAIN C-OSKUT notgood_time
+CHAIN C-OSKUT a4979
 ~[C-OSKUT] Hey... Malcer. They look familiar. Hold up, this might be a bad idea.~
 == C-MALCER ~[C-MALCER] I hear lots of hot air, but they don't look that tough, even with the backup.~
 == C-ARANJ ~[ARAN] Now, <CHARNAME>, you go on back in an' have a nice cup o' tea, mayhap do your nails. I think these boys have had just a mite bit too much to drink.~
 == C-OSKUT ~[C-OSKUT] I am serious. I recognize her, now. They say she has a collection of drow ears and dragon's teeth, and that she personally smashed the Iron Throne.~
-END
-IF ~~ THEN EXTERN C-MALCER a2941
+EXTERN C-MALCER a2941
 
 /* Mediation Fails, And They Insult PC */
 CHAIN C-MALCER a2939
@@ -29041,11 +28916,15 @@ END
 ++ ~[PC] And here I thought I was ending the evening entertaining three men in my bedchamber. I guess I have some free time, and absolutely nothing to do...~ EXTERN C-ARANJ a2945
 ++ ~[PC] Hey, that was fun. Did you see the way the little one turned all white in the face? Come on, let's follow them!~ EXTERN C-ARANJ a2945
 
-
 /* patron 1 */
 APPEND ~C-AW01P1~
+/*  Area C-AW01 Tavern Patron - Gerald the Strong - L10 male fighter c-aw01p1.cre */
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2381 
+  SAY ~[C-AW01P1] Mercenary life is great. Lots of pointless fighting for fools who see you as expendable, lots of bad food and worse ale, and no real pension plan to speak of.~
+  = ~[C-AW01P1] So if you are here to recruit me, sod off. Or, buy me a drink, and then sod off.~ 
+  IF ~~ THEN DO ~SetGlobal("c-ar01gerald","C-AR01",1)~ EXIT 
+END
 
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2381 SAY ~[C-AW01P1] Mercenary life is great. Lots of pointless fighting for fools who see you as expendable, lots of bad food and worse ale, and no real pension plan to speak of. So if you are here to recruit me, sod off. Or, buy me a drink, and then sod off.~ IF ~~ THEN EXIT END
 IF ~RandomNum(5,1)~ THEN BEGIN a2382 SAY #15312 /* Ahhh, go away, will you? */ IF ~~ THEN EXIT END
 IF ~RandomNum(5,2)~ THEN BEGIN a2383 SAY #15314 /* (hic)  Oooh, I hate that.  (hic)  (hic) */ IF ~~ THEN EXIT END
 IF ~RandomNum(5,3)~ THEN BEGIN a2384 SAY #15315 /* (bleh!)  Oh, well, there go your shoes.  Seeker's pardon. */ IF ~~ THEN EXIT END
@@ -29056,8 +28935,8 @@ END
 
 /* patron 2 */
 APPEND ~C-AW01P2~
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2386 SAY ~[C-AW01P2] They say the prophecies of Aulando are coming true. I've heard that before, though. Usually right before they raise taxes.~ IF ~~ THEN EXIT END
+/* Area C-AW01 Tavern Patron Cheris c-aw01p2.cre */
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2386 SAY ~[C-AW01P2] They say the prophecies of Aulando are coming true. I've heard that before, though. Usually right before they raise taxes.~ IF ~~ THEN DO ~SetGlobal("c-ar01cheris","C-AR01",1)~ EXIT END
 IF ~RandomNum(5,1)~ THEN BEGIN a2387 SAY ~[C-AW01P2] You know, I need to stop drinking. I am beginning to smell like a drunken Luscan. Wait... I am a drunken Luscan. Never mind.~ IF ~~ THEN EXIT END
 IF ~RandomNum(5,2)~ THEN BEGIN a2388 SAY ~[C-AW01P2] So, are you buying the next round? I make a good friend. Good listener, you know. As long as the drinks keep coming, I keep listening.~ IF ~~ THEN EXIT END
 IF ~RandomNum(5,3)~ THEN BEGIN a2389 SAY ~[C-AW01P2] Some folks say Firewine is the best. Me, I don't care what is pouring, as long as there is plenty of it and it is cheap.~ IF ~~ THEN EXIT END
@@ -29068,8 +28947,8 @@ END
 
 /* patron 3 */
 APPEND ~C-AW01P3~
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2391 SAY ~[C-AW01P3] I'm contracted out for the next three tendays, so if you are looking for another sword, I'm not available.~ IF ~~ THEN EXIT END
+/* Area C-AW01 Tavern Patron Kavain - L10 male priest c-aw01p3.cre */
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2391 SAY ~[C-AW01P3] I'm contracted out for the next three tendays, so if you are looking for another sword, I'm not available.~ IF ~~ THEN DO ~SetGlobal("c-ar01kavain","C-AR01",1)~ EXIT END
 IF ~RandomNum(5,1)~ THEN BEGIN a2392 SAY ~[C-AW01P3] Don't sign anything from the Flaming Fist without checking the contract carefully. I ended up fighting some Chill up Nashkel way for half a year, and had to pay for my own food. Lousy recruiters... always looking to take advantage.~ IF ~~ THEN EXIT END
 IF ~RandomNum(5,2)~ THEN BEGIN a2393 SAY ~[C-AW01P3] They say the mercenary life is exciting and special. I suppose that might be true for some. I'd characterize it more like hard and painful.~ IF ~~ THEN EXIT END
 IF ~RandomNum(5,3)~ THEN BEGIN a2394 SAY ~[C-AW01P3] I work hard, play hard, and drink hard. Then again, my play and my work involve drinking, so I could just say "bottom's up".~ IF ~~ THEN EXIT END
@@ -29079,9 +28958,8 @@ IF ~RandomNum(5,5)~ THEN BEGIN a2921 SAY ~[C-AW01P3] Look, I am almost drunk eno
 END
 
 /* barker */
-
 APPEND C-AW01EP
-
+/* Area C-AW01 Entry Point - Manson - Bouncer on Promenade c-aw01ep.cre */
 IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2420 SAY ~[C-AW01EP] You look like the right sort. If you want, The Broken Sword is that door north of you. No civilians allowed, unless they are hiring. This place is only for people who live and die on the sharp edge.~ IF ~~ THEN EXIT END
 IF ~RandomNum(9,1)~ THEN BEGIN a2419 SAY ~[C-AW01EP] If you are looking for sellswords, step on in. Daggerford isn't the only hiring place, you know.~ IF ~~ THEN EXIT END
 
@@ -29190,106 +29068,205 @@ IF ~~ THEN EXIT
 
 /* server 1 - Erika*/
 APPEND C-AW01W1
-
-IF ~NumTimesTalkedTo(0)~ THEN BEGIN a2396
-  SAY ~[C-AW01W1] Now, I do have a good selection of drinks, but I am only one person. If you order your drinks at the bar, I will be happy to bring them to you.~
-  IF ~OR(3) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN GOTO a2404
-END
-
-IF ~RandomNum(5,1)~ THEN BEGIN a2397
+/* Area C-AW01 Tavern Waitress - Erika c-aw01w1.cre */
+IF ~Global("c-ar01erikatalk","GLOBAL",0)~ THEN BEGIN a2397
   SAY ~[C-AW01W1] Orders for food or drink are at the bar, <SIRMAAM>. If you are looking for anything else, it is not on the menu.~
   /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN GOTO a2403
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN GOTO a2404
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN GOTO a2405
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN GOTO a2406
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN GOTO a2407
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN GOTO a2423
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN GOTO a2424
-  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters  are used up */
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,1)~ THEN GOTO a2402
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,2)~ THEN GOTO a2425
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,3)~ THEN GOTO a2403
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,4)~ THEN GOTO a2426
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,5)~ THEN GOTO a2427
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",1)~ GOTO a4976
 END
 
-IF ~RandomNum(5,2)~ THEN BEGIN a2398
+IF ~Global("c-ar01erikatalk","GLOBAL",1)~ THEN BEGIN a2398
   SAY ~[C-AW01W1] I will get you as much water as you like, as quickly as I can.~
   /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN GOTO a2403
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN GOTO a2404
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN GOTO a2405
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN GOTO a2406
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN GOTO a2407
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN GOTO a2423
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN GOTO a2424
-  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters  are used up */
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,1)~ THEN GOTO a2402
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,2)~ THEN GOTO a2425
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,3)~ THEN GOTO a2403
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,4)~ THEN GOTO a2426
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,5)~ THEN GOTO a2427
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",2)~ GOTO a4976
 END
 
-IF ~RandomNum(5,3)~ THEN BEGIN a2399
+IF ~Global("c-ar01erikatalk","GLOBAL",2)~ THEN BEGIN a2399
   SAY ~[C-AW01W1] Did you order the D'Tranion and Meat Pie? I have two orders, both getting cold, and not a patron to claim it. But if you want to pay for it...~
   /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN GOTO a2403
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN GOTO a2404
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN GOTO a2405
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN GOTO a2406
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN GOTO a2407
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN GOTO a2423
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN GOTO a2424
-  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters  are used up */
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,1)~ THEN GOTO a2402
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,2)~ THEN GOTO a2425
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,3)~ THEN GOTO a2403
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,4)~ THEN GOTO a2426
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,5)~ THEN GOTO a2427
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",3)~ GOTO a4976
 END
 
-IF ~RandomNum(5,4)~ THEN BEGIN a2400
+IF ~Global("c-ar01erikatalk","GLOBAL",3)~ THEN BEGIN a2400
   SAY ~[C-AW01W1] We have a good selection of food and spirits. We can even help you with some money changing, if you want...~
   /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN GOTO a2403
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN GOTO a2404
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN GOTO a2405
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN GOTO a2406
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN GOTO a2407
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN GOTO a2423
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN GOTO a2424
-  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters  are used up */
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,1)~ THEN GOTO a2402
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,2)~ THEN GOTO a2425
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,3)~ THEN GOTO a2403
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,4)~ THEN GOTO a2426
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,5)~ THEN GOTO a2427
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",4)~ GOTO a4976
 END
 
-IF ~RandomNum(5,5)~ THEN BEGIN a2401
+IF ~Global("c-ar01erikatalk","GLOBAL",4)~ THEN BEGIN a2401
   SAY ~[C-AW01W1] You do realize I am just a barmaid, not a Lorekeeper of Oghma, right?~
   /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN GOTO a2402
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN GOTO a2403
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN GOTO a2404
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN GOTO a2405
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN GOTO a2406
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN GOTO a2407
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN GOTO a2423
-  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN GOTO a2424
-  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters  are used up */
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,1)~ THEN GOTO a2402
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,2)~ THEN GOTO a2425
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,3)~ THEN GOTO a2403
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,4)~ THEN GOTO a2426
-  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(5,5)~ THEN GOTO a2427
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",5)~ GOTO a4976
+END
+
+IF ~Global("c-ar01erikatalk","GLOBAL",5)~ THEN BEGIN a2396
+  SAY ~[C-AW01W1] Drinks are ordered at the bar, and then if you sit at a table I can bring them to you.~
+  /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",6)~ GOTO a4976
+END
+
+IF ~Global("c-ar01erikatalk","GLOBAL",6)~ THEN BEGIN a4977
+  SAY ~[C-AW01W1] Well, you look like you could use a drink. Just see Orrin, at the bar.~
+  /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",7)~ GOTO a4976
+END
+
+IF ~Global("c-ar01erikatalk","GLOBAL",7)~ THEN BEGIN a4978
+  SAY ~[C-AW01W1] I know I have told you this before. I really can't take drink orders, only Orrin can.~
+  /* panel of "aran flirts" - random #s 7 or 8 mean no flirt (skip  without advancing global) */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2402
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2403
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2404
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2405
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2406
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2407
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2423
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalLT("c-awbarflirt","C-AR01",9) RandomNum(8,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2424
+  /* panel of " no aran flirts" - kicks in if Aran is not valid, or if all 8 banters are used up */
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,1)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2402
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,2)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2425
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,3)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2403
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,4)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2426
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,5)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a2427
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,6)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4971
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,7)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4972
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,8)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4973
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,9)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4974
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,10)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4975
+  IF ~OR(4) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-awbarflirt","C-AR01",8) RandomNum(11,11)~ THEN DO ~SetGlobal("c-ar01erikatalk","GLOBAL",0)~ GOTO a4976
 END
 
 IF ~~ a2402 SAY ~[C-AW01W1] Orrin will be happy to help you, I am sure.~ IF ~~ THEN EXIT END
@@ -29297,6 +29274,12 @@ IF ~~ a2403 SAY ~[C-AW01W1] Orrin handles everything but the cleanup.~ IF ~~ THE
 IF ~~ a2425 SAY ~[C-AW01W1] Orrin is over at the bar.~ IF ~~ THEN EXIT END
 IF ~~ a2426 SAY ~[C-AW01W1] I do not handle any coin. You will have to deal with Orrin.~ IF ~~ THEN EXIT END
 IF ~~ a2427 SAY ~[C-AW01W1] I need to get this order out right away, so go talk to Orrin.~ IF ~~ THEN EXIT END
+IF ~~ a4971 SAY ~[C-AW01W1] Oooh, sorry... that drink spilled, just a little. I hope it doesn't stain anything.~ IF ~~ THEN EXIT END
+IF ~~ a4972 SAY ~[C-AW01W1] Was this order yours? Wait... no, it was for Teldra, in tha back room. Sorry.~ IF ~~ THEN EXIT END
+IF ~~ a4973 SAY ~[C-AW01W1] Table four, did you order the Rashemi Firewine?~ IF ~~ THEN EXIT END
+IF ~~ a4974 SAY ~[C-AW01W1] Yes, I know these clothes are too nice. I plan on going out after my shift.~ IF ~~ THEN EXIT END
+IF ~~ a4975 SAY ~[C-AW01W1] Hey! Who pinched me! Shame on you! I'm a nice girl, and way too young for the likes of you!~ IF ~~ THEN EXIT END
+IF ~~ a4976 SAY ~[C-AW01W1] I only speak two languages, and table two is speaking some strange thing I have never heard. Does anyone know what Zyzzlup is, and if we have it?~ IF ~~ THEN EXIT END
 
 IF ~~ a2404
   SAY ~[C-AW01W1] Keep your feet off of the table, please, Master Whitehand. This is a respectable establishment.~
@@ -29426,7 +29409,7 @@ CHAIN C-ARANJ a2436
 /* references; Gold & Glory, Tim Beech, TSR FR Supplements */
 /* Tavern Keeper Orrin */
 APPEND ~C-AW01TK~
-
+/* Area C-AW01 Tavern Keeper - Orrin c-aw01tk.cre */
 IF ~OR(2) PartyHasItem("c-awpkg1") PartyHasItem("c-awpkg2") OR(3) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN BEGIN a2437
   SAY ~[C-AW01TK] Any word on that work you were doing for me? I do hope you can come with Aran in tow. He is Guild, and I cannot pay off a contract without him present and in good health. Teldra holds most of my business hostage. One bad word from her, and my entire clientele will go elsewhere.~
   ++ ~[PC] Not yet. I wish to peruse your selection of services, if I may.~ + a2472
@@ -29441,6 +29424,9 @@ IF ~OR(2) PartyHasItem("c-awpkg1") PartyHasItem("c-awpkg2") OR(3) !InParty("c-ar
   + ~PartyHasItem("c-awpkg1")~ + ~[PC] I have the package. I just have not delivered it yet.~ + a2471
   + ~PartyHasItem("c-awpkg2")~ + ~[PC] I have delivered the package, but I think I want to renegotiate my fee before giving you the receipt...~ + a2470
   ++ ~[PC] What do you think - does this outfit match my hair?~ + a2468
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
 END
 
 IF ~PartyHasItem("c-awpkg1") InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN BEGIN a2522
@@ -29456,6 +29442,9 @@ IF ~PartyHasItem("c-awpkg1") InParty("c-aran") InMyArea("c-aran") !StateCheck("c
   ++ ~[PC] Is there anything of interest that you might tell me? Interesting goings on, or work available?~ + a2453
   ++ ~[PC] I have the package. I just have not delivered it yet.~ + a2471
   ++ ~[PC] What do you think - does this outfit match my hair?~ + a2468
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
 END
 
 IF ~PartyHasItem("c-awpkg2") Global("c-awtavkquest","C-AR01",1) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN BEGIN a2438
@@ -29466,10 +29455,13 @@ IF ~PartyHasItem("c-awpkg2") Global("c-awtavkquest","C-AR01",1) InParty("c-aran"
   ++ ~[PC] Look, next time, handle your own parcel delivery. That was a large chunk of my life I just wasted playing fetch-and-carry.~ EXTERN C-ARANJ a2495
   ++ ~[PC] Hey, even Aran can't mess up a simple delivery.~ + a2493
   ++ ~[PC] What package?~ + a2494
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
 END
 
-IF ~OR(2) Global("c-arancontract","GLOBAL",9) Global("c-arancontract","GLOBAL",17)~ THEN BEGIN a2439
-  SAY ~[C-AW01TK] Good tidings to you, <CHARNAME>. A word of concern... Teldra does not take kindly to those who break her contracts. She provides most of my business, as well as a good deal of protection. Stay away from her, please. Actually, the same applies to my humble personage.~
+IF ~ReputationLT(Player1,7)~ THEN BEGIN a2439
+  SAY ~[C-AW01TK] Tidings to you, <CHARNAME>. A word of concern... Your reputation is less than stellar. Teldra does not take kindly to those who break her contracts. She provides most of my business, as well as a good deal of protection. Stay away from her, please. Actually, the same applies to my humble personage.~
   + ~GlobalLT("c-awtavkquest","C-AR01",2)~ + ~[PC] I wish to peruse your selection of services, if I may.~ + a2508
   + ~GlobalLT("c-awtavkquest","C-AR01",2)~ + ~[PC] I am doing business with you, not Teldra. Just show me what you have.~ + a2508
   + ~Global("c-awtavkquest","C-AR01",2)~ + ~[PC] I am doing business with you, not Teldra. Just show me what you have.~ + a2507
@@ -29492,6 +29484,9 @@ IF ~True()~ THEN BEGIN a2440
   + ~RandomNum(5,3)~ + ~[PC] I wish nothing at this time.~ + a2476
   + ~RandomNum(5,4)~ + ~[PC] I wish nothing at this time.~ + a2477
   + ~RandomNum(5,5)~ + ~[PC] I wish nothing at this time.~ + a2478
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
   + ~Global("c-pctavern","C-AR01",1)~ + ~[PC] You seem to have a wide variety of people here. Is that man over there really a Mindulgulph?~ + a2457
   + ~Global("c-pctavern","C-AR01",3)~ + ~[PC] So, what is the deal with you and Teldra? Are you two... you know?~ + a2459
   + ~Global("c-pctavern","C-AR01",5)~ + ~[PC] Is Erika attached? She seems to be unreceptive to flirting.~ + a2461
@@ -29530,6 +29525,9 @@ IF ~~ a2442
   + ~RandomNum(5,5)~ + ~[PC] Not right now.~ + a2478
   ++ ~[PC] Oh, come on. You have not seen anything of interest around here at all?~ + a2469
   ++ ~[PC] Yes. You seem like a very interesting man. Perhaps we could share a drink, and get to know each other.~ + a2452
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
   ++ ~[PC] I would not mind a few free drinks, and perhaps some entertainment.~ + a2464
 END
 
@@ -29621,6 +29619,9 @@ IF ~~ a2447
   ++ ~[PC] Just show me your usual wares, then.~ + a2472
   ++ ~[PC] Has anyone ever told you that you have a supercilious attitude?~ + a2455
   ++ ~[PC] Hmmm. You seem like a very interesting man. Perhaps we could share a drink, and get to know each other. Perhaps work out an alternate arrangement...~ + a2452
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
   + ~RandomNum(5,1)~ + ~[PC] Actually, I think I will be moving along.~ + a2474
   + ~RandomNum(5,2)~ + ~[PC] Actually, I think I will be moving along.~ + a2475
   + ~RandomNum(5,3)~ + ~[PC] Actually, I think I will be moving along.~ + a2476
@@ -29720,6 +29721,9 @@ IF ~~ a2451
   + ~GlobalGT("c-pctavern","C-AR01",6)~ + ~[PC] How is life?~ +  a2463
   + ~OR(2) PartyGoldGT(3000) Global("c-awtavkquest","C-AR01",2)~ + ~[PC] I have heard that a wealthy, well connected person might peruse some of the more... interesting wares?~ + a2473
   + ~GlobalLT("c-awtavkquest","C-AR01",2) PartyGoldLT(3001)~ + ~[PC] I have heard that a wealthy, well connected person might peruse some of the more... interesting wares?~ + a2443
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cherisor","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cherisor","C-AR01",1)~ + a4982
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavainor","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavainor","C-AR01",1)~ + a4982
   + ~RandomNum(5,1)~ + ~[PC] I wish nothing at this time.~ + a2474
   + ~RandomNum(5,2)~ + ~[PC] I wish nothing at this time.~ + a2475
   + ~RandomNum(5,3)~ + ~[PC] I wish nothing at this time.~ + a2476
@@ -29808,43 +29812,25 @@ IF ~~ a2462
 END
 
 /* repeatedly plays at GT(7) to signal that there is no more small-talk */
-IF ~~ a2463
-  SAY ~[C-AW01TK] I have it on good authority that it beats the alternative.~
-  IF ~~ THEN GOTO a2445
-END
-
+IF ~~ a2463 SAY ~[C-AW01TK] I have it on good authority that it beats the alternative.~ IF ~~ THEN GOTO a2445 END
 IF ~~ a2464 SAY ~[C-AW01TK] I am sure the Copper Coronet could serve you better than I, then. Do come back when you wish fair services rendered for fair prices.~ IF ~~ THEN EXIT END
+IF ~~ a4982 SAY ~[C-AW01TK] Well, if it were your business, I might be persuaded to answer. Since it is not, I will politely decline to respond.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2466 SAY ~[C-AW01TK] No, I think that is much more friendly teasing than romance. She has seen enough of Aran's... peculiarities.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2467 SAY ~[C-AW01TK] Undoubtedly.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2468 SAY ~[C-AW01TK] I usually refrain from commenting on a customer's choice in fashion attire. Surprisingly, many mercenaries get a little touchy about the strangest things.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2469 SAY ~[C-AW01TK] I believe that is what I indicated.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2470 SAY ~[C-AW01TK] I do not think negotiation is appropriate at this time. Aran is Guild. That means payoff or any discussion of that comes when he is healthy, present, and part of your team. That is all part of the contract.~ IF ~~ THEN EXIT END
+IF ~~ a2471 SAY ~[C-AW01TK] Well I do hope you can finish that soon. I need that matter resolved.~ IF ~~ THEN GOTO a2445 END
+IF ~~ a2474 SAY ~[C-AW01TK] Consider my establishment your home away from home, with the exception of the small matter of remaining fully clothed in all public areas at all times.~ IF ~~ THEN EXIT END
+IF ~~ a2475 SAY ~[C-AW01TK] Enjoy your time here, then. Just remember, I have decent drinks, reasonable prices, and a low tolerance for shenanigans.~ IF ~~ THEN EXIT END
+IF ~~ a2476 SAY ~[C-AW01TK] I wish you well, then. Be sure to think of The Broken Sword after your next successful campaign. We handle parties as large as a standard platoon.~ IF ~~ THEN EXIT END
+IF ~~ a2477 SAY ~[C-AW01TK] Good <DAYNIGHT> to you, then. If you happen on jewels and gems in your travels, please remember our services.~ IF ~~ THEN EXIT END
+IF ~~ a2478 SAY ~[C-AW01TK] A Pearl to you, and to your return visit.~ IF ~~ THEN EXIT END
+IF ~~ a2479 SAY ~[C-AW01TK] You heard incorrectly. Rather, to be more precise, you received incorrect information. Whether or not your hearing is impaired is something that I cannot judge.~ IF ~~ THEN GOTO a2445 END
 
 /* Living Forgotten Realms stuff - not canon, but fun! */
 IF ~~ a2465
   SAY ~[ARAN] I am afraid that if I granted such requests to every famous or notorious personage ever to grace my establishment, I would no longer be in business. Rustybeard Orcwall himself could not sway me, even if he brought half of the Vilhon Company with him.~
-  IF ~~ THEN GOTO a2445
-END
-
-IF ~~ a2466
-  SAY ~[ARAN] No, I think that is much more friendly teasing than romance. She has seen enough of Aran's... peculiarities.~
-  IF ~~ THEN GOTO a2445
-END
-
-IF ~~ a2467
-  SAY ~[ARAN] Undoubtedly.~
-  IF ~~ THEN GOTO a2445
-END
-
-IF ~~ a2468
-  SAY ~[ARAN] I usually refrain from commenting on a customer's choice in fashion attire. Surprisingly, many mercenaries get a little touchy about the strangest things.~
-  IF ~~ THEN GOTO a2445
-END
-
-IF ~~ a2469
-  SAY ~[C-AW01TK] I believe that is what I indicated.~
-  IF ~~ THEN GOTO a2445
-END
-
-IF ~~ a2470 SAY ~[C-AW01TK] I do not think negotiation is appropriate at this time. Aran is Guild. That means payoff or any discussion of that comes when he is healthy, present, and part of your team. That is all part of the contract.~ IF ~~ THEN EXIT END
-
-IF ~~ a2471
-  SAY ~[C-AW01TK] Well I do hope you can finish that soon. I need that matter resolved.~
   IF ~~ THEN GOTO a2445
 END
 
@@ -29856,17 +29842,6 @@ END
 IF ~~ a2473
   SAY ~[C-AW01TK] Certainly, <SIRMAAM>. But if the Watch comes calling on me, rest assured the Guild will not take kindly to your interference.~
   IF ~~ THEN DO ~StartStore("c-awtav2",LastTalkedToBy())~ EXIT
-END
-
-IF ~~ a2474 SAY ~[C-AW01TK] Consider my establishment your home away from home, with the exception of the small matter of remaining fully clothed in all public areas at all times.~ IF ~~ THEN EXIT END
-IF ~~ a2475 SAY ~[C-AW01TK] Enjoy your time here, then. Just remember, I have decent drinks, reasonable prices, and a low tolerance for shenanigans.~ IF ~~ THEN EXIT END
-IF ~~ a2476 SAY ~[C-AW01TK] I wish you well, then. Be sure to think of The Broken Sword after your next successful campaign. We handle parties as large as a standard platoon.~ IF ~~ THEN EXIT END
-IF ~~ a2477 SAY ~[C-AW01TK] Good <DAYNIGHT> to you, then. If you happen on jewels and gems in your travels, please remember our services.~ IF ~~ THEN EXIT END
-IF ~~ a2478 SAY ~[C-AW01TK] A Pearl to you, and to your return visit.~ IF ~~ THEN EXIT END
-
-IF ~~ a2479
-  SAY ~[ARAN] You heard incorrectly. Rather, to be more precise, you received incorrect information. Whether or not your hearing is impaired is something that I cannot judge.~
-  IF ~~ THEN GOTO a2445
 END
 
 /* JOINING INTRODUCTION AND LETTER GIVEN */
@@ -30016,7 +29991,7 @@ END
 IF ~~ a2508
   SAY ~[C-AW01TK] Ah, I  must not have made myself clear. Teldra contracts mercenaries. Therefore, mercenaries come here, and they spend coin. They trade for gems and jewelry. They talk to each other, and they drink. If Teldra goes away, most of my business follows her.~
   = ~[C-AW01TK] In addition, I have a reputation to maintain. I serve Blue Boar and Blacktalon equally, under the bond that says 'a contract is a contract - nothing personal'. That only works when everyone knows there is a single golden rule... don't break a contract.~
-  = ~[C-AW01TK] So, I am afraid that you have become persona non grata here. I am sure you can find another establishment to frequent. Do have a nice day.~
+  = ~[C-AW01TK] Rumor has it that you break contracts. So, I am afraid that you have become persona non grata here. I am sure you can find another establishment to frequent. Do have a nice day.~
   IF ~~ THEN EXIT
 END
 
@@ -30035,10 +30010,10 @@ CHAIN C-ARANJ a2495
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] There must be more noble tasks than acting as couriers for minor townspeople. It would be well for the opportunity to present itself immediately.~
 == YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN ~[YOSHIMO] One takes what opportunities are presented.~
 == JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN ~[JAN] Speaking of opportunities, have I told you about my Uncle Roderick? He was a messenger for years. He finally retired when the cost of Raise Dead spells outweighed his yearly profits.~
-== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Didn't it seem simpler, easier in flavor?  There were less entanglements, far less chaos.  We aren't always exploring some dank, ruined place.~ /* bviconi.d 75 with one word change */
+== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Doesn't it seem simpler, easier in flavor?  There were less entanglements, far less chaos.  We aren't always exploring some dank, ruined place.~ /* bviconi.d 75 with one word change */
 == HAERDAJ IF ~InParty("HaerDalis") InMyArea("HaerDalis") !StateCheck("HaerDalis",CD_STATE_NOTVALID)~ THEN ~[HAERDALIS] Ah, but true adventures require the flight of fancy, the excitement of risk.~
 == NALIAJ IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN ~[NALIA] Look at it this way: perhaps it is just the gods' way of telling you that there are far more people who need assistance in minor ways than in major ways, yes?~ /* naliaj 133 rewrite */
-== C-AW01TK ~[C-AW01TK] You do seem to be a talkative lot. No matter. I appreciate your attention to this small matter.~
+== C-AW01TK ~[C-AW01TK] You do seem to be a talkative lot. But I appreciate your attention to this small matter.~
 END
 IF ~~ THEN EXTERN C-AW01TK a2493
 
@@ -30153,9 +30128,780 @@ CHAIN ~C-AW01TK~ a2506
 END
 IF ~~ THEN EXTERN C-AW01TK a2445
 
+
+/* Area C-AW01 Tavern - Teldra the Recruiter c-aw01tl.cre */
+
+APPEND ~C-AW01TL~
+
+/* Initial Starting State: */
+IF ~Global("c-teldratalk","GLOBAL",0)~ THEN BEGIN a4970
+  SAY ~[C-AW01TL] Greetings and a pearl you. If you come to me seeking sellswords and mercenaries looking for contracts both long and short, you have come to the right place.~
+  /* ask for work */
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4894
+  /* flirt */
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4897 
+   /* talk shop */
+  ++ ~[PC] Is business good right now?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893  
+  /* flirt */  
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4954
+  /* Aran Conditions */
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  /* Aran Conditions : in party, joined, ok 1 */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",0)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4989
+  /* Aran Conditions : in party, joined, ok 2 */ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-AW01TL a4987
+  /* Aran Conditions : in party, joined, ok 3 and greater*/ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4986
+  /* Aran Conditions : in party, joined, not dead but not ok */
+  IF ~InParty("c-aran") InMyArea("c-aran") OR(2) HPPercentLT("c-aran",30) StateCheck("c-aran",CD_STATE_NOTVALID) !StateCheck("c-aran",STATE_DEAD) !StateCheck("c-aran",STATE_ACID_DEATH) !StateCheck("c-aran",STATE_FLAME_DEATH) !StateCheck("c-aran",STATE_EXPLODING_DEATH) !StateCheck("c-aran",STATE_STONE_DEATH) !StateCheck("c-aran",STATE_FROZEN_DEATH)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ GOTO a4965
+END
+/* Additional Teldra Meetings : 1 */
+IF ~Global("c-teldratalk","GLOBAL",1)~ THEN BEGIN a4909
+  SAY ~[C-AW01TL] Greetings and a pearl you. Sellswords, mercenaries, contracts both long and short. You have come to the right place.~
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4897
+  ++ ~[PC] Is business good right now?~  DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4893
+  ++ ~[PC] Do you know of any weapons trainers, or jewelers?~  DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4959
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4988
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~  DO ~SetGlobal("c-teldratalk","GLOBAL",2)~ + a4954
+  /* Aran Conditions */
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  /* Aran Conditions : in party, joined, ok 1 */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",0)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4989
+  /* Aran Conditions : in party, joined, ok 2 */ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-AW01TL a4987
+  /* Aran Conditions : in party, joined, ok 3 and greater*/ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4986
+  /* Aran Conditions : in party, joined, not dead but not ok */
+  IF ~InParty("c-aran") InMyArea("c-aran") OR(2) HPPercentLT("c-aran",30) StateCheck("c-aran",CD_STATE_NOTVALID) !StateCheck("c-aran",STATE_DEAD) !StateCheck("c-aran",STATE_ACID_DEATH) !StateCheck("c-aran",STATE_FLAME_DEATH) !StateCheck("c-aran",STATE_EXPLODING_DEATH) !StateCheck("c-aran",STATE_STONE_DEATH) !StateCheck("c-aran",STATE_FROZEN_DEATH)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ GOTO a4965
+END
+/* Additional Teldra Meetings : 2 */
+IF ~Global("c-teldratalk","GLOBAL",2)~ THEN BEGIN a4910
+  SAY ~[C-AW01TL] Back again, I see. Greetings and a pearl you. Mercenary contracts long and short, that's my business. Might be yours, too, if anything becomes available.~
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4897
+  ++ ~[PC] Is business good right now?~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~  + a4893
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ DO ~SetGlobal("c-teldratalk","GLOBAL",3)~ + a4954
+  /* Aran Conditions */
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  /* Aran Conditions : in party, joined, ok 1 */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",0)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4989
+  /* Aran Conditions : in party, joined, ok 2 */ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-AW01TL a4987
+  /* Aran Conditions : in party, joined, ok 3 and greater*/ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4986
+  /* Aran Conditions : in party, joined, not dead but not ok */
+  IF ~InParty("c-aran") InMyArea("c-aran") OR(2) HPPercentLT("c-aran",30) StateCheck("c-aran",CD_STATE_NOTVALID) !StateCheck("c-aran",STATE_DEAD) !StateCheck("c-aran",STATE_ACID_DEATH) !StateCheck("c-aran",STATE_FLAME_DEATH) !StateCheck("c-aran",STATE_EXPLODING_DEATH) !StateCheck("c-aran",STATE_STONE_DEATH) !StateCheck("c-aran",STATE_FROZEN_DEATH)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ GOTO a4965
+END
+/* Additional Teldra Meetings : 3 */
+IF ~GlobalGT("c-teldratalk","GLOBAL",2)~ THEN BEGIN a4911 /* stays here */
+  SAY ~[C-AW01TL] Greetings and a pearl you, <CHARNAME>. What brings you back to me?~
+  ++ ~[PC] Actually, I was looking to be employed. Is there any short term work available?~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4897
+  ++ ~[PC] Is business good right now?~ + a4893
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  /* Aran Conditions */
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  /* Aran Conditions : in party, joined, ok 1 */
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",0)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4989
+  /* Aran Conditions : in party, joined, ok 2 */ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-AW01TL a4987
+  /* Aran Conditions : in party, joined, ok 3 and greater*/ 
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) GlobalGT("c-aranteldratalk","LOCALS",1)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ EXTERN C-ARANJ a4986
+  /* Aran Conditions : in party, joined, not dead but not ok */
+  IF ~InParty("c-aran") InMyArea("c-aran") OR(2) HPPercentLT("c-aran",30) StateCheck("c-aran",CD_STATE_NOTVALID) !StateCheck("c-aran",STATE_DEAD) !StateCheck("c-aran",STATE_ACID_DEATH) !StateCheck("c-aran",STATE_FLAME_DEATH) !StateCheck("c-aran",STATE_EXPLODING_DEATH) !StateCheck("c-aran",STATE_STONE_DEATH) !StateCheck("c-aran",STATE_FROZEN_DEATH)~ THEN DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ GOTO a4965
+END
+
+IF ~~ a4988
+  SAY ~[C-AW01TL] Well, you sure know how to compliment a woman.~
+  ++ ~[PC] Are you related to the barmaid?~ + a4901
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ + a4894
+  ++ ~[PC] It has been nice meeting you, but we should get going.~ + a4927
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  ++ ~[PC] Perhaps I will be back to talk to you later.~ + a4927
+END
+
+IF ~~ a4900
+  SAY ~[C-AW01TL] So, what can I do for you?~
+  ++ ~[PC] Are you related to the barmaid?~ + a4901
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ + a4894
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  ++ ~[PC] It has been nice meeting you, but we should get going.~ + a4927
+  ++ ~[PC] Perhaps I will be back to talk to you later.~ + a4927
+  + ~Gender(Player1,MALE)~ + ~[PC] You know, you are dazzlingly beautiful, in a raw, rough kind of way.~ + a4903
+  + ~Gender(Player1,FEMALE)~ + ~[PC] You know, you are dazzlingly beautiful, in a raw, rough kind of way.~ + a4904
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+END
+
+IF ~~ a4901
+  SAY ~[C-AW01TL] Erika? No. No relation. Why?~
+  ++ ~[PC] You both seem to have very similar reactions to Aran, here.~ + a4905 
+  + ~Gender(Player1,MALE)~ + ~[PC] You are both dazzlingly beautiful.~ + a4903
+  + ~Gender(Player1,FEMALE)~ + ~[PC] You are both dazzlingly beautiful.~ + a4904
+  ++ ~[PC] I was wondering if she had any suitors. She seems very interesting.~ + a4902
+  ++ ~[PC] Usually when I wander around talking to random strangers, they have some important piece of news to impart. But all she does is take my drink order.~ + a4955
+  ++ ~[PC] Oh, no reason.~ + a4933
+END
+
+IF ~~ a4905
+  SAY ~[C-AW01TL] Proactive self defense. Aran here thinks "hey, will you pass me that drink" means "I want you to make sweet love to me". To be fair, most mercenaries around here think that, male or female.~
+  ++ ~[PC] So he is unreliable?~ + a4906 
+  ++ ~[PC] Is business good right now?~ + a4893
+  ++ ~[PC] I think I will pass. I don't need that kind of person around making life difficult.~ + a4932
+  ++ ~[PC] Interesting information. I will see you later.~ + a4927
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+END
+
+IF ~~ a4894
+  SAY ~[C-AW01TL] Unfortunately, not right now. The last group headed out Dalewards, headed for reinforcement of some campaign or other. Tethyr just closed out recruitment for some squabbles they are having, The 'Fist has their hands full re-training what they already have for guard duty and caravan protection, and you don't look like the Mindgulph's type. Blue Boars... perhaps.~
+  = ~[C-AW01TL] I will keep my ears open for anything available, though. Odd things pop up from time to time, and it might be beneficial to both of us to have some problems solved on a lesser contract. Not every problem needs swatting with a batillion of armed regulars.~ 
+  IF ~~ THEN GOTO a4933
+END
+
+IF ~~ a4893 
+  SAY ~[C-AW01TL] Not really. There are few recruitable people left to enroll. Every day we get more mercenary work, what with uprisings and rebellions and needed protection. Whole armies are on the march, and no one is completely sure why.~
+  = ~[C-AW01TL] But in spite of all the action, there is little available save shipping mercenaries off on three or four year contracts. No real short-term or secialized work available, really.~
+  ++ ~[PC] But I will make a great candidate for any work the regular companies can't or won't take, right?~ + a4922
+  ++ ~[PC] At least you have a full purse now.~ + a4923
+  ++ ~[PC] I thought there could never be too much business.~ + a4924
+  ++ ~[PC] Well, perhaps you will have to turn to prostitution. I could be your trial run, if you wanted.~ + a4925
+  ++ ~[PC] Well, it is good talking to you. I will see you later.~ + a4927
+  ++ ~[PC] Do you mind if I ask you a question?~ + a4913
+END
+
+IF ~~ a4912
+  SAY ~[C-AW01TL] I do have a good prospect for you, if you need someone who can fight and keep an accounting ledger.~
+  ++ ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~ + a4894
+  + ~InParty("j#kelsey") InMyArea("j#kelsey") !StateCheck("j#kelsey",CD_STATE_NOTVALID)~ + ~[PC] I already have Kelsey here to keep the books, and while he can't fight very well he is a strong enough spellcaster.~ + a4921
+  + ~RandomNum(3,3)~ + ~[PC] You actually have something of use to me? I just thought you were another barmaid.~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] You actually have something of use to me? I just thought you were another barmaid.~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] You actually have something of use to me? I just thought you were another barmaid.~ + a4897
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] I might be interested in hiring some help. Where can I find this sellsword?~ + a4895
+  ++ ~[PC] What can you tell me about this sellsword?~ + a4914
+END
+
+IF ~~ a4895
+  SAY ~[C-AW01TL] Take a look in the room just north of here. North is that way, by the way. Well, unless one of those Cowled Wizards has been hassling someone over a 'deviant act', as they call it, and messed up the compass directions again. I guess Amn feels madmen are the best keepers of madmen.~
+  ++ ~[PC] Hey, what do you think about him? You know, the sellsword?~ + a4914
+  ++ ~[PC] Thanks for the help.~ + a4913
+  ++ ~[PC] What do you know about the Cowled Wizards?~ + a4926
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+END
+
+IF ~~ a4913
+  SAY ~[C-AW01TL] I live to serve. Well, actually, that is complete bullshit, but you look like a person who might be either a client or an employee someday, so it never hurts to put a little shine on, right?~
+  ++ ~[PC] Employee, I bet. You look like the kind of impossibly attractive lady who lives to send people like me out to get all bruised and battered while you sit there drinking and counting your profit.~ + a4931
+  ++ ~[PC] Client, I bet. You look like the kind of dashing stranger I would hire to clean my boots.~ + a4931
+  ++ ~[PC] What do you think about Aran Whitehand? Just the high points.~ + a4914
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  ++ ~[PC] Sure. I will be moving along, now.~ + a4930
+END
+
+IF ~~ a4914
+  SAY ~[C-AW01TL] Good man in a fight. Can read and write in more than one language, though he speaks common like the most illiterate trades-way bastard I ever did hear. Translates, too. Done service in at least two mercenary companies; I think he grew up in a trading family. Thinks he's a gift from the gods to every woman, and tries to prove it. He has a room here, second door on your left.~
+  ++ ~[PC] Is he reliable?~ + a4915
+  + ~Gender(Player1,FEMALE)~ + ~[PC] Is he cute?~ + a4916
+  ++ ~[PC] Where was his room again?~ + a4917
+  + ~Gender(Player1,MALE)~ + ~[PC] Is he cute?~ + a4877
+  ++ ~[PC] How much do I owe you for the information?~ + a4919
+  + ~Gender(Player1,FEMALE) OR(3) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~ + ~...gift from the gods to every woman... Should I be worried?~ EXTERN C-AW01TL a4908
+  + ~Gender(Player1,FEMALE) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ + ~...gift from the gods to every woman... Should I be worried?~ EXTERN C-AW01TL a4908
+  ++ ~[PC] He doesn't sound useful enough to me. Anyone else? Or anything I can do to get some coin?~ + a4894
+END
+
+IF ~~ a4920
+  SAY ~[C-AW01TL] Any other questions?~
+  ++ ~[PC] Seriously... is he reliable?~ + a4915
+  + ~Gender(Player1,FEMALE)~ + ~[PC] Is he cute?~ + a4916
+  ++ ~[PC] Where was his room again?~ + a4917
+  + ~Gender(Player1,MALE)~ + ~[PC] Is he cute?~ + a4877
+  ++ ~[PC] How much do I owe you for the information?~ + a4919
+  ++ ~[PC] He doesn't sound useful enough to me. Anyone else? Or anything I can do to get some coin?~ + a4894
+  ++ ~[PC] No more questions.~ + a4930
+  + ~Gender(Player1,FEMALE) OR(3) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~ + ~His interest in women... Should I be worried?~ EXTERN C-AW01TL a4908
+  + ~Gender(Player1,FEMALE) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ + ~His interest in women... Should I be worried?~ EXTERN C-AW01TL a4908
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+END
+
+IF ~~ a4921
+  SAY ~[C-AW01TL] Well, regardless, Aran can be a good man in a fight. He can read and write in more than one language, though he speaks common like the most illiterate trades-way bastard I ever did hear. Translates, too. Done service in at least two mercenary companies; I think he grew up in a trading family. Thinks he's a gift from the gods to every woman, and tries to prove it. He has a room here, second door on your left.~
+  ++ ~[PC] Is he reliable?~ + a4915
+  + ~Gender(Player1,FEMALE)~ + ~[PC] Is he cute?~ + a4916
+  ++ ~[PC] Where was his room again?~ + a4917
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  + ~Gender(Player1,MALE)~ + ~[PC] Is he cute?~ + a4877
+  ++ ~[PC] How much do I owe you for the information?~ + a4919
+  ++ ~[PC] He doesn't sound useful enough to me. Anyone else? Or anything I can do to get some coin?~ + a4894
+  + ~RandomNum(4,1)~ + ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~ + a4966
+  + ~RandomNum(4,2)~ + ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~ + a4967
+  + ~RandomNum(4,3)~ + ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~ + a4968
+  + ~RandomNum(4,4)~ + ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~ + a4969
+END
+
+IF ~~ a4966
+  SAY ~[C-AW01TL] You obviously missed some of his better works. His treatise on campaign tactics and the influence of gibberling horde movement on supply rerouting was quite interesting. Not bad, for a civilian writer.~
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4967
+  SAY ~[C-AW01TL] The only difference between mercenary work and cleaning out stables is where the dung lands. Most of the time, stable work is removing it after the fact. Mercenarie, on the other hand, tend to be more directly under the source as it is expelled.~
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4968
+  SAY ~[C-AW01TL] Why, do you make a habit of watching kobolds mate? I guess everyone has a guilty pleasure.~
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4969
+  SAY ~[C-AW01TL] I worked for a Masked Lord once. Fair contract. Good man. Good pay. So back off on them, or we might have some problmes, you and I.~
+  IF ~~ THEN GOTO a4963
+END
+
+IF ~~ a4933
+  SAY ~[C-AW01TL] Now, is there anything else, or can I get back to fleecing these poor lads out of all their gambling money?~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  ++ ~[PC] Is there any short term work available at all? I am short on funds, and looking for pretty much any work, as long as it pays.~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4897
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  ++ ~[PC] Fleece, fleece, by all means. I didn't mean to interrupt your work.~ + a4934
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4960
+  SAY ~[C-AW01TL] Anything else? The cards are getting lonely, and I need to comfort them. Not that they are running in my favor right now, but it is the principle of the thing.~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  ++ ~[PC] Is there any short term work available at all? I am short on funds, and looking for pretty much any work, as long as it pays.~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4897
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] I have some skill at cards. And even some skill at table-talk.~ + a4934
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4961
+  SAY ~[C-AW01TL] Anything else you want to ask? Not much in this hand, anyways, I think. Ah, well... it is only a few coins.~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  ++ ~[PC] Is there any short term work available at all? I am short on funds, and looking for pretty much any work, as long as it pays.~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you run the gambling here, as well?~ + a4897
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4988
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] I have some skill at cards. And even some skill at table-talk.~ + a4934
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4962
+  SAY ~[C-AW01TL] Anything else I can do for you?~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  ++ ~[PC] Not really. But you look like you are setting up for a card game, and I would not mind sitting in.~ + a4934
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4963
+  SAY ~[C-AW01TL] Any more questions?~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] Not really. But I would not mind hearing about what is going on around Amn.~ + a4981
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4964
+  SAY ~[C-AW01TL] So, anything else?~
+  ++ ~[PC] Nothing else. I think I'll come back later.~ + a4930
+  /* Aran Conditions : not in party, not joined, no orrin talk */
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) !Global("c-aranorintalk","C-AR01",1)~ + ~[PC] Do you have any good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4889 
+  /* Aran Conditions : not in party, not joined, orrin talk */ 
+  + ~!InParty("c-aran") !Global("c-aranjoined","GLOBAL",1) Global("c-aranorintalk","C-AR01",1)~ + ~[PC] I might be interested in hiring some help. Orrin, the tavernkeeper over there, mentioned a sellsword who can read and write. Where can I find him?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4895
+  /* Aran Conditions : not in party, joined, dead */
+  + ~!InParty("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4956
+  /* Aran Conditions : not in party, joined, not dead (sent back to inn) */
+  + ~!InParty("c-aran") InMyArea("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Have you talked to Aran lately? I am looking for him.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4957
+  /* Aran Conditions : in party, joined, dead */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1) OR(6) StateCheck("c-aran",STATE_DEAD) StateCheck("c-aran",STATE_ACID_DEATH) StateCheck("c-aran",STATE_FLAME_DEATH) StateCheck("c-aran",STATE_EXPLODING_DEATH) StateCheck("c-aran",STATE_STONE_DEATH) StateCheck("c-aran",STATE_FROZEN_DEATH)~ + ~[PC] I am afraid Aran is no longer among the living.~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4958
+  /* Aran Conditions : in party, joined, generic (ok or not ok) */
+  + ~InPartyAllowDead("c-aran") Global("c-aranjoined","GLOBAL",1)~ + ~[PC] Do you have any other good prospects to assist an adventuring party?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4893 
+  + ~OR(2) Global("c-aranorintalk","C-AR01",1) InPartyAllowDead("c-aran")~ + ~[PC] What do you think of this Aran Whitehand I have heard so much about?~ DO ~SetGlobal("c-teldratalk","GLOBAL",1)~ + a4914 
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4988
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] I was hoping we could share stories, trade information. I think we could both benefit.~ + a4981
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4934
+  SAY ~[C-AW01TL] Well, pull up a chair and rest a bit. No work right now, so there is little enough to do, and I bet you could tell me some great stories... that would distract them from their cards.~
+  ++ ~[PC] Aren't you going to take my drink order?~ + a4935
+  ++ ~[PC] I was admiring the curve of your breastplate. I especially like the lack of appropriate protection from slashing attacks.~ + a4937
+  /* could be interested in a fling if Charisma < 15 and reputation < 12 */
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Look, Teldra, I don't know how to say this... but perhaps we could go some place more private?~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Look, Teldra, I don't know how to say this... but perhaps we could go some place more private?~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Look, Teldra, I don't know how to say this... but perhaps we could go some place more private?~ + a4954  
+  ++ ~[PC] I am the conquering all-powerful <CHARNAME>. I have come for your soul.~ + a4935
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  + ~RandomNum(4,4)~ + ~[PC] I will talk if you buy the drinks.~ + a4949
+  + ~RandomNum(4,3)~ + ~[PC] I will talk if you buy the drinks.~ + a4950
+  + ~RandomNum(4,2)~ + ~[PC] I will talk if you buy the drinks.~ + a4951
+  + ~RandomNum(4,1)~ + ~[PC] I will talk if you buy the drinks.~ + a4952
+  + ~RandomNum(4,1)~ + ~[PC] I was hoping you could swap a story or two.~ + a4949
+  + ~RandomNum(4,2)~ + ~[PC] I was hoping you could swap a story or two.~ + a4950
+  + ~RandomNum(4,3)~ + ~[PC] I was hoping you could swap a story or two.~ + a4951
+  + ~RandomNum(4,4)~ + ~[PC] I was hoping you could swap a story or two.~ + a4952
+  ++ ~[PC] On second thought, some other time, perhaps.~ + a4927
+END
+
+IF ~~ a4981
+  SAY ~[C-AW01TL] Well, then, pull up a chair.~
+  ++ ~[PC] Aren't you going to take my drink order?~ + a4935
+  ++ ~[PC] I was admiring the curve of your breastplate. I especially like the lack of appropriate protection from slashing attacks.~ + a4937
+  /* could be interested in a fling if Charisma < 15 and reputation < 12 */
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Look, Teldra... perhaps we could go some place more private?~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Look, Teldra... perhaps we could go some place more private?~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Look, Teldra... perhaps we could go some place more private?~ + a4954  
+  ++ ~[PC] I am the conquering all-powerful <CHARNAME>. I have come for your soul.~ + a4935
+  + ~RandomNum(4,4)~ + ~[PC] I will talk if you buy the drinks.~ + a4949
+  + ~RandomNum(4,3)~ + ~[PC] I will talk if you buy the drinks.~ + a4950
+  + ~RandomNum(4,2)~ + ~[PC] I will talk if you buy the drinks.~ + a4951
+  + ~RandomNum(4,1)~ + ~[PC] I will talk if you buy the drinks.~ + a4952
+  + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldtl","C-AR01",0)~ + ~[PC] Can I ask you what is going on with that big burly fighter in the back rooms?~ DO ~SetGlobal("c-ar01geraldtl","C-AR01",1)~ + a4983 
+  + ~Global("c-ar01cheris","C-AR01",1) Global("c-ar01cheristl","C-AR01",0)~ + ~[PC] Can I ask you about that half-orc woman in the back rooms?~ DO ~SetGlobal("c-ar01cheristl","C-AR01",1)~ + a4984
+  + ~Global("c-ar01kavain","C-AR01",1) Global("c-ar01kavaintl","C-AR01",0)~ + ~[PC] Can I ask you what that cleric is doing in the back rooms?~ DO ~SetGlobal("c-ar01kavaintl","C-AR01",1)~ + a4985
+  + ~RandomNum(4,1)~ + ~[PC] I was hoping you could swap a story or two. Who goes first?~ + a4949
+  + ~RandomNum(4,2)~ + ~[PC] I was hoping you could swap a story or two. Who goes first?~ + a4950
+  + ~RandomNum(4,3)~ + ~[PC] I was hoping you could swap a story or two. Who goes first?~ + a4951
+  + ~RandomNum(4,4)~ + ~[PC] I was hoping you could swap a story or two. Who goes first?~ + a4952
+  ++ ~[PC] On second thought, some other time, perhaps.~ + a4927
+END
+
+IF ~~ a4935
+  SAY ~[C-AW01TL] Heh. What soul? I sold that for a few iron tradebars when I was fourteen. Now, if you have come for my body, buy me a drink and we will get down to some serious negotiation.~
+  ++ ~[PC] Soul, body... whatever gets you into my bed, or me into yours.~ + a4940
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Why, Teldra, I am surprised. Why so forward?~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Why, Teldra, I am surprised. Why so forward?~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Why, Teldra, I am surprised. Why so forward?~ + a4954 
+  ++ ~[PC] You said there is no work at all? I really need some coin.~ + a4936  
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Soul, body... whatever gets you into my bed, or me into yours.~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Soul, body... whatever gets you into my bed, or me into yours.~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Soul, body... whatever gets you into my bed, or me into yours.~ + a4954  
+  ++ ~[PC] I... I am not comfortable with this. We should keep things friendly, but not too friendly.~ + a4927
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4936
+  SAY ~[C-AW01TL] Now, what you really need is a good stiff drink, sitting here swapping combat stories, and forgetting your troubles for a time. We all need that.~
+  ++ ~[PC] I don't have the time. There are so many things to do, monsters to slay, opponents to loot... I don't even have time for a drink.~ + a4927
+  ++ ~[PC] Why are you leaning forward like that? I can see right down your cleavage, you know.~ + a4937
+  ++ ~[PC] You may. I don't.~ + a4927
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
+  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4937
+  SAY ~[C-AW01TL] Hey, if you have it, flaunt it, I always say. I can't tell you how many times some poor sod is on the fence about signing on, and all it takes is a judicious leaning forward and a slight wardrobe malfunction, and I have met my quota.~
+  + ~Gender(Player1,FEMALE)~ + ~[PC] You don't have that much to flaunt, you know.~ + a4938
+  + ~Gender(Player1,MALE)~ + ~[PC] You don't have that much to flaunt, you know.~ + a4939
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4954
+  ++ ~[PC] Huh. I heard you were both easy and cheap, but luring poor innocent farmers into becoming fodder for mercenary companies is just a little over the top.~ + a4947
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
+  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4938
+  SAY ~[C-AW01TL] Says you, sister. Besides, it isn't how much you have, it is how much you 'accidentally' show. No one can resists the allure and mystery of the forbidden fruit, whether it is a peach or a melon.~ 
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4954
+  ++ ~[PC] I'll drink to that. Though I will resist your allure, I'm sure.~ + a4945
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
+  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4939
+  SAY ~[C-AW01TL] Says you, boyo. Your eyes keep wandering down that way whether you realize it or not. Besides, it isn't how much you have, it is how much you 'accidentally' show. No one can resists the allure and mystery of the forbidden fruit, whether it is a peach or a melon.~
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4954
+  ++ ~[PC] I'll drink to that. Though I will resist your allure, I'm sure.~ + a4945
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
+  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4940
+  SAY ~[C-AW01TL] Look, I am not easy, and I am not cheap, but I like powerful, effective people. And I look at you, and what is there not to like? So shall we negotiate, or shall we go upstairs and screw like wild rabbits?~
+  ++ ~[PC] I was thinking of leisurely romance, a bottle of wine, the long slow teasing and sultry looks.~ + a4942
+  ++ ~[PC] Wild rabbits it is.~ + a4943
+  ++ ~[PC] I don't have the time right now, but I would love to have this conversation another time.~ + a4945
+  ++ ~[PC] Huh. I heard you were both easy and cheap.~ + a4946
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
+END
+
+IF ~~ a4941
+  SAY ~[C-AW01TL] What can I say. You may have won me over, and when I see what I want, I go for it.~
+  ++ ~[PC] I was thinking of leisurely romance, a bottle of wine, the long slow teasing and sultry looks.~ + a4942
+  ++ ~[PC] Bedding like wild rabbits it is.~ + a4943
+  ++ ~[PC] I don't have the time right now, but I would love to have this conversation later.~ + a4945
+  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
+  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
+END
+
+IF ~~ a4906
+  SAY ~[C-AW01TL] I don't put up with unreliable. Whitehand is reliable, remarkably flexible, and can do the job. You just have to watch him when it comes to fraternization with females, be they mercenaries, townsfolk, waitstaff, geese, ducks, pigs...~ 
+  IF ~OR(3) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN GOTO a4920
+  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ EXTERN C-ARANJ a4907 
+END
+
+IF ~~ a4889 SAY ~[C-AW01TL] You look like you are gathering an adventuring party. I can tell by the slightly haunted look in your eyes, you appearing in a sudden explosion on the Promanade, and all the screaming and yelling that accompanied that particular event.~ IF ~~ THEN GOTO a4912 END
+IF ~~ a4915 SAY ~[C-AW01TL] Reliable? Yes. Predictable? Mostly. Annoying? At times. Useful? Yes.~ IF ~~ THEN GOTO a4920 END
+IF ~~ a4916 SAY ~[C-AW01TL] If you like that sort of thing, sure. A bit rough around the edges, but if you tell him to keep his hands to himself and check in with him from time to time, and you won't have any problems.~ IF ~~ THEN GOTO a4920 END
+IF ~~ a4917 SAY ~[C-AW01TL] Are you sure you are interested in a sellsword? I can recommend a decent healer for your deafness problem, or perhaps removal of the feeblemind spell you seem to be under. Go out the way you came in, turn north, look to your left, and there will be a big brown wooden thing we like to call a "door". You look for the funny brass thing halfway down the left hand side, grab hold of it, and it will make the big brown wooden thing open. He's in there.~ IF ~~ THEN GOTO a4920 END
+IF ~~ a4877 SAY ~[C-AW01TL] If you like that sort of thing, sure. But like I said, he likes the ladies a fair sight better than he should. If you are looking for a little romance on the trail, keep dreaming. That's about all you are going to get to do.~ IF ~~ THEN GOTO a4920 END
+IF ~~ a4919 SAY ~[C-AW01TL] Nothing. He's Fighters Guild, but freelance. Any work he gets from me, I take a percentage from his cut. Any work he gets freelace, he pays his dues, so it is covered. He owes me some money, so getting him employed is in my best interests.~ IF ~~ THEN GOTO a4920 END
+IF ~~ a4929 SAY ~[C-AW01TL] Look, I don't know where you hail from, but around here barmaids don't have scars like these, or equipment like this.~ IF ~~ THEN EXIT END
+IF ~~ a4896 SAY ~[C-AW01TL] The nice thing about looking like this is idiots walk right up within sword range and leer at me, which gives me just enough room to put them out of my misery~ IF ~~ THEN EXIT END
+IF ~~ a4897 SAY ~[C-AW01TL] The swordbelt should have given it away. Or the duelling scar. Or the fact that I am NOT SERVING DRINKS.~ IF ~~ THEN EXIT END
+IF ~~ a4898 SAY ~[C-AW01TL] Keep dreaming. That's about all you are going to get to do.~ IF ~~ THEN EXIT END
+IF ~~ a4899 SAY ~[C-AW01TL] And you are very alluring yourself, in an "I-am-so-desparate-I-will-proposition-anything-that-moves" kind of way. Go tell it to the 'Fist. I hear some of their recruits are so horny they will sleep with Chill.~ IF ~~ THEN EXIT END
+IF ~~ a4954 SAY ~[C-AW01TL] Sure thing. You go find us a nice room, strip naked, and tie yourself to the bedpost. I'll be in just as soon as I can. Oh, wait... I made a promise to myself to avoid sleeping with obnoxious idiots. Sorry.~ IF ~~ THEN EXIT END
+IF ~~ a4922 SAY ~[C-AW01TL] Sure enough. It never rains without a benefit to someone. Lucky you. Except...~ = ~[C-AW01TL] Look. You seem to have pleny going on as it is. My employers are not likey to hire someone who causes trouble. Like being involved with mages blowing the crap out of the Promenade. You pobably should look elsewhere for work.~ IF ~~ THEN EXIT END
+IF ~~ a4923 SAY ~[C-AW01TL] For now, yes. And with all the movement, there will be plenty of accounts to manage and enogh to keep me going for quite some time. But these things are cyclical. Eventually, I am going to be sitting here keeping dozens of out of work mercenaries entertained and occupied, so that they don't tear half of Amn apart out of sheer boredom and cussedness.~ IF ~~ THEN EXIT END
+IF ~~ a4924 SAY ~[C-AW01TL] Supply and demand, m'<PRO_BOYGIRL>, supply and demand. It is great to have strong demand, but when it outstrips supply, I end up on the pointy end of the spear. So far, that last has been only a figure of speech, because I don't subcontract Chill work. Best decicision of my life.~ IF ~~ THEN EXIT END
+IF ~~ a4925 SAY ~[C-AW01TL] Hey, what a great idea. I have an even better one. You bend over, and I'll go find something large and spiky to ram up your rear.~ IF ~~ THEN EXIT END
+IF ~~ a4926 SAY ~[C-AW01TL] Friend, the less you know the better. I know they have a tight grip on magic use, and getting permits from them is worse than trying to get blood from a stone. They don't like me much. The feeling is mutual.~ IF ~~ THEN EXIT END
+IF ~~ a4927 SAY ~[C-AW01TL] Well, suit yourself. I am not planning on going anywhere, so I will keep a spot warm for you.~ IF ~~ THEN EXIT END
+IF ~~ a4930 SAY ~[C-AW01TL] Drop by any time. I will be right here. I might even be sober.~ IF ~~ THEN EXIT END
+IF ~~ a4942 SAY ~[C-AW01TL] You have the wrong woman for that. I favor complete discretion, quick negotiation, a thorough examination of the physical goods, a detailed exploration of skills and sevices, and rapid conclusion of the contract to the mutual pleasure of both parties. Oh, and a no-fault clause... I don't sign up for long term comittments.~ IF ~~ THEN GOTO a4948 END
+IF ~~ a4943 SAY ~[C-AW01TL] Good. I favor complete discretion, quick negotiation, a thorough examination of the physical goods, a detailed exploration of skills and sevices, and rapid conclusion of the contract to the mutual pleasure of both parties. Oh, and a no-fault clause... I don't sign up for long term comittments.~ IF ~~ THEN GOTO a4948 END
+IF ~~ a4944 SAY ~[C-AW01TL] For a brief tumble in the bedchamber? Yes. And now that you are not likely to be a client of mine in the near future, the thought keeps occurring to me. But joining you as an adventurer, no. I have a good position here, and a good life.~ IF ~~ THEN EXIT END
+IF ~~ a4945 SAY ~[C-AW01TL] Fine by me. For the record, though, I favor complete discretion, quick negotiation, a thorough examination of the physical goods, a detailed exploration of skills and sevices, and rapid conclusion of the contract to the mutual pleasure of both parties. Oh, and a no-fault clause... I don't sign up for long term comittments.~ IF ~~ THEN EXIT END
+IF ~~ a4946 SAY ~[C-AW01TL] Well, if you are going to joke about it, forget it. You are cute, but I don't like attitude in the bedroom. Unless it is "yes, please, may I have another?".~ IF ~~ THEN EXIT END
+IF ~~ a4947 SAY ~[C-AW01TL] Well, if you are going to be that way, forget the whole flirting business. You are cute, but I don't like attitude in the bedroom. Unless it is "yes, please, may I have another?".~ IF ~~ THEN EXIT END
+IF ~~ a4949 SAY ~[C-AW01TL] You just sit here, and the first round is on me. I'll tell you about the time I had a contract dispute between the Steels and the Mindgulphs, and had to hire the Blue Boars to keep the peace while we sorted it all out.~ IF ~~ THEN EXIT END
+IF ~~ a4950 SAY ~[C-AW01TL] You just sit here, and the first round is on me. So, tell me... what is it like to be one of the most powerful forces on the face of Toril?~ IF ~~ THEN EXIT END
+IF ~~ a4951 SAY ~[C-AW01TL] You just sit here, and the first round is on me. So, tell me... what do you know about the Harpers?~ IF ~~ THEN EXIT END
+IF ~~ a4952 SAY ~[C-AW01TL] You just sit here, and the first round is on me. So, tell me... is it true that there is a secret entrance to Candlekeep?~ IF ~~ THEN EXIT END
+IF ~~ a4953 SAY ~[C-AW01TL] Me? Joining you as an adventurer? No. I have a good position here, and a good life.~ IF ~~ THEN EXIT END
+IF ~~ a4955 SAY ~[C-AW01TL] She doesn't get out much.~ IF ~~ THEN GOTO a4933 END
+IF ~~ a4931 SAY ~[C-AW01TL] I think I like you, smartass. Come talk to me sometime.~ IF ~~ THEN GOTO a4960 END
+IF ~~ a4932 SAY ~[C-AW01TL] Fine by me.~ IF ~~ THEN GOTO a4961 END
+IF ~~ a4956 SAY ~[C-AW01TL] Occupational hazard. But if you tell me where his body is, I'll pass it on to his family.~ IF ~~ THEN GOTO a4962 END
+IF ~~ a4957 SAY ~[C-AW01TL] He is definitely around here somewhere. He seems to have enough coin to get himself in trouble, but not enough to leave.~ IF ~~ THEN GOTO a4963 END
+IF ~~ a4958 SAY ~[C-AW01TL] Aran sure looks mostly dead, there. He doesn't have revivification insurance, if you are after some coin to get him raised. But I'll donate a few tradebars, if you are taking up a collection.~ IF ~~ THEN DO ~GiveGoldForce(80)~ GOTO a4964 END
+IF ~~ a4983 SAY ~[C-AW01TL] Gerald the Strong? Dom't pay him any attention. He has been upset ever since he found out his last contract badmouthed him to the guild. Aparently he was prone to demonstrating his strenght, and the repair bills were too high. He will be fine, once he sobers up a bit.~ IF ~~ THEN EXIT END
+IF ~~ a4984 SAY ~[C-AW01TL] Cheris Nothar, or Nothrar, or something. Between the tusks and the accent, I never can make out what she is saying. She is a good fighter, though a bit young and prone to outbursts. She is resting up for her next contract. I think it is intelligence work for the Mindgulph. I don't know why they don't subcontract to the Thieve's Guild.~ IF ~~ THEN EXIT END
+IF ~~ a4985 SAY ~[C-AW01TL] Kavain? He is under contract, and not happy about the whole thing. But he has to do the job. I told him it was a bad idea signing up for an employer without checking who they really work for. I hope he can square things with his god, or there will e some serious repercussions.~ IF ~~ THEN EXIT END
+
+IF ~~ a4959
+  SAY ~[C-AW01TL] I know Orrin, the owner of this place, does trading in gems and jewelry. I have heard he even has decent stock if you have lots of coin, or do him a favor or two. But as for weapons trainers, not really. Unless you count Aran.~
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4902 
+  SAY ~[C-AW01TL] I make a decent living coordinating hires for mercenaries, nothing else. If you want a matchmaker, find someone else.~ 
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4903 
+  SAY ~[C-AW01TL] Gods, another one. Look, boyo, you are kind of cute, but business is business. Keep all that sweet talk for the next drunken half-orc female who wanders by. Now, on the subject of business...~ 
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4904 
+  SAY ~[C-AW01TL] Gods, a female Aran. Look, you are kind of cute, and I am very.... flexible, in all the right ways... but business is business. Keep all that sweet talk for the next drunken half-orc who wanders by. Now, on the subject of business...~ 
+  IF ~RandomNum(6,1)~ THEN GOTO a4933
+  IF ~RandomNum(6,2)~ THEN GOTO a4960
+  IF ~RandomNum(6,3)~ THEN GOTO a4961
+  IF ~RandomNum(6,4)~ THEN GOTO a4962
+  IF ~RandomNum(6,5)~ THEN GOTO a4963
+  IF ~RandomNum(6,6)~ THEN GOTO a4964  
+END
+
+IF ~~ a4965
+  SAY ~[C-AW01TL] Aran sure looks worse for the wear, there. I hope that heals up nicely. Hells, I hope it heals, period.~
+  = ~[C-AW01TL] So, what brings you back to me?~
+  ++ ~[PC] Actually, I was looking to be employed. Is there any short term work available?~ + a4894
+  + ~RandomNum(3,3)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4929
+  + ~RandomNum(3,2)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4896
+  + ~RandomNum(3,1)~ + ~[PC] I just thought you were the barmaid. Do you work here?~ + a4897
+  ++ ~[PC] Is business good right now?~ + a4893
+  + ~RandomNum(3,3)~ + ~[PC] I was admiring the curve of your breastplate.~ + a4898
+  + ~RandomNum(3,2)~ + ~[PC] You are very pretty, in a "cross-me-and-I-will-kill-you" kind of way.~ + a4899
+  + ~RandomNum(3,1)~ + ~[PC] I was thinking perhaps you might be up for some fun, clothing optional.~ + a4954
+  ++ ~[PC] I was hoping we could share stories, trade information. I think we could both benefit.~ + a4981
+  ++ ~[PC] I think I am done here.~ + a4930
+END
+
+IF ~~ a4948
+  SAY ~[C-AW01TL] That being said, I'll see you upstairs. Drink up... I intend to find out just how much endurance you have!~
+  IF ~~ THEN DO ~RestParty()~ EXIT /* cutscene? Encounter? For now, just do a BioWare standard "rest the party", and at the least swap in berelinde's "don't have other dreams" cutscene. */
+END
+
+END // of append to teldra
+
+CHAIN C-ARANJ a4989
+~[ARAN] Ho, Teldra. I think you do get prettier every time I see you.~
+== C-AW01TL ~[C-AW01TL] Pity I can't say the same about you.~
+== C-ARANJ ~[ARAN] Meaner, too.~
+EXTERN C-AW01TL a4988
+
+CHAIN C-AW01TL a4987
+~[C-AW01TL] Oh, I didn't see you there, Aran. Wipe that stupid grin off your face and tell me what is troubling you, and therefore me.~
+== C-ARANJ ~[ARAN] This be th' smartest grin I know.~
+== C-AW01TL ~[C-AW01TL] That figures. Looking for a contract?~
+== C-ARANJ ~[ARAN] Got one. But mayhap <CHARNAME> here might be lookin' for somethin' short term.~
+== C-AW01TL ~[C-AW01TL] For you, Aran, I could find something, if you get kicked out of your current contract with <CHARNAME>. I hear there is a need for stable hands.~
+EXTERN C-AW01TL a4900 
+
+CHAIN C-ARANJ a4907
+~[ARAN] Hey, I do be callin' foul, pun intended! I never did hear any complaints from you.~
+== C-AW01TL ~[C-AW01TL] I have low standards.~
+EXTERN C-AW01TL a4920
+
+CHAIN C-ARANJ a4986
+~[ARAN] Ho, Teldra. I think you do get prettier every time I see you.~
+== C-AW01TL ~[C-AW01TL] You know, you say that almost every time you greet me.~
+== C-ARANJ ~[ARAN] And it be true every time.~
+== C-AW01TL ~[C-AW01TL] You are so full of horsedung.~
+== C-ARANJ ~[ARAN] Any work for me? I mean, do there be any work for us?~
+== C-AW01TL ~[C-AW01TL] Not really. But I have no place else to be, if you want to talk a bit.~
+EXTERN C-AW01TL a4900 
+
+CHAIN C-AW01TL a4908
+~[C-AW01TL] Worried? Personally? Oh, no, nothing like that. He minds his business, just not his manners. Tell him what you want, talk to him, and if necessary lay down some ground rules. But he knows no means no.~ 
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] You two know I be standin' right here, eh?~ 
+== C-AW01TL IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[C-AW01TL] Be a good lad and shut the hells up when we are negotiating contract, Aran. Make yourself useful and take notes.~ 
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Ma'am, yes ma'am.~
+EXTERN C-AW01TL a4920
+
 /* Fight or Flight, otherwise known as The Big Valley, PC initiated in C-AR01 */
 APPEND C-TORAN
-
+/* Area C-AW01 bar/barfight - Toran c-aw01bp.cre */
 IF ~RandomNum(3,3) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2511 SAY ~[C-TORAN] Hey, don't poke me... I don't want any trouble.~ IF ~~ THEN EXIT END
 IF ~RandomNum(3,2) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2512 SAY ~[C-TORAN] Worst deal I even made. I'll move over here, out of the way.~ IF ~~ THEN EXIT END
 IF ~RandomNum(3,1) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2513 SAY ~[C-TORAN] No problem here. I  will keep my mouth shut.~ IF ~~ THEN EXIT END
@@ -30472,7 +31218,6 @@ IF ~~ a2548
 END
 
 IF ~~ a2549 SAY ~[CIVIL03] I will be here. Unfortunately. Counting the days until retirement.~ IF ~~ THEN EXIT END
-
 IF ~~ a2550 SAY ~[CIVIL03] Nope.~ = ~[CIVIL03] Move along, then. There are other people in line.~ IF ~~ THEN EXIT END
 
 IF ~~ a2551
