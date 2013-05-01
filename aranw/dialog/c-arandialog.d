@@ -30901,7 +30901,7 @@ EXTERN C-AW01TL a4920
 
 /* Fight or Flight, otherwise known as The Big Valley, PC initiated in C-AR01 */
 APPEND C-TORAN
-/* Area C-AW01 bar/barfight - Toran c-aw01bp.cre */
+/* Area C-AW01 bar/barfight - Toran c-toran.cre */
 IF ~RandomNum(3,3) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2511 SAY ~[C-TORAN] Hey, don't poke me... I don't want any trouble.~ IF ~~ THEN EXIT END
 IF ~RandomNum(3,2) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2512 SAY ~[C-TORAN] Worst deal I even made. I'll move over here, out of the way.~ IF ~~ THEN EXIT END
 IF ~RandomNum(3,1) Global("c-arantoran","GLOBAL",3)~ THEN BEGIN a2513 SAY ~[C-TORAN] No problem here. I  will keep my mouth shut.~ IF ~~ THEN EXIT END

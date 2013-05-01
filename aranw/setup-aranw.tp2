@@ -1306,7 +1306,7 @@ COPY ~aranw/media/portraits_bg2/peachplums_manson_bg2s.bmp~ ~override/c-aw01ep.b
 COPY ~aranw/media/portraits_bg2/peachplums_gerald_bg2s.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
 COPY ~aranw/media/portraits_bg2/peachplums_cheris_bg2s.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
 COPY ~aranw/media/portraits_bg2/peachplums_kavain_bg2s.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-aw01bp.bmp~ /* Area C-AW01 Toran (Peachplums) */
+COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
 COPY ~aranw/media/portraits_bg2/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
 COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
 /* Area C-AW01 Tavern Keeper Orrin	*/
@@ -1326,12 +1326,12 @@ COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 /* Area C-AW01 bar/barfight - Toran */
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01bp.cre~	
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	
 	SAY NAME1 ~Toran~
 	SAY NAME2 ~Toran~
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
-/* Area C-AW01 Tavern Keeper - Orrin	*/
+/* Area C-AW01 Tavern Keeper - Orrin */
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~	
 	SAY NAME1 ~Orrin~
 	SAY NAME2 ~Orrin~
