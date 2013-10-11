@@ -579,319 +579,319 @@ IF ~~ a2303 SAY ~[ARAN] No. But it be a good thing to remind any o' us mere mort
 IF ~~ a2304 SAY ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, sometimes I make myself a little space in my head an' go there, all by myself, just to remember what I be fightin' for. Just... just don't be stayin' there too long, eh?~ = ~[ARAN] Th' problem wi' hidin' away in your head is that your head be attached to th' mortal world. An' hidin' for a little mayhap gives some respite, but it does naught for actually changin' things or protectin' us from bein' th' next target o' this bloodshed.~ IF ~~ THEN EXIT END
 
 /* Scenery Dialog : Aran Apologizes */
-IF ~Global("c-aranapology","GLOBAL",1)~ THEN BEGIN a1706tob
+IF ~Global("c-aranapology","GLOBAL",1)~ THEN BEGIN a4999
   SAY ~[ARAN] Hey... I am right sorry.~ [c-aws119]
-  IF ~RandomNum(3,1)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a1707tob
-  IF ~RandomNum(3,2)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a1708tob
-  IF ~RandomNum(3,3)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a1709tob
+  IF ~RandomNum(3,1)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a5000
+  IF ~RandomNum(3,2)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a5001
+  IF ~RandomNum(3,3)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a5002
 END
 
-IF ~~ a1707tob /* 7 to 11 responses */
+IF ~~ a5000 /* 7 to 11 responses */
   SAY ~[ARAN] I know I have been awkward an' all, but I should know better. You call th' shots, <CHARNAME>. Do we be fine wi' each other?~
-  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] Not really. I should have <PLAYER2> beat you senseless. I would do it, but I think it is beneath my notice.~ + a1710tob
-  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] I can't believe you just walked away angry like that. I should have <PLAYER3> pound some sense into you.~ + a1710tob
-  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] No. You should be careful, Aran. <PLAYER4> might be convinced that you hurt me, and then where would you be?~ + a1710tob
-  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] No. I do not understand why you were so angry. I asked <PLAYER5>, and he just shrugged.~ + a1710tob
-  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] If by fine, you mean I should be spending less time with you and more time with <PLAYER6>, then sure.~ + a1710tob
-  + ~RandomNum(3,1)~ + ~[PC] It was my fault, Aran, not yours. Of course we are fine.~ + a1711tob
-  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, and what you want of me, Aran. But you are a part of my life now. I accept your apology.~ + a1712tob
-  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a1713tob
-  + ~RandomNum(3,1)~ + ~[PC] No. You will have to do better than that as an apology, Aran. Go away until you can apologize properly.~ + a1714tob
-  + ~RandomNum(3,2)~ + ~[PC] He speaks. Well, sort of - his mouth is moving, but I do not hear anything worth hearing.~ + a1715tob
-  + ~RandomNum(3,3)~ + ~[PC] You are joking, right? What makes you think I have forgiven you?~ + a1715tob
-  + ~RandomNum(3,1)~ + ~[PC] (Burst into tears.)~ + a1716tob
-  + ~RandomNum(3,2)~ + ~[PC] I... I... you... (Begin crying.)~ + a1716tob
-  + ~RandomNum(3,3)~ + ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me.~ + a1716tob
-  + ~RandomNum(8,1)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a1717tob
-  + ~RandomNum(8,2)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a1718tob
-  + ~RandomNum(8,3)~ + ~[PC] Do you really think I will accept such a lackluster performance?  No gifts. No flowers. No chocolate. No clue. That isn't an apology - that is an insult.~ + a1719tob
-  + ~RandomNum(8,4)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a1720tob
-  + ~RandomNum(8,5)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet, licking my boots. Do it, and I might consider your apology.~ + a1720tob
-  + ~RandomNum(8,6)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a1719tob
-  + ~RandomNum(8,7)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology. A dog could do better.~ + a1718tob
-  + ~RandomNum(8,8)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a1717tob
-  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a1721tob
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a1726tob
+  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] Not really. I should have <PLAYER2> beat you senseless. I would do it, but I think it is beneath my notice.~ + a5003
+  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] I can't believe you just walked away angry like that. I should have <PLAYER3> pound some sense into you.~ + a5003
+  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] No. You should be careful, Aran. <PLAYER4> might be convinced that you hurt me, and then where would you be?~ + a5003
+  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] No. I do not understand why you were so angry. I asked <PLAYER5>, and he just shrugged.~ + a5003
+  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] If by fine, you mean I should be spending less time with you and more time with <PLAYER6>, then sure.~ + a5003
+  + ~RandomNum(3,1)~ + ~[PC] It was my fault, Aran, not yours. Of course we are fine.~ + a5004
+  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, and what you want of me, Aran. But you are a part of my life now. I accept your apology.~ + a5005
+  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a5006
+  + ~RandomNum(3,1)~ + ~[PC] No. You will have to do better than that as an apology, Aran. Go away until you can apologize properly.~ + a5007
+  + ~RandomNum(3,2)~ + ~[PC] He speaks. Well, sort of - his mouth is moving, but I do not hear anything worth hearing.~ + a5008
+  + ~RandomNum(3,3)~ + ~[PC] You are joking, right? What makes you think I have forgiven you?~ + a5008
+  + ~RandomNum(3,1)~ + ~[PC] (Burst into tears.)~ + a5009
+  + ~RandomNum(3,2)~ + ~[PC] I... I... you... (Begin crying.)~ + a5009
+  + ~RandomNum(3,3)~ + ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me.~ + a5009
+  + ~RandomNum(8,1)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a5010
+  + ~RandomNum(8,2)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a5011
+  + ~RandomNum(8,3)~ + ~[PC] Do you really think I will accept such a lackluster performance?  No gifts. No flowers. No chocolate. No clue. That isn't an apology - that is an insult.~ + a5012
+  + ~RandomNum(8,4)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a5013
+  + ~RandomNum(8,5)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet, licking my boots. Do it, and I might consider your apology.~ + a5013
+  + ~RandomNum(8,6)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a5012
+  + ~RandomNum(8,7)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology. A dog could do better.~ + a5011
+  + ~RandomNum(8,8)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a5010
+  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a5014
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a5019
 END
 
-IF ~~ a1708tob /* 8 to 12 responses */
+IF ~~ a5001 /* 8 to 12 responses */
   SAY ~[ARAN] I just got so... so mad, I didn't rightly know how to handle it. You mean a good bit to me, <CHARNAME>. Do we be fine wi' each other?~
-  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] <PLAYER2> thinks you are an ass.~ + a1710tob
-  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] I thought we understood each other. <PLAYER3> would have understood me better.~ + a1710tob
-  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] I don't understand why you got so upset. If I were arguing with <PLAYER4>, he would never walk away from me like that.~ + a1710tob
-  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] You got so angry, over so little. I asked <PLAYER5> if all men were like that, and he just shrugged.~ + a1710tob
-  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] If by fine, you mean I should be spending less time with you and more time with <PLAYER6>, then sure.~ + a1710tob
-  + ~RandomNum(3,1)~ + ~[PC] It was my fault, Aran, not yours. Of course we are fine.~ + a1722tob
-  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, and what you want of me, Aran. But you are a part of my life now.~ + a1712tob
-  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a1723tob
-  + ~RandomNum(3,1)~ + ~[PC] Go away, Aran. I don't want to talk to you right now.~ + a1714tob
-  + ~RandomNum(3,2)~ + ~[PC] He speaks. Well, sort of - his mouth is moving, but I do not hear anything worth hearing.~ + a1724tob
-  + ~RandomNum(3,3)~ + ~[PC] You are joking, right? What makes you think I have forgiven you?~ + a1724tob
-  + ~RandomNum(8,1)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a1717tob
-  + ~RandomNum(8,2)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a1718tob
-  + ~RandomNum(8,3)~ + ~[PC] Do you really think I will accept such a lackluster performance?  No gifts. No flowers. No chocolate. No clue. That isn't an apology - that is an insult.~ + a1719tob
-  + ~RandomNum(8,4)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a1720tob
-  + ~RandomNum(8,5)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet, licking my boots. Do it, and I might consider your apology.~ + a1720tob
-  + ~RandomNum(8,6)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a1719tob
-  + ~RandomNum(8,7)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology. A dog could do better.~ + a1718tob
-  + ~RandomNum(8,8)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a1717tob
-  + ~RandomNum(4,1)~ + ~[PC] I am so sorry I hurt you. I didn't mean to, and I am so selfish and stupid... I just need to be near you, and have you be near me.~ + a1722tob
-  + ~RandomNum(4,2)~ + ~[PC] I don't deserve to be with you. You are careful and considerate, and I was horrible to you. You mean more to me than I ever imagined.~ + a1712tob
-  + ~RandomNum(4,3)~ + ~[PC] I don't deserve to be with you. You are careful and considerate, and I was horrible to you. You mean more to me than I ever imagined.~ + a1725tob
-  + ~RandomNum(4,4)~ + ~[PC] (Grab his hand, kissing his palm quickly.) Does this answer the question?~ + a1727tob
-  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a1721tob
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a1726tob
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a2320tob
+  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] <PLAYER2> thinks you are an ass.~ + a5003
+  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] I thought we understood each other. <PLAYER3> would have understood me better.~ + a5003
+  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] I don't understand why you got so upset. If I were arguing with <PLAYER4>, he would never walk away from me like that.~ + a5003
+  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] You got so angry, over so little. I asked <PLAYER5> if all men were like that, and he just shrugged.~ + a5003
+  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] If by fine, you mean I should be spending less time with you and more time with <PLAYER6>, then sure.~ + a5003
+  + ~RandomNum(3,1)~ + ~[PC] It was my fault, Aran, not yours. Of course we are fine.~ + a5015
+  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, and what you want of me, Aran. But you are a part of my life now.~ + a5005
+  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a5016
+  + ~RandomNum(3,1)~ + ~[PC] Go away, Aran. I don't want to talk to you right now.~ + a5007
+  + ~RandomNum(3,2)~ + ~[PC] He speaks. Well, sort of - his mouth is moving, but I do not hear anything worth hearing.~ + a5017
+  + ~RandomNum(3,3)~ + ~[PC] You are joking, right? What makes you think I have forgiven you?~ + a5017
+  + ~RandomNum(8,1)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a5010
+  + ~RandomNum(8,2)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a5011
+  + ~RandomNum(8,3)~ + ~[PC] Do you really think I will accept such a lackluster performance?  No gifts. No flowers. No chocolate. No clue. That isn't an apology - that is an insult.~ + a5012
+  + ~RandomNum(8,4)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a5013
+  + ~RandomNum(8,5)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet, licking my boots. Do it, and I might consider your apology.~ + a5013
+  + ~RandomNum(8,6)~ + ~[PC] You should be crawling to me on your hands and feet. Actually, you should be kissing my feet, and begging me for forgiveness.~ + a5012
+  + ~RandomNum(8,7)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology. A dog could do better.~ + a5011
+  + ~RandomNum(8,8)~ + ~[PC] Don't you think I deserve a better apology than that? Perhaps you should be kneeling, or groveling, or something more suitable?~ + a5010
+  + ~RandomNum(4,1)~ + ~[PC] I am so sorry I hurt you. I didn't mean to, and I am so selfish and stupid... I just need to be near you, and have you be near me.~ + a5015
+  + ~RandomNum(4,2)~ + ~[PC] I don't deserve to be with you. You are careful and considerate, and I was horrible to you. You mean more to me than I ever imagined.~ + a5005
+  + ~RandomNum(4,3)~ + ~[PC] I don't deserve to be with you. You are careful and considerate, and I was horrible to you. You mean more to me than I ever imagined.~ + a5018
+  + ~RandomNum(4,4)~ + ~[PC] (Grab his hand, kissing his palm quickly.) Does this answer the question?~ + a5020
+  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a5014
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a5019
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a5031
 END
 
-IF ~~ a1709tob /* lots of states, but only 6 to 8 are available in any given party */
+IF ~~ a5002 /* lots of states, but only 6 to 8 are available in any given party */
   SAY ~[ARAN] I get so worked up over you sometimes, it just seems a bit like I be drownin'. I don't have no hold or call over you, but sometimes I start thinkin' like I do. Do we be fine wi' each other?~
-  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] <PLAYER2> would never turn his back on me, no matter what I did.~ + a1710tob
-  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] Why don't you go ask <PLAYER3> how a real man apologizes. Even he could do better.~ + a1710tob
-  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] I don't know. <PLAYER4> would never treat me like you do.~ + a1710tob
-  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] Why don't you go off and do manly things with <PLAYER5>. You don't need me around, anyways. After all, I am just a silly little girl who doesn't know how to keep you happy.~ + a1710tob
-  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] <PLAYER6> says I am too important to be given the silent treatment, but I told him it didn't matter. I am not worth talking to, anyways.~ + a1710tob
-  + ~Gender(Player2,FEMALE) !Name("edwin",Player2) !Name("aerie",Player2) !Name("viconia",Player2) !Name("jaheira",Player2)~ + ~[PC] <PLAYER2> says men can't help themselves, they just are naturally stupid. But I thought you were different. I guess I was wrong.~ + a1710tob
-  + ~Gender(Player3,FEMALE) !Name("edwin",Player3) !Name("aerie",Player3) !Name("viconia",Player3) !Name("jaheira",Player3)~ + ~[PC] Why don't you go try to flirt with <PLAYER3>? Maybe she can make you happier than I can.~ + a1710tob
-  + ~Gender(Player4,FEMALE) !Name("edwin",Player4) !Name("aerie",Player4) !Name("viconia",Player4) !Name("jaheira",Player4)~ + ~[PC] If <PLAYER4> had her way, I would be out looking for another person to fill your shoes.~ + a1710tob
-  + ~Gender(Player5,FEMALE) !Name("edwin",Player5) !Name("aerie",Player5) !Name("viconia",Player5) !Name("jaheira",Player5)~ + ~[PC] <PLAYER5> says I am too important to be given the silent treatment, but I told her it didn't matter. I am not worth talking to, anyways.~ + a1710tob
-  + ~Gender(Player6,FEMALE) !Name("edwin",Player6) !Name("aerie",Player6) !Name("viconia",Player6) !Name("jaheira",Player6)~ + ~[PC] Oh, don't mind me. <PLAYER6> is probably  more fun than I am, anyways.~ + a1710tob
-  + ~Gender(Player2,FEMALE) Name("edwin",Player2)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a1710tob
-  + ~Gender(Player3,FEMALE) Name("edwin",Player3)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a1710tob
-  + ~Gender(Player4,FEMALE) Name("edwin",Player4)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a1710tob
-  + ~Gender(Player5,FEMALE) Name("edwin",Player5)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a1710tob
-  + ~Gender(Player6,FEMALE) Name("edwin",Player6)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a1710tob
+  + ~Gender(Player2,MALE) !Name("c-aran",Player2)~ + ~[PC] <PLAYER2> would never turn his back on me, no matter what I did.~ + a5003
+  + ~Gender(Player3,MALE) !Name("c-aran",Player3)~ + ~[PC] Why don't you go ask <PLAYER3> how a real man apologizes. Even he could do better.~ + a5003
+  + ~Gender(Player4,MALE) !Name("c-aran",Player4)~ + ~[PC] I don't know. <PLAYER4> would never treat me like you do.~ + a5003
+  + ~Gender(Player5,MALE) !Name("c-aran",Player5)~ + ~[PC] Why don't you go off and do manly things with <PLAYER5>. You don't need me around, anyways. After all, I am just a silly little girl who doesn't know how to keep you happy.~ + a5003
+  + ~Gender(Player6,MALE) !Name("c-aran",Player6)~ + ~[PC] <PLAYER6> says I am too important to be given the silent treatment, but I told him it didn't matter. I am not worth talking to, anyways.~ + a5003
+  + ~Gender(Player2,FEMALE) !Name("edwin",Player2) !Name("aerie",Player2) !Name("viconia",Player2) !Name("jaheira",Player2)~ + ~[PC] <PLAYER2> says men can't help themselves, they just are naturally stupid. But I thought you were different. I guess I was wrong.~ + a5003
+  + ~Gender(Player3,FEMALE) !Name("edwin",Player3) !Name("aerie",Player3) !Name("viconia",Player3) !Name("jaheira",Player3)~ + ~[PC] Why don't you go try to flirt with <PLAYER3>? Maybe she can make you happier than I can.~ + a5003
+  + ~Gender(Player4,FEMALE) !Name("edwin",Player4) !Name("aerie",Player4) !Name("viconia",Player4) !Name("jaheira",Player4)~ + ~[PC] If <PLAYER4> had her way, I would be out looking for another person to fill your shoes.~ + a5003
+  + ~Gender(Player5,FEMALE) !Name("edwin",Player5) !Name("aerie",Player5) !Name("viconia",Player5) !Name("jaheira",Player5)~ + ~[PC] <PLAYER5> says I am too important to be given the silent treatment, but I told her it didn't matter. I am not worth talking to, anyways.~ + a5003
+  + ~Gender(Player6,FEMALE) !Name("edwin",Player6) !Name("aerie",Player6) !Name("viconia",Player6) !Name("jaheira",Player6)~ + ~[PC] Oh, don't mind me. <PLAYER6> is probably  more fun than I am, anyways.~ + a5003
+  + ~Gender(Player2,FEMALE) Name("edwin",Player2)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a5003
+  + ~Gender(Player3,FEMALE) Name("edwin",Player3)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a5003
+  + ~Gender(Player4,FEMALE) Name("edwin",Player4)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a5003
+  + ~Gender(Player5,FEMALE) Name("edwin",Player5)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a5003
+  + ~Gender(Player6,FEMALE) Name("edwin",Player6)~ + ~[PC] Edwina says you are a chauvinistic, egotistical, self-centered moron. And I tend to believe her... after all, she has lived both sides of the equation.~ + a5003
   /* Another female as foil: Aerie */
-  + ~Gender(Player2,FEMALE) Name("aerie",Player2)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a1710tob
-  + ~Gender(Player3,FEMALE) Name("aerie",Player3)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a1710tob
-  + ~Gender(Player4,FEMALE) Name("aerie",Player4)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a1710tob
-  + ~Gender(Player5,FEMALE) Name("aerie",Player5)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a1710tob
-  + ~Gender(Player6,FEMALE) Name("aerie",Player6)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a1710tob
+  + ~Gender(Player2,FEMALE) Name("aerie",Player2)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a5003
+  + ~Gender(Player3,FEMALE) Name("aerie",Player3)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a5003
+  + ~Gender(Player4,FEMALE) Name("aerie",Player4)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a5003
+  + ~Gender(Player5,FEMALE) Name("aerie",Player5)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a5003
+  + ~Gender(Player6,FEMALE) Name("aerie",Player6)~ + ~[PC] Aerie says I should apologize to you right away, because we make such a good team, but she is no real judge of relationships.~ + a5003
   /* Another female as foil: Viconia */
-  + ~Gender(Player2,FEMALE) Name("viconia",Player2)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a1710tob
-  + ~Gender(Player3,FEMALE) Name("viconia",Player3)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a1710tob
-  + ~Gender(Player4,FEMALE) Name("viconia",Player4)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a1710tob
-  + ~Gender(Player5,FEMALE) Name("viconia",Player5)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a1710tob
-  + ~Gender(Player6,FEMALE) Name("viconia",Player6)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a1710tob
+  + ~Gender(Player2,FEMALE) Name("viconia",Player2)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a5003
+  + ~Gender(Player3,FEMALE) Name("viconia",Player3)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a5003
+  + ~Gender(Player4,FEMALE) Name("viconia",Player4)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a5003
+  + ~Gender(Player5,FEMALE) Name("viconia",Player5)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a5003
+  + ~Gender(Player6,FEMALE) Name("viconia",Player6)~ + ~[PC] Viconia says you are a spineless wimp, and I should beat you, hurt you, or manipulate you until you do my bidding without getting angry.~ + a5003
   /* Another female as foil: Jaheira */
-  + ~Gender(Player2,FEMALE) Name("jaheira",Player2)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a1710tob
-  + ~Gender(Player3,FEMALE) Name("jaheira",Player3)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a1710tob
-  + ~Gender(Player4,FEMALE) Name("jaheira",Player4)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a1710tob
-  + ~Gender(Player5,FEMALE) Name("jaheira",Player5)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a1710tob
-  + ~Gender(Player6,FEMALE) Name("jaheira",Player6)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a1710tob
+  + ~Gender(Player2,FEMALE) Name("jaheira",Player2)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a5003
+  + ~Gender(Player3,FEMALE) Name("jaheira",Player3)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a5003
+  + ~Gender(Player4,FEMALE) Name("jaheira",Player4)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a5003
+  + ~Gender(Player5,FEMALE) Name("jaheira",Player5)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a5003
+  + ~Gender(Player6,FEMALE) Name("jaheira",Player6)~ + ~[PC] Jaheira says I should smack you hard on the side of the head, and tell you to stop being a silly male, but I don't know if I care anyways.~ + a5003
   /* make up */
-  + ~RandomNum(3,1)~ + ~[PC] It is my fault, Aran, not yours. Of course we are fine.~ + a1723tob
-  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, or what you want of me, Aran. But you are a part of my life now.~ + a1725tob
-  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a1722tob
+  + ~RandomNum(3,1)~ + ~[PC] It is my fault, Aran, not yours. Of course we are fine.~ + a5016
+  + ~RandomNum(3,2)~ + ~[PC] I do not always understand you, or what you want of me, Aran. But you are a part of my life now.~ + a5018
+  + ~RandomNum(3,3)~ + ~[PC] I think so. Do you think we are fine with each other?~ + a5015
   /* do not make up */
-  + ~RandomNum(3,1)~ + ~[PC] No. You have to do better than that as an apology, Aran. Get on with the job at hand. Perhaps you should just sulk and stew by yourself for a few days.~ + a1715tob
-  + ~RandomNum(3,2)~ + ~[PC] Go away, Aran. You shut me out. I don't care what I did, or what you did... I just don't ever expect to be given the cold shoulder, ever.~ + a1729tob
-  + ~RandomNum(3,3)~ + ~[PC] I do not hear anything worth hearing. You can go drown, for all I care.~ + a1710tob
+  + ~RandomNum(3,1)~ + ~[PC] No. You have to do better than that as an apology, Aran. Get on with the job at hand. Perhaps you should just sulk and stew by yourself for a few days.~ + a5008
+  + ~RandomNum(3,2)~ + ~[PC] Go away, Aran. You shut me out. I don't care what I did, or what you did... I just don't ever expect to be given the cold shoulder, ever.~ + a5021
+  + ~RandomNum(3,3)~ + ~[PC] I do not hear anything worth hearing. You can go drown, for all I care.~ + a5003
   /* stop romance */
-  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1721tob
+  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a5014
   /* kick him out */
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a1726tob
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a5019
   /* kick him out for good and try to kill him */
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a2320tob
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a5031
 END
 
-IF ~~ a1710tob
+IF ~~ a5003
   SAY ~[ARAN] Now, don't be that way, eh? I done said I was sorry...~
   /* make up */
-  + ~RandomNum(3,1)~ + ~[PC] No... wait. It is my fault, Aran, not yours. Of course we are fine.~ + a1712tob
-  + ~RandomNum(3,2)~ + ~[PC] Yes, you did. And... I guess that I should, too. I do not always understand you, and what you want of me, Aran. But you are a part of my life now.~ + a1723tob
-  + ~RandomNum(3,3)~ + ~[PC] I think that is enough torture. Of course we are fine with each other. In fact, we are more than fine. A little argument isn't going to kill us.~ + a1725tob
+  + ~RandomNum(3,1)~ + ~[PC] No... wait. It is my fault, Aran, not yours. Of course we are fine.~ + a5005
+  + ~RandomNum(3,2)~ + ~[PC] Yes, you did. And... I guess that I should, too. I do not always understand you, and what you want of me, Aran. But you are a part of my life now.~ + a5016
+  + ~RandomNum(3,3)~ + ~[PC] I think that is enough torture. Of course we are fine with each other. In fact, we are more than fine. A little argument isn't going to kill us.~ + a5018
   /* do not make up */
-  + ~RandomNum(3,1)~ + ~[PC] No. You have to do better than that as an apology, Aran. Get on with the job at hand, and don't come to me before you have figured out what you did wrong.~ + a1715tob
-  + ~RandomNum(3,2)~ + ~[PC] You never specified what you are sorry about. About the stars being in the sky? About you being an ass? About you not listening to my needs and wants?~ + a1729tob
-  + ~RandomNum(3,3)~ + ~[PC] That is not enough. Words are never enough. I mean, you just talk, you don't do anything to back them up. You must hate me.~ + a1730tob
+  + ~RandomNum(3,1)~ + ~[PC] No. You have to do better than that as an apology, Aran. Get on with the job at hand, and don't come to me before you have figured out what you did wrong.~ + a5008
+  + ~RandomNum(3,2)~ + ~[PC] You never specified what you are sorry about. About the stars being in the sky? About you being an ass? About you not listening to my needs and wants?~ + a5021
+  + ~RandomNum(3,3)~ + ~[PC] That is not enough. Words are never enough. I mean, you just talk, you don't do anything to back them up. You must hate me.~ + a5022
   /* cry */
-  + ~RandomNum(3,1)~ + ~[PC] (Burst into tears.)~ + a1716tob
-  + ~RandomNum(3,2)~ + ~[PC] I... I... you... (Begin crying.)~ + a1716tob
-  + ~RandomNum(3,3)~ + ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me by shutting me out.~ + a1716tob
+  + ~RandomNum(3,1)~ + ~[PC] (Burst into tears.)~ + a5009
+  + ~RandomNum(3,2)~ + ~[PC] I... I... you... (Begin crying.)~ + a5009
+  + ~RandomNum(3,3)~ + ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me by shutting me out.~ + a5009
   /* PC expects groveling by Aran */
-  + ~RandomNum(3,1)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a1717tob
-  + ~RandomNum(3,2)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet. Do it, and I might consider your apology.~ + a1718tob
-  + ~RandomNum(3,3)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology.~ + a1719tob
+  + ~RandomNum(3,1)~ + ~[PC] On your knees. A proper apology starts with you kneeling in front of me.~ + a5010
+  + ~RandomNum(3,2)~ + ~[PC] After your words and actions over the past few days, you should be crawling to me on your hands and feet. Do it, and I might consider your apology.~ + a5011
+  + ~RandomNum(3,3)~ + ~[PC] Speak a little louder. And where are my flowers? Where is my gift? This is shaping up to be a sorry excuse for an apology.~ + a5012
   /* stop romance */
-  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a1721tob
+  ++ ~[PC] This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a5014
   /* kick him out */
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a1726tob
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a5019
   /* kick him out for good and try to kill him */
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a2320tob
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. Stop that grinning, servile smile. I think... yes. I will just kill you now and be done with it.~ + a5031
 END
 
-IF ~~ a1714tob
+IF ~~ a5007
   SAY ~[ARAN] So it is not important enough to be talkin' about. I see. You can hold bloody diatribes wi' all manner o' creatures, but I'm not important enough to you to talk wi' when I be th' one wronged. You know, I'd tell you to go to th' nine hells, but you've already been there.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1724tob
+IF ~~ a5017
   SAY ~[ARAN] Hey, that be right ugly, eh? I be ready to talk, an' you...~
-  + ~RandomNum(4,1)~ + ~[PC] ...would rather eat sand than talk to you.~ + a1731tob
-  + ~RandomNum(4,2)~ + ~[PC] Oh, shut up and go sulk. You can go to the nine hells. While you are there, get someone to teach you to speak properly. I hear gibberlings actually have less of an accent then you do.~ + a1732tob
-  + ~RandomNum(4,3)~ + ~[PC] ...will end up having to smile like a good little girl and say "yes dear, no dear" while you try to worm your way back into my good graces, while your eyes never actually make it up past my breasts.~ + a1733tob
-  + ~RandomNum(4,4)~ + ~[PC] We are not 'fine', Aran. I think I shall give you the 'silent treatment', and see how you like it. Wait... if I use your definition of 'silent', then I must remember to talk about unrelated garbage every ten seconds.~ + a1734tob
-  + ~RandomNum(4,1)~ + ~[PC] Wait. I am... I don't know why I said that. Yes, of course we are fine.~ + a1722tob
-  + ~RandomNum(4,2)~ + ~[PC] Hey, you were the one shutting me out. How does it feel to be mistreated? But in terms of the fighting, I think we are even. I accept your apology.~ + a1712tob
-  + ~RandomNum(4,3)~ + ~[PC] Oh, forget I said anything. Yes, I accept your apology.~ + a1723tob
-  + ~RandomNum(4,4)~ + ~[PC] ...I obviously was not. I do accept your apology. I just wanted to remind you how words can hurt.~ + a1725tob
-  ++ ~[PC] I have had enough of your crap. Go on... go sulk for awhile. When you decide to grow up, come and talk to me again.~ + a1731tob
+  + ~RandomNum(4,1)~ + ~[PC] ...would rather eat sand than talk to you.~ + a5023
+  + ~RandomNum(4,2)~ + ~[PC] Oh, shut up and go sulk. You can go to the nine hells. While you are there, get someone to teach you to speak properly. I hear gibberlings actually have less of an accent then you do.~ + a5024
+  + ~RandomNum(4,3)~ + ~[PC] ...will end up having to smile like a good little girl and say "yes dear, no dear" while you try to worm your way back into my good graces, while your eyes never actually make it up past my breasts.~ + a5025
+  + ~RandomNum(4,4)~ + ~[PC] We are not 'fine', Aran. I think I shall give you the 'silent treatment', and see how you like it. Wait... if I use your definition of 'silent', then I must remember to talk about unrelated garbage every ten seconds.~ + a5026
+  + ~RandomNum(4,1)~ + ~[PC] Wait. I am... I don't know why I said that. Yes, of course we are fine.~ + a5015
+  + ~RandomNum(4,2)~ + ~[PC] Hey, you were the one shutting me out. How does it feel to be mistreated? But in terms of the fighting, I think we are even. I accept your apology.~ + a5005
+  + ~RandomNum(4,3)~ + ~[PC] Oh, forget I said anything. Yes, I accept your apology.~ + a5016
+  + ~RandomNum(4,4)~ + ~[PC] ...I obviously was not. I do accept your apology. I just wanted to remind you how words can hurt.~ + a5018
+  ++ ~[PC] I have had enough of your crap. Go on... go sulk for awhile. When you decide to grow up, come and talk to me again.~ + a5023
 END
 
-IF ~~ a1715tob
+IF ~~ a5008
   SAY ~[ARAN] You blighted well want more than... you know, this were a mistake. Forget it. You are the largest pain in my rear end I ever did have. Luckily, it be less big than your actual rear end.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1729tob
+IF ~~ a5021
   SAY ~[ARAN] Look, I already said I was sorry. I don't rightly remember all th' details, an'...~
-  + ~RandomNum(2,1)~ + ~[PC] You didn't think it was important to remember the details of communication between the two of us? I must mean so little to you.~ + a1731tob /* reconsider, no */
-  + ~RandomNum(2,2)~ + ~[PC] Why are you apologizing if you don't remember what started the fight? Do you think you can just patronize me, tell me "yes dear", "no dear", and not really pay attention to my feelings?~ + a1732tob /* reconsider, no */
-  + ~RandomNum(2,1)~ + ~[PC] You said you were sorry. Big deal. I can say I am the Queen of the Dale Lands, and that does not make it true. You just want me to go back to the way things were.~ + a1733tob /* reconsider, no */
-  + ~RandomNum(2,2)~ + ~[PC] Forget it. I am mad at you, and I refuse to let you come around trying to manipulate me and patronize me. Go away.~ + a1734tob /* reconsider, no */
-  + ~RandomNum(2,1)~ + ~[PC] Aran, shut up. I should be apologizing to you. I just feel a little out of control.~ + a1722tob /* reconsider, yes */
-  + ~RandomNum(2,2)~ + ~[PC] Oh, Aran, forget I said any of that... I don't want us fighting any more. We belong together.~ + a1712tob /* reconsider, yes */
-  + ~RandomNum(2,1)~ + ~[PC] The details do not matter. My feelings matter, though. If you are willing to keep that in mind in the future, I think we can consider this matter settled.~ + a1723tob /* reconsider, yes */
-  + ~RandomNum(2,2)~ + ~[PC] Wait. I am sorry. Let's forget any of this happened.~ + a1725tob /* reconsider, yes */
-  ++ ~[PC] You are so... so... Go on. Go sulk, or pout, or whatever you want to do. I don't want to talk to you anyways! I... I hate you! (burst into tears.)~ + a1732tob
+  + ~RandomNum(2,1)~ + ~[PC] You didn't think it was important to remember the details of communication between the two of us? I must mean so little to you.~ + a5023 /* reconsider, no */
+  + ~RandomNum(2,2)~ + ~[PC] Why are you apologizing if you don't remember what started the fight? Do you think you can just patronize me, tell me "yes dear", "no dear", and not really pay attention to my feelings?~ + a5024 /* reconsider, no */
+  + ~RandomNum(2,1)~ + ~[PC] You said you were sorry. Big deal. I can say I am the Queen of the Dale Lands, and that does not make it true. You just want me to go back to the way things were.~ + a5025 /* reconsider, no */
+  + ~RandomNum(2,2)~ + ~[PC] Forget it. I am mad at you, and I refuse to let you come around trying to manipulate me and patronize me. Go away.~ + a5026 /* reconsider, no */
+  + ~RandomNum(2,1)~ + ~[PC] Aran, shut up. I should be apologizing to you. I just feel a little out of control.~ + a5015 /* reconsider, yes */
+  + ~RandomNum(2,2)~ + ~[PC] Oh, Aran, forget I said any of that... I don't want us fighting any more. We belong together.~ + a5005 /* reconsider, yes */
+  + ~RandomNum(2,1)~ + ~[PC] The details do not matter. My feelings matter, though. If you are willing to keep that in mind in the future, I think we can consider this matter settled.~ + a5016 /* reconsider, yes */
+  + ~RandomNum(2,2)~ + ~[PC] Wait. I am sorry. Let's forget any of this happened.~ + a5018 /* reconsider, yes */
+  ++ ~[PC] You are so... so... Go on. Go sulk, or pout, or whatever you want to do. I don't want to talk to you anyways! I... I hate you! (burst into tears.)~ + a5024
 END
 
-IF ~~ a1716tob
+IF ~~ a5009
   SAY ~[ARAN] Now, hey, wait... I be right sorry, eh? I just felt you were takin' advantage o' me right an' left, an' I.. oh, for Tymora's Smile, stop wi' th' waterworks, eh?~
-  ++ ~[PC] That is not enough. Words are never enough. I mean, you just talk,I just talk, and then we fight... You must hate me.~ + a1730tob
+  ++ ~[PC] That is not enough. Words are never enough. I mean, you just talk,I just talk, and then we fight... You must hate me.~ + a5022
   /* make up */
-  + ~RandomNum(2,1)~ + ~[PC] Gods, I am crying like a little girl. It is my fault, Aran, not yours. Of course we are fine.~ + a1723tob
-  + ~RandomNum(2,2)~ + ~[PC] I don't know why it hurts so much that I have to cry. I do not always understand you, or what you want of me, Aran. But you are a part of my life now.~ + a1725tob
-  ++ ~[PC] I don't know why you don't hate me. I am a soulless monster, driven in so many different directions I don't even know why I wake up in the morning. You do not need to be weighed down by all of this. You deserve better.~ + a1735tob
-  ++ ~[PC] Do you love me?~ + a1736tob
+  + ~RandomNum(2,1)~ + ~[PC] Gods, I am crying like a little girl. It is my fault, Aran, not yours. Of course we are fine.~ + a5016
+  + ~RandomNum(2,2)~ + ~[PC] I don't know why it hurts so much that I have to cry. I do not always understand you, or what you want of me, Aran. But you are a part of my life now.~ + a5018
+  ++ ~[PC] I don't know why you don't hate me. I am a soulless monster, driven in so many different directions I don't even know why I wake up in the morning. You do not need to be weighed down by all of this. You deserve better.~ + a5027
+  ++ ~[PC] Do you love me?~ + a5028
   /* Gratuitous stealing of song lyrics, and if you don't know from which song, you are missing out on some great music... */
-  ++ ~[PC] It doesn't matter. Nothing really matters. Easy come, easy go, every way the wind blows... nothing really matters to me.~ + a1735tob
+  ++ ~[PC] It doesn't matter. Nothing really matters. Easy come, easy go, every way the wind blows... nothing really matters to me.~ + a5027
 END
 
-IF ~~ a1717tob
+IF ~~ a5010
   SAY ~[ARAN] You want me to... blighted hells. You do.~
   = ~[ARAN] For any other person on th' face o' Toril, I'd die rather than have no dignity. But this be me, droppin' on' my knees, an' tellin' you that I were wrong to hold anythin' from you, or be any way you don't want me to be.~
-  ++ ~[PC] That is sufficient. I accept your apology.~ + a1712tob
-  ++ ~[PC] Oh, come here and kiss me, you big idiot. I didn't mean for you to take me so seriously. Forget anything happened, ok?~ + a1712tob
-  ++ ~[PC] Gods... I hate myself. I just made you grovel like some servant. You must hate me.~ + a1730tob
-  ++ ~[PC] You really are a worm, you know. I guess I can make you do just about anything.~ + a1719tob
-  ++ ~[PC] Aran... you don't have to do that ever again. I can answer your question about whether this fight is over... (kneel swiftly with him, taking his hands in yours.)~ + a1727tob
+  ++ ~[PC] That is sufficient. I accept your apology.~ + a5005
+  ++ ~[PC] Oh, come here and kiss me, you big idiot. I didn't mean for you to take me so seriously. Forget anything happened, ok?~ + a5005
+  ++ ~[PC] Gods... I hate myself. I just made you grovel like some servant. You must hate me.~ + a5022
+  ++ ~[PC] You really are a worm, you know. I guess I can make you do just about anything.~ + a5012
+  ++ ~[PC] Aran... you don't have to do that ever again. I can answer your question about whether this fight is over... (kneel swiftly with him, taking his hands in yours.)~ + a5020
 END
 
-IF ~~ a1718tob
+IF ~~ a5011
   SAY ~[ARAN] You want me to... Cyric's Balls. When th' nine hells freeze over, mayhap.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT /* goes to preexisting without global setting */
 END
 
-IF ~~ a1719tob
+IF ~~ a5012
   SAY ~[ARAN] Well, your highness, miss "my crap don't stink, a' you should bow before me", don't be holdin' your breath for that. On account o' you should be apologizin' to me for even suggestin' it. If you want some ragdoll to order about an' mistreat, go get some other poor bastard to play your games.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT /* goes to preexisting without global setting */
 END
 
-IF ~~ a1720tob
+IF ~~ a5013
   SAY ~[ARAN] Shar's Spit, you want me to drop on my belly like a worm an' strip every inch o' my pride? I done got two words for you, an' they don't be "good mornin'". Use your imagination to fill in exactly what I be sayin'.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1727tob
+IF ~~ a5020
   SAY ~[ARAN] (He draws your hands to him, holding them close to his chest.)~
   = ~[ARAN] Aye, it does answer it right well. An' I be a happy man.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1735tob
+IF ~~ a5027
   SAY ~[ARAN] Corellon's Bowhand, you got this all wrong, all wrong completely. I don't rightly know what I would do wi' out you. Look, forget all this arguin' an' apologizin' an' such. You mean more to me than any words ever made.~
-  ++ ~[PC] Are you saying that you love me?~ + a1738tob
-  ++ ~[PC] You can't be saying that you love me.~ + a1738tob
-  ++ ~[PC] No. You cannot say you love me. That would ruin everything.~ + a1736tob
-  ++ ~[PC] Are you saying that you will serve me without reservation, even if I don't really love you?~ + a1739tob
-  ++ ~[PC] Are you saying that you will serve me without reservation, even if I truly love someone else?~ + a1739tob
+  ++ ~[PC] Are you saying that you love me?~ + a5029
+  ++ ~[PC] You can't be saying that you love me.~ + a5029
+  ++ ~[PC] No. You cannot say you love me. That would ruin everything.~ + a5028
+  ++ ~[PC] Are you saying that you will serve me without reservation, even if I don't really love you?~ + a5030
+  ++ ~[PC] Are you saying that you will serve me without reservation, even if I truly love someone else?~ + a5030
 END
 
-IF ~~ a1738tob
+IF ~~ a5029
   SAY ~[ARAN] By this point, I don't think it be a matter o' words, but deeds, eh? I don't rightly know how to answer th' question more than I already have. Except to say th' words. An' this be th' wrong place an' time to be havin' that discussion. But as for th' fight, it be over right proper.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1739tob
+IF ~~ a5030
   SAY ~[ARAN] Look, I be man enough to want you. An' I be man enough to choose if I be served best by havin' you love me, or just tolerate me. I'll serve, even when I don't rightly agree. An' my heart's my own, Sune curse Herself. Believe me, it be th' laughter o' th gods mockin' me, fallin' for someone what don't necessarily reciprocate. But I can make my own choices, an' I chose servin' you awhile back.~
   = ~[ARAN] Just be a mite bit more careful how much you play wi' my attentions, on account o' every man has his limit. An' most don' know exactly where that limit be.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0)~ EXIT /* no NPC initiated flirt restart  */
 END
 
-IF ~~ a1736tob
+IF ~~ a5028
   SAY ~[ARAN] No words, then. That saves you th' trouble o' balancin' an' fussin' about anythin'. I know you have your own mind on th' way things go. But you an' I both know, deep down, what th' real answer to that question be.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1711tob
+IF ~~ a5004
   SAY ~[ARAN] Aye, it was naught but a misunderstandin' anyways. I think it be best to let bygones be bygones, eh? We have more important things to be worryin' about.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1713tob
+IF ~~ a5006
   SAY ~[ARAN] I just can't rightly stay mad at you, nohow, <CHARNAME>. I guess I was a bit o' an idiot to shut you out like that.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1722tob
+IF ~~ a5015
   SAY ~[ARAN] Well, on my part, I am blighted glad to be around you, no matter what. When we be gettin' along, I feel like I can accomplish almost anythin'.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1712tob
+IF ~~ a5005
   SAY ~[ARAN] I have naught in th' way o' knowledge o' what you truly need an' want, <CHARNAME>, but I try every day to fill in th' blanks. As for me, you be a right large part o' my life. I am blighted happy just to be at your side.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1723tob
+IF ~~ a5016
   SAY ~[ARAN] I know I be in th' right place, as long as it be at your side. I am glad we put that behind us an' we can move on.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1725tob
+IF ~~ a5018
   SAY ~[ARAN] You know, there be times when havin' words or coldness between us hurts worse than a good solid swordcut across th' gut. Th' physical, well, there be spells an' bandages an' potions. But havin' things go cold between th' two o' us, well, that don't have no quick resolution. But one kiss from you heals my spirit right proper, it does.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",0)~ EXIT
 END
 
-IF ~~ a1731tob
+IF ~~ a5023
   SAY ~[ARAN] Grumbar's Clay Fists, you be a right bloody pain in my arse.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1732tob
+IF ~~ a5024
   SAY ~[ARAN] You... I... I gotta go kill somethin'. Preferably somethin' what splats.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1733tob
+IF ~~ a5025
   SAY ~[ARAN] You can go to th' nine hells an' rot.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1734tob
+IF ~~ a5026
   SAY ~[ARAN] May th' gods preserve us from blighted fools, orcs, an' the nastiness of a vindictive, frightful, spiteful woman.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
-IF ~~ a1721tob
+IF ~~ a5014
   SAY ~[ARAN] Fine. I get it. I stick to business. It's not like I have any feelin's or naught for you. But I get th' message; shut up an' soldier. Gods, let's just be gettin' to somewhere wi' some alcohol right quick.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ EXIT
 END  /*  deal with journal entry */
 
-IF ~~ a1726tob
+IF ~~ a5019
   SAY ~[ARAN] Well, don't that be a kick in th' head. Mayhap I should just rip my heart out while it be beatin'. Fine. Saved me several years o' heartache, I guess.~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3) SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty())~ EXIT
 END  /*  deal with journal entry */
 
-IF ~~ a1730tob
+IF ~~ a5022
   SAY ~[ARAN] Sune's Rump, I don't hate you. Not one bit. You make me so angry sometimes, it hurts. An' then you smile, an' it be like th' first day o' spring. Gods, <CHARNAME>, I don't hate you. Let's just forget this whole thing, eh, an' go back to th' way it was?~
-  ++ ~[PC] No, you hate me. I can see it. You just want my body. This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a1721tob
-  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a1726tob
-  ++ ~[PC] I think... yes. I will just kill you now and be done with it. If you love me, you will hold very still while I cut your throat and burn your head so you can't be revived.~ + a2320tob
-  ++ ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me by shutting me out. It was as if you didn't want me, or didn't need me.~ + a1735tob
-  ++ ~[PC] I don't know why you don't hate me. I am a soulless monster, driven in so many different directions I don't even know why I wake up in the morning. You do not need to be weighed down by all of this. You deserve better.~ + a1735tob
+  ++ ~[PC] No, you hate me. I can see it. You just want my body. This is not working out, Aran. We should stick to business, and absolutely nothing else.~ + a5014
+  ++ ~[PC] None of this is working the way I want. You are a pain and a distraction. You should leave the party for awhile.~ + a5019
+  ++ ~[PC] I think... yes. I will just kill you now and be done with it. If you love me, you will hold very still while I cut your throat and burn your head so you can't be revived.~ + a5031
+  ++ ~[PC] These aren't jewels running down my cheeks, Aran. You really hurt me by shutting me out. It was as if you didn't want me, or didn't need me.~ + a5027
+  ++ ~[PC] I don't know why you don't hate me. I am a soulless monster, driven in so many different directions I don't even know why I wake up in the morning. You do not need to be weighed down by all of this. You deserve better.~ + a5027
   ++ ~[PC] Oh, just go away. I ... I hate you!~ DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY)~ EXIT
 END
 
@@ -9294,7 +9294,7 @@ END
 
 /* fixes and additions */
 
-IF ~~ a2320tob
+IF ~~ a5031
   SAY ~[ARAN] Hey! Cyric's Buttocks, you traitorous wench... I'll not go wi' out a fight...~
   IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3) SetGlobal("KickedOut","LOCALS",1) ActionOverride("c-aran",SetLeavePartyDialogFile()) ActionOverride("c-aran",ChangeAIScript("",DEFAULT)) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",Enemy())~ EXIT
 END

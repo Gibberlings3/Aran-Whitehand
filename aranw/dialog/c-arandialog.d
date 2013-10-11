@@ -4748,10 +4748,10 @@ END
 
 IF ~~ a109
   SAY ~[ARAN] See, this little feather I'm usin' here can do some pretty powerful things.~
-  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",0)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a109_chaste
-  + ~Gender(Player1,FEMALE) OR(2) Global("c-aransex","GLOBAL",1) Global("c-aransex","GLOBAL",2)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a109_fun
-  + ~Gender(Player1,FEMALE) GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a109_wild
-  + ~!Gender(Player1,FEMALE)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a109_boyo
+  + ~Gender(Player1,FEMALE) Global("c-aransex","GLOBAL",0)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a4995
+  + ~Gender(Player1,FEMALE) OR(2) Global("c-aransex","GLOBAL",1) Global("c-aransex","GLOBAL",2)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a4996
+  + ~Gender(Player1,FEMALE) GlobalGT("c-aransex","GLOBAL",2)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a4997
+  + ~!Gender(Player1,FEMALE)~ + ~[PC] Would you like to see a few better uses for that feather?~ + a4994
   ++ ~[PC] Ah, trail talk about philosophy. The 'might versus write' debate. I think I would rather be boiled in oil or served raw to a pack of gibberlings.~ + a110
   ++ ~[PC] You are smarter than you appear, Aran.~ + a107
   ++ ~[PC] A feather. A sharpened feather, dipped in ink. Are you joking?~ + a107
@@ -4759,22 +4759,22 @@ IF ~~ a109
   IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ EXTERN KORGANJ a112
 END
 
-IF ~~ a109_chaste
+IF ~~ a4995
   SAY ~[ARAN] You know, I'd swear you were havin' me on, an'...~
   = ~[ARAN] No. You wouldn't be makin' no joke like what I heard in my head. My mind goes right to th' sparkin' side o' life, it does. Anyways...~
   IF ~~ THEN GOTO a107
 END
-IF ~~ a109_fun
+IF ~~ a4996
   SAY ~[ARAN] Start makin' suggestions like that, an' what's a lad to do but take you up on it? Only I got more than... err... hrmpf. What were I sayin'? Oh, yes..~
   IF ~~ THEN GOTO a107
 END
 
-IF ~~ a109_wild
+IF ~~ a4997
   SAY ~[ARAN] Gettin' bored wi' me already, eh? Now, th' next thing you know, you will be makin' jokes about quills, an' dippin' in th' inkpot, an' all sorts o' talk what makes a lad blush crimson. Anyways...~
   IF ~~ THEN GOTO a107
 END
 
-IF ~~ a109_boyo
+IF ~~ a4994
   SAY ~[ARAN] I don't need naught in th' way o' bedroom instruction from you, m'boyo. This be about th' power o' symbolic representation an' transmission o' information, not some bedroom farce. That be for later, when I can get some red-haired green-eyed half-dryad woodnymph what wants to have her evil ways wi' my poor quill, eh? Anyways...~
   IF ~~ THEN GOTO a107
 END
@@ -25990,7 +25990,7 @@ END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 0  */
 IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",0)~ THEN BEGIN a22
-  SAY ~[ARAN] I was wonderin' when you would show up. I have been checkin' out the area, but I was startin' to worry.~ [c-aws085]
+  SAY ~[ARAN] I was wonderin' when you would show up. I have been checkin' out the area, but I were startin' to worry.~ [c-aws085]
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",1)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",1)~ GOTO a35
   IF ~RandomNum(5,3)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",1)~ GOTO a36
@@ -25999,7 +25999,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 1 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",1)~ THEN BEGIN a22_one
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",1)~ THEN BEGIN a4990
   SAY ~[ARAN] Well, I was just thikin' to myself, 'Self, where do <CHARNAME> be?'. An' then you pop up. I hope I didn't just squander one o' them wish spells by accident.~
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",2)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",2)~ GOTO a35
@@ -26009,8 +26009,8 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 2 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",2)~ THEN BEGIN a22_two
-  SAY ~[ARAN] There you are.~
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",2)~ THEN BEGIN a4991
+  SAY ~[ARAN] Well, there be a sight for sore eyes, eh?~
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",3)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",3)~ GOTO a35
   IF ~RandomNum(5,3)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",3)~ GOTO a36
@@ -26019,7 +26019,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 3 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",3)~ THEN BEGIN a22_three
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",3)~ THEN BEGIN a4992
   SAY ~[ARAN] There you are.~
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",4)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",4)~ GOTO a35
@@ -26029,7 +26029,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 2 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",4)~ THEN BEGIN a22_four
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",4)~ THEN BEGIN a4993
   SAY ~[ARAN] Good to see you. In fact, great to see you. Mayhap th' best news I have had this day.~
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",0)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",0)~ GOTO a35
@@ -31131,7 +31131,7 @@ END
 IF ~~ a2535
   SAY ~[CIVIL01] I could not care less. That is not my department. You could talk to the Auditor General, but the last three AG's have died under mysterious circumstances and the post has been vacant for at least two years. So, do you have something to give me, or not?~
   ++ ~[PC] Yes. Can I get a receipt?~ DO ~TakePartyItem("c-awpkg1")~ + a2530
-  ++ ~[PC] No. It is a Writ of Quarterly Bribes to Bloodsucking Bloated Government Toadies Who Mess With People Because They Can, Long Form. Here, take it. I will not tell you where you can put it... I leave that to your imagination.~ DO ~TakePartyItem("c-awpkg1")~ +  a2533
+  ++ ~[PC] No. It is a Writ of Quarterly Bribes to Bloodsucking Bloated Government Toadies Who Mess With People Because They Can With Impunity, Long Form. Here, take it. I will not tell you where you can put it... I leave that to your imagination.~ DO ~TakePartyItem("c-awpkg1")~ +  a2533
   ++ ~[PC] Actually, I am not sure what this is. I was told to deliver it, and get a receipt.~ DO ~TakePartyItem("c-awpkg1")~ + a2530
   ++ ~[PC] I was supposed to deliver this, but I think I will wait for a bit.~ + a2531
 END
