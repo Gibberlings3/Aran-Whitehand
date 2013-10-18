@@ -2543,7 +2543,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,MAGE)~ THEN BEGIN a198
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2557,7 +2557,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER)~ THEN BEGIN a23
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2571,7 +2571,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,CLERIC)~ THEN BEGIN a230
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2585,7 +2585,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,THIEF)~ THEN BEGIN a2307
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2599,7 +2599,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,BARD)~ THEN BEGIN a2308
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2613,7 +2613,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,PALADIN)~ THEN BEGIN a23
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2627,7 +2627,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_MAGE)~ THEN BEGI
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2641,7 +2641,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_CLERIC)~ THEN BE
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2655,7 +2655,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_THIEF)~ THEN BEG
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2669,7 +2669,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_MAGE_THIEF)~ THE
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2683,7 +2683,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,DRUID)~ THEN BEGIN a2314
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2697,7 +2697,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,RANGER)~ THEN BEGIN a231
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2711,7 +2711,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,MAGE_THIEF)~ THEN BEGIN 
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2725,7 +2725,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,CLERIC_MAGE)~ THEN BEGIN
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2739,7 +2739,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,CLERIC_THIEF)~ THEN BEGI
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2753,7 +2753,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_DRUID)~ THEN BEG
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2767,7 +2767,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,FIGHTER_MAGE_CLERIC)~ TH
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2781,7 +2781,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,CLERIC_RANGER)~ THEN BEG
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2795,7 +2795,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,SORCERER)~ THEN BEGIN a2
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2809,7 +2809,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) Class(Player1,MONK)~ THEN BEGIN a2893
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -2824,7 +2824,7 @@ IF ~Global("c-aranfriendbg2","GLOBAL",21) !Class(Player1,MAGE) !Class(Player1,FI
   ++ ~[PC] That sounds like a great idea. Let's do it.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Waving pointy things at each other randomly during the middle of an adventure... what could possibly go wrong?~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
   ++ ~[PC] Well... I suppose...~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should and find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
+  ++ ~[PC] I am not sure this is the time or place, Aran. Perhaps we should find somewhere more protected.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
   + ~RandomNum(5,1)~ + ~[PC] No. And stop talking to me.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
   + ~RandomNum(5,2)~ + ~[PC] I prefer you when you are the silent type. Right now, obviously, this is a problem, because you keep opening your mouth and letting wind come out.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
   + ~RandomNum(5,3)~ + ~[PC] Please, keep talking. I always yawn when I am interested. Just in case you did not notice, this is called 'sarcasm'.~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
@@ -4220,22 +4220,14 @@ IF ~~ a67
   ++ ~[PC] We are doing well enough. I don't think we need to continue this discussion.~ + a75
 END
 
-IF ~~ a68
-  SAY ~[ARAN] Sure enough. Like what, exactly?~
-  ++ ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ + a69
-  + ~Class(Player1,FIGHTER_ALL)~ + ~[PC] You are relying on weight and numbers to hold back the enemy. What happens when I charge a shield wall with magical weaponry that cleaves through shields like a hot knife through butter?~ + a70
-  + ~Class(Player1,MAGE_ALL)~ + ~[PC] A well placed fireball, or perhaps some lightning, or simply a gaseous cloud... there are lots of ways I could break up that wall, Aran.~ + a65
-  + ~OR(2) Class(Player1,DRUID) Class(Player1,RANGER)~ + ~[PC] Outdoors, a druid must eat shield walls as a light snack. I might call lightning, if I could, and fry them all. Or entangle them and allow archery to finish them.~ + a65
-  + ~Class(Player1,THIEF_ALL)~ + ~[PC] I would probably sneak around back, and take them out one by one. Or simply avoid the whole wall, make your way past them, and get rid of the spellcasters.~ + a70
-  + ~Class(Player1,BARD)~ + ~[PC] A full audience, drawn up into a line, just for me? If I can't beguile them or terrorize them with my music, I would have to reevaluate my bardic skills.~ + a70
-  + ~OR(2) Class(Player1,MONK) Class(Player1,CLERIC_ALL)~ + ~[PC] There are many ways, both spiritually and physically, to influence such a formation. Perhaps you would enlighten me as to the weaknesses you have seen yourself?~ + a70
-  ++ ~[PC] Well, you are supposed to be the tactics expert. Consider it a test of your knowledge. You tell me.~ + a74
-END
-
 IF ~~ a69
   SAY ~[ARAN] I did see one time a Wall fail miserably, as an illusionist got workin' so the swords thought their friends was enemies. An' I did see one time where someone cast a spell what made most o' the Wall flee in terror. But then again, most o' the time, I've seen it work right smart against some pretty tough foes.~
   ++ ~[PC] Any other weaknesses?~ + a70
   ++ ~[PC] That is enough analysis.~ + a64
+  ++ ~[PC] Do you have lots of these stories?~ + a56
+  + ~RandomNum(3,1)~ + ~[PC] I have had enough of your stories. Do the world a favor, and shut up.~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(3,2)~ + ~[PC] I have had enough of your stories. Do the world a favor, and shut up.~ + a1914 /* c-aranshutup8 */
+  + ~RandomNum(3,3)~ + ~[PC] I have had enough of your stories. Do the world a favor, and shut up.~ + a1915 /* c-aranshutup9 */
 END
 
 /* a70, a71, a72, a73, a74 in chains */
@@ -4838,7 +4830,7 @@ IF ~~ a118 SAY ~[ARAN] I say the pen's a force greater than a million swords. On
 
 /* a119 is a chain */
 
-IF ~~ a120_noclass
+IF ~~ a4928
   SAY ~[ARAN] So, m'<PRO_LADYLORD>, what be next?~
   ++ ~[PC] Speak that disrespectfully to me again, and you will find me more than a little angry.~ + a134
   + ~RandomNum(3,3)~ + ~[PC] We really do not have time for all this talk right now.~ + a1927 /* c-aranshutup21 */
@@ -7431,7 +7423,7 @@ IF ~~ a4859
   SAY ~[ARAN] I were right happy, in case you had naught in th' way o' evidence. An' you seemed right happy, too.~
   ++ ~[PC] If I remember correctly, we did a lot more than kiss. I mean, we didn't... we stopped short of...~ + a4860
   ++ ~[PC] I thought... well... I was not sure. I like this. But I am just not ready for more.~ + a4868
-  ++ ~[PC] If I remember correctly, we did a lot more than kiss. I mean, we didn't... we stopped short of...~ + a4860
+  ++ ~[PC] I had plenty of evidence. I am less sure of how I feel about this.~ + a4870
   ++ ~[PC] Oh gods... get up. Fast. And straighten your tunic, will you? What are people going to think?~ + a4863
   ++ ~[PC] This was the biggest mistake I have ever made. I may have seemed happy, but now I wish I didn't have to find some excuse for being alone with you.~ + a4864
 END  
@@ -9525,6 +9517,7 @@ END
 
 IF ~~ a606
   SAY ~[ARAN] Well, two spoons in a drawer, they nestle up close, an' then...~
+  ++ ~[PC] (Blush and look away.)~ + a2321
   ++ ~[PC] Stop right there. No 'spooning' on the job, Aran. In fact, none on or off the job.~ + a603
   ++ ~[PC] Stop right there. No 'spooning' on the job, Aran. Now, perhaps later you could show me how that all works, when we settle in for the night.~ + a603
   ++ ~[PC] Like this? How does my back pressing into your chest and my head falling on your shoulder make you feel?~ + a616
@@ -9648,6 +9641,7 @@ END
 IF ~~ a615 SAY ~[ARAN] I would be right sorry, an' respect that you feel that way right now. But I am not known to be anythin' but stubborn, an' I know my own interests. I will be right here, on your shield arm, hopin' you change your mind.~ IF ~~ THEN EXIT END
 IF ~~ a616 SAY ~[ARAN] Alive.~ IF ~~ THEN EXIT END
 IF ~~ a617 SAY ~[ARAN] I would say by th' gods an' goddesses, you vixen, you be teasin' me somethin' fierce.~ IF ~~ THEN EXIT END
+IF ~~ a2321 SAY ~[ARAN] Well, now, that be an answer, o' a sort. A lad can live on glances an' blushes for a long time, he can. Just so's th' glances an' blushes be naught o' th' way o' anger or disgust.~ IF ~~ THEN EXIT END
 
 /* BG2 Love Talk 6 :  ABBA - Take A Chance On Me : c-aranrombg2 = 11 > 12 c-aranromtimer,ARAN_LTT */
 IF ~Global("c-aranbg2rom","GLOBAL",11)~ THEN BEGIN a618
@@ -9998,7 +9992,7 @@ IF ~~ a668
   SAY ~[ARAN] I think about it sometimes, is all. It is hard to dream wi' out nightmares, sometimes. And there is somethin' to havin' a strong partner to help face the world.~
   ++ ~[PC] You know, it isn't that hard to do. Arms go around the back, hands at the waist, lean forward a little - a relatively simple maneuver for a man trained in combat.~ + a677
   ++ ~[PC] And you think perhaps I would be interested in that kind of contract?~ + a669
-  ++ ~[PC] Look, Aran. You are useful to have around, but forget the long term ideas. Life is too short for contracts~ + a669
+  ++ ~[PC] Look, Aran. You are useful to have around, but forget the long term ideas. Life is too short for contracts.~ + a669
   ++ ~[PC] I know you like me, but are you suggesting that we become something more permanent?~ + a677
   + ~Alignment(Player1,MASK_EVIL)~ + ~[PC] I would not describe myself as 'normal', but even I have wants and needs.~ + a673
   + ~!Alignment(Player1,MASK_EVIL)~ + ~[PC] I would not describe myself as 'normal', but even I have wants and needs.~ + a674
@@ -10018,6 +10012,7 @@ IF ~~ a670
   SAY ~[ARAN] (Aran's face goes as still and careful as if aiming an arrow.)~
   ++ ~[PC] (Lean into him and kiss him.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a671
   ++ ~[PC] (Look into his eyes, then release his jaw and step away.)~ + a672
+  ++ ~[PC] (Blush, and turn away from him.)~ EXIT
   ++ ~[PC] Aran, don't you want to do something?~ + a672
   ++ ~[PC] I... Aran... I want you to kiss me, please.~ + a671
   ++ ~[PC] I am getting tired of the hints. I am a simple woman. I expect you to take what you want, by force if necessary. All this talk is wasting my time. Are you going to act, or are you going to dance around avoiding the whole concept of 'us'?~ DO ~SetGlobal("c-aranrom","GLOBAL",2)~ + a677
@@ -13814,23 +13809,106 @@ CHAIN C-ARANJ a65
 == C-ARANJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[ARAN] Not every group has spellcasters, so sure thing. I never did see a spellcaster get off a successful spell when he's got an arrow through his left eye. That's archery at work, or cavalry chargin' round the flank an' smashin' 'em but good.~
 == VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN ~[VALYGAR] A very satisfying thought.~
 END
-IF ~~ THEN EXTERN C-ARANJ a70
+IF ~~ THEN EXTERN C-ARANJ a4918
+
+CHAIN C-ARANJ a68
+~[ARAN] Sure enough. Like what, exactly?~
+== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] Must we disuss this with a common sellsword? A Drow child could outwit him. Our enemies will not wait patiently while he attempts to discuss this with you.~
+END
+++ ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ EXTERN C-ARANJ a69
+++ ~[PC] I think that is enough analysis.~ EXTERN C-ARANJ a64
+++ ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ EXTERN C-ARANJ a69
++ ~Class(Player1,FIGHTER_ALL)~ + ~[PC] You are relying on weight and numbers to hold back the enemy. What happens when I charge a shield wall with magical weaponry that cleaves through shields like a hot knife through butter?~ EXTERN C-ARANJ a4333
++ ~Class(Player1,MAGE_ALL)~ + ~[PC] A well placed fireball, or perhaps some lightning, or simply a gaseous cloud... there are lots of ways I could break up that wall, Aran.~ EXTERN C-ARANJ a65
++ ~OR(2) Class(Player1,DRUID) Class(Player1,RANGER)~ + ~[PC] Outdoors, a druid must eat shield walls as a light snack. I might call lightning, if I could, and fry them all. Or entangle them and allow archery to finish them.~ EXTERN C-ARANJ a65
++ ~Class(Player1,THIEF_ALL)~ + ~[PC] I would probably sneak around back, and take them out one by one. Or simply avoid the whole wall, make your way past them, and get rid of the spellcasters.~ EXTERN C-ARANJ a4469
++ ~Class(Player1,BARD)~ + ~[PC] A full audience, drawn up into a line, just for me? If I can't beguile them or terrorize them with my music, I would have to reevaluate my bardic skills.~ EXTERN C-ARANJ a4496
++ ~OR(2) Class(Player1,MONK) Class(Player1,CLERIC_ALL)~ + ~[PC] There are many ways, both spiritually and physically, to influence such a formation. Perhaps you would enlighten me as to the weaknesses you have seen yourself?~ EXTERN C-ARANJ a4537
+++ ~[PC] Well, you are supposed to be the tactics expert. Consider it a test of your knowledge. You tell me.~ EXTERN C-ARANJ a74
 
 CHAIN C-ARANJ a70
 ~[ARAN] O' course, I didn't say it were a perfect solution. I just think it would help us out.~
-== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[KORGAN] All this namby-pamby talk o' tactics makes me wanna hit something. Cut the blabber so we can get going.~ DO ~SetGlobal("c-fightanalysis","GLOBAL",1)~
-== C-ARANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[ARAN] Ho, shortaxe, got up on th' wrong side o' bed this century?~
-== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[VICONIA] It is right that the weaker and lesser cattle should be expended as shields.~ DO ~SetGlobal("c-fightanalysis","GLOBAL",1)~
-== C-ARANJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID) Global("c-fightanalysis","GLOBAL",0)~ THEN ~[ARAN] I wasn't talkin' to you, drowess... you can kiss my arse.~
+== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGAN] All this namby-pamby talk o' tactics makes me wanna hit something. Cut the blabber so we can get going.~
+== C-ARANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[ARAN] Ho, shortaxe, got up on th' wrong side o' bed this century?~
+== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[VICONIA] It is right that the weaker and lesser cattle should be expended as shields.~
+== C-ARANJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN ~[ARAN] I wasn't talkin' to you, drowess... you can kiss my arse.~
 END
 ++ ~[PC] I think that is enough analysis.~ EXTERN C-ARANJ a64
-+ ~Global("c-fightanalysis1","LOCALS",0)~ + ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ DO ~SetGlobal("c-fightanalysis1","LOCALS",1)~ EXTERN C-ARANJ a69
-+ ~Class(Player1,FIGHTER_ALL) Global("c-fightanalysis2","LOCALS",0)~ + ~[PC] You are relying on weight and numbers to hold back the enemy. What happens when I charge a shield wall with magical weaponry that cleaves through shields like a hot knife through butter?~ DO ~SetGlobal("c-fightanalysis2","LOCALS",1)~ EXTERN C-ARANJ a70
-+ ~Class(Player1,MAGE_ALL) Global("c-fightanalysis3","LOCALS",0)~ + ~[PC] A well placed fireball, or perhaps some lightning, or simply a gaseous cloud... there are lots of ways I could break up that wall, Aran.~ DO ~SetGlobal("c-fightanalysis3","LOCALS",1)~ EXTERN C-ARANJ a65
-+ ~OR(2) Class(Player1,DRUID) Class(Player1,RANGER) Global("c-fightanalysis4","LOCALS",0)~ + ~[PC] Outdoors, a druid must eat shield walls as a light snack. I might call lightning, if I could, and fry them all. Or entangle them and allow archery to finish them.~ DO ~SetGlobal("c-fightanalysis4","LOCALS",1)~ EXTERN C-ARANJ a65
-+ ~Class(Player1,THIEF_ALL) Global("c-fightanalysis5","LOCALS",0)~ + ~[PC] I would probably sneak around back, and take them out one by one. Or simply avoid the whole wall, make your way past them, and get rid of the spellcasters.~ DO ~SetGlobal("c-fightanalysis5","LOCALS",1)~ EXTERN C-ARANJ a70
-+ ~Class(Player1,BARD) Global("c-fightanalysis6","LOCALS",0)~ + ~[PC] A full audience, drawn up into a line, just for me? If I can't beguile them or terrorize them with my music, I would have to reevaluate my bardic skills.~ DO ~SetGlobal("c-fightanalysis6","LOCALS",1)~ EXTERN C-ARANJ a70
-+ ~OR(2) Class(Player1,MONK) Class(Player1,CLERIC_ALL) Global("c-fightanalysis7","LOCALS",0)~ + ~[PC] There are many ways, both spiritually and physically, to influence such a formation. Perhaps you would enlighten me as to the weaknesses you have seen yourself?~ DO ~SetGlobal("c-fightanalysis7","LOCALS",1)~ EXTERN C-ARANJ a70
+++ ~[PC] A wall must take a huge hit from any spellcasters around. It sounds like it makes a big target.~ EXTERN C-ARANJ a69
++ ~Class(Player1,FIGHTER_ALL)~ + ~[PC] You are relying on weight and numbers to hold back the enemy. What happens when I charge a shield wall with magical weaponry that cleaves through shields like a hot knife through butter?~ EXTERN C-ARANJ a4333
++ ~Class(Player1,MAGE_ALL)~ + ~[PC] A well placed fireball, or perhaps some lightning, or simply a gaseous cloud... there are lots of ways I could break up that wall, Aran.~ EXTERN C-ARANJ a65
++ ~OR(2) Class(Player1,DRUID) Class(Player1,RANGER)~ + ~[PC] Outdoors, a druid must eat shield walls as a light snack. I might call lightning, if I could, and fry them all. Or entangle them and allow archery to finish them.~ EXTERN C-ARANJ a65
++ ~Class(Player1,THIEF_ALL)~ + ~[PC] I would probably sneak around back, and take them out one by one. Or simply avoid the whole wall, make your way past them, and get rid of the spellcasters.~ EXTERN C-ARANJ a4469
++ ~Class(Player1,BARD)~ + ~[PC] A full audience, drawn up into a line, just for me? If I can't beguile them or terrorize them with my music, I would have to reevaluate my bardic skills.~ EXTERN C-ARANJ a4496
++ ~OR(2) Class(Player1,MONK) Class(Player1,CLERIC_ALL)~ + ~[PC] There are many ways, both spiritually and physically, to influence such a formation. Perhaps you would enlighten me as to the weaknesses you have seen yourself?~ EXTERN C-ARANJ a4537
+
+CHAIN C-ARANJ a4333
+~[ARAN] Not much in th' way o' help if we have all spellswords, I think. But other than that, a Wall be a right powerful tactic.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad.~
+== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
+== C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
+END
+++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
+++ ~[PC] I will think about bringing on more swords, Aran. But I can't promise anything.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a skilled thief or two to complement our skillset.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a paladin to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get some spellcasters to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I think you should avoid discussing tactics with me from now on. I think I have things well in hand.~ EXTERN C-ARANJ a75
+
+CHAIN C-ARANJ a4469
+~[ARAN] That would work right fine, an' roll right up th' flank, until you got exposed. Then there'd be th ' hells to pay, I bet.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad.~
+== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
+== C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
+END
+++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
+++ ~[PC] I will think about bringing on more swords, Aran. But I can't promise anything.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a skilled thief or two to complement our skillset.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a paladin to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get some spellcasters to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I think you should avoid discussing tactics with me from now on. I think I have things well in hand.~ EXTERN C-ARANJ a75
+
+CHAIN C-ARANJ a4496
+~[ARAN] I suppose you could look at it that way. On th' other hand, one little spell o' silenc, an' there might be all th' hells to pay for you, you know.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad. You learn to keep your wits sharp an' never forget a leeeon learned through hard experience.~
+== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
+== C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
+END
+++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
+++ ~[PC] I will think about bringing on more swords, Aran. But I can't promise anything.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a skilled thief or two to complement our skillset.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a paladin to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get some spellcasters to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I think you should avoid discussing tactics with me from now on. I think I have things well in hand.~ EXTERN C-ARANJ a75
+
+CHAIN C-ARANJ a4537
+~[ARAN] Lots o' ways. Most o' them have to do wi' breakin' morale, or disruptin' th' formation in some way or other. Not a problme for a strong will like yours, but most soldiers don't appreciate havin' stingin' nettles grow up around 'em, or gettin' plagued by insects.~
+== CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[CERND] You suprise me. I thought you had very little training in the strategy and tactics of nature.~
+== C-ARANJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad. You learn to keep your wits sharp an' never forget a leeeon learned through hard experience.~
+END
+++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
+++ ~[PC] I will think about bringing on more swords, Aran. But I can't promise anything.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a skilled thief or two to complement our skillset.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a paladin to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get some spellcasters to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I think you should avoid discussing tactics with me from now on. I think I have things well in hand.~ EXTERN C-ARANJ a75
+
+CHAIN C-ARANJ a4918
+~[ARAN] Truth be told, now that I think o' it, th' Wall be a right fine tactic when there be larger numbers. Mayhap it would not apply so well here after all, on account o' we have so few in th' party to begin with.~
+== MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[MAZZY] We might be better served by keeping our numbers small. Large groups require supply lines, move at slower speeds...~
+== C-ARANJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN ~[ARAN] Banes Bones, you be right. I should have thought o' that before openin' my mouth, eh? I guess we have th' right composition for a small, mobile force wi' out al th' trouble o' mass logistics an' organization.~
+== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[KORGON] Gods, shut yer blighted yap, Whitehand. You blather on.~
+== C-ARANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN ~[ARAN] Keep your britches on, shortaxe.~
+END
+++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
+++ ~[PC] I will think about bringing on more swords, Aran. But I can't promise anything.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a skilled thief or two to complement our skillset.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get a paladin to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I will think about it, Aran. But I am more likely to get some spellcasters to assist us.~ EXTERN C-ARANJ a75
+++ ~[PC] I think you should avoid discussing tactics with me from now on. I think I have things well in hand.~ EXTERN C-ARANJ a75
 
 CHAIN C-ARANJ a71
 ~[ARAN] Well, then th' Shield Wall is protection for archers an' spellcasters. Acts like a livin' stone wall to hide behind, an' it can move forward an' take on all comers.~
@@ -13916,7 +13994,7 @@ IF ~!Class(Player1,MAGE_ALL)
 !Class(Player1,BARD_ALL)
 !Class(Player1,PALADIN_ALL)
 !Class(Player1,DRUID_ALL)
-!Class(Player1,RANGER_ALL)~ GOTO a120_noclass
+!Class(Player1,RANGER_ALL)~ GOTO a4928
 
 CHAIN C-ARANJ a137
 ~[ARAN] Well, now. Comin' up with decent meals is more tricky than it appears. It helps to know what you have, an' what you might be doin' next. I mean, cookin' a light meal before fightin' a Great Wyrm is a good idea. Eatin' spicy food before explorin' a dark place that smells like a Calimport sewer, well, that is an invitation for disaster.~
@@ -14000,12 +14078,14 @@ CHAIN C-ARANJ a177
 == C-ARANJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[ARAN] Mystra's Magnificent Mouth, Cernd... given the choice between my feet in battle an' the animal, I am considerin' the animal a distant second.~
 END
 + ~!Class(Player1,CLERIC_ALL)~ + ~[PC] For the god's sake, slow down with the swearing, will you?~ EXTERN C-ARANJ a178
-+ ~OR(2) Class(Player1,PALADIN) Class(Player1,CLERIC_ALL) !Kit(Player1,GODTALOS) !Kit(Player1,GODHELM) !Kit(Player1,GODLATHANDER)~ + ~[PC] Why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a179
-+ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODHELM)~ + ~[PC] Here. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a180
-+ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODLATHANDER)~ + ~[PC] Here. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a181
-+ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODTALOS)~ + ~[PC] Here. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a182
-+ ~OR(2) Class(Player1,RANGER) Class(Player1,DRUID)~ + ~[PC] Here. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a183
++ ~OR(2) Class(Player1,PALADIN) Class(Player1,CLERIC_ALL) !Kit(Player1,GODTALOS) !Kit(Player1,GODHELM) !Kit(Player1,GODLATHANDER)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a179
++ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODHELM)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a180
++ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODLATHANDER)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a181
++ ~Class(Player1,CLERIC_ALL) Kit(Player1,GODTALOS)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a182
++ ~OR(2) Class(Player1,RANGER) Class(Player1,DRUID)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a183
 ++ ~[PC] You take every opportunity to swear, don't you, Aran.~ EXTERN C-ARANJ a178
++ ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ + ~[PC] Here you go, Aran. No need to cut up Minsc's spares. And be careful of your language, you might offend someone.~ EXTERN C-ARANJ a178
++ ~OR(3) !InParty("Minsc") !InMyArea("Minsc") StateCheck("Minsc",CD_STATE_NOTVALID)~ + ~[PC] Here, have a lace of mine. But why are you blaspheming over something so minor, Aran?~ EXTERN C-ARANJ a178
 ++ ~[PC] Alright, move along, everyone. The sellsword is having troubles again. Catch up fast, Aran.~ EXTERN C-ARANJ a1907 /* c-aranshutup1 */
 
 CHAIN C-ARANJ a178
@@ -17405,7 +17485,7 @@ IF ~~ a3785 /* ANYWAYYOULIKEIT_3785 */
   + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] I think I would like to fulfill that fantasy.~ + a3784 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] (Blush fiercely and turn away from him.)~ + a3295
 END
 
 IF ~~ a3786 /* ANYWAYYOULIKEIT_3786 */
@@ -17417,7 +17497,7 @@ IF ~~ a3786 /* ANYWAYYOULIKEIT_3786 */
   + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] I think I would like to fulfill that fantasy.~ + a3784 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] (Blush fiercely and turn away from him.)~ + a3295
 END
 IF ~~ a3787 /* ANYWAYYOULIKEIT_3787 */
   SAY ~[ARAN] Well, if I had anythin' I could do, it would be to watch your face as you found your pleasure. I'd watch th' slow smile turn anxious, your bright eyes sharpen to keen desire, your chest risin' an' fallin', until th' slow blush be spread across it... I'd follow that blush wi' kisses, until you either demanded I fill you or demanded I release you, whichever suited your fancy. Then I'd be right happy man, I would.~
@@ -17428,7 +17508,7 @@ IF ~~ a3787 /* ANYWAYYOULIKEIT_3787 */
   + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] I think I would like to fulfill that fantasy.~ + a3784 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] (Blush fiercely and turn away from him.)~ + a3295
 END
 
 IF ~~ a3788 /* ANYWAYYOULIKEIT_3788 */
@@ -17441,7 +17521,7 @@ IF ~~ a3788 /* ANYWAYYOULIKEIT_3788 */
   + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] I think I would like to fulfill that fantasy.~ + a3784 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] (Blush fiercely and turn away from him.)~ + a3295
 END
 
 IF ~~ a3789 /* ANYWAYYOULIKEIT_3789 */
@@ -17454,8 +17534,10 @@ IF ~~ a3789 /* ANYWAYYOULIKEIT_3789 */
   + ~RandomNum(3,3)~ + ~[PC] Nice idea, but not now, please. I really do have a headache. And a backache. And I think I have strained my ankle, as well.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,2)~ + ~[PC] Not... not now. I don't think I am ready for more than a kiss right now.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(3,1)~ + ~[PC] No, thank you. I think I will pass on that particular opportunity.~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
-  ++ ~[PC] I think I would like to fulfill that fantasy.~ + a3784 /* TOLD_ACTION_COMPLETED */
+  ++ ~[PC] (Blush fiercely and turn away from him.)~ + a3295
 END
+
+IF ~~ a3295 SAY ~[ARAN] Hells. I done said too much.~ IF ~~ THEN EXIT END
 
 /* intermediaries from intermediaries, leading to filters */
 
@@ -19802,7 +19884,7 @@ IF ~~ a4794
   SAY ~[ARAN] Well, there be this odd sensation o' th' mud an' rock, an' to tell th' truth I'd rather follow amorous pursuits somewhere th' weeds have naught in th' way o' findin' places they should not.~
   ++ ~[PC] Are you scared of me? Or of what I am offering?~ + a4800
   ++ ~[PC] I... I agree. But I intend to follow up on this train of thought later on. Though I have this feeling you will not let me forget I was interested...~ + a4805
-  ++ ~[PC] My body, my needs, my rules. Are you denying me what I want?~ + a4802
+  ++ ~[PC] My body, my needs, my rules. Are you denying me what I want, right here and now?~ + a4802
   ++ ~[PC] Well, time to get back to camp. I suspect you will dream of me tonight, won't you?~ + a4805
 END
 
@@ -19833,6 +19915,7 @@ END
 IF ~~ a4803
   SAY ~[ARAN] Mayhap I want to hear more about this 'penalty' option, eh?~ 
   ++ ~[PC] The penalty option is I walk away right now, and leave you to your own devices.~ + a4804
+  ++ ~[PC] (Blush, and turn away from him.)~ + a4804
   ++ ~[PC] Well, there would be whips. And chains. And lots and lots of leather. Or not.~ + a4804
   ++ ~[PC] Well, there would be honey. Lots of honey. Applied in interesting places. Or are you scared of a little experimentation?~ + a4800
   ++ ~[PC] Trust me. You do not want to find out what the penalty phase entails. Some things are just too hideous to contemplate.~ + a4804
@@ -22606,7 +22689,7 @@ IF ~~ a1131 SAY ~[ARAN] That tree... I swear it looked right back at me.~ IF ~~ 
 IF ~~ a1132 SAY ~[ARAN] I know you can find almost anythin' for sale, you can find work o' both nice an' not so nice kinds, an' you can find yourself knocked out n' chained to a rowin' bench headed for Calimport.~ IF ~~ THEN EXIT END
 IF ~~ a1133 SAY ~[ARAN] Don't give coin to strangers? Don't drink th' water? Xvim's Spit, <CHARNAME>... I don't usually frequent slums. I take contracts to go in an' roust the poor bastards, knock some heads together, mayhap burn down a building or two. We might ask a native or two, though. These folks would sell their child into slavery wi' you for a few coins.~ IF ~~ THEN EXIT END
 IF ~~ a1134 SAY ~[ARAN] Well, I marched through here once, on a day contract. Local merchant house wanted to make a big splash, an' hired a bunch o' sellswords to wear pink an' purple livery an' guard a carriage through town.~ = ~[ARAN] It did not work out well, though. When the crowd weren't laughin', they were lookin' at all the finery, an' seein' little in th' way o' armor. Rival house took advantage, an' beat the lot o' us, dumped the carriage, an' dumped the poor passenger in the mud.~ = ~[ARAN] Learned a good lesson that day, too... don't be tryin' to punch a man in the mouth what wears full plate. It busts your knuckles up somethin' fierce.~ IF ~~ THEN EXIT END
-IF ~~ a1135 SAY ~[ARAN] This place, I know. There be a circus to visit, an' until some idiot blew a great hole in th' shops over there, you could pick up good work as scribe or mercenary guard at daily, tenday, or monthly contracts. An up over there, th' Inn o' the Seven Veils has some right fine entertainment if you can afford it. Hells, I hope Sheri is playin' again tonight. Got my eye on her. I'd have more, but she might object.~ IF ~~ THEN EXIT END
+IF ~~ a1135 SAY ~[ARAN] This place, I know. There be a circus to visit, an' until some idiot blew a great hole in th' shops over there, you could pick up good work as scribe or mercenary guard at daily, tenday, or monthly contracts. An' up over there, th' Den o' the Seven Vales has some right fine entertainment if you can afford it. Hells, I hope Sheri is playin' again tonight. Got my eye on her. I'd have more, but she might object.~ IF ~~ THEN EXIT END
 IF ~~ a1136 SAY ~[ARAN] Up?~ IF ~~ THEN EXIT END
 IF ~~ a1137 SAY ~[ARAN] Well, eat right, avoid drinkin' to excess, stop smokin', an' avoid dragons an' liches. Oh, an' vampires. Avoid them, too. other than that, I got naught to advise.~ IF ~~ THEN EXIT END
 IF ~~ a1138 SAY ~[ARAN] I have heard there be only three big temples here, an' all three are not to be trifled with. Sometimes they hire out work, too. I also heard there be a new religion in town, somethin' about an 'Unseein' one' ore somethin' like that. Figured any god called 'Unseein' was also 'Unfeelin', so I gave it a wide berth.~ IF ~~ THEN EXIT END
@@ -23103,7 +23186,7 @@ END
 /* Flirt Gifts Sequence */
 IF ~~ a1362
   SAY ~[ARAN] Right, then, <CHARNAME>. I'd be a fool not to know that the ladies like to see... err... I know th' fairer sex wants to know a man appreciates them. An' it usually goes by givin' gifts. So, I got you somethin'. Here - take it.~
-  IF ~Global("c-arangift","GLOBAL",0)~ THEN REPLY ~[PC] Why... thank you, I think... a dagger. Just what I always wanted. A curious choice. Why a knife? Doesn't that imply soem sort of conflict?~ DO ~GiveItemCreate("DAGG02",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1389
+  IF ~Global("c-arangift","GLOBAL",0)~ THEN REPLY ~[PC] Why... thank you, I think... a dagger. Just what I always wanted. A curious choice. Why a knife? Doesn't that imply some sort of conflict?~ DO ~GiveItemCreate("DAGG02",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1389
   IF ~Global("c-arangift","GLOBAL",1)~ THEN REPLY ~[PC] Is this some sort of gem?~ DO ~SetGlobal("c-arangift","GLOBAL",2) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1391
   IF ~Global("c-arangift","GLOBAL",2)~ THEN REPLY ~[PC] A wild flower.~ DO ~SetGlobal("c-arangift","GLOBAL",3) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1392
   IF ~Global("c-arangift","GLOBAL",3)~ THEN REPLY ~[PC] The carving on this leather bracer is... interesting.~ DO ~GiveItemCreate("BRAC01",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",4) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1393
@@ -31276,16 +31359,16 @@ CHAIN C-ARANJ a2699
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aanoconflict","GLOBAL",0)~ THEN ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",1)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? You done told me no sellsword has th' right to be called "friend". Why do you be askin'?~
-== C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",1)~ THEN ~[ARAN] You haven't told me to not try a bit o' sparkin' from time to time. Then again, You done got a huge amount to think about lately. I think we be friends, more's th' pity. Why do you be askin'?~
+== C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",1)~ THEN ~[ARAN] You haven't told me to not try a bit o' sparkin' from time to time. Then again, you done got a huge amount to think about lately. I think we be friends, more's th' pity. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",0)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into more than a kiss or two someday. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",2)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into somethin' more than kissin' an' touchin' someday. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' each other. Mayhap someday we will take that final step. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",4)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. An' I won't never forget spendin' time wi' you all tangled up, explorin' everythin'... why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. We could have a bit more, but I guess things didn't work out th' way you wanted. Why do you be askin'?~
-== C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, You done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
+== C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) !Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You told me to not try to confuse things by bein' friends, so we be supposed to keep to th' professional side. You command, I follow. Then you pay me. You do let me prattle on an' on about whatever I like, which is blighted nice o' you.  Why do you be askin'?~
-== C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, You done got a huge amount to think about lately. You also told me not to talk so much. I think we be friends. Why do you be askin'?~
+== C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also told me not to talk so much. I think we be friends. Why do you be askin'?~
 == C-ARANJ IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) !Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You told me to not try to confuse things by bein' friends, so we be supposed to keep to th' professional side. I also am supposed to keep my blighted mouth shut most o' th' time. You command, I follow. Then you pay me. Why do you be askin'?~
 == C-ARANJ IF ~HasItemEquiped("belt05",Player1)~ THEN ~[ARAN] Hey... you know, I be havin' one hells o' a blighted time figurin' out just what I think o' our relationship. I mean, that belt... it confuses me right proper, it do.~
 END
@@ -31310,16 +31393,16 @@ CHAIN C-ARANP a2712
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aanoconflict","GLOBAL",0)~ THEN ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",1)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? You done told me no sellsword has th' right to be called "friend". Why do you be askin'?~
-== C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",1)~ THEN ~[ARAN] You haven't told me to not try a bit o' sparkin' from time to time. Then again, You done got a huge amount to think about lately. I think we be friends, more's th' pity. Why do you be askin'?~
+== C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",1)~ THEN ~[ARAN] You haven't told me to not try a bit o' sparkin' from time to time. Then again, you done got a huge amount to think about lately. I think we be friends, more's th' pity. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",0)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into more than a kiss or two someday. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",2)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into somethin' more than kissin' an' touchin' someday. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' each other. Mayhap someday we will take that final step. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",4)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. An' I won't never forget spendin' time wi' you all tangled up, explorin' everythin'... why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. We could have a bit more, but I guess things didn't work out th' way you wanted. Why do you be askin'?~
-== C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, You done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
+== C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) !Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You told me to not try to confuse things by bein' friends, so we be supposed to keep to th' professional side. You command, I follow. Then you pay me. You do let me prattle on an' on about whatever I like, which is blighted nice o' you.  Why do you be askin'?~
-== C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, You done got a huge amount to think about lately. You also told me not to talk so much. I think we be friends. Why do you be askin'?~
+== C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also told me not to talk so much. I think we be friends. Why do you be askin'?~
 == C-ARANP IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) !Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You told me to not try to confuse things by bein' friends, so we be supposed to keep to th' professional side. I also am supposed to keep my blighted mouth shut most o' th' time. You command, I follow. Then you pay me. Why do you be askin'?~
 == C-ARANP IF ~HasItemEquiped("belt05",Player1)~ THEN ~[ARAN] Hey... you know, I be havin' one hells o' a blighted time figurin' out just what I think o' our relationship. I mean, that belt... it confuses me right proper, it do.~
 END
