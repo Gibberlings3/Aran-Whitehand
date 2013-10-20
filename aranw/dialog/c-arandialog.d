@@ -5527,7 +5527,7 @@ IF ~~ a220
   + ~Gender(Player1,MALE)~ + ~[PC] That sounds fine to me.~ DO ~SetGlobal("c-aranspar","GLOBAL",4)~ EXIT
   + ~Gender(Player1,FEMALE)~ + ~[PC] That sounds fine to me.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
   + ~Gender(Player1,MALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we set up camp outside in the evening, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",4)~ EXIT
-  + ~Gender(Player1,FEMALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we camp outside in the evening, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
+  + ~Gender(Player1,FEMALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we set up camp outside in the evening, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
   ++ ~[PC] No, thank you. I think it would be a waste of my time.~ + a224
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Are you sure that you want to spar, or do you have romance in mind?~ + a223
   ++ ~[PC] Chicken. You are worse than Melicamp. At least he had an excuse.~ + a222
@@ -5537,8 +5537,8 @@ IF ~~ a221
   SAY ~[ARAN] Well, that puts a damper on things. How about the first time we settle into camp for a rest, we take this up again? We should make it outside, too, on account o' havin' enough space. Some evenin', when we be campin'. Come on, it might be a mite bit o' fun!~
   + ~Gender(Player1,MALE)~ + ~[PC] That sounds fine to me.~ DO ~SetGlobal("c-aranspar","GLOBAL",4)~ EXIT
   + ~Gender(Player1,FEMALE)~ + ~[PC] That sounds fine to me.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
-  + ~Gender(Player1,MALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we camp outside, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",4)~ EXIT
-  + ~Gender(Player1,FEMALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we camp outside, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
+  + ~Gender(Player1,MALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we set up camp outside in the evening, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",4)~ EXIT
+  + ~Gender(Player1,FEMALE)~ + ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we set up camp outside in the evening, I will look for you.~ DO ~SetGlobal("c-aranspar","GLOBAL",1)~ EXIT
   ++ ~[PC] No, thank you. I think it would be a waste of my time.~ + a224
   + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + ~[PC] Are you sure that you want to spar, or do you have romance in mind?~ + a223
   ++ ~[PC] Chicken. You are delaying this because you do not want to lose to me. You are worse than Melicamp. At least he had an excuse.~ + a222
@@ -10442,7 +10442,7 @@ IF ~~ a3234 /* aran letter #4 (rom, c-alttr4.itm) */
 
 I hope that all is well with you. For me, I am sorely in need of your guidance. I know we have written about this several times, but I need to clear my head and think and you are always good at helping me do that. I cannot stop thinking about her. I cannot stop watching her. It has me off balance, even worse than when I fell for that half-elven bard you warned me against. I simply do not understand how I could be pulled so far under her spell in such a short time. I know I am not an apprentice, but I certainly feel like one. I know I wrote to you of my feelings, and I know we joked about the difficulties of falling for one's employer, but now I am serious.
 I do not know if you would like her, or not. But do not believe the stories that must be floating around about what we are doing. All I can say is that she has captivated my attention in a way no other woman has. Yes, even more than SilverEyes. I just have difficulties seeing what I can offer her in return. I have no wealth or title, no real prospects, and I do not even know if she truly would have me. But that is how serious my situation seems to have become. For Sune's Blessing and for the love of your brother, help me. I need to know what a woman of power really wants.
-Yours faithfully, Aran~
+Yours faithfully, Aran.~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
   ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr4",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
@@ -10468,7 +10468,7 @@ IF ~~ a3236 /* aran letter #6 (rom, c-alttr6.itm) */
   Congratulations on winning your competition! I had no idea that things were so competitive at the academy, and I am very glad that the Priests of Ilmater were there when that boy got caught in the fireball. I am so happy you won, and you even gave me ideas for a new set of tactics to use. I doubt I will often be able to spread oil or grease before a battle, but the use of multiple layers of magic is not something I have studied very much. The way things are going around here, we may need all the tactical advantages I can come up with.
   As for your inquiries, she is holding her own against the power of her blood. I do not have any real answers for you as to whether she sees me as someone who she could be with forever, or just someone she can use temporarily. I hear her words, and I see her responses, but I often am not quite sure where she really is coming from. She may be shouting her truth at me all the time, for all I know, but I am simply not sure if I am hearing reality or something I have constructed all in my head. You know as well as I do that I have done that before, and the results have been less than positive.
   There will be time enough to write more later. I will be enclosing a few odds and ends gleaned from our last few combats, but I am unsure as to how to stop them from breaking when transported to you. If the letter you are holding is a bright black on one corner, then I would seek out the Priests for healing immediately. I am never sure why you want me to send you these things, as my training has been in writing, not herbalism, but you know that I would do anything for you.
-  Yours faithfully, Aran~
+Yours faithfully, Aran.~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
   ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr6",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
@@ -10481,7 +10481,7 @@ IF ~~ a3237 /* aran letter #7 (rom, c-alttr7.itm) */
 I hope my letter finds you in good health and spirits. I will get straight to the point and remind you that you are too special and to smart to fall into any traps. Be careful. I do not know anything about Court and have never really seen a Masked Lord or even an un-masked one, but I have been around long enough to be suspicious of anyone who makes bold passes at you. I wish I were there, so that he would know that you have a protector. I know you can take care of yourself, but it still worries me. If you need proof, remember how I have acted around Giselle and Rani, and how you had to send a spark at me to stop me from behaving badly with your friends.
 Yes, I know I have a double standard, but I have always been very interested in all of this romantic sparking, while you have avoided it like the plague. And our situations are not as similar as you made it sound. <CHARNAME> is more complicated than what we are talking about. If it were just for fun, that would be one thing, but I seem to have developed some attachments that make things more painful for me if I do things that she might not like. I always try to fit what she seems to want, but it is hard sometimes. In fact, it seems almost impossible at times. But I trust in Tymora, and She will make the coin toss. What is meant to be, is meant to be. In your case, though, your benefactor might not take kindly to that particular young man. Do not take this the wrong way, but you have to ask yourself if he is really interested in you, or if he wants information.
 I trust you to make the right choice for you, of course. I would send for you to join us for a little bit, so you could get away and think, but I am afraid things here have gotten very difficult. Our adversaries are the stiff of legends and folktales, only they turn out to be real. Usually, they also turn out to be able to crush me into goo. No matter what is going on there, things are worse here. Do not worry for me, though. I have always had an eye out for trouble, and I think I enjoy feeling part of something that will make a difference.
-  Yours faithfully, Aran~
+Yours faithfully, Aran.~
   ++ ~[PC] (You carefully slip the letter back where you found it.)~ EXIT
   ++ ~[PC] (You take the letter.)~ DO ~GiveItemCreate("c-alttr7",Player1,0,0,0) SetGlobal("c-arlettertaken","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
   ++ ~[PC] (You hunt through his writing kit and find his quill, and print 'No Secrets' in Common across the top of his letter. Then you slip the letter back into his pack.)~ DO ~SetGlobal("c-arannosecrets","GLOBAL",1) SetGlobalTimer("c-aranlettertalk","GLOBAL",ONE_DAY)~ EXIT
@@ -10870,7 +10870,7 @@ IF ~~ a4523 /* Alternate (Original) Bathing State, for more Variety */
   ++ ~[PC] What are you doing? Get out of the tub this instant. You were supposed to watch the door and protect me.~ + a1809
   ++ ~[PC] (Remove your clothing slowly, and hesitate over a button.) Aran... I could use your help, here. I seem to be having some trouble disrobing.~ + a1810
   ++ ~[PC] (Turn your back to him, but disrobe completely, slipping into the water carefully).~ + a1811
-  ++ ~[PC] You are absolutely no fun. (Drop your clothing where it falls, and step into the tub quickly, wrapping your arms around his neck and sliding your body down his chest).~ + a1812
+  ++ ~[PC] You are absolutely no fun. (Drop your clothing where it falls, and step into the tub quickly, wrapping your arms around his neck and sliding your body down his chest.)~ + a1812
   ++ ~[PC] (Turn your back to him and strip down to your underclothing, slipping into the water carefully and discreetly).~ + a1813
 END
 
@@ -12661,7 +12661,7 @@ IF ~~ a2069
   SAY ~[ARAN] (His breath quickens against your skin, and his distraction wavers enough that the line you are drawing together begins to wander.)~
   ++ ~[PC] So, do you like what you see?~ + a2100
   + ~Global("c-aransex","GLOBAL",0)~ + ~[PC] You could offer me a drink, you know. In my room. Upstairs. If... if you wanted to. (Blush.)~ + a2078
-  + ~GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] You could offer me a drink, you know. In my room. Upstairs. If... if you wanted to.~ + a2079
+  + ~GlobalGT("c-aransex","GLOBAL",0)~ + ~[PC] You could offer me a drink, you know. In my room. Upstairs. If you wanted to.~ + a2079
   + ~OR(3) Class(Player1,CLERIC_ALL) Class(Player1,MAGE_ALL) Class(Player1,SORCERER)~ + ~[PC] You do realize I lied, right? I can scribe very well all by myself.~ + a2089
   ++ ~[PC] Hey, your breath. That tickles... and I think you should stop.~ + a2087
   ++ ~[PC] I was being sarcastic. Keep your eyes on the page. This is not a show put on for your benefit.~ + a2087
@@ -13844,7 +13844,7 @@ END
 
 CHAIN C-ARANJ a4333
 ~[ARAN] Not much in th' way o' help if we have all spellswords, I think. But other than that, a Wall be a right powerful tactic.~
-== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You surprise me. I thought you had very little training in strategy and tactics.~
 == C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad.~
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
 == C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
@@ -13858,7 +13858,7 @@ END
 
 CHAIN C-ARANJ a4469
 ~[ARAN] That would work right fine, an' roll right up th' flank, until you got exposed. Then there'd be th ' hells to pay, I bet.~
-== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You surprise me. I thought you had very little training in strategy and tactics.~
 == C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad.~
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
 == C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
@@ -13872,7 +13872,7 @@ END
 
 CHAIN C-ARANJ a4496
 ~[ARAN] I suppose you could look at it that way. On th' other hand, one little spell o' silenc, an' there might be all th' hells to pay for you, you know.~
-== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You suprise me. I thought you had very little training in strategy and tactics.~
+== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ANOMEN] You surprise me. I thought you had very little training in strategy and tactics.~
 == C-ARANJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad. You learn to keep your wits sharp an' never forget a leeeon learned through hard experience.~
 == KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Is this Flaming Fist training?~
 == C-ARANJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN ~[ARAN] To tell th' truth, th' Fist be better at barroom brawls an' guard duty, for th' most part. But there be some smart officers what use any opportunity to teach in th' field. Improves th' survival odds, it does.~
@@ -13886,7 +13886,7 @@ END
 
 CHAIN C-ARANJ a4537
 ~[ARAN] Lots o' ways. Most o' them have to do wi' breakin' morale, or disruptin' th' formation in some way or other. Not a problme for a strong will like yours, but most soldiers don't appreciate havin' stingin' nettles grow up around 'em, or gettin' plagued by insects.~
-== CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[CERND] You suprise me. I thought you had very little training in the strategy and tactics of nature.~
+== CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[CERND] You surprise me. I thought you had very little training in the strategy and tactics of nature.~
 == C-ARANJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN ~[ARAN] Book-study, that I be light on. But there be no better teacher than an organized an' implacable enemy what wants to kill a lad. You learn to keep your wits sharp an' never forget a leeeon learned through hard experience.~
 END
 ++ ~[PC] I think that is enough analysis. We should move along.~ EXTERN C-ARANJ a64
@@ -15777,7 +15777,7 @@ END
 
 IF ~~ a3461 /* ARAN_TOO_LATE */
   SAY ~[ARAN] Gods alive... Too late...~
-  ++ ~[PC] Warm. Very warm, and kind of tickley inside. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3462 /* DEATH_OF_ME */
+  ++ ~[PC] Warm. Very warm, and kind of tickly inside. But fun. Perhaps we should try again.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3462 /* DEATH_OF_ME */
   ++ ~[PC] I c... can't stop right now... got to... to...~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3462 /* DEATH_OF_ME */
   ++ ~[PC] HOLD ME TIGHTER.~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3462 /* DEATH_OF_ME */
   ++ ~[PC] (Savor his pleasure, letting yours join his... a small explosion of feeling quietly hidden in the shadows.)~ DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3463 /* ARAN_CUDDLE_ON_CHEST */
@@ -18135,7 +18135,7 @@ END
 /* range 2 passthrough/delay */
 
 IF ~~ a3690 /* GUIDE_HAND_UP */
-  SAY ~[ARAN] (Roughened fingers, suprisingly gentle, explore you.)~
+  SAY ~[ARAN] (Roughened fingers, surprisingly gentle, explore you.)~
   ++ ~[PC] (Open yourself to his advances, letting his fingers play about and touch you where it most pleases you.)~ + a3698 /* FRONT_TO_ARAN_EXPLORE */
   ++ ~[PC] W... wait a moment...~ + a3522 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
   ++ ~[PC] This is too much. Too fast. Wait.~ + a3522 /* GO_ON_OR_NOT_ASK_WHAT_WRONG */
@@ -20044,7 +20044,7 @@ IF ~~ a4714
   SAY ~[ARAN] No call to be embarassed. There be nothin' wrong wi' th' human body, you know.~
   ++ ~[PC] There is nothing wrong with your body. I just... oh, never mind. I'm headed back to camp.~ + a4715
   ++ ~[PC] I know that. Don't treat me as if I were a child to be instructed. And don't look at my backside as I walk away, either.~ + a4715
-  ++ ~[PC] Well, a girl can blush because she is embarrased, or because she is angry, or sometimes because she is excited... but you will never find out which from me. See, this is me, walking back to camp before you get any silly ideas.~ + a4715
+  ++ ~[PC] Well, a girl can blush because she is embarrassed, or because she is angry, or sometimes because she is excited... but you will never find out which from me. See, this is me, walking back to camp before you get any silly ideas.~ + a4715
   ++ ~[PC] (Smile slightly and nod as you stand up and brush yourself off.)~ + a4715
   ++ ~[PC] (Frown slightly and shake your head as you stand up and brush yourself off.)~ + a4715  
 END
@@ -26180,23 +26180,23 @@ IF ~~ a33  /*  add more here for later chapters? */
   SAY ~[ARAN] Well, I can try. Where do you be wantin' me to go?~
   + ~!AreaCheck("AR1600")~ + ~[PC] Head for the Brynlaw docks.~ UNSOLVED_JOURNAL ~Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~ + a4274
+ I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~ + a4274
   + ~!AreaCheck("AR0300")~ + ~[PC] Head for the Athkatla docks.~ UNSOLVED_JOURNAL ~Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.~ + a38
+ I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.~ + a38
 
   + ~!AreaCheck("C-AR01") !AreaCheck("AR0700")~ + ~[PC] Meet me in the Market District in Athkatla.~ UNSOLVED_JOURNAL ~Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.~ + a39
+ I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.~ + a39
   ++ ~[PC] Meet me outside of the de'Arnise Keep.~ UNSOLVED_JOURNAL ~Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.~ + a40
+ I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.~ + a40
   ++ ~[PC] Meet me in Trademeet.~ UNSOLVED_JOURNAL ~Whitehand Trading
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.~ + a41
+ I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.~ + a41
   ++ ~[PC] Meet me outside of the Umar Hills.~ UNSOLVED_JOURNAL ~Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.~ + a42
+ I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.~ + a42
 END
 
 /*  a34, a35, a36, a37 are chains */
@@ -26288,25 +26288,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
+ I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
+ I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
+ I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
+ I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+ I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
 EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
+ I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
 END
 
 IF ~~ a487
@@ -26320,25 +26320,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
+ I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
+ I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
+ I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
+ I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+ I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
 EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
+ I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) JoinParty()~ EXIT
 END
 
 IF ~~ a488
@@ -26934,82 +26934,82 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.~ + a24
   + ~Global("c-aranwaiting","GLOBAL",0) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a25
   + ~Global("c-aranwaiting","GLOBAL",1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a26
   + ~Global("c-aranwaiting","GLOBAL",2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a27
   + ~Global("c-aranwaiting","GLOBAL",3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a28
   + ~Global("c-aranwaiting","GLOBAL",4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a29
   + ~Global("c-aranwaiting","GLOBAL",5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a30
   + ~Global("c-aranwaiting","GLOBAL",6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a31
   + ~Global("c-aranwaiting","GLOBAL",7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a32
   + ~Global("c-aranwaiting","GLOBAL",8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + ~[PC] Wait here. And try not to get into any trouble. I have eyes and ears everywhere.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a2718
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.~ + a2718
   + ~AreaCheck("C-AR01")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.~ + a4275
+ I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.~ + a4275
   + ~AreaCheck("AR0313")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.~ + a4276
+ I told Aran Whitehand to wait for me right where he currently stands, singing sea chanties and holding drinking contests in The Sea's Bounty. Hopefully, he will be there when I return.~ + a4276
   + ~AreaCheck("AR0406")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.~ + a4277
+ I told Aran Whitehand to wait for me right where he currently stands, wandering around and getting into trouble at The Copper Coronet. Hopefully, he will be there when I return.~ + a4277
   + ~AreaCheck("AR0509")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.~ + a4278
+ I told Aran Whitehand to wait for me right where he currently stands, staring at actresses in The Five Flagons. Hopefully, he will be there when I return.~ + a4278
   + ~AreaCheck("AR0522")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.~ + a4279
+ I told Aran Whitehand to wait for me right where he currently stands, grimacing at the bills and sharpening his quill in my stronghold at the Five Flagons. Hopefully, he will be there when I return.~ + a4279
   + ~AreaCheck("AR0704")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.~ + a4280
+ I told Aran Whitehand to wait for me right where he currently stands, eyeing the cook's larder at The Mithrest Inn. Hopefully, he will be there when I return.~ + a4280
   + ~AreaCheck("AR1105")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.~ + a4281
+ I told Aran Whitehand to wait for me right where he currently stands, perusing the wares at the Imnesvale Inn in the Umar Hills. Hopefully, he will be there when I return.~ + a4281
   + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.~ + a4282
+ I told Aran Whitehand to wait for me right where he currently stands, drinking swill at The Vulgar Monkey. Hopefully, he will be there when I return. Even more hopefully, he will have avoided behaving like the inn's namesake.~ + a4282
   + ~AreaCheck("AR2010")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.~ + a4283
+ I told Aran Whitehand to wait for me right where he currently stands, listening to the bards at Vyatri's Pub in Trademeet. Hopefully, he will be there when I return.~ + a4283
   + ~AreaCheck("AR0709")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.~ + a4284
+ I told Aran Whitehand to wait for me right where he currently stands, making smalltalk with the staff of The Den of the Seven Vales. Hopefully, he will be there when I return.~ + a4284
   + ~AreaCheck("AR0513")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.~ + a4285
+ I told Aran Whitehand to wait for me right where he currently stands, gambling with anyone who will play at Calbor's Inn in the Bridge District. Hopefully, he will be there when I return.~ + a4285
   + ~AreaCheck("AR0021")~ + ~[PC] Aran, wait here for me, will you? I will be back.~
   UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.~ + a4286
+ I told Aran Whitehand to wait for me right where he currently stands, drinking the second-rate stock at The Crooked Crane. Hopefully, he will be there when I return.~ + a4286
   + ~AreaCheck("AR1602")~ + ~[PC] Aran, wait here for me, will you? I will be back.~ UNSOLVED_JOURNAL ~Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.~ + a4287
+ I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.~ + a4287
   + ~InParty(Player4) Gender(Player4,FEMALE) !Name("c-aran",Player4)~ + ~[PC] As long as you promise to stop staring at <PLAYER4>'s hair when she is not looking, you can join us.~ + a2713
   + ~InParty(Player5) Gender(Player5,FEMALE) !Name("c-aran",Player5)~ + ~[PC] If you stop gawking at <PLAYER5>'s legs, you can join us.~ + a2713
   + ~InParty(Player6) Gender(Player6,FEMALE) !Name("c-aran",Player6)~ + ~[PC] As long as you promise to stop staring at <PLAYER6>'s decolletage, you can join us.~ + a2713
@@ -28218,25 +28218,25 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Sailing
 
-  I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
+ I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.%)
 EraseJournalEntry(%Whitehand Docked
 
-  I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
+ I told Aran Whitehand to wait for me at the Athkatla docks. He mentioned that he enjoyed watching the ships, and that he would probably take up fishing if I took too long.%)
 EraseJournalEntry(%Whitehand Sold on Staying
 
-  I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
+ I told Aran Whitehand to wait for me at the Market District in Athkatla. He mentioned that he might go shopping, but he would would probably end up at The Broken Sword, inhabiting his old room.%)
 EraseJournalEntry(%Whitehand Keeping Still
 
-  I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
+ I told Aran Whitehand to wait for me in the lands surrounding the de'Arnise Keep. He mentioned trying to look up some old friends and seeing if he could put down his bedroll in an outpost.%)
 EraseJournalEntry(%Whitehand Trading
 
-  I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
+ I told Aran Whitehand to wait for me in Trademeet. He mentioned something about a good pub, and not waiting around without having some form of entertainment.%)
 EraseJournalEntry(%Whitehand Heads for the Hills
 
-  I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
+ I told Aran Whitehand to wait for me at the outside of the Umar Hills. He will probably find a local pub and try to get into some sort of trouble.%) SetGlobal("KickedOut","LOCALS",0) SetGlobal("c-aranjoined","GLOBAL",1) JoinParty()~ EXIT
   + ~RandomNum(3,3)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2948
   + ~RandomNum(3,2)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2949
   + ~RandomNum(3,1)~ + ~[PC] Just checking on how you are doing. Wait here.~ + a2950
@@ -28551,7 +28551,7 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Waits
 
 I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
@@ -28599,7 +28599,7 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Waits
 
 I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
@@ -28695,7 +28695,7 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Waits
 
 I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
@@ -28743,7 +28743,7 @@ EraseJournalEntry(%Whitehand Sent to the Gods
   I destroyed Aran Whitehand. It is good to know that I have the power of life and death at my fingertips, and the will to use that power for my own ends.%)
 EraseJournalEntry(%Whitehand Waits
 
-  I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
+ I told Aran Whitehand to wait for me right where he currently stands. Hopefully, he will find a good place to wait, and be there when I return.%)
 EraseJournalEntry(%Whitehand Waits
 
 I told Aran Whitehand to wait for me right where he currently stands, bothering the patrons of The Broken Sword. Hopefully, he will be there when I return.%)
@@ -30817,8 +30817,8 @@ IF ~~ a4938
   + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4954
   ++ ~[PC] I'll drink to that. Though I will resist your allure, I'm sure.~ + a4945
   + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4954
   ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
   + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
   + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
@@ -30832,8 +30832,8 @@ IF ~~ a4939
   + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] Well, about that drink, and that negotiation...~ + a4954
   ++ ~[PC] I'll drink to that. Though I will resist your allure, I'm sure.~ + a4945
   + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4954
   ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
   + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4944
   + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + ~[PC] Have you ever thought of joining me? Adventuring with me?~ + a4953
@@ -30847,8 +30847,8 @@ IF ~~ a4940
   ++ ~[PC] I don't have the time right now, but I would love to have this conversation another time.~ + a4945
   ++ ~[PC] Huh. I heard you were both easy and cheap.~ + a4946
   + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me~ + a4954
+  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4898
+  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + ~[PC] That is a big change in attitude. One would think you were trying to tempt me.~ + a4954
   ++ ~[PC] We should keep things friendly. No need to muddle business and pleasure.~ + a4945
 END
 

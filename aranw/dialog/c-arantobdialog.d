@@ -1975,7 +1975,7 @@ IF ~~ a2843
   SAY ~[ARAN] Th' world don't rightly revolve around you, do it?~
   ++ ~[PC] Actually, it does.~ + a2845
   ++ ~[PC] It should, but it doesn't seem to. If you need to go make sure your sister is not in any danger, you could just go, I suppose.~ + a2846
-  ++ ~[PC] There is no pressin need to deal with family issues while the entire face of Faerun descends into war.~ + a2847
+  ++ ~[PC] There is no pressing need to deal with family issues while the entire face of Faerun descends into war.~ + a2847
   ++ ~[PC] You know, you follow me, but you don't really embrace the power and control I exert. I would think you would be against me, trying to stop my rise to power, to protect her from coming under my control.~ + a2840
   ++ ~[PC] Alas, my one weakness... modesty.~ + a2848
 END
@@ -1984,7 +1984,7 @@ IF ~~ a2844
   SAY ~[ARAN] I don't rightly admit naught in th' way o' such a thing. Besides, we be talkin' about our sisters, not discussin' teatime.~
   ++ ~[PC] Actually, the only really important part of our discussion is how it impacts my plans.~ + a2845
   ++ ~[PC] Sisters and tea have little to do with my plans. If you feel strongly about how your sister is faring, you might visit her.~ + a2846
-  ++ ~[PC] There is no pressin need to deal with family issues while the entire face of Faerun descends into war.~ + a2847
+  ++ ~[PC] There is no pressing need to deal with family issues while the entire face of Faerun descends into war.~ + a2847
   ++ ~[PC] You know, you follow me, but you don't really embrace the power and control I exert. I would think you would be against me, trying to stop my rise to power, to protect her from coming under my control.~ + a2840
   ++ ~[PC] Imoen might be my one weakness. Well, either that, or putting up with you.~ + a2848
 END
@@ -2710,7 +2710,7 @@ IF ~~ a4725
   ++ ~[PC] My neck is ugly.~ + a4726
   ++ ~[PC] I usually notice your eyes drifting a little farther south, you know.~ + a4726
   ++ ~[PC] Your laugh makes me smile. And sometimes it makes me tremble.~ + a4726
-  ++ ~[PC] This is very embarassing.~ + a4726
+  ++ ~[PC] This is very embarrassing.~ + a4726
 END
 
 IF ~~ a4726
@@ -4180,7 +4180,7 @@ IF ~~ a4403
 END
 
 IF ~~ a4404
-  SAY ~[ARAN] (He reaches across to brush your hair gently back from your eyes, and catches a strand, staring as if charmed)~
+  SAY ~[ARAN] (He reaches across to brush your hair gently back from your eyes, and catches a strand, staring as if charmed.)~
   =  ~[ARAN] The gods were messin' with menfolk to create such beauty. 'T ain't natural.~
   IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
 END
@@ -7178,7 +7178,7 @@ IF ~~ a4175 /* PC_HAS_TATTOO */
   SAY ~[ARAN] Well now, if th' two o' them want to get together, we will be in a mite interestin' position, now. But I think that meetin' can be arranged... if you don't mind some other parts havin' a conversation too.~
   ++ ~[PC] I want that conversation to go on for hours. And if one of us finishes talking, I want the other to get everyone back into the conversation.~ + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
   ++ ~[PC] Why, sweet little innocent me? I would never go so far as to take hold of this... or move my leg like this... or put you right THERE. Oh.~ + a4131 /* ROM_PULSE_DEEP_ABOVE */
-  ++ ~[PC] Well, if I look over my shoulder like this, and then guide you right there, I think... yes... I think they... can meet... eachother... again... and again...~ + a4152 /* BACK_TO_ARAN_GUIDE */
+  ++ ~[PC] Well, if I look over my shoulder like this, and then guide you right there, I think... yes... I think they... can meet... each other... again... and again...~ + a4152 /* BACK_TO_ARAN_GUIDE */
   ++ ~[PC] Good things come to he who waits. Or perhaps I meant come on, or even come with... but tell me about the tattoo.~ + a4174 /* ARAN_TATTOO_STORY_ONE */
   ++ ~[PC] I suppose it does not matter, when I can claim that territory as my own with a simple kiss. (You lean forward, your kisses moving now to his neck, now to his chest.)~ + a4051 /* ROM_THREE_PC_TO_ARAN */
   ++ ~[PC] No, I think I would rather hear the story. I like having all of your attention focused so intently on me, but I am not really interested in things moving forward just yet.~ + a4174 /* ARAN_TATTOO_STORY_ONE */
@@ -10419,7 +10419,7 @@ So, a dialog for checking
 /* Aran... what do you think our "relationship" is?  Resetting for players for ToB, but might double as a recheck via PID on both SoA and ToB. Useful for testing, anyways. */
 CHAIN C-ARN25A a2694
 ~[ARAN] Well now, let me think a bit... our relationship. Put a lad on th' spot, eh?~
-== C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at eachother, or so it seems.~
+== C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at each other, or so it seems.~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You done told me to quit makin' all sorts o' random comments.~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aanoconflict","GLOBAL",0)~ THEN ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
@@ -10428,7 +10428,7 @@ CHAIN C-ARN25A a2694
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",0)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into more than a kiss or two someday. Why do you be askin'?~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",2)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into somethin' more than kissin' an' touchin' someday. Why do you be askin'?~
-== C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' eachother. Mayhap someday we will take that final step. Why do you be askin'?~
+== C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' each other. Mayhap someday we will take that final step. Why do you be askin'?~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",4)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. An' I won't never forget spendin' time wi' you all tangled up, explorin' everythin'... why do you be askin'?~
 == C-ARN25A IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. We could have a bit more, but I guess things didn't work out th' way you wanted. Why do you be askin'?~
 == C-ARN25A IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
@@ -10486,7 +10486,7 @@ END /* of APPEND */
 
 CHAIN C-ARN25J a3210
 ~[ARAN] Well now, let me think a bit... our relationship. Put a lad on th' spot, eh?~
-== C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at eachother, or so it seems.~
+== C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at each other, or so it seems.~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You done told me to quit makin' all sorts o' random comments.~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aanoconflict","GLOBAL",0)~ THEN ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
@@ -10495,7 +10495,7 @@ CHAIN C-ARN25J a3210
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",0)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into more than a kiss or two someday. Why do you be askin'?~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",2)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into somethin' more than kissin' an' touchin' someday. Why do you be askin'?~
-== C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' eachother. Mayhap someday we will take that final step. Why do you be askin'?~
+== C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' each other. Mayhap someday we will take that final step. Why do you be askin'?~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",4)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. An' I won't never forget spendin' time wi' you all tangled up, explorin' everythin'... why do you be askin'?~
 == C-ARN25J IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. We could have a bit more, but I guess things didn't work out th' way you wanted. Why do you be askin'?~
 == C-ARN25J IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0) Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. You also let me prattle on an' on about whatever I like, which is blighted nice o' you. I think we be friends. Why do you be askin'?~
@@ -10563,7 +10563,7 @@ END /* of APPEND */
 
 CHAIN C-ARN25P a3223
 ~[ARAN] Well now, let me think a bit... our relationship. Put a lad on th' spot, eh?~
-== C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at eachother, or so it seems.~
+== C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aranfight","GLOBAL",0)~ THEN ~[ARAN] Currently, we be fightin' mad at each other, or so it seems.~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-silencearan","GLOBAL",0)~ THEN ~[ARAN] You done told me to quit makin' all sorts o' random comments.~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) !Global("c-aanoconflict","GLOBAL",0)~ THEN ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
@@ -10572,7 +10572,7 @@ CHAIN C-ARN25P a3223
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",0)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",1)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into more than a kiss or two someday. Why do you be askin'?~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",2)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into somethin' more than kissin' an' touchin' someday. Why do you be askin'?~
-== C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' eachother. Mayhap someday we will take that final step. Why do you be askin'?~
+== C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",3)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. I can rightly say I live for th' times when we get physical wi' each other. Mayhap someday we will take that final step. Why do you be askin'?~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",2) Global("c-aransex","GLOBAL",4)~ THEN ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. An' I won't never forget spendin' time wi' you all tangled up, explorin' everythin'... why do you be askin'?~
 == C-ARN25P IF ~Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ THEN ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. We could have a bit more, but I guess things didn't work out th' way you wanted. Why do you be askin'?~
 == C-ARN25P IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) Global("c-apcdeclaresellsword","GLOBAL",0)~ THEN ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. I think we be friends. Why do you be askin'?~
