@@ -144,7 +144,7 @@ I_C_T BALTH 22 c-arn25balth22 /* My plan is much more altruistic.  I have vowed 
 END
 
 I_C_T2 BAZDRA01 1 c-arn25dr1 /* No... I see I am wrong.  You are not brothers of the tattooed one.  *sniff*  I smell the taint of Bhaal on you. */
-== C-ARN25J IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Is that what that smell is? An' here I thought I'd just spiced up th' curry too much.~
+== C-ARN25J IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN ~[ARAN] Is that what that smell be? An' here I thought I'd just spiced up th' curry too much.~
 END
 
 I_C_T BAZDRA03 1 c-arn25dr03 /* On your knees before you enter the presence of Abazigal!  Bow before his ruthless might! */
@@ -2662,7 +2662,7 @@ END
 IF ~~ a4720
   SAY ~[ARAN] Hey, give a lad a chance to profess his undyin' love, eh? You be spoilin' th' moment.~
   ++ ~[PC] You silly, silly man. Fine. I love you. Go ahead and make a complete fool out of yourself.~ + a4723
-  ++ ~[PC] I have feelings for you too, Aran. I just get embarassed by talking about them this way.~ + a4723
+  ++ ~[PC] I have feelings for you too, Aran. I just get embarrassed by talking about them this way.~ + a4723
   ++ ~[PC] I thought man just wanted that shown.~ + a4722
   ++ ~[PC] I knew this day would come. Aran, we have a very enjoyable romantic fling. But I don't love you, at least not yet.~ + a4724
   ++ ~[PC] I do not love you, Aran. And I never will.~ + a4724
@@ -10438,7 +10438,7 @@ CHAIN C-ARN25A a2694
 == C-ARN25A IF ~HasItemEquiped("belt05",Player1)~ THEN ~[ARAN] Hey... you know, I be havin' one hells o' a blighted time figurin' out just what I think o' our relationship. I mean, that belt... it confuses me right proper, it do.~
 END
 ++ ~[PC] I was just wondering.~ EXIT
-+ ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + ~[PC] Oh, I just thought you might realize that I depend on you as one of my closest friends. I may not treat you exactly the way you would like, but I count on you..~ EXIT
++ ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + ~[PC] Oh, I just thought you might realize that I depend on you as one of my closest friends. I may not treat you exactly the way you would like, but I count on you.~ EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + ~[PC] No sellsword ever has the right to call me "friend".~ DO ~SetGlobal("c-apcdeclaresellsword","GLOBAL",1)~ EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",1) !HasItemEquiped("belt05",Player1)~ + ~[PC] It is good to know that you know your place.~ EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",1) !HasItemEquiped("belt05",Player1)~ + ~[PC] In your case, I will make an exception. I think we are friends.~ DO ~SetGlobal("c-apcdeclaresellsword","GLOBAL",0)~  EXIT

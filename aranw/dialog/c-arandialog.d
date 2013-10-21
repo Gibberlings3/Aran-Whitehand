@@ -300,7 +300,7 @@ END
 
 /* SoA Interjections : Firkraag Fight */
 I_C_T3 FIRKRA02 0 c-aranfirkfight /* Welcome.  You have come as I wanted.  It has been an interesting game, but to tell the truth, I tire of it. */
-== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranfirtrap","GLOBAL",0)~ THEN ~[ARAN] That is the biggest damned thing I have ever seen. Are we goin' to fight *him*?~
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranfirtrap","GLOBAL",0)~ THEN ~[ARAN] That be th' biggest damned thing I have ever seen. Are we goin' to fight *him*?~
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("c-aranfirtrap","GLOBAL",1)~ THEN ~[ARAN] I told you that were too much coin for a simple contract. That's the biggest damned thing I have ever seen. We are goin' to fight *him*?~
 == KELDORJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("keldorn") InMyArea("keldorn") !StateCheck("keldorn",CD_STATE_NOTVALID) OR(3) !InParty("korgan") !InMyArea("korgan") StateCheck("korgan",CD_STATE_NOTVALID) OR(3) !InParty("valygar") !InMyArea("valygar") StateCheck("valygar",CD_STATE_NOTVALID) OR(3) !InParty("cernd") !InMyArea("cernd") StateCheck("cernd",CD_STATE_NOTVALID)~ THEN ~[KELDORN] Ten feet. That is very tall. Do you know how tall that really is?~
 == KORGANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("korgan") InMyArea("korgan") !StateCheck("korgan",CD_STATE_NOTVALID) OR(3) !InParty("keldorn") !InMyArea("keldorn") StateCheck("keldorn",CD_STATE_NOTVALID) OR(3) !InParty("valygar") !InMyArea("valygar") StateCheck("valygar",CD_STATE_NOTVALID) OR(3) !InParty("cernd") !InMyArea("cernd") StateCheck("cernd",CD_STATE_NOTVALID)~ THEN ~[KORGAN] Ten feet. Very tall. Very, very tall.~
@@ -2084,7 +2084,7 @@ IF ~Global("c-arandrunk","GLOBAL",3)~ THEN BEGIN a1588
   + ~Gender(Player1,FEMALE)~ + ~[PC] You seem to have had too much to drink. Perhaps we should get you to bed.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1513
   + ~Gender(Player1,MALE)~ + ~[PC] You seem to have had too much to drink. Perhaps we should get you to bed.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1514
   + ~Gender(Player1,FEMALE)~ + ~[PC] Oh, come on. You haven't had that much to drink. I bet I can drink you under the table.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1515
-  + ~Gender(Player1,MALE)~ + ~[PC] Oh, come on.  You haven't had that much to drink. I bet I can drink you under the table.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1516
+  + ~Gender(Player1,MALE)~ + ~[PC] Oh, come on. You haven't had that much to drink. I bet I can drink you under the table.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1516
   + ~Gender(Player1,FEMALE)~ + ~[PC] Hey, keep your voice down. You are starting to attract attention.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1517
   + ~Gender(Player1,MALE)~ + ~[PC] Hey, keep your voice down. You are starting to attract attention.~ DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1518
   ++ ~[PC] Hey, didn't we already have this conversation?~ + a1589
@@ -7745,7 +7745,7 @@ IF ~~ a380
   SAY ~[ARAN] Aye, true enough. We had better get movin' quickly, on account o' we don't have no one guardin' this position an' on th' lookout, eh?~
   ++ ~[PC] Hand me the rest of my clothes, please... yes, that too. No, the strap goes there, not there... OUCH!~ + a381
   ++ ~[PC] What is done is done. But we need to be discreet.~ + a376
-  ++ ~[PC] On second thought, I think that we need another practice session. In fact, I think that we need one right... (oooh)  now... (hmmm) see?~ + a370
+  ++ ~[PC] On second thought, I think that we need another practice session. In fact, I think that we need one right... oooh...  now... hmmm... see?~ + a370
   ++ ~[PC] I do not want to get out of bed. Fix me breakfast? I could make it worth your while...~ + a378
 END
 
@@ -10225,7 +10225,7 @@ IF ~~ a696
 END
 
 IF ~~ a697
-  SAY ~[ARAN] Then this will be naught but a bucket o' cold water on you, eh - ~
+  SAY ~[ARAN] Then this will be naught but a bucket o' cold water on you, eh...~
   IF ~~ THEN GOTO a700
 END
 
@@ -14445,7 +14445,7 @@ END
 /* Easter Egg for Multi-stronghold folks who get all strongholds at once */
 IF ~Global("c-aranas","LOCALS",1)~ THEN BEGIN a1478
   SAY ~[ARAN] Denir's Dexterous Digits, I am goin' crazy. What wi' all o' these strongholds to maintain, there be so much paperwork that I be usin' potions o' healin' on th' paper cuts. An' some idiot decided it were unkind to kill animals an' trees to use for buildin' parchment an' vellum, so now I have that ranger cabin an' druid grove on verbal contract.~ [c-aws132]
-  = ~[ARAN] That senchal at th' Keep be whinin' about taxes not addin' up, th' Thieves Guild dues we paid twice on account o' "clerical error", an' somehow those bloody apprentices wanted spell components similar to the temple's order so th' order components got cross-shipped. Don't rightly know how more messed up this can get.~
+  = ~[ARAN] That senechal at th' Keep be whinin' about taxes not addin' up, th' Thieves Guild dues we paid twice on account o' "clerical error", an' somehow those bloody apprentices wanted spell components similar to the temple's order so th' order components got cross-shipped. Don't rightly know how more messed up this can get.~
   = ~[ARAN] Hey, find me somethin' to kill, eh? I am shut o' paperwork for a good while. Or mayhap get me a nice personal assistant, what can keep up with th' filin'.~
   ++ ~[PC] You asked to help, remember? Don't come crying to me now.~ DO ~SetGlobal("c-aranas","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1496
   ++ ~[PC] You have done a good job, and you will get through this. Just clear your head, take a day or two off, and then focus on getting things back in order.~ DO ~SetGlobal("c-aranas","LOCALS",2) RealSetGlobalTimer("c-aranstrong","GLOBAL",180)~ + a1497
@@ -14675,7 +14675,7 @@ IF ~~ a2221
   ++ ~[PC] And what will you do if I ever cross that unknown line?~ + a2223
   ++ ~[PC] That is what I like about you. Always so vague and indecisive, and easy to manipulate.~ + a2220
   ++ ~[PC] That is what I hate about you. You keep letting me push you around.~ + a2220
-  ++ ~[PC] Sorry.  should not have asked that question. I am in a foul mood tonight. I had better get some rest.~ + a2220
+  ++ ~[PC] Sorry. I should not have asked that question. I am in a foul mood tonight. I had better get some rest.~ + a2220
 END
 
 IF ~~ a2222
@@ -16016,7 +16016,7 @@ IF ~~ a3481 /* MOON_JUST_L4_FRIENDS */
 END
 
 IF ~~ a3492 /* MOON_ARAN_ACTS */
-  SAY ~[ARAN] Right... that hurt a mite bit more than  expected. How about you tell me what you want, an' I try my best to do that wi' out causin' us both to crack our heads together like a pair o' lovestruck apprentices.~
+  SAY ~[ARAN] Right... that hurt a mite bit more than I expected. How about you tell me what you want, an' I try my best to do that wi' out causin' us both to crack our heads together like a pair o' lovestruck apprentices.~
   ++ ~[PC] (Kiss him deeply, throwing your arms around his neck and drawing him close.)~ + a3494 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Let's try that again.~ + a3494 /* ARAN_MOON_2_RESPOND */
   ++ ~[PC] Ouch. No. I think I have had quite enough of clumsy, ugly, pain-causing ogres tonight. Go away until you develop some kind of dexterity.~ + a3418 /* FIGHT_EXIT */
@@ -20041,7 +20041,7 @@ IF ~~  a4713
 END
 
 IF ~~ a4714
-  SAY ~[ARAN] No call to be embarassed. There be nothin' wrong wi' th' human body, you know.~
+  SAY ~[ARAN] No call to be embarrassed. There be nothin' wrong wi' th' human body, you know.~
   ++ ~[PC] There is nothing wrong with your body. I just... oh, never mind. I'm headed back to camp.~ + a4715
   ++ ~[PC] I know that. Don't treat me as if I were a child to be instructed. And don't look at my backside as I walk away, either.~ + a4715
   ++ ~[PC] Well, a girl can blush because she is embarrassed, or because she is angry, or sometimes because she is excited... but you will never find out which from me. See, this is me, walking back to camp before you get any silly ideas.~ + a4715
@@ -21783,7 +21783,7 @@ IF ~~ a1259 SAY ~[ARAN] I be right glad you are. Unfortunately, I think I done l
 /* UD praises 2 */
 IF ~~ a1260 SAY ~[ARAN] I'd be right happy to be friend, good friend, lover, husband, camp follower, cook, dishwasher, sex toy, or whippin' boy... just as long as we bloody well get th' nine hells out o' here as fast as possible.~ IF ~~ THEN EXIT END
 /* UD praises 3 */
-IF ~~ a1261 SAY ~[ARAN] The feelin' be mutual, believe me. Though I do wish I were a mite more self-controlled, on account o' when you walk, it does somethin' to a lad. Things get a mite bit hot an' more tight than comfort allows, eh?~ IF ~~ THEN EXIT END
+IF ~~ a1261 SAY ~[ARAN] Th' feelin' be mutual, believe me. Though I do wish I were a mite more self-controlled, on account o' when you walk, it does somethin' to a lad. Things get a mite bit hot an' more tight than comfort allows, eh?~ IF ~~ THEN EXIT END
 /* UD praises 4 */
 IF ~~ a1262 SAY ~[ARAN] I'll be bloody well damned if I know why you think I be worth the look, <CHARNAME>, but I'd be right stupid if I did not find it flatterin'.~ IF ~~ THEN EXIT END
 /* UD teasing 1 */
@@ -22296,7 +22296,7 @@ IF ~~ a1074 // 1 escape, 9 or 10 flirting options available at any one time
   + ~RandomNum(4,1)~ + ~[PC] (Tug Aran's hair firmly.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1174
   + ~RandomNum(4,2)~ + ~[PC] (Lightly punch him in the shoulder.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1175
   + ~RandomNum(4,3)~ + ~[PC] (Look at him with wide-eyed innocence, while tipping some of your waterskin on him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1176
-  + ~RandomNum(4,4)~ + ~[PC] Oh dear - I am just a poor helpless little female. Whatever *shall* I do. I can't reach that pack strap. I need a big strong he-man to help me out!~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1177
+  + ~RandomNum(4,4)~ + ~[PC] Oh dear - I am just a poor helpless little female. Whatever *shall* I do. I can't reach that pack strap. I need a big strong man to help me out!~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1177
   /* quiet/hidden 1 */
   + ~RandomNum(4,1)~ + ~[PC] (Quietly watch him out of the corner of your eye, tracing his form with your eyes.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1178
   + ~RandomNum(4,2)~ + ~[PC] (Gently smooth your hair and twist one strand of it around a finger, casting glances at him.)~ DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)~ + a1179
@@ -24120,7 +24120,7 @@ IF ~~ a1539
 END
 
 IF ~~ a1540
-  SAY ~[ARAN] No,I am not goin' to do that wi' you. I'd be right happy to drink together, but no contest. It just don't seem right.~
+  SAY ~[ARAN] No, I am not goin' to do that wi' you. I'd be right happy to drink together, but no contest. It just don't seem right.~
   ++ ~[PC] That wasn't a request, it was an order. Here, we will start with this.~ + a1555
   ++ ~[PC] Well, we have an early start tomorrow, I think. I'm headed out.~ + a1523
   ++ ~[PC] Good decision. You have had way too much to drink anyways, so the contest would be no fun. Come on, you need to get upstairs.~ + a1561
@@ -24226,7 +24226,7 @@ END
 IF ~~ a1555
   SAY ~[ARAN] Now, this be a drink what can knock down an ogre at twelve paces, j... just wi' th' smell. Aye, death t... to our enemies!~
   /* They're both toast */
-  + ~CheckStatLT("c-aran",15,CON) CheckStatLT(Player1,15,CON)~ + ~[PC] Ooohh... that burns as it goes down. I don't.. feel... sho...~ + a1556  /* both constitutions under 14, both pass out. */
+  + ~CheckStatLT("c-aran",15,CON) CheckStatLT(Player1,15,CON)~ + ~[PC] Ooohh... that burns as it goes down. I don't... feel... sho...~ + a1556  /* both constitutions under 14, both pass out. */
   /* Both holding their own */
   + ~!CheckStatLT("c-aran",15,CON) !CheckStatLT(Player1,15,CON)~ + ~[PC] Drink up!~ + a1557
   + ~!CheckStatLT("c-aran",15,CON) !CheckStatLT(Player1,15,CON)~ + ~[PC] This is no longer fun. You are on your own.~ + a1558
@@ -24234,7 +24234,7 @@ IF ~~ a1555
   /* Aran's done */
   + ~CheckStatLT("c-aran",15,CON) !CheckStatLT(Player1,15,CON)~ + ~[PC] Aran? Are you al... alright? You look like you are about to...~ + a1559
   /* PC's done */
-  + ~!CheckStatLT("c-aran",15,CON) CheckStatLT(Player1,15,CON)~ + ~[PC] Ooohh... I don't.. feel... sho...~ + a1560
+  + ~!CheckStatLT("c-aran",15,CON) CheckStatLT(Player1,15,CON)~ + ~[PC] Ooohh... I don't... feel... sho...~ + a1560
 END
 
 IF ~~ a1556
@@ -24245,7 +24245,7 @@ END
 IF ~~ a1557
   SAY ~[ARAN] Flamin' Fist Forev'r.~
   /* They're both toast */
-  + ~CheckStatLT("c-aran",16,CON) CheckStatLT(Player1,16,CON)~ + ~[PC] Ooohh... I don't.. feel... sho...~ + a1561
+  + ~CheckStatLT("c-aran",16,CON) CheckStatLT(Player1,16,CON)~ + ~[PC] Ooohh... I don't... feel... sho...~ + a1561
   /* Both holding their own */
   + ~!CheckStatLT("c-aran",16,CON) !CheckStatLT(Player1,16,CON)~ + ~[PC] Confusion to our friends!~ + a1565
   + ~!CheckStatLT("c-aran",16,CON) !CheckStatLT(Player1,16,CON)~ + ~[PC] This is no longer fun. You are on your own.~ + a1558
@@ -24253,7 +24253,7 @@ IF ~~ a1557
   /* Aran's done */
   + ~CheckStatLT("c-aran",16,CON) !CheckStatLT(Player1,16,CON)~ + ~[PC] Aran? Are you al... alright? You look like you are about to...~ + a1559
   /* PC's done */
-  + ~!CheckStatLT("c-aran",16,CON) CheckStatLT(Player1,16,CON)~ + ~[PC] Ooohh... I don't.. feel... sho...~ + a1560
+  + ~!CheckStatLT("c-aran",16,CON) CheckStatLT(Player1,16,CON)~ + ~[PC] Ooohh... I don't... feel... sho...~ + a1560
 END
 
 IF ~~ a1558
@@ -24294,7 +24294,7 @@ END
 IF ~~ a1565
   SAY ~[ARAN] Shune there be some goodly drlinliki... dr... hellsh. Drink up.~
   /* They're both toast */
-  + ~CheckStatLT("c-aran",17,CON) CheckStatLT(Player1,17,CON)~ + ~[PC] Ooohh... I don't.. feel... sho...~ + a1561
+  + ~CheckStatLT("c-aran",17,CON) CheckStatLT(Player1,17,CON)~ + ~[PC] Ooohh... I don't... feel... sho...~ + a1561
   /* Both holding their own */
   + ~!CheckStatLT("c-aran",17,CON) !CheckStatLT(Player1,17,CON)~ + ~[PC] Bottoms Up, and Tops, Too!~ + a1554
   + ~!CheckStatLT("c-aran",17,CON) !CheckStatLT(Player1,17,CON)~ + ~[PC] This is no longer fun. You are on your own.~ + a1558
