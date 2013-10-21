@@ -10659,17 +10659,17 @@ END
 
 /* start the waterworks */
 CHAIN IF ~NumTimesTalkedTo(0)~ THEN C-ARWRTH a2241
-~[C-ARWRTH] Aran? Whitehand, light a torch or somethin'. It is as dark as hells here...~ [C-ARW001]
+~[C-ARWRTH] Aran? Aye, Whitehand, light a torch or somethin'. It is as dark as hells here...~ [C-ARW001]
 == C-ARN25J ~[ARAN] What in th' nine hells... you be dead an' buried. Someone get me some holy water right quick, eh? You were no good when you was alive, an' I don't rightly want to see you now you be dead.~ [ARAN_SOUND_HERE]
-== C-ARWRTH ~[C-ARWRTH] You have come up in th' world. Who is th' wench?~ [C-ARW002]
-== C-ARN25J ~[ARAN] Keep a guard on your tongue, bastard.~ [ARAN_SOUND_HERE]
-== C-ARWRTH ~[C-ARWRTH] Oho, a new lover? Stedd sees all now, Whitehand. You sorry weakling, you actually think you can keep her? Does she know?~ [C-ARW003]
-== C-ARN25J ~[ARAN] Shut your filthy mouth.~ [ARAN_SOUND_HERE]
-== C-ARWRTH ~[C-ARWRTH] Hah! She doesn't know! You remember, don't you? Th' smell of flesh burnin', th' screams of th' children...~ [C-ARW004]
-== C-ARN25J ~[ARAN] I did what you ordered. Bane Blight your soul, I didn't know.~ [ARAN_SOUND_HERE]
-== C-ARWRTH ~[C-ARWRTH] You lie, you piece of dung. You acted so high an' mighty, and then you go blindly followin' without a acre or thought in th' world. Th' blood's on your hands, and those screams will haunt you past death's door. Think you will keep her precious lips close to you now, mercenary?~ [C-ARW005]
-== C-ARN25J ~[ARAN] Gods...~ [ARAN_SOUND_HERE]
-== C-ARWRTH ~[C-ARWRTH] Murderers all, we happy few. And you with th' weak stomach cryin' like a baby, battin' at the flames while your comrades died. Twice murderous, bastard. Charred flesh was not about to rise, an' we died because you had no stomach for th' collateral damage. Are you cryin' now?~ [C-ARW006]
+== C-ARWRTH ~[C-ARWRTH] You have come up in th' world. Who is th' wench?~
+== C-ARN25J ~[ARAN] Keep a guard on your tongue, bastard.~
+== C-ARWRTH ~[C-ARWRTH] Oho, a new lover? Stedd sees all now, Whitehand. You sorry weakling, you actually think you can keep her? Does she know?~
+== C-ARN25J ~[ARAN] Shut your filthy mouth.~
+== C-ARWRTH ~[C-ARWRTH] Hah! She doesn't know! You remember, don't you? Th' smell of flesh burnin', th' screams of th' children...~
+== C-ARN25J ~[ARAN] I did what you ordered. Bane Blight your soul, I didn't know.~
+== C-ARWRTH ~[C-ARWRTH] You lie, you piece of dung. You acted so high an' mighty, and then you go blindly followin' without a acre or thought in th' world. Th' blood's on your hands, and those screams will haunt you past death's door. Think you will keep her precious lips close to you now, mercenary?~
+== C-ARN25J ~[ARAN] Gods...~
+== C-ARWRTH ~[C-ARWRTH] Murderers all, we happy few. And you with th' weak stomach cryin' like a baby, battin' at the flames while your comrades died. Twice murderous, bastard. Charred flesh was not about to rise, an' we died because you had no stomach for th' collateral damage. Are you cryin' now?~
 END
 ++ ~[PC] Don't say those things to Aran! He did what he had to!~ EXTERN HGWRA01 25
 ++ ~[PC] I... I knew you had done some difficult things in your past, but you never told me about this, Aran.~ EXTERN C-ARN25J a2239
