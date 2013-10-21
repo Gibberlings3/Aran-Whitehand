@@ -3302,14 +3302,14 @@ THEN
 		SetGlobalTimer("c-aranblush","GLOBAL",TEN_DAYS) // set up delay for embarrassment banters 
 		SetGlobalTimer("c-aranisdrunk","GLOBAL",10)  // initializes drunk talk timer
 		SetGlobal("c-aranfriendsetup","GLOBAL",1)
-		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",180)	// Minimum Real Time until SoA_FT_1	is called, unlless the player initiates PID and triggers it 
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",180)	// Minimum Real Time until SoA_FT_1 is called, unlless the player initiates PID and triggers it 
 		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghold spacer timer 
 END
 
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available any time */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",21)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",23)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
 	OR(11)
@@ -3318,12 +3318,13 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",4)	// set up SoA_FT_3
 		Global("c-aranfriendbg2","GLOBAL",6)	// set up SoA_FT_4
 		Global("c-aranfriendbg2","GLOBAL",8)	// set up SoA_FT_5
-		Global("c-aranfriendbg2","GLOBAL",10) // set up SoA_FT_6
-		Global("c-aranfriendbg2","GLOBAL",12) // set up SoA_FT_7
-		Global("c-aranfriendbg2","GLOBAL",14) // set up SoA_FT_8
-		Global("c-aranfriendbg2","GLOBAL",16) // set up SoA_FT_9
-		Global("c-aranfriendbg2","GLOBAL",18) // set up SoA_FT_10
-		Global("c-aranfriendbg2","GLOBAL",20) // set up SoA_FT_11
+		Global("c-aranfriendbg2","GLOBAL",10) 	// set up SoA_FT_6
+		Global("c-aranfriendbg2","GLOBAL",12) 	// set up SoA_FT_7
+		Global("c-aranfriendbg2","GLOBAL",14) 	// set up SoA_FT_8
+		Global("c-aranfriendbg2","GLOBAL",16) 	// set up SoA_FT_9
+		Global("c-aranfriendbg2","GLOBAL",18) 	// set up SoA_FT_10
+		Global("c-aranfriendbg2","GLOBAL",20) 	// set up SoA_FT_11
+		Global("c-aranfriendbg2","GLOBAL",22) 	// set up SoA_FT_12		
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
@@ -3332,16 +3333,15 @@ END
 /* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available after chapter 5 */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",27)	// shuts down sequence when finished
+	GlobalGT("c-aranfriendbg2","GLOBAL",23)
+	GlobalLT("c-aranfriendbg2","GLOBAL",31)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	GlobalGT("Chapter","GLOBAL",5) // Not in Underdark, and must fire post-losing-soul
-	OR(3)
-
-		Global("c-aranfriendbg2","GLOBAL",22) // set up SoA_FT_12 
-		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13 // "soultalk"
+	OR(3) 
+		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
 		Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
- //	 Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
- //	 Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
+		Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
+		Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
@@ -3350,7 +3350,7 @@ END
 /* Aran's FriendTalks Fire, c-aranfriendbg2, ARAN_FTT */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",28)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",30)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
 	InParty(Myself)						// Aran is here
@@ -3358,12 +3358,12 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	!ActuallyInCombat()
 	!See([ENEMY])	// Can't see any enemies
-	OR(14)
-		Global("c-aranfriendbg2","GLOBAL",1)		// fire SoA_FT_1
-		Global("c-aranfriendbg2","GLOBAL",3)		// fire SoA_FT_2
-		Global("c-aranfriendbg2","GLOBAL",5)		// fire SoA_FT_3
-		Global("c-aranfriendbg2","GLOBAL",7)		// fire SoA_FT_4
-		Global("c-aranfriendbg2","GLOBAL",9)		// fire SoA_FT_5
+	OR(16)
+		Global("c-aranfriendbg2","GLOBAL",1)	// fire SoA_FT_1
+		Global("c-aranfriendbg2","GLOBAL",3)	// fire SoA_FT_2
+		Global("c-aranfriendbg2","GLOBAL",5)	// fire SoA_FT_3
+		Global("c-aranfriendbg2","GLOBAL",7)	// fire SoA_FT_4
+		Global("c-aranfriendbg2","GLOBAL",9)	// fire SoA_FT_5
 		Global("c-aranfriendbg2","GLOBAL",11)	// fire SoA_FT_6
 		Global("c-aranfriendbg2","GLOBAL",13)	// fire SoA_FT_7
 		Global("c-aranfriendbg2","GLOBAL",15)	// fire SoA_FT_8
@@ -3373,8 +3373,8 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",23)	// fire SoA_FT_12
 		Global("c-aranfriendbg2","GLOBAL",25)	// fire SoA_FT_13
 		Global("c-aranfriendbg2","GLOBAL",27)	// fire SoA_FT_14
-//		Global("c-aranfriendbg2","GLOBAL",29)	// fire SoA_FT_15
-//		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_16
+		Global("c-aranfriendbg2","GLOBAL",29)	// fire SoA_FT_15
+		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_16
 THEN
 	RESPONSE #100
 		PlaySong(0)	// play a blank reference, stoping the soundtrack
@@ -3415,7 +3415,7 @@ END
 /* Aran's UnderDark FriendTalks Fire, c-aranfriendbg2, ARAN_FTT, Underdark */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-aranfriendud","GLOBAL",8)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendud","GLOBAL",10)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	Global("Chapter","GLOBAL",5) // In Underdark
 	InParty(Myself)						// Aran is here
@@ -3513,11 +3513,11 @@ IF
 	Global("c-aranmatch","GLOBAL",1) // romance matched
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	OR(8)
-		Global("c-aranbg2rom","GLOBAL",0)	//	set up SoA_LT_1
-		Global("c-aranbg2rom","GLOBAL",2)	// set up SoA_LT_2
-		Global("c-aranbg2rom","GLOBAL",4)	// set up SoA_LT_3
-		Global("c-aranbg2rom","GLOBAL",6)	// set up SoA_LT_4
-		Global("c-aranbg2rom","GLOBAL",8)	// set up SoA_LT_5
+		Global("c-aranbg2rom","GLOBAL",0)  // set up SoA_LT_1
+		Global("c-aranbg2rom","GLOBAL",2)  // set up SoA_LT_2
+		Global("c-aranbg2rom","GLOBAL",4)  // set up SoA_LT_3
+		Global("c-aranbg2rom","GLOBAL",6)  // set up SoA_LT_4
+		Global("c-aranbg2rom","GLOBAL",8)  // set up SoA_LT_5
 		Global("c-aranbg2rom","GLOBAL",10) // set up SoA_LT_6
 		Global("c-aranbg2rom","GLOBAL",12) // set up SoA_LT_7
 		Global("c-aranbg2rom","GLOBAL",14) // set up SoA_LT_8
@@ -3548,14 +3548,14 @@ IF
 	CombatCounter(0)	// Not in combat
 	!See([ENEMY])	// Can't see any enemies
 	OR(8)
-		Global("c-aranbg2rom","GLOBAL",1)	 // fire SoA_LT_1
-		Global("c-aranbg2rom","GLOBAL",3)	 // fire SoA_LT_2
-		Global("c-aranbg2rom","GLOBAL",5)	 // fire SoA_LT_3
-		Global("c-aranbg2rom","GLOBAL",7)	 // fire SoA_LT_4
-		Global("c-aranbg2rom","GLOBAL",9)	 // fire SoA_LT_5
-		Global("c-aranbg2rom","GLOBAL",11)	// fire SoA_LT_6
-		Global("c-aranbg2rom","GLOBAL",13)	// fire SoA_LT_7
-		Global("c-aranbg2rom","GLOBAL",15)	// fire SoA_LT_8
+		Global("c-aranbg2rom","GLOBAL",1)  // fire SoA_LT_1
+		Global("c-aranbg2rom","GLOBAL",3)  // fire SoA_LT_2
+		Global("c-aranbg2rom","GLOBAL",5)  // fire SoA_LT_3
+		Global("c-aranbg2rom","GLOBAL",7)  // fire SoA_LT_4
+		Global("c-aranbg2rom","GLOBAL",9)  // fire SoA_LT_5
+		Global("c-aranbg2rom","GLOBAL",11) // fire SoA_LT_6
+		Global("c-aranbg2rom","GLOBAL",13) // fire SoA_LT_7
+		Global("c-aranbg2rom","GLOBAL",15) // fire SoA_LT_8
  //	 Global("c-aranbg2rom","GLOBAL",17)	// fire SoA_LT_9
  //	 Global("c-aranbg2rom","GLOBAL",19)	// fire SoA_LT_10
  //	 Global("c-aranbg2rom","GLOBAL",21)	// fire SoA_LT_11
@@ -3816,7 +3816,7 @@ END
 /* Drunk Talks (incorporates Flirts if gender and romance variables set)	*/
 /* Using GLOBAL here so it can influence friendtalks */
 IF
-	GlobalLT("c-arandrunk","GLOBAL",4)	// shuts down sequence when finished
+	GlobalLT("c-arandrunk","GLOBAL",3)	// shuts down sequence when finished
 	InParty(Myself)
 	CheckStatGT(Myself,40,INTOXICATION)	// Whoot - the room is moving about too much
 	GlobalTimerExpired("c-aranisdrunk","GLOBAL")
@@ -3906,6 +3906,81 @@ END
 /* Liches Are Scary (Darios) : Initiate */
 IF
 	Global("c-aranlich","LOCALS",1)
+	Global("c-silencearan","GLOBAL",0)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+/* Where's Buffy When You Need Her : Rollback */
+IF
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranseevamp","LOCALS",1)
+	!See([0.0.VAMPIRE])
+	!See([0.0.VAMPYRE])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranseevamp","LOCALS",0)
+END
+/* Where's Buffy When You Need Her : Activate */
+IF
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-aranseevamp","LOCALS",0)
+	OR(2)
+	  See([0.0.VAMPIRE])
+	  See([0.0.VAMPYRE])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranseevamp","LOCALS",1)
+END
+/* Where's Buffy When You Need Her : Initiate */
+IF
+	Global("c-aranseevamp","LOCALS",1)
+	Global("c-silencearan","GLOBAL",0)
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		StartDialogNoSet(Player1)
+END
+/* See a Troll : Rollback */
+IF
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-arantroll","LOCALS",1)
+	!See([0.0.TROLL])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-arantroll","LOCALS",0)
+END
+/* See a Troll : Activate */
+IF
+	Global("c-silencearan","GLOBAL",0)
+	Global("c-arantroll","LOCALS",0)
+	See([0.0.TROLL])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+	RESPONSE #100
+		SetGlobal("c-arantroll","LOCALS",1)
+END
+/* See a Troll : Initiate */
+IF
+	Global("c-arantroll","LOCALS",1)
 	Global("c-silencearan","GLOBAL",0)
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -4051,9 +4126,9 @@ THEN
 END
 /* SoA Scenery Talks :  Basilisk Baiting  : Activate */
 IF
-	Killed([0.0.BASILISK])
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranbasilisk","LOCALS",0)
+	Killed([0.0.BASILISK])
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
@@ -4261,9 +4336,6 @@ THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
 END
-
-
-
 /* SoA Scenery Talks  : Graveyard  : Rollback */
 IF
 	InParty(Myself)
@@ -4298,8 +4370,6 @@ THEN
 	RESPONSE #100
 		StartDialogueNoSet(Player1)
 END 
-
-
 /* SoA Commentary/Reactions, called from .bcs : Auntie Is a PITA :  set from ICT */
 /* SoA Scenery Talks  : Auntie Is a PITA  : Initiate */
 IF
@@ -4346,8 +4416,6 @@ THEN
 END
 talk not written in yet
 */
-
-
 
 
 /* SoA Scenery Talks (no rollback needed) : Setting Aran as Leader : Activate */
@@ -4397,6 +4465,7 @@ THEN
 	RESPONSE #100
 		StartDialogNoSet(Player1)
 END
+
 
 /* Scenery Dialog : Temple Comments, Only If Not A Cleric (even minimal training would keep him from starting a holy fight) */
 /* Temple Comment : Oghma : Rollback */
