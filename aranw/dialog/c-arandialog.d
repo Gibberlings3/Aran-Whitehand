@@ -30132,7 +30132,7 @@ IF ~~ a2481
   + ~RandomNum(5,3)~ + ~[PC] I wish nothing at this time.~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2476
   + ~RandomNum(5,4)~ + ~[PC] I wish nothing at this time.~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2477
   + ~RandomNum(5,5)~ + ~[PC] I wish nothing at this time.~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2478
-  ++ ~[PC] You have to be joking. He gives you a copper piece for each of these pieces of flimsy woodpulp you hand out? Is it really worth your time?~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2482
+  ++ ~[PC] You have to be joking. He gives you a copper piece for each of these pieces of flimsy wood pulp you hand out? Is it really worth your time?~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2482
   ++ ~[PC] So, where is this mercenary?~ DO ~GiveItemCreate("c-alttr1",Player1,0,0,0) SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2483
   ++ ~[PC] No need for the broadside. I do not want the thing weighing down my pack. But you could tell me where to find him.~ DO ~SetGlobal("c-orrinbroadside","C-AR01",1)~ + a2483
 END
