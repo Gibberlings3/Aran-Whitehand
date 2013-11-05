@@ -11053,13 +11053,13 @@ I destroyed Aran Whitehand. It is good to know that I have the power of life and
 @10658 = ~[C-AW01P3] I work hard, play hard, and drink hard. Then again, my play and my work involve drinking, so I could just say "bottom's up".~
 @10659 = ~[C-AW01P3] Your equipment is way too fancy for a regular, and all mismatched besides. Were you expecting this place to be invaded by an army? Gods, go get a decent equipment locker.~
 @10660 = ~[C-AW01P3] Look, I am almost drunk enough to find you attractive. So move along, now. I am probably going to do something stupid, and then the boys will have to bail me out of the local jail. Again.~
-@10661 = ~[C-AW01EP] You look like the right sort. If you want, The Broken Sword is that door north of you. No civilians allowed, unless they are hiring. This place is only for people who live and die on the sharp edge.~
+@10661 = ~[C-AW01EP] You look like the right sort. If you want, The Broken Sword is that door west of you. No civilians allowed, unless they are hiring. This place is only for people who live and die on the sharp edge.~
 @10662 = ~[C-AW01EP] If you are looking for sellswords, step on in. Daggerford isn't the only hiring place, you know.~
 @10663 = ~[C-AW01EP] Look, this ain't Asbravn. If you want hospitality, step inside. If you don't, blighted well move along.~
 @10664 = ~[C-AW01EP] Yeah, yeah... tell it to the 'Fist. My whole contract is to stand outside and make sure idiots who can't hold their own in a fight stay out here. You folks can go on in anytime.~
 @10665 = ~[C-AW01EP] This duty is boring enough, I am almost tempted to sign up for another tour in Maztica. Almost.~
-@10666 = ~[C-AW01EP] Door. There. North. You know, the opposite of South.~
-@10667 = ~[C-AW01EP] If you are looking for sellswords or mercenaries, The Broken Sword is the right place. If you are looking to fight anyone in particular, bugger off and do it someplace else. I cause enough trouble all on my own.~
+@10666 = ~[C-AW01EP] Door. There. West. You know, the opposite of East.~
+@10667 = ~[C-AW01EP] If you are looking for sellswords or mercenaries, The Broken Sword is the right place. If you are looking to fight anyone in particular, bugger off and do it some place else. I cause enough trouble all on my own.~
 @10668 = ~[C-AW01EP] Drinks, yes. Rooms, yes. Goods and services, a few. Look, if you really have to ask this, you really shouldn't wander in. Nothing starts a fight faster than some blighted greenhorn fool making a crack about the Red Cloaks or the 'Fist. Last time, we had to scrub the blood out of the woodwork with wet sand for a week.~
 @10669 = ~[C-AW01EP] Would I recommend drinking here? Sure. It's your funeral.~
 @10670 = ~[C-AW01EP] Do I look like a signpost? Tyr's Eye, just blighted well go in and hire someone. Or, get a decent contract and get the hells out of this place. Gods know things are strange enough around here to make anyone need hirelings. Talk to Teldra. She'll set you up, either way.~
@@ -11411,12 +11411,12 @@ I destroyed Aran Whitehand. It is good to know that I have the power of life and
 @11016 = ~[PC] Is he cute?~
 @11017 = ~[PC] Where was his room again?~
 @11018 = ~[PC] How much do I owe you for the information?~
-@11019 = ~...gift from the gods to every woman... Should I be worried?~
+@11019 = ~[PC]...gift from the gods to every woman... Should I be worried?~
 @11020 = ~[PC] He doesn't sound useful enough to me. Anyone else? Or anything I can do to get some coin?~
 @11021 = ~[C-AW01TL] Any other questions?~
 @11022 = ~[PC] Seriously... is he reliable?~
 @11023 = ~[PC] No more questions.~
-@11024 = ~His interest in women... Should I be worried?~
+@11024 = ~[PC] His interest in women... Should I be worried?~
 @11025 = ~[C-AW01TL] Well, regardless, Aran can be a good man in a fight. He can read and write in more than one language, though he speaks common like the most illiterate trades-way bastard I ever did hear. Translates, too. Done service in at least two mercenary companies; I think he grew up in a trading family. Thinks he's a gift from the gods to every woman, and tries to prove it. He has a room here, second door on your left.~
 @11026 = ~[C-AW01TL] You obviously missed some of his better works. His treatise on campaign tactics and the influence of gibberling horde movement on supply rerouting was quite interesting. Not bad, for a civilian writer.~
 @11027 = ~[C-AW01TL] The only difference between mercenary work and cleaning out stables is where the dung lands. Most of the time, stable work is removing it after the fact. Mercenarie, on the other hand, tend to be more directly under the source as it is expelled.~
@@ -11739,7 +11739,7 @@ I destroyed Aran Whitehand. It is good to know that I have the power of life and
 @11344 = ~[ARAN] Wyrms. Th' gods have no sense o' imagination. No giant toadstools barrin' our paths, no huge grasshoppers, just th' same ol' three... Liches, Vampires, an' Dragons, oh my. Just once, I'd like to see a giant cup o' tea barrin' th' path, wi' a side o' toast.~
 @11345 = ~[ARAN] Wyrms. Th' gods have no sense o' imagination. No giant toadstools barrin' our paths, no huge grasshoppers, just th' same ol' three... Liches, Vampires, on Dragons, oh my. Just once, I'd like to see a giant cup o' tea barrin' th' path, wi' a side o' toast.~
 @11346 = ~[ARAN] Every time we turn around, there be another layer o' servants. I gotta get me some o' them. Spruce a place up, they do.~
-@11347 = ~[ARAN] O'course it is. You sure there be no liches? What about a bloodsuckin' vampiric dragon-lich? We wouldn't want to make this easier, eh?~
+@11347 = ~[ARAN] O' course it is. You sure there be no liches? What about a bloodsuckin' vampiric dragon-lich? We wouldn't want to make this easier, eh?~
 @11348 = ~[ARAN] You bloody well sound like that lass I was tryin' to spark with back when I was in Calimport.~
 @11349 = ~[ARAN] You bloody well sound like that lass I was tryin' to spark with back when I was in Calimport. Err... that was a mite o' time before I met you, <CHARNAME>.~
 @11350 = ~[ARAN] Now, to be fair, <PRO_HESHE> had a mite bit o' help, eh? Speakin' for myself, I'm not always th' sharpest tack in th' toolshed, but I get th' job done.~
@@ -13536,3 +13536,5 @@ I destroyed Aran Whitehand. It is good to know that I have the power of life and
 @13141 = ~Hmmm. Takin' strip poker a mite too far, eh?~
 @13142 = ~You look downright drained, <CHARNAME>. Kinda glowy, though.~
 @13143 = ~Look what th' cat dragged in. What be that big smile for, anyhow?~
+@13144 = ~The Broken Sword~
+@13145 = ~The Broken Sword. Room and board. Mercenaries and sellswords only.~

@@ -1087,6 +1087,9 @@ COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~
 	SAY NAME2 @140
 	REMOVE_CRE_ITEM ~rndtre02~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+	COMPILE ~aranw/baf/C-AW01EP.baf~
+      EVALUATE_BUFFER
+      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
 /* Area C-AW01 bar/barfight - Toran */
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	
 	SAY NAME1 @141
@@ -1337,53 +1340,27 @@ COMPILE ~aranw/baf/c-ar01.baf~
 
 EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
 
-/* delete original info trigger */
+/* steal Abandon06 info point and turn it into a ravel region, add entrance point for c-ar01 to use to send party to AR0700	*/
 COPY_EXISTING ar0700.are override
-	LPF fj_are_structure
-	INT_VAR
-		fj_delete = 0 // give me feedback (not)
-		fj_delete_mode = 24 // (#25 in NI, but count starts at 0 not one...)
+	LPF ALTER_AREA_REGION
+    INT_VAR
+	type = ~2~
+	cursor = ~30~
 	STR_VAR
-		fj_structure_type = region
-		fj_type = 1 // info
+	region_name = ~Abandon06~
+	destination_area = ~c-ar01~
+	entrance_name = ~Trancar01~
 	END
-BUT_ONLY_IF_IT_CHANGES
-
-/* add entrance target, add travel	region back to c-ar01.are matching original info trigger	*/
-COPY_EXISTING ar0700.are override
 	LPF fj_are_structure
 	INT_VAR
-		fj_loc_x		 = 3183
-		fj_loc_y		 = 983
-		fj_orientation = 0	 // s
+		fj_loc_x		 = 2391
+		fj_loc_y		 = 1484
+		fj_orientation = 4	 // w
 	STR_VAR
 		fj_structure_type = entrance
 		fj_name	= Exitc-ar01
 	END
-	LPF fj_are_structure
-	INT_VAR
-		fj_type		 = 2	// travel
-		fj_box_left	 = 3175
-		fj_box_top		= 857
-		fj_box_right	= 3261
-		fj_box_bottom	 = 919
-		fj_cursor_idx	 = 30	 // door
-		fj_vertex_0	 = 3175 + (917 << 16)
-		fj_vertex_1	 = 3261 + (919 << 16)
-		fj_vertex_2	 = 3260 + (882 << 16)
-		fj_vertex_3	 = 3255 + (871 << 16)
-		fj_vertex_4	 = 3246 + (864 << 16)
-		fj_vertex_5	 = 3226 + (858 << 16)
-		fj_vertex_6	 = 3213 + (857 << 16)
-		fj_vertex_7	 = 3189 + (863 << 16)
-		fj_vertex_8	 = 3178 + (868 << 16)
-		fj_vertex_9	 = 3175 + (883 << 16)
-	STR_VAR
-		fj_structure_type	= region
-		fj_name			= Trancar01
-		fj_destination_area 	= c-ar01
-		fj_destination_name 	= Trancar01
-	END
+	ADD_MAP_NOTE #2254 #1342 ~blue~ @13144
 
 /* new area added */
 
@@ -1391,7 +1368,7 @@ COPY_EXISTING ar0700.are override
 COPY_EXISTING c-ar01.are override
 	LPF fj_are_structure
 	INT_VAR
-		fj_delete = 0 // give me feedback (not)
+		fj_delete = 1 // give me feedback (not)
 		fj_delete_mode = 0 // (#25 in NI, but count starts at 0 not one...)
 	STR_VAR
 		fj_structure_type = region
