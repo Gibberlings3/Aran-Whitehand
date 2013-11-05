@@ -1072,12 +1072,12 @@ END
 END
 
 /* GOTO Harpers are Not Always Good For Business : CONTINUED */
-CHAIN JAHEIJ a4809
+CHAIN JAHEIRAJ a4809
 @476
 == C-ARANJ @477
-== JAHEIJ @478
+== JAHEIRAJ @478
 == C-ARANJ @479
-== JAHEIJ @480
+== JAHEIRAJ @480
 == C-ARANJ @481
 == C-ARANJ @482
 END
@@ -1870,7 +1870,7 @@ IF ~~ a1606
   IF ~InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN EXTERN VICONIJ a1617
   IF ~InParty("imoen2") InMyArea("imoen2") !StateCheck("imoen2",CD_STATE_NOTVALID)~ THEN EXTERN IMOEN2J a1618
   IF ~InParty("aerie") InMyArea("aerie") !StateCheck("aerie",CD_STATE_NOTVALID)~ THEN EXTERN AERIEJ a1613
-  IF ~InParty("edwin") InMyArea("edwin") !StateCheck("edwin",CD_STATE_NOTVALID) Gender("edwin",FEMALE)~ THEN EXTERN BEDWINWO a1615
+  IF ~InParty("edwin") InMyArea("edwin") !StateCheck("edwin",CD_STATE_NOTVALID) Gender("edwin",FEMALE)~ THEN EXTERN BEDWIN a1615
 END
 
 IF ~~ a1607
@@ -1983,7 +1983,7 @@ IF ~~ a1614
 END
 END
 
-APPEND ~BEDWINWO~
+APPEND ~BEDWIN~
 IF ~~ a1615
   SAY @998
   IF ~~ THEN EXTERN C-ARANB a1619
@@ -2089,7 +2089,7 @@ END
 IF ~Global("c-aranlyrosjob","LOCALS",1)~ THEN BEGIN a4812
   SAY @1026
   IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN DO ~SetGlobal("c-aranlyrosjob","LOCALS",2)~ EXIT
-  IF ~OR(3)!InParty("Jaheira") !InMyArea("Jaheira") StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN DO ~SetGlobal("c-aranlyrosjob","LOCALS",2)~ EXTERN JAHEIJ a4809
+  IF ~OR(3)!InParty("Jaheira") !InMyArea("Jaheira") StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN DO ~SetGlobal("c-aranlyrosjob","LOCALS",2)~ EXTERN JAHEIRAJ a4809
 END
 /* GOTO Harpers are Not Always Good For Business : CONTINUED */
 

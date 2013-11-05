@@ -13,7 +13,7 @@ VERSION ~Beta3~
 
 LANGUAGE ~English~
          ~English~
-         ~aranw\tra\english\aranw.tra~
+         ~aranw\tra\english\c-aranw.tra~
 
 BEGIN @1
 
@@ -23,7 +23,14 @@ PRINT @0
 INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
 
 /* .ids patching */
-INCLUDE ~aranw/lib/ids_patching.tph~
+
+ACTION_IF GAME_IS BG2EE THEN BEGIN
+  // LOAD_TRA ~aranw/tra/%LANGUAGE%/c-aranw_ee.tra~
+  ADD_JOURNAL TITLE (~Aran Whitehand~) @456 @448 @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @10399 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+END ELSE
+BEGIN
+  INCLUDE ~aranw/lib/ids_patching.tph~
+END
 
 OUTER_FOR( aran_timer_choice = 0 ; ~%aran_timer_choice%~ STRING_COMPARE_REGEXP ~^[12]$~ ; )BEGIN
 	PRINT @2
@@ -1043,6 +1050,19 @@ COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg2.itm~
 
 /* mycre.cre population */
 
+ACTION_IF GAME_IS BG2EE THEN BEGIN
+/* resources : portraits : bg2:ee */
+COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eel.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eem.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2ee/nix_default_bg2ees.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
+COPY ~aranw/media/portraits_bg2ee/peachplums_manson_bg2ees.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
+// COPY ~aranw/media/portraits_bg2ee/peachplums_gerald_bg2s.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
+// COPY ~aranw/media/portraits_bg2ee/peachplums_cheris_bg2s.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
+// COPY ~aranw/media/portraits_bg2ee/peachplums_kavain_bg2s.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
+// COPY ~aranw/media/portraits_bg2ee/peachplums_toran_bg2s.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
+// COPY ~aranw/media/portraits_bg2ee/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
+COPY ~aranw/media/portraits_bg2ee/peachplums_teldra_bg2ees.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
+END ELSE BEGIN
 /* resources : portraits : bg2 */
 COPY ~aranw/media/portraits_bg2/nix_default_bg2l.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
 COPY ~aranw/media/portraits_bg2/nix_default_bg2m.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
@@ -1058,10 +1078,7 @@ COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.b
 COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~ ~override/c-malcer.bmp~ /* Malcer, thug portrait (Peachplums)*/
 /* Oskut - L10	male fighter */
 /* Taman - L10	male fighter */
-
-/* ACTION_IF will be needed when bg2:ee comes out */
-/* resources : portraits : bg2:ee */
-
+END
 
 /* creatures */
 /* Area C-AW01 Entry Point - Manson - Bouncer on Promenade	*/
@@ -1315,7 +1332,7 @@ COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
 /* area script */
 COMPILE ~aranw/baf/c-ar01.baf~
       EVALUATE_BUFFER
-      USING ~aranw/tra/%LANGUAGE%/aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
 /* Existing Promenade edits */
 
 EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
@@ -1500,7 +1517,7 @@ EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog in
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 /* Regular Scripts */
 COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ /* override script */
-      USING ~aranw/tra/%LANGUAGE%/aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
 COMPILE ~aranw/baf/c-arand.baf~ /* SoA dreamscript */
 COMPILE ~aranw/baf/c-aranx.baf~ /* out-of-party combat script */
 /* Rest-but-don't-trigger-player1D */
@@ -1516,7 +1533,7 @@ COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
 ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN /* ToB dialog file */
 	PRINT @156
 	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
-      USING ~aranw/tra/%LANGUAGE%/aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
 	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
 	COMPILE ~aranw/baf/c-arn25d.baf~ // ToB dreamscript
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
