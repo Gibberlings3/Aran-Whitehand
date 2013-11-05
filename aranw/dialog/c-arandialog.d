@@ -24566,7 +24566,7 @@ APPEND C-ARAN
 IF ~!NumTimesTalkedTo(0)~ THEN BEGIN a16
   SAY @10313
   + ~RandomNum(4,4)~ + @10314 + a6
-  + ~RandomNum(4,3)~ + @10315 + a13
+  + ~RandomNum(4,3)~ + @10315 JOURNAL @13146 + a13
   + ~RandomNum(4,2)~ + @10314 + a14
   + ~RandomNum(4,1)~ + @10316 + a7
   + ~RandomNum(5,1)~ + @10317 + a7
@@ -24575,9 +24575,9 @@ IF ~!NumTimesTalkedTo(0)~ THEN BEGIN a16
   + ~RandomNum(5,4)~ + @10320 + a10
   + ~RandomNum(5,5)~ + @10321 + a11
   ++ @10322 + a12
-  ++ @10323 + a13
+  ++ @10323 JOURNAL @13146 + a13
   ++ @10324 + a11
-  ++ @10325 + a13
+  ++ @10325 JOURNAL @13146 + a13
 END
 
 /* Pre-Joining Talks: Heya. Got a gig for me? */
@@ -24598,7 +24598,7 @@ END
 
 IF ~~ a2
   SAY @10335
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   ++ @10322 + a12
   + ~RandomNum(5,1)~ + @3648 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24611,14 +24611,14 @@ IF ~~ a2
   + ~RandomNum(4,2)~ + @10324 + a9
   + ~RandomNum(4,1)~ + @10324 + a10
   + ~RandomNum(4,1)~ + @10324 + a11
-  ++ @10339 + a13
+  ++ @10339 JOURNAL @13146 + a13
   + ~!Global("c-aranhirestory","GLOBAL",1)~ + @10314 DO ~SetGlobal("c-aranhirestory","GLOBAL",1)~ + a14
   + ~Global("c-aranhirestory","GLOBAL",1)~ + @10340 + a14
 END
 
 IF ~~ a3
   SAY @10341
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
   + ~RandomNum(5,3)~ + @10336 + a9
@@ -24630,15 +24630,15 @@ IF ~~ a3
   + ~RandomNum(5,2)~ + @10324 + a10
   + ~RandomNum(5,1)~ + @10324 + a11
   ++ @10344 + a12
-  ++ @10323 + a13
-  ++ @10345 + a13
+  ++ @10323 JOURNAL @13146 + a13
+  ++ @10345 JOURNAL @13146 + a13
   + ~!Global("c-aranhirestory","GLOBAL",1)~ + @10314 DO ~SetGlobal("c-aranhirestory","GLOBAL",1)~ + a14
   + ~Global("c-aranhirestory","GLOBAL",1)~ + @10340 + a14
 END
 
 IF ~~ a4
   SAY @10346
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   + ~RandomNum(4,4)~ + @3648 + a7
   + ~RandomNum(4,3)~ + @3648 + a8
   + ~RandomNum(4,2)~ + @3648 + a9
@@ -24651,13 +24651,13 @@ IF ~~ a4
   + ~RandomNum(5,4)~ + @10342 + a10
   + ~RandomNum(5,5)~ + @10318 + a11
   ++ @10347 + a12
-  ++ @10345 + a13
-  ++ @10323 + a13
+  ++ @10345 JOURNAL @13146 + a13
+  ++ @10323 JOURNAL @13146 + a13
 END
 
 IF ~~ a5
   SAY @10348
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   ++ @10314 + a14
   + ~RandomNum(4,4)~ + @3648 + a7
   + ~RandomNum(4,3)~ + @3648 + a8
@@ -24669,8 +24669,8 @@ IF ~~ a5
   + ~RandomNum(5,4)~ + @10342 + a10
   + ~RandomNum(5,5)~ + @10318 + a11
   ++ @10344 + a12
-  ++ @10323 + a13
-  ++ @10345 + a13
+  ++ @10323 JOURNAL @13146 + a13
+  ++ @10345 JOURNAL @13146 + a13
 END
 
 IF ~~ a6 SAY @10349 IF ~~ THEN GOTO a14 END
@@ -24689,7 +24689,7 @@ END
 
 IF ~~ a12
   SAY @10356
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   ++ @10357 + a2946
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24697,8 +24697,8 @@ IF ~~ a12
   + ~RandomNum(5,4)~ + @10358 + a10
   + ~RandomNum(5,5)~ + @10359 + a11
   ++ @10314 + a14
-  + ~NumInPartyGT(1)~ + @10345 + a13
-  ++ @10323 + a13
+  + ~NumInPartyGT(1)~ + @10345 JOURNAL @13146 + a13
+  ++ @10323 JOURNAL @13146 + a13
 END
 
 IF ~~ a13
@@ -24739,15 +24739,15 @@ IF ~~ a18
   + ~RandomNum(5,4)~ + @10368 + a10
   + ~RandomNum(5,5)~ + @10321 + a11
   ++ @10369 + a12
-  ++ @10323 + a13
+  ++ @10323 JOURNAL @13146 + a13
   ++ @10324 + a11
-  ++ @10339 + a13
+  ++ @10339 JOURNAL @13146 + a13
 END
 
 IF ~~ a19
   SAY @10370
   ++ @10314 + a6
-  ++ @10315 + a13
+  ++ @10315 JOURNAL @13146 + a13
   ++ @10316 + a2956
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24755,9 +24755,9 @@ IF ~~ a19
   + ~RandomNum(5,4)~ + @10372 + a10
   + ~RandomNum(5,5)~ + @10321 + a11
   ++ @10322 + a12
-  ++ @10323 + a13
+  ++ @10323 JOURNAL @13146 + a13
   ++ @10324 + a11
-  ++ @10325 + a13
+  ++ @10325 JOURNAL @13146 + a13
 END
 
 IF ~~ a2956 SAY @10373 IF ~~ THEN EXIT END
@@ -24781,9 +24781,9 @@ CHAIN C-ARAN a14
 END
 ++ @10386 EXTERN C-ARAN a17
 ++ @10369 EXTERN C-ARAN a12
-++ @10323 EXTERN C-ARAN a13
+++ @10323 JOURNAL @13146 EXTERN C-ARAN a13
 ++ @10324 EXTERN C-ARAN a11
-++ @10339 EXTERN C-ARAN a13
+++ @10339 JOURNAL @13146 EXTERN C-ARAN a13
 
 CHAIN C-ARAN a17
 @10387
@@ -24797,11 +24797,11 @@ DO ~SetGlobal("c-arangerris","LOCALS",1)~
 == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @10394
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @10395
 END
-++ @10315 EXTERN C-ARAN a13
+++ @10315 JOURNAL @13146 EXTERN C-ARAN a13
 ++ @10357 EXTERN C-ARAN a2946
 ++ @10324 EXTERN C-ARAN a11
-++ @10345 EXTERN C-ARAN a13
-++ @10323 EXTERN C-ARAN a13
+++ @10345 JOURNAL @13146 EXTERN C-ARAN a13
+++ @10323 JOURNAL @13146 EXTERN C-ARAN a13
 
 /* C-ARANP SoA post-joined */
 
@@ -24851,10 +24851,10 @@ IF ~~ a1648
 END
 
 /* NPC Management: Post-Joined File : Move It Or lose It. */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21 // add erasejournalentry
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21
   SAY @10407
   ++ @10408 + a1694
-  ++ @10409 DO ~EraseJournalEntry(@10410)
+  ++ @10409 DO ~EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -24868,7 +24868,7 @@ EraseJournalEntry(@1716)
 EraseJournalEntry(@1717)
 EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
-EraseJournalEntry(@1720)~ SOLVED_JOURNAL @1705 + a23
+EraseJournalEntry(@1720)~ JOURNAL @1705 + a23
   + ~Gender(Player1,FEMALE)~ + @10411 DO ~EraseJournalEntry(@1705)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
@@ -24883,9 +24883,8 @@ EraseJournalEntry(@1716)
 EraseJournalEntry(@1717)
 EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
-EraseJournalEntry(@1720)~ SOLVED_JOURNAL @10410 + a2320
-  + ~Gender(Player1,MALE)~ + @10411 DO ~/* Journal Entry Block */
-EraseJournalEntry(@1705)
+EraseJournalEntry(@1720)~ JOURNAL @1706 + a2320
+  + ~Gender(Player1,MALE)~ + @10411 DO ~EraseJournalEntry(@1705)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -24899,9 +24898,9 @@ EraseJournalEntry(@1716)
 EraseJournalEntry(@1717)
 EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
-EraseJournalEntry(@1720)~ SOLVED_JOURNAL @10410 + a24
+EraseJournalEntry(@1720)~ JOURNAL @1706 + a24
   + ~Global("c-aranwaiting","GLOBAL",0) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24916,7 +24915,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a25
   + ~Global("c-aranwaiting","GLOBAL",1) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24931,7 +24930,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a26
   + ~Global("c-aranwaiting","GLOBAL",2) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24946,7 +24945,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a27
   + ~Global("c-aranwaiting","GLOBAL",3) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24961,7 +24960,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a28
   + ~Global("c-aranwaiting","GLOBAL",4) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24976,7 +24975,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a29
   + ~Global("c-aranwaiting","GLOBAL",5) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -24991,7 +24990,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a30
   + ~Global("c-aranwaiting","GLOBAL",6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -25006,7 +25005,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a31
   + ~Global("c-aranwaiting","GLOBAL",7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -25021,7 +25020,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1707 + a32
   + ~AreaCheck("C-AR01")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1709)
 EraseJournalEntry(@1710)
@@ -25036,7 +25035,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1708 + a4275
   + ~AreaCheck("AR0313")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1710)
@@ -25051,7 +25050,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1709 + a4276
   + ~AreaCheck("AR0406")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25066,7 +25065,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1710 + a4277
   + ~AreaCheck("AR0509")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25081,7 +25080,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1711 + a4278
   + ~AreaCheck("AR0522")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25096,7 +25095,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1712 + a4279
   + ~AreaCheck("AR0704")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25111,7 +25110,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1713 + a4280
   + ~AreaCheck("AR1105")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25126,7 +25125,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1714 + a4281
   + ~AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25141,7 +25140,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1715 + a4282
   + ~AreaCheck("AR2010")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25156,7 +25155,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1716 + a4283
   + ~AreaCheck("AR0709")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25171,7 +25170,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1717 + a4284
   + ~AreaCheck("AR0513")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25186,7 +25185,7 @@ EraseJournalEntry(@1717)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1718 + a4285
   + ~AreaCheck("AR0021")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25201,7 +25200,7 @@ EraseJournalEntry(@1717)
 EraseJournalEntry(@1718)
 EraseJournalEntry(@1720)~ UNSOLVED_JOURNAL @1719 + a4286
   + ~AreaCheck("AR1602")~ + @10412 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25552,7 +25551,7 @@ END
 IF ~~ a2717
   SAY @10492
   + ~Global("c-aranjoinupagain","GLOBAL",0)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25568,7 +25567,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4306
   + ~Global("c-aranjoinupagain","GLOBAL",1)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25584,7 +25583,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4288
   + ~Global("c-aranjoinupagain","GLOBAL",2)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25600,7 +25599,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4289
   + ~Global("c-aranjoinupagain","GLOBAL",3)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25616,7 +25615,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4290
   + ~Global("c-aranjoinupagain","GLOBAL",4)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25632,7 +25631,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4291
   + ~Global("c-aranjoinupagain","GLOBAL",5)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25648,7 +25647,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4292
   + ~Global("c-aranjoinupagain","GLOBAL",6)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25664,7 +25663,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4293
   + ~Global("c-aranjoinupagain","GLOBAL",7)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25680,7 +25679,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4294
   + ~Global("c-aranjoinupagain","GLOBAL",8)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25696,7 +25695,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4295
   + ~Global("c-aranjoinupagain","GLOBAL",9)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25712,7 +25711,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4296
   + ~Global("c-aranjoinupagain","GLOBAL",10)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25823,7 +25822,7 @@ IF ~~ a2707 SAY @10530 IF ~~ THEN EXIT END
 IF ~~ a2947
   SAY @10531
   + ~Global("c-aranjoinupagain","GLOBAL",0)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25839,7 +25838,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4306
   + ~Global("c-aranjoinupagain","GLOBAL",1)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25855,7 +25854,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4288
   + ~Global("c-aranjoinupagain","GLOBAL",2)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25871,7 +25870,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4289
   + ~Global("c-aranjoinupagain","GLOBAL",3)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25887,7 +25886,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4290
   + ~Global("c-aranjoinupagain","GLOBAL",4)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25903,7 +25902,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4291
   + ~Global("c-aranjoinupagain","GLOBAL",5)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25919,7 +25918,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4292
   + ~Global("c-aranjoinupagain","GLOBAL",6)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25935,7 +25934,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4293
   + ~Global("c-aranjoinupagain","GLOBAL",7)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25951,7 +25950,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4294
   + ~Global("c-aranjoinupagain","GLOBAL",8)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25967,7 +25966,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4295
   + ~Global("c-aranjoinupagain","GLOBAL",9)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -25983,7 +25982,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4296
   + ~Global("c-aranjoinupagain","GLOBAL",10)~ + @10532 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26020,7 +26019,7 @@ END
 IF ~~ a4307
   SAY @10538
   + ~Global("c-aranjoinupagain","GLOBAL",0)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26036,7 +26035,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4306
   + ~Global("c-aranjoinupagain","GLOBAL",1)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26052,7 +26051,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4288
   + ~Global("c-aranjoinupagain","GLOBAL",2)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26068,7 +26067,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4289
   + ~Global("c-aranjoinupagain","GLOBAL",3)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26084,7 +26083,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4290
   + ~Global("c-aranjoinupagain","GLOBAL",4)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26100,7 +26099,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4291
   + ~Global("c-aranjoinupagain","GLOBAL",5)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26116,7 +26115,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4292
   + ~Global("c-aranjoinupagain","GLOBAL",6)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26132,7 +26131,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4293
   + ~Global("c-aranjoinupagain","GLOBAL",7)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26148,7 +26147,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4294
   + ~Global("c-aranjoinupagain","GLOBAL",8)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26164,7 +26163,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4295
   + ~Global("c-aranjoinupagain","GLOBAL",9)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26180,7 +26179,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4296
   + ~Global("c-aranjoinupagain","GLOBAL",10)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26300,7 +26299,7 @@ END
 IF ~~ a2952
   SAY @10564
   + ~Global("c-aranjoinupagain","GLOBAL",0)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26316,7 +26315,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4306
   + ~Global("c-aranjoinupagain","GLOBAL",1)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26332,7 +26331,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4288
   + ~Global("c-aranjoinupagain","GLOBAL",2)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26348,7 +26347,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4289
   + ~Global("c-aranjoinupagain","GLOBAL",3)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26364,7 +26363,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4290
   + ~Global("c-aranjoinupagain","GLOBAL",4)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26380,7 +26379,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4291
   + ~Global("c-aranjoinupagain","GLOBAL",5)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
@@ -26428,7 +26427,7 @@ EraseJournalEntry(@1718)
 EraseJournalEntry(@1719)
 EraseJournalEntry(@1720)~ + a4294
   + ~Global("c-aranjoinupagain","GLOBAL",8)~ + @10493 DO ~EraseJournalEntry(@1705)
-EraseJournalEntry(@10410)
+EraseJournalEntry(@1706)
 EraseJournalEntry(@1707)
 EraseJournalEntry(@1708)
 EraseJournalEntry(@1709)
