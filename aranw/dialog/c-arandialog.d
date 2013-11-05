@@ -791,10 +791,10 @@ END
 I_C_T3 UDSILVER 37 c-aranDrowAppearance
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @402
 == IMOEN2J IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("imoen2") InMyArea("imoen2") !StateCheck("imoen2",CD_STATE_NOTVALID)~ THEN @403
-== VICONJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN @404
+== VICONIJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN @404
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID) !Global("c-aranRomanceActive","GLOBAL",2)~ THEN @405
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID) Global("c-aranRomanceActive","GLOBAL",2)~ THEN @406
-== VICONJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN @407
+== VICONIJ  IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty("viconia") InMyArea("viconia") !StateCheck("viconia",CD_STATE_NOTVALID)~ THEN @407
 END
 
 /* Ployer and Yoshimo and Aran */
@@ -28445,10 +28445,10 @@ IF ~~ a4981
   SAY @11052
   ++ @11045 + a4935
   ++ @11046 + a4937
-  /* could be interested in a fling if Charisma < 15 and reputation < 12 */
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11053 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11053 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11053 + a4954  
+  /* could be interested in a fling if Charisma < 15 */
+  + ~CheckStatGT(Player1,15,CHR)~ + @11053 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11053 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11053 + a4954  
   ++ @11048 + a4935
   + ~RandomNum(4,4)~ + @11049 + a4949
   + ~RandomNum(4,3)~ + @11049 + a4950
@@ -28467,13 +28467,13 @@ END
 IF ~~ a4935
   SAY @11055
   ++ @11056 + a4940
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11057 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11057 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11057 + a4954 
+  + ~CheckStatGT(Player1,15,CHR)~ + @11057 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11057 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11057 + a4954 
   ++ @11058 + a4936  
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11056 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11056 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11056 + a4954  
+  + ~CheckStatGT(Player1,15,CHR)~ + @11056 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11056 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11056 + a4954  
   ++ @11059 + a4927
   ++ @10846 + a4930
 END
@@ -28483,8 +28483,8 @@ IF ~~ a4936
   ++ @11061 + a4927
   ++ @11062 + a4937
   ++ @11063 + a4927
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11064 + a4944
-  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + @11064 + a4953
+  + ~CheckStatGT(Player1,15,CHR)~ + @11064 + a4944
+  + ~CheckStatLT(Player1,16,CHR)~ + @11064 + a4953
   ++ @10846 + a4930
 END
 
@@ -28492,42 +28492,42 @@ IF ~~ a4937
   SAY @11065
   + ~Gender(Player1,FEMALE)~ + @11066 + a4938
   + ~Gender(Player1,MALE)~ + @11066 + a4939
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11067 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11067 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11067 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11067 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11067 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11067 + a4954
   ++ @11068 + a4947
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11064 + a4944
-  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + @11064 + a4953
+  + ~CheckStatGT(Player1,15,CHR)~ + @11064 + a4944
+  + ~CheckStatLT(Player1,16,CHR)~ + @11064 + a4953
   ++ @10846 + a4930
 END
 
 IF ~~ a4938
   SAY @11069 
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11067 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11067 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11067 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11067 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11067 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11067 + a4954
   ++ @11070 + a4945
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11071 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11071 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11071 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11071 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11071 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11071 + a4954
   ++ @11072 + a4945
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11064 + a4944
-  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + @11064 + a4953
+  + ~CheckStatGT(Player1,15,CHR)~ + @11064 + a4944
+  + ~CheckStatLT(Player1,16,CHR)~ + @11064 + a4953
   ++ @10846 + a4930
 END
 
 IF ~~ a4939
   SAY @11073
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11067 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11067 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11067 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11067 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11067 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11067 + a4954
   ++ @11070 + a4945
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11071 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11071 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11071 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11071 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11071 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11071 + a4954
   ++ @11072 + a4945
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11064 + a4944
-  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + @11064 + a4953
+  + ~CheckStatGT(Player1,15,CHR)~ + @11064 + a4944
+  + ~CheckStatLT(Player1,16,CHR)~ + @11064 + a4953
   ++ @10846 + a4930
 END
 
@@ -28537,9 +28537,9 @@ IF ~~ a4940
   ++ @11076 + a4943
   ++ @11077 + a4945
   ++ @11078 + a4946
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11071 + a4940
-  + ~CheckStatGT(Player1,7,CHR) CheckStatLT(Player1,16,CHR)~ + @11071 + a4898
-  + ~OR(2) CheckStatLT(Player1,8,CHR) ReputationLT(Player1,12)~ + @11071 + a4954
+  + ~CheckStatGT(Player1,15,CHR)~ + @11071 + a4940
+  + ~CheckStatLT(Player1,16,CHR) CheckStatGT(Player1,8,CHR)~ + @11071 + a4898
+  + ~CheckStatLT(Player1,9,CHR)~ + @11071 + a4954
   ++ @11072 + a4945
 END
 
@@ -28548,8 +28548,8 @@ IF ~~ a4941
   ++ @11075 + a4942
   ++ @11080 + a4943
   ++ @11081 + a4945
-  + ~CheckStatGT(Player1,15,CHR) ReputationGT(Player1,11)~ + @11064 + a4944
-  + ~OR(2) CheckStatLT(Player1,16,CHR) ReputationLT(Player1,12)~ + @11064 + a4953
+  + ~CheckStatGT(Player1,15,CHR)~ + @11064 + a4944
+  + ~CheckStatLT(Player1,16,CHR)~ + @11064 + a4953
 END
 
 IF ~~ a4906
@@ -28807,11 +28807,7 @@ IF ~~ a2523
   ++ @11188 + a2524
 END
 
-IF ~~ a2524
-  SAY @11189
-  IF ~~ THEN GOTO a2525
-END
-
+IF ~~ a2524 SAY @11189 IF ~~ THEN GOTO a2525 END
 IF ~~ a2525 SAY @11190 IF ~~ THEN EXIT END
 
 END /* of append */
