@@ -886,7 +886,7 @@ THEN
 		SetGlobal("c-arSCRL15","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL15",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Petrification be finished, if you want it.~)
+		DisplayStringHead(Myself,@13019)
 	EndCutSceneMode()
 END
 /* c-arSCRL1B Aran PID: Create Scroll of Agannazar's Scorcher */
@@ -904,7 +904,7 @@ THEN
 		SetGlobal("c-arSCRL1B","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1B",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Agannazar's Scorcher be finished, if you want it.~)
+		DisplayStringHead(Myself,@13020)
 	EndCutSceneMode()
 END
 /* c-arSCRL1C Aran PID: Create Scroll of Ghoul Touch */
@@ -922,7 +922,7 @@ THEN
 		SetGlobal("c-arSCRL1C","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1C",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghoul Touch be finished, if you want it.~)
+		DisplayStringHead(Myself,@13021)
 	EndCutSceneMode()
 END
 /* c-arSCRL1D Aran PID: Create Scroll of Clairvoyance */
@@ -940,7 +940,7 @@ THEN
 		SetGlobal("c-arSCRL1D","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1D",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Clairvoyance be finished, if you want it.~)
+		DisplayStringHead(Myself,@13022)
 	EndCutSceneMode()
 END
 /* c-arSCRL1E Aran PID: Create Scroll of Dispel Magic */
@@ -958,7 +958,7 @@ THEN
 		SetGlobal("c-arSCRL1E","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1E",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Dispel Magic be finished, if you want it.~)
+		DisplayStringHead(Myself,@13023)
 	EndCutSceneMode()
 END
 /* c-arSCRL1F Aran PID: Create Scroll of Flame Arrow */
@@ -976,7 +976,7 @@ THEN
 		SetGlobal("c-arSCRL1F","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1F",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Flame Arrow be finished, if you want it.~)
+		DisplayStringHead(Myself,@13024)
 	EndCutSceneMode()
 END
 /* c-arSCRL1G Aran PID: Create Scroll of Fireball */
@@ -994,7 +994,7 @@ THEN
 		SetGlobal("c-arSCRL1G","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1G",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireball be finished, if you want it.~)
+		DisplayStringHead(Myself,@13025)
 	EndCutSceneMode()
 END
 /* c-arSCRL1H Aran PID: Create Scroll of Haste */
@@ -1012,7 +1012,7 @@ THEN
 		SetGlobal("c-arSCRL1H","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1H",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Haste be finished, if you want it.~)
+		DisplayStringHead(Myself,@13026)
 	EndCutSceneMode()
 END
 /* c-arSCRL1I Aran PID: Create Scroll of Hold Person */
@@ -1030,7 +1030,7 @@ THEN
 		SetGlobal("c-arSCRL1I","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1I",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Person be finished, if you want it.~)
+		DisplayStringHead(Myself,@13027)
 	EndCutSceneMode()
 END
 /* c-arSCRL1J Aran PID: Create Scroll of Invisibility 10' radius */
@@ -1048,7 +1048,7 @@ THEN
 		SetGlobal("c-arSCRL1J","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1J",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility 10' radius be finished, if you want it.~)
+		DisplayStringHead(Myself,@13028)
 	EndCutSceneMode()
 END
 /* c-arSCRL1K Aran PID: Create Scroll of Lightning Bolt */
@@ -1066,7 +1066,7 @@ THEN
 		SetGlobal("c-arSCRL1K","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1K",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Lightning Bolt be finished, if you want it.~)
+		DisplayStringHead(Myself,@13029)
 	EndCutSceneMode()
 END
 /* c-arSCRL1M Aran PID: Create Scroll of NonDetection */
@@ -1084,7 +1084,7 @@ THEN
 		SetGlobal("c-arSCRL1M","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1M",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' NonDetection be finished, if you want it.~)
+		DisplayStringHead(Myself,@13030)
 	EndCutSceneMode()
 END
 /* c-arSCRL1N Aran PID: Create Scroll of Protection from Normal Missiles */
@@ -1102,7 +1102,7 @@ THEN
 		SetGlobal("c-arSCRL1N","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1N",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Missiles be finished, if you want it.~)
+		DisplayStringHead(Myself,@13031)
 	EndCutSceneMode()
 END
 /* c-arSCRL1O Aran PID: Create Scroll of Slow */
@@ -1120,7 +1120,7 @@ THEN
 		SetGlobal("c-arSCRL1O","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1O",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Slow be finished, if you want it.~)
+		DisplayStringHead(Myself,@13032)
 	EndCutSceneMode()
 END
 /* c-arSCRL1P Aran PID: Create Scroll of Skull Trap */
@@ -1138,7 +1138,7 @@ THEN
 		SetGlobal("c-arSCRL1P","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1P",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Skull Trap be finished, if you want it.~)
+		DisplayStringHead(Myself,@13033)
 	EndCutSceneMode()
 END
 /* c-arSCRL1Q Aran PID: Create Scroll of Vampiric Touch */
@@ -1156,7 +1156,7 @@ THEN
 		SetGlobal("c-arSCRL1Q","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1Q",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Vampiric Touch be finished, if you want it.~)
+		DisplayStringHead(Myself,@13034)
 	EndCutSceneMode()
 END
 /* c-arSCRL1S Aran PID: Create Scroll of Dire Charm */
@@ -1174,7 +1174,7 @@ THEN
 		SetGlobal("c-arSCRL1S","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1S",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Dire Charm be finished, if you want it.~)
+		DisplayStringHead(Myself,@13035)
 	EndCutSceneMode()
 END
 /* c-arSCRL1T Aran PID: Create Scroll of Ghost Armor */
@@ -1192,7 +1192,7 @@ THEN
 		SetGlobal("c-arSCRL1T","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1T",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Ghost Armor be finished, if you want it.~)
+		DisplayStringHead(Myself,@13036)
 	EndCutSceneMode()
 END
 /* c-arSCRL1U Aran PID: Create Scroll of Confusion */
@@ -1210,7 +1210,7 @@ THEN
 		SetGlobal("c-arSCRL1U","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1U",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Confusion be finished, if you want it.~)
+		DisplayStringHead(Myself,@13037)
 	EndCutSceneMode()
 END
 /* c-arSCRL1V Aran PID: Create Scroll of Stoneskin */
@@ -1228,7 +1228,7 @@ THEN
 		SetGlobal("c-arSCRL1V","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1V",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Stoneskin be finished, if you want it.~)
+		DisplayStringHead(Myself,@13038)
 	EndCutSceneMode()
 END
 /* c-arSCRL1W Aran PID: Create Scroll of Fireshield (Blue) */
@@ -1246,7 +1246,7 @@ THEN
 		SetGlobal("c-arSCRL1W","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1W",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Blue) be finished, if you want it.~)
+		DisplayStringHead(Myself,@13039)
 	EndCutSceneMode()
 END
 /* c-arSCRL1X Aran PID: Create Scroll of Ice Storm */
@@ -1264,7 +1264,7 @@ THEN
 		SetGlobal("c-arSCRL1X","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1X",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Ice Storm be finished, if you want it.~)
+		DisplayStringHead(Myself,@13040)
 	EndCutSceneMode()
 END
 /* c-arSCRL1Y Aran PID: Create Scroll of Improved Invisibility */
@@ -1282,7 +1282,7 @@ THEN
 		SetGlobal("c-arSCRL1Y","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1Y",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Invisibility be finished, if you want it.~)
+		DisplayStringHead(Myself,@13041)
 	EndCutSceneMode()
 END
 /* c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
@@ -1300,7 +1300,7 @@ THEN
 		SetGlobal("c-arSCRL1Z","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL1Z",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Globe of Invulnerability be finished, if you want it.~)
+		DisplayStringHead(Myself,@13042)
 	EndCutSceneMode()
 END
 /* c-arSCRL2E Aran PID: Create Scroll of Cloudkill */
@@ -1318,7 +1318,7 @@ THEN
 		SetGlobal("c-arSCRL2E","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL2E",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Cloudkill be finished, if you want it.~)
+		DisplayStringHead(Myself,@13043)
 	EndCutSceneMode()
 END
 /* c-arSCRL2F Aran PID: Create Scroll of Cone of Cold */
@@ -1336,7 +1336,7 @@ THEN
 		SetGlobal("c-arSCRL2F","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL2F",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Cone of Cold be finished, if you want it.~)
+		DisplayStringHead(Myself,@13044)
 	EndCutSceneMode()
 END
 /* c-arSCRL2H Aran PID: Create Scroll of Shadow Door */
@@ -1354,7 +1354,7 @@ THEN
 		SetGlobal("c-arSCRL2H","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL2H",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Shadow Door be finished, if you want it.~)
+		DisplayStringHead(Myself,@13045)
 	EndCutSceneMode()
 END
 /* c-arSCRL3G Aran PID: Create Scroll of Vocalize */
@@ -1372,7 +1372,7 @@ THEN
 		SetGlobal("c-arSCRL3G","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL3G",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Vocalize be finished, if you want it.~)
+		DisplayStringHead(Myself,@13046)
 	EndCutSceneMode()
 END
 /* c-arSCRL5G Aran PID: Create Scroll of Remove Curse */
@@ -1390,7 +1390,7 @@ THEN
 		SetGlobal("c-arSCRL5G","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5G",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Remove Curse be finished, if you want it.~)
+		DisplayStringHead(Myself,@13047)
 	EndCutSceneMode()
 END
 /* c-arSCRL5H Aran PID: Create Scroll of Emotion */
@@ -1408,7 +1408,7 @@ THEN
 		SetGlobal("c-arSCRL5H","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5H",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Emotion be finished, if you want it.~)
+		DisplayStringHead(Myself,@13048)
 	EndCutSceneMode()
 END
 /* c-arSCRL5I Aran PID: Create Scroll of Greater Malison */
@@ -1426,7 +1426,7 @@ THEN
 		SetGlobal("c-arSCRL5I","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5I",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Greater Malison be finished, if you want it.~)
+		DisplayStringHead(Myself,@13049)
 	EndCutSceneMode()
 END
 /* c-arSCRL5J Aran PID: Create Scroll of Otiluke's Resilient Sphere */
@@ -1444,7 +1444,7 @@ THEN
 		SetGlobal("c-arSCRL5J","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5J",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Otiluke's Resilient Sphere be finished, if you want it.~)
+		DisplayStringHead(Myself,@13050)
 	EndCutSceneMode()
 END
 /* c-arSCRL5K Aran PID: Create Scroll of Spirit Armor */
@@ -1462,7 +1462,7 @@ THEN
 		SetGlobal("c-arSCRL5K","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5K",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spirit Armor be finished, if you want it.~)
+		DisplayStringHead(Myself,@13051)
 	EndCutSceneMode()
 END
 /* c-arSCRL5N Aran PID: Create Scroll of Domination */
@@ -1480,7 +1480,7 @@ THEN
 		SetGlobal("c-arSCRL5N","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5N",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Domination be finished, if you want it.~)
+		DisplayStringHead(Myself,@13052)
 	EndCutSceneMode()
 END
 
@@ -1499,7 +1499,7 @@ THEN
 		SetGlobal("c-arSCRL5P","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5P",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Chaos be finished, if you want it.~)
+		DisplayStringHead(Myself,@13053)
 	EndCutSceneMode()
 END
 /* c-arSCRL5Q Aran PID: Create Scroll of Feeblemind */
@@ -1517,7 +1517,7 @@ THEN
 		SetGlobal("c-arSCRL5Q","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5Q",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Feeblemind be finished, if you want it.~)
+		DisplayStringHead(Myself,@13054)
 	EndCutSceneMode()
 END
 /* c-arSCRL5T Aran PID: Create Scroll of Protection from Electricity */
@@ -1535,7 +1535,7 @@ THEN
 		SetGlobal("c-arSCRL5T","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5T",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Electricity be finished, if you want it.~)
+		DisplayStringHead(Myself,@13055)
 	EndCutSceneMode()
 END
 /* c-arSCRL5U Aran PID: Create Scroll of Reflected Image */
@@ -1553,7 +1553,7 @@ THEN
 		SetGlobal("c-arSCRL5U","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL5U",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Reflected Image be finished, if you want it.~)
+		DisplayStringHead(Myself,@13056)
 	EndCutSceneMode()
 END
 /* c-arSCRL66 Aran PID: Create Scroll of Grease */
@@ -1571,7 +1571,7 @@ THEN
 		SetGlobal("c-arSCRL66","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL66",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Grease be finished, if you want it.~)
+		DisplayStringHead(Myself,@13057)
 	EndCutSceneMode()
 END
 /* c-arSCRL67 Aran PID: Create Scroll of Armor */
@@ -1589,7 +1589,7 @@ THEN
 		SetGlobal("c-arSCRL67","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL67",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Armor be finished, if you want it.~)
+		DisplayStringHead(Myself,@13058)
 	EndCutSceneMode()
 END
 /* c-arSCRL68 Aran PID: Create Scroll of Burning Hands */
@@ -1607,7 +1607,7 @@ THEN
 		SetGlobal("c-arSCRL68","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL68",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Burning Hands be finished, if you want it.~)
+		DisplayStringHead(Myself,@13059)
 	EndCutSceneMode()
 END
 /* c-arSCRL69 Aran PID: Create Scroll of Charm Person */
@@ -1625,7 +1625,7 @@ THEN
 		SetGlobal("c-arSCRL69","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL69",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Charm Person be finished, if you want it.~)
+		DisplayStringHead(Myself,@13060)
 	EndCutSceneMode()
 END
 /* c-arSCRL6D Aran PID: Create Scroll of Find Familiar */
@@ -1643,7 +1643,7 @@ THEN
 		SetGlobal("c-arSCRL6D","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6D",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Find Familiar be finished, if you want it.~)
+		DisplayStringHead(Myself,@13061)
 	EndCutSceneMode()
 END
 /* c-arSCRL6E Aran PID: Create Scroll of Power Word, Sleep */
@@ -1661,7 +1661,7 @@ THEN
 		SetGlobal("c-arSCRL6E","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6E",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Sleep be finished, if you want it.~)
+		DisplayStringHead(Myself,@13062)
 	EndCutSceneMode()
 END
 /* c-arSCRL6F Aran PID: Create Scroll of Ray of Enfeeblement */
@@ -1679,7 +1679,7 @@ THEN
 		SetGlobal("c-arSCRL6F","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6F",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Ray of Enfeeblement be finished, if you want it.~)
+		DisplayStringHead(Myself,@13063)
 	EndCutSceneMode()
 END
 /* c-arSCRL6G Aran PID: Create Scroll of Minor Spell Deflection */
@@ -1697,7 +1697,7 @@ THEN
 		SetGlobal("c-arSCRL6G","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6G",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Deflection be finished, if you want it.~)
+		DisplayStringHead(Myself,@13064)
 	EndCutSceneMode()
 END
 /* c-arSCRL6H Aran PID: Create Scroll of Protection from Fire */
@@ -1715,7 +1715,7 @@ THEN
 		SetGlobal("c-arSCRL6H","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6H",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Fire be finished, if you want it.~)
+		DisplayStringHead(Myself,@13065)
 	EndCutSceneMode()
 END
 /* c-arSCRL6I Aran PID: Create Scroll of Protection from Cold */
@@ -1733,7 +1733,7 @@ THEN
 		SetGlobal("c-arSCRL6I","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6I",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Cold be finished, if you want it.~)
+		DisplayStringHead(Myself,@13066)
 	EndCutSceneMode()
 END
 /* c-arSCRL6J Aran PID: Create Scroll of Spell Thrust */
@@ -1751,7 +1751,7 @@ THEN
 		SetGlobal("c-arSCRL6J","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6J",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Thrust be finished, if you want it.~)
+		DisplayStringHead(Myself,@13067)
 	EndCutSceneMode()
 END
 /* c-arSCRL6K Aran PID: Create Scroll of Detect Illusion */
@@ -1769,7 +1769,7 @@ THEN
 		SetGlobal("c-arSCRL6K","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6K",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Illusion be finished, if you want it.~)
+		DisplayStringHead(Myself,@13068)
 	EndCutSceneMode()
 END
 /* c-arSCRL6L Aran PID: Create Scroll of Hold Undead */
@@ -1787,7 +1787,7 @@ THEN
 		SetGlobal("c-arSCRL6L","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6L",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Hold Undead be finished, if you want it.~)
+		DisplayStringHead(Myself,@13069)
 	EndCutSceneMode()
 END
 /* c-arSCRL6M Aran PID: Create Scroll of Enchanted Weapon */
@@ -1805,7 +1805,7 @@ THEN
 		SetGlobal("c-arSCRL6M","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6M",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Enchanted Weapon be finished, if you want it.~)
+		DisplayStringHead(Myself,@13070)
 	EndCutSceneMode()
 END
 /* c-arSCRL6N Aran PID: Create Scroll of Fireshield (Red) */
@@ -1823,7 +1823,7 @@ THEN
 		SetGlobal("c-arSCRL6N","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6N",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Fireshield (Red) be finished, if you want it.~)
+		DisplayStringHead(Myself,@13071)
 	EndCutSceneMode()
 END
 /* c-arSCRL6O Aran PID: Create Scroll of Secret Word */
@@ -1841,7 +1841,7 @@ THEN
 		SetGlobal("c-arSCRL6O","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6O",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Secret Word be finished, if you want it.~)
+		DisplayStringHead(Myself,@13072)
 	EndCutSceneMode()
 END
 /* c-arSCRL6P Aran PID: Create Scroll of Minor Sequencer */
@@ -1859,7 +1859,7 @@ THEN
 		SetGlobal("c-arSCRL6P","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6P",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Sequencer be finished, if you want it.~)
+		DisplayStringHead(Myself,@13073)
 	EndCutSceneMode()
 END
 /* c-arSCRL6S Aran PID: Create Scroll of Spell Immunity */
@@ -1877,7 +1877,7 @@ THEN
 		SetGlobal("c-arSCRL6S","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6S",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Immunity be finished, if you want it.~)
+		DisplayStringHead(Myself,@13074)
 	EndCutSceneMode()
 END
 /* c-arSCRL6T Aran PID: Create Scroll of Protection from Normal Weapons */
@@ -1895,7 +1895,7 @@ THEN
 		SetGlobal("c-arSCRL6T","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6T",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Normal Weapons be finished, if you want it.~)
+		DisplayStringHead(Myself,@13075)
 	EndCutSceneMode()
 END
 /* c-arSCRL6U Aran PID: Create Scroll of Breach */
@@ -1913,7 +1913,7 @@ THEN
 		SetGlobal("c-arSCRL6U","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6U",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Breach be finished, if you want it.~)
+		DisplayStringHead(Myself,@13076)
 	EndCutSceneMode()
 END
 /* c-arSCRL6V Aran PID: Create Scroll of Lower Resistance */
@@ -1931,7 +1931,7 @@ THEN
 		SetGlobal("c-arSCRL6V","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6V",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Lower Resistance be finished, if you want it.~)
+		DisplayStringHead(Myself,@13077)
 	EndCutSceneMode()
 END
 /* c-arSCRL6W Aran PID: Create Scroll of Oracle */
@@ -1949,7 +1949,7 @@ THEN
 		SetGlobal("c-arSCRL6W","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6W",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Oracle be finished, if you want it.~)
+		DisplayStringHead(Myself,@13078)
 	EndCutSceneMode()
 END
 /* c-arSCRL6Y Aran PID: Create Scroll of Protection from Acid */
@@ -1967,7 +1967,7 @@ THEN
 		SetGlobal("c-arSCRL6Y","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6Y",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Acid be finished, if you want it.~)
+		DisplayStringHead(Myself,@13079)
 	EndCutSceneMode()
 END
 /* c-arSCRL6Z Aran PID: Create Scroll of Phantom Blade */
@@ -1985,7 +1985,7 @@ THEN
 		SetGlobal("c-arSCRL6Z","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL6Z",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Phantom Blade be finished, if you want it.~)
+		DisplayStringHead(Myself,@13080)
 	EndCutSceneMode()
 END
 /* c-arSCRL70 Aran PID: Create Scroll of Color Spray */
@@ -2003,7 +2003,7 @@ THEN
 		SetGlobal("c-arSCRL70","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL70",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Color Spray be finished, if you want it.~)
+		DisplayStringHead(Myself,@13081)
 	EndCutSceneMode()
 END
 /* c-arSCRL71 Aran PID: Create Scroll of Blindness */
@@ -2021,7 +2021,7 @@ THEN
 		SetGlobal("c-arSCRL71","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL71",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Blindness be finished, if you want it.~)
+		DisplayStringHead(Myself,@13082)
 	EndCutSceneMode()
 END
 /* c-arSCRL72 Aran PID: Create Scroll of Friends */
@@ -2039,7 +2039,7 @@ THEN
 		SetGlobal("c-arSCRL72","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL72",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Friends be finished, if you want it.~)
+		DisplayStringHead(Myself,@13083)
 	EndCutSceneMode()
 END
 /* c-arSCRL75 Aran PID: Create Scroll of Identify */
@@ -2057,7 +2057,7 @@ THEN
 		SetGlobal("c-arSCRL75","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL75",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Identify be finished, if you want it.~)
+		DisplayStringHead(Myself,@13084)
 	EndCutSceneMode()
 END
 /* c-arSCRL76 Aran PID: Create Scroll of Infravision */
@@ -2075,7 +2075,7 @@ THEN
 		SetGlobal("c-arSCRL76","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL76",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Infravision be finished, if you want it.~)
+		DisplayStringHead(Myself,@13085)
 	EndCutSceneMode()
 END
 /* c-arSCRL77 Aran PID: Create Scroll of Magic Missile */
@@ -2093,7 +2093,7 @@ THEN
 		SetGlobal("c-arSCRL77","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL77",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Magic Missile be finished, if you want it.~)
+		DisplayStringHead(Myself,@13086)
 	EndCutSceneMode()
 END
 /* c-arSCRL78 Aran PID: Create Scroll of Protection from Evil */
@@ -2111,7 +2111,7 @@ THEN
 		SetGlobal("c-arSCRL78","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL78",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Evil be finished, if you want it.~)
+		DisplayStringHead(Myself,@13087)
 	EndCutSceneMode()
 END
 /* c-arSCRL79 Aran PID: Create Scroll of Shield */
@@ -2129,7 +2129,7 @@ THEN
 		SetGlobal("c-arSCRL79","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL79",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Shield be finished, if you want it.~)
+		DisplayStringHead(Myself,@13088)
 	EndCutSceneMode()
 END
 /* c-arSCRL7D Aran PID: Create Scroll of Minor Spell Turning */
@@ -2147,7 +2147,7 @@ THEN
 		SetGlobal("c-arSCRL7D","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7D",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Minor Spell Turning be finished, if you want it.~)
+		DisplayStringHead(Myself,@13089)
 	EndCutSceneMode()
 END
 /* c-arSCRL7F Aran PID: Create Scroll of Globe of Invulnerability */
@@ -2165,7 +2165,7 @@ THEN
 		SetGlobal("c-arSCRL7F","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7F",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Globe of Invulnerability be finished, if you want it.~)
+		DisplayStringHead(Myself,@13090)
 	EndCutSceneMode()
 END
 /* c-arSCRL7G Aran PID: Create Scroll of Tenser's Transformation */
@@ -2183,7 +2183,7 @@ THEN
 		SetGlobal("c-arSCRL7G","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7G",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Tenser's Transformation be finished, if you want it.~)
+		DisplayStringHead(Myself,@13091)
 	EndCutSceneMode()
 END
 /* c-arSCRL7H Aran PID: Create Scroll of Flesh to Stone */
@@ -2201,7 +2201,7 @@ THEN
 		SetGlobal("c-arSCRL7H","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7H",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Flesh to Stone be finished, if you want it.~)
+		DisplayStringHead(Myself,@13092)
 	EndCutSceneMode()
 END
 /* c-arSCRL7I Aran PID: Create Scroll of Death Spell */
@@ -2219,7 +2219,7 @@ THEN
 		SetGlobal("c-arSCRL7I","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7I",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Spell be finished, if you want it.~)
+		DisplayStringHead(Myself,@13093)
 	EndCutSceneMode()
 END
 /* c-arSCRL7J Aran PID: Create Scroll of Protection from Magic */
@@ -2237,7 +2237,7 @@ THEN
 		SetGlobal("c-arSCRL7J","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7J",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magic be finished, if you want it.~)
+		DisplayStringHead(Myself,@13094)
 	EndCutSceneMode()
 END
 /* c-arSCRL7K Aran PID: Create Scroll of Mislead */
@@ -2255,7 +2255,7 @@ THEN
 		SetGlobal("c-arSCRL7K","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7K",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Mislead be finished, if you want it.~)
+		DisplayStringHead(Myself,@13095)
 	EndCutSceneMode()
 END
 /* c-arSCRL7L Aran PID: Create Scroll of Pierce Magic */
@@ -2273,7 +2273,7 @@ THEN
 		SetGlobal("c-arSCRL7L","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7L",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Pierce Magic be finished, if you want it.~)
+		DisplayStringHead(Myself,@13096)
 	EndCutSceneMode()
 END
 /* c-arSCRL7M Aran PID: Create Scroll of True Sight */
@@ -2291,7 +2291,7 @@ THEN
 		SetGlobal("c-arSCRL7M","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7M",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' True Sight be finished, if you want it.~)
+		DisplayStringHead(Myself,@13097)
 	EndCutSceneMode()
 END
 /* c-arSCRL7O Aran PID: Create Scroll of Protection from Magical Weapons */
@@ -2309,7 +2309,7 @@ THEN
 		SetGlobal("c-arSCRL7O","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7O",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Protection from Magical Weapons be finished, if you want it.~)
+		DisplayStringHead(Myself,@13098)
 	EndCutSceneMode()
 END
 /* c-arSCRL7P Aran PID: Create Scroll of Power Word, Silence */
@@ -2327,7 +2327,7 @@ THEN
 		SetGlobal("c-arSCRL7P","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7P",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Power Word, Silence be finished, if you want it.~)
+		DisplayStringHead(Myself,@13099)
 	EndCutSceneMode()
 END
 /* c-arSCRL7Q Aran PID: Create Scroll of Improved Haste */
@@ -2345,7 +2345,7 @@ THEN
 		SetGlobal("c-arSCRL7Q","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7Q",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Improved Haste be finished, if you want it.~)
+		DisplayStringHead(Myself,@13100)
 	EndCutSceneMode()
 END
 /* c-arSCRL7R Aran PID: Create Scroll of Death Fog */
@@ -2363,7 +2363,7 @@ THEN
 		SetGlobal("c-arSCRL7R","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7R",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Death Fog be finished, if you want it.~)
+		DisplayStringHead(Myself,@13101)
 	EndCutSceneMode()
 END
 /* c-arSCRL7S Aran PID: Create Scroll of Chain Lightning */
@@ -2381,7 +2381,7 @@ THEN
 		SetGlobal("c-arSCRL7S","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7S",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Chain Lightning be finished, if you want it.~)
+		DisplayStringHead(Myself,@13102)
 	EndCutSceneMode()
 END
 /* c-arSCRL7T Aran PID: Create Scroll of Disintegrate */
@@ -2399,7 +2399,7 @@ THEN
 		SetGlobal("c-arSCRL7T","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7T",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Disintegrate be finished, if you want it.~)
+		DisplayStringHead(Myself,@13103)
 	EndCutSceneMode()
 END
 /* c-arSCRL7U Aran PID: Create Scroll of Contingency */
@@ -2417,7 +2417,7 @@ THEN
 		SetGlobal("c-arSCRL7U","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7U",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Contingency be finished, if you want it.~)
+		DisplayStringHead(Myself,@13104)
 	EndCutSceneMode()
 END
 /* c-arSCRL7V Aran PID: Create Scroll of Spell Deflection */
@@ -2435,7 +2435,7 @@ THEN
 		SetGlobal("c-arSCRL7V","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL7V",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Deflection be finished, if you want it.~)
+		DisplayStringHead(Myself,@13105)
 	EndCutSceneMode()
 END
 /* c-arSCRL80 Aran PID: Create Scroll of Shocking Grasp */
@@ -2453,7 +2453,7 @@ THEN
 		SetGlobal("c-arSCRL80","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL80",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Shocking Grasp be finished, if you want it.~)
+		DisplayStringHead(Myself,@13106)
 	EndCutSceneMode()
 END
 /* c-arSCRL81 Aran PID: Create Scroll of Sleep */
@@ -2471,7 +2471,7 @@ THEN
 		SetGlobal("c-arSCRL81","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL81",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Sleep be finished, if you want it.~)
+		DisplayStringHead(Myself,@13107)
 	EndCutSceneMode()
 END
 /* c-arSCRL82 Aran PID: Create Scroll of Chill Touch */
@@ -2489,7 +2489,7 @@ THEN
 		SetGlobal("c-arSCRL82","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL82",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Chill Touch be finished, if you want it.~)
+		DisplayStringHead(Myself,@13108)
 	EndCutSceneMode()
 END
 /* c-arSCRL83 Aran PID: Create Scroll of Chromatic Orb */
@@ -2507,7 +2507,7 @@ THEN
 		SetGlobal("c-arSCRL83","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL83",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Chromatic Orb be finished, if you want it.~)
+		DisplayStringHead(Myself,@13109)
 	EndCutSceneMode()
 END
 /* c-arSCRL84 Aran PID: Create Scroll of Larloch's Minor Drain */
@@ -2525,7 +2525,7 @@ THEN
 		SetGlobal("c-arSCRL84","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL84",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Larloch's Minor Drain be finished, if you want it.~)
+		DisplayStringHead(Myself,@13110)
 	EndCutSceneMode()
 END
 /* c-arSCRL85 Aran PID: Create Scroll of Blur */
@@ -2543,7 +2543,7 @@ THEN
 		SetGlobal("c-arSCRL85","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL85",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Blur be finished, if you want it.~)
+		DisplayStringHead(Myself,@13111)
 	EndCutSceneMode()
 END
 /* c-arSCRL86 Aran PID: Create Scroll of Detect Evil */
@@ -2561,7 +2561,7 @@ THEN
 		SetGlobal("c-arSCRL86","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL86",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Evil be finished, if you want it.~)
+		DisplayStringHead(Myself,@13112)
 	EndCutSceneMode()
 END
 /* c-arSCRL87 Aran PID: Create Scroll of Detect Invisibility */
@@ -2579,7 +2579,7 @@ THEN
 		SetGlobal("c-arSCRL87","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL87",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Detect Invisibility be finished, if you want it.~)
+		DisplayStringHead(Myself,@13113)
 	EndCutSceneMode()
 END
 /* c-arSCRL89 Aran PID: Create Scroll of Horror */
@@ -2597,7 +2597,7 @@ THEN
 		SetGlobal("c-arSCRL89","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL89",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Horror be finished, if you want it.~)
+		DisplayStringHead(Myself,@13114)
 	EndCutSceneMode()
 END
 /* c-arSCRL8C Aran PID: Create Scroll of Stone to Flesh */
@@ -2615,7 +2615,7 @@ THEN
 		SetGlobal("c-arSCRL8C","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL8C",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Stone to Flesh be finished, if you want it.~)
+		DisplayStringHead(Myself,@13115)
 	EndCutSceneMode()
 END
 /* c-arSCRL8X Aran PID: Create Scroll of Spell Shield */
@@ -2633,7 +2633,7 @@ THEN
 		SetGlobal("c-arSCRL8X","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL8X",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spell Shield be finished, if you want it.~)
+		DisplayStringHead(Myself,@13116)
 	EndCutSceneMode()
 END
 /* c-arSCRL90 Aran PID: Create Scroll of Invisibility */
@@ -2651,7 +2651,7 @@ THEN
 		SetGlobal("c-arSCRL90","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL90",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Invisibility be finished, if you want it.~)
+		DisplayStringHead(Myself,@13117)
 	EndCutSceneMode()
 END
 /* c-arSCRL91 Aran PID: Create Scroll of Knock */
@@ -2669,7 +2669,7 @@ THEN
 		SetGlobal("c-arSCRL91","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL91",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Knock be finished, if you want it.~)
+		DisplayStringHead(Myself,@13118)
 	EndCutSceneMode()
 END
 /* c-arSCRL92 Aran PID: Create Scroll of Know Alignment */
@@ -2687,7 +2687,7 @@ THEN
 		SetGlobal("c-arSCRL92","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL92",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Know Alignment be finished, if you want it.~)
+		DisplayStringHead(Myself,@13119)
 	EndCutSceneMode()
 END
 /* c-arSCRL93 Aran PID: Create Scroll of Luck */
@@ -2705,7 +2705,7 @@ THEN
 		SetGlobal("c-arSCRL93","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL93",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Luck be finished, if you want it.~)
+		DisplayStringHead(Myself,@13120)
 	EndCutSceneMode()
 END
 /* c-arSCRL94 Aran PID: Create Scroll of Resist Fear */
@@ -2723,7 +2723,7 @@ THEN
 		SetGlobal("c-arSCRL94","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL94",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Resist Fear be finished, if you want it.~)
+		DisplayStringHead(Myself,@13121)
 	EndCutSceneMode()
 END
 /* c-arSCRL95 Aran PID: Create Scroll of Melf's Acid Arrow */
@@ -2741,7 +2741,7 @@ THEN
 		SetGlobal("c-arSCRL95","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL95",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Acid Arrow be finished, if you want it.~)
+		DisplayStringHead(Myself,@13122)
 	EndCutSceneMode()
 END
 /* c-arSCRL96 Aran PID: Create Scroll of Mirror Image */
@@ -2759,7 +2759,7 @@ THEN
 		SetGlobal("c-arSCRL96","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL96",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Mirror Image be finished, if you want it.~)
+		DisplayStringHead(Myself,@13123)
 	EndCutSceneMode()
 END
 
@@ -2778,7 +2778,7 @@ THEN
 		SetGlobal("c-arSCRL97","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL97",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Stinking Cloud be finished, if you want it.~)
+		DisplayStringHead(Myself,@13124)
 	EndCutSceneMode()
 END
 /* c-arSCRL98 Aran PID: Create Scroll of Strength */
@@ -2796,7 +2796,7 @@ THEN
 		SetGlobal("c-arSCRL98","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL98",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Strength be finished, if you want it.~)
+		DisplayStringHead(Myself,@13125)
 	EndCutSceneMode()
 END
 /* c-arSCRL99 Aran PID: Create Scroll of Web */
@@ -2814,7 +2814,7 @@ THEN
 		SetGlobal("c-arSCRL99","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRL99",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Web be finished, if you want it.~)
+		DisplayStringHead(Myself,@13126)
 	EndCutSceneMode()
 END
 /* c-arSCRLA1 Aran PID: Create Scroll of Wizard Eye */
@@ -2832,7 +2832,7 @@ THEN
 		SetGlobal("c-arSCRLA1","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA1",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Wizard Eye be finished, if you want it.~)
+		DisplayStringHead(Myself,@13127)
 	EndCutSceneMode()
 END
 /* c-arSCRLA2 Aran PID: Create Scroll of Deafness */
@@ -2850,7 +2850,7 @@ THEN
 		SetGlobal("c-arSCRLA2","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA2",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Deafness be finished, if you want it.~)
+		DisplayStringHead(Myself,@13128)
 	EndCutSceneMode()
 END
 /* c-arSCRLA3 Aran PID: Create Scroll of Glitterdust */
@@ -2868,7 +2868,7 @@ THEN
 		SetGlobal("c-arSCRLA3","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA3",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Glitterdust be finished, if you want it.~)
+		DisplayStringHead(Myself,@13129)
 	EndCutSceneMode()
 END
 /* c-arSCRLA5 Aran PID: Create Scroll of Melf's Minute Meteors */
@@ -2886,7 +2886,7 @@ THEN
 		SetGlobal("c-arSCRLA5","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA5",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Melf's Minute Meteors be finished, if you want it.~)
+		DisplayStringHead(Myself,@13130)
 	EndCutSceneMode()
 END
 /* c-arSCRLA6 Aran PID: Create Scroll of Spook */
@@ -2904,7 +2904,7 @@ THEN
 		SetGlobal("c-arSCRLA6","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA6",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Spook be finished, if you want it.~)
+		DisplayStringHead(Myself,@13131)
 	EndCutSceneMode()
 END
 /* c-arSCRLA8 Aran PID: Create Scroll of Contagion */
@@ -2922,7 +2922,7 @@ THEN
 		SetGlobal("c-arSCRLA8","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLA8",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Contagion be finished, if you want it.~)
+		DisplayStringHead(Myself,@13132)
 	EndCutSceneMode()
 END
 /* c-arSCRLAJ Aran PID: Create Scroll of Farsight */
@@ -2940,7 +2940,7 @@ THEN
 		SetGlobal("c-arSCRLAJ","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLAJ",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Farsight be finished, if you want it.~)
+		DisplayStringHead(Myself,@13133)
 	EndCutSceneMode()
 END
 /* c-arSCRLAL Aran PID: Create Scroll of Sunfire */
@@ -2958,7 +2958,7 @@ THEN
 		SetGlobal("c-arSCRLAL","LOCALS",0)
 		SetGlobal("c-aranscribe","GLOBAL",0)
 		GiveItemCreate("SCRLAL",Myself,1,1,1)
-		DisplayStringHead(Myself,~Aye, now, that scroll o' Sunfire be finished, if you want it.~)
+		DisplayStringHead(Myself,@13134)
 	EndCutSceneMode()
 END
 
@@ -3478,8 +3478,8 @@ THEN
 	RESPONSE #100
  		SetGlobal("c-aransetupromtimers","GLOBAL",1)
 		SetGlobal("c-aranpcflirtstart","GLOBAL",1)
- 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
+ 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",@13135) // Minimum Real Time until first LT 
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)  // Tee up flirt timer 
 END
 
 /* early flirt triggering */
@@ -3496,8 +3496,8 @@ END
 THEN
 	RESPONSE #100
  		SetGlobal("c-aransetupromtimers","GLOBAL",1)
- 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
+ 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",@13135) // Minimum Real Time until first LT 
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)  // Tee up flirt timer 
 END
 
 /* LOVE TALKS */
@@ -3585,7 +3585,7 @@ IF
 	!HasItemEquiped("belt05",Player1)
 THEN RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)
 END
 
 /* Set Up Flirting After 3 FTs, if player has not taken a shortcut and flirted alot - done in romance talk setup. */
@@ -4810,13 +4810,13 @@ IF
 	!StateCheck("Anomen",CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
-		DisplayStringHead(Myself,~*BUUURRPPPP*~)
+		DisplayStringHead(Myself,@13137)
 		Wait(2)
-		DisplayStringHead("Anomen",~Control yourself, Whitehand. That is churlish behavior.~)
+		DisplayStringHead("Anomen",@13138)
 		Wait(2)
-		DisplayStringHead(Myself,~Sir, Yes Sir. No more loud burpin', Sir.~)
+		DisplayStringHead(Myself,@13139)
 		Wait(3)
-		DisplayStringHead(Myself,~*fffbbbbbt*~)
+		DisplayStringHead(Myself,@13140)
 		Wait(2)
 		SetGlobal("c-arananomenf","LOCALS",1)
 		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
