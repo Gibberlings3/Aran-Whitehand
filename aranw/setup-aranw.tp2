@@ -11,6 +11,8 @@ AUTHOR ~cmorgan~
 
 VERSION ~Beta3~
 
+README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/readme-aranw.html~
+
 LANGUAGE ~English~
          ~English~
          ~aranw\tra\english\c-aranw.tra~
@@ -26,107 +28,11 @@ INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
 
 ACTION_IF GAME_IS BG2EE THEN BEGIN
   // LOAD_TRA ~aranw/tra/%LANGUAGE%/c-aranw_ee.tra~
-  ADD_JOURNAL TITLE (~Aran Whitehand~) @456 @448 @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @10399 @13146 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+  ADD_JOURNAL TITLE (~Aran Whitehand~) @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @13146 @13147 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+  ADD_JOURNAL EXISTING TITLE (#74337) @448 @456 @10399 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
 END ELSE
 BEGIN
   INCLUDE ~aranw/lib/ids_patching.tph~
-END
-
-OUTER_FOR( aran_timer_choice = 0 ; ~%aran_timer_choice%~ STRING_COMPARE_REGEXP ~^[12]$~ ; )BEGIN
-	PRINT @2
-	ACTION_READLN aran_timer_choice
-END // of O_F
-
-ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
-	/* .ids patching with player choice: set talk timers */
-		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
-		PRINT @3
-		OUTER_SET choseninitialrom = 2400
-		PRINT @4
-		OUTER_SET choseninitialflirt = 1200
-		PRINT @5
-		PRINT @6
-END
-	
-
-ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
-	PRINT @7
-
-	PRINT @8
-
-	OUTER_SPRINT ~friendshiptimer~ @9
-	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x6) OR (~friendshiptimer~ < 0x1)) BEGIN
-		PRINT @10
-		ACTION_READLN ~friendshiptimer~
-	END
-	ACTION_IF ("friendshiptimer" = 1) THEN BEGIN
-		APPEND ~gtimes.ids~ ~3600 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~3600 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~3600 ARAN_FLIRT~
-		PRINT @3
-		OUTER_SET choseninitialrom = 2400
-		PRINT @4
-		OUTER_SET choseninitialflirt = 1200
-		PRINT @5
-		PRINT @11
-	END
-	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
-		APPEND ~gtimes.ids~ ~900 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~900 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~900 ARAN_FLIRT~
-		PRINT @12
-		OUTER_SET choseninitialrom = 600
-		PRINT @13
-		OUTER_SET choseninitialflirt = 300
-		PRINT @14
-		PRINT @15
-	END
-	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
-		APPEND ~gtimes.ids~ ~1800 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~1800 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~1800 ARAN_FLIRT~
-		PRINT @16
-		OUTER_SET choseninitialrom = 1200
-		PRINT @17
-		OUTER_SET choseninitialflirt = 600
-		PRINT @18
-		PRINT @19
-	END
-	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
-		APPEND ~gtimes.ids~ ~2700 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~2700 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~2700 ARAN_FLIRT~
-		PRINT @20
-		OUTER_SET choseninitialrom = 1800
-		PRINT @21
-		OUTER_SET choseninitialflirt = 900
-		PRINT @22
-		PRINT @23
-	END
-	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
-		APPEND ~gtimes.ids~ ~5400 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~5400 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~5400 ARAN_FLIRT~
-		PRINT @24
-		OUTER_SET choseninitialrom = 3600
-		PRINT @25
-		OUTER_SET choseninitialflirt = 1800
-		PRINT @26
-		PRINT @27
-	END
-	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
-		APPEND ~gtimes.ids~ ~7200 ARAN_FTT~
-		APPEND ~gtimes.ids~ ~7200 ARAN_LTT~
-		APPEND ~gtimes.ids~ ~7200 ARAN_FLIRT~
-		PRINT @28
-		OUTER_SET choseninitialrom = 4800
-		PRINT @29
-		OUTER_SET choseninitialflirt = 2400
-		PRINT @30
-		PRINT @31
-	END
 END
 
 /* .2da patching */
@@ -937,6 +843,99 @@ DEFINE_PATCH_MACRO ~aran_cre_setup~ BEGIN
 END
 
 /* end of define all macros */
+
+/* Setting up timered interactions with player choice before compiling .d and .baf */
+OUTER_FOR( aran_timer_choice = 0 ; ~%aran_timer_choice%~ STRING_COMPARE_REGEXP ~^[12]$~ ; )BEGIN
+	PRINT @2
+	ACTION_READLN aran_timer_choice
+END // of O_F
+ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
+	/*  patching files with player choice: set talk timers */
+		OUTER_SET ARAN_FTT = 3600
+		OUTER_SET ARAN_LTT = 3600
+		OUTER_SET ARAN_FLIRT = 3600
+		PRINT @3
+		OUTER_SET choseninitialrom = 2400
+		PRINT @4
+		OUTER_SET choseninitialflirt = 1200
+		PRINT @5
+		PRINT @6
+END
+ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
+	PRINT @7
+	PRINT @8
+	OUTER_SPRINT ~friendshiptimer~ @9
+	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x6) OR (~friendshiptimer~ < 0x1)) BEGIN
+		PRINT @10
+		ACTION_READLN ~friendshiptimer~
+	END
+	ACTION_IF ("friendshiptimer" = 1) THEN BEGIN
+		OUTER_SET ARAN_FTT = 3600
+		OUTER_SET ARAN_LTT = 3600
+		OUTER_SET ARAN_FLIRT = 3600
+		PRINT @3
+		OUTER_SET choseninitialrom = 2400
+		PRINT @4
+		OUTER_SET choseninitialflirt = 1200
+		PRINT @5
+		PRINT @11
+	END
+	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
+		OUTER_SET ARAN_FTT = 900
+		OUTER_SET ARAN_LTT = 900
+		OUTER_SET ARAN_FLIRT = 900
+		PRINT @12
+		OUTER_SET choseninitialrom = 600
+		PRINT @13
+		OUTER_SET choseninitialflirt = 300
+		PRINT @14
+		PRINT @15
+	END
+	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
+		OUTER_SET ARAN_FTT = 1800
+		OUTER_SET ARAN_LTT = 1800
+		OUTER_SET ARAN_FLIRT = 1800
+		PRINT @16
+		OUTER_SET choseninitialrom = 1200
+		PRINT @17
+		OUTER_SET choseninitialflirt = 600
+		PRINT @18
+		PRINT @19
+	END
+	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
+		OUTER_SET ARAN_FTT = 2700
+		OUTER_SET ARAN_LTT = 2700
+		OUTER_SET ARAN_FLIRT = 2700
+		PRINT @20
+		OUTER_SET choseninitialrom = 1800
+		PRINT @21
+		OUTER_SET choseninitialflirt = 900
+		PRINT @22
+		PRINT @23
+	END
+	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
+		OUTER_SET ARAN_FTT = 5400
+		OUTER_SET ARAN_LTT = 5400
+		OUTER_SET ARAN_FLIRT = 5400
+		PRINT @24
+		OUTER_SET choseninitialrom = 3600
+		PRINT @25
+		OUTER_SET choseninitialflirt = 1800
+		PRINT @26
+		PRINT @27
+	END
+	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
+		OUTER_SET ARAN_FTT = 7200
+		OUTER_SET ARAN_LTT = 7200
+		OUTER_SET ARAN_FLIRT = 7200
+		PRINT @28
+		OUTER_SET choseninitialrom = 4800
+		PRINT @29
+		OUTER_SET choseninitialflirt = 2400
+		PRINT @30
+		PRINT @31
+	END
+END
 
 PRINT @116
 
