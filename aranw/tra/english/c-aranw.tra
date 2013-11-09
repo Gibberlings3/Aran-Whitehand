@@ -13119,7 +13119,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12724 = ~[HGWRA01] What of the inevitable pain you must cause to the one you love? This man, the one whom you call @68.~
 @12725 = ~[ARAN] What in Cyric's Blighted Breath do this windbag be talkin' about? You be in control o' th' bloodurges...~
 @12726 = ~[C-ARWRTH] Aran? Aye, Whitehand, light a torch or somethin'. It is as dark as hells here...~ [C-ARW001]
-@12727 = ~[ARAN] What in th' nine hells... you be dead an' buried. Someone get me some holy water right quick, eh? You were no good when you was alive, an' I don't rightly want to see you now you be dead.~ [ARAN_SOUND_HERE]
+@12727 = ~[ARAN] What in th' nine hells... you be dead an' buried. Someone get me some holy water right quick, eh? You were no good when you was alive, an' I don't rightly want to see you now you be dead.~
 @12728 = ~[C-ARWRTH] You have come up in th' world. Who is th' wench?~
 @12729 = ~[ARAN] Keep a guard on your tongue, bastard.~
 @12730 = ~[C-ARWRTH] Oho, a new lover? Stedd sees all now, Whitehand. You sorry weakling, you actually think you can keep her? Does she know?~
@@ -13527,8 +13527,8 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @13132 = ~Aye, now, that scroll o' Contagion be finished, if you want it.~
 @13133 = ~Aye, now, that scroll o' Farsight be finished, if you want it.~
 @13134 = ~Aye, now, that scroll o' Sunfire be finished, if you want it.~
-@13135 = ~choseninitialrom~
-@13136 = ~choseninitialflirt~
+// @13135 = ~choseninitialrom~ REUSE THIS
+// @13136 = ~choseninitialflirt~ REUSE THIS
 @13137 = ~*BUUURRPPPP*~
 @13138 = ~Control yourself, Whitehand. That is churlish behavior.~
 @13139 = ~Sir, Yes Sir. No more loud burpin', Sir.~
@@ -13541,3 +13541,6 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @13146 = ~Aran Whitehand Joins
 
 A sellsword named Aran has joined me. He seems to have had some experience, so perhaps he will be useful. I met him at an inn for mercenaries, The Broken Sword, on the Promenade.~
+@13147 = ~The Broken Sword
+
+The Broken Blade turned out to be a productive visit. It looks like there are several sources of information there, and I picked up a mercenary named Aran Whitehand as well. He seems to have some ties with an innkeeper, a mercenary recruiter, and the barmaid. I may investigate this place again.~

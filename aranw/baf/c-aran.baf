@@ -3306,7 +3306,7 @@ THEN
 		RealSetGlobalTimer("c-aranstrong","GLOBAL",180) // tee up stronghold spacer timer 
 END
 
-/* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available any time */
+/* Aran's FriendTalks Aim, c-aranfriendbg2, %ARAN_FTT% : available any time */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalLT("c-aranfriendbg2","GLOBAL",23)	// shuts down sequence when finished
@@ -3330,7 +3330,7 @@ THEN
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
 END
 
-/* Aran's FriendTalks Aim, c-aranfriendbg2, ARAN_FTT : available after chapter 5 */
+/* Aran's FriendTalks Aim, c-aranfriendbg2, %ARAN_FTT% : available after chapter 5 */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalGT("c-aranfriendbg2","GLOBAL",23)
@@ -3347,7 +3347,7 @@ THEN
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
 END
 
-/* Aran's FriendTalks Fire, c-aranfriendbg2, ARAN_FTT */
+/* Aran's FriendTalks Fire, c-aranfriendbg2, %ARAN_FTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
 	GlobalLT("c-aranfriendbg2","GLOBAL",30)	// shuts down sequence when finished
@@ -3383,7 +3383,7 @@ THEN
 END
 
 
-/* Aran's Underdark FriendTalks Aim, c-aranfriendud, ARAN_FTT : Setup */
+/* Aran's Underdark FriendTalks Aim, c-aranfriendud, %ARAN_FTT% : Setup */
 /* This block sets up the underdark talks */
 IF
 	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
@@ -3394,7 +3394,7 @@ THEN
 		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",600) // 15 minutes real-time minimum
 END
 
-/* Aran's Underdark FriendTalks Aim, c-aranfriendud, ARAN_FTT */
+/* Aran's Underdark FriendTalks Aim, c-aranfriendud, %ARAN_FTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 
 IF
@@ -3412,7 +3412,7 @@ THEN
 		IncrementGlobal("c-aranfriendud","GLOBAL",1)	// move up from even to odd
 END
 
-/* Aran's UnderDark FriendTalks Fire, c-aranfriendbg2, ARAN_FTT, Underdark */
+/* Aran's UnderDark FriendTalks Fire, c-aranfriendbg2, %ARAN_FTT%, Underdark */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
 	GlobalLT("c-aranfriendud","GLOBAL",10)	// shuts down sequence when finished
@@ -3478,8 +3478,8 @@ THEN
 	RESPONSE #100
  		SetGlobal("c-aransetupromtimers","GLOBAL",1)
 		SetGlobal("c-aranpcflirtstart","GLOBAL",1)
- 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",@13135) // Minimum Real Time until first LT 
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)  // Tee up flirt timer 
+ 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
 END
 
 /* early flirt triggering */
@@ -3496,14 +3496,14 @@ END
 THEN
 	RESPONSE #100
  		SetGlobal("c-aransetupromtimers","GLOBAL",1)
- 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",@13135) // Minimum Real Time until first LT 
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)  // Tee up flirt timer 
+ 		RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
 END
 
 /* LOVE TALKS */
 /* Romance Talks Sequence */
 
-/* Aran's Romance LoveTalks Aim, c-aranbg2rom, ARAN_LTT */
+/* Aran's Romance LoveTalks Aim, c-aranbg2rom, %ARAN_LTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalLT("c-aranbg2rom","GLOBAL",15)	// shuts down sequence when finished
@@ -3534,7 +3534,7 @@ THEN
 		IncrementGlobal("c-aranbg2rom","GLOBAL",1)
 END
 
-/* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
+/* Aran's Romance LoveTalks Fire, c-aranbg2rom, %ARAN_LTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
 	InParty(Myself)
@@ -3585,7 +3585,7 @@ IF
 	!HasItemEquiped("belt05",Player1)
 THEN RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)
 END
 
 /* Set Up Flirting After 3 FTs, if player has not taken a shortcut and flirted alot - done in romance talk setup. */
@@ -3603,7 +3603,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranrom","GLOBAL",2)
 		SetGlobal("c-aranpcflirtstart","GLOBAL",2)
-		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+		RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)
 END
 
 /* Lightweight Flirts */

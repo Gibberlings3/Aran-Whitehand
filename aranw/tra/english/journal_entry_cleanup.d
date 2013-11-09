@@ -47,7 +47,6 @@ I told Aran Whitehand to wait for me right where he currently stands, drinking t
 
 I told Aran Whitehand to wait for me right where he currently stands, singing bawdy songs with the patrons of the only inn in Brynnlaw. Hopefully, he will be there when I return.~
 
-
 @10405 = ~Whitehand Withdraws
 
 Aran Whitehand deserted the party today. I always suspected that he did not have the strength to follow me. If our paths cross again, it is likely that he will become very sorry that he ever showed his face to me.~
@@ -132,3 +131,21 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 
 A sellsword named Aran has joined me. He seems to have had some experience, so perhaps he will be useful. I met him at an inn for mercenaries, The Broken Sword, on the Promenade.~
 
+
+
+
+
+
+// EXISTING
+
+@448  = ~The Final Battle with Bodhi.
+
+Bodhi appeared in an ambush shortly before I reached her haven, warning me that she was aware of my pursuit and stealing Aran from my side. Before she vanished and unleashed more of her undead creations upon me, Bodhi warned that if I continue I will lose even more than I thought possible. I cannot give up on the Rhynn Lanthorn... but now the life and immortal soul of Aran is at stake, as well!~
+
+@456  = ~The Final Battle with Bodhi.
+
+Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...~
+
+@10399 = ~The Final Battle with Bodhi.
+
+While I had feared for some time that Bodhi's final revenge on me would be to take away Aran forever, it seems that the information in the lorebook was right...  Amaunator's idol has restored Aran not only to life, but has removed the vampiric curse from him, as well. And more to the point, it appears his language is quite unaffected.~

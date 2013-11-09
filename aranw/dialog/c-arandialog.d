@@ -2287,111 +2287,111 @@ END
 /*  SoA UnderDark FriendTalk 1 : Nightmares on Elm Street */
 IF ~Global("c-aranfriendud","GLOBAL",1)~ THEN BEGIN a1689
   SAY @1074
-  ++ @1075 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2040
-  ++ @1076 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2041
-  ++ @1077 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2042
-  + ~RandomNum(3,1)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(3,3)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1079 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
-  + ~InParty("ADANGEL") InMyArea("ADANGEL") !StateCheck("ADANGEL",CD_STATE_NOTVALID) Global("c-aran2103","GLOBAL",0)~ + @1082 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2103
-  + ~InParty("Anishai") InMyArea("Anishai") !StateCheck("Anishai",CD_STATE_NOTVALID) Global("c-aran2104","GLOBAL",0)~ + @1083 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2104
-  + ~InParty("Azure") InMyArea("Azure") !StateCheck("Azure",CD_STATE_NOTVALID) Global("c-aran2105","GLOBAL",0)~ + @1084 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2105
-  + ~InParty("B!Gavin2") InMyArea("B!Gavin2") !StateCheck("B!Gavin2",CD_STATE_NOTVALID) Global("c-aran2106","GLOBAL",0)~ + @1085 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2106
-  + ~InParty("b!haldamir") InMyArea("b!haldamir") !StateCheck("b!haldamir",CD_STATE_NOTVALID) Global("c-aran2107","GLOBAL",0)~ + @1086 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2107
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1788
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1789
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1790
+  ++ @1075 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2040
+  ++ @1076 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2041
+  ++ @1077 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2042
+  + ~RandomNum(3,1)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(3,3)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1079 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
+  + ~InParty("ADANGEL") InMyArea("ADANGEL") !StateCheck("ADANGEL",CD_STATE_NOTVALID) Global("c-aran2103","GLOBAL",0)~ + @1082 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2103
+  + ~InParty("Anishai") InMyArea("Anishai") !StateCheck("Anishai",CD_STATE_NOTVALID) Global("c-aran2104","GLOBAL",0)~ + @1083 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2104
+  + ~InParty("Azure") InMyArea("Azure") !StateCheck("Azure",CD_STATE_NOTVALID) Global("c-aran2105","GLOBAL",0)~ + @1084 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2105
+  + ~InParty("B!Gavin2") InMyArea("B!Gavin2") !StateCheck("B!Gavin2",CD_STATE_NOTVALID) Global("c-aran2106","GLOBAL",0)~ + @1085 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2106
+  + ~InParty("b!haldamir") InMyArea("b!haldamir") !StateCheck("b!haldamir",CD_STATE_NOTVALID) Global("c-aran2107","GLOBAL",0)~ + @1086 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2107
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1788
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1789
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1790
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
 /*  SoA UnderDark FriendTalk 2 : Moving Bowels */
 IF ~Global("c-aranfriendud","GLOBAL",3)~ THEN BEGIN a1690
   SAY @1087
-  ++ @1088 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2043
-  + ~RandomNum(3,1)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(3,3)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  ++ @1090 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2044
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1091 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
-  + ~InParty("WxJon") InMyArea("WxJon") !StateCheck("WxJon",CD_STATE_NOTVALID) Global("c-aran2113","GLOBAL",0)~ + @1092 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2113
-  + ~InParty("CHLOE") InMyArea("CHLOE") !StateCheck("CHLOE",CD_STATE_NOTVALID) Global("c-aran2114","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2114
-  + ~InParty("RCHLOE") InMyArea("RCHLOE") !StateCheck("RCHLOE",CD_STATE_NOTVALID) Global("c-aran2115","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2115
-  + ~InParty("CMALORA") InMyArea("CMALORA") !StateCheck("CMALORA",CD_STATE_NOTVALID) Global("c-aran2116","GLOBAL",0)~ + @1094 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2116
-  + ~InParty("CMGMIRIAM") InMyArea("CMGMIRIAM") !StateCheck("CMGMIRIAM",CD_STATE_NOTVALID) Global("c-aran2117","GLOBAL",0)~ + @1095 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2117
+  ++ @1088 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2043
+  + ~RandomNum(3,1)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(3,3)~ + @1089 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  ++ @1090 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2044
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1091 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
+  + ~InParty("WxJon") InMyArea("WxJon") !StateCheck("WxJon",CD_STATE_NOTVALID) Global("c-aran2113","GLOBAL",0)~ + @1092 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2113
+  + ~InParty("CHLOE") InMyArea("CHLOE") !StateCheck("CHLOE",CD_STATE_NOTVALID) Global("c-aran2114","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2114
+  + ~InParty("RCHLOE") InMyArea("RCHLOE") !StateCheck("RCHLOE",CD_STATE_NOTVALID) Global("c-aran2115","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2115
+  + ~InParty("CMALORA") InMyArea("CMALORA") !StateCheck("CMALORA",CD_STATE_NOTVALID) Global("c-aran2116","GLOBAL",0)~ + @1094 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2116
+  + ~InParty("CMGMIRIAM") InMyArea("CMGMIRIAM") !StateCheck("CMGMIRIAM",CD_STATE_NOTVALID) Global("c-aran2117","GLOBAL",0)~ + @1095 DO ~SetGlobal("c-aranfriendud","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2117
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
 /*  SoA UnderDark FriendTalk 3 : Don't Look Now, but your Isaiah 2:19 is showing... */
 IF ~Global("c-aranfriendud","GLOBAL",5)~ THEN BEGIN a1691
   SAY @1096
-  ++ @1097 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2045
-  ++ @1098 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2046
-  ++ @1099 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2047
-  ++ @1100 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2048
-  + ~RandomNum(3,1)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1943 /* c-aranshutup37 */
-  + ~RandomNum(3,3)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1102 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
-  + ~InParty("CMNIKITA") InMyArea("CMNIKITA") !StateCheck("CMNIKITA",CD_STATE_NOTVALID) Global("c-aran2118","GLOBAL",0)~ + @1103 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2118
-  + ~InParty("CMNINAF") InMyArea("CMNINAF") !StateCheck("CMNINAF",CD_STATE_NOTVALID) Global("c-aran2119","GLOBAL",0)~ + @1104 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2119
-  + ~InParty("CORAN") InMyArea("CORAN") !StateCheck("CORAN",CD_STATE_NOTVALID) Global("c-aran2120","GLOBAL",0)~ + @1105 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2120
-  + ~InParty("D#Silver") InMyArea("D#Silver") !StateCheck("D#Silver",CD_STATE_NOTVALID) Global("c-aran2121","GLOBAL",0)~ + @1106 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2121
-  + ~InParty("D0Alassa") InMyArea("D0Alassa") !StateCheck("D0Alassa",CD_STATE_NOTVALID) Global("c-aran2122","GLOBAL",0)~ + @1107 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2122
-  + ~InParty("Rylorn") InMyArea("Rylorn") !StateCheck("Rylorn",CD_STATE_NOTVALID) Global("c-aran2168","GLOBAL",0)~ + @1108 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2168
-  + ~InParty("SAERILETH") InMyArea("SAERILETH") !StateCheck("SAERILETH",CD_STATE_NOTVALID) Global("c-aran2169","GLOBAL",0)~ + @1109 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2169
-  + ~InParty("SIME") InMyArea("SIME") !StateCheck("SIME",CD_STATE_NOTVALID) Global("c-aran2171","GLOBAL",0)~ + @1110 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2171
-  + ~InParty("SUBRU") InMyArea("SUBRU") !StateCheck("SUBRU",CD_STATE_NOTVALID) Global("c-aran2170","GLOBAL",0)~ + @1111 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2170
-  + ~InParty("SK#NEHT") InMyArea("SK#NEHT") !StateCheck("SK#NEHT",CD_STATE_NOTVALID) Global("c-aran2172","GLOBAL",0)~ + @1112 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2172
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1783
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1784
-  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a1785
+  ++ @1097 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2045
+  ++ @1098 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2046
+  ++ @1099 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2047
+  ++ @1100 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2048
+  + ~RandomNum(3,1)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1943 /* c-aranshutup37 */
+  + ~RandomNum(3,3)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1102 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
+  + ~InParty("CMNIKITA") InMyArea("CMNIKITA") !StateCheck("CMNIKITA",CD_STATE_NOTVALID) Global("c-aran2118","GLOBAL",0)~ + @1103 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2118
+  + ~InParty("CMNINAF") InMyArea("CMNINAF") !StateCheck("CMNINAF",CD_STATE_NOTVALID) Global("c-aran2119","GLOBAL",0)~ + @1104 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2119
+  + ~InParty("CORAN") InMyArea("CORAN") !StateCheck("CORAN",CD_STATE_NOTVALID) Global("c-aran2120","GLOBAL",0)~ + @1105 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2120
+  + ~InParty("D#Silver") InMyArea("D#Silver") !StateCheck("D#Silver",CD_STATE_NOTVALID) Global("c-aran2121","GLOBAL",0)~ + @1106 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2121
+  + ~InParty("D0Alassa") InMyArea("D0Alassa") !StateCheck("D0Alassa",CD_STATE_NOTVALID) Global("c-aran2122","GLOBAL",0)~ + @1107 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2122
+  + ~InParty("Rylorn") InMyArea("Rylorn") !StateCheck("Rylorn",CD_STATE_NOTVALID) Global("c-aran2168","GLOBAL",0)~ + @1108 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2168
+  + ~InParty("SAERILETH") InMyArea("SAERILETH") !StateCheck("SAERILETH",CD_STATE_NOTVALID) Global("c-aran2169","GLOBAL",0)~ + @1109 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2169
+  + ~InParty("SIME") InMyArea("SIME") !StateCheck("SIME",CD_STATE_NOTVALID) Global("c-aran2171","GLOBAL",0)~ + @1110 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2171
+  + ~InParty("SUBRU") InMyArea("SUBRU") !StateCheck("SUBRU",CD_STATE_NOTVALID) Global("c-aran2170","GLOBAL",0)~ + @1111 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2170
+  + ~InParty("SK#NEHT") InMyArea("SK#NEHT") !StateCheck("SK#NEHT",CD_STATE_NOTVALID) Global("c-aran2172","GLOBAL",0)~ + @1112 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2172
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1783
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1784
+  IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ THEN DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a1785
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
 /*  SoA UnderDark FriendTalk 4 : Weather forecast for tonight... dark. (George Carlin) */
 IF ~Global("c-aranfriendud","GLOBAL",7)~ THEN BEGIN a1692
   SAY @1113
-  ++ @1114 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2049
-  ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2050
-  + ~RandomNum(3,1)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(3,3)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1117 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~InParty("WxJon") InMyArea("WxJon") !StateCheck("WxJon",CD_STATE_NOTVALID) Global("c-aran2113","GLOBAL",0)~ + @1092 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2113
-  + ~InParty("CHLOE") InMyArea("CHLOE") !StateCheck("CHLOE",CD_STATE_NOTVALID) Global("c-aran2114","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2114
-  + ~InParty("RCHLOE") InMyArea("RCHLOE") !StateCheck("RCHLOE",CD_STATE_NOTVALID) Global("c-aran2115","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2115
-  + ~InParty("CMALORA") InMyArea("CMALORA") !StateCheck("CMALORA",CD_STATE_NOTVALID) Global("c-aran2116","GLOBAL",0)~ + @1094 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2116
-  + ~InParty("CMGMIRIAM") InMyArea("CMGMIRIAM") !StateCheck("CMGMIRIAM",CD_STATE_NOTVALID) Global("c-aran2117","GLOBAL",0)~ + @1095 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2117
-  + ~!Class("c-aran",BARD_ALL)~ + @1118 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1119 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1120 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
-  ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2050
+  ++ @1114 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2049
+  ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2050
+  + ~RandomNum(3,1)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(3,3)~ + @1116 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1117 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~InParty("WxJon") InMyArea("WxJon") !StateCheck("WxJon",CD_STATE_NOTVALID) Global("c-aran2113","GLOBAL",0)~ + @1092 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2113
+  + ~InParty("CHLOE") InMyArea("CHLOE") !StateCheck("CHLOE",CD_STATE_NOTVALID) Global("c-aran2114","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2114
+  + ~InParty("RCHLOE") InMyArea("RCHLOE") !StateCheck("RCHLOE",CD_STATE_NOTVALID) Global("c-aran2115","GLOBAL",0)~ + @1093 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2115
+  + ~InParty("CMALORA") InMyArea("CMALORA") !StateCheck("CMALORA",CD_STATE_NOTVALID) Global("c-aran2116","GLOBAL",0)~ + @1094 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2116
+  + ~InParty("CMGMIRIAM") InMyArea("CMGMIRIAM") !StateCheck("CMGMIRIAM",CD_STATE_NOTVALID) Global("c-aran2117","GLOBAL",0)~ + @1095 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2117
+  + ~!Class("c-aran",BARD_ALL)~ + @1118 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1119 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1120 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
+  ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2050
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
 /*  SoA UnderDark FriendTalk 5 : "I believe that forgiving them is God's function. Our job is to arrange the meeting." ("Stormin'" Norman Schwarzkopf) */
 IF ~Global("c-aranfriendud","GLOBAL",9)~ THEN BEGIN a1693
   SAY @1121
-  + ~!Class("c-aran",BARD_ALL)~ + @1122 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1122 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1120 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
-  + ~InParty("CMNIKITA") InMyArea("CMNIKITA") !StateCheck("CMNIKITA",CD_STATE_NOTVALID) Global("c-aran2118","GLOBAL",0)~ + @1103 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2118
-  + ~InParty("CMNINAF") InMyArea("CMNINAF") !StateCheck("CMNINAF",CD_STATE_NOTVALID) Global("c-aran2119","GLOBAL",0)~ + @1104 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2119
-  + ~InParty("CORAN") InMyArea("CORAN") !StateCheck("CORAN",CD_STATE_NOTVALID) Global("c-aran2120","GLOBAL",0)~ + @1105 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2120
-  + ~InParty("D#Silver") InMyArea("D#Silver") !StateCheck("D#Silver",CD_STATE_NOTVALID) Global("c-aran2121","GLOBAL",0)~ + @1106 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2121
-  + ~InParty("D0Alassa") InMyArea("D0Alassa") !StateCheck("D0Alassa",CD_STATE_NOTVALID) Global("c-aran2122","GLOBAL",0)~ + @1107 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2122
-  ++ @1123 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2051
-  ++ @1124 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2191
+  + ~!Class("c-aran",BARD_ALL)~ + @1122 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1122 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1120 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
+  + ~InParty("CMNIKITA") InMyArea("CMNIKITA") !StateCheck("CMNIKITA",CD_STATE_NOTVALID) Global("c-aran2118","GLOBAL",0)~ + @1103 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2118
+  + ~InParty("CMNINAF") InMyArea("CMNINAF") !StateCheck("CMNINAF",CD_STATE_NOTVALID) Global("c-aran2119","GLOBAL",0)~ + @1104 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2119
+  + ~InParty("CORAN") InMyArea("CORAN") !StateCheck("CORAN",CD_STATE_NOTVALID) Global("c-aran2120","GLOBAL",0)~ + @1105 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2120
+  + ~InParty("D#Silver") InMyArea("D#Silver") !StateCheck("D#Silver",CD_STATE_NOTVALID) Global("c-aran2121","GLOBAL",0)~ + @1106 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2121
+  + ~InParty("D0Alassa") InMyArea("D0Alassa") !StateCheck("D0Alassa",CD_STATE_NOTVALID) Global("c-aran2122","GLOBAL",0)~ + @1107 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2122
+  ++ @1123 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2051
+  ++ @1124 DO ~SetGlobal("c-aranfriendud","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2191
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
@@ -2400,139 +2400,139 @@ END
 /* BG2 FriendTalk 1 c-aranfriendbg2 = 1 : Not Just Another Quasi-Invincible Band Of Protagonists */
 IF ~Global("c-aranfriendbg2","GLOBAL",1)~ THEN BEGIN a43
   SAY @1125
-  ++ @1126 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a44
-  ++ @1127 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,CLERIC_ALL)~ + @1128 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,MAGE_ALL)~ + @1129 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,FIGHTER_ALL)~ + @1130 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,SORCERER)~ + @1131 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,MONK)~ + @1132 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~Class(Player1,THIEF_ALL)~ + @1133 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~InParty("minsc")~ + @1134 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
-  + ~RandomNum(3,1)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(3,3)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  ++ @1135 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a45
+  ++ @1126 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a44
+  ++ @1127 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,CLERIC_ALL)~ + @1128 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,MAGE_ALL)~ + @1129 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,FIGHTER_ALL)~ + @1130 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,SORCERER)~ + @1131 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,MONK)~ + @1132 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~Class(Player1,THIEF_ALL)~ + @1133 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~InParty("minsc")~ + @1134 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
+  + ~RandomNum(3,1)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(3,3)~ + @1116 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  ++ @1135 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a45
 END
 /* GOTO BG2 FriendTalk 1 c-aranfriendbg2 = 1 : Not Just Another Quasi-Invincible Band Of Protagonists : Replies */
 
 /* BG2 FriendTalk 2 c-aranfriendbg2 = 3 : "My Pal the Shield Wall", or, merits of Heavy Metal (Whitesnake) vs Alternative (Feist) */
 IF ~Global("c-aranfriendbg2","GLOBAL",3)~ THEN BEGIN a61
   SAY @1136
-  ++ @1137 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a62
-  + ~RandomNum(5,1)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1908 /* c-aranshutup2 */
-  + ~RandomNum(5,2)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1910 /* c-aranshutup4 */
-  + ~RandomNum(5,3)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1912 /* c-aranshutup6 */
-  + ~RandomNum(5,4)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1914 /* c-aranshutup8 */
-  + ~RandomNum(5,5)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1916 /* c-aranshutup10 */
-  + ~Class(Player1,MAGE_ALL)~ + @1139 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a62
-  + ~Class(Player1,FIGHTER_ALL)~ + @1140 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a62
-  ++ @1141 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a62
-  ++ @1142 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a62
+  ++ @1137 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a62
+  + ~RandomNum(5,1)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1908 /* c-aranshutup2 */
+  + ~RandomNum(5,2)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1910 /* c-aranshutup4 */
+  + ~RandomNum(5,3)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1912 /* c-aranshutup6 */
+  + ~RandomNum(5,4)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1914 /* c-aranshutup8 */
+  + ~RandomNum(5,5)~ + @1138 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1916 /* c-aranshutup10 */
+  + ~Class(Player1,MAGE_ALL)~ + @1139 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a62
+  + ~Class(Player1,FIGHTER_ALL)~ + @1140 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a62
+  ++ @1141 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a62
+  ++ @1142 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",4) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a62
 END
 /* GOTO BG2 FriendTalk 2 c-aranfriendbg2 = 3 : "My Pal the Shield Wall", or, merits of Heavy Metal (Whitesnake) vs Alternative (Feist)  : Replies */
 
 /* BG2 FriendTalk 3 c-aranfriendbg2 = 5 : "The Price of Fame", or, Whoa - *that* <CHARNAME>? Sux to be you, pal. */
 IF ~Global("c-aranfriendbg2","GLOBAL",5)~ THEN BEGIN a76
   SAY @1143
-  ++ @1144 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a77
-  + ~CheckStatGT(Player1,15,CHR)~ + @1145 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a78
-  + ~CheckStatGT(Player1,15,STR)~ + @1146 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a79
-  + ~CheckStatGT(Player1,15,DEX)~ + @1147 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a80
-  + ~CheckStatGT(Player1,15,CON)~ + @1148 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a81
-  ++ @1149 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a82
-  + ~CheckStatGT(Player1,15,INT)~ + @1150 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a83
-  + ~CheckStatGT(Player1,15,WIS)~ + @1151 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a84
-  ++ @1152 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a85
+  ++ @1144 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a77
+  + ~CheckStatGT(Player1,15,CHR)~ + @1145 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a78
+  + ~CheckStatGT(Player1,15,STR)~ + @1146 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a79
+  + ~CheckStatGT(Player1,15,DEX)~ + @1147 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a80
+  + ~CheckStatGT(Player1,15,CON)~ + @1148 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a81
+  ++ @1149 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a82
+  + ~CheckStatGT(Player1,15,INT)~ + @1150 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a83
+  + ~CheckStatGT(Player1,15,WIS)~ + @1151 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a84
+  ++ @1152 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a85
 END
 /* GOTO BG2 FriendTalk 3 c-aranfriendbg2 = 5 : "The Price of Fame", or, Whoa - *that* <CHARNAME>? Sux to be you, pal. : Replies */
 
 /* BG2 FriendTalk 4 c-aranfriendbg2 = 7 : "Mongo But Pawn In Great Chess Game of Life?" */
 IF ~Global("c-aranfriendbg2","GLOBAL",7)~ THEN BEGIN a3317
   SAY @1153
-  ++ @1154 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3352
-  ++ @1155 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3349
-  ++ @1156 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3348
-  ++ @1157 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3347
-  ++ @1158 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3346
-  ++ @1159 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3345
-  ++ @1160 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a3344
+  ++ @1154 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3352
+  ++ @1155 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3349
+  ++ @1156 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3348
+  ++ @1157 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3347
+  ++ @1158 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3346
+  ++ @1159 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3345
+  ++ @1160 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3344
 END
 /* GOTO BG2 FriendTalk 4 c-aranfriendbg2 = 7 : "Mongo But Pawn In Great Chess Game of Life?"  : Replies */
 
 /* BG2 FriendTalk 5 c-aranfriendbg2 = 9 : "Irresistible Forces and Immovable Objects", or, is the pen really mightier than the sword, or does he just have a better PR firm?  */
 IF ~Global("c-aranfriendbg2","GLOBAL",9)~ THEN BEGIN a99
   SAY @1161
-  ++ @1162 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a100
-  ++ @1163 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a104
-  ++ @1164 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a105
-  ++ @1165 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a106
-  + ~RandomNum(3,3)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1923 /* c-aranshutup17 */
-  + ~RandomNum(3,2)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1924 /* c-aranshutup18 */
-  + ~RandomNum(3,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1925 /* c-aranshutup19 */
+  ++ @1162 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a100
+  ++ @1163 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a104
+  ++ @1164 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a105
+  ++ @1165 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a106
+  + ~RandomNum(3,3)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1923 /* c-aranshutup17 */
+  + ~RandomNum(3,2)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1924 /* c-aranshutup18 */
+  + ~RandomNum(3,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1925 /* c-aranshutup19 */
 END
 /* GOTO BG2 FriendTalk 5 c-aranfriendbg2 = 9 : "Irresistible Forces and Immovable Objects", or, is the pen really mightier than the sword, or does he just have a better PR firm? : Replies  */
 
 /* BG2 FriendTalk 6 c-aranfriendbg2 = 11 : "Attention"  */
 IF ~Global("c-aranfriendbg2","GLOBAL",11)~ THEN BEGIN a5032
   SAY @1167
-  ++ @1168 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a5034
-  ++ @1169 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a5033
-  ++ @1170 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a5034
-  ++ @1171 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a5034
-  ++ @1172 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a5035
+  ++ @1168 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5034
+  ++ @1169 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5033
+  ++ @1170 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5034
+  ++ @1171 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5034
+  ++ @1172 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5035
 END
 /* GOTO BG2 FriendTalk 6 c-aranfriendbg2 = 11 : "Attention" : Replies */
 
 /* BG2 FriendTalk 7 c-aranfriendbg2 = 13 : "Creative Culinary Conundrums", or, Whaddaya like to eat, 'cause I make this mean curry... */
 IF ~Global("c-aranfriendbg2","GLOBAL",13)~ THEN BEGIN a4361
   SAY @1173
-  IF ~~ THEN DO ~SetGlobal("c-aranfriendbg2","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a119
+  IF ~~ THEN DO ~SetGlobal("c-aranfriendbg2","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a119
 END
 /* GOTO BG2 FriendTalk 7 c-aranfriendbg2 = 13 : "Creative Culinary Conundrums", or, Whaddaya like to eat, 'cause I make this mean curry... : Replies */
 
 /* BG2 FriendTalk 8 c-aranfriendbg2 = 15 : "Alternate Paths to Sun Tsu", or, tactics are fun, but sometimes you just gotta whack 'em. */
 IF ~Global("c-aranfriendbg2","GLOBAL",15)~ THEN BEGIN a152
   SAY @1174
-  ++ @1175 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a153
-  ++ @1176 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a154
-  + ~RandomNum(3,1)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1919 /* c-aranshutup13 */
-  + ~RandomNum(3,2)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1920 /* c-aranshutup14 */
-  + ~RandomNum(3,3)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1921 /* c-aranshutup15 */
-  ++ @1178 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a155
-  ++ @1179 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a154
+  ++ @1175 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a153
+  ++ @1176 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a154
+  + ~RandomNum(3,1)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1919 /* c-aranshutup13 */
+  + ~RandomNum(3,2)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1920 /* c-aranshutup14 */
+  + ~RandomNum(3,3)~ + @1177 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1921 /* c-aranshutup15 */
+  ++ @1178 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a155
+  ++ @1179 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",16) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a154
 END
 /* GOTO BG2 FriendTalk 8 c-aranfriendbg2 = 15 : "Alternate Paths to Sun Tsu", or, tactics are fun, but sometimes you just gotta whack 'em. : Replies */
 
 /* BG2 FriendTalk 9 c-aranfriendbg2 = 17 : "Warning - Objects Are Closer Than They Appear", or, why you want to check carefully behind your target area before firing that arrow. */
 IF ~Global("c-aranfriendbg2","GLOBAL",17)~ THEN BEGIN a161
   SAY @1180
-  ++ @1181 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a162
-  + ~RandomNum(3,1)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1922 /* c-aranshutup16 */
-  + ~RandomNum(3,2)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1923 /* c-aranshutup17 */
-  + ~RandomNum(3,3)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1924 /* c-aranshutup18 */
-  ++ @1183 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a163
-  ++ @1184 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a164
-  + ~Global("c-heartwarder","GLOBAL",1)~ + @1185 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a163
+  ++ @1181 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a162
+  + ~RandomNum(3,1)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1922 /* c-aranshutup16 */
+  + ~RandomNum(3,2)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1923 /* c-aranshutup17 */
+  + ~RandomNum(3,3)~ + @1182 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1924 /* c-aranshutup18 */
+  ++ @1183 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a163
+  ++ @1184 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a164
+  + ~Global("c-heartwarder","GLOBAL",1)~ + @1185 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",18) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a163
 END
 /* GOTO BG2 FriendTalk 9 c-aranfriendbg2 = 17 : "Warning - Objects Are Closer Than They Appear", or, why you want to check carefully behind your target area before firing that arrow. : Replies */
 
 /* BG2 FriendTalk 10 c-aranfriendbg2 = 19 : "Bhaalspawn, Shmalspawn. Meh.", or, Gods and Monsters. */
 IF ~Global("c-aranfriendbg2","GLOBAL",19)~ THEN BEGIN a4373
   SAY @1186
-  IF ~~ THEN DO ~SetGlobal("c-aranfriendbg2","GLOBAL",20) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ GOTO a177
+  IF ~~ THEN DO ~SetGlobal("c-aranfriendbg2","GLOBAL",20) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a177
 END
 /* GOTO BG2 FriendTalk 10 c-aranfriendbg2 = 19 : "Bhaalspawn, Shmalspawn. Meh.", or, Gods and Monsters. : Replies */
 
 /* BG2 FriendTalk 11 c-aranfriendbg2 = 21 : "Ch-Ch-Ch-Changes" */ 
 IF ~Global("c-aranfriendbg2","GLOBAL",21)~ THEN BEGIN a4748
   SAY @1187
-  ++ @1188 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4749
-  ++ @1189 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4750
-  ++ @1190 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4751
-  ++ @1191 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4752
-  ++ @1192 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4753
-  ++ @1193 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a4759
+  ++ @1188 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4749
+  ++ @1189 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4750
+  ++ @1190 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4751
+  ++ @1191 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4752
+  ++ @1192 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4753
+  ++ @1193 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",22) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a4759
 END
 /* GOTO BG2 FriendTalk 11 c-aranfriendbg2 = 21 : "Ch-Ch-Ch-Changes" : Replies */
 
@@ -2540,297 +2540,297 @@ END
 /* Setup for evening sparring, 1 version for (non-hitting on) males: c-aranspar 4 -> 5 -> 6, one for (hitting on) females: c-aranspar 1 -> 2 -> 3 */
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,MAGE)~ THEN BEGIN a198
   SAY @1194
-  ++ @1195 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a199
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1195 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a199
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER)~ THEN BEGIN a2305
   SAY @1204
-  ++ @1205 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a200
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1205 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a200
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,CLERIC)~ THEN BEGIN a2306
   SAY @1206
-  ++ @1207 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a201
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1207 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a201
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,THIEF)~ THEN BEGIN a2307
   SAY @1208
-  ++ @1209 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a202
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1209 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a202
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,BARD)~ THEN BEGIN a2308
   SAY @1210
-  ++ @1211 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a203
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1211 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a203
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,PALADIN)~ THEN BEGIN a2309
   SAY @1212
-  ++ @1213 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a204
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1213 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a204
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_MAGE)~ THEN BEGIN a2310
   SAY @1214
-  ++ @1215 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a205
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1215 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a205
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_CLERIC)~ THEN BEGIN a2311
   SAY @1216
-  ++ @1217 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a206
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1217 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a206
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_THIEF)~ THEN BEGIN a2312
   SAY @1218
-  ++ @1219 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a207
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1219 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a207
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_MAGE_THIEF)~ THEN BEGIN a2313
   SAY @1220
-  ++ @1221 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a208
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1221 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a208
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,DRUID)~ THEN BEGIN a2314
   SAY @1222
-  ++ @1223 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a209
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1223 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a209
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,RANGER)~ THEN BEGIN a2315
   SAY @1224
-  ++ @1225 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a210
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1225 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a210
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,MAGE_THIEF)~ THEN BEGIN a2316
   SAY @1226
-  ++ @1227 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a211
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1227 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a211
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,CLERIC_MAGE)~ THEN BEGIN a2317
   SAY @1228
-  ++ @1229 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a212
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1229 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a212
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,CLERIC_THIEF)~ THEN BEGIN a2318
   SAY @1230
-  ++ @1231 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a213
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1231 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a213
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_DRUID)~ THEN BEGIN a2319
   SAY @1232
-  ++ @1233 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a214
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1233 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a214
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,FIGHTER_MAGE_CLERIC)~ THEN BEGIN a2890
   SAY @1234
-  ++ @1235 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a215
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1235 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a215
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,CLERIC_RANGER)~ THEN BEGIN a2891
   SAY @1236
-  ++ @1237 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a216
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1237 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a216
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,SORCERER)~ THEN BEGIN a2892
   SAY @1238
-  ++ @1239 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a217
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1239 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a217
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",23) Class(Player1,MONK)~ THEN BEGIN a2893
   SAY @1240
-  ++ @1241 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a218
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1241 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a218
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 
 /* "catch-all" for potential breakage and forward-fixing when GemRB allows new classes to be defined... */
 IF ~Global("c-aranfriendbg2","GLOBAL",23) !Class(Player1,MAGE) !Class(Player1,FIGHTER) !Class(Player1,CLERIC) !Class(Player1,THIEF) !Class(Player1,BARD) !Class(Player1,PALADIN) !Class(Player1,FIGHTER_MAGE) !Class(Player1,FIGHTER_CLERIC) !Class(Player1,FIGHTER_THIEF) !Class(Player1,FIGHTER_MAGE_THIEF) !Class(Player1,DRUID) !Class(Player1,RANGER) !Class(Player1,MAGE_THIEF) !Class(Player1,CLERIC_MAGE) !Class(Player1,CLERIC_THIEF)  !Class(Player1,FIGHTER_DRUID) !Class(Player1,FIGHTER_MAGE_CLERIC)  !Class(Player1,CLERIC_RANGER) !Class(Player1,SORCERER) !Class(Player1,MONK)~ THEN BEGIN a2894
   SAY @1228
-  ++ @1242 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a218
-  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a220
-  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a219
-  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1915 /* c-aranshutup9 */
-  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1917 /* c-aranshutup11 */
+  ++ @1242 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a218
+  ++ @1196 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1197 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1198 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a220
+  ++ @1199 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a219
+  + ~RandomNum(5,1)~ + @1166 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(5,2)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(5,3)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(5,4)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1915 /* c-aranshutup9 */
+  + ~RandomNum(5,5)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",24) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1917 /* c-aranshutup11 */
 END
 /* GOTO BG2 FriendTalk 12 c-aranfriendbg2 = 23 : "Weapons Practice for Fun and Profit", or, never bet with a Sicilian when death is on the line. : Replies */
 
@@ -2867,32 +2867,32 @@ END
 /* BG2 FriendTalk 13 c-aranfriendbg2 = 25 : "Optimists, Pessimists, and Realists, Oh My.", or, the glass is half full, half empty, who cares - as long as it is a glass of good scotch!  */
 IF ~Global("c-aranfriendbg2","GLOBAL",25)~ THEN a388
   SAY @1253
-  ++ @1254 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a389
-  ++ @1255 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a390
-  ++ @1256 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a391
-  ++ @1257 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a392
-  ++ @1258 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a392
-  + ~RandomNum(3,1)~ + @1259 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1260 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1908 /* c-aranshutup2 */
-  + ~RandomNum(3,3)~ + @1261 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
+  ++ @1254 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a389
+  ++ @1255 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a390
+  ++ @1256 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a391
+  ++ @1257 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a392
+  ++ @1258 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a392
+  + ~RandomNum(3,1)~ + @1259 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1260 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1908 /* c-aranshutup2 */
+  + ~RandomNum(3,3)~ + @1261 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",26) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
 END
 /* GOTO BG2 FriendTalk 13 c-aranfriendbg2 = 25 : "Optimists, Pessimists, and Realists, Oh My.", or, the glass is half full, half empty, who cares - as long as it is a glass of good scotch! : Replies */
 
 /* BG2 FriendTalk 14 c-aranfriendbg2 = 27 :  "What's under all that Armor, Anyways?", or, take it all off, baby - take it all off. Emotionally, dude[ette] - jeeze, get a life.  */
 IF ~Global("c-aranfriendbg2","GLOBAL",27)~ THEN BEGIN a396
   SAY @1262
-  + ~RandomNum(3,1)~ + @1263 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1918 /* c-aranshutup12 */
-  + ~RandomNum(3,2)~ + @1264 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1919 /* c-aranshutup13 */
-  + ~RandomNum(3,3)~ + @1265 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1920 /* c-aranshutup14 */
-  ++ @1266 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a397
-  + ~Class(Player1,CLERIC_ALL) !Kit(Player1,GODTALOS) !Kit(Player1,GODHELM) !Kit(Player1,GODLATHANDER)~ + @1267 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODTALOS)~ + @1268 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODHELM)~ + @1269 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODLATHANDER)~ + @1270 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,MAGE_ALL)~ + @1271 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,THIEF_ALL)~ + @1272 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  + ~Class(Player1,BARD_ALL)~ + @1273 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
-  ++ @1274 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a398
+  + ~RandomNum(3,1)~ + @1263 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1918 /* c-aranshutup12 */
+  + ~RandomNum(3,2)~ + @1264 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1919 /* c-aranshutup13 */
+  + ~RandomNum(3,3)~ + @1265 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1920 /* c-aranshutup14 */
+  ++ @1266 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a397
+  + ~Class(Player1,CLERIC_ALL) !Kit(Player1,GODTALOS) !Kit(Player1,GODHELM) !Kit(Player1,GODLATHANDER)~ + @1267 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODTALOS)~ + @1268 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODHELM)~ + @1269 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,CLERIC_ALL) Kit(Player1,GODLATHANDER)~ + @1270 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,MAGE_ALL)~ + @1271 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,THIEF_ALL)~ + @1272 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  + ~Class(Player1,BARD_ALL)~ + @1273 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
+  ++ @1274 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",28) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a398
 END
 /* GOTO BG2 FriendTalk 14 c-aranfriendbg2 = 27 :  "What's under all that Armor, Anyways?", or, take it all off, baby - take it all off. Emotionally, dude[ette] - jeeze, get a life. : Replies  */
 
@@ -2900,19 +2900,19 @@ END
 /* BG2 FriendTalk 15 c-aranfriendbg2 = 29  : "So once there were three men, sitting around a fire. And one of them got up and said..." TrailTalk, FR style  */
 IF ~Global("c-aranfriendbg2","GLOBAL",29)~ THEN BEGIN a426
   SAY @1275
-  ++ @1276 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a427
-  + ~RandomNum(7,1)~ + @1263 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1913 /* c-aranshutup7 */
-  + ~RandomNum(7,2)~ + @1264 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(7,3)~ + @1265 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1908 /* c-aranshutup2 */
-  + ~RandomNum(7,4)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1943 /* c-aranshutup37 */
-  + ~RandomNum(7,5)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1910 /* c-aranshutup4 */
-  + ~RandomNum(7,6)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~RandomNum(7,7)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1912 /* c-aranshutup6 */
-  + ~Class(Player1,BARD_ALL)~ + @1277 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a428
-  + ~!Class(Player1,BARD_ALL)~ + @1278 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a429
-  ++ @1279 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a428
-  ++ @1280 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a439
-  ++ @1281 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a430
+  ++ @1276 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a427
+  + ~RandomNum(7,1)~ + @1263 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1913 /* c-aranshutup7 */
+  + ~RandomNum(7,2)~ + @1264 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(7,3)~ + @1265 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1908 /* c-aranshutup2 */
+  + ~RandomNum(7,4)~ + @1200 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1943 /* c-aranshutup37 */
+  + ~RandomNum(7,5)~ + @1201 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1910 /* c-aranshutup4 */
+  + ~RandomNum(7,6)~ + @1202 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~RandomNum(7,7)~ + @1203 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1912 /* c-aranshutup6 */
+  + ~Class(Player1,BARD_ALL)~ + @1277 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a428
+  + ~!Class(Player1,BARD_ALL)~ + @1278 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a429
+  ++ @1279 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a428
+  ++ @1280 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a439
+  ++ @1281 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a430
 END
 /* GOTO BG2 FriendTalk 15 c-aranfriendbg2 = 29  : "So once there were three men, sitting around a fire. And one of them got up and said..." TrailTalk, FR style : Replies */
 
@@ -2920,11 +2920,11 @@ END
 
 IF ~Global("c-aranfriendbg2","GLOBAL",31)~ THEN BEGIN a2876
   SAY @1282
-  ++ @1283 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2877
-  ++ @1284 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2877
-  ++ @1285 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2877
-  ++ @1286 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2877
-  ++ @1287 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2877
+  ++ @1283 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
+  ++ @1284 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
+  ++ @1285 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
+  ++ @1286 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
+  ++ @1287 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",32) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
 END
 
 /* GOTO BG2 FriendTalk 16 c-aranfriendbg2 = 31  : Bonus Round - Simple Word States, Maximum Effect: The Teacher's Workroom. : Replies */
@@ -3032,30 +3032,30 @@ END
 /* stream bonding 1 of 3, cycles, female */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Gender(Player1,FEMALE) Global("c-arstreamtalk","GLOBAL",0) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a766
   SAY @1296
-  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a790
-  ++ @1290 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a2913
+  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a790
+  ++ @1290 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a2913
 END
 /* GOTO Rummage in The Pack */
 
 /* stream bonding 2 of 3, cycles, cycles, female */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk","GLOBAL",1) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a767
   SAY @1296
-  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a792 // pc_c_b aw_u_w
-  ++ @1290 DO ~SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT 
-  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a2913
+  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a792 // pc_c_b aw_u_w
+  ++ @1290 DO ~SetGlobal("c-arstreamtalk","GLOBAL",2) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT 
+  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a2913
 END
 /* GOTO Rummage in The Pack */
 
 /* stream bonding 3 of 3, cycles, female */
 IF ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-arstreamtalk","GLOBAL",2) OR(3) AreaCheck("AR1100") AreaCheck("AR1200") AreaCheck("AR1700")~ THEN a4810
   SAY @1296
-  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a4811
-  ++ @1290 DO ~SetGlobal("c-arstreamtalk","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a2913
+  ++ @1297 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-arstreamtalk","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a4811
+  ++ @1290 DO ~SetGlobal("c-arstreamtalk","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1298 DO ~SetGlobal("c-arstreamtalk","GLOBAL",5) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1299 DO ~SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a2913
 END
 /* GOTO Rummage in The Pack */
 
@@ -3341,9 +3341,9 @@ IF ~~ a2040
   + ~InParty("Skooter") InMyArea("Skooter") !StateCheck("Skooter",CD_STATE_NOTVALID) Global("c-aran2173","GLOBAL",0)~ + @1457 + a2173
   + ~InParty("SOLAUFEIN") InMyArea("SOLAUFEIN") !StateCheck("SOLAUFEIN",CD_STATE_NOTVALID) Global("c-aran2174","GLOBAL",0)~ + @1458 + a2174
   + ~InParty("xulaye") InMyArea("xulaye") !StateCheck("xulaye",CD_STATE_NOTVALID) Global("c-aran2175","GLOBAL",0)~ + @1459 + a2175
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
   ++ @1460 + a2052
   ++ @1461 + a2053
   ++ @1462 + a2054
@@ -3406,16 +3406,16 @@ END
 
 IF ~~ a1791
   SAY @1487
-  ++ @1075 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2040
-  ++ @1076 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2041
-  ++ @1077 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2042
-  + ~RandomNum(3,1)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1909 /* c-aranshutup3 */
-  + ~RandomNum(3,3)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1079 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
+  ++ @1075 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2040
+  ++ @1076 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2041
+  ++ @1077 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2042
+  + ~RandomNum(3,1)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1909 /* c-aranshutup3 */
+  + ~RandomNum(3,3)~ + @1078 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1079 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
 END
 
 IF ~~ a1789
@@ -3560,17 +3560,17 @@ END
 
 IF ~~ a1792
   SAY @1547
-  ++ @1097 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2045
-  ++ @1098 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2046
-  ++ @1099 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2047
-  ++ @1100 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a2048
-  + ~RandomNum(3,1)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1907 /* c-aranshutup1 */
-  + ~RandomNum(3,2)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1943 /* c-aranshutup37 */
-  + ~RandomNum(3,3)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1911 /* c-aranshutup5 */
-  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1102 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1687
-  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1672
-  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1671
-  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",ARAN_FTT)~ + a1673
+  ++ @1097 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2045
+  ++ @1098 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2046
+  ++ @1099 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2047
+  ++ @1100 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2048
+  + ~RandomNum(3,1)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1907 /* c-aranshutup1 */
+  + ~RandomNum(3,2)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1943 /* c-aranshutup37 */
+  + ~RandomNum(3,3)~ + @1101 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1911 /* c-aranshutup5 */
+  + ~InParty("aerie") InMyArea("aerie") Global("c-aranaerieud","LOCALS",0)~ + @1102 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1687
+  + ~!Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
+  + ~Class("c-aran",BARD_ALL)~ + @1080 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
+  + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 DO ~SetGlobal("c-aranfriendud","GLOBAL",6) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
 END
 
 IF ~~ a1784
@@ -8705,20 +8705,20 @@ IF ~~ a502 SAY @3622 IF ~~ THEN DO ~ActionOverride(Player1,ReallyForceSpell(Myse
 IF ~~ a503 SAY @3623 IF ~~ THEN EXIT END
 IF ~~ a504 SAY @3624 IF ~~ THEN EXIT END
 
-/* BG2 Love Talk 1 : Mary Chapin Carpenter - I Take My Chances : c-aranbg2rom = 1 > 2  c-aranromtimer, ARAN_LTT  */
+/* BG2 Love Talk 1 : Mary Chapin Carpenter - I Take My Chances : c-aranbg2rom = 1 > 2  c-aranromtimer, %ARAN_LTT%  */
 
 IF ~Global("c-aranbg2rom","GLOBAL",1)~ THEN BEGIN a505
   SAY @3625
   = @3626
-  ++ @3627 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a506
-  ++ @3628 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a507
-  ++ @3629 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a508
-  ++ @3630 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a509
-  ++ @3631 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a510
-  + ~RandomNum(4,1)~ + @1259 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1934 /* c-aranshutup28 */
-  + ~RandomNum(4,2)~ + @3632 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1935 /* c-aranshutup29 */
-  + ~RandomNum(4,3)~ + @1261 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1936 /* c-aranshutup30 */
-  + ~RandomNum(4,4)~ + @1261 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1937 /* c-aranshutup31 */
+  ++ @3627 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a506
+  ++ @3628 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a507
+  ++ @3629 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a508
+  ++ @3630 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a509
+  ++ @3631 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a510
+  + ~RandomNum(4,1)~ + @1259 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1934 /* c-aranshutup28 */
+  + ~RandomNum(4,2)~ + @3632 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1935 /* c-aranshutup29 */
+  + ~RandomNum(4,3)~ + @1261 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1936 /* c-aranshutup30 */
+  + ~RandomNum(4,4)~ + @1261 DO ~SetGlobal("c-aranbg2rom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1937 /* c-aranshutup31 */
 END
 
 IF ~~ a506
@@ -8827,15 +8827,15 @@ END
 
 IF ~~ a518 SAY @3678 IF ~~ THEN EXIT END
 
-/* BG2 Love Talk 2 : Dixie Chicks, Ready To Run  :  c-aranbg2rom = 3 > 4 c-aranromtimer, ARAN_LTT */
+/* BG2 Love Talk 2 : Dixie Chicks, Ready To Run  :  c-aranbg2rom = 3 > 4 c-aranromtimer, %ARAN_LTT% */
 IF ~Global("c-aranbg2rom","GLOBAL",3)~ THEN BEGIN a519
   SAY @3679
-  ++ @3680 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a520
-  ++ @3681 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a520
-  ++ @3682 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a520
-  + ~RandomNum(3,1)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a521
-  + ~RandomNum(3,2)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a522
-  + ~RandomNum(3,3)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a523
+  ++ @3680 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a520
+  ++ @3681 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a520
+  ++ @3682 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a520
+  + ~RandomNum(3,1)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a521
+  + ~RandomNum(3,2)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a522
+  + ~RandomNum(3,3)~ + @3683 DO ~SetGlobal("c-aranbg2rom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a523
 END
 
 IF ~~ a520
@@ -8966,16 +8966,16 @@ IF ~~ a523 SAY @3736 IF ~~ THEN EXIT END
 IF ~~ a538 SAY @3737 IF ~~ THEN EXIT END
 IF ~~ a541 SAY @3738 IF ~~ THEN EXIT END
 
-/* BG2 Love Talk 3 : Queen - Somebody To Love, A No-Talk Lovetalk - or an extended Aran-Initiated Flirting Opportunity. c-aranbg2rom  5 to  6  c-aranromtimer ARAN_LTT  */
+/* BG2 Love Talk 3 : Queen - Somebody To Love, A No-Talk Lovetalk - or an extended Aran-Initiated Flirting Opportunity. c-aranbg2rom  5 to  6  c-aranromtimer %ARAN_LTT%  */
 
 IF ~Global("c-aranbg2rom","GLOBAL",5)~ THEN BEGIN a542
   SAY @3739
   = @3740
-  ++ @3741 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a543
-  ++ @3742 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a544
-  ++ @3743 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a545
-  ++ @3744 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a546
-  ++ @3745 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a4359
+  ++ @3741 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a543
+  ++ @3742 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a544
+  ++ @3743 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a545
+  ++ @3744 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a546
+  ++ @3745 DO ~SetGlobal("c-aranbg2rom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4359
 END
 
 IF ~~ a4359 SAY @3746 IF ~~ THEN EXIT END
@@ -9263,18 +9263,18 @@ IF ~~ a574
   ++ @3848 EXIT
 END
 
-/* BG2 Love Talk 4 : ABBA - Name of the Game : c-aranbg2rom = 7 > 8 c-aranromtimer,ARAN_LTT */
+/* BG2 Love Talk 4 : ABBA - Name of the Game : c-aranbg2rom = 7 > 8 c-aranromtimer,%ARAN_LTT% */
 
 IF ~Global("c-aranbg2rom","GLOBAL",7)~ THEN BEGIN a575
   SAY @3864
-  ++ @3865 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a576
-  ++ @3866 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a577
-  ++ @3867 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a578
-  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + @3868 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a579
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + @3868 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a4844
-  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + @3869 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a580
-  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + @3869 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a4845
-  ++ @3870 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a581
+  ++ @3865 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a576
+  ++ @3866 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a577
+  ++ @3867 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a578
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + @3868 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a579
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + @3868 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4844
+  + ~GlobalLT("c-aranflirt","GLOBAL",12)~ + @3869 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a580
+  + ~GlobalGT("c-aranflirt","GLOBAL",11)~ + @3869 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4845
+  ++ @3870 DO ~SetGlobal("c-aranbg2rom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a581
 END
 
 IF ~~ a576
@@ -9524,12 +9524,12 @@ IF ~~ a1655
   IF ~~ THEN EXIT
 END
 
-/* BG2 Love Talk 5 :  Billy Joel - You may be Right/We Didn't Start The Fire mixology : c-aranrombg2 = 9 > 10 c-aranromtimer,ARAN_LTT */
+/* BG2 Love Talk 5 :  Billy Joel - You may be Right/We Didn't Start The Fire mixology : c-aranrombg2 = 9 > 10 c-aranromtimer,%ARAN_LTT% */
 IF ~Global("c-aranbg2rom","GLOBAL",9)~ THEN BEGIN a596
   SAY @3971
-  IF ~NumInPartyGT(4)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ GOTO a597
-  IF ~NumInPartyLT(5) NumInPartyGT(2)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ GOTO a598
-  IF ~NumInParty(2)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ GOTO a599
+  IF ~NumInPartyGT(4)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ GOTO a597
+  IF ~NumInPartyLT(5) NumInPartyGT(2)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ GOTO a598
+  IF ~NumInParty(2)~ DO ~SetGlobal("c-aranbg2rom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ GOTO a599
 END
 
 IF ~~ a597
@@ -9750,17 +9750,17 @@ IF ~~ a616 SAY @4092 IF ~~ THEN EXIT END
 IF ~~ a617 SAY @4093 IF ~~ THEN EXIT END
 IF ~~ a2321 SAY @4094 IF ~~ THEN EXIT END
 
-/* BG2 Love Talk 6 :  ABBA - Take A Chance On Me : c-aranrombg2 = 11 > 12 c-aranromtimer,ARAN_LTT */
+/* BG2 Love Talk 6 :  ABBA - Take A Chance On Me : c-aranrombg2 = 11 > 12 c-aranromtimer,%ARAN_LTT% */
 IF ~Global("c-aranbg2rom","GLOBAL",11)~ THEN BEGIN a618
   SAY @4095
-  ++ @4096 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a619
-  ++ @4097 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a619
-  ++ @4098 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a619
-  + ~RandomNum(3,1)~ + @4099 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1950 /* c-aranshutup44 */
-  + ~RandomNum(3,2)~ + @4100 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1951 /* c-aranshutup45 */
-  + ~RandomNum(3,3)~ + @4101 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1952 /* c-aranshutup46 */
-  ++ @4102 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a620
-  ++ @4103 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a640
+  ++ @4096 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a619
+  ++ @4097 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a619
+  ++ @4098 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a619
+  + ~RandomNum(3,1)~ + @4099 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1950 /* c-aranshutup44 */
+  + ~RandomNum(3,2)~ + @4100 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1951 /* c-aranshutup45 */
+  + ~RandomNum(3,3)~ + @4101 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1952 /* c-aranshutup46 */
+  ++ @4102 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a620
+  ++ @4103 DO ~SetGlobal("c-aranbg2rom","GLOBAL",12) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a640
 END
 
 IF ~~ a619
@@ -10034,20 +10034,20 @@ IF ~~ a661 SAY @4257 IF ~~ THEN EXIT END
 IF ~~ a662 SAY @4258 IF ~~ THEN EXIT END
 IF ~~ a664 SAY @4259 IF ~~ THEN EXIT END
 
-/* BG2 Love Talk 7 : I want you - do you want me? : c-aranrombg2 = 13 > 14 c-aranromtimer,ARAN_LTT */
+/* BG2 Love Talk 7 : I want you - do you want me? : c-aranrombg2 = 13 > 14 c-aranromtimer,%ARAN_LTT% */
 IF ~Global("c-aranbg2rom","GLOBAL",13)~ THEN BEGIN a665
   SAY @4260
   = @4261
   = @4262
-  ++ @4263 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a668
-  ++ @4264 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a666
-  ++ @4265 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a666
-  ++ @4266 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a667
-  + ~RandomNum(3,1)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1954 /* c-aranshutup48 */
-  + ~RandomNum(3,2)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1955 /* c-aranshutup49 */
-  + ~RandomNum(3,3)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1956 /* c-aranshutup50 */
-  + ~GlobalGT("SelfTalk","GLOBAL",1)~ + @4268 DO ~IncrementGlobal("c-arpclowimage","LOCALS",1) SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a680
-  + ~GlobalLT("SelfTalk","GLOBAL",2)~ + @4269 DO ~IncrementGlobal("c-arpclowimage","LOCALS",1) SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a681
+  ++ @4263 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a668
+  ++ @4264 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a666
+  ++ @4265 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a666
+  ++ @4266 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a667
+  + ~RandomNum(3,1)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1954 /* c-aranshutup48 */
+  + ~RandomNum(3,2)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1955 /* c-aranshutup49 */
+  + ~RandomNum(3,3)~ + @4267 DO ~SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1956 /* c-aranshutup50 */
+  + ~GlobalGT("SelfTalk","GLOBAL",1)~ + @4268 DO ~IncrementGlobal("c-arpclowimage","LOCALS",1) SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a680
+  + ~GlobalLT("SelfTalk","GLOBAL",2)~ + @4269 DO ~IncrementGlobal("c-arpclowimage","LOCALS",1) SetGlobal("c-aranbg2rom","GLOBAL",14) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a681
 END
 
 IF ~~ a666
@@ -10196,19 +10196,19 @@ IF ~~ a681
   IF ~~ THEN GOTO a668
 END
 
-/* BG2 Love Talk 8 : Police - Every Little Thing She Does Is Magic : c-aranrombg2 = 15 > 16 c-aranromtimer,ARAN_LTT */
+/* BG2 Love Talk 8 : Police - Every Little Thing She Does Is Magic : c-aranrombg2 = 15 > 16 c-aranromtimer,%ARAN_LTT% */
 IF ~Global("c-aranbg2rom","GLOBAL",15)~ THEN BEGIN a682
   SAY @4352
-  ++ @4353 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a683
-  ++ @4354 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a684
-  ++ @4355 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) SetGlobal("c-aranrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a685
-  + ~RandomNum(4,1)~ + @4356 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1957 /* c-aranshutup51 */
-  + ~RandomNum(4,2)~ + @4357 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1958 /* c-aranshutup52 */
-  + ~RandomNum(4,3)~ + @4358 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1959 /* c-aranshutup53 */
-  + ~RandomNum(4,4)~ + @4359 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a1960 /* c-aranshutup54 */
-  ++ @4360 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) IncrementGlobal("c-arpclowimage","LOCALS",1) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a687
-  ++ @4361 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a686
-  ++ @4362 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",ARAN_LTT)~ + a684
+  ++ @4353 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a683
+  ++ @4354 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a684
+  ++ @4355 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) SetGlobal("c-aranrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a685
+  + ~RandomNum(4,1)~ + @4356 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1957 /* c-aranshutup51 */
+  + ~RandomNum(4,2)~ + @4357 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1958 /* c-aranshutup52 */
+  + ~RandomNum(4,3)~ + @4358 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1959 /* c-aranshutup53 */
+  + ~RandomNum(4,4)~ + @4359 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a1960 /* c-aranshutup54 */
+  ++ @4360 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) IncrementGlobal("c-arpclowimage","LOCALS",1) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a687
+  ++ @4361 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a686
+  ++ @4362 DO ~SetGlobal("c-aranbg2rom","GLOBAL",16) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a684
 END
 
 IF ~~ a683
@@ -13012,7 +13012,7 @@ IF ~~ a2096 SAY @5586 IF ~~ THEN DO ~RestParty()~ EXIT END
 IF ~~ a2097 SAY @5587 IF ~~ THEN EXIT END
 IF ~~ a4339 SAY @5587 IF ~~ THEN GOTO a4508 END
 IF ~~ a2098 SAY @5588 IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
-IF ~~ a2099 SAY @5589 IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT) StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
+IF ~~ a2099 SAY @5589 IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%) StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
 IF ~~ a2100 SAY @5590 IF ~~ THEN DO ~StartCutSceneMode() StartCutScene("c-restco")~ EXIT END
 
 IF ~~ a2101
@@ -22377,13 +22377,13 @@ IF ~~ a1074 // 1 escape, 9 or 10 flirting options available at any one time
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902")  AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902")  AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1195
   /* Temple Flirt 2 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1196
   /* Temple Flirt 3 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9289 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9289 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -22485,13 +22485,13 @@ IF ~~ a1075 // 1 escape, 10 or 11 flirting options available at any one time
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1195
   /* Temple Flirt 2 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1196
   /* Temple Flirt 3 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9328 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9328 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -22565,13 +22565,13 @@ IF ~~ a1076 // 1 escape, 10 or 11 options at any one time
   /* Situational/Conditional Flirts */
   /* Temple Flirts, 4, identical for level 1, 2, and 3 flirts - fun with a "loop!" */
   /* Temple Flirt 1 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1195
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",0) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9287 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1195
   /* Temple Flirt 2 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1196
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",1) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9288 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",2) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1196
   /* Temple Flirt 3 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9328 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1197
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",2) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9328 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",3) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1197
   /* Temple Flirt 4 */
-  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1198
+  + ~RealGlobalTimerExpired("c-aranflirttimer","GLOBAL") Global("c-templeflirts","GLOBAL",3) OR(12) AreaCheck("AR0319") AreaCheck("AR0408") AreaCheck("AR0512") AreaCheck("AR0703") AreaCheck("AR0901") AreaCheck("AR0902") AreaCheck("AR0903") AreaCheck("AR0904") AreaCheck("AR1010") AreaCheck("AR1400") AreaCheck("AR1604") AreaCheck("AR2008")~ + @9290 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-templeflirts","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1198
   /* Escape If PC And Aran Are Fighting */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,1)~ THEN GOTO a1756 /* c-aranmad1 */
   IF ~Global("c-aranfight","GLOBAL",1) RandomNum(4,2)~ THEN GOTO a1757 /* c-aranmad2 */
@@ -22619,21 +22619,21 @@ IF ~~ a1439 SAY @9375 IF ~~ THEN EXIT END
 IF ~~ a1440 SAY @9376 = @9377 IF ~~ THEN EXIT END
 IF ~~ a1441 SAY @9378 IF ~~ THEN DO ~SetGlobal("c-arandroweq","LOCALS",1)~ EXIT END
 /* light replies for necklace flirts */
-IF ~~ a1456 SAY @9379 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
-IF ~~ a1457 SAY @9380 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
-IF ~~ a1458 SAY @9381 IF ~~ THEN DO ~SetGlobal("c-aljewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
-IF ~~ a1459 SAY @9382 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
-IF ~~ a1460 SAY @9383 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
-IF ~~ a1461 SAY @9384 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
-IF ~~ a1462 SAY @9385 IF ~~ THEN DO ~GiveItemCreate("AMUL11",Player1,0,0,0) SetGlobal("c-aljewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+IF ~~ a1456 SAY @9379 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* expensive */
+IF ~~ a1457 SAY @9380 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* missiles */
+IF ~~ a1458 SAY @9381 IF ~~ THEN DO ~SetGlobal("c-aljewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* simple */
+IF ~~ a1459 SAY @9382 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* anti-poison */
+IF ~~ a1460 SAY @9383 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* anti-wolf */
+IF ~~ a1461 SAY @9384 IF ~~ THEN DO ~SetGlobal("c-aljewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* magical */
+IF ~~ a1462 SAY @9385 IF ~~ THEN DO ~GiveItemCreate("AMUL11",Player1,0,0,0) SetGlobal("c-aljewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* clunky */
 /* heavy replies for necklace flirts */
-IF ~~ a1463 SAY @9386 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* expensive */
-IF ~~ a1464 SAY @9387 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* missiles */
-IF ~~ a1465 SAY @9388 = @9389 IF ~~ THEN DO ~SetGlobal("c-ahjewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* simple */
-IF ~~ a1466 SAY @9390 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-poison */
-IF ~~ a1467 SAY @9391 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* anti-wolf */
-IF ~~ a1468 SAY @9384 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* magical */
-IF ~~ a1469 SAY @9392 IF ~~ THEN DO ~SetGlobal("c-ahjewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT END /* clunky */
+IF ~~ a1463 SAY @9386 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* expensive */
+IF ~~ a1464 SAY @9387 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* missiles */
+IF ~~ a1465 SAY @9388 = @9389 IF ~~ THEN DO ~SetGlobal("c-ahjewel3","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* simple */
+IF ~~ a1466 SAY @9390 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* anti-poison */
+IF ~~ a1467 SAY @9391 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* anti-wolf */
+IF ~~ a1468 SAY @9384 IF ~~ THEN DO ~SetGlobal("c-ahjewel1","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* magical */
+IF ~~ a1469 SAY @9392 IF ~~ THEN DO ~SetGlobal("c-ahjewel2","LOCALS",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT END /* clunky */
 /* misc. exits from other states */
 IF ~~ a1500 SAY @9393 IF ~~ THEN EXIT END
 IF ~~ a1501 SAY @9394 IF ~~ THEN EXIT END
@@ -22960,93 +22960,93 @@ END
 
 IF ~~ a1315
   SAY @9673
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1316
   SAY @9674
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1317
   SAY @9675
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1318
   SAY @9676
   = @9677
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1319
   SAY @9678
   = @9679
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1320
   SAY @9680
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1321
   SAY @9681
   = @9682
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1322
   SAY @9683
   =  @9684
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1323
   SAY @9685
   = @9686
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1324
   SAY @9687
   = @9688
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1325
   SAY @9689
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1326
   SAY @9690
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1327
   SAY @9691
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1328
   SAY @9692
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1329
   SAY @9693
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1330
   SAY @9694
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1331
   SAY @9695
-  IF ~!Global("c-heartwarder","GLOBAL",1)~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~!Global("c-heartwarder","GLOBAL",1)~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
   IF ~Global("c-heartwarder","GLOBAL",1)~ THEN GOTO a1332
 END
 
@@ -23064,56 +23064,56 @@ END
 
 IF ~~ a1333
   SAY @9701
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Inside joke for Domi */
 IF ~~ a1334
   SAY @9702
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Inside joke for berelinde */
 IF ~~ a1335
   SAY @9703
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1336
   SAY @9704
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Inside joke for RavenBlack */
 IF ~~ a1337
   SAY @9705
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Inside joke for Jastey */
 IF ~~ a1338
   SAY @9706
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1339
   SAY @9707
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1340
   SAY @9708
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1341
   SAY @9709
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1342
   SAY @9710
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranlightflirt","GLOBAL",0) SetGlobal("c-aranheavyflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Low HP hijack of flirts early flirts */
@@ -23129,116 +23129,116 @@ END
 IF ~~ a1344
   SAY @9712
   = @9713
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1345
   SAY @9714
   = @9715
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1346
   SAY @9716
   = @9717
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1347
   SAY @9718
   = @9719
   = @9720
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1348
   SAY @9721
   = @9722
   = @9723
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1349
   SAY @9724
-  ++ @9725 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1634
-  ++ @9726 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1634
-  ++ @9727 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1634
+  ++ @9725 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1634
+  ++ @9726 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1634
+  ++ @9727 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1634
 END
 
 IF ~~ a1634 SAY @9728 IF ~~ THEN EXIT END
 
 IF ~~ a1351
   SAY @9729
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1352
   SAY @9730
   = @9731
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1353
   SAY @9732
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1354
   SAY @9733
   = @9734
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1355
   SAY @9735
   = @9736
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1356
   SAY @9737
   = @9738
   = @9739
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1357
   SAY @9740
   =  @9741
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1358
   SAY @9742
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1359
   SAY @9743
   = @9744
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1360
   SAY @9745
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1361
   SAY @9746
   = @9747
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Flirt Gifts Sequence */
 IF ~~ a1362
   SAY @9748
-  IF ~Global("c-arangift","GLOBAL",0)~ THEN REPLY @9749 DO ~GiveItemCreate("DAGG02",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1389
-  IF ~Global("c-arangift","GLOBAL",1)~ THEN REPLY @9750 DO ~SetGlobal("c-arangift","GLOBAL",2) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1391
-  IF ~Global("c-arangift","GLOBAL",2)~ THEN REPLY @9751 DO ~SetGlobal("c-arangift","GLOBAL",3) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1392
-  IF ~Global("c-arangift","GLOBAL",3)~ THEN REPLY @9752 DO ~GiveItemCreate("BRAC01",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",4) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1393
-  IF ~Global("c-arangift","GLOBAL",4)~ THEN REPLY @9753 DO ~SetGlobal("c-arangift","GLOBAL",5) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1394
-  IF ~Global("c-arangift","GLOBAL",5)~ THEN REPLY @9754 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1395
+  IF ~Global("c-arangift","GLOBAL",0)~ THEN REPLY @9749 DO ~GiveItemCreate("DAGG02",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1389
+  IF ~Global("c-arangift","GLOBAL",1)~ THEN REPLY @9750 DO ~SetGlobal("c-arangift","GLOBAL",2) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1391
+  IF ~Global("c-arangift","GLOBAL",2)~ THEN REPLY @9751 DO ~SetGlobal("c-arangift","GLOBAL",3) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1392
+  IF ~Global("c-arangift","GLOBAL",3)~ THEN REPLY @9752 DO ~GiveItemCreate("BRAC01",Player1,1,1,0) SetGlobal("c-arangift","GLOBAL",4) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1393
+  IF ~Global("c-arangift","GLOBAL",4)~ THEN REPLY @9753 DO ~SetGlobal("c-arangift","GLOBAL",5) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1394
+  IF ~Global("c-arangift","GLOBAL",5)~ THEN REPLY @9754 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1395
 END
 
 IF ~~ a1363
@@ -23252,49 +23252,49 @@ END
 IF ~~ a1364
   SAY  @9756
   = @9757
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1365
   SAY @9758
   = @9759
   = @9760
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1366
   SAY @9761
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1367
   SAY @9762
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1368
   SAY @9763
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1369
   SAY @9764
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1370
   SAY @9765
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1371
   SAY @9766
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1372
   SAY @9767
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1373
@@ -23321,7 +23321,7 @@ IF ~~ a1377
   SAY @9777
   = @9778
   = @9779
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Race Flirt */
@@ -23339,41 +23339,41 @@ END
 IF ~~ a1379
   SAY @9781
   = @9782
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1380
   SAY @9783
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1381
   SAY @9784
   = @9785
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1382
   SAY @9786
   = @9787
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1383
   SAY @9788
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1384
   SAY @9789
   = @9790
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1388
   SAY @9791
   = @9792
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1389
@@ -23406,148 +23406,148 @@ IF ~~ a1397
   SAY @9712
   = @9805
   = @9806
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1398
   SAY @9807
   = @9808
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1399
   SAY @9809
   = @9810
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1400
   SAY @9718
   = @9719
   = @9720
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1401
   SAY @9721
   = @9722
   = @9723
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1402
   SAY @9811
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* Aran-Initiated Physical Flirts */
 IF ~~ a1403
   SAY @9812
-  ++ @9813 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9814 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9815 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9813 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9814 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9815 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1404
   SAY @9816
-  ++ @9817 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9818 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9817 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9818 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
   ++ @9819 GOTO a1417
-  ++ @9820 DO ~SetGlobal("c-aranintimate","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9820 DO ~SetGlobal("c-aranintimate","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1405
   SAY @9821
-  ++ @9822 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9823 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9824 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9822 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9823 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9824 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1406
   SAY @9825
-  ++ @9826 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9827 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9828 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9829 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9826 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9827 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9828 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9829 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1407
   SAY @9830
-  ++ @9831 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~EXIT
-  ++ @9832 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9833 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9831 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~EXIT
+  ++ @9832 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9833 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1408
   SAY @9834
-  ++ @9835 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9836 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9837 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9835 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9836 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9837 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1409
   SAY @9838
-  ++ @9839 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9840 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9841 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9842 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9839 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9840 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9841 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9842 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1410
   SAY @9843
-  ++ @9844 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9845 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9846 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9844 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9845 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9846 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
   ++ @9847 + a1416
 END
 
 IF ~~ a1411
   SAY @9848
   = @9849
-  ++ @9850 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9851 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9852 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9850 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9851 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9852 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1412
   SAY @9853
-  ++ @9854 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9855 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9856 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9854 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9855 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9856 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1413
   SAY @9857
-  ++ @9858 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9859 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9860 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9861 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9858 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9859 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9860 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9861 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1414
   SAY @9862
-  ++ @9863 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9864 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9865 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9863 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9864 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9865 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1415
   SAY @9866
-  ++ @9867 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9868 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9869 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9870 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9867 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9868 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9869 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9870 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1416
   SAY @9871
   = @9872
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1417
   SAY @9873
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1664
@@ -23573,7 +23573,7 @@ END
 
 IF ~~ a1420
   SAY @9884
-  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranfight","GLOBAL",1) SetGlobal("c-aranflirtstop","GLOBAL",1) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 /* set the night visit here: Global("c-arangoaded","GLOBAL",1) */
@@ -23593,37 +23593,37 @@ END
 IF ~~ a1423 /* c-aranstarflirt */
   SAY @9888
   = @9889
-  IF ~~ THEN DO ~SetGlobal("c-aranstarflirt","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~SetGlobal("c-aranstarflirt","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1424 /* c-arancityflirt */
   SAY @9890
   ++ @9891 + a1425
-  ++ @9892 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9892 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
   ++ @9893 + a1426
   ++ @9894 + a1425
-  ++ @9895 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  ++ @9895 DO ~IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1425
   SAY @9896
-  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
+  IF ~~ THEN DO ~IncrementGlobal("c-aranflirt","GLOBAL",1)SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
 END
 
 IF ~~ a1426
   SAY @9897
-  IF ~~ THEN DO ~SetGlobal("c-arangardenmakeout","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT /* PLACEHOLDER */
+  IF ~~ THEN DO ~SetGlobal("c-arangardenmakeout","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT /* PLACEHOLDER */
 END
 
 /* NOTE TO  BCS - CUTSCENE OVERRIDE  */
 
 IF ~~ a1427 /* c-arandungeonflirt */
   SAY @9898
-  ++ @9899 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @1888 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9900 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9901 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ EXIT
-  ++ @9902 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)~ + a1169
+  ++ @9899 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0)RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @1888 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9900 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9901 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ EXIT
+  ++ @9902 DO ~SetGlobal("c-arandungeon","GLOBAL",1) IncrementGlobal("c-aranflirt","GLOBAL",1) SetGlobal("c-aranheavyflirt","GLOBAL",0) SetGlobal("c-aranlightflirt","GLOBAL",0) RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)~ + a1169
 END
 
 /* UD spoken 2 */
@@ -24598,7 +24598,7 @@ END
 
 IF ~~ a2
   SAY @10335
-  ++ @10315 JOURNAL @13146 + a13
+  ++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10322 + a12
   + ~RandomNum(5,1)~ + @3648 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24618,7 +24618,7 @@ END
 
 IF ~~ a3
   SAY @10341
-  ++ @10315 JOURNAL @13146 + a13
+  ++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
   + ~RandomNum(5,3)~ + @10336 + a9
@@ -24630,8 +24630,8 @@ IF ~~ a3
   + ~RandomNum(5,2)~ + @10324 + a10
   + ~RandomNum(5,1)~ + @10324 + a11
   ++ @10344 + a12
-  ++ @10323 JOURNAL @13146 + a13
-  ++ @10345 JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
+  ++ @10345 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   + ~!Global("c-aranhirestory","GLOBAL",1)~ + @10314 DO ~SetGlobal("c-aranhirestory","GLOBAL",1)~ + a14
   + ~Global("c-aranhirestory","GLOBAL",1)~ + @10340 + a14
 END
@@ -24651,13 +24651,13 @@ IF ~~ a4
   + ~RandomNum(5,4)~ + @10342 + a10
   + ~RandomNum(5,5)~ + @10318 + a11
   ++ @10347 + a12
-  ++ @10345 JOURNAL @13146 + a13
-  ++ @10323 JOURNAL @13146 + a13
+  ++ @10345 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
 IF ~~ a5
   SAY @10348
-  ++ @10315 JOURNAL @13146 + a13
+  ++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10314 + a14
   + ~RandomNum(4,4)~ + @3648 + a7
   + ~RandomNum(4,3)~ + @3648 + a8
@@ -24669,8 +24669,8 @@ IF ~~ a5
   + ~RandomNum(5,4)~ + @10342 + a10
   + ~RandomNum(5,5)~ + @10318 + a11
   ++ @10344 + a12
-  ++ @10323 JOURNAL @13146 + a13
-  ++ @10345 JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
+  ++ @10345 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
 IF ~~ a6 SAY @10349 IF ~~ THEN GOTO a14 END
@@ -24689,7 +24689,7 @@ END
 
 IF ~~ a12
   SAY @10356
-  ++ @10315 JOURNAL @13146 + a13
+  ++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10357 + a2946
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24697,8 +24697,8 @@ IF ~~ a12
   + ~RandomNum(5,4)~ + @10358 + a10
   + ~RandomNum(5,5)~ + @10359 + a11
   ++ @10314 + a14
-  + ~NumInPartyGT(1)~ + @10345 JOURNAL @13146 + a13
-  ++ @10323 JOURNAL @13146 + a13
+  + ~NumInPartyGT(1)~ + @10345 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
 IF ~~ a13
@@ -24739,15 +24739,15 @@ IF ~~ a18
   + ~RandomNum(5,4)~ + @10368 + a10
   + ~RandomNum(5,5)~ + @10321 + a11
   ++ @10369 + a12
-  ++ @10323 JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10324 + a11
-  ++ @10339 JOURNAL @13146 + a13
+  ++ @10339 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
 IF ~~ a19
   SAY @10370
   ++ @10314 + a6
-  ++ @10315 JOURNAL @13146 + a13
+  ++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10316 + a2956
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10318 + a8
@@ -24755,9 +24755,9 @@ IF ~~ a19
   + ~RandomNum(5,4)~ + @10372 + a10
   + ~RandomNum(5,5)~ + @10321 + a11
   ++ @10322 + a12
-  ++ @10323 JOURNAL @13146 + a13
+  ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
   ++ @10324 + a11
-  ++ @10325 JOURNAL @13146 + a13
+  ++ @10325 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
 IF ~~ a2956 SAY @10373 IF ~~ THEN EXIT END
@@ -24781,9 +24781,9 @@ CHAIN C-ARAN a14
 END
 ++ @10386 EXTERN C-ARAN a17
 ++ @10369 EXTERN C-ARAN a12
-++ @10323 JOURNAL @13146 EXTERN C-ARAN a13
+++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 EXTERN C-ARAN a13
 ++ @10324 EXTERN C-ARAN a11
-++ @10339 JOURNAL @13146 EXTERN C-ARAN a13
+++ @10339 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 EXTERN C-ARAN a13
 
 CHAIN C-ARAN a17
 @10387
@@ -24797,11 +24797,11 @@ DO ~SetGlobal("c-arangerris","LOCALS",1)~
 == AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @10394
 == ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @10395
 END
-++ @10315 JOURNAL @13146 EXTERN C-ARAN a13
+++ @10315 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 EXTERN C-ARAN a13
 ++ @10357 EXTERN C-ARAN a2946
 ++ @10324 EXTERN C-ARAN a11
-++ @10345 JOURNAL @13146 EXTERN C-ARAN a13
-++ @10323 JOURNAL @13146 EXTERN C-ARAN a13
+++ @10345 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 EXTERN C-ARAN a13
+++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 EXTERN C-ARAN a13
 
 /* C-ARANP SoA post-joined */
 
@@ -24842,7 +24842,29 @@ END
 /* Plot Talks: Post-Joined File : Standard "you tick me off too much to stick around" state */
 IF ~HappinessLT(Myself,-290)~ THEN BEGIN a20
   SAY @10404
-  IF ~~ THEN JOURNAL @10405 + a1648
+  IF ~~ THEN DO ~EraseJournalEntry(@1706)
+EraseJournalEntry(@1707)
+EraseJournalEntry(@1708)
+EraseJournalEntry(@1709)
+EraseJournalEntry(@1710)
+EraseJournalEntry(@1711)
+EraseJournalEntry(@1712)
+EraseJournalEntry(@1713)
+EraseJournalEntry(@1714)
+EraseJournalEntry(@1715)
+EraseJournalEntry(@1716)
+EraseJournalEntry(@1717)
+EraseJournalEntry(@1718)
+EraseJournalEntry(@1719)
+EraseJournalEntry(@1720)
+EraseJournalEntry(@10405)
+EraseJournalEntry(@10482)
+EraseJournalEntry(@10445)
+EraseJournalEntry(@10447)
+EraseJournalEntry(@10449)
+EraseJournalEntry(@10451)
+EraseJournalEntry(@10453)
+EraseJournalEntry(@10455)~ JOURNAL @10405 + a1648
 END
 
 IF ~~ a1648

@@ -2478,7 +2478,7 @@ THEN
 		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",600)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
 END
 
-/* Aran's FriendTalks Aim, c-aranfriendtob, ARAN_FTT */
+/* Aran's FriendTalks Aim, c-aranfriendtob, %ARAN_FTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalLT("c-aranfriendtob","GLOBAL",10)	// shuts down sequence when finished
@@ -2504,7 +2504,7 @@ THEN
 	IncrementGlobal("c-aranfriendtob","GLOBAL",1)	// move up from even to odd
 END
 
-/* Aran's FriendTalks Fire, c-aranfriendtob, ARAN_FTT */
+/* Aran's FriendTalks Fire, c-aranfriendtob, %ARAN_FTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off. */
 IF
 	GlobalLT("c-aranfriendtob","GLOBAL",8)	// shuts down sequence when finished
@@ -2564,14 +2564,14 @@ THEN
 	RESPONSE #100								// 100% of the time
 	SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
 	SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
-	RealSetGlobalTimer("c-aranromtimer","GLOBAL",@13135 )	// Minimum Real Time until first LT
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136 ) // Tee up flirt timer
+	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%)	// Minimum Real Time until first LT
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%) // Tee up flirt timer
 END
 
 /* LOVE TALKS */
 /* Romance Talks Sequence */
 
-/* Aran's Romance LoveTalks Aim, c-arantobrom, ARAN_LTT */
+/* Aran's Romance LoveTalks Aim, c-arantobrom, %ARAN_LTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
@@ -2598,7 +2598,7 @@ THEN
 	IncrementGlobal("c-arantobrom","GLOBAL",1)
 END
 
-/* Aran's Romance LoveTalks Fire, c-aranbg2rom, ARAN_LTT */
+/* Aran's Romance LoveTalks Fire, c-aranbg2rom, %ARAN_LTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
 	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
@@ -2642,7 +2642,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",1)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",@13136)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)
 END
 
 /* Player likes to flirt, 24 interactions by either Aran or PC without shutting him down */
@@ -2656,7 +2656,7 @@ IF
 THEN
 	RESPONSE #100
 	SetGlobal("c-aranpcflirtstart","GLOBAL",2)
-	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",ARAN_FLIRT)
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%ARAN_FLIRT%)
 END
 
 /* Lightweight Flirts */
