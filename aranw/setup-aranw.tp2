@@ -11,7 +11,7 @@ AUTHOR ~cmorgan~
 
 VERSION ~Beta3~
 
-README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/readme-aranw.html~
+README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
 
 LANGUAGE ~English~
          ~English~

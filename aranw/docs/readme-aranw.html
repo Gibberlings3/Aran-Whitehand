@@ -23,7 +23,7 @@ Aran Whitehand
 <p><strong>On the web: <a href="http://www.gibberlings3.net/aranw/index.php">Home page</a></strong> and <strong><a href="http://forums.gibberlings3.net/index.php?showforum=159">discussion forum</a></strong><br /><br />
 </p>
 <p>
-<strong>Version Beta_3 - <a href="http://www.gibberlings3.net/downloads/#aranw">Check for the most recent version</a></strong> <br />
+<strong>Version: Beta_3 - <a href="http://www.gibberlings3.net/downloads/#aranw">Check for the most recent version</a></strong> <br />
 <strong>Languages:</strong> English<br />
 <strong>Platforms:</strong> Windows, Mac OS X, and Linux<br />
 <strong>Games:</strong> BGII - SoA, BGII - ToB, and BGII:EE<br />
@@ -122,7 +122,7 @@ Aran Whitehand is functionally a Companion mod. He has minor optional quests wit
 <a name="compat" id="compat">Compatibility</a>
 </h2>
 <div class="section">
-<p> Aran Whitehand, AranAware </p>
+<p> <strong>Aran Whitehand</strong> is designed for use on BGII - SoA, BGII - ToB, BGT, and BGII:EE.  </p>
 </div>
 <h2>
 <a name="install" id="install">Installation</a>
@@ -144,21 +144,47 @@ Please run setup-aranw in your game folder to reinstall, uninstall or otherwise 
 Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of WeiDU for Linux from <a href="http://www.weidu.org/~thebigg "><acronym title="Weimer Dialogue Utility">WeiDU</acronym>.org</a> and copy WeiDU and WeInstall to /usr/bin. Following that, open a terminal and cd to your BG2 installation directory, run 'tolower' and answer Y to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lower cased file name. If you're unsure, running tolower and choosing both options is the safe bet. Run <strong>WeInstall aranw</strong> in your game folder to install the mod. Then run <strong>wine BGMain.exe</strong> and start playing.</p>
 </div>
 <h2>
-<a name="compon" id="compon">Components and Optional Follow-On Mods</a>
+<a name="compon" id="compon">Components</a>
 </h2>
 <div class="section">
-</p><strong>Component 0</strong> Install Aran Whitehand <br />
-Installs Aran Whitehand on BGII - SoA, BGII - ToB, BGT, or BGII:EE
+</p><strong>Component 0 : Install Aran Whitehand </strong> <br />
+Installs Aran Whitehand on BGII - SoA, BGII - ToB, BGT, or BGII:EE <br />
+Player Choices: <br />
+1. Set Talk and Flirt Timers : [1] Use Default or [2] Customize  <br />  
 </p>
-</p><strong>Component 1</strong><br />
+</p><strong>Component 1 : Install Audio </strong><br />
+Player Choices: <br />
+[1] Install Soundset, Voiced lines, and Music <br />
+[2] Install Only Soundset and Music <br />
+[3] Install Only Soundset <br />
+[4] Do not install any audio <br />
+[NOTE: Currently, there are no voiced lines, so installing 1 or 2 above gives you everything currently enabled.]<br />
 </p>
-</p><strong>Component 2</strong><br />
+</p><strong>Component 2 : Aran Configuration</strong> <br />
+Player Choices: <br />
+[1] Aran Whitehand, default configuration (Soldier) or one of four customizations. <br />
+ <br />
+[2] Aran Whitehand, Mage Dual-Class stats configuration (Tinker) <br />
+[3] Aran Whitehand, Cleric Dual-Class stats configuration (Tailor) <br />
+[4] Aran Whitehand, Fighter stats configuration (Soldier) <br />
+[5] Aran Whitehand, Thief Dual-Class stats configuration (Spy) <br />
+ <br />
+If you choose to customize, you can set the following:<br />
+- modify starting Aran to be poor, average, or rich<br />
+- see his current proficiencies and adjust his carried equipment<br />
+- choose what armor he comes with<br />
+<br />
 </p>
-</p><strong>Component 3</strong><br />
+</p><strong>Component 3 : Alternate portraits </strong><br />
+Portrait choices currently available are <a href= "../docs/alternateportraits.html">here</a>.
 </p>
-</p><strong>Follow-On Mods</strong><br />
-<strong>AranAware</strong><br />
-AranAware can be found here. It is designed to be run after both Aran Whitehand and other mods, much like Crossmod. While many "awareness" comments and dialogs are already enabled passively within the central mod, there are cross-mod materials that need adjustment. This add-on should be run after most mods on your install. It only enables content/manipulates Aran's own scripts and files, so should cause no troubles with other mods. Currently, it recognises and enables the following content:<br />
+</div>
+<h2>
+<a name="follow" id="follow">Optional Follow-On Mods</a>
+</h2>
+<div class="section">
+</p><strong>AranAware</strong><br />
+AranAware can be found [NOT YET AVAILABLE]. It is designed to be run after both Aran Whitehand and other mods, much like Crossmod. While many "awareness" comments and dialogs are already enabled passively within the central mod, there are cross-mod materials that need adjustment. This add-on should be run after most mods on your install. It only enables content/manipulates Aran's own scripts and files, so should cause no troubles with other mods. Currently, it recognises and enables the following content:<br />
 </p>
 <p> {Insert Aran Aware materials rundown here} </p> 
 </div>
@@ -166,18 +192,30 @@ AranAware can be found here. It is designed to be run after both Aran Whitehand 
 <a name="modder" id="modder">Modder Notes</a>
 </h2>
 <div class="section">
-<p> The philosophy driving coding in this project is to preserve technical operating compatibility with as wide a range of other mods as possible. I leave it up to the player to define 'conceptual incompatibility' - there are so many mods out there now that I think players have the right to choose to add, subtract, or modify within their games without me making those decisions up front. Hey, I am a hobbyist, not a professional - if you want professional stuff, go buy it! Some of the things done to support this are listed here:,/p>
+<p> The philosophy driving coding in this project is to preserve technical operating compatibility with as wide a range of other mods as possible. I leave it up to the player to define 'conceptual incompatibility' - there are so many mods out there now that I think players have the right to choose to add, subtract, or modify within their games without me making those decisions up front. Hey, I am a hobbyist, not a professional - if you want professional stuff, go buy it! Some of the things done to support this are listed here:</p>
 <ul>
 <li> {add text here explaining technical compatability} </li>
+</ul>
+</div>
+<h2>
+<a name="funstuff" id="funstuff">Fun Things To Do With Aran</a>
+</h2>
+<div class="section">
+<ul>
+<li> Kick him out and take him back in in different ways.</li>
+<li> Have a sparring session with him. </li>
+<li> Ask him for advice in different areas. </li>
+<li> Get him drunk. Several times. </li>
+<li> Play an evil female PC and treat him badly... scratch him, bite him, and see what he does.</li>
 </ul>
 </div>
 <h2>
 <a name="thanks" id="thanks">Thanks and Acknowledgements</a>
 </h2>
 <div class="section">
-<p>It takes many people to contribute to a project as large as <acronym title="Baldur's Gate">BG1</acronym> <acronym title="Non-Player Character">NPC</acronym>. The current list of folks who have contributed and I wish to thank is on Aran's forum... or it will be once I have gotten that organized</p>
-<p>There is an entire community of folks to thank, for all sorts of reasons, so someone is going to get left out and I am going to be very embarassed. But the folks who really make things fun when working through i.e. stuff, the folks who assisted in proofreading, giving critical feedback, and sending those PMs and messages saying "YES!" or "NOOOOO!!!!!!" are all part of this mod. The good parts. The bad parts are all mine. </p>
-<p>First off, Domi is a goddess whose work with Dynaheir in BG1NPC originally inspired me to get off of my lazy behind and actually become involved in modding. I thank her, curse her, swear at her, and then swear by her, all usually within the same 20 minutes. Thanks to CamDawg, Grim Squeaker, Smoketest, devSin, wisp, Taimon, Ascension64, igi, eric, Steve, and Miloch, who all show me how things work and manage not to call me an ignorant jackass to my face (mostly). And infinite thanks to Nythrun, who showed me patience, great humor, and the power of "just do it."</p>
+<p>The current list of folks who have contributed and I wish to thank is on Aran's forum... or it will be once I have gotten that organized</p>
+<p>There is an entire community of folks to thank, for all sorts of reasons, so someone is going to get left out and I am going to be very embarrassed. But the folks who really make things fun when working through i.e. stuff, the folks who assisted in proofreading, giving critical feedback, and sending those PMs and messages saying "YES!" or "NOOOOO!!!!!!" are all part of this mod. The good parts. The bad parts are all mine. </p>
+<p>First off, Domi is a goddess whose work with Dynaheir in BG1NPC originally inspired me to get off of my lazy behind and actually become involved in modding. I thank her, curse her, swear at her, and then swear by her, all usually within the same 20 minutes. Thanks to CamDawg, Grim Squeaker, Smoketest, devSin, Wisp, Taimon, Ascension64, igi, eric, Steve, and Miloch, who all show me how things work and manage not to call me an ignorant jackass to my face (mostly). And infinite thanks to Nythrun, who showed me patience, great humor, and the power of "just do it."</p>
 <p>And though he will make an obscene comment or involve Aran in a Dodecahedron mod in retaliation, special thanks to "the bigg". Not just for years of patience and help, but for continuing to support, clean up, extend, and rebuild Weimer's Dialog Utility making it relevant and powerful for today's modders.</p>
 <p>On this specific project, huge thanks go to Berelinde, who has helped me bounce ideas, clean up/rebuild code, warned me when I was getting really gross, poked at me when I slacked, asked the "duh" questions that have set me on new paths, reminded me when I have started doing boneheaded things in code, and provided solid criticism. Jastey has been there regularly, giving great specific feedback; without these two strong modders as friends, working on and discussing things at Tolkein Across The Water, the biggest challenges in the mod would never have been attempted, let alone written. To the Two Mistresses of Modding Mayhem, I tip my cap in appreciation, and let you know that you have helped me get hours of enjoyment out of the modding challenge. It is great to work with you!</p>
 <p>Lots of people have helped out in this "open code" mod experiment, many with behind-the-scenes PMs that have opened new ideas or closed up old ones, others with clear and helpful bug and typo hunting, and still others with the ticklish and sensitive "proofread the smut" quotient. My appreciation is fierce. In most cases, my thanks has been to write specific pathways or open branches in response to their own particular personal protagonist preference (their "ppp"), but some angels have given feedback without indicating what they like in their ppp, so the only coin I have in repayent is acknowledgement of contribution. A partial list follows:</p>
@@ -212,7 +250,7 @@ AranAware can be found here. It is designed to be run after both Aran Whitehand 
 <li> Shaitan </li>
 <li> plainab </li>
 <li> Domi </li>
-<li> NOTE TO SELF: RECHECK PMS AND POSTS FOR CONTRIBUTORS!!!</li>
+<li> NOTE TO SELF: RECHECK PMS AND POSTS FOR CONTRIBUTORS!!! And for folks who would rather remain anonymous.</li>
 </ul>
 <p>This project has been a blast, even on days when I just wanted to throw it all in and go whack something in Mount & Blade or take over the world in Civ III/IV/BTS/V (the project took that long!!). That is entirely due to folks poking at Aran with long sticks, asking questions, giving feedback, and making me rethink things.</p>
 <strong>Tools Used in Creation</strong><br />
@@ -238,10 +276,32 @@ AranAware can be found here. It is designed to be run after both Aran Whitehand 
 </div>
 <h2>Musical Themes Used</h2>
 <div class="section">
+<a href="http://www.jsayles.com/familypages/earlymusic.htm"> JSayles Early Music </a> - "All MP3 recordings listed below, may be downloaded and distributed free of charge. The recordings may be used for any purpose whatsoever.	In fact, that's the only reason I'm doing this to promote Early Music, and especially to promote the musical selections recorded below." - J. Sayles, performer</p>
 <ul>
-<li> <strong>Happy Music: </strong><em>Title</em> by author</li>
-<li> <strong>Friendship Music: </strong><em>Title</em> by author</li>
-<li> <strong>Romance Music: </strong><em>Title</em> by author</li>
+<li> aranw/media/wavc/set2_1_orosetta.wav /* 1 friend, upbeat  */ </li>
+<li> aranw/media/wavc/set2_2_praetorius.wav /* 2 friend, introspective */ </li>
+<li> aranw/media/wavc/set2_3_sweetnymphcometothylover.wav /* 3 love, upbeat  */ </li>
+<li> aranw/media/wavc/set2_4_aprilinmistressface.wav /* 4 love, introspective */ </li>
+<li> aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast */ </li>
+<li> aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective  */ </li>
+</ul>
+ Vox Vulgaris - middle ages with a twist. Source - The group. Selections clipped from three of their online materials, Cantiga 166, Rokatanc, and Saltarello. Pieces are in public domain, but the performance is copyrighted - probably shorter than the "you are stealing this" time index, but if an official someone objects for use in a free mod, I'll just use it on my own install. I have to thank the husband and wife team that developed mount & Blade, because I didn't know there was such great midaevil re-covers from groups like Vox Vulgaris and Hungary Debrecen, until modders put them into their M&B mods!</p>
+<ul>
+<li> aranw/media/wavc/set3_1_vox_vulgaris_rokatanc.wav /* 1 friend, upbeat  */ </li>
+<li> aranw/media/wavc/set3_2_vox_vulgaris_rokatanc.wav /* 2 friend, introspective */ </li>
+<li> aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 3 love, upbeat  */ </li>
+<li> aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 4 love, introspective */ </li>
+<li> aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast  */ </li>
+<li> aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav /* 6 inn, introspective  */ </li>
+</ul>
+<p> Brass ensemble, Suzato, The Danseyre. Renaissance, done in a brass arrangement. Czech Brass. Source - Czech Brass album "Virtuosi Baroque Music", on the Sonnleitner Verlag label. Copyrighted, so if someone objects to the rip for a free mod, I'll take it out. But if you find one of their recordings, they are solid brass, more calm in their interpretations that the Philip Jones Brass Ensemble or Canadian Brass.</p>
+<ul>	
+<li>aranw/media/wavc/set1_1_suzato_danserye_mourisque.wav /* 1 friend, upbeat  */ </li>
+<li>aranw/media/wavc/set1_2_suzato_danserye_battaille.wav /* 2 friend, introspective */ </li>
+<li>aranw/media/wavc/set1_3_suzato_danserye_bransle.wav /* 3 love, upbeat */ </li>
+<li>aranw/media/wavc/set1_4_suzato_danserye_monamy.wav /* 4 love, introspective */ </li>
+<li>aranw/media/wavc/set1_5_praetorius_volte.wav /* 5 drunk or in an inn, fast  */ </li>
+<li>aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective */ </li>
 </ul>
 </div>
 <h2>
