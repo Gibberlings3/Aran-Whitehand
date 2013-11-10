@@ -3818,7 +3818,7 @@ END
 IF
 	GlobalLT("c-arandrunk","GLOBAL",3)	// shuts down sequence when finished
 	InParty(Myself)
-	CheckStatGT(Myself,40,INTOXICATION)	// Whoot - the room is moving about too much
+	CheckStatGT("c-aran",40,INTOXICATION)	// Whoot - the room is moving about too much
 	GlobalTimerExpired("c-aranisdrunk","GLOBAL")
 	OR(13)
 		AreaCheck("AR0313") // Sea's Bounty
