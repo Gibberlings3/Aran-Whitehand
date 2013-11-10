@@ -14899,16 +14899,16 @@ IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a1314
  /* NPC Initiated Flirts : Jewelry Light Flirt Additions:  */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL04",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1444 /* Studded Necklace with Zios Gems */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL05",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1445 /* Bluestone Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL06",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1446 /*  Agni Mani Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1447 /*  Rainbow Obsidian Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL08",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1448 /*  Tiger Cowrie Shell Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1449 /*  Silver Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1450 /*  Gold Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL11",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1451 /*  Pearl Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL06",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1446 /* Agni Mani Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1447 /* Rainbow Obsidian Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL08",Player1) Global("c-aljewel2","LOCALS",0)~ THEN GOTO a1448 /* Tiger Cowrie Shell Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1449 /* Silver Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1450 /* Gold Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL11",Player1) Global("c-aljewel3","LOCALS",0)~ THEN GOTO a1451 /* Pearl Necklace */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL16",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1452 /* Amulet of Metaspell Influence (+1 2nd level spell) */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL18",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1453 /*  Wolfsbane Charm +2 vs Lycanthropes */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL22",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1454 /*  Periapt of Proof Against Poison */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1443 /*  Necklace of Missiles */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL18",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1453 /* Wolfsbane Charm +2 vs Lycanthropes */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL22",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1454 /* Periapt of Proof Against Poison */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1443 /* Necklace of Missiles */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL12",Player1) Global("c-aljewel1","LOCALS",0)~ THEN GOTO a1442 /* Laeral's Tear Necklace (3000 gp) */
   IF ~RandomNum(2,1) HasItemEquiped("RE_valm",Player1) Global("c-aljewelv","LOCALS",0)~ THEN GOTO a1499 /* Romantic Encounters: Valygar item */
   IF ~RandomNum(2,1) HPPercentLT(Player1,40)~ THEN GOTO a1343
@@ -14960,16 +14960,16 @@ IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a1350
   IF ~RandomNum(2,1) HasItemEquiped("AMUL04",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1444 /* Studded Necklace with Zios Gems */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL05",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1445 /* Bluestone Necklace */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL06",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1446 /* Agni Mani Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1447 /*  Rainbow Obsidian Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL07",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1447 /* Rainbow Obsidian Necklace */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL08",Player1) Global("c-ahjewel2","LOCALS",0)~ THEN GOTO a1448 /* Tiger Cowrie Shell Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a1449 /*  Silver Necklace */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a1450 /*  Gold Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL09",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a1449 /* Silver Necklace */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL10",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a1450 /* Gold Necklace */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL11",Player1) Global("c-ahjewel3","LOCALS",0)~ THEN GOTO a1451 /* Pearl Necklace */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL16",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1452 /* Amulet of Metaspell Influence (+1 2nd level spell) */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL18",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1453 /* Wolfsbane Charm +2 vs Lycanthropes */
   IF ~RandomNum(2,1) HasItemEquiped("AMUL22",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1454 /* Periapt of Proof Against Poison */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1443 /*  Necklace of Missiles */
-  IF ~RandomNum(2,1) HasItemEquiped("AMUL12",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1442 /*  Laeral's Tear Necklace (3000 gp) */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL01",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1443 /* Necklace of Missiles */
+  IF ~RandomNum(2,1) HasItemEquiped("AMUL12",Player1) Global("c-ahjewel1","LOCALS",0)~ THEN GOTO a1442 /* Laeral's Tear Necklace (3000 gp) */
   IF ~RandomNum(2,1) HasItemEquiped("RE_valm",Player1) Global("c-aljewelv","LOCALS",0)~ THEN GOTO a1499 /* Romantic Encounters: Valygar item */
   IF ~HPPercentLT(Player1,40)~ THEN GOTO a1396
 END
