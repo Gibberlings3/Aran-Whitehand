@@ -678,7 +678,7 @@ Bodhi appeared in an ambush shortly before I reached her haven, warning me that 
 @452  = ~[PC] You place too much confidence in sentiment. The theft of Aran will not save you.~
 @453  = ~[PC] Well, we could have come to a simple agreement. But now you have been playing with too many of my toys, and I shall simply have to spank you.~
 @454  = ~[PC] Have you noticed that so far everyone who challenges me loses?~
-@455  = ~[BODHI] He is lost to you, <CHARNAME>. Aran was quite unreceptive to my discipline at first, but in the end he came along like a good little soldier. You could not have been that fond of him after all.All his resistance fell away with a bite and a gaze. Isn't that right, my little pet?~
+@455  = ~[BODHI] He is lost to you, <CHARNAME>. Aran was quite unreceptive to my discipline at first, but in the end he came along like a good little soldier. You could not have been that fond of him after all. All his resistance fell away with a bite and a gaze. Isn't that right, my little pet?~
 @456  = ~The Final Battle with Bodhi.
 
 Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may not have been completed in the short time Bodhi has had him.  Hopefully something can be done or I will have lost him.  Perhaps the elven war sage might know some way of restoration... or Elhan...~
@@ -1252,7 +1252,7 @@ Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may no
 @1024 = ~[PC] Hey, didn't we already have this conversation?~
 @1025 = ~[PC] I think the young redhead at the end of the bar is looking at you, Aran.~
 @1026 = ~[ARAN] I kept my blighted mouth shut, on account o' I didn't trust myself to stay in my Cyric-lovin' place, an' not start more trouble. But I have had my fill o' slippery connivin' Harper tricks. Mayhap it be just me, but it seems we'd be a mite bit safer if we just stayed th' blighted hells away from anyone associatin' wi' th' Harpers. I thought they were on th' side o' good.~
-@1027 = ~[ARAN] Jergal's Moldy Wrappings, that bastard could take a hit, he could. I guess th' whole 'live forever' thing didn't' rightly work out for him, though. He should have remembered that sometimes th' gods are right bastards, an' grant you exactly what you think you want, eh?~ [c-aws050]
+@1027 = ~[ARAN] Jergal's Moldy Wrappings, that bastard could take a hit, he could. I guess th' whole 'live forever' thing didn't rightly work out for him, though. He should have remembered that sometimes th' gods are right bastards, an' grant you exactly what you think you want, eh?~ [c-aws050]
 @1028 = ~[ARAN] Ah, light! Lathander's Luminated Lamp, that's a right fine thing to see. I was beginnin' to think we'd never see naught but shadow, darkness, an' death. Does a body good to see some sun shine down on this place.~ [c-aws051]
 @1029 = ~[ARAN] Lathander's Bright Buttocks, it be right fine to see you alive an' well, Gavin m'lad. Though, I do have to say, you look like hell. Strike that... I seen a bit o' hell, an' you look worse.~ [c-aws070]
 @1030 = ~[ARAN] Jergal's Moldy Wrappings, that stinks. Usually, I'm all for 'when in Calimport, act as a Calimshan'. But slavery's just wrong, no matter where an' when.~ [c-aws063]
@@ -10918,7 +10918,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10523 = ~[ARAN] I would love that.~
 @10524 = ~[PC] You remember it correctly, Aran. All except the stray glances, whispers, and the way you look at me. It is like you are hungry, but not for food.~
 @10525 = ~[PC] You remember it correctly, Aran. All except the bold glances, whispered conversations, and some very deep kisses.~
-@10526 = ~[PC] You remember it correctly, Aran. All except the stolen whispered conversations, the feel of your fingers tracing runes my body, the feel of the bare skin of your chest under my palms... and kisses that set us both on fire.~
+@10526 = ~[PC] You remember it correctly, Aran. All except the stolen whispered conversations, the feel of your fingers tracing runes across my body, the feel of the bare skin of your chest under my palms... and kisses that set us both on fire.~
 @10527 = ~[PC] Aran... we have spent so much time together, the only thing we haven't done is...~
 @10528 = ~[PC] Aran... I know the touch of you, the feel of all you, and that little strained look you get just before you...~
 @10529 = ~[ARAN] Well, you had me off balance, there. I be right happy we both agree. I was worried, mayhap because any time a woman asks about 'relationship status', there be a powerful lot o' pitfalls an' traps a lad can fall into, eh?~
@@ -11344,7 +11344,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10949 = ~[C-AW01TK] You seem as aware as you usually are, Aran. I do hope the cooking experiments are more successful now?~
 @10950 = ~[ARAN] I don't rightly hear no complaints.~
 @10951 = ~[C-AW01TK] You must be traveling with such polite companions, then. I feel sure that they will appreciate a well cooked meal from this fair establishment.~
-@10952 = ~[C-AW01TL] Greetings and a pearl you. If you come to me seeking sellswords and mercenaries looking for contracts both long and short, you have come to the right place.~
+@10952 = ~[C-AW01TL] Greetings and a pearl to you. If you come to me seeking sellswords and mercenaries looking for contracts both long and short, you have come to the right place.~
 @10953 = ~[PC] Actually, I was looking to be employed myself. Is there any short term work available?~
 @10954 = ~[PC] I just thought you were the barmaid. Do you work here?~
 @10955 = ~[PC] Is business good right now?~
@@ -11357,10 +11357,10 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10962 = ~[PC] Have you talked to Aran lately? I am looking for him.~
 @10963 = ~[PC] Do you have any other good prospects to assist an adventuring party?~
 @10964 = ~[PC] What do you think of this Aran Whitehand I have heard so much about?~
-@10965 = ~[C-AW01TL] Greetings and a pearl you. Sellswords, mercenaries, contracts both long and short. You have come to the right place.~
+@10965 = ~[C-AW01TL] Greetings and a pearl to you. Sellswords, mercenaries, contracts both long and short. You have come to the right place.~
 @10966 = ~[PC] Do you know of any weapons trainers, or jewelers?~
-@10967 = ~[C-AW01TL] Back again, I see. Greetings and a pearl you. Mercenary contracts long and short, that's my business. Might be yours, too, if anything becomes available.~
-@10968 = ~[C-AW01TL] Greetings and a pearl you, <CHARNAME>. What brings you back to me?~
+@10967 = ~[C-AW01TL] Back again, I see. Greetings and a pearl to you. Mercenary contracts long and short, that's my business. Might be yours, too, if anything becomes available.~
+@10968 = ~[C-AW01TL] Greetings and a pearl to you, <CHARNAME>. What brings you back to me?~
 @10969 = ~[PC] Actually, I was looking to be employed. Is there any short term work available?~
 @10970 = ~[C-AW01TL] Well, you sure know how to compliment a woman.~
 @10971 = ~[PC] Are you related to the barmaid?~
@@ -11368,7 +11368,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10973 = ~[PC] Sticking around here sounds about as exciting as reading Volo's works on the Dung Beetles of Neverwinter. Why don't you step out and adventure yourself?~
 @10974 = ~[PC] Sticking around here sounds about as exciting as shoveling out a stable. Why don't you step out and adventure yourself?~
 @10975 = ~[PC] Sticking around here sounds about as exciting as watching kobolds mate. Why don't you step out and adventure yourself?~
-@10976 = ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lord of Waterdeep to show her face. Why don't you step out and adventure yourself?~
+@10976 = ~[PC] Sticking around here sounds about as exciting as watching for a Masked Lady of Waterdeep to show her face. Why don't you step out and adventure yourself?~
 @10977 = ~[PC] Perhaps I will be back to talk to you later.~
 @10978 = ~[C-AW01TL] So, what can I do for you?~
 @10979 = ~[PC] You know, you are dazzlingly beautiful, in a raw, rough kind of way.~
@@ -11385,7 +11385,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10990 = ~[C-AW01TL] Unfortunately, not right now. The last group headed out Dalewards, headed for reinforcement of some campaign or other. Tethyr just closed out recruitment for some squabbles they are having, The 'Fist has their hands full re-training what they already have for guard duty and caravan protection, and you don't look like the Mindgulph's type. Blue Boars... perhaps.~
 @10991 = ~[C-AW01TL] I will keep my ears open for anything available, though. Odd things pop up from time to time, and it might be beneficial to both of us to have some problems solved on a lesser contract. Not every problem needs swatting with a batillion of armed regulars.~
 @10992 = ~[C-AW01TL] Not really. There are few recruitable people left to enroll. Every day we get more mercenary work, what with uprisings and rebellions and needed protection. Whole armies are on the march, and no one is completely sure why.~
-@10993 = ~[C-AW01TL] But in spite of all the action, there is little available save shipping mercenaries off on three or four year contracts. No real short-term or secialized work available, really.~
+@10993 = ~[C-AW01TL] But in spite of all the action, there is little available save shipping mercenaries off on three or four year contracts. No real short-term or specialized work available, really.~
 @10994 = ~[PC] But I will make a great candidate for any work the regular companies can't or won't take, right?~
 @10995 = ~[PC] At least you have a full purse now.~
 @10996 = ~[PC] I thought there could never be too much business.~
@@ -11419,9 +11419,9 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11024 = ~[PC] His interest in women... Should I be worried?~
 @11025 = ~[C-AW01TL] Well, regardless, Aran can be a good man in a fight. He can read and write in more than one language, though he speaks common like the most illiterate trades-way bastard I ever did hear. Translates, too. Done service in at least two mercenary companies; I think he grew up in a trading family. Thinks he's a gift from the gods to every woman, and tries to prove it. He has a room here, second door on your left.~
 @11026 = ~[C-AW01TL] You obviously missed some of his better works. His treatise on campaign tactics and the influence of gibberling horde movement on supply rerouting was quite interesting. Not bad, for a civilian writer.~
-@11027 = ~[C-AW01TL] The only difference between mercenary work and cleaning out stables is where the dung lands. Most of the time, stable work is removing it after the fact. Mercenarie, on the other hand, tend to be more directly under the source as it is expelled.~
+@11027 = ~[C-AW01TL] The only difference between mercenary work and cleaning out stables is where the dung lands. Most of the time, stable work is removing it after the fact. Mercenaries, on the other hand, tend to be more directly under the source as it is expelled.~
 @11028 = ~[C-AW01TL] Why, do you make a habit of watching kobolds mate? I guess everyone has a guilty pleasure.~
-@11029 = ~[C-AW01TL] I worked for a Masked Lord once. Fair contract. Good man. Good pay. So back off on them, or we might have some problmes, you and I.~
+@11029 = ~[C-AW01TL] I worked for a Masked Lord once. Fair contract. Good man. Good pay. So back off on them, or we might have some problems, you and I.~
 @11030 = ~[C-AW01TL] Now, is there anything else, or can I get back to fleecing these poor lads out of all their gambling money?~
 @11031 = ~[PC] Nothing else. I think I'll come back later.~
 @11032 = ~[PC] Is there any short term work available at all? I am short on funds, and looking for pretty much any work, as long as it pays.~
@@ -11488,9 +11488,9 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11093 = ~[C-AW01TL] And you are very alluring yourself, in an "I-am-so-desparate-I-will-proposition-anything-that-moves" kind of way. Go tell it to the 'Fist. I hear some of their recruits are so horny they will sleep with Chill.~
 @11094 = ~[C-AW01TL] Sure thing. You go find us a nice room, strip naked, and tie yourself to the bedpost. I'll be in just as soon as I can. Oh, wait... I made a promise to myself to avoid sleeping with obnoxious idiots. Sorry.~
 @11095 = ~[C-AW01TL] Sure enough. It never rains without a benefit to someone. Lucky you. Except...~
-@11096 = ~[C-AW01TL] Look. You seem to have pleny going on as it is. My employers are not likey to hire someone who causes trouble. Like being involved with mages blowing the crap out of the Promenade. You pobably should look elsewhere for work.~
-@11097 = ~[C-AW01TL] For now, yes. And with all the movement, there will be plenty of accounts to manage and enogh to keep me going for quite some time. But these things are cyclical. Eventually, I am going to be sitting here keeping dozens of out of work mercenaries entertained and occupied, so that they don't tear half of Amn apart out of sheer boredom and cussedness.~
-@11098 = ~[C-AW01TL] Supply and demand, m'<PRO_BOYGIRL>, supply and demand. It is great to have strong demand, but when it outstrips supply, I end up on the pointy end of the spear. So far, that last has been only a figure of speech, because I don't subcontract Chill work. Best decicision of my life.~
+@11096 = ~[C-AW01TL] Look. You seem to have plenty going on as it is. My employers are not likey to hire someone who causes trouble. Like being involved with mages blowing the crap out of the Promenade. You pobably should look elsewhere for work.~
+@11097 = ~[C-AW01TL] For now, yes. And with all the movement, there will be plenty of accounts to manage and enough to keep me going for quite some time. But these things are cyclical. Eventually, I am going to be sitting here keeping dozens of out of work mercenaries entertained and occupied, so that they don't tear half of Amn apart out of sheer boredom and cussedness.~
+@11098 = ~[C-AW01TL] Supply and demand, m'<PRO_BOYGIRL>, supply and demand. It is great to have strong demand, but when it outstrips supply, I end up on the pointy end of the spear. So far, that last has been only a figure of speech, because I don't subcontract Chill work. Best decision of my life.~
 @11099 = ~[C-AW01TL] Hey, what a great idea. I have an even better one. You bend over, and I'll go find something large and spiky to ram up your rear.~
 @11100 = ~[C-AW01TL] Friend, the less you know the better. I know they have a tight grip on magic use, and getting permits from them is worse than trying to get blood from a stone. They don't like me much. The feeling is mutual.~
 @11101 = ~[C-AW01TL] Well, suit yourself. I am not planning on going anywhere, so I will keep a spot warm for you.~
@@ -11512,9 +11512,9 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11117 = ~[C-AW01TL] Occupational hazard. But if you tell me where his body is, I'll pass it on to his family.~
 @11118 = ~[C-AW01TL] He is definitely around here somewhere. He seems to have enough coin to get himself in trouble, but not enough to leave.~
 @11119 = ~[C-AW01TL] Aran sure looks mostly dead, there. He doesn't have revivification insurance, if you are after some coin to get him raised. But I'll donate a few tradebars, if you are taking up a collection.~
-@11120 = ~[C-AW01TL] Gerald the Strong? Dom't pay him any attention. He has been upset ever since he found out his last contract badmouthed him to the guild. Aparently he was prone to demonstrating his strenght, and the repair bills were too high. He will be fine, once he sobers up a bit.~
+@11120 = ~[C-AW01TL] Gerald the Strong? Don't pay him any attention. He has been upset ever since he found out his last contract badmouthed him to the guild. Apparently he was prone to demonstrating his strength, and the repair bills were too high. He will be fine, once he sobers up a bit.~
 @11121 = ~[C-AW01TL] Cheris Nothar, or Nothrar, or something. Between the tusks and the accent, I never can make out what she is saying. She is a good fighter, though a bit young and prone to outbursts. She is resting up for her next contract. I think it is intelligence work for the Mindgulph. I don't know why they don't subcontract to the Thieve's Guild.~
-@11122 = ~[C-AW01TL] Kavain? He is under contract, and not happy about the whole thing. But he has to do the job. I told him it was a bad idea signing up for an employer without checking who they really work for. I hope he can square things with his god, or there will e some serious repercussions.~
+@11122 = ~[C-AW01TL] Kavain? He is under contract, and not happy about the whole thing. But he has to do the job. I told him it was a bad idea signing up for an employer without checking who they really work for. I hope he can square things with his god, or there will be some serious repercussions.~
 @11123 = ~[C-AW01TL] I know Orrin, the owner of this place, does trading in gems and jewelry. I have heard he even has decent stock if you have lots of coin, or do him a favor or two. But as for weapons trainers, not really. Unless you count Aran.~
 @11124 = ~[C-AW01TL] I make a decent living coordinating hires for mercenaries, nothing else. If you want a matchmaker, find someone else.~
 @11125 = ~[C-AW01TL] Gods, another one. Look, boyo, you are kind of cute, but business is business. Keep all that sweet talk for the next drunken half-orc female who wanders by. Now, on the subject of business...~
@@ -11664,7 +11664,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11269 = ~[ARAN] Currently, we be fightin' mad at each other, or so it seems.~
 @11270 = ~[ARAN] You done told me to quit makin' all sorts o' random comments.~
 @11271 = ~[ARAN] You done told me I should be leavin' Anomen alone an' not fightin' wi' him.~
-@11272 = ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think even be friends. Why do you be askin'?~
+@11272 = ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? I think we even be friends. Why do you be askin'?~
 @11273 = ~[ARAN] I seem to not have ticked you off to th' point where you drop me for good, eh? You done told me no sellsword has th' right to be called "friend". Why do you be askin'?~
 @11274 = ~[ARAN] You haven't told me to not try a bit o' sparkin' from time to time. Then again, you done got a huge amount to think about lately. I think we be friends, more's th' pity. Why do you be askin'?~
 @11275 = ~[ARAN] We might rightly be called 'involved', I think. I am not sure what you get out o' th' deal, but I'm not rightly complainin'. Mayhap I can coax you into a kiss or two someday. Why do you be askin'?~
@@ -12216,7 +12216,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11821 = ~[PC] I was teasing you, Aran. I don't think you have as much to worry about as I did, though.~
 @11822 = ~[PC] What a pity. I would make such a good little sister for you. I would have you worrying about all sorts of interesting things, most of whom are poisonous, dangerous, undead, or all three combined.~
 @11823 = ~[PC] That is a good thing, as I think some of the things we might feel about each other might be considered inappropriate. Wait, that was a poor choice of words...~
-@11824 = ~[ARAN] Hey, that be unfair! That were an accident, by Helm's Fist. I just didn't' see you there. I done apologized, too! But on th' dangers we face, compared to the usual, well...~
+@11824 = ~[ARAN] Hey, that be unfair! That were an accident, by Helm's Fist. I just didn't see you there. I done apologized, too! But on th' dangers we face, compared to the usual, well...~
 @11825 = ~[ARAN] No, not too personal. I think I am right close to her. I write to her often enough.~
 @11826 = ~[PC] I don't mean to pry into your business. It is just... well, I have a had time balancing what is right, and what is right for Imoen.~
 @11827 = ~[PC] It sounds like you have found a way to balance both being part of her life and following our cause.~
