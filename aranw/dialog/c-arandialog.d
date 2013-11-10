@@ -14953,7 +14953,7 @@ IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a1350
   IF ~RandomNum(36,3)~ THEN GOTO a1413
   IF ~RandomNum(36,2)~ THEN GOTO a1414
   IF ~RandomNum(36,1)~ THEN GOTO a1415
-  IF ~AreaType(OUTDOOR) TimeOfDay(NIGHT) Global("c-aranstarflirt","GLOBAL",0)~ THEN GOTO a1423 /* c-aranstarflirt */
+  IF ~AreaType(OUTDOOR) OR(6) Time(22) Time(23) Time(0) Time(1) Time(2) Time(3) Global("c-aranstarflirt","GLOBAL",0)~ THEN GOTO a1423 /* c-aranstarflirt */
   IF ~AreaType(CITY) Global("c-arancityflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arancityflirt","GLOBAL",1)~ GOTO a1424 /* c-arancityflirt */
   IF ~AreaType(DUNGEON) Global("c-arandungeonflirt","GLOBAL",0)~ THEN DO ~SetGlobal("c-arandungeonflirt","GLOBAL",1)~ GOTO a1427  /* c-arandungeonflirt */
   /* Jewelry Light Flirt Additions:  */

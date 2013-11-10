@@ -901,7 +901,7 @@ Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may no
 @673  = ~[ARAN] Yasraena. Nothin'. I got naught. I'll have to come back to her another day, eh~
 @674  = ~[ARAN] Zaiya. You gotta be jokin', right? This one's a mite harder than most. Zany don't quite do th' job. Nope, I got nothin'. Wait a second... Zealous Zaiya. I think I might be gettin' the hang o' this.~
 @675  = ~[ARAN] Now then, miss foxy lass, Moddy. How about Munchin' Moddie, on account o' her love for nice things what's to eat. No, I think it might be Vivacious Vixen, as she sure does keep close to her animal instincts.~
-@676  = ~[ARAN] Able Ajantis. That don't catch th' whole honor an' knightly side o' things, but th' buy can swing a sword right fine, he can.~
+@676  = ~[ARAN] Able Ajantis. That don't catch th' whole honor an' knightly side o' things, but th' boy can swing a sword right fine, he can.~
 @677  = ~[ARAN] Egregious Eldoth. Do that be a word, 'egregious'? I'd say 'slimy twisted bastard Eldoth', but it don't rightly rhyme, now, do it.~
 @678  = ~[ARAN] Garrulous Garrick. That boy just don't rightly know when to shut up an' listen, eh? Why, Th' other day, we were just tryin' to get a good set o words in, an'...~
 @679  = ~[HAERDALIS] The falcon is circling far from the nest...~
@@ -3364,8 +3364,8 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @3104 = ~[PC] (Lean your head forward and fold both hands against his chest.)~
 @3105 = ~[PC] You... you are scaring me, a little.~
 @3106 = ~[PC] Am I scaring you, a little?~
-@3107 = ~[PC] (Loop one leg around his, and twist quickly, bringing yourself under him as you fall to the ground.)~
-@3108 = ~[PC] (Loop one leg around his, and twist quickly, bringing yourself on top of him as you fall to the ground.)~
+@3107 = ~[PC] (Twist quickly, bringing yourself under him as you fall to the ground.)~
+@3108 = ~[PC] (Twist quickly, bringing yourself on top of him as you fall to the ground.)~
 @3109 = ~[PC] (Bite his lips fiercely, tasting warm blood as your teeth clash together in mounting desire.)~
 @3110 = ~[ARAN] (His hands are insistent, pulling at the cloth barring your bare skin from touching his.)~
 @3111 = ~[PC] I... I can't do this. You need to go. Now.~
@@ -5746,7 +5746,7 @@ Yours faithfully, Aran.~
 @5452 = ~[ARAN] (There is a tight moment where your fingers are twisted in the laces, but quite suddenly they give way, and your hand is moving along something very warm and very hard.)~
 @5453 = ~[ARAN] Hey. Gods... what do you think you be doin'?~
 @5454 = ~[PC] No one can see anything, Aran. Just relax and help me concentrate on the task at hand. Or should I say, in my hand?~
-@5455 = ~[PC] I thought I would try some other kind entertainment. (Adjust yourself so that the contents of the codpiece are nestled between your thighs, with nothing between you to bar the touch.)~
+@5455 = ~[PC] I thought I would try some other kind of entertainment. (Adjust yourself so that the contents of the codpiece are nestled between your thighs, with nothing between you to bar the touch.)~
 @5456 = ~[PC] (Adjust yourself so that the contents of the codpiece are nestled between your thighs, with nothing between you to bar the touch.)~
 @5457 = ~[PC] Oh, nothing. Just exploring.~
 @5458 = ~[PC] I was trying to figure out what kept prodding my back. Now that I have found the culprit, I think I have better things to do. Have a good night, Aran. Sweet dreams.~
