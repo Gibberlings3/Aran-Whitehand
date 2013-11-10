@@ -1204,7 +1204,7 @@ Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may no
 @976  = ~[PC] A random scrap of parchment lying around has no owner. I think I shall read it aloud, though, since you seem so worried about me picking it up...~
 @977  = ~[PC] You should keep a closer eye on your belongings. Your punishment for carelessness is that I shall read it aloud.~
 @978  = ~[ARAN] Thank you right kindly. You didn't read it, now, did you?~
-@979  = ~[PC] Unfortunately, yes. The imagery was quite... detailed. one might even say explicit.~
+@979  = ~[PC] Unfortunately, yes. The imagery was quite... detailed. One might even say explicit.~
 @980  = ~[PC] Not yet. But anything left out in public is mine. Why? What is on it?~
 @981  = ~[PC] Of course not. Though if it is private, I think you should be more careful about how you dispose of things like this in the future.~
 @982  = ~[ARAN] Nothin' much. Just some scrapped practice writin'. Nothin' there, no <PRO_SIRMAAM>, nothin' to see.~
@@ -7505,8 +7505,8 @@ Yours faithfully, Aran.~
 @7211 = ~[PC] I am serious. Stop right now.~
 @7212 = ~[PC] Aran... oh. That feels very nice.~
 @7213 = ~[PC] (Bite your lip and lean forward, allowing him more access to your charms.)~
-@7214 = ~[ARAN] (His lips move on you, exploring and teasing, until they find your intimacy. With gentle tongue he guides your pleasure, stopping only when it has been met.)~
-@7215 = ~[ARAN] Now, I do think those sound you just made be reward enough, m' lady. I'd do more, but time be short an' we'd best get back right quick.~
+@7214 = ~[ARAN] (His lips move on you, exploring and teasing, until they find your intimacy. With a gentle tongue he guides your pleasure, stopping only when it has been met.)~
+@7215 = ~[ARAN] Now, I do think those sounds you just made be reward enough, m' lady. I'd do more, but time be short an' we'd best get back right quick.~
 @7216 = ~[ARAN] Sorry. I misjudged. I thought you would find it right playful an' sexy, mayhap fun. I'll bugger off now.~
 @7217 = ~[ARAN] (Aran's quick steps mark his movements as he paces back an forth. His back is to you as you approach him. You are alone together for what brief time you can find.)~
 @7218 = ~[PC] So, what did my shining knight bring me?~
@@ -10859,9 +10859,9 @@ I told Aran Whitehand to wait for me right where he currently stands. Hopefully,
 @10492 = ~[ARAN] I'd be right happy to leave here wi' you, you know. Action o' any kind beats sittin' around.~
 @10493 = ~[PC] Sure. Join me.~
 @10494 = ~[PC] Just checking on how you are doing. Wait here.~
-@10495 = ~Whitehand Left for Waterdeep
+@10495 = ~Whitehand Seems Interested in Me
 
-I sent Aran Whitehand away permanently. He decided to head north to Waterdeep to pursue his own goals. I think that is for the best.~
+I am not sure how I feel about it yet, but Aran seems to be watching me with more than just friendship in his glances. I will have to decide if this is something I will pursue.~
 @10496 = ~[PC] Wait here. And try not to get into any trouble. I have eyes and ears everywhere.~
 @10497 = ~Whitehand Waits
 
@@ -13527,8 +13527,12 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @13132 = ~Aye, now, that scroll o' Contagion be finished, if you want it.~
 @13133 = ~Aye, now, that scroll o' Farsight be finished, if you want it.~
 @13134 = ~Aye, now, that scroll o' Sunfire be finished, if you want it.~
-// @13135 = ~choseninitialrom~ REUSE THIS
-// @13136 = ~choseninitialflirt~ REUSE THIS
+@13135 = ~Whitehand Discouraged
+
+Aran seems to have dropped any potential romance with me. I will need to watch him and make sure he understands what I want out of our relationship.~ 
+@13136 = ~Whitehand Encouraged
+
+I told Aran that we should be more than friends. He seemed to be pleased with the news. I will need to watch him and make sure he understands what I want out of our relationship.~ 
 @13137 = ~*BUUURRPPPP*~
 @13138 = ~Control yourself, Whitehand. That is churlish behavior.~
 @13139 = ~Sir, Yes Sir. No more loud burpin', Sir.~
@@ -13543,4 +13547,5 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 A sellsword named Aran has joined me. He seems to have had some experience, so perhaps he will be useful. I met him at an inn for mercenaries, The Broken Sword, on the Promenade.~
 @13147 = ~The Broken Sword
 
-The Broken Blade turned out to be a productive visit. It looks like there are several sources of information there, and I picked up a mercenary named Aran Whitehand as well. He seems to have some ties with an innkeeper, a mercenary recruiter, and the barmaid. I may investigate this place again.~
+The Broken Sword Inn turned out to be a productive visit. It looks like there are several sources of information there, and I picked up a mercenary named Aran Whitehand as well. He seems to have some ties with an innkeeper, a mercenary recruiter named Teldra, and the barmaid. I may investigate this place again.~
+@13148  = ~[ARAN] Erudite Edwin? Egregious Edwin? Mayhap I'd better leave him out o' this, on account o' his sense o' humor runs more to th' pain side o' things, I expect..~

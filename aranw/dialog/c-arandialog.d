@@ -1284,6 +1284,7 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("Valygar")~ THEN @601
 == C-ARANB IF ~InParty("Anomen")~ THEN @602
 == C-ARANB IF ~InParty("Viconia")~ THEN @603
+== C-ARANB IF ~InParty("Edwin")~ THEN @13148
 == C-ARANB IF ~InParty("Yoshimo")~ THEN @604
 == BHAERDA IF ~InParty("Yoshimo")~ THEN @605
 == C-ARANB IF ~InParty("Imoen2")~ THEN @606
@@ -25759,8 +25760,7 @@ EraseJournalEntry(@1720)~ + a4297
   + ~Global("c-aranjoinupagain","GLOBAL",8)~ + @10494 + a4303
   + ~Global("c-aranjoinupagain","GLOBAL",9)~ + @10494 + a4304
   + ~Global("c-aranjoinupagain","GLOBAL",10)~ + @10494 + a4305
-
-  ++ @10409 SOLVED_JOURNAL @10495 + a23
+  ++ @10409 SOLVED_JOURNAL @1705 + a23
   + ~Gender(Player1,FEMALE)~ + @10411 SOLVED_JOURNAL @1706 + a2320
   + ~Gender(Player1,MALE)~ + @10411 SOLVED_JOURNAL @1706 + a24
   + ~Global("c-aranwaiting","GLOBAL",0) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 UNSOLVED_JOURNAL @10482 + a25
@@ -25772,30 +25772,18 @@ EraseJournalEntry(@1720)~ + a4297
   + ~Global("c-aranwaiting","GLOBAL",6) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 UNSOLVED_JOURNAL @10482 + a31
   + ~Global("c-aranwaiting","GLOBAL",7) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10412 UNSOLVED_JOURNAL @10482 + a32
   + ~Global("c-aranwaiting","GLOBAL",8) !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("C-AR01") !AreaCheck("AR0313") !AreaCheck("AR0406") !AreaCheck("AR0509") !AreaCheck("AR0522") !AreaCheck("AR0704") !AreaCheck("AR1105") !AreaCheck("AR1602") !AreaCheck("AR2010") !AreaCheck("AR0709") !AreaCheck("AR0513") !AreaCheck("AR0021") !AreaCheck("AR1602")~ + @10496 UNSOLVED_JOURNAL @10482 + a2718
-  + ~AreaCheck("C-AR01")~ + @10412
-  UNSOLVED_JOURNAL @10497 + a4275
-  + ~AreaCheck("AR0313")~ + @10412
-  UNSOLVED_JOURNAL @10498 + a4276
-  + ~AreaCheck("AR0406")~ + @10412
-  UNSOLVED_JOURNAL @10499 + a4277
-  + ~AreaCheck("AR0509")~ + @10412
-  UNSOLVED_JOURNAL @10500 + a4278
-  + ~AreaCheck("AR0522")~ + @10412
-  UNSOLVED_JOURNAL @10501 + a4279
-  + ~AreaCheck("AR0704")~ + @10412
-  UNSOLVED_JOURNAL @10502 + a4280
-  + ~AreaCheck("AR1105")~ + @10412
-  UNSOLVED_JOURNAL @10503 + a4281
-  + ~AreaCheck("AR1602")~ + @10412
-  UNSOLVED_JOURNAL @10504 + a4282
-  + ~AreaCheck("AR2010")~ + @10412
-  UNSOLVED_JOURNAL @10505 + a4283
-  + ~AreaCheck("AR0709")~ + @10412
-  UNSOLVED_JOURNAL @10506 + a4284
-  + ~AreaCheck("AR0513")~ + @10412
-  UNSOLVED_JOURNAL @10507 + a4285
-  + ~AreaCheck("AR0021")~ + @10412
-  UNSOLVED_JOURNAL @10508 + a4286
+  + ~AreaCheck("C-AR01")~ + @10412 UNSOLVED_JOURNAL @10497 + a4275
+  + ~AreaCheck("AR0313")~ + @10412 UNSOLVED_JOURNAL @10498 + a4276
+  + ~AreaCheck("AR0406")~ + @10412 UNSOLVED_JOURNAL @10499 + a4277
+  + ~AreaCheck("AR0509")~ + @10412 UNSOLVED_JOURNAL @10500 + a4278
+  + ~AreaCheck("AR0522")~ + @10412 UNSOLVED_JOURNAL @10501 + a4279
+  + ~AreaCheck("AR0704")~ + @10412 UNSOLVED_JOURNAL @10502 + a4280
+  + ~AreaCheck("AR1105")~ + @10412 UNSOLVED_JOURNAL @10503 + a4281
+  + ~AreaCheck("AR1602")~ + @10412 UNSOLVED_JOURNAL @10504 + a4282
+  + ~AreaCheck("AR2010")~ + @10412 UNSOLVED_JOURNAL @10505 + a4283
+  + ~AreaCheck("AR0709")~ + @10412 UNSOLVED_JOURNAL @10506 + a4284
+  + ~AreaCheck("AR0513")~ + @10412 UNSOLVED_JOURNAL @10507 + a4285
+  + ~AreaCheck("AR0021")~ + @10412 UNSOLVED_JOURNAL @10508 + a4286
   + ~AreaCheck("AR1602")~ + @10412 UNSOLVED_JOURNAL @10509 + a4287
   + ~InParty(Player4) Gender(Player4,FEMALE) !Name("c-aran",Player4)~ + @10510 + a2713
   + ~InParty(Player5) Gender(Player5,FEMALE) !Name("c-aran",Player5)~ + @10511 + a2713
