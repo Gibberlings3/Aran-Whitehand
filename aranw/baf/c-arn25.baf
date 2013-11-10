@@ -30,10 +30,9 @@ THEN
 		StartDialogueNoSet(Player1)
 END
 
-
 /* ToB	RE */
 
-/* Romantic Encounters: Cambion	*/
+/* Romantic Encounters: Cambion	
 IF
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -46,8 +45,8 @@ THEN
 		DisplayStringHead(Myself,@13141)
 		SetGlobal("c-arnRECambion","LOCALS",2)
 END
-
-/* Romantic Encounters: Cambion Shutdown */
+*/
+/* Romantic Encounters: Cambion Shutdown
 IF
 	InParty(Myself)
 	Global("RE_CambionFlirt","GLOBAL",1)
@@ -58,7 +57,8 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnRECambion","LOCALS",2)
 END
-
+ */
+ 
 /* Romantic Encounters: Cyric	*/
 IF
 	InParty(Myself)
@@ -86,7 +86,7 @@ THEN
 		SetGlobal("c-arnRELaranToB","LOCALS",2)
 END
 
-/* Romantic Encounters: Viekang	*/
+/* Romantic Encounters: Viekang	
 IF
 	InParty(Myself)
 	Global("RE_ViekangFlirt","GLOBAL",1)
@@ -97,6 +97,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arnREViekang","LOCALS",9)
 END
+*/
 
 /* Romantic Encounters: Sarevok	*/
 IF
