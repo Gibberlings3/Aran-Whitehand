@@ -2755,7 +2755,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2495 = ~[PC] I think I have had enough physical combat with our daily routine of finding things, talking to them, and then killing them.~
 @2496 = ~[ARAN] Hey, now, none o' that monk stuff here. I know you can clobber a man barehanded, on account o' I seen you do it. You pick up a weapon, fair an' square, an' fight me <PRO_MANWOMAN> to man, th' way civilized folk do!~
 @2497 = ~[PC] Well, if you insist. But we should use practice weapons to make sure we don't have any accidents.~
-@2498 = ~[PC] It will do no harm to indulge you, aran. If it will help you find your center, then I shall assist you. Where shall we spar?~
+@2498 = ~[PC] It will do no harm to indulge you, Aran. If it will help you find your center, then I shall assist you. Where shall we spar?~
 @2499 = ~[PC] I thought that you had given up weaponry when you became a monk, Aran. But I guess it will do no harm to indulge in some memories for you.~
 @2500 = ~[PC] My beliefs will not allow that sort of weapons practice even in mock combat, Aran. perhaps you should find someone else to take as a sparring partner.~
 @2501 = ~[ARAN] Chauntea's Rosy Cheeks, where do you think be a safe an' protected place anywhere on th' face o' Toril? Here be just as good as anywhere when your adversaries include the pack o' powerful beings what like to mess wi' you. Come on, a spar won't hurt none. Well, it might just sting a mite bit.~
@@ -4785,7 +4785,7 @@ Yes, I know I have a double standard, but I have always been very interested in 
 I trust you to make the right choice for you, of course. I would send for you to join us for a little bit, so you could get away and think, but I am afraid things here have gotten very difficult. Our adversaries are the stiff of legends and folktales, only they turn out to be real. Usually, they also turn out to be able to crush me into goo. No matter what is going on there, things are worse here. Do not worry for me, though. I have always had an eye out for trouble, and I think I enjoy feeling part of something that will make a difference.
 Yours faithfully, Aran.~
 @4493 = ~[ARAN] (Unfortunately, Aran has begun writing in a language or cipher you cannot understand. You will have to ask him to read the letter to you.)~
-@4494 = ~[ARAN] Right, then. I blighted well thought a letter to my sister were naught buy my own business. You want somethin' translated, I'll do it. I don't give a rat's arse if you want to poke an' pry, but th' inference be that you don't trust me. Lovitar's Lash, that hurts a lad.~
+@4494 = ~[ARAN] Right, then. I blighted well thought a letter to my sister were naught but my own business. You want somethin' translated, I'll do it. I don't give a rat's arse if you want to poke an' pry, but th' inference be that you don't trust me. Lovitar's Lash, that hurts a lad.~
 @4495 = ~[ARAN] I would, but other than rufflin' my feathers, there be no real harm done. There be precious little what be private in a group like this. If you want to know what I be writin' to my sister, you don't have to poke about. You could just ask, eh?~
 @4496 = ~[ARAN] I thought my gear would be offerin' some privacy, but then again there be naught in th' way o' that in a group like this. If you want to know what I be writin' to my sister, you don't have to poke about. You could just ask, eh?~
 @4497 = ~[ARAN] I would get right snippy wi' whomever were messin' about, but other than rufflin' my feathers, there be no real harm done. There be precious little what be private in a group like this. If anyone wants to know what I be writin' to my sister, they don't have to poke about. They could just ask, eh?~
@@ -5678,7 +5678,7 @@ Yours faithfully, Aran.~
 @5384 = ~[ARAN] Well, don't blame a lad for tryin', eh?~
 @5385 = ~[ARAN] Aye, there be a bit more to it than first appears, eh? Here, let me help. Now, take th' quill, like this... dip it here. No, not that far down. We want naught in th' way o' splatter, just a fine line's worth. Good. Now, let me take your hand... an' then it be a circular motion, like this...~
 @5386 = ~[ARAN] (His breath whispers warmth on your neck as he leans against your back, guiding your hand over the rough parchment.)~
-@5387 = ~[ARAN] (His other hand seems much more interested in other pursuits, as it gently parts your robe higher than the knee, and begins exploring.)~
+@5387 = ~[ARAN] (His other hand seems much more interested in other pursuits, as it gently strokes your thigh higher than the knee, and begins exploring.)~
 @5388 = ~[PC] (You lean your head back against his shoulder, moving the quill gently across the page as his fingertips trace a copy of your motions on your inner thigh.)~
 @5389 = ~[PC] (You firmly move his hand to your waist, and hold it there while the quill scratches along the parchment.)~
 @5390 = ~[PC] Aran. Your hand. Move it or lose it.~
@@ -5806,7 +5806,7 @@ Yours faithfully, Aran.~
 @5512 = ~[PC] Hey. I do what I want, but you can't. I didn't say you could touch me like that. Cut it out. (Drive your fingernails sharply into the back of his hand.)~
 @5513 = ~[PC] Sorry. I will stop.~
 @5514 = ~[ARAN] I'd blighted well be able to concentrate better if your hand weren't so warm. Somehow, this be less than relaxin'.~
-@5515 = ~[PC] I... hey, friends can just cuddle, right? I mean... there is no harm in just working together. I mean, petting your leg like this is no more than petting a dog, right?~
+@5515 = ~[PC] Hey, friends can just cuddle, right? I mean... there is no harm in just working together. I mean, petting your leg like this is no more than petting a dog, right?~
 @5516 = ~[PC] This is good. Well, this far is good, and no more.~
 @5517 = ~[PC] I am having trouble concentrating, too. But this is nice.~
 @5518 = ~[PC] You could kiss my neck. I wouldn't mind.~
@@ -13549,3 +13549,10 @@ A sellsword named Aran has joined me. He seems to have had some experience, so p
 
 The Broken Sword Inn turned out to be a productive visit. It looks like there are several sources of information there, and I picked up a mercenary named Aran Whitehand as well. He seems to have some ties with an innkeeper, a mercenary recruiter named Teldra, and the barmaid. I may investigate this place again.~
 @13148  = ~[ARAN] Erudite Edwin? Egregious Edwin? Mayhap I'd better leave him out o' this, on account o' his sense o' humor runs more to th' pain side o' things, I expect..~
+@13149  = ~[PC] Sorry, but I can't help myself sometimes. Ah, Aran, don't be mad but...perhaps you want this book back, too. And perhaps this comb...~ 
+@13150  = ~[PC] Hey. Turnabout is fair play. Didn't I see you poking about in my pack a few days ago?~ 
+@13151  = ~[PC] Fine. be that way. Go sulk.~ 
+@13152  = ~[PC] I'm sorry, Aran. I won't do it again.~ 
+@13153  = ~[ARAN] Once a sticky-fingered inquisitive little thief, always one, eh? Right. Only don't take naught in th' way o' my spices. Nor these letters, eh?~
+@13154  = ~[ARAN] Right. Well, no harm done, but that be a mean thing to do to a lad, eh? My space, my things.~
+@13155  = ~[ARAN] That were different. I were... I were... I were doin' th' laundry. Right. I were doin' th' laundry.~

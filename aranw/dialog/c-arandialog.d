@@ -10570,7 +10570,18 @@ IF ~~ a3230
 END
 
 /*  Inked Or Stolen Letters Replies */
-IF ~~ a2909 SAY @4494 IF ~~ THEN EXIT END
+IF ~~ a2909 SAY @4494 
+  + ~Class(Player1,THIEF_ALL)~ + @13149 + a2909_thief
+  + ~!Class(Player1,THIEF_ALL)~ + @13149 + a2909_notthief
+  ++ @13150 + a2909_arancaught
+  ++ @13151 + a2909_notthief
+  ++ @13152 + a2909_notthief
+END
+
+/* FINDME - replace with sequential state numbers */
+IF ~~ a2909_thief SAY @13153 IF ~~ THEN EXIT END
+IF ~~ a2909_notthief SAY @13154 IF ~~ THEN EXIT END
+IF ~~ a2909_arancaught SAY @13155 IF ~~ THEN EXIT END
 IF ~~ a2911 SAY @4495 IF ~~ THEN EXIT END
 IF ~~ a4337 SAY @4496 IF ~~ THEN EXIT END
 IF ~~ a4338 SAY @4497 IF ~~ THEN EXIT END
