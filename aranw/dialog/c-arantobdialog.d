@@ -1267,6 +1267,37 @@ IF ~Global("c-aranfriendtob","GLOBAL",7)~ THEN BEGIN a4551
 END
 /* ToB FriendTalk 4 : "Digression" : goto followup */
 
+/* ToB FriendTalk 5 : "Worrying" */
+
+IF ~Global("c-aranfriendtob","GLOBAL",9)~ THEN BEGIN a5055
+  SAY @13156
+  ++ @4589 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5056
+  ++ @13157 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5057
+  ++ @13158 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5058
+  ++ @13159 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5059
+  + ~RandomNum(5,5)~ + @12637 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3173 /* c-aranshutup40 */
+  + ~RandomNum(5,4)~ + @11609 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3174 /* c-aranshutup41 */
+  + ~RandomNum(5,3)~ + @13160 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3175 /* c-aranshutup42 */
+  + ~RandomNum(5,2)~ + @13161 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3176 /* c-aranshutup43 */
+  + ~RandomNum(5,1)~ + @13162 DO ~SetGlobal("c-aranfriendtob","GLOBAL",10) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3177 /* c-aranshutup44 */
+END
+
+/* ToB FriendTalk 5 : "Worrying" : goto followup5 */
+
+/* ToB FriendTalk 6 : "Fear and Courage" */
+IF ~Global("c-aranfriendtob","GLOBAL",11)~ THEN BEGIN a5064
+  SAY @13202
+  ++ @13203 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5072
+  ++ @13204 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5065
+  ++ @13205 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5066
+  ++ @13206 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5067
+  ++ @13207 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5068
+  ++ @13208 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5069
+  ++ @13209 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5070
+  ++ @13210 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5071
+  ++ @13211 DO ~SetGlobal("c-aranfriendtob","GLOBAL",12) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5073
+END
+/* ToB FriendTalk 6 : "Fear and Courage" : goto followup6 */
 
 /* ToB Love Talks */
 
@@ -2636,6 +2667,365 @@ END
 
 IF ~~ a4565 SAY @12190 IF ~~ THEN EXIT END
 IF ~~ a4566 SAY @12191 IF ~~ THEN EXIT END
+
+/* ToB FriendTalk 5 : "Worrying"  : followup5 */
+IF ~~ a5056
+  SAY @13163
+  + ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ + @13164 + a5060
+  + ~Gender(Player1,FEMALE) OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + @13164 + a5060
+  + ~Gender(Player1,MALE)~ + @13165 + a5063
+  ++ @4589 + a5056
+  ++ @13166 + a5063
+  ++ @13167 + a5062
+  ++ @13168 + a5062
+  + ~RandomNum(5,5)~ + @13169 + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + @11609 + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + @13170 + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + @12630 + a3181 /* c-aranshutup48 */
+  + ~RandomNum(5,1)~ + @13171 + a3182 /* c-aranshutup49 */
+END
+
+IF ~~ a5057
+  SAY @13172
+  ++ @13173 + a5056
+  ++ @13166 + a5063
+  ++ @13167 + a5062
+  ++ @13168 + a5062
+  ++ @13174 + a5058
+  + ~RandomNum(5,5)~ + @13169 + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + @11609 + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + @13175 + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + @12630 + a3181 /* c-aranshutup48 */
+  + ~RandomNum(5,1)~ + @13171 + a3182 /* c-aranshutup49 */
+END
+
+IF ~~ a5058
+  SAY @13176
+  ++ @13177 + a5063
+  ++ @13167 + a5062
+  ++ @13168 + a5062
+  + ~OR(27) AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @13178 + a5063
+  + ~AreaCheck("AR4500")~ + @13179 + a5063
+  + ~AreaCheck("AR5000")~ + @13180 + a5063
+  + ~AreaCheck("AR5003")~ + @13181 + a5063
+  + ~AreaCheck("AR5501")~ + @13182 + a5063
+  + ~AreaCheck("AR5004")~ + @13183 + a5063
+  + ~AreaCheck("AR5006") AreaCheck("AR5016")~ + @13184 + a5063
+  + ~AreaCheck("AR5005") AreaCheck("AR5015")~ + @13185 + a5063
+  + ~AreaCheck("AR5013")~ + @13186 + a5063
+  + ~OR(9) AreaCheck("AR6102") AreaCheck("AR6103") AreaCheck("AR6104") AreaCheck("AR6105") AreaCheck("AR6106") AreaCheck("AR6107") AreaCheck("AR6108") AreaCheck("AR6109") AreaCheck("AR6110")~ + @13187 + a5063
+  + ~AreaCheck("AR5509")~ + @13188 + a5063
+  + ~OR(4) AreaCheck("AR5200") AreaCheck("AR5201") AreaCheck("AR5203") AreaCheck("AR5204")~ + @13189 + a5063
+  ++ @13190 + a5063
+END
+
+IF ~~ a5059
+  SAY @13191
+  + ~RandomNum(5,5)~ + @13192 + a3178 /* c-aranshutup45 */
+  + ~RandomNum(5,4)~ + @11609 + a3179 /* c-aranshutup46 */
+  + ~RandomNum(5,3)~ + @13175 + a3180 /* c-aranshutup47 */
+  + ~RandomNum(5,2)~ + @12630 + a3181 /* c-aranshutup48 */
+  + ~OR(27) AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @13178 + a5063
+  + ~AreaCheck("AR4500")~ + @13179 + a5063
+  + ~AreaCheck("AR5000")~ + @13180 + a5063
+  + ~AreaCheck("AR5003")~ + @13181 + a5063
+  + ~AreaCheck("AR5501")~ + @13182 + a5063
+  + ~AreaCheck("AR5004")~ + @13183 + a5063
+  + ~AreaCheck("AR5006") AreaCheck("AR5016")~ + @13184 + a5063
+  + ~AreaCheck("AR5005") AreaCheck("AR5015")~ + @13185 + a5063
+  + ~AreaCheck("AR5013")~ + @13186 + a5063
+  + ~OR(9) AreaCheck("AR6102") AreaCheck("AR6103") AreaCheck("AR6104") AreaCheck("AR6105") AreaCheck("AR6106") AreaCheck("AR6107") AreaCheck("AR6108") AreaCheck("AR6109") AreaCheck("AR6110")~ + @13187 + a5063
+  + ~AreaCheck("AR5509")~ + @13188 + a5063
+  + ~OR(4) AreaCheck("AR5200") AreaCheck("AR5201") AreaCheck("AR5203") AreaCheck("AR5204")~ + @13189 + a5063
+  ++ @13193 + a5062
+  ++ @13177 + a5063
+  ++ @13167 + a5062
+  ++ @13168 + a5062
+END
+
+IF ~~ a5060
+  SAY @13194
+  IF ~!Global("c-aranrom","GLOBAL",1) !Global("c-aranrom","GLOBAL",2)~ THEN GOTO a5057
+  IF ~OR(2) Global("c-aranrom","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ THEN GOTO a5061
+END
+
+IF ~~ a5061
+  SAY @13195
+  IF ~~ THEN GOTO a5057
+END
+
+IF ~~ a5062
+  SAY @13196
+  ++ @13197 + a5063
+  ++ @13198 + a5063
+  ++ @13190 + a5063
+  ++ @13199 + a5063
+  ++ @13200 + a5063
+END
+
+IF ~~ a5063
+  SAY @13201
+  IF ~~ THEN EXIT
+END
+
+/* ToB FriendTalk 6 : "Fear and Courage" : followup6 */
+IF ~~ a5065
+  SAY @13212
+  ++ @13213 + a5073
+  ++ @13214 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5066
+  SAY @13217
+  ++ @13218 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5067
+  SAY @13222
+  ++ @13223 + a5082
+  ++ @13224 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5068
+  SAY @13225
+  ++ @13226 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5069
+  SAY @13227
+  ++ @13228 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5070
+  SAY @13229
+  ++ @13218 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5071
+  SAY @13230
+  = @13231
+  ++ @13232 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5072
+  SAY @13233
+  ++ @13234 + a5082
+  ++ @13219 + a5082
+  ++ @13220 + a5073
+  ++ @13221 + a5072
+  + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @13215 + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @13216 + a3187 /* c-aranshutup54 */
+END
+
+IF ~~ a5073
+  SAY @13235
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationGT(Player1,16)~ + @13236 + a5094 //  hard to believe you are real billy joel blonde over blue
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationLT(Player1,17) ReputationGT(Player1,7)~ + @13236 + a5074 // scary but fun dangerous undertow lady gaga bad romance
+  + ~Gender(Player1,FEMALE) Global("c-aranrom","GLOBAL",2) ReputationLT(Player1,8)~ + @13236 + a5075 // scary and self-destructive bruno mars grenade
+  + ~Gender(Player1,FEMALE) !Global("c-aranrom","GLOBAL",2)~ + @13236 + a5076 // so much potential, so much prettiness and strength katy perry firework
+  + ~Gender(Player1,MALE)~ + @13236 + a5077 // lead follow get out of the way... I always follow but you don't have all the answers
+  ++ @13237 + a5078
+  ++ @13238 + a5079
+  + ~InParty(Player2) !Name("c-aran",PLAYER2)~ + @13239 + a5081
+  + ~InParty(Player3) !Name("c-aran",PLAYER3)~ + @13240 + a5081
+  + ~InParty(Player4) !Name("c-aran",PLAYER4)~ + @13241 + a5081
+  + ~InParty(Player5) !Name("c-aran",PLAYER5)~ + @13242 + a5081
+  + ~InParty(Player6) !Name("c-aran",PLAYER6)~ + @13243 + a5081
+END
+
+IF ~~ a5074
+  SAY @13244
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5075
+  SAY @13245
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5076
+  SAY @13246
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5077
+  SAY @13247
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5078
+  SAY @13248
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5079
+  SAY @13249
+  = @13250
+  ++ @13251 + a5082
+  ++ @13252 + a5080
+  ++ @13253 + a5080
+  ++ @13254 + a5087
+  ++ @13255 + a5083
+END
+ 
+IF ~~ a5080
+  SAY @3601
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5081
+  SAY @13256
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5082
+  SAY @13257
+  ++ @13258 + a5085
+  ++ @13259 + a5086
+  ++ @13260 + a5092
+  ++ @13261 + a5083
+  + ~!InParty("minsc")~ + @13262 + a5091
+  + ~InParty("minsc")~ + @13263 + a5090
+END
+
+IF ~~ a5083
+  SAY @13264
+  ++ @13265 + a5092
+  ++ @13266 + a5084
+  + ~!InParty("minsc")~ + @13262 + a5091
+  + ~InParty("minsc")~ + @13263 + a5090
+END
+
+IF ~~ a5084
+  SAY @13267
+  = @13268
+  ++ @13269 + a5089
+  ++ @13270 + a5089
+  ++ @13271 + a5085
+  ++ @13272 + a5085
+  ++ @13273 + a5092
+  + ~!InParty("minsc")~ + @13274 + a5091
+  + ~InParty("minsc")~ + @13275 + a5090
+END
+
+IF ~~ a5085
+  SAY @13276
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5086
+  SAY @13277
+  IF ~~ THEN GOTO a5087
+END
+
+IF ~~ a5087
+  SAY @13278
+  = @13279
+  ++ @13280 + a5088
+  ++ @13281 + a5093
+  ++ @13282 + a5088
+  ++ @13283 + a5088
+  ++ @13284 + a5088
+  ++ @13285 + a5088
+END
+
+IF ~~ a5088
+  SAY @13286
+  = @13287
+  ++ @13288 + a5092
+  ++ @13289 + a5092
+  ++ @13290 + a5092
+  ++ @13291 + a5092
+  + ~!InParty("minsc")~ + @13262 + a5091
+  + ~InParty("minsc")~ + @13263 + a5090
+END
+
+IF ~~ a5089
+  SAY @13292
+  = @13293
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5090
+  SAY @13294
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5091
+  SAY @13295
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5092
+  SAY @13296
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5093
+  SAY @13297
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5094
+  SAY @13298
+  = @13299
+  IF ~~ THEN GOTO a5087
+END
+
 
 /* ToB Love Talk #2 : statement of intent for seriousness : replies */
 IF ~~ a4717
