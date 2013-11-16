@@ -13,9 +13,19 @@ VERSION ~Beta3~
 
 README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
 
-LANGUAGE ~English~
-         ~English~
-         ~aranw\tra\english\c-aranw.tra~
+ALWAYS 
+	ACTION_IF GAME_IS ~bg2ee~ BEGIN
+		OUTER_SPRINT tra_version ~c-aranw_utf8nb~
+	    LOAD_TRA ~aranw\tra\english\c-aranw_utf8nb.tra~
+	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_utf8nb.tra~		
+	END ELSE BEGIN
+		OUTER_SPRINT tra_version ~c-aranw_cp1252~
+	    LOAD_TRA ~aranw\tra\english\c-aranw_cp1252.tra~
+	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_cp1252.tra~
+	END
+END
+
+LANGUAGE ~English~ ~English~ ~aranw\tra\english\c-aranw_cp1252.tra~
 
 BEGIN @1
 
@@ -27,9 +37,8 @@ INCLUDE ~aranw/lib/extra_regexp_vars.tpa~
 /* .ids patching */
 
 ACTION_IF GAME_IS BG2EE THEN BEGIN
-  // LOAD_TRA ~aranw/tra/%LANGUAGE%/c-aranw_ee.tra~
-  ADD_JOURNAL TITLE (~Aran Whitehand~) @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @13146 @13147 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
-  ADD_JOURNAL EXISTING TITLE (#74337) @448 @456 @10399 USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+  ADD_JOURNAL TITLE (~Aran Whitehand~) @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @13146 @13147 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+  ADD_JOURNAL EXISTING TITLE (#74337) @448 @456 @10399 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 END ELSE
 BEGIN
   INCLUDE ~aranw/lib/ids_patching.tph~
@@ -939,12 +948,14 @@ END
 
 PRINT @116
 
-COMPILE ~aranw/dialog/c-arandialog.d~ // SoA dialog file
-
+/* SoA dialog file */
+COMPILE ~aranw/dialog/c-arandialog.d~   
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	  
 ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
 	PRINT @117
 	COMPILE ~aranw/dialog/c-arantobdialog.d~
-
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	/* Epilogue 1:	Low Rep, regardless of friendship or romance status */
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE0.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
@@ -984,6 +995,11 @@ ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN // ToB dialog file
 		LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 		
 END /* of ToB installation */
+
+ACTION_IF GAME_IS ~bg2ee~ BEGIN
+	COMPILE ~aranw/dialog/c-aranbg2ee_content.d~   
+		USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+END 
 
 /* items */
 
@@ -1088,7 +1104,7 @@ COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	COMPILE ~aranw/baf/C-AW01EP.baf~
       EVALUATE_BUFFER
-      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 /* Area C-AW01 bar/barfight - Toran */
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	
 	SAY NAME1 @141
@@ -1161,9 +1177,9 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	SAY NAME1 @149
 	SAY NAME2 @149
-	WRITE_BYTE 0x2E 45 // major color
-	WRITE_BYTE 0x2F 37 // skin color
-	WRITE_BYTE 0x32 29 // hair color
+	WRITE_BYTE 0x2E 45 /* major color */
+	WRITE_BYTE 0x2F 37 /* skin color */
+	WRITE_BYTE 0x32 29 /* hair color */
 	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8	/* give new override AI script */
 	WRITE_ASCII 0x268 ~WTASIGHT~ #8	/* give new default AI script	*/
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
@@ -1334,7 +1350,7 @@ COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
 /* area script */
 COMPILE ~aranw/baf/c-ar01.baf~
       EVALUATE_BUFFER
-      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 /* Existing Promenade edits */
 
 EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
@@ -1380,7 +1396,7 @@ EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog in
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 /* Regular Scripts */
 COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ /* override script */
-      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 COMPILE ~aranw/baf/c-arand.baf~ /* SoA dreamscript */
 COMPILE ~aranw/baf/c-aranx.baf~ /* out-of-party combat script */
 /* Rest-but-don't-trigger-player1D */
@@ -1396,7 +1412,7 @@ COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
 ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN /* ToB dialog file */
 	PRINT @156
 	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
-      USING ~aranw/tra/%LANGUAGE%/c-aranw.tra~
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
 	COMPILE ~aranw/baf/c-arn25d.baf~ // ToB dreamscript
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
