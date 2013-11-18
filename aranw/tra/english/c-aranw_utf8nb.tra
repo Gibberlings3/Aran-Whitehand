@@ -379,7 +379,7 @@ Aran was captured by Bodhi and infected with vampirism, forcing you to slay him.
 [4] berelinde's "Dragon Age" (dark hairr, dark complexion)
 [5] berelinde's "Scruffy" (light brown hair, fair complexion)
 [6] McMazey's "Don Pedro" (dark hair, dark complexion)
-[6] McMazey's "Fantasy Photo" (long brown hair, light complexion)
+[7] McMazey's "Fantasy Photo" (long brown hair, light complexion)
 [8] McMazey's "Bearded" (dark hair, light complexion)
 [9] McMazey's "No Beard" (dark hair, light complexion)
 [10] McMazey's "Horatio Photo" (dark hair, light complexion)
@@ -13863,3 +13863,6 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13460 = ~[DORN] That is likely.~
 @13461 = ~[ARAN] So when will you be makin' your move?~
 @13462 = ~[DORN] Someday, perhaps. But not today.~
+@13463 = ~BGII:EE detected. Managing journal entries.~
+@13464 = ~BGII:EE content is being installed.~
+@13465 = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, or BGII:Enhanced Edition. Stopping installation. * * *~
