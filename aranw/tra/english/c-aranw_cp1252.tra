@@ -13849,7 +13849,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13446 = ~[DORN] That is what you do not understand.~
 @13447 = ~[ARAN] So, no more patron.~
 @13448 = ~[DORN] I have no need of one.~
-@13449 = ~[ARAN]An' what does that change, eh?~
+@13449 = ~[ARAN] An' what does that change, eh?~
 @13450 = ~[DORN] It means I can revel in the glory, and share none of it.~
 @13451 = ~[ARAN] Do you be meanin' glory, or gore?~
 @13452 = ~[DORN] What is the difference?~
@@ -13866,3 +13866,9 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13463 = ~BGII:EE detected. Managing journal entries.~
 @13464 = ~BGII:EE content is being installed.~
 @13465 = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, or BGII:Enhanced Edition. Stopping installation. * * *~
+@13466 = ~[PC] Branwen seems to be handling this better than you are.~
+@13467 = ~[EDWINA] Keep your lecherous gaze to yourself, sellsword. (The moron thinks I do not see his covetous glances.)~ 
+@13468 = ~[ARAN] Now, Edwin, how's a lad supposed to feel, when all those robes be concealin' such art? I just have to look at th' legs.~
+@13469 = ~[EDWINA] You will have trouble with your eyes, I think. Perhaps turning them to stone will keep your lusts in check.~
+@13470 = ~[ARAN] Oh, no worries on my account. Your form may be right fine to look at, but you still be an evil, over-educated, stone-hearted, backstabbin', manipulative Red Wizard, wi' all th' trappin's that entails.~
+@13471 = ~[EDWINA] Flattery will get you nowhere. (The moronic baboon. Though his points do have merit. I am still a magnificent specimen.)~

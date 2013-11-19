@@ -1246,6 +1246,16 @@ DO ~SetGlobal("c-aranedwin","GLOBAL",1)~
 == BEDWIN @575
 EXIT
 
+/* SoA Banters: Edwina > Aran */
+CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Gender("edwin",FEMALE) Global("c-edwinaaran","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty(Myself) !StateCheck(Myself,CD_STATE_NOTVALID)~ THEN BEDWIN c-edwinaaranbanter
+@13467
+DO ~SetGlobal("c-edwinaaran","GLOBAL",1)~
+== C-ARANB @13468
+== BEDWIN @13469
+== C-ARANB @13470
+== BEDWIN @13471
+EXIT
+
 /* SoA Banters: HaerDalis > Aran */
 CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-haerdalisaran","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) InParty(Myself) !StateCheck(Myself,CD_STATE_NOTVALID)~ THEN BHAERDA c-haerdalisaranbanter
 @576
@@ -1305,7 +1315,7 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("CORAN")~ THEN @621
 == C-ARANB IF ~InParty("D#Silver")~ THEN @622
 == C-ARANB IF ~InParty("D0Alassa")~ THEN @623
-== C-ARANB IF ~OR(2) InParty("DL#BWN") InParty("7XBRAN")~ THEN @624
+== C-ARANB IF ~OR(3) InParty("DL#BWN") InParty("7XBRAN") InParty("O#BRAN")~ THEN @624
 == C-ARANB IF ~InParty("DYNAHEIR")~ THEN @625
 == C-ARANB IF ~InParty("E3Fade")~ THEN @626
 == C-ARANB IF ~InParty("FHLAND")~ THEN @627
@@ -1355,7 +1365,7 @@ DO ~SetGlobal("c-aranhaerdalis","GLOBAL",1)~
 == C-ARANB IF ~InParty("TSUJATH")~ THEN @669
 == C-ARANB IF ~InParty("Valen")~ THEN @670
 == C-ARANB IF ~InParty("WILLYB")~ THEN @637
-== C-ARANB IF ~InParty("WLBRAN")~ THEN @624
+== C-ARANB IF ~OR(3) InParty("DL#BWN") InParty("7XBRAN") InParty("O#BRAN")~ THEN @624
 == C-ARANB IF ~InParty("WxJon")~ THEN @671
 == C-ARANB IF ~InParty("xulaye")~ THEN @672
 == C-ARANB IF ~InParty("YASRAENA")~ THEN @673
@@ -1933,7 +1943,7 @@ END
 IF ~~ a1623
   SAY @978
   ++ @979 + a1628
-  ++ @980 +  a1624
+  ++ @980 + a1624
   ++ @976 + a1625
   ++ @977 + a1625
   ++ @981 + a1625
@@ -1963,7 +1973,6 @@ END
 
 IF ~~ a1627 SAY @992 IF ~~ THEN EXIT END
 IF ~~ a1628 SAY @993 IF ~~ THEN EXIT END
-
 /* Edwina's Objections */
 IF ~~ a4770 SAY @994 IF ~~ THEN EXIT END
 IF ~~ a2904 SAY @995 IF ~~ THEN EXIT END
@@ -3338,7 +3347,10 @@ IF ~~ a2040
   + ~InParty("BWTOUCHX") InMyArea("BWTOUCHX") !StateCheck("BWTOUCHX",CD_STATE_NOTVALID) Global("c-aran2109","GLOBAL",0)~ + @1455 + a2109
   + ~InParty("CALLISTO") InMyArea("CALLISTO") !StateCheck("CALLISTO",CD_STATE_NOTVALID) Global("c-aran2110","GLOBAL",0)~ + @1456 + a2110
   + ~InParty("WILLYB") InMyArea("WILLYB") !StateCheck("WILLYB",CD_STATE_NOTVALID) Global("c-aran2111","GLOBAL",0)~ + @1111 + a2111
-  + ~InParty("WLBRAN") InMyArea("WLBRAN") !StateCheck("WLBRAN",CD_STATE_NOTVALID) Global("c-aran2112","GLOBAL",0)~ + @1111 + a2112
+  + ~InParty("WLBRAN") InMyArea("WLBRAN") !StateCheck("WLBRAN",CD_STATE_NOTVALID) Global("c-aran2112","GLOBAL",0)~ + @13466 + a2112
+  + ~InParty("DL#BWN") InMyArea("DL#BWN") !StateCheck("DL#BWN",CD_STATE_NOTVALID) Global("c-aran2112","GLOBAL",0)~ + @13466 + a2112
+  + ~InParty("7XBRAN") InMyArea("7XBRAN") !StateCheck("7XBRAN",CD_STATE_NOTVALID) Global("c-aran2112","GLOBAL",0)~ + @13466 + a2112
+  + ~InParty("O#BRAN") InMyArea("O#BRAN") !StateCheck("O#BRAN",CD_STATE_NOTVALID) Global("c-aran2112","GLOBAL",0)~ + @13466 + a2112
   + ~InParty("Skooter") InMyArea("Skooter") !StateCheck("Skooter",CD_STATE_NOTVALID) Global("c-aran2173","GLOBAL",0)~ + @1457 + a2173
   + ~InParty("SOLAUFEIN") InMyArea("SOLAUFEIN") !StateCheck("SOLAUFEIN",CD_STATE_NOTVALID) Global("c-aran2174","GLOBAL",0)~ + @1458 + a2174
   + ~InParty("xulaye") InMyArea("xulaye") !StateCheck("xulaye",CD_STATE_NOTVALID) Global("c-aran2175","GLOBAL",0)~ + @1459 + a2175
@@ -20295,7 +20307,7 @@ IF ~!IsGabber(Player1)~ THEN a870
   IF ~OR(12) IsGabber("J#Kelsey") IsGabber("JCBruce") IsGabber("K#Auren") IsGabber("K#Bana") IsGabber("K#Sarah") IsGabber("K#SHEENA") IsGabber("KACHIKO") IsGabber("Kari") IsGabber("Keto") IsGabber("TSUJATH") IsGabber("Valen") IsGabber("Z_MODDY")~ GOTO a874
   IF ~OR(12) IsGabber("KIARA") IsGabber("KINDREK") IsGabber("Kiyone") IsGabber("Kova") IsGabber("LRIRENIC") IsGabber("M#AMBER") IsGabber("MTS#Shy") IsGabber("MWAriena") IsGabber("MWKido") IsGabber("SUHESSA") IsGabber("t#dace") IsGabber("TASHIA")~ GOTO a875
   IF ~OR(12) IsGabber("NATH") IsGabber("Ninde") IsGabber("O#TIAX") IsGabber("O#XAN") IsGabber("P#DEHER") IsGabber("P#KIVAN") IsGabber("R#ALLIS") IsGabber("R#Kitanya") IsGabber("Rylorn") IsGabber("SAERILETH") IsGabber("SDNPC")  IsGabber("SUBRU")~ GOTO a876
-  IF ~OR(7) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") IsGabber("C#Ajantis") IsGabber("Arath")~ GOTO a878
+  IF ~OR(8) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye") IsGabber("C#Ajantis") IsGabber("Arath") IsGabber("O#BRAN")~ GOTO a878
   IF ~OR(17) IsGabber("7XAJAN") IsGabber("7XAlora") IsGabber("7XBRAN") IsGabber("CORAN") IsGabber("7XELDOT") IsGabber("7XGAR") IsGabber("7Xkaga") IsGabber("7XKIVA") IsGabber("7XMONT") IsGabber("7XQUAY") IsGabber("7XSafa") IsGabber("7Xshar") IsGabber("7XSKI") IsGabber("7XTIAX") IsGabber("7XXAN") IsGabber("7XXZAR") IsGabber("7XYES")~ GOTO a4567
   IF ~OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo")~ GOTO a877
 END
@@ -20405,7 +20417,7 @@ IF ~~ a876
   IF ~IsGabber("SUBRU")~ GOTO a940
 END
 
-/* block 7, the Expansion Block NPCs : OR(5) IsGabber("SIME") IsGabber("SK#NEHT") IsGabber("Skooter") IsGabber("SOLAUFEIN") IsGabber("xulaye")  IsGabber("C#Ajantis") IsGabber("Arath") */
+/* block 7, the Expansion Block NPCs */
 IF ~~ a878
   SAY @8412
   IF ~IsGabber("SIME")~ GOTO a941
@@ -20416,6 +20428,7 @@ IF ~~ a878
   IF ~IsGabber("xulaye") Global("LK#XulayeKnows","GLOBAL",1)~ GOTO a946
   IF ~IsGabber("C#Ajantis")~ GOTO a4568 
   IF ~IsGabber("Arath")~ GOTO a4579 
+  IF ~IsGabber("O#BRAN")~ GOTO a900
 END
 
 /* block 7a, the BioWare Pack Added by Smiling Imp's BG1 NPCs In SoA, second evaluated : OR(16) IsGabber("Minsc") IsGabber("Korgan") IsGabber("Keldorn") IsGabber("Valygar") IsGabber("Viconia") IsGabber("Nalia") IsGabber("Mazzy") IsGabber("Jaheira") IsGabber("Jan") IsGabber("Imoen2") IsGabber("HaerDalis") IsGabber("Edwin") IsGabber("Aerie") IsGabber("Anomen") IsGabber("Cernd") IsGabber("Yoshimo") */
