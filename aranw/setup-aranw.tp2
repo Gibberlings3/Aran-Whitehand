@@ -5,11 +5,12 @@ AUTHOR ~cmorgan~
  * IF YOU ARE DOWNOADING FROM GITHUB, you need to do the following:
  * 1. check to make sure everything is there,
  * 2. edit the VERSION line found right below this message with your username and the date, so you have a way of knowing what "version" you have
- * 3. copy another mod's setup-mymod.exe and rename it setup-aranw.exe
+ * >>> You can do that by opening aranw\tra\english\setup-win32.tra and changing line @30001 between the tildes like this: ~MyName 11/2013~
+ * 3. copy another mod's setup-mymod.exe and rename it setup-aranw.exe, or use the file located in the top git directory named setup-aranw.exe
  * 4. enjoy the mod. If you run into problems, find me at G3 or start an issue ticket on GitHub!
 */
 
-VERSION @0
+VERSION @30001
 
 README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
 
@@ -18,47 +19,67 @@ ALWAYS
 	
 	ACTION_IF GAME_IS ~bg2ee~ BEGIN
 		OUTER_SPRINT tra_version ~c-aranw_utf8nb~
-	    LOAD_TRA ~aranw\tra\english\c-aranw_utf8nb.tra~
-	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_utf8nb.tra~		
+	    LOAD_TRA ~aranw\tra\english\c-aranw_utf8nb.tra~ /* Fallback .tra in case LANGUAGE is missing some strings : Contains text strings displayed in the game with localised encoding UTF-8 (no BOM) for all versions of BGII:EE */
+	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_utf8nb.tra~	/* Desired Language .tra : Contains text strings displayed in the game with localised encoding UTF-8 (no BOM) for all versions of BGII:EE */	
 	END ELSE BEGIN
 		OUTER_SPRINT tra_version ~c-aranw_cp1252~
-	    LOAD_TRA ~aranw\tra\english\c-aranw_cp1252.tra~
-	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_cp1252.tra~
+	    LOAD_TRA ~aranw\tra\english\c-aranw_cp1252.tra~  /* Fallback .tra in case LANGUAGE is missing some strings with localised encoding Windows-1252 aka cp1252 */
+	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_cp1252.tra~ /* Desired language chosen at install with localised encoding Windows-1252 aka cp1252 */
 	END
 END
 
-LANGUAGE ~English~ ~English~ ~aranw\tra\english\c-aranw_cp1252.tra~
+LANGUAGE ~English~
+         ~english~
+         ~aranw\tra\english\c-aranw_cp1252.tra~ /* Contains text strings displayed in the game with localised encoding Windows-1252 aka cp1252 */
+         ~aranw\tra\english\setup_%WEIDU_OS%.tra~ /* Contains text strings displayed during the installation: TP2, Components, etc., encoded for _win32 (cp1252), _osx (utf-8 no BOM), or _unix (utf-8 no BOM) */
+		 
+BEGIN @30010
+REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee~ @30002
+/* put some information in the .DEBUG file to help with troubleshooting */
+PRINT @30009
+ACTION_IF GAME_IS ~bg2~ BEGIN PRINT @30003 END
+ACTION_IF GAME_IS ~tob~ BEGIN PRINT @30004 END
+ACTION_IF GAME_IS ~bgt~ BEGIN PRINT @30005 END
+ACTION_IF GAME_IS ~bg2ee~ BEGIN PRINT @30006 END
+PRINT @30007
+PRINT @30001
+PRINT @30008
+PRINT @30009
 
-BEGIN @1
-REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee~ @13465
-PRINT @0
-
-/* .2da patching */
+/* .2da patching : yes, I use pretty_print. Because I am just that OCD. I want everything in neat little columns, even though the game engine does not care. */
 APPEND ~pdialog.2da~ ~C-ARAN C-ARANP C-ARANJ C-ARAND C-ARN25P C-ARN25J C-ARN25D C-ARN25~ UNLESS ~C-ARAN~
 COPY_EXISTING ~pdialog.2da~ ~override~
 		PRETTY_PRINT_2DA
 
 APPEND ~interdia.2da~ ~C-ARAN C-ARANB C-ARN25B~ UNLESS ~C-ARAN~
-COPY_EXISTING ~pdialog.2da~ ~override~
+COPY_EXISTING ~interdia.2da~ ~override~
 		PRETTY_PRINT_2DA
 		
-/* make sure Imoen has her banter file assigned */
-ACTION_IF FILE_EXISTS_IN_GAME ~ar6111.are~ THEN BEGIN /* fixes ToB version */
+/* make sure Imoen has her banter file assigned - not needed on BGII:EE */
+ACTION_IF GAME_IS ~tob bgt~ BEGIN /* fixes ToB version */
 	COPY_EXISTING ~interdia.2da~ ~override~
 		SET_2DA_ENTRY 17 1 2 ~BIMOEN2~
+		PRETTY_PRINT_2DA
 	BUT_ONLY_IF_IT_CHANGES
-END ELSE BEGIN
-	APPEND ~interdia.2da~ ~IMOEN		 BIMOEN2~ /* fixes SoA version */
-		UNLESS ~BIMOEN2~
-END
+END 
+
+ACTION_IF GAME_IS ~soa~ BEGIN /* fixes SoA version */
+	APPEND ~interdia.2da~ ~IMOEN BIMOEN2~ UNLESS ~BIMOEN2~
+	COPY_EXISTING ~interdia.2da~ ~override~	
+		PRETTY_PRINT_2DA
+	BUT_ONLY_IF_IT_CHANGES
+END 
+
+/* .ids patching to make sure everything is in place */
+INCLUDE ~aranw/lib/ids_patching.tph~
 
 /* Macro definitions */
 
 /* Set Sound Choices */
 DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
-	OUTER_SPRINT ~soundchoice~ @9
+	OUTER_SPRINT ~soundchoice~ ~placeholder_value~
 	OUTER_WHILE (!(IS_AN_INT ~soundchoice~) OR (~soundchoice~ > 0x3) OR (~soundchoice~ < 0x1)) BEGIN
-		PRINT @32
+		PRINT @30071
 		ACTION_READLN ~soundchoice~
 	END
 	ACTION_IF ("soundchoice" = 1) THEN BEGIN
@@ -70,7 +91,8 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set2_4_aprilinmistressface.wav~			~aranw/media/wavc/c-arnltl.wav~ /* 4 love, introspective */
 		COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~					~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast */
 		COPY ~aranw/media/wavc/set2_6_comeagain.wav~					~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
-		PRINT @33
+		PRINT @30072
+		PRINT ~  ~
 	END
 	ACTION_IF ("soundchoice" = 2) THEN BEGIN
 		/* sound themes */
@@ -81,7 +103,8 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav~		~aranw/media/wavc/c-arnltl.wav~ /* 4 love, introspective */
 		COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~					~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
 		COPY ~aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav~		~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
-		PRINT @34
+		PRINT @30073
+		PRINT ~  ~
 	END
 	ACTION_IF ("soundchoice" = 3) THEN BEGIN
 		/* sound themes */
@@ -93,7 +116,8 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set1_4_suzato_danserye_monamy.wav~		~aranw/media/wavc/c-arnltl.wav~ /* 4 love, introspective */
 		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
 		COPY ~aranw/media/wavc/set2_6_comeagain.wav~					~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective */
-		PRINT @35
+		PRINT @30074
+		PRINT ~  ~
 	END
 END // of macro
 
@@ -102,110 +126,119 @@ DEFINE_ACTION_MACRO ~aran_report_status~ BEGIN
 		WITH
 		1
 		BEGIN
-			PRINT @36
+			PRINT @30075
+			PRINT ~  ~
 		END
 		2
 		BEGIN
-			PRINT @37
+			PRINT @30076
+			PRINT ~  ~
 		END
 		3
 		BEGIN
-			PRINT @38
+			PRINT @30077
+			PRINT ~  ~
 		END
 		DEFAULT
-			PRINT @39
+			PRINT @30078
+			PRINT ~  ~
 		END
 		ACTION_MATCH ~%aran_armor_choice%~
 		WITH
 		1
 		BEGIN
-			PRINT @40
+			PRINT @30079
+			PRINT ~  ~
 		END
 		2
 		BEGIN
-			PRINT @41
+			PRINT @30080
+			PRINT ~  ~
 		END
 		3
 		BEGIN
-			PRINT @42
+			PRINT @30081
+			PRINT ~  ~
 		END
 		4
 		BEGIN
-			PRINT @43
+			PRINT @30082
+			PRINT ~  ~
 		END
 		5
 		BEGIN
-			PRINT @44
+			PRINT @30083
+			PRINT ~  ~
 		END
 		DEFAULT
-				PRINT @39
-				PRINT @45
+				PRINT @30078
+				PRINT ~  ~
 		END
 	ACTION_MATCH	~%aran_weapon_set%~
 		WITH
 		1
 		BEGIN
-				PRINT @46
-				PRINT @45
+				PRINT @30084
+				PRINT ~  ~
 		END
 		2
 		BEGIN
-				PRINT @47
-				PRINT @45
+				PRINT @30085
+				PRINT ~  ~
 		END
 		3
 		BEGIN
-				PRINT @48
-				PRINT @45
+				PRINT @30086
+				PRINT ~  ~
 		END
 		4
 		BEGIN
-				PRINT @49
-				PRINT @45
+				PRINT @30087
+				PRINT ~  ~
 		END
 		5
 		BEGIN
-				PRINT @50
-				PRINT @45
+				PRINT @30088
+				PRINT ~  ~
 		END
 		6
 		BEGIN
-				PRINT @51
-				PRINT @45
+				PRINT @30089
+				PRINT ~  ~
 		END
 		7
 		BEGIN
-				PRINT @52
-				PRINT @45
+				PRINT @30090
+				PRINT ~  ~
 		END
 		8
 		BEGIN
-				PRINT @53
-				PRINT @45
+				PRINT @30091
+				PRINT ~  ~
 		END
 		9
 		BEGIN
-				PRINT @54
-				PRINT @45
+				PRINT @30092
+				PRINT ~  ~
 		END
 		10
 		BEGIN
-				PRINT @55
-				PRINT @45
+				PRINT @30093
+				PRINT ~  ~
 		END
 		11
 		BEGIN
-				PRINT @56
-				PRINT @45
+				PRINT @30094
+				PRINT ~  ~
 		END
 		12
 		BEGIN
-				PRINT @57
-				PRINT @45
+				PRINT @30095
+				PRINT ~  ~
 		END
 		DEFAULT
-				PRINT @39
-				PRINT @45
+				PRINT @30078
+				PRINT ~  ~
 		END
 
 END // of macro definition
@@ -217,11 +250,11 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 	1	 // the first check. If %class_choice% = 1, the next stuff will work, else check the next
 	BEGIN /* mage dual-class build */
 		OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
-			PRINT @58
+			PRINT @30096
 			ACTION_READLN aran_wealth
 		END
 		OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN // one way of setting up for READLN
-				PRINT @59
+				PRINT @30097
 				ACTION_READLN weapon_choices
 		END
 		/* we are using READLN values to set a variable - the mod range of possible combos is 1 to 15 inclusive, so we can't just read it directly */
@@ -243,7 +276,7 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 			OUTER_SET ~aran_weapon_set~ = 6 // Long Sword, Shield, Long Bow
 		END // of default
 		OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
-			PRINT @60
+			PRINT @30098
 			ACTION_READLN aran_armor_choice
 		END // of O_F
 		LAUNCH_ACTION_MACRO ~aran_report_status~
@@ -257,11 +290,11 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 	 2 // the second check. If %class_choice% = 2, the next stuff will work, else check the next
 	 BEGIN /* cleric dual-class build */
 	 	OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
-	 	 	 PRINT @58
+	 	 	 PRINT @30096
 				ACTION_READLN aran_wealth
 		END
 		OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[1234]$~ ; )BEGIN // one way of setting up for READLN
-	 	 		PRINT @62
+	 	 		PRINT @30100
 				ACTION_READLN ~weapon_choices~
 			END
 			ACTION_MATCH	~%weapon_choices%~	 // check this value
@@ -282,7 +315,7 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				OUTER_SET ~aran_weapon_set~ = 5 // Long Sword, Shield, Flail
 			END
 			OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
-				PRINT @60
+				PRINT @30098
 				ACTION_READLN aran_armor_choice
 			END // of O_F
 		LAUNCH_ACTION_MACRO ~aran_report_status~
@@ -290,17 +323,17 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
 					LAUNCH_PATCH_MACRO ~aran_cre_setup~	// patch in player choices using this pre-defined code
 				END ELSE BEGIN
-					PATCH_FAIL @61
+					PATCH_FAIL @30099
 				END
 		END // of dual-to-cleric swing
 		3 // the third check. If %class_choice% = 3, the next stuff will work, else check the next
 		BEGIN /* fighter single-class build */
 			OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
-				PRINT @63
+				PRINT @30101
 				ACTION_READLN aran_wealth
 			END
 			OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[123456]$~ ; )BEGIN
-				PRINT @64
+				PRINT @30102
 				ACTION_READLN ~weapon_choices~
 			END
 			ACTION_MATCH	~%weapon_choices%~	 // check this value
@@ -329,7 +362,7 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				OUTER_SET ~aran_weapon_set~ = 12 // Long Sword, Shield, Hammer
 			END // of default
 			OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
-				PRINT @65
+				PRINT @30098
 				ACTION_READLN aran_armor_choice
 			END // of O_F
 			LAUNCH_ACTION_MACRO ~aran_report_status~
@@ -337,17 +370,17 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				PATCH_IF (SOURCE_SIZE > 0x2d3) THEN BEGIN // if the .cre is valid, then
 					LAUNCH_PATCH_MACRO ~aran_cre_setup~	// patch in player choices using this pre-defined code
 				END ELSE BEGIN
-					PATCH_FAIL @61
+					PATCH_FAIL @30099
 				END
 		END // of just-a-fighter swing
 		4 // the second check. If %class_choice% = 4, the next stuff will work, else check the next
 		BEGIN /* thief dual-class build */
 			OUTER_FOR( aran_wealth = 0 ; ~%aran_wealth%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN
-				PRINT @58
+				PRINT @30096
 				ACTION_READLN aran_wealth
 			END
 			OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
-				PRINT @66
+				PRINT @30104
 				ACTION_READLN ~weapon_choices~
 			END
 			ACTION_MATCH	~%weapon_choices%~	 // check this value
@@ -372,7 +405,7 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				OUTER_SET ~aran_weapon_set~ = 11 // Short Sword, Shield, Crossbow
 			END // of default
 			OUTER_FOR( aran_armor_choice = 0 ; ~%aran_armor_choice%~ STRING_COMPARE_REGEXP ~^[12345]$~ ; )BEGIN
-				PRINT @65
+				PRINT @30098
 				ACTION_READLN aran_armor_choice
 			END // of O_F
 			LAUNCH_ACTION_MACRO ~aran_report_status~
@@ -384,9 +417,9 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 				END
 		END // of dual-to-thief swing
 		DEFAULT	// the fall-through check. If %class_choice% was not 1, 2, 3, or 4, the default code will run
-		PRINT @67
+		PRINT @30026
 		/* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
-		OUTER_SET ~aran_wealth~ = 2 // experienced mercenary	with some resources
+		OUTER_SET ~aran_wealth~ = 2 // experienced mercenary with some resources
 		OUTER_SET ~aran_weapon_set~ = 6 // Long Sword, Shield, Long Bow
 		OUTER_SET ~aran_armor_choice~ = 4 // splint
 		LAUNCH_ACTION_MACRO ~aran_report_status~
@@ -840,10 +873,10 @@ DEFINE_PATCH_MACRO ~aran_cre_setup~ BEGIN
 END
 
 /* end of define all macros */
-
+PRINT @30009
 /* Setting up timered interactions with player choice before compiling .d and .baf */
 OUTER_FOR( aran_timer_choice = 0 ; ~%aran_timer_choice%~ STRING_COMPARE_REGEXP ~^[12]$~ ; )BEGIN
-	PRINT @2
+	PRINT @30042
 	ACTION_READLN aran_timer_choice
 END // of O_F
 ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
@@ -851,96 +884,97 @@ ACTION_IF ("aran_timer_choice" = 1) THEN BEGIN
 		OUTER_SET ARAN_FTT = 3600
 		OUTER_SET ARAN_LTT = 3600
 		OUTER_SET ARAN_FLIRT = 3600
-		PRINT @3
+		PRINT @30043
 		OUTER_SET choseninitialrom = 2400
-		PRINT @4
+		PRINT @30044
 		OUTER_SET choseninitialflirt = 1200
-		PRINT @5
-		PRINT @6
+		PRINT @30045
+		PRINT @30046
 END
 ACTION_IF ("aran_timer_choice" = 2) THEN BEGIN
-	PRINT @7
-	PRINT @8
-	OUTER_SPRINT ~friendshiptimer~ @9
+	PRINT @30047
+	PRINT @30048
+	OUTER_SPRINT ~friendshiptimer~ ~placeholder_value~
 	OUTER_WHILE (!(IS_AN_INT ~friendshiptimer~) OR (~friendshiptimer~ > 0x6) OR (~friendshiptimer~ < 0x1)) BEGIN
-		PRINT @10
+		PRINT @30049
 		ACTION_READLN ~friendshiptimer~
 	END
 	ACTION_IF ("friendshiptimer" = 1) THEN BEGIN
 		OUTER_SET ARAN_FTT = 3600
 		OUTER_SET ARAN_LTT = 3600
 		OUTER_SET ARAN_FLIRT = 3600
-		PRINT @3
+		PRINT @30043
 		OUTER_SET choseninitialrom = 2400
-		PRINT @4
+		PRINT @30044
 		OUTER_SET choseninitialflirt = 1200
-		PRINT @5
-		PRINT @11
+		PRINT @30045
+		PRINT @30050
 	END
 	ACTION_IF ("friendshiptimer" = 2) THEN BEGIN
 		OUTER_SET ARAN_FTT = 900
 		OUTER_SET ARAN_LTT = 900
 		OUTER_SET ARAN_FLIRT = 900
-		PRINT @12
+		PRINT @30051
 		OUTER_SET choseninitialrom = 600
-		PRINT @13
+		PRINT @30052
 		OUTER_SET choseninitialflirt = 300
-		PRINT @14
-		PRINT @15
+		PRINT @30053
+		PRINT @30054
 	END
 	ACTION_IF ("friendshiptimer" = 3) THEN BEGIN
 		OUTER_SET ARAN_FTT = 1800
 		OUTER_SET ARAN_LTT = 1800
 		OUTER_SET ARAN_FLIRT = 1800
-		PRINT @16
+		PRINT @30055
 		OUTER_SET choseninitialrom = 1200
-		PRINT @17
+		PRINT @30056
 		OUTER_SET choseninitialflirt = 600
-		PRINT @18
-		PRINT @19
+		PRINT @30057
+		PRINT @30058
 	END
 	ACTION_IF ("friendshiptimer" = 4) THEN BEGIN
 		OUTER_SET ARAN_FTT = 2700
 		OUTER_SET ARAN_LTT = 2700
 		OUTER_SET ARAN_FLIRT = 2700
-		PRINT @20
+		PRINT @30059
 		OUTER_SET choseninitialrom = 1800
-		PRINT @21
+		PRINT @30060
 		OUTER_SET choseninitialflirt = 900
-		PRINT @22
-		PRINT @23
+		PRINT @30061
+		PRINT @30062
 	END
 	ACTION_IF ("friendshiptimer" = 5) THEN BEGIN
 		OUTER_SET ARAN_FTT = 5400
 		OUTER_SET ARAN_LTT = 5400
 		OUTER_SET ARAN_FLIRT = 5400
-		PRINT @24
+		PRINT @30063
 		OUTER_SET choseninitialrom = 3600
-		PRINT @25
+		PRINT @30064
 		OUTER_SET choseninitialflirt = 1800
-		PRINT @26
-		PRINT @27
+		PRINT @30065
+		PRINT @30066
 	END
 	ACTION_IF ("friendshiptimer" = 6) THEN BEGIN
 		OUTER_SET ARAN_FTT = 7200
 		OUTER_SET ARAN_LTT = 7200
 		OUTER_SET ARAN_FLIRT = 7200
-		PRINT @28
+		PRINT @30067
 		OUTER_SET choseninitialrom = 4800
-		PRINT @29
+		PRINT @30068
 		OUTER_SET choseninitialflirt = 2400
-		PRINT @30
-		PRINT @31
+		PRINT @30069
+		PRINT @30070
 	END
 END
-
-PRINT @116
+PRINT @30009
+PRINT @30031
 /* SoA dialog file */
 COMPILE ~aranw/dialog/c-arandialog.d~   
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
-	  
-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB dialog file
-	PRINT @117
+PRINT @30009	  
+/* ToB dialog file */	  
+ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN 
+	PRINT @30032
 	COMPILE ~aranw/dialog/c-arantobdialog.d~
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	/* Epilogue 1:	Low Rep, regardless of friendship or romance status */
@@ -972,40 +1006,35 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB dialog file
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
 		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 		REPLACE 99999 @123
-
-	PRINT @124
 		
 END /* of ToB installation */
-
-ACTION_IF GAME_IS BG2EE THEN BEGIN
-	PRINT @13463
+PRINT @30009
+ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
+	PRINT @30027
 	ADD_JOURNAL TITLE (~Aran Whitehand~) @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @13146 @13147 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	ADD_JOURNAL EXISTING TITLE (#74337) @448 @456 @10399 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
-	PRINT @13464
+	PRINT @30028
 	COMPILE ~aranw/dialog/c-aranbg2ee_content.d~   
 		USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 END 
-
+PRINT @30009
 /* items */
-
+PRINT @30033
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr1.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @127
 	SAY DESC @127
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr2.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @128
 	SAY DESC @128
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr3.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @129
 	SAY DESC @129
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr4.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
@@ -1016,31 +1045,26 @@ COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr5.itm~
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @131
 	SAY DESC @131
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr6.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @132
 	SAY DESC @132
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr7.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @133
 	SAY DESC @134
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-alttr8.itm~
 	SAY NAME1 @126
 	SAY NAME2 @126
 	SAY UNIDENTIFIED_DESC @135
 	SAY DESC @135
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg1.itm~
 	SAY NAME1 @136
 	SAY NAME2 @136
 	SAY UNIDENTIFIED_DESC @137
 	SAY DESC @137
-
 COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg2.itm~
 	SAY NAME1 @138
 	SAY NAME2 @138
@@ -1048,43 +1072,46 @@ COPY_EXISTING ~SCRL3E.itm~ ~override/c-awpkg2.itm~
 	SAY DESC	@139
 
 /* mycre.cre population */
-
+PRINT @30009
 /* NPC portraits */
 ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-/* resources : portraits : bg2:ee */
-COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eel.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eem.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2ee/nix_default_bg2ees.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_manson_bg2ees.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_gerald_bg2ees.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_cheris_bg2ees.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_kavain_bg2ees.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_toran_bg2ees.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_erika_bg2ees.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_teldra_bg2ees.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
-COPY ~aranw/media/portraits_bg2ee/peachplums_malcer_bg2ees.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
-COPY ~aranw/media/portraits_bg2ee/peachplums_orrin_bg2ees.bmp~  ~override/c-aw01tkbmp~ /* Area C-AW01 Tavern Keeper Orrin */
-/* Oskut - L10	male fighter */
-/* Taman - L10	male fighter */
+	/* resources : portraits : bg2:ee */
+	PRINT @30029
+	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eel.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eem.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2ees.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_manson_bg2ees.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_gerald_bg2ees.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_cheris_bg2ees.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_kavain_bg2ees.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_toran_bg2ees.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_erika_bg2ees.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_teldra_bg2ees.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_malcer_bg2ees.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_orrin_bg2ees.bmp~  ~override/c-aw01tkbmp~ /* Area C-AW01 Tavern Keeper Orrin */
+	/* Oskut - L10	male fighter */
+	/* Taman - L10	male fighter */
 END ELSE BEGIN
-/* resources : portraits : bg2 */
-COPY ~aranw/media/portraits_bg2/nix_default_bg2l.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2/nix_default_bg2m.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2/nix_default_bg2s.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
-COPY ~aranw/media/portraits_bg2/peachplums_manson_bg2s.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_gerald_bg2s.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_cheris_bg2s.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_kavain_bg2s.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
-COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
-COPY ~aranw/media/portraits_bg2/peachplums_orrin_bg2s.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin	*/
-/* Oskut - L10	male fighter */
-/* Taman - L10	male fighter */
+	/* resources : portraits : bg2 */
+	PRINT @30030
+	COPY ~aranw/media/portraits_bg2/nix_default_bg2l.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2/nix_default_bg2m.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2/nix_default_bg2s.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
+	COPY ~aranw/media/portraits_bg2/peachplums_manson_bg2s.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_gerald_bg2s.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_cheris_bg2s.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_kavain_bg2s.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
+	COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
+	COPY ~aranw/media/portraits_bg2/peachplums_orrin_bg2s.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin	*/
+	/* Oskut - L10	male fighter */
+	/* Taman - L10	male fighter */
 END
-
+PRINT @30009
 /* creatures */
+PRINT @30034
 /* Area C-AW01 Entry Point - Manson - Bouncer on Promenade	*/
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~	 
 	SAY NAME1 @140
@@ -1205,7 +1232,11 @@ COPY_EXISTING ~vampano.cre~ ~override/c-arnvmp.cre~
 	WRITE_ASCIIE 0x2cc ~%DEST_RES%~ #8 /* dialogue */
 	WRITE_ASCIIE 0x280 ~%DEST_RES%~ #32 /* death variable */
 	ADD_CRE_ITEM ~c-avbody~ #0 #0 #0 IDENTIFIED QITEM1
+	
+PRINT @30009	
+
 /* ToB-only .cres */
+PRINT @30035
 ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
 		/* resources : portraits : bg2:ee */
@@ -1220,9 +1251,12 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 		SAY NAME1 @125
 		SAY NAME2 @125
 		LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+		
+	PRINT @30009
 END
 
 /* resources : stores */
+PRINT @30036
 COPY ~aranw/media/stores/c-awtav1.sto~ ~override~
 	PATCH_IF SOURCE_SIZE > 0x9b BEGIN
 		SAY NAME2 @153
@@ -1339,8 +1373,9 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #7 ~UNLIMITED~	/* Pearl Necklace */
 		ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4	/* Bloodstone Amulet */
 	END
-
+PRINT @30009
 /* resources : area creation */
+PRINT @30037
 COPY ~aranw/areas/c-ar01.are~ 	~override~
 COPY ~aranw/areas/c-ar01.tis~ 	~override~
 COPY ~aranw/areas/c-ar01.mos~ 	~override~
@@ -1357,6 +1392,7 @@ COMPILE ~aranw/baf/c-ar01.baf~
 
 EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
 
+PRINT @30038
 /* steal Abandon06 info point and turn it into a ravel region, add entrance point for c-ar01 to use to send party to AR0700	*/
 COPY_EXISTING ar0700.are override
 	LPF ALTER_AREA_REGION
@@ -1378,9 +1414,9 @@ COPY_EXISTING ar0700.are override
 		fj_name	= Exitc-ar01
 	END
 	ADD_MAP_NOTE #2254 #1342 ~blue~ @13144
-
+PRINT @30009
 /* install scripts */
-PRINT @155
+PRINT @30039
 /* underdark trigger */
 EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ /* sets up filter indicating drow avatar and spelunking */
 EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~	/* shuts down underdark filter */
@@ -1410,8 +1446,10 @@ COMPILE ~aranw/baf/c-malcer.baf~ /* override script for Malcer */
 COMPILE ~aranw/baf/c-oskut.baf~ /* override script for Oskut */
 COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
 
-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB dialog file */
-	PRINT @156
+PRINT @30009
+
+ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB scripts */
+	PRINT @30040
 	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	COMPILE ~aranw/baf/c-aranx.baf~ // default ToB unjoined temporary
@@ -1419,13 +1457,15 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB dialog file */
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
 	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
 	EXTEND_TOP ~ar6200.bcs~ ~aranw/baf/c-ar6200_epilog_ext.baf~ // epilogues triggered
+	
+	PRINT @30009
 END
 
 /* sounds */
 
-BEGIN @157
-	FORCED_SUBCOMPONENT @158
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+BEGIN @30012
+	FORCED_SUBCOMPONENT @30011
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 
 	// replace this for .acm music later - but for now,	add the blank sound reference 
 
@@ -1491,17 +1531,17 @@ BEGIN @157
 		~c-arandf~
 		~c-arands~
 	END
-
 	// look for the resulting .wavc files and copy them into the game 
 	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
 		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
 			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
 		END
 	END
+	PRINT @30009
 	
-BEGIN @160
-	FORCED_SUBCOMPONENT @158
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+BEGIN @30013
+	FORCED_SUBCOMPONENT @30011
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 
 	COPY ~aranw/media/g3blank.mus~ 		~music~
 	COPY_EXISTING ~songlist.2da~ 		~override~
@@ -1565,17 +1605,17 @@ BEGIN @160
 		~c-arandf~
 		~c-arands~
 	END
-
 	/* look for the resulting .wavc files and copy them into the game */
 	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
 		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
 			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
 		END
 	END
-
-BEGIN @161
-	FORCED_SUBCOMPONENT @158
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+	PRINT @30009
+	
+BEGIN @30014
+	FORCED_SUBCOMPONENT @30011
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	COPY ~aranw/media/g3blank.mus~ 		~music~
 	COPY_EXISTING ~songlist.2da~ 		~override~
 		SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
@@ -1632,23 +1672,23 @@ BEGIN @161
 		~c-aws044~
 		~c-aws045~
 	END
-
 	/* look for the resulting .wavc files and copy them into the game */
 	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
 		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
 			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
 		END
 	END
+	PRINT @30009
 
-BEGIN @162
-	FORCED_SUBCOMPONENT @158
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
-
-	PRINT @163
-
-BEGIN	@164
-	FORCED_SUBCOMPONENT @165
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+BEGIN @30015
+	FORCED_SUBCOMPONENT @30011
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	PRINT @30016
+	PRINT @30009
+	
+BEGIN @30019
+	FORCED_SUBCOMPONENT @30018
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* register choice */
 	OUTER_SET class_choice = 5
 	/* Ask for choices and patch the .cre */
@@ -1661,12 +1701,13 @@ BEGIN	@164
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
 			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
-		PRINT @166
+		PRINT @30024
 	END
-
-BEGIN	@167
-	FORCED_SUBCOMPONENT @165
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+	PRINT @30009
+	
+BEGIN @30020
+	FORCED_SUBCOMPONENT @30018
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* register choice */
 	OUTER_SET class_choice = 1
 	/* Ask for choices and patch the .cre */
@@ -1679,12 +1720,13 @@ BEGIN	@167
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
 			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
-		PRINT @166
+		PRINT @30024
 	END
-
-BEGIN	@168
-	FORCED_SUBCOMPONENT @165
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+	PRINT @30009
+	
+BEGIN @30021
+	FORCED_SUBCOMPONENT @30018
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* register choice */
 	OUTER_SET class_choice = 2
 	/* Ask for choices and patch the .cre */
@@ -1695,14 +1737,15 @@ BEGIN	@168
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /*	override script */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
-		PRINT @166
+		PRINT @30024
 	END
-
-BEGIN	@169
-	FORCED_SUBCOMPONENT @165
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+	PRINT @30009
+	
+BEGIN @30022
+	FORCED_SUBCOMPONENT @30018
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* register choice */
 	OUTER_SET class_choice = 3
 	/* Ask for choices and patch the .cre */
@@ -1713,14 +1756,15 @@ BEGIN	@169
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /*	override script */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
-		PRINT @166
+		PRINT @30024
 	END
-
-BEGIN	@170
-	FORCED_SUBCOMPONENT @165
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
+	PRINT @30009
+	
+BEGIN @30023
+	FORCED_SUBCOMPONENT @30018
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* register choice */
 	OUTER_SET class_choice = 4
 	/* Ask for choices and patch the .cre */
@@ -1731,17 +1775,18 @@ BEGIN	@170
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
 			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /*	override script */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 	END ELSE BEGIN
-		PRINT @166
+		PRINT @30024
 	END
-
-BEGIN @171
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @159
-
-OUTER_SPRINT ~arportrait~ @172
+	PRINT @30009
+	
+BEGIN @30025
+REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+PRINT @30105
+OUTER_SPRINT ~arportrait~ ~portrait_value~
 OUTER_WHILE (!(IS_AN_INT ~arportrait~) OR (~arportrait~ > 0xe) OR (~arportrait~ < 0x1)) BEGIN
-	PRINT @173
+	PRINT @30106
 	ACTION_READLN ~arportrait~
 END
 ACTION_IF ("arportrait" = 0x1) THEN BEGIN /* Nix's "Default" portrait set ( fair hair, fair complexion) */
@@ -1749,287 +1794,314 @@ ACTION_IF ("arportrait" = 0x1) THEN BEGIN /* Nix's "Default" portrait set ( fair
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @174
+	PRINT @30107
 END
 ACTION_IF (("arportrait" = 0x1) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	/* portraits already copied into place as standard resources, so just touch the file to make sure it has the right colors */
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x2) THEN BEGIN /* Pechplum's "Latest" portrait set ( brown hair, fair complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2l.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2m.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2s.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2l.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2m.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2s.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @176
+	PRINT @30108
 END
 ACTION_IF (("arportrait" = 0x2) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3 /* hair color (light gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x3) THEN BEGIN /*	Berelinde's "Boromir" style (dark brown hair, fair complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_borm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_bors.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_borm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_bors.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @177
+	PRINT @30109
 END
 ACTION_IF (("arportrait" = 0x3) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x4) THEN BEGIN	/*	Berelinde's "Dragon Age" style (dark hair, dark complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_dam.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_das.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_dam.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_das.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
-	PRINT @178
+	PRINT @30110
 END
 ACTION_IF (("arportrait" = 0x4) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x5) THEN BEGIN /*	Berelinde's "Scruffy" style (light brown hair, fair complexion)	*/
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_scruffym.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/berelinde_scruffys.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_scruffym.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/berelinde_scruffys.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @179
+	PRINT @30111
 END
 ACTION_IF (("arportrait" = 0x5) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3 /* hair color (light gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x6) THEN BEGIN	/*	Macmazey's	"Don Pedro" style (dark hair, dark complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/macmazey_donpedrom.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/macmazey_donpedros.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/macmazey_donpedrom.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/macmazey_donpedros.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
-	PRINT @180
+	PRINT @30112
 END
 ACTION_IF (("arportrait" = 0x6) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 91 /* skin color (dark chocolate) */
 		WRITE_BYTE 0x32 0	/* hair color (red-tinted black) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x7) THEN BEGIN	/*	Macmazey's "Fantasy Photo" style (long brown hair, light complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/macmazey_longhairm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/macmazey_longhairs.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/macmazey_longhairm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/macmazey_longhairs.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @181
+	PRINT @30113
 END
 ACTION_IF (("arportrait" = 0x7) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x8) THEN BEGIN /*	Macmazey's	"Bearded" style (dark hair, light complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_beardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_beards.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_beardm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_beards.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @182
+	PRINT @30114
 END
 ACTION_IF (("arportrait" = 0x8) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre	file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0x9) THEN BEGIN	/*	Macmazey's "No Beard" style (dark hair, light complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_nobeardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_nobeards.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_nobeardm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_nobeards.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @183
+	PRINT @30115
 END
 ACTION_IF (("arportrait" = 0x9) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0xa) THEN BEGIN	/*	Macmazey's "Horatio Photo" style (dark hair, light complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/mcmazey_photo_hs.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_photo_hm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/mcmazey_photo_hs.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @184
+	PRINT @30116
 END
 ACTION_IF (("arportrait" = 0xa) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0xb) THEN BEGIN /*	Peachplum's "Young Fighter" style (red hair, fair comlpexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/peachplums_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/peachplums_youngs.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/peachplums_youngm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/peachplums_youngs.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
 		WRITE_BYTE 0x32 4	/* hair color (auburn) */
-	PRINT @185
+	PRINT @30117
 END
 ACTION_IF (("arportrait" = 0xb) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 13 /* skin color (light pure silver) */
 		WRITE_BYTE 0x32 4	/* hair color (auburn) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0xc) THEN BEGIN /*	piper's "Stalwort Bearded Young" style (light brown hair, fair complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_beard_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_beard_youngs.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_beard_youngm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_beard_youngs.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @186
+	PRINT @30118
 END
 ACTION_IF (("arportrait" = 0xc) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
 ACTION_IF ("arportrait" = 0xd) THEN BEGIN	/*	piper's "Mature Bearded" style (dark brown hair, medium complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_darker_beardm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_darker_beards.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_darker_beardm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_darker_beards.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 84 /* skin color (peachy) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @187
+	PRINT @30119
 END
 ACTION_IF (("arportrait" = 0xd) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 84 /* skin color (peachy) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
-ACTION_IF ("arportrait" = 0xe) THEN BEGIN	 /*	piper's "Stalwort Young" style (light brown hair, fair complexion) */
+ACTION_IF ("arportrait" = 0xe) THEN BEGIN /* piper's "Stalwort Young" style (light brown hair, fair complexion) */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
-	COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
+		PRINT @30029
+		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
-	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngm.bmp~ ~override/c-aranwm.bmp~
-	COPY ~aranw/media/portraits_bg2/piper_nobeard_youngs.bmp~ ~override/c-aranws.bmp~
+		PRINT @30030
+		COPY ~aranw/media/portraits_bg2/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_nobeard_youngm.bmp~ ~override/c-aranwm.bmp~
+		COPY ~aranw/media/portraits_bg2/piper_nobeard_youngs.bmp~ ~override/c-aranws.bmp~
 	END
 	COPY_EXISTING ~c-aran7.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 3	/* hair color (light gold) */
-	PRINT @188
+	PRINT @30120
 END
 ACTION_IF (("arportrait" = 0xe) AND (FILE_EXISTS_IN_GAME ~c-aran13.cre~)) THEN BEGIN // ToB .cre file
 	COPY_EXISTING ~c-aran13.cre~ ~override~
 		WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 		WRITE_BYTE 0x32 2	/* hair color (dark gold) */
-	PRINT @175
+	PRINT @30041
 END
-
+PRINT @30009
+PRINT @30103
 

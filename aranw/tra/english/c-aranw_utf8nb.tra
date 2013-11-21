@@ -1,216 +1,71 @@
-@0    = ~Beta_4~
-@1    = ~Install Aran Whitehand for SoA and ToB~
-@2    = ~Set Talk and Flirt Timers
-	[1] Install Default Timers
-	[2] Customize Timers
-Please type 1 or 2 and press enter.~
-@3    = ~Speed: minimum 1 hour real time between dialogues (Default, recommended)~
-@4    = ~Initial Lovetalk offset by 40 minutes~
-@5    = ~Initial NPC-Initiated Flirt offset by 20 minutes~
-@6    = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-hourly FriendTalk, 
-NPC-initiated Flirt 20 minutes later, 
-RomanceTalk 20 minutes after that, 
-then 20 minutes later the next FriendTalk fires. 
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@7    = ~Select Aran's Talk timers:~
-@8    = ~Please choose one of the following:
- [1] approximately 1 hour real time minimum between friendship dialogues (recommended, default)
- [2] approximately 15 minutes real time minimum between friendship dialogues
- [3] approximately 30 minutes real time minimum between friendship dialogues
- [4] approximately 45 minutes real time minimum between friendship dialogues
- [5] approximately 1 hour 30 minutes real time minimum friendship between dialogues
- [6] approximately 2 hours real time minimum between friendship dialogues~
-@9    = ~placeholder_value~
-@10   = ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
-@11   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-hourly FriendTalk, 
-NPC Flirt 20 minutes later, 
-and RomanceTalk 20 minutes after that, 
-then 20 minutes later the next FriendTalk fires. 
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@12   = ~Speed: minimum 15 minutes real time between dialogues~
-@13   = ~Initial Lovetalk offset by 10 minutes~
-@14   = ~Initial NPC-Initiated Flirt offset by 5 minutes~
-@15   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-15 minute FriendTalk, 
-NPC-initiated Flirt 5 minutes later, 
-and RomanceTalk 5 minutes after that, 
-then 5 minutes later the next FriendTalk fires.
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@16   = ~Speed: minimum 30 minutes real time between dialogues~
-@17   = ~Initial Lovetalk offset by 20 minutes~
-@18   = ~Initial NPC-Initiated Flirt offset by 10 minutes~
-@19   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-30 minute FriendTalk, 
-NPC-initiated Flirt 10 minutes later, 
-and RomanceTalk 10 minutes after that, 
-then 10 minutes later the next FriendTalk fires.
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@20   = ~Speed: minimum 45 minutes real time between dialogues~
-@21   = ~Initial Lovetalk offset by 30 minutes~
-@22   = ~Initial NPC-Initiated Flirt offset by 15 minutes~
-@23   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-45 minute FriendTalk, 
-NPC-initiated Flirt 15 minutes later, 
-and RomanceTalk 15 minutes after that, 
-then 15 minutes later the next FriendTalk fires.
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@24   = ~Speed: minimum 1 hour 30 minutes real time between dialogues~
-@25   = ~Initial Lovetalk offset by 60 minutes~
-@26   = ~Initial NPC-Initiated Flirt offset by 30 minutes~
-@27   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-90 minute FriendTalk, 
-NPC-initiated Flirt 30 minutes later, 
-and RomanceTalk 30 minutes after that, 
-then 30 minutes later the next FriendTalk fires.
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@28   = ~Speed: minimum 2 hours real time between dialogues~
-@29   = ~Initial Lovetalk offset by 80 minutes~
-@30   = ~Initial NPC-Initiated Flirt offset by 40 minutes~
-@31   = ~So if you are in a romance with him and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-120 minute FriendTalk,
-NPC-initiated Flirt 40 minutes later, 
-and RomanceTalk 40 minutes after that, 
-then 40 minutes later the next FriendTalk fires.
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@32   = ~Music choices:
-		[1] JSayles unaccompanied guitar, Early Music
-		[2] Renaissance brass
-		[3] Vox Vulgaris (midaevil wih a twist)
-		Please type 1, 2, or 3, and press enter.~
-@33   = ~Default unaccompanied guitar soundtrack chosen~
-@34   = ~Vox Vulgaris soundtrack chosen~
-@35   = ~Brass soundtrack chosen~
-@36   = ~Aran is down-and-out poor,~
-@37   = ~Aran is of average wealth,~
-@38   = ~Aran is successful,~
-@39   = ~Something has gone wrong~
-@40   = ~has Leather Armor,~
-@41   = ~has Studded Leather Armor,~
-@42   = ~has Chain Mail,~
-@43   = ~has Splint Mail,~
-@44   = ~has Plate Armor,~
-@45   = ~  ~
-@46   = ~carrying Long Sword, Shield, Dagger~
-@47   = ~carrying Long Sword, Shield, Quarterstaff~
-@48   = ~carrying Long Sword, Shield, Potions of Healing~
-@49   = ~carrying Long Sword, Shield, Mace~
-@50   = ~carrying Long Sword, Shield, Flail~
-@51   = ~carrying Long Sword, Shield, Long Bow~
-@52   = ~carrying Bastard Sword, Shield, Dagger~
-@53   = ~carrying Bastard Sword, Shield, Long Bow~
-@54   = ~carrying Long Sword, Shield, Crossbow~
-@55   = ~carrying Short Sword, Shield, Dagger~
-@56   = ~carrying Short Sword, Shield, Crossbow~
-@57   = ~carrying Long Sword, Shield, Hammer~
-@58   = ~Please choose from the following choices to modify starting armor and weapons available to him:
-	[1] Aran is down-and-out poor and has sold off most of his good equipment.
-	[2] Aran has kept most of his good gear.
-	[3] Aran has kept the best gear available to a successful mercenary.
-Please type 1, 2, or 3 and press enter.~
-@59   = ~You are probably going to Dual-Class Aran to Mage. He currently has proficiencies as follows:
-	** Long Sword
-	** Quarterstaff
-	** Dagger
-Please choose from the following starting weapon choices:
-	[1] Long Sword, Shield, Dagger
-	[2] Long Sword, Shield, Quarterstaff
-	[3] Long Sword, Shield, Potions of healing
-Please type 1, 2, or 3, and press enter~
-@60   = ~Please choose from the following starting armor choices for Aran:
-	[1] Leather
-	[2] Studded Leather
-	[3] Chain
-	[4] Splint
-	[5] Plate
-Please type 1, 2, 3, 4, or 5 and press enter.~
-@61   = ~For some reason, %dest_res% is not valid. Please check your install.~
-@62   = ~You are probably going to Dual-Class Aran to Cleric. He currently has proficiencies as follows:
-	* Long Sword
-	* Hammer
-	* Mace
-	* Flail
-	** Sword and Shield Style
-Please choose from the following starting weapon choices:
-	[1] Long Sword, Shield, Mace
-	[2] Long Sword, Shield, Quarterstaff
-	[3] Long Sword, Shield, Hammer
-	[4] Long Sword, Shield, Flail
-Please type 1, 2, or 3 and press enter.~
-@63   = ~Please choose from the following choices to modify starting armor and weapons available to him:
-	[1] Aran is down-and-out poor and has sold off most of his good equipment.
-	[2] Aran has kept most of his good gear.
-	[3] Aran has kept the best gear available to a successful mercenary.
-Please select 1, 2, or 3 and press enter.~
-@64   = ~You are probably going to leave Aran as a fighter. He currently has proficiencies as follows:
-	** Long Sword
-	** Bastard Sword
-	* Long Bow
-	* Sword and Shield
-Please choose from the following starting weapon choices:
-		[1] Long Sword, Shield, Dagger
-		[2] Long Sword, Shield, Long Bow
-		[3] Long Sword, Shield, Potions of healing
-		[4] Bastard Sword, Shield, Dagger
-		[5] Bastard Sword, Shield, Long Bow
-		[6] Long Sword, Shield, Hammer
-Please type 1, 2, 3, 4, 5, or 6 and press enter.~
-@65   = ~Please choose from the following starting armor choices for Aran:
-	[1] Leather
-	[2] Studded Leather
-	[3] Chain
-	[4] Splint
-	[5] Plate
-Please select 1, 2, 3, 4, or 5 and press enter.~
-@66   = ~You are probably going to Dual-Class Aran as a Thief. He currently has proficiencies as follows:
-	** Long Sword
-	** Short Sword
-	* Dagger
-	* Crossbow
-Please choose from the following starting weapon choices:
-	[1] Long Sword, Shield, Dagger
-	[2] Long Sword, Shield, Crossbow
-	[3] Long Sword, Shield, Potions of healing
-	[4] Short Sword, Shield, Dagger
-	[5] Short Sword, Shield, Crossbow
-Please select 1, 2, 3, 4, or 5 and press enter.~
-@67   = ~Installing Aran's default settings (Soldier).~
+// @0    = 
+// @1    = 
+// @2    = 
+// @3    = 
+// @4    = 
+// @5    = 
+// @6    = 
+// @7    = 
+// @8    = 
+// @9    = 
+// @10   = 
+// @11   = 
+// @12   = 
+// @13   = 
+// @14   = 
+// @15   = 
+// @16   = 
+// @17   = 
+// @18   = 
+// @19   = 
+// @20   = 
+// @21   = 
+// @22   = 
+// @23   = 
+// @24   = 
+// @25   = 
+// @26   = 
+// @27   = 
+// @28   = 
+// @29   = 
+// @30   = 
+// @31   = 
+// @32   = 
+// @33   = 
+// @34   = 
+// @35   = 
+// @36   = 
+// @37   = 
+// @38   = 
+// @39   = 
+// @40   = 
+// @41   = 
+// @42   = 
+// @43   = 
+// @44   = 
+// @45   = 
+// @46   = 
+// @47   = 
+// @48   = 
+// @49   = 
+// @50   = 
+// @51   = 
+// @52   = 
+// @53   = 
+// @54   = 
+// @55   = 
+// @56   = 
+// @57   = 
+// @58   = 
+// @59   = 
+// @60   = 
+// @61   = 
+// @62   = 
+// @63   = 
+// @64   = 
+// @65   = 
+// @66   = 
+// @67   = 
 @68   = ~Aran~
 @69   = ~Aran Whitehand~
 @70   = ~[c-aws001] Now, there be an idea... joinin' up on an adventure.~ [c-aws001]
@@ -259,15 +114,15 @@ Please select 1, 2, 3, 4, or 5 and press enter.~
 @113  = ~[c-aws044] Never did get that one right...~ [c-aws044]
 @114  = ~[c-aws045] Try that, you bugger.~ [c-aws045]
 @115  = ~[c-aranbio] When you ask him about his past, ARAN WHITEHAND grasps at a nearby twig to chew on. He explains that he grew up in a small independent family-run Coster plying the Trade Way and Coast Way from Waterdeep both north and south. Working as both Pen and Sword (scribe and fighting guard) made him attractive as an independent, since he could balance accounts, keep inventory, and still operate as a sellsword. A few campaigns with mercenary companies, a few battles, and lots of wandering about has brought him to Amn. He hastens to note that he is not the man to send in to negotiate anything, preferring to wield weapons rather than the spoken word - but if you want a trading contract written up, he's the right man for the job.~ [c-aran44]
-@116  = ~Installing SoA dialog...~
-@117  = ~Installing ToB dialog...~
+// @116  = 
+// @117  = 
 @118  = ~The years of following in <CHARNAME>'s shadow took their toll on Aran, though not a single instance of him complaining is recorded. After a time, he withdrew from <PRO_HISHER> side, claiming injury, and set out for the wild coast of Maztican. Rejoining the Flaming Fist there gave him one last brush with glory - his name still graces the List of Brotherhood in the Flaming Fist training facilities there. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers, but their persistence in trying to get Aran to speak of those days went unanswered. Of <CHARNAME> <PRO_HIMHER>self, Aran refused to speak.~
 @119  = ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. As Aran tells it, the greatest moment in Aran's life came when his eldest daughter took up the way of the sword and pledged herself to <CHARNAME>'s protection. The second best moment was when his new wife finally managed to teach him to speak with correct pronunciation (though she never did erase his swearing completely).~
 @120  = ~There are few places in history for followers and companions, and Aran was no exception. He traveled the breadth and depth of Toril in service to <CHARNAME>, often dispatched to assist other companions and causes dear to <CHARNAME>'s heart. Discovering new love with a Cleric of Sune Firehair, his sons and daughters grew up listening to bard's tales of the adventures of <CHARNAME> and <PRO_HISHER> followers. Though he never claimed worship of <CHARNAME>, his children relate that the new oaths and blasphemies used when they did something particularly right or particularly wrong seemed to indicate he was profoundly aware of <CHARNAME>'s godhood.~
 @121  = ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. Though the histories never indicate precisely the nature of their romance, there is no question of his loyalty. His final act of devotion came giving up his life in order to protect her. There are no reliable sources, but bard's tales say that his last words were "Blighted hells, <CHARNAME>... did we have to come Planewalkin' here?"~
 @122  = ~Aran's depth of devotion to <CHARNAME> continued to grow, serving as Her right hand on Faerun. His constant work furthering her causes helped develop a respectable following, and his willingness to travel anywhere in Her name led others to regard him as some sort of high priest... a notion that often was dispelled in a barrage of blasphemy. As the histories recount, his last days on this mortal plane were spent comfortably on Evermeet, attempting to arrange a joint project between the followers of <CHARNAME> and Hanali Celanil's Order of the Ruby Rose to commemorate what would have been <CHARNAME>'s eightieth mortal birth-day celebration.~
 @123  = ~Aran's depth of devotion to <CHARNAME> continued to grow, serving for the following years without question or complaint. His constant work furthering her causes eventually corrupted him completely, though later writings indicate growing fear and desolation as his mortality left him increasingly unable to serve <CHARNAME> in the manner she wished. It is a mark of their love that when a Paladin of Helm finally ended Aran's life, <CHARNAME> Herself personally blasted the woman into nothingness, causing a minor skirmish in the wars of the gods.~
-@124  = ~Installing ToB creature...~
+// @124  = 
 @125  = ~Stedd~
 @126  = ~A Letter~
 @127  = ~[Aran Broadside]Mae Govannen
@@ -354,54 +209,40 @@ Ferrin DeLorea, Clerk, City Revenue Department~
 Aran was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be.~
 @153  = ~Orrin's Tavern~
 @154  = ~Orrin's Special Stock~
-@155  = ~Installing SoA scripts...~
-@156  = ~Installing ToB scripts...~
-@157  = ~Install Soundset, Voiced lines, and Music~
-@158  = ~Install Audio Files~
-@159  = ~Aran Whitehand must be installed for this to work.~
-@160  = ~Install Only Soundset and Music~
-@161  = ~Install Only Soundset~
-@162  = ~Do not install any audio~
-@163  = ~No soundset, music, or voiced lines files are installed.~
-@164  = ~Aran Whitehand, default configuration (Soldier)~
-@165  = ~Choose Which Aran Configuration to install...~
-@166  = ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
-@167  = ~Aran Whitehand, Mage Dual-Class stats configuration (Tinker)~
-@168  = ~Aran Whitehand, Cleric Dual-Class stats configuration (Tailor)~
-@169  = ~Aran Whitehand, Fighter stats configuration (Soldier)~
-@170  = ~Aran Whitehand, Thief Dual-Class stats configuration (Spy)~
-@171  = ~Choose Aran's Portrait~
-@172  = ~There are many alternate portraits from which to choose. You may want to consult the ReadMe before choosing.~
-@173  = ~Please enter your choice and press return:
-[1] Keep Nix's "Default" portrait (fair hair, fair complexion)
-[2] Peachplum's "Latest" (dark brown hair, fair complexion)
-[3] berelinde's "Boromir" (dark brown hair, fair complexion)
-[4] berelinde's "Dragon Age" (dark hairr, dark complexion)
-[5] berelinde's "Scruffy" (light brown hair, fair complexion)
-[6] McMazey's "Don Pedro" (dark hair, dark complexion)
-[7] McMazey's "Fantasy Photo" (long brown hair, light complexion)
-[8] McMazey's "Bearded" (dark hair, light complexion)
-[9] McMazey's "No Beard" (dark hair, light complexion)
-[10] McMazey's "Horatio Photo" (dark hair, light complexion)
-[11] Peachplums' "Young Fighter" (red hair, fair complexion)
-[12] piperb's "Stalwort Bearded Young" (light brown hair, fair complexion)
-[13] piperb's "Mature Bearded" (dark brown hair, medium complexion)
-[14] piperb's "Stalwort Young" (light brown hair, fair complexion) ~
-@174  = ~Nix's "Default" portrait (fair hair, fair complexion) installed.~
-@175  = ~ToB file patched to match.~
-@176  = ~Pechplum's "Latest" portrait (fair hair, fair complexion) installed.~
-@177  = ~Berelinde's "Boromir" (dark brown hair, fair complexion) installed.~
-@178  = ~Berelinde's "Dragon Age" (dark hair, dark complexion) installed.~
-@179  = ~Berelinde's "Scruffy"(light brown hair, fair complexion) installed.~
-@180  = ~Macmazey's "Don Pedro" (dark hair, dark complexion) installed.~
-@181  = ~Macmazey's "Fantasy Photo" (long brown hair, light complexion) installed.~
-@182  = ~Macmazey's	"Bearded" (dark hair, light complexion) installed.~
-@183  = ~Macmazey's "No Beard" (dark hair, light complexion) installed.~
-@184  = ~Macmazey's "Horatio Photo" (dark hair, light complexion)installed.~
-@185  = ~Peachplum's "Young Fighter" (red hair, fair comlpexion) installed.~
-@186  = ~piper's "Stalwort Bearded Young" (light brown hair, fair complexion) installed.~
-@187  = ~piper's "Mature Bearded" (dark brown hair, medium complexion) installed.~
-@188  = ~piper's "Stalwort Young" (light brown hair, fair complexion) installed.~
+// @155  = 
+// @156  = 
+// @157  = 
+// @158  = 
+// @159  = 
+// @160  = 
+// @161  = 
+// @162  = 
+// @163  = 
+// @164  = 
+// @165  = 
+// @166  = 
+// @167  = 
+// @168  = 
+// @169  = 
+// @170  = 
+// @171  = 
+// @172  = 
+// @173  = 
+// @174  = 
+// @175  = 
+// @176  = 
+// @177  = 
+// @178  = 
+// @179  = 
+// @180  = 
+// @181  = 
+// @182  = 
+// @183  = 
+// @184  = 
+// @185  = 
+// @186  = 
+// @187  = 
+// @188  = 
 @189  = ~[ARAN] Small! Naught about me could rightly be called small! You should see th' size o' my... err... yep. Teeth. Sorry. Shuttin' up an' soldierin'.~
 @190  = ~[ARAN] Now, to be fair, they were a mite bit useful. Watchin' 'em bumble around an' fall over themselves, it were as entertainin' as one o' them plays or follies, or such.~
 @191  = ~[ARAN] Blighted... Look. I kept my bloody mouth shut up to now. But this be war on more than a minor guild member. An' we still pay? Bane's Blighted Bones, <CHARNAME>, we are bein' used hard, wi' naught in th' way o' a decent reward... only a blighted "discount". I for one don't like th' feelin' o' a club being shoved up my arse an' twisted hard.~
@@ -13849,7 +13690,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13446 = ~[DORN] That is what you do not understand.~
 @13447 = ~[ARAN] So, no more patron.~
 @13448 = ~[DORN] I have no need of one.~
-@13449 = ~[ARAN]An' what does that change, eh?~
+@13449 = ~[ARAN] An' what does that change, eh?~
 @13450 = ~[DORN] It means I can revel in the glory, and share none of it.~
 @13451 = ~[ARAN] Do you be meanin' glory, or gore?~
 @13452 = ~[DORN] What is the difference?~
@@ -13863,13 +13704,12 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13460 = ~[DORN] That is likely.~
 @13461 = ~[ARAN] So when will you be makin' your move?~
 @13462 = ~[DORN] Someday, perhaps. But not today.~
-@13463 = ~BGII:EE detected. Managing journal entries.~
-@13464 = ~BGII:EE content is being installed.~
-@13465 = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, or BGII:Enhanced Edition. Stopping installation. * * *~
+// @13463 = 
+// @13464 = 
+// @13465 = 
 @13466 = ~[PC] Branwen seems to be handling this better than you are.~
 @13467 = ~[EDWINA] Keep your lecherous gaze to yourself, sellsword. (The moron thinks I do not see his covetous glances.)~ 
 @13468 = ~[ARAN] Now, Edwin, how's a lad supposed to feel, when all those robes be concealin' such art? I just have to look at th' legs.~
 @13469 = ~[EDWINA] You will have trouble with your eyes, I think. Perhaps turning them to stone will keep your lusts in check.~
 @13470 = ~[ARAN] Oh, no worries on my account. Your form may be right fine to look at, but you still be an evil, over-educated, stone-hearted, backstabbin', manipulative Red Wizard, wi' all th' trappin's that entails.~
 @13471 = ~[EDWINA] Flattery will get you nowhere. (The moronic baboon. Though his points do have merit. I am still a magnificent specimen.)~
-
