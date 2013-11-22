@@ -3312,7 +3312,7 @@ IF
 	GlobalLT("c-aranfriendbg2","GLOBAL",23)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-	OR(11)
+	OR(12)
 		Global("c-aranfriendbg2","GLOBAL",0)	// set up SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",2)	// set up SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",4)	// set up SoA_FT_3
