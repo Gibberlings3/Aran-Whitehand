@@ -4042,7 +4042,7 @@ END
 IF
 	Global("c-arshaddragseen","GLOBAL",0)
 	AreaCheck("AR1402")
-	!Dead("ShaDra01")
+	See("ShaDra01")
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	InMyArea(Player1)
@@ -4068,8 +4068,9 @@ END
 IF
 	Global("c-arshaddrag","GLOBAL",1)
 	InParty(Myself)
-	!AreaCheck("AR1402")
-	Dead("ShaDra01")	
+	OR(2)
+	  !AreaCheck("AR1402")
+	  Dead("ShaDra01")	
 THEN
 	RESPONSE #100
 		SetGlobal("c-arshaddrag","GLOBAL",5)

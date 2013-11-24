@@ -2292,7 +2292,7 @@ END
 // THEN
 	// RESPONSE #100
 	// SetGlobal("c-aranworriedtob","GLOBAL",1)
-	// SetGlobalTimer("c-aransaravoktalk","GLOBAL",TEN_DAYS)
+	// SetGlobalTimer("c-aransaravoktalk","GLOBAL",TEN_DAYS) //TEN_DAYS
 // END
 
 // /* Sarevok chosen as companion: Activate after a week */
@@ -2421,14 +2421,14 @@ See(Player1)
 OR(2)
 Dead("abazigal1")
 Dead("abazigal")
-Global(" ","GLOBAL",0)
+// Global(" ","GLOBAL",0)
 AreaCheck("AR6005")
 THEN
 RESPONSE #100
 RealSetGlobalTimer(" ","GLOBAL",900)
-SetGlobal(" ","GLOBAL",1)
+// SetGlobal(" ","GLOBAL",1)
 PlaySong(0)
-PlaySound(" ")
+// PlaySound(" ")
 StartDialogueNoSet(Player1)
 END
 

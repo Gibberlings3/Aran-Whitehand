@@ -969,13 +969,13 @@ END
 PRINT @30009
 PRINT @30031
 /* SoA dialog file */
-COMPILE ~aranw/dialog/c-arandialog.d~   
+COMPILE EVALUATE_BUFFER ~aranw/dialog/c-arandialog.d~   
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 PRINT @30009	  
 /* ToB dialog file */	  
 ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN 
 	PRINT @30032
-	COMPILE ~aranw/dialog/c-arantobdialog.d~
+	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-arantobdialog.d~
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	/* Epilogue 1:	Low Rep, regardless of friendship or romance status */
 	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE0.2da~
