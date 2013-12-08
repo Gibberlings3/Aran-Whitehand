@@ -977,35 +977,296 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 	PRINT @30032
 	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-arantobdialog.d~
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
-	/* Epilogue 1:	Low Rep, regardless of friendship or romance status */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE0.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @118
-
-	/* PC Refused Godhood, Friendship */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE1.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @119
-
-	/* PC Became God, Friendship */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE2.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @120
-
-	/* PC Refused Godhood, Romance */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE3.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @121
-
-	/* PC Accepted Godhood, Romance, Good or Neutral */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE4.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @122
-
-	/* PC Accepted Godhood, Romance, Evil */
-	COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
-		REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
-		REPLACE 99999 @123
+	
+	////////////////////////////////////////////////////////
+	/////* PC Refuses Godhood Potential Endings : DLG */////
+	////////////////////////////////////////////////////////
+	
+	/* PC Refused Godhood, All PCs, Friendship, Good/Neutral : Global("c-aranepiloguefriend","GLOBAL",0) !Alignment(Player1,MASK_EVIL) */
+	/* TextScreen("C-ARANE5") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE5.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @0  
+	
+	/* PC Refused Godhood, All PCs, Friendship, Evil : Global("c-aranepiloguefriend","GLOBAL",0) Alignment(Player1,MASK_EVIL) */
+	/* TextScreen("C-ARANE6") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE6.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @1 
+	
+	/* PC Refused Godhood, All PCs, Friendship and Part Ways : Global("c-aranepiloguefriend","GLOBAL",1) */
+	/* TextScreen("C-ARANE7") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE7.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @2  
+	
+	/* PC Refused Godhood, Romance, Friendship with Benefits and Part Ways : Global("c-aranepiloguefriend","GLOBAL",1) */
+	/* TextScreen("C-ARANE8") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE8.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @3  
+	
+	/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: Adventuring Life : Global("c-aranepiloguefriend","GLOBAL",2) */
+	/* TextScreen("C-ARANE9") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE9.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @4  
+	
+	/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: City Life : Global("c-aranepiloguefriend","GLOBAL",3) */
+	/* TextScreen("C-ARNE10") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE10.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @5 
+	
+	/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: Country Life : Global("c-aranepiloguefriend","GLOBAL",4) */
+	/* TextScreen("C-ARNE11") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE11.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @6 
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE12") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE12.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @7  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE13") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE13.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @8  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE14") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE14.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @9  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE15") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE15.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @10  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE16") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE16.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @11 
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE17") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE17.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @12  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE18") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE18.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @13  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE19") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE19.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @14  
+	
+	/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE20") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE20.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @15  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE21") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE21.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @16  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE22") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE22.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @17  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE23") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE23.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @18  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE24") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE34.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @19  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE25") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE25.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @20 
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE26") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE26.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @21  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE27") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE27.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @22 
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE28") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE28.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @23  
+	
+	/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE29") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE29.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @24 
+	
+	/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE30") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE30.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @25  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE31") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE31.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @26  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE32") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE32.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @27 
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE33") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE33.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @28  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE34") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE34.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @29  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE35") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE35.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @30  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE36") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE36.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @31  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE37") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE37.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @32  
+	
+	/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE38") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE38.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @33  
+	
+	/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE39") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE39.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @34 
+	
+	/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE40") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE40.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @35 
+	
+	/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE41") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE41.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @36  
+			
+	/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE42") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE42.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @37  
+	
+	/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE43") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE43.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @38 
+	
+	/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE44") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE44.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @39  
+	
+	/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+	/* TextScreen("C-ARNE45") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE45.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @40  
+	
+	/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+	/* TextScreen("C-ARNE46") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE46.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @41  
+	
+	/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+	/* TextScreen("C-ARNE47") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE47.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @42  
+	
+	////////////////////////////////////////////////////////
+	/////* PC Accepts Godhood Potential Endings : DLG */////
+	////////////////////////////////////////////////////////
+	
+	/* PC Accepted Godhood, Friendship, Good/Neutral */
+	/* TextScreen("C-ARANE1") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE1.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @43  
+	
+	/* PC Accepted Godhood, Friendship, Evil */
+	/* TextScreen("C-ARANE2") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE2.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @44  
+	
+	/* PC Accepted Godhood, Romance, Good/Neutral */
+	/* TextScreen("C-ARANE3") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE3.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @45  
+	
+	/* PC Accepted Godhood, Romance, Evil */ 
+	/* TextScreen("C-ARANE4") */
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARANE4.2da~
+			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
+			REPLACE 99999 @46 
 		
 END /* of ToB installation */
 PRINT @30009

@@ -592,10 +592,10 @@ IF
 THEN
 	RESPONSE #100
 	StartCutSceneMode()
-	SetGlobal("c-arSCRL1Y","LOCALS",0)
-	SetGlobal("c-aranscribe","GLOBAL",0)
-	GiveItemCreate("SCRL1Y",Myself,1,1,1)
-	DisplayStringHead(Myself,@13041)
+		SetGlobal("c-arSCRL1Y","LOCALS",0)
+		SetGlobal("c-aranscribe","GLOBAL",0)
+		GiveItemCreate("SCRL1Y",Myself,1,1,1)
+		DisplayStringHead(Myself,@13041)
 	EndCutSceneMode()
 END
 /*	c-arSCRL1Z Aran PID: Create Scroll of Minor Globe of Invulnerability */
@@ -2469,16 +2469,29 @@ END
 
 /* Friend Talks Setup	*/
 IF
+	Global("c-aranfriendtobstart","GLOBAL",0)	 // Not evaluated true yet
+	Global("c-aranfriendtobstart","GLOBAL",0)	 // Not evaluated true yet
+	InParty(Myself)						// Aran is here
+	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+THEN
+	RESPONSE #100								// 100% of the time
+		SetGlobal("c-aranfriendtobstart","GLOBAL",1)		 //	set up ToB_FT_1 initialization
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",200)	// Minimum Real Time until ToB_FT_1 is ready; keeps PID clear	// set test time	<<<
+END
+/* Friend Talks Primed	*/
+IF
+	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
+	Global("c-aranfriendtobstart","GLOBAL",1)	 // Not evaluated true yet
 	Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 THEN
 	RESPONSE #100								// 100% of the time
-		SetGlobal("c-aranfriendtob","GLOBAL",1)		 //	set up ToB_FT_1
-		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",600)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
+		SetGlobal("c-aranfriendtob","GLOBAL",1)		 //	set up ToB_FT_1 initialization
+		RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",100)	// Minimum Real Time until ToB_FT_1	// set test time	<<<
 END
-
 /* Aran's FriendTalks Aim, c-aranfriendtob, %ARAN_FTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
@@ -2725,7 +2738,6 @@ IF
 	!Class(Myself,CLERIC_ALL)
 	Global("c-silencearan","GLOBAL",0)
 	Global("c-aranwaukeen","LOCALS",0)
-	OR(2)
 	AreaCheck("AR5004") //	Temple of Waukeen
 	InParty(Myself)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -2748,6 +2760,15 @@ THEN
 RESPONSE #100
 	SetGlobalTimer("c-aransmalltalk","GLOBAL",300) // spaces comments
 	StartDialogNoSet(Player1)
+END
+/* Temple Comment : Waukeen : Rollback */
+IF
+	Global("c-aranwaukeen","LOCALS",1)
+	!AreaCheck("AR5004") //	Temple of Waukeen
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("c-aranwaukeen","LOCALS",0)
 END
 
 /* Scenery Dialog : Aran Apologizes */

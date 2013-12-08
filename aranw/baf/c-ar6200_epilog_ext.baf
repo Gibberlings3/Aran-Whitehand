@@ -1,98 +1,928 @@
-/* Epilogue: PC Refused Godhood, Low Rep, regardless of friendship or romance status */
+/* EPILOGUE VARS if PC does not accept godhood
+ * Global("c-aranrom","GLOBAL",2) in romance | !Global("c-aranrom","GLOBAL",2) not in romance
+ * IF !Global("c-aranrom","GLOBAL",2) !Alignment(Player1,MASK_EVIL) = evil friend
+ * IF !Global("c-aranrom","GLOBAL",2) Alignment(Player1,MASK_EVIL) = god/neutral friend
+ * Global("c-aranepiloguefriend","GLOBAL",0) 	// 0 = alignment check, 1 = friends but part ways, 2 = Adventurers Forever, 3 = City Forever, 4 = Country Forever
+ * ALL ROM CONDITIONS (must at least set c-aranepiloguerelation and c-aranepiloguelifestyle above 0 or no epilogue will return true...
+ * Global("c-aranepiloguemarried","GLOBAL",0)	// 0 or 1
+ * Global("c-aranepiloguechildren","GLOBAL",0)	// 0 or 1
+ * Global("c-aranepiloguerelation","GLOBAL",0)	// 1 = AranPrince, 2 = PCPrincess, 3 = Equals
+ * Global("c-aranepiloguelifestyle","GLOBAL",0)	// 1 = Adventuring, 2 = City, 3 = Country
+*/   
+
+////////////////////////////////////////////////////////
+/////* PC Accepts Godhood Potential Endings : BCS */////
+////////////////////////////////////////////////////////
+
+/* PC Accepted Godhood, Friendship, Good/Neutral */
+/* TextScreen("C-ARANE1") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  !Global("PlayerChoseEssence","GLOBAL",1)
-  ReputationLT(Player1,10)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE0")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	Global("PlayerChoseEssence","GLOBAL",1)
+ 	!Global("c-aranrom","GLOBAL",2)
+ 	!GlobalGT("PPEvilChoices","GLOBAL",2) // PC chose good or neutral
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE1")
+ 	SmallWait(1)
+ 	Continue()
+ END
+
+/* PC Accepted Godhood, Friendship, Evil */
+/* TextScreen("C-ARANE2") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	Global("PlayerChoseEssence","GLOBAL",1)
+ 	!Global("c-aranrom","GLOBAL",2)
+ 	GlobalGT("PPEvilChoices","GLOBAL",2) // PC chose evil
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE2")
+ 	SmallWait(1)
+ 	Continue()
 END
 
-/* PC Refused Godhood, Friendship */
+/* PC Accepted Godhood, Romance, Good/Neutral */
+/* TextScreen("C-ARANE3") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  ReputationGT(Player1,9)
-  !Global("PlayerChoseEssence","GLOBAL",1)
-  !Global("c-aranrom","GLOBAL",2)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE2")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	!GlobalGT("PPEvilChoices","GLOBAL",2) // PC chose good or neutral
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE3")
+ 	SmallWait(1)
+ 	Continue()
 END
 
-/* PC Refused Godhood, Romance */
+/* PC Accepted Godhood, Romance, Evil */ 
+/* TextScreen("C-ARANE4") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  ReputationGT(Player1,9)
-  !Global("PlayerChoseEssence","GLOBAL",1)
-  Global("c-aranrom","GLOBAL",2)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE3")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	GlobalGT("PPEvilChoices","GLOBAL",2) // PC chose evil
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE4")
+ 	SmallWait(1)
+ 	Continue()
 END
 
+////////////////////////////////////////////////////////
+/////* PC Refuses Godhood Potential Endings : BCS */////
+////////////////////////////////////////////////////////
 
-/* PC Became God, Friendship */
+/* PC Refused Godhood, All PCs, Friendship, Good/Neutral : Global("c-aranepiloguefriend","GLOBAL",0) */
+/* TextScreen("C-ARANE5") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  ReputationGT(Player1,9)
-  Global("PlayerChoseEssence","GLOBAL",1)
-  !Global("c-aranrom","GLOBAL",2)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE2")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	!Global("c-aranrom","GLOBAL",2)
+ 	!Alignment(Player1,MASK_EVIL)
+ 	GlobalLT("c-aranepiloguefriend","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE5")
+ 	SmallWait(1)
+ 	Continue()
 END
 
-/* PC Accepted Godhood, Romance, Good or Neutral */
+/* PC Refused Godhood, All PCs, Friendship, Evil : Global("c-aranepiloguefriend","GLOBAL",0) */
+/* TextScreen("C-ARANE6") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  Global("PlayerChoseEssence","GLOBAL",1)
-  !GlobalGT("PPEvilChoices","GLOBAL",2)
-  Global("c-aranrom","GLOBAL",2)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE4")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	!Global("c-aranrom","GLOBAL",2)
+ 	Alignment(Player1,MASK_EVIL)
+ 	GlobalLT("c-aranepiloguefriend","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE6")
+ 	SmallWait(1)
+ 	Continue()
 END
 
-/* PC Accepted Godhood, Romance, Evil */
+/* PC Refused Godhood, All PCs, Friendship and Part Ways : Global("c-aranepiloguefriend","GLOBAL",1) */
+/* TextScreen("C-ARANE7") */
 IF
-  Global("StartEndBios","AR6200",1)
-  InPartyAllowDead("c-aran")
-  Global("PlayerChoseEssence","GLOBAL",1)
-  GlobalGT("PPEvilChoices","GLOBAL",2)
-  Global("c-aranrom","GLOBAL",2)
-  Global("c-aranbio","GLOBAL",0)
-THEN
-  RESPONSE #100
-    SetGlobal("c-aranbio","GLOBAL",1)
-    TextScreen("C-ARANE5")
-    SmallWait(1)
-    Continue()
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	!Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguefriend","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE7")
+ 	SmallWait(1)
+ 	Continue()
 END
 
+/* PC Refused Godhood, Romance, Friendship with Benefits and Part Ways : Global("c-aranepiloguefriend","GLOBAL",1) (RA) */
+/* TextScreen("C-ARANE8") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguefriend","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE8")
+ 	SmallWait(1)
+ 	Continue()
+END
 
+/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: Adventuring Life : Global("c-aranepiloguefriend","GLOBAL",2) (RA) */
+/* TextScreen("C-ARANE9") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguefriend","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARANE9")
+ 	SmallWait(1)
+ 	Continue()
+END
 
+/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: City Life : Global("c-aranepiloguefriend","GLOBAL",3) */
+/* TextScreen("C-ARNE10") (RA) */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguefriend","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE10")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Friendship with Benefits but Never Part Ways: Country Life : Global("c-aranepiloguefriend","GLOBAL",4) */
+/* TextScreen("C-ARNE11") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguefriend","GLOBAL",4)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE11")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE12") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE12")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE13") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE13")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE14") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE14")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE15") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE15")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE16") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE16")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE17") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE17")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE18") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE18")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE19") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE19")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With No Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE20") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE20")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE21") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE21")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE22") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE22")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE23") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE23")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE24") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE24")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE25") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE25")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE26") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE26")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE27") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE27")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE28") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE28")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Not Married With Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE29") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",0)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE29")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE30") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE30")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE31") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE31")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE32") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE32")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE33") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE33")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE34") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE34")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE35") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE35")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE36") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE36")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE37") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE37")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With No Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",0) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE38") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",0)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE38")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE39") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE39")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE40") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE40")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, Aran as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",1) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE41") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",1)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE41")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE42") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE42")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE43") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE43")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC as Prince Charming : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE44") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",2)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE44")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",1) */
+/* TextScreen("C-ARNE45") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",1)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE45")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : City Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",2) */
+/* TextScreen("C-ARNE46") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",2)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE46")
+ 	SmallWait(1)
+ 	Continue()
+END
+
+/* PC Refused Godhood, Romance, Married With Children, PC and Aran as Equals : Country Life : Global("c-aranepiloguemarried","GLOBAL",1) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",3) Global("c-aranepiloguelifestyle","GLOBAL",3) */
+/* TextScreen("C-ARNE47") */
+IF
+ 	Global("StartEndBios","AR6200",1)
+ 	Global("c-aranbio","GLOBAL",0)
+ 	InPartyAllowDead("c-aran")
+ 	!Global("PlayerChoseEssence","GLOBAL",1)
+ 	Global("c-aranrom","GLOBAL",2)
+ 	Global("c-aranepiloguemarried","GLOBAL",1)
+ 	Global("c-aranepiloguechildren","GLOBAL",1)
+ 	Global("c-aranepiloguerelation","GLOBAL",3)
+ 	Global("c-aranepiloguelifestyle","GLOBAL",3)
+THEN 
+	RESPONSE #100
+ 	SetGlobal("c-aranbio","GLOBAL",1)
+ 	TextScreen("C-ARNE47")
+ 	SmallWait(1)
+ 	Continue()
+END

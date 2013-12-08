@@ -4181,19 +4181,19 @@ END /* of pre-joined file */
 APPEND C-ARN25J
 
 /* Setting Aran as Leader (Darios) */
-IF ~Global("c-aranleader","LOCALS",1) Global("c-silencearan","GLOBAL",0)~ THEN BEGIN a3020
+IF ~Global("c-aranleader","LOCALS",1)~ THEN BEGIN a3020
   SAY @1031
   IF ~~ THEN DO ~SetGlobal("c-aranleader","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
 
 /* You look dead on your feet */
-IF ~Global("c-aranpctired","LOCALS",1) Global("c-silencearan","GLOBAL",0)~ THEN BEGIN a3021
+IF ~Global("c-aranpctired","LOCALS",1)~ THEN BEGIN a3021
   SAY @1032
   IF ~~ THEN DO ~SetGlobal("c-aranpctired","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
 
 /* Waukeen Temple */
-IF ~Global("c-aranwaukeen","LOCALS",1) Global("c-silencearan","GLOBAL",0)~ THEN BEGIN a3022
+IF ~Global("c-aranwaukeen","LOCALS",1)~ THEN BEGIN a3022
   SAY @1053
   IF ~~ THEN DO ~SetGlobal("c-aranwaukeen","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
