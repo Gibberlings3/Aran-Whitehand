@@ -405,7 +405,7 @@ APPEND C-ARN25J
 /* Sarevok and PC "disappear" for awhile */
 IF ~Global("c-arnRESarev","LOCALS",1)~ THEN BEGIN a4872
    SAY @11406
-   IF ~~ THEN EXIT
+   IF ~~ THEN DO ~SetGlobal("c-arnRESarev","LOCALS",2)~ EXIT
 END
 
 /* In Watcher's Keep, ToB  - both C-ARANJ and C-ARN25J triggered from Global("c-aranwatchkeep","GLOBAL",1) and closed to 2 in dlg */
