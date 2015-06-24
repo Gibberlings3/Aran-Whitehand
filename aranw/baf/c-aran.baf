@@ -286,6 +286,9 @@ THEN
 		SetGlobal("c-aranmalcer","GLOBAL",0)
 END
 
+
+
+
 /* Closing Reaction Blocks (Backup) based on Berelide's work */
 
 /* Backing out RE Reactions */
@@ -4064,17 +4067,6 @@ THEN
 	RESPONSE #100
 		StartDialogueNoSet(Player1)
 END
-/* SoA Scenery Talks : Shadow Dragon clobbered c-arshaddrag : Escape if not played */
-IF
-	Global("c-arshaddrag","GLOBAL",1)
-	InParty(Myself)
-	OR(2)
-	  !AreaCheck("AR1402")
-	  Dead("ShaDra01")	
-THEN
-	RESPONSE #100
-		SetGlobal("c-arshaddrag","GLOBAL",5)
-END
 /* SoA Scenery Talks : Shadow Dragon clobbered c-arshaddrag : Activate */
 IF
 	Global("c-arshaddrag","GLOBAL",0)
@@ -4098,6 +4090,16 @@ IF
 THEN
 	RESPONSE #100
 		StartDialogueNoSet(Player1)
+END
+/* SoA Scenery Talks : Shadow Dragon clobbered c-arshaddrag : Escape if not played */
+IF
+	Global("c-arshaddrag","GLOBAL",1)
+	InParty(Myself)
+	!AreaCheck("AR1402")
+	Dead("ShaDra01")	
+THEN
+	RESPONSE #100
+		SetGlobal("c-arshaddrag","GLOBAL",5)
 END
 /* SoA Scenery Talks :  Aran Dragon-Slayer (Darios) :  Activate */
 IF

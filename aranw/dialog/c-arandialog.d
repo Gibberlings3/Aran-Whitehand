@@ -26706,7 +26706,7 @@ CHAIN C-ARANJ a2936
 == C-TAMAN @10623
 == C-OSKUT @10624
 END
-IF ~NumInPartyLT(4)~ THEN DO ~SetGlobal("c-arbarfight","LOCALS",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
+IF ~NumInPartyLT(4)~ THEN DO ~SetGlobal("c-arbarfight","GLOBAL",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
 IF ~NumInPartyGT(3)~ THEN EXTERN C-OSKUT a4979
 
 CHAIN C-OSKUT a4979
@@ -26721,7 +26721,7 @@ CHAIN C-MALCER a2939
 @10629
 == C-ARANJ @10630
 END
-IF ~~ THEN DO ~SetGlobal("c-arbarfight","LOCALS",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
+IF ~~ THEN DO ~SetGlobal("c-arbarfight","GLOBAL",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
 
 /* PC Protective of Aran or just Feisty Exit */
 CHAIN C-MALCER a2940
@@ -26729,7 +26729,7 @@ CHAIN C-MALCER a2940
 == C-ARANJ @10632
 == C-MALCER @10633
 END
-IF ~~ THEN DO ~SetGlobal("c-arbarfight","LOCALS",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
+IF ~~ THEN DO ~SetGlobal("c-arbarfight","GLOBAL",1) ActionOverride("c-malcer",Enemy()) ActionOverride("c-oskut",Enemy()) ActionOverride("c-taman",Enemy())~ EXIT
 
 /* Scared Them Off, Tea and Nails */
 CHAIN C-MALCER a2941
