@@ -8384,13 +8384,41 @@ END
 
 IF ~~ a4134 /* LIPS_PRESS_FINGERS_UNTANGLE_BODICE */
   SAY @7785
+  /* IF RN = 1 THEN showblock1 */  
   + ~RandomNum(5,1)~ + @6584 + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  + ~RandomNum(5,1)~ + @7784 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4112 /* KISSING_END_STATE */
+  + ~RandomNum(5,1)~ + @7412 + a3564 /* KISSING_HOLDING_THREE */ 
+  + ~RandomNum(5,1)~ + @7315 + a3602 /* ROM_THREE_PC_TO_ARAN */
+  + ~RandomNum(5,1)~ + @7075 + a4061 /* MOON_ORAL */
+  /* IF RN = 2 THEN showblock2 */  
   + ~RandomNum(5,2)~ + @6584 + a3834 /* ARAN_AGREES_TWO_CUDDLE */
-  + ~RandomNum(5,1)~ + @7784 + a4112 /* KISSING_END_STATE */
-  + ~RandomNum(5,2)~ + @7784 + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,2)~ + @7784 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4145 /* QUICK_END_FADEOUT */
+  + ~RandomNum(5,2)~ + @67 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + c-lips_tob_check /* EXPLORING_WITH_BENEFITS */
+  + ~RandomNum(5,2)~ + @65 + c-fascinating_tob_rythm /* WHY_FASCINATED_WITH_BODY_PART */
+  /* ELSE = divert to other pathways */
   IF ~RandomNum(5,3)~ THEN GOTO a4127 /* ROM_TWO_ACTION_GENTLE_TOUCH_FACE */
   IF ~RandomNum(5,4)~ THEN GOTO a4126 /* ROM_TWO_ACTION_HEAT_CLOSE_FACE */
   IF ~RandomNum(5,5)~ THEN GOTO a4148 /* FRONT_TO_ARAN_FINGERS */
+END
+
+IF ~~ c-fascinating_tob_rythm /* WHY_FASCINATED_WITH_BODY_PART */
+  SAY @64  
+  ++ @6584 + a3833 /* ARAN_AGREES_ONE_CUDDLE */
+  ++ @7784 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4112 /* KISSING_END_STATE */
+  ++ @61 + c-lips_tob_check /* EXPLORING_WITH_BENEFITS  */
+  ++ @60 + c-inter_tob_ruptus /* INTERRUPTUS_SUNE */
+  ++ @59 + c-inter_tob_ruptus /* INTERRUPTUS_SUNE */
+  ++ @58 + c-inter_tob_ruptus /* INTERRUPTUS_SUNE */
+END
+
+IF ~~ c-lips_tob_check /* EXPLORING_WITH_BENEFITS  */
+  SAY @66  
+  IF ~~ THEN EXIT
+END
+
+IF ~~ c-inter_tob_ruptus /* INTERRUPTUS_SUNE */
+  SAY @63 = @62 
+  IF ~~ THEN EXIT
 END
 
 IF ~~ a4125 /* WAY_TOO_GRAPHIC */

@@ -1,5 +1,5 @@
 BACKUP ~aranw/backup~
-AUTHOR ~cmorgan~
+AUTHOR ~cmorgan: http://gibberlings3.net/forums/index.php?showforum=159~
 
 /*
  * IF YOU ARE DOWNOADING FROM GITHUB, you need to do the following:
@@ -10,6 +10,8 @@ AUTHOR ~cmorgan~
  * 4. enjoy the mod. If you run into problems, find me at G3 or start an issue ticket on GitHub!
 */
 
+
+/* WeiDU versions newer than v203 allow tp2 level version listing in the .log for troubleshooting  */
 VERSION @30001
 
 README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
