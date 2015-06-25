@@ -8387,8 +8387,8 @@ IF ~~ a4134 /* LIPS_PRESS_FINGERS_UNTANGLE_BODICE */
   /* IF RN = 1 THEN showblock1 */  
   + ~RandomNum(5,1)~ + @6584 + a3833 /* ARAN_AGREES_ONE_CUDDLE */
   + ~RandomNum(5,1)~ + @7784 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a4112 /* KISSING_END_STATE */
-  + ~RandomNum(5,1)~ + @7412 + a3564 /* KISSING_HOLDING_THREE */ 
-  + ~RandomNum(5,1)~ + @7315 + a3602 /* ROM_THREE_PC_TO_ARAN */
+  + ~RandomNum(5,1)~ + @7412 + a4013 /* KISSING_HOLDING_THREE */ 
+  + ~RandomNum(5,1)~ + @7315 + a4051 /* ROM_THREE_PC_TO_ARAN */
   + ~RandomNum(5,1)~ + @7075 + a4061 /* MOON_ORAL */
   /* IF RN = 2 THEN showblock2 */  
   + ~RandomNum(5,2)~ + @6584 + a3834 /* ARAN_AGREES_TWO_CUDDLE */

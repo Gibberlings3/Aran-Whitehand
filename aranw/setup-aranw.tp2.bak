@@ -31,33 +31,13 @@ ALWAYS
 				reload_array = c-aranreload
 		END
 	END
-	OUTER_SPRINT tra_version ~c-aranw~
 END
-LANGUAGE	~English~ 
-			~english~ 
-			~aranw\tra\english\c-aranw.tra~ 
-			~aranw\tra\english\setup.tra~ /* Contains text strings displayed during the installation: TP2, Components, etc., encoded for _win32 (cp1252), _osx (utf-8 no BOM), or _unix (utf-8 no BOM) */ 
- 
-//	
-//	ACTION_IF GAME_IS ~bg2ee~ BEGIN
-//		OUTER_SPRINT tra_version ~c-aranw_utf8nb~
-//	    LOAD_TRA ~aranw\tra\english\c-aranw_utf8nb.tra~ /* Fallback .tra in case LANGUAGE is missing some strings : Contains text strings displayed in the game with localised encoding UTF-8 (no BOM) for all versions of BGII:EE */
-//	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_utf8nb.tra~	/* Desired Language .tra : Contains text strings displayed in the game with localised encoding UTF-8 (no BOM) for all versions of BGII:EE */	
-//	END ELSE BEGIN
-//		OUTER_SPRINT tra_version ~c-aranw_cp1252~
-//	    LOAD_TRA ~aranw\tra\english\c-aranw_cp1252.tra~  /* Fallback .tra in case LANGUAGE is missing some strings with localised encoding Windows-1252 aka cp1252 */
-//	    LOAD_TRA ~aranw\tra\%LANGUAGE%\c-aranw_cp1252.tra~ /* Desired language chosen at install with localised encoding Windows-1252 aka cp1252 */
-//	END
-//END
-//
-//
-// old languiage block pre- HANDLE_CHARSETS
-// LANGUAGE ~English~
-//      ~english~
-//         ~aranw\tra\english\c-aranw_cp1252.tra~ /* Contains text strings displayed in the game with localised encoding Windows-1252 aka cp1252 */
-//         ~aranw\tra\english\setup_%WEIDU_OS%.tra~ /* Contains text strings displayed during the installation: TP2, Components, etc., encoded for _win32 (cp1252), _osx (utf-8 no BOM), or _unix (utf-8 no BOM) */
-//
-	 
+
+LANGUAGE ~English~
+         ~english~
+         ~aranw\tra\english\c-aranw_cp1252.tra~ /* Contains text strings displayed in the game with localised encoding Windows-1252 aka cp1252 */
+         ~aranw\tra\english\setup_%WEIDU_OS%.tra~ /* Contains text strings displayed during the installation: TP2, Components, etc., encoded for _win32 (cp1252), _osx (utf-8 no BOM), or _unix (utf-8 no BOM) */
+		 
 BEGIN @30010
 REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee~ @30002
 /* put some information in the .DEBUG file to help with troubleshooting */
