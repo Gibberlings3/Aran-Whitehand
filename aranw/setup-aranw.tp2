@@ -897,6 +897,88 @@ DEFINE_PATCH_MACRO ~aran_cre_setup~ BEGIN
 	END
 END
 
+/* fix up ALTER_AREA_REGION with Argent's "info point text detection" */
+
+DEFINE_PATCH_FUNCTION ARGENT_ALTER_AREA_REGION
+  INT_VAR type        = "-1" // region type at 0x20; negative values mean no change
+          cursor      = "-1" // cursor type at 0x34; negative values mean no change
+          trap_detect = "-1" // difficulty of trap detection at 0x68; negative values mean no change
+          trap_remove = "-1" // difficulty of trap removal at 0x6a; negative values mean no change
+          trapped     = "-1" // is trapped? at 0x6c; negative values mean no change
+          detected    = "-1" // is detected? at 0x6e; negative values mean no change
+          info_strref = "-2" // info text at 0x64; negative values < -1 mean no change
+          // flag_ vars affect flags starting at 0x60; 0 means remove flag, 1 means add flag, -1 no change
+          flag_locked           = "-1" // locked, bit0
+          flag_resets           = "-1" // trap resets, bit1
+          flag_party_required   = "-1" // party required, bit2
+          flag_trap_detectable  = "-1" // trap can be detected, bit3
+          flag_trap_enemies     = "-1" // trap can be set off by enemies, bit4
+          flag_tutorial         = "-1" // tutorial trigger, bit5
+          flag_trap_npcs        = "-1" // trap can be set off by npcs, bit6
+          flag_silent           = "-1" // silent trigger, bit7
+          flag_deactivated      = "-1" // deactivated, bit8
+          flag_impassable_npc   = "-1" // can not be passed by npcs, bit9
+          flag_activation_point = "-1" // use activation point, bit10
+          flag_connect_to_door  = "-1" // connected to door, bit11
+  STR_VAR region_name = ""     // required, at 0x00, used to match region
+          destination_area    = "same" // changes destination area at 0x38; "same" means no change
+          entrance_name     = "same" // changes entrance name at 0x40; "same" means no change
+          door_key     = "same" // resref of key to unlock at 0x74; "same" means no change
+          door_script  = "same" // resref of region script at 0x7c; "same" means no change
+BEGIN
+  READ_SHORT 0x5a trig_num
+  READ_LONG  0x5c trig_off
+  FOR (index = 0 ; index < trig_num ; ++index) BEGIN
+    READ_ASCII (trig_off + (index * 0xc4)) trig_name_file (32) NULL
+    PATCH_IF ("%region_name%" STRING_COMPARE_CASE  "%trig_name_file%" = 0) BEGIN
+      PATCH_IF (type >= 0)                 BEGIN WRITE_SHORT (trig_off + 0x20 + (index * 0xc4)) type        END
+      PATCH_IF (cursor >= 0)               BEGIN WRITE_LONG  (trig_off + 0x34 + (index * 0xc4)) cursor      END
+      PATCH_IF (info_strref >= "-1")       BEGIN WRITE_LONG  (trig_off + 0x64 + (index * 0xc4)) info_strref END
+      PATCH_IF (trap_detect >= 0)          BEGIN WRITE_SHORT (trig_off + 0x68 + (index * 0xc4)) trap_detect END
+      PATCH_IF (trap_remove >= 0)          BEGIN WRITE_SHORT (trig_off + 0x6a + (index * 0xc4)) trap_remove END
+      PATCH_IF (trapped >= 0)              BEGIN WRITE_SHORT (trig_off + 0x6c + (index * 0xc4)) trapped     END
+      PATCH_IF (detected >= 0)             BEGIN WRITE_SHORT (trig_off + 0x6e + (index * 0xc4)) detected    END
+      PATCH_IF (flag_locked = 0)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11111110) END
+      PATCH_IF (flag_resets = 0)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11111101) END
+      PATCH_IF (flag_party_required = 0)   BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11111011) END
+      PATCH_IF (flag_trap_detectable = 0)  BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11110111) END
+      PATCH_IF (flag_trap_enemies = 0)     BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11101111) END
+      PATCH_IF (flag_tutorial = 0)         BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b11011111) END
+      PATCH_IF (flag_trap_npcs = 0)        BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b10111111) END
+      PATCH_IF (flag_silent = 0)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BAND 0b01111111) END
+      PATCH_IF (flag_deactivated = 0)      BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BAND 0b11111110) END
+      PATCH_IF (flag_impassable_npc = 0)   BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BAND 0b11111101) END
+      PATCH_IF (flag_activation_point = 0) BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BAND 0b11111011) END
+      PATCH_IF (flag_connect_to_door = 0)  BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BAND 0b11110111) END
+      PATCH_IF (flag_locked = 1)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT0) END
+      PATCH_IF (flag_resets = 1)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT1) END
+      PATCH_IF (flag_party_required = 1)   BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT2) END
+      PATCH_IF (flag_trap_detectable = 1)  BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT3) END
+      PATCH_IF (flag_trap_enemies = 1)     BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT4) END
+      PATCH_IF (flag_tutorial = 1)         BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT5) END
+      PATCH_IF (flag_trap_npcs = 1)        BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT6) END
+      PATCH_IF (flag_silent = 1)           BEGIN WRITE_BYTE  (trig_off + 0x60 + (index * 0xc4)) (THIS BOR BIT7) END
+      PATCH_IF (flag_deactivated = 1)      BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BOR BIT0) END
+      PATCH_IF (flag_impassable_npc = 1)   BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BOR BIT1) END
+      PATCH_IF (flag_activation_point = 1) BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BOR BIT2) END
+      PATCH_IF (flag_connect_to_door = 1)  BEGIN WRITE_BYTE  (trig_off + 0x61 + (index * 0xc4)) (THIS BOR BIT3) END
+      PATCH_IF ("%destination_area%" STRING_COMPARE_CASE "same") BEGIN
+        WRITE_ASCIIE (trig_off + 0x38 + (index * 0xc4)) "%destination_area%" #8
+      END
+      PATCH_IF ("%entrance_name%" STRING_COMPARE_CASE "same") BEGIN
+        WRITE_ASCIIE (trig_off + 0x40 + (index * 0xc4)) "%entrance_name%" #32
+      END
+      PATCH_IF ("%door_key%" STRING_COMPARE_CASE "same") BEGIN
+        WRITE_ASCIIE (trig_off + 0x74 + (index * 0xc4)) "%door_key%" #8
+      END
+      PATCH_IF ("%door_script%" STRING_COMPARE_CASE "same") BEGIN
+        WRITE_ASCIIE (trig_off + 0x7c + (index * 0xc4)) "%door_script%" #8
+      END
+    END
+  END
+
+END
+
 /* end of define all macros */
 PRINT @30009
 /* Setting up timered interactions with player choice before compiling .d and .baf */
@@ -1681,23 +1763,27 @@ EXTEND_TOP ~AR0700.BCS~ ~aranw/baf/c-spawnbouncer.baf~
 PRINT @30038
 /* steal Abandon06 info point and turn it into a ravel region, add entrance point for c-ar01 to use to send party to AR0700	*/
 COPY_EXISTING ar0700.are override
-	LPF ALTER_AREA_REGION
-    INT_VAR
-	type = ~2~
-	cursor = ~30~
-	STR_VAR
-	region_name = ~Abandon06~
-	destination_area = ~c-ar01~
-	entrance_name = ~Trancar01~
+	/* Turn Abandon06 into an entry point for C-AR01, The Broken Sword */
+	LPF ARGENT_ALTER_AREA_REGION
+		INT_VAR
+			type = ~2~
+			cursor = ~30~
+			info_strref = RESOLVE_STR_REF(@13144) // The Broken Sword
+		STR_VAR
+			region_name = ~Abandon06~
+			destination_area = ~c-ar01~
+			entrance_name = ~Trancar01~
 	END
+	SAY 0x470c @13144
+	/* give an exit point for C-AR01, The Broken Sword */
 	LPF fj_are_structure
-	INT_VAR
-		fj_loc_x		 = 2391
-		fj_loc_y		 = 1484
-		fj_orientation = 4	 // w
-	STR_VAR
-		fj_structure_type = entrance
-		fj_name	= Exitc-ar01
+		INT_VAR
+			fj_loc_x		 = 2391
+			fj_loc_y		 = 1484
+			fj_orientation = 4	 // w
+		STR_VAR
+			fj_structure_type = entrance
+			fj_name	= Exitc-ar01
 	END
 	ADD_MAP_NOTE #2254 #1342 ~blue~ @13144
 PRINT @30009
