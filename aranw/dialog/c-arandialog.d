@@ -13356,6 +13356,12 @@ END
 
 IF ~~ a1795 SAY @1499 IF ~~ THEN EXIT END /* or whatever tie backs necessary */
 IF ~~ a1796 SAY @1500 IF ~~ THEN EXIT END
+IF ~~ a5140 SAY @176 IF ~~ THEN EXIT END // @176 = ~[ARAN] Aye. There might be a good bit o' fun in that. An' mayhap those two in th' corner over there will turn out to be a couple, eh? Might be a sight to watch.~
+IF ~~ a5141 SAY @177 IF ~~ THEN EXIT END // @177 = ~[ARAN] Sounds... nice.~ 
+IF ~~ a5142 SAY @178 IF ~~ THEN EXIT END // @178 = ~[ARAN Nothin' like a good round o' peaceful, quiet nothin'. It beats th' usual screamin', dodgin', an dyin' any day.~
+IF ~~ a5143 SAY @179 IF ~~ THEN EXIT END // @179 = ~[ARAN] Aye, then. I will drink to your health, an' to th' confusion o' your enemies.~ 
+IF ~~ a5144 SAY @180 IF ~~ THEN EXIT END // @180 = ~[ARAN] (He looks at you with a keen eye, raising a glass in salute.)~ 
+IF ~~ a5145 SAY @181 IF ~~ THEN EXIT END // @181 = ~[ARAN] I can see you be in a quiet mood after all, eh? Suits me right fine. I can think o' worse things to be doin' than sittin' here with you.~ 
 
 /* Inn  #1 */
 IF ~~ a796
@@ -13395,6 +13401,13 @@ IF ~~ a2287
   ++ @5695 + a2972
   ++ @5696 + a2972
   ++ @5697 + a2972
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
 END
 
 IF ~~ a2288 SAY @5698 IF ~~ THEN EXIT END
@@ -13418,6 +13431,13 @@ IF ~~ a797
   SAY @5710
   ++ @5711 + a798
   ++ @5712 + a809
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5713 + a803
   ++ @5714 + a801
   ++ @5715 + a816
@@ -13428,12 +13448,26 @@ IF ~~ a798
   ++ @5717 + a809
   ++ @5718 + a809
   ++ @5719 + a822
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5720 + a2271
 END
 
 IF ~~ a799
   SAY @5721
   ++ @5722 EXIT
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5723 + a810
   ++ @5724 + a807
   ++ @5725 + a804
@@ -13445,6 +13479,13 @@ IF ~~ a800
   ++ @5728 + a822
   ++ @5729 + a810
   ++ @5730 + a809
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5731 + a807
   ++ @5732 + a802
 END
@@ -13455,6 +13496,13 @@ IF ~~ a801
   ++ @5735 + a802
   ++ @5736 + a807
   ++ @5737 + a809
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5738 + a802
 END
 
@@ -13464,12 +13512,26 @@ IF ~~ a802
   ++ @5741 + a822
   ++ @5742 + a809
   ++ @5736 + a807
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
 END
 
 IF ~~ a803
   SAY @5743
   ++ @5744 EXIT
   ++ @5745 + a809
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5746 + a807
   ++ @5747 + a807
 END
@@ -13479,6 +13541,13 @@ IF ~~ a804
   ++ @5749 + a3251
   ++ @5750 + a812
   ++ @5751 + a806
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   + ~RandomNum(2,1)~ + @5680 + a1808
   + ~RandomNum(2,2)~ + @5681 + a2057
 END
@@ -13599,6 +13668,13 @@ IF ~~ a818
   + ~RandomNum(2,2)~ + @5814 + a823
   + ~TimeofDay(DAY)~ + @5815 + a2280
   + ~TimeofDay(NIGHT)~ + @5816 + a2583
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
 END
 
 IF ~~ a819
@@ -13606,6 +13682,13 @@ IF ~~ a819
   ++ @5818 + a824
   ++ @5819 + a820
   ++ @5820 + a830
+  /* relax and think options for inn flirt blocks */
+  + ~RandomNum(6,1)~ + @174 + a5140 // @174  = ~[PC] I think that I would like to just sit here, and watch what is going on.~
+  + ~RandomNum(6,2)~ + @174 + a5141
+  + ~RandomNum(6,3)~ + @174 + a5142
+  + ~RandomNum(6,4)~ + @175 + a5143 // @175  = ~[PC] Sometimes it is nice to just sit and think.~
+  + ~RandomNum(6,5)~ + @175 + a5144
+  + ~RandomNum(6,6)~ + @175 + a5145
   ++ @5801 + a865
 END
 
