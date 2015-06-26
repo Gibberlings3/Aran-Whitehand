@@ -286,8 +286,43 @@ THEN
 		SetGlobal("c-aranmalcer","GLOBAL",0)
 END
 
+/* Check for Vyatri's Pub Encounter in romance, battle completed */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	Global("c-arbarfight","GLOBAL",1)
+	Dead("c-malcer")	
+	Dead("c-oskut")	
+	Dead("c-taman")
+	AreaCheck("AR2000")
+THEN
+	RESPONSE #100
+		SetGlobal("c-arbarfight","GLOBAL",2)
+END
+/* then initiate conversation in AR2000... */
+IF
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	Global("c-arbarfight","GLOBAL",2)
+	AreaCheck("AR2000")
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(Player1)
+		
+END
 
-
+/* ... and shut it down if you leave the area before it fires. */
+IF
+	InParty(Myself)
+	Global("c-arbarfight","GLOBAL",2)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	!AreaCheck("AR2000")
+THEN
+	RESPONSE #100
+		SetGlobal("c-arbarfight","GLOBAL",3)  // 0 = not initiated; 1 = initiated; 2 = fired; 3 = talk done or player left area before it fired.
+END
 
 /* Closing Reaction Blocks (Backup) based on Berelide's work */
 

@@ -2094,6 +2094,98 @@ IF ~Global("c-arandrunk","GLOBAL",3)~ THEN BEGIN a1588
 END
 /* GOTO Drunk2 Dialog Replies */
 
+/* Maiden Shadow Suggestion: The encounter with the three mercs outside of Vyatri's Pub is nicely done. However, a follow-up conversation would be nice if you end up fighting them. An example that comes to mind would be CHARNAME saying, "My hero!" in a variety of ways to accommodate for the different PC archetypes you already have going. Shy/Demure can delicately peck him on the cheek and murmur, "My hero." Saucy/Minx can purr, "My hero," then press herself up against him and kiss him thoroughly. There's also the option of CHARNAME asking about the Raven mercenary group. */ 
+/* SoA Commentary/Reactions, called from c-aran.bcs if in romance and the fight is triggered: Trademeet Fight Response */
+
+IF ~Global("c-arbarfight","GLOBAL",2)~ THEN BEGIN a5126
+  SAY @47
+  ++ @48 DO ~SetGlobal("c-arbarfight","GLOBAL",3)~ + a5127
+  ++ @49 DO ~SetGlobal("c-arbarfight","GLOBAL",3)~ + a5128
+  ++ @50 DO ~SetGlobal("c-arbarfight","GLOBAL",3)~ + a5131
+  ++ @51 DO ~SetGlobal("c-arbarfight","GLOBAL",3)~ + a5130
+  ++ @52 DO ~SetGlobal("c-arbarfight","GLOBAL",3)~ + a5131
+END
+
+IF ~~ a5127
+  SAY @53
+  ++ @54 + a5130
+  ++ @55 + a5134
+  ++ @50 + a5131
+  ++ @57 + a5138
+  ++ @116 + a5135
+END
+
+IF ~~ a5128
+  SAY @117
+  ++ @160 + a5132
+  ++ @161 + a3623
+  ++ @163 + a5129
+  ++ @56 + a5139
+  ++ @165 + a5127
+END
+
+IF ~~ a5129
+  SAY @118
+  ++ @164 + a5132
+  ++ @166 + a5139
+  ++ @167 + a5139
+  ++ @168 + a5139
+  ++ @169 + a5133
+  ++ @56 + a5139  
+  ++ @170 + a3623
+END
+
+IF ~~ a5130
+  SAY @119
+  ++ @56 + a5139 
+  ++ @116 + a5135 
+  ++ @169 + a5133
+  ++ @167 + a5139
+  ++ @172 + a5137
+END
+
+IF ~~ a5131 /* claim prize */
+  SAY @120
+  ++ @164 + a5132
+  ++ @166 + a5139
+  ++ @167 + a5139
+  ++ @168 + a5139
+  ++ @163 + a5129
+  ++ @171 + a3623
+END
+
+IF ~~ a5132
+  SAY @122
+  IF ~RandomNum(3,1)~ THEN GOTO a1921 /* c-aranshutup15 ~[ARAN] Malar's Sharp Teeth. Shuttin' up an' soldierin'.~ */
+  IF ~RandomNum(3,2)~ THEN GOTO a1908 /* c-aranshutup2 ~[ARAN] By the Cryin' God's tears, you are in a mood.~ */
+  IF ~RandomNum(3,3)~ THEN GOTO a1919 /* c-aranshutup13 ~[ARAN] Lolth's Cruel Fingernails, you can cut a man down. Sure. Shuttin' up.~ */
+END
+
+IF ~~ a5133
+  SAY @121
+  ++ @164 + a5132
+  ++ @161 + a3623
+  ++ @166 + a5139
+  ++ @168 + a5139
+  ++ @56 + a5139  
+  ++ @170 + a3623
+END
+
+IF ~~ a5135
+  SAY @123
+  ++ @162 + a5137
+  ++ @173 + a5136
+  ++ @166 + a5139
+  ++ @168 + a5139
+  ++ @171 + a3623
+END
+
+IF ~~ a5134 SAY @124 = @155 IF ~~ THEN EXIT END
+IF ~~ a5136 SAY @156 IF ~~ THEN EXIT END
+IF ~~ a5137 SAY @157 IF ~~ THEN EXIT END
+IF ~~ a5138 SAY @158 IF ~~ THEN EXIT END
+IF ~~ a5139 SAY @159 IF ~~ THEN EXIT END
+
 /* SoA Commentary/Reactions, called from .bcs : Harpers are Not Always Good For Business */
 /* LUSETTE 11 ~Begone, and hopefully your next dealings with the Harpers will be more pleasant.~ */
 IF ~Global("c-aranlyrosjob","LOCALS",1)~ THEN BEGIN a4812

@@ -1457,7 +1457,7 @@ ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
 	COPY ~aranw/media/portraits_bg2ee/peachplums_erika_bg2ees.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
 	COPY ~aranw/media/portraits_bg2ee/peachplums_teldra_bg2ees.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
 	COPY ~aranw/media/portraits_bg2ee/peachplums_malcer_bg2ees.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_orrin_bg2ees.bmp~  ~override/c-aw01tkbmp~ /* Area C-AW01 Tavern Keeper Orrin */
+	COPY ~aranw/media/portraits_bg2ee/peachplums_orrin_bg2ees.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin */
 	/* Oskut - L10	male fighter */
 	/* Taman - L10	male fighter */
 END ELSE BEGIN
