@@ -101,6 +101,7 @@ INCLUDE ~aranw/lib/ids_patching.tph~
 /* Macro definitions */
 
 /* Set Sound Choices */
+/* note - set2_5_riuriuchiu.wav has been pulled from tavern talks as it causes a crash on BG2:EE */
 DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 	OUTER_SPRINT ~soundchoice~ ~placeholder_value~
 	OUTER_WHILE (!(IS_AN_INT ~soundchoice~) OR (~soundchoice~ > 0x3) OR (~soundchoice~ < 0x1)) BEGIN
@@ -114,7 +115,7 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set2_2_praetorius.wav~ 					~aranw/media/wavc/c-arnfti.wav~ /* 2 friend, introspective */
 		COPY ~aranw/media/wavc/set2_3_sweetnymphcometothylover.wav~		~aranw/media/wavc/c-arnltu.wav~ /* 3 love, upbeat  */
 		COPY ~aranw/media/wavc/set2_4_aprilinmistressface.wav~			~aranw/media/wavc/c-arnltl.wav~ /* 4 love, introspective */
-		COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~					~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast */
+		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast */
 		COPY ~aranw/media/wavc/set2_6_comeagain.wav~					~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
 		PRINT @30072
 		PRINT ~  ~
@@ -126,7 +127,7 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set3_2_vox_vulgaris_rokatanc.wav~		~aranw/media/wavc/c-arnfti.wav~ /* 2 friend, introspective */
 		COPY ~aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav~		~aranw/media/wavc/c-arnltu.wav~ /* 3 love, upbeat  */
 		COPY ~aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav~		~aranw/media/wavc/c-arnltl.wav~ /* 4 love, introspective */
-		COPY ~aranw/media/wavc/set2_5_riuriuchiu.wav~					~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
+		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
 		COPY ~aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav~		~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
 		PRINT @30073
 		PRINT ~  ~
@@ -1774,7 +1775,6 @@ COPY_EXISTING ar0700.are override
 			destination_area = ~c-ar01~
 			entrance_name = ~Trancar01~
 	END
-	SAY 0x470c @13144
 	/* give an exit point for C-AR01, The Broken Sword */
 	LPF fj_are_structure
 		INT_VAR
