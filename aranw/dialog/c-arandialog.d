@@ -21205,7 +21205,7 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   /* PCIF 3 : PC Wants To Initiate A Flirt : Broken Up */       
   + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aranrom","GLOBAL",3)~ + @8589 + a3296
   /* PCIF 4 : PC Wants To Initiate A Flirt : Lightweight */ 
-  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) Global("c-aransex","GLOBAL",1) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + @8589 + a1074
+  + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) GlobalLT("c-aransex","GLOBAL",2) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + @8589 + a1074
   /* PCIF 5 : PC Wants To Initiate A Flirt : Heavyweight */
   + ~Global("c-aranfight","GLOBAL",0) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1) OR(2) Global("c-aransex","GLOBAL",2) Global("c-aransex","GLOBAL",3) !Global("c-aranrom","GLOBAL",3) GlobalGT("c-aranbg2rom","GLOBAL",2)~ + @8589 + a1075
   /* PCIF 6 : PC Wants To Initiate A Flirt : Mature */        
