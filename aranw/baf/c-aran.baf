@@ -1,3 +1,62 @@
+/* On initial join, leveling to get closer to PC's level - SoA only (ToB is too short to expect that most folks do the pickup/dropoff) */ 
+/* rank 1 - no change */ 
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPLT(Player1,225001)
+THEN
+  RESPONSE #100
+     SetGlobal("c-araninitiallevel","GLOBAL",1)
+END
+/* rank 2 - +150000 */ 
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPGT(Player1,225000)
+  XPLT(Player1,450001)
+THEN
+  RESPONSE #100
+     AddXPObject("c-aran",150000) 
+     SetGlobal("c-araninitiallevel","GLOBAL",2)
+END
+/* rank 3 - +400000 */
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPGT(Player1,450000)
+  XPLT(Player1,675001)
+THEN
+  RESPONSE #100
+     AddXPObject("c-aran",400000) 
+    SetGlobal("c-araninitiallevel","GLOBAL",3)
+END
+/* rank 4 - +625000 */
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPGT(Player1,675000)
+  XPLT(Player1,900001)
+THEN
+  RESPONSE #100
+     AddXPObject("c-aran",625000) 
+     SetGlobal("c-araninitiallevel","GLOBAL",4)
+END
+/* rank 5 - +850000 */
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPGT(Player1,900000)
+  XPLT(Player1,1125001)
+THEN
+  RESPONSE #100
+     AddXPObject("c-aran",850000) 
+     SetGlobal("c-araninitiallevel","GLOBAL",5)
+END
+/* rank 6 - +1050000 */
+IF
+  Global("c-araninitiallevel","GLOBAL",0)
+  XPGT(Player1,1125000)
+THEN
+  RESPONSE #100
+     AddXPObject("c-aran",1050000) 
+     SetGlobal("c-araninitiallevel","GLOBAL",6)
+END
+
 /* tracking intimacy levels */
 /* look for incrementing relationship to kissing */
 IF
