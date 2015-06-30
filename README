@@ -5,8 +5,6 @@ Hello! I'm a fan of open development, and I am doing all this for fun, so no nee
 
 [*] HOWEVER, you are working with a non-released version, where some content has not been fully tested in-game.
 
-[*] SO, for your own protection, make sure you edit the .tp2 as indicated below, especially with a date, so if you have an issue I can check it against the daily fixes and perhaps even come up with a fix for you.
-
 [*] By the way, this mod has things in it in the female PC romance that may be... adult. They may be laughably funny, or just stupid, or perhaps just horrible fanfic sex, or you might even like some of it, but regardless, please use discretion when reporting stuff at G3. Some of our members might not appreciate details. PM me. 
 
 
@@ -15,11 +13,9 @@ Hello! I'm a fan of open development, and I am doing all this for fun, so no nee
 
  * 1. check to make sure everything is there,
 
- * 2. edit the VERSION line found right below this message with your username and the date, so you have a way of knowing what "version" you have
+ * 2. copy another mod's setup-mymod.exe and rename it setup-aranw.exe or download the .exe here
 
- * 3. copy another mod's setup-mymod.exe and rename it setup-aranw.exe
-
- * 4. run that, and enjoy the mod. If you run into problems, find me at G3 or start an issue ticket on GitHub!
+ * 3. run that, and enjoy the mod. If you run into problems, find me at G3 or start an issue ticket on GitHub!
 
 */
 
