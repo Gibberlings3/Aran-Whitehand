@@ -20,7 +20,10 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast */
 		COPY ~aranw/media/wavc/set2_6_comeagain.wav~					~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
 		PRINT @30072
-		PRINT ~  ~
+		ACTION_IF FILE_EXISTS ~override\c-arandebugger02.log~ THEN BEGIN
+			OUTER_SPRINT aranw_soundchoice @30072
+			APPEND ~c-arandebugger02.log~ ~Component %COMPONENT_NUMBER%, %soundchoice%, %aranw_soundchoice%~
+		END
 	END
 	ACTION_IF ("soundchoice" = 2) THEN BEGIN
 		/* sound themes */
@@ -32,7 +35,10 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
 		COPY ~aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav~		~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective  */
 		PRINT @30073
-		PRINT ~  ~
+		ACTION_IF FILE_EXISTS ~override\c-arandebugger02.log~ THEN BEGIN
+			OUTER_SPRINT aranw_soundchoice @30073
+			APPEND ~c-arandebugger02.log~ ~Component %COMPONENT_NUMBER%, %soundchoice%, %aranw_soundchoice%~
+		END
 	END
 	ACTION_IF ("soundchoice" = 3) THEN BEGIN
 		/* sound themes */
@@ -45,7 +51,10 @@ DEFINE_ACTION_MACRO ~chooseasoundtrack~ BEGIN
 		COPY ~aranw/media/wavc/set1_5_praetorius_volte.wav~				~aranw/media/wavc/c-arandf.wav~ /* 5 drunk or in an inn, fast  */
 		COPY ~aranw/media/wavc/set2_6_comeagain.wav~					~aranw/media/wavc/c-arands.wav~ /* 6 inn, introspective */
 		PRINT @30074
-		PRINT ~  ~
+		ACTION_IF FILE_EXISTS ~override\c-arandebugger02.log~ THEN BEGIN
+			OUTER_SPRINT aranw_soundchoice @30074
+			APPEND ~c-arandebugger02.log~ ~Component %COMPONENT_NUMBER%, %soundchoice%, %aranw_soundchoice%~
+		END
 	END
 END // of macro
 
@@ -55,118 +64,187 @@ DEFINE_ACTION_MACRO ~aran_report_status~ BEGIN
 		1
 		BEGIN
 			PRINT @30075
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30075
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		2
 		BEGIN
 			PRINT @30076
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30076
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		3
 		BEGIN
 			PRINT @30077
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30077
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END	
 		END
 		DEFAULT
 			PRINT @30078
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30078
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		ACTION_MATCH ~%aran_armor_choice%~
 		WITH
 		1
 		BEGIN
 			PRINT @30079
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30079
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		2
 		BEGIN
 			PRINT @30080
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30080
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		3
 		BEGIN
 			PRINT @30081
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30081
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		4
 		BEGIN
 			PRINT @30082
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30082
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		5
 		BEGIN
 			PRINT @30083
-			PRINT ~  ~
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30083
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 		DEFAULT
-				PRINT @30078
-				PRINT ~  ~
+			PRINT @30078
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_wealthchoice @30078
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_wealth%, %aranw_wealthchoice%~
+			END
 		END
 	ACTION_MATCH	~%aran_weapon_set%~
 		WITH
 		1
 		BEGIN
-				PRINT @30084
-				PRINT ~  ~
+			PRINT @30084
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30084
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		2
 		BEGIN
-				PRINT @30085
-				PRINT ~  ~
+			PRINT @30085
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30085
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		3
 		BEGIN
-				PRINT @30086
-				PRINT ~  ~
+			PRINT @30086
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30086
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		4
 		BEGIN
-				PRINT @30087
-				PRINT ~  ~
+			PRINT @30087
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30087
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		5
 		BEGIN
-				PRINT @30088
-				PRINT ~  ~
+			PRINT @30088
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30088
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		6
 		BEGIN
-				PRINT @30089
-				PRINT ~  ~
+			PRINT @30089
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30089
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		7
 		BEGIN
-				PRINT @30090
-				PRINT ~  ~
+			PRINT @30090
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30090
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		8
 		BEGIN
-				PRINT @30091
-				PRINT ~  ~
+			PRINT @30091
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30091
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		9
 		BEGIN
-				PRINT @30092
-				PRINT ~  ~
+			PRINT @30092
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30092
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		10
 		BEGIN
-				PRINT @30093
-				PRINT ~  ~
+			PRINT @30093
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30093
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		11
 		BEGIN
-				PRINT @30094
-				PRINT ~  ~
+			PRINT @30094
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30094
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END	
 		END
 		12
 		BEGIN
-				PRINT @30095
-				PRINT ~  ~
+			PRINT @30095
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30095
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 		DEFAULT
-				PRINT @30078
-				PRINT ~  ~
+			PRINT @30078
+			ACTION_IF FILE_EXISTS ~override\c-arandebugger03.log~ THEN BEGIN
+				OUTER_SPRINT aranw_weapons_used @30078
+				APPEND ~c-arandebugger03.log~ ~Component %COMPONENT_NUMBER%, choice %aran_weapon_set%, %aranw_weapons_used%~
+			END
 		END
 
 END // of macro definition
@@ -182,8 +260,8 @@ DEFINE_ACTION_MACRO customized_cre_choice BEGIN	// define the instruction set to
 			ACTION_READLN aran_wealth
 		END
 		OUTER_FOR( weapon_choices = 0 ; ~%weapon_choices%~ STRING_COMPARE_REGEXP ~^[123]$~ ; )BEGIN // one way of setting up for READLN
-				PRINT @30097
-				ACTION_READLN weapon_choices
+			PRINT @30097
+			ACTION_READLN weapon_choices
 		END
 		/* we are using READLN values to set a variable - the mod range of possible combos is 1 to 15 inclusive, so we can't just read it directly */
 		ACTION_MATCH	~%weapon_choices%~	 // check this value
