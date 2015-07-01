@@ -2186,6 +2186,213 @@ IF ~~ a5137 SAY @157 IF ~~ THEN EXIT END
 IF ~~ a5138 SAY @158 IF ~~ THEN EXIT END
 IF ~~ a5139 SAY @159 IF ~~ THEN EXIT END
 
+/* SoA Scenery: Acknowledging Sheri from Romantic Encounters */
+
+/* Do we see her as existing or not? */
+IF ~Global("c-aranRE_Sheri","GLOBAL",1)~ a5146
+  SAY @13472 /* [ARAN] Now, I be listenin'... */
+  IF ~InMyArea("RE_Sheri")~ THEN DO ~SetGlobal("c-aranRE_Sheri","GLOBAL",2)~ GOTO a5147
+  IF ~!InMyArea("RE_Sheri")~ THEN DO ~SetGlobal("c-aranRE_Sheri","GLOBAL",2)~ GOTO a5148
+END
+
+/* Let's make sure there is an excuse not to be directly involved in the I_C_Ts, for immersion/consistency */
+/* start here if she is not around or not installed: if the area script is slow to process, no harm done, because we introduce *why* Aran is not in the interjections... so if it evaluates later, no inconsistency */
+IF ~~ a5148
+  SAY @13473 /* [ARAN] Well, no Sheri tonight, it seems. An' that be a pity, too. She sings th' kind o' songs I like. */
+  = @13474 /* [ARAN] Mayhap if we drop by again an' she be here, you do th' talkin', eh? On account o' I think I might have ticked her off proper last time I tried to get friendly wi' her. */
+  ++ @13475 + a5149
+  ++ @13476 + a5168
+  ++ @13477 + a5171
+  ++ @13478 + a5167
+  + ~!Class(Player1,BARD_ALL)~ + @13479 + a5171
+  + ~Class(Player1,BARD_ALL)~ + @13480 + a5171
+END  
+
+/* Start here if she is around  */
+IF ~~ a5147
+  SAY @13481 /* [ARAN] Aye, she be in right fine form tonight. An any night, for that matter. */
+  = @13482 /* [ARAN] But mayhap you should do th' talkin'. I did not do so well on th' communication front last time we spoke. In fact, I mayhap be better off standin' a ways back an' just listenin'. */
+  + ~Gender(Player1,MALE) Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13483 + a5150  /* PC is a bard, Aran is a bard : male */
+  + ~Gender(Player1,MALE) Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13483 + a5152 /* PC is a bard, Aran is not a bard : male */
+  + ~Gender(Player1,MALE) !Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13483 + a5153 /* PC is not a bard, Aran is a bard : male */
+  + ~Gender(Player1,MALE) !Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13483 + a5159 /* PC is not a bard, Aran is not a bard : male  */
+  + ~Gender(Player1,FEMALE) Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13483 + a5154   /* PC is a bard, Aran is a bard : female  */
+  + ~Gender(Player1,FEMALE) Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13483 + a5155 /* PC is a bard, Aran is not a bard : female */
+  + ~Gender(Player1,FEMALE) !Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13483 + a5158 /* PC is not a bard, Aran is a bard : female */
+  + ~Gender(Player1,FEMALE) !Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13483 + a5160 /* PC is not a bard, Aran is not a bard : female */
+  ++ @13475 + a5149
+  ++ @13484 + a5171
+  ++ @13485 + a5171
+  + ~!Class(Player1,BARD_ALL)~ + @13479 + a5171
+  + ~Class(Player1,BARD_ALL)~ + @13480 + a5171
+END
+
+IF ~~ a5149
+  SAY @13486 /* [ARAN] Aye, guilty as charged. */
+  + ~Gender(Player1,MALE) Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13487 + a5150  /* PC is a bard, Aran is a bard : male */
+  + ~Gender(Player1,MALE) Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13487 + a5152 /* PC is a bard, Aran is not a bard : male */
+  + ~Gender(Player1,MALE) !Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13487 + a5153 /* PC is not a bard, Aran is a bard : male */
+  + ~Gender(Player1,MALE) !Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13487 + a5159 /* PC is not a bard, Aran is not a bard : male  */
+  + ~Gender(Player1,FEMALE) Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13487 + a5154   /* PC is a bard, Aran is a bard : female  */
+  + ~Gender(Player1,FEMALE) Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13487 + a5155 /* PC is a bard, Aran is not a bard : female */
+  + ~Gender(Player1,FEMALE) !Class(Player1,BARD_ALL) Class("c-aran",BARD_ALL)~ + @13487 + a5158 /* PC is not a bard, Aran is a bard : female */
+  + ~Gender(Player1,FEMALE) !Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ + @13487 + a5160 /* PC is not a bard, Aran is not a bard : female */
+  ++ @13488 + a5171
+  ++ @13489 + a5172
+  ++ @13490 + a5172
+END
+ 
+IF ~~ a5150
+  SAY @13491 /* [ARAN] There be no accountin' on whether she be better than you nor I on th' vocal front, as to some th' sopranos run, some th' tenors, an' baritones or bass be solid for all sorts o' songs. But she be a far sight better trained than either o' us blighted bastards. */
+  ++ @13492 + a5151
+  ++ @13493 + a5159
+  ++ @13494 + a5151
+  ++ @13495 + a5165
+  ++ @13496 + a5171
+END
+ 
+IF ~~ a5151
+  SAY @13497 /* [ARAN] Well, just listen. Notes into th' upper octave as clear as a bell. Diction clean without heavy handed plosives. Th' way she just controlled her dynamics on that last line to throw th' pathos... musical line... */
+  = @13498 /* [ARAN] Hells. you did th' trainin' same as I. You *know* how blighted rare it be for a true acuto sfogato soprano t' be playin' bit places an' bars. She should be in Waterdeep, at th' Masked Court. */
+  ++ @13499 + a5159
+  ++ @13500 + a5159
+  ++ @13496 + a5171
+  ++ @13475 + a5169
+  ++ @13501 + a5171
+END
+
+IF ~~ a5152
+  SAY @13502 /* [ARAN] You be th' judge, on account o' you have th' right trainin', eh? But to my untrained ear, she sounds like a blighted Avatar o' Sune made flesh an' blood. */
+  ++ @13496 + a5171
+  ++ @13475 + a5169  
+  ++ @13489 + a5172
+  ++ @13490 + a5172
+  ++ @13501 + a5171
+END
+ 
+IF ~~ a5153
+  SAY @13503 /* [ARAN] Well, she be a fully trained vocalist, an' her upper register be absolutely clear, wi' no forced notes or improper placement in th' headvoice.... ah, there I go, talkin' shop. Yes. She is blighted good. */
+  ++ @13475 + a5169  
+  ++ @13489 + a5172
+  ++ @13490 + a5172
+  ++ @13501 + a5171
+  ++ @13504 + a5171
+END
+ 
+IF ~~ a5154
+  SAY @13497 /* [ARAN] Well, just listen. Notes into th' upper octave as clear as a bell. Diction clean without heavy handed plosives. Th' way she just controlled her dynamics on that last line to throw th' pathos... musical line... */
+  = @13498 /* [ARAN] Hells. you did th' trainin' same as I. You *know* how blighted rare it be for a true acuto sfogato soprano t' be playin' bit places an' bars. She should be in Waterdeep, at th' Masked Court. */
+  ++ @13505 + a5157
+  ++ @13506 + a5157
+  ++ @13507 + a5156
+  ++ @13508 + a5171
+  ++ @13509 + a5160
+END
+
+IF ~~ a5155
+  SAY @13510 /* [ARAN] Well, just listen to her, an' mayhap a trained bardess like you can explain to me why she can turn a tune t' make a man weep or laugh as easy as I can flick a blade from left to right. She certainly do catch my ear. */
+  ++ @13506 + a5157
+  ++ @13511 + a5156
+  ++ @13512 + a5171
+  ++ @13509 + a5160
+  ++ @13475 + a5169
+  ++ @13501 + a5171
+END
+
+IF ~~ a5156
+  SAY @13513 /* [ARAN] Well, I defer to your better judgement, on account o' I hold your opinion in high regard, I do. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5157
+  SAY @13514 /* [ARAN] Now, that be a bad idea. There be strengths an' weaknesses in any what follow th' craft. You know full well what you are capable of. She may be rare, but you be just as strong. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5158
+  SAY @13515 /* [ARAN] Aye, somethin' seriously special, an' rare. She be a true acuto sfogato soprano, wi' a range higher than most o' th' coloratura sopranos... err... there I go, talkin' shop. Yes. She is blighted good. */
+  IF ~~ THEN GOTO a5160
+END
+
+/* males: craptalk */
+IF ~~ a5159
+SAY @13516 /* [ARAN] Aye. No interest in me, more be th' pity. Mayhap she be frightened off by th' brilliance o' my manly charms. Either that, or she has been talkin' to Erika at Th' Broken Sword. */
+  ++ @13517 + a5163
+  ++ @13518 + a5164
+  ++ @13519 + a5166
+  ++ @13484 + a5171
+  ++ @13490 + a5172
+END
+
+/* females; have to account for potential time in party if PC visits late game instead of immediately */
+/* With Apologies to Annie Get Your Gun */
+IF ~~ a5160
+SAY @13520 /* [ARAN] I love th' sound o' her voice, an' that be for sure. */
+  + ~!Global("c-aranrom","GLOBAL",2)~ + @13521 + a5161
+  + ~Global("c-aranrom","GLOBAL",2)~ + @13521 + a5162
+  ++ @13475 + a5169  
+  ++ @13522 + a5165
+  ++ @13523 + a5165
+  ++ @13524 + a5171
+  + ~!Class(Player1,BARD_ALL)~ + @13479 + a5171
+  + ~Class(Player1,BARD_ALL)~ + @13480 + a5171
+END
+
+IF ~~ a5161
+  SAY @13525 /* [ARAN] Hells, no! Th' way her eyes sparkle, it be right nice to see. An' when she takes in a right solid breath... */
+  = @13526 /* [ARAN] Err... */
+  = @13527 /* [ARAN] Yes. That be all I love about her. That be my story, an' naught can shake me from it. But it don't matter for naught either way. She didn't find my sparkin' to her taste. */
+  IF ~~ THEN GOTO a5167
+END
+
+IF ~~ a5162
+  SAY @13528 /* [ARAN] Aye. That voice... it caught me right away. But then I had to go an' be a jackass, an' try to spark a bit wi' her. It were before I met you. */
+  IF ~~ THEN GOTO a5167
+END
+
+IF ~~ a5163
+  SAY @13529 /* [ARAN] There be no deal between us at all. I am not likely to be makin' serious passes at Erika. She has a great sense o' humor, an' I needs be keepin' in good graces wi' Orrin an' Teldra as well. Fun teasin' her, is all. */
+  IF ~~ THEN GOTO a5166
+END
+
+IF ~~ a5164
+SAY @13530 /* [ARAN] Well, I mayhap be a bit forward wi' th' ladies. But most o' th' time it be just talk. No harm in that. */
+ IF ~Gender(Player1,MALE)~ THEN GOTO a5166
+ IF ~Gender(Player1,FEMALE)~ THEN GOTO a5167
+END
+
+IF ~~ a5165
+  SAY @13531 /* [ARAN] Mayhap you be right. But I think that calls for a bit o' a contest later on to decide, eh? */
+  IF ~Gender(Player1,MALE)~ THEN GOTO a5166
+  IF ~Gender(Player1,FEMALE)~ THEN GOTO a5167
+END
+
+IF ~~ a5166
+  SAY @13532 /* [ARAN] I be right confident in my abilities, to be sure. But I know my limits. Sheri, she be as far out o' my reach as th' nearest star. */
+  ++ @13533 + a5170
+  ++ @13484 + a5171
+  ++ @13534 + a5171
+  + ~!Class(Player1,BARD_ALL)~ + @13479  + a5171
+  + ~Class(Player1,BARD_ALL)~ + @13480 + a5171
+  ++ @13535 + a5172
+END
+
+IF ~~ a5167
+  SAY @13536 
+  ++ @13537 + a5170
+  ++ @13533 + a5170
+  ++ @13534 + a5171
+  + ~!Class(Player1,BARD_ALL)~ + @13479 + a5171
+  + ~Class(Player1,BARD_ALL)~ + @13480 + a5171
+  ++ @13535 + a5172
+END
+
+IF ~~ a5168 SAY @13538 IF ~~ THEN GOTO a5169 END
+IF ~~ a5169 SAY @13539 IF ~~ THEN EXIT END
+IF ~~ a5170 SAY @13540 IF ~~ THEN EXIT END
+IF ~~ a5171 SAY @13541 IF ~~ THEN EXIT END
+IF ~~ a5172 SAY @3601 IF ~~ THEN EXIT END 
+
 /* SoA Commentary/Reactions, called from .bcs : Harpers are Not Always Good For Business */
 /* LUSETTE 11 ~Begone, and hopefully your next dealings with the Harpers will be more pleasant.~ */
 IF ~Global("c-aranlyrosjob","LOCALS",1)~ THEN BEGIN a4812

@@ -57,6 +57,45 @@ THEN
      SetGlobal("c-araninitiallevel","GLOBAL",6)
 END
 
+/* BEGIN TEST */
+
+/* SoA Scenery: Acknowledging Sheri from Romantic Encounters */
+/* OK, look for Sheri D'Avignon at the Mithrest Inn... */
+IF
+    InParty(Myself)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    AreaCheck("AR0704")
+    Global("c-aranRE_Sheri","GLOBAL",0)
+THEN
+    RESPONSE #100
+        SetGlobal("c-aranRE_Sheri","GLOBAL",1)
+END
+/* trigger the comment (Dialog handles Exists("RE_Sheri) | Exists("RE_Sheri) */
+IF
+	!See([ENEMY])
+	InParty(Myself)
+	!StateCheck(Myself,CD_STATE_NOTVALID)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID) 
+    AreaCheck("AR0704")
+    Global("c-aranRE_Sheri","GLOBAL",1)
+THEN
+    RESPONSE #100
+		StartDialogueNoSet(Player1)
+END
+/* Rollback if player moves out of AR0704 before it triggers or other things happen to delay this */
+IF
+    InParty(Myself)
+    !StateCheck(Myself,CD_STATE_NOTVALID)
+    !AreaCheck("AR0704")
+    Global("c-aranRE_SheriTalk","GLOBAL",1)
+THEN
+    RESPONSE #100
+        SetGlobal("c-aranRE_SheriTalk","GLOBAL",0)
+END
+
+/* END TEST */
+
 /* tracking intimacy levels */
 /* look for incrementing relationship to kissing */
 IF

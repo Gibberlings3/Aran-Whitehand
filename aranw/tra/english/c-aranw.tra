@@ -336,7 +336,7 @@ This small roll of scrolls holds several sheets of vellum, each inscribed with c
 @138  = ~Government Receipt~
 @139  = ~[Government Receipt]Whereas the Owner of The Broken Sword
 
-has provided an accounting of the businesses present and monetary exchanges made in aforesaid establishment for the first quarter of this tax year, Orrin Theris of Athlaka, resident owner of aforesaid business establishment, is hereby in receipt of an acnowledgement of official submission of tax documents. This document serves to confirm rec't of the first of four (4) required quarterly earnings statements as required under section 125, sub-paragraph 4 of the City Revenue Code.
+has provided an accounting of the businesses present and monetary exchanges made in aforesaid establishment for the first quarter of this tax year, Orrin Theris of Athlaka, resident owner of aforesaid business establishment, is hereby in receipt of an acknowledgement of official submission of tax documents. This document serves to confirm rec't of the first of four (4) required quarterly earnings statements as required under section 125, sub-paragraph 4 of the City Revenue Code.
 
 Signed,
 Ferrin DeLorea, Clerk, City Revenue Department~
@@ -9804,7 +9804,7 @@ The keyhole in her door.'~
 @9498 = ~[ARAN] Well, I marched through here once, on a day contract. Local merchant house wanted to make a big splash, an' hired a bunch o' sellswords to wear pink an' purple livery an' guard a carriage through town.~
 @9499 = ~[ARAN] It did not work out well, though. When the crowd weren't laughin', they were lookin' at all the finery, an' seein' little in th' way o' armor. Rival house took advantage, an' beat the lot o' us, dumped the carriage, an' dumped the poor passenger in the mud.~
 @9500 = ~[ARAN] Learned a good lesson that day, too... don't be tryin' to punch a man in the mouth what wears full plate. It busts your knuckles up somethin' fierce.~
-@9501 = ~[ARAN] This place, I know. There be a circus to visit, an' until some idiot blew a great hole in th' shops over there, you could pick up good work as scribe or mercenary guard at daily, tenday, or monthly contracts. An' up over there, th' Den o' the Seven Vales has some right fine entertainment if you can afford it. Hells, I hope Sheri is playin' again tonight. Got my eye on her. I'd have more, but she might object.~
+@9501 = ~[ARAN] This place, I know. There be a circus to visit, an' until some idiot blew a great hole in th' shops over there, you could pick up good work as scribe or mercenary guard at daily, tenday, or monthly contracts. An' up over there, second level on th' left, th' Mithrest Inn has some right fine entertainment if you can afford it. Hells, I hope Sheri is playin' again tonight. Got my eye on her. I'd have more, but she might object.~
 @9502 = ~[ARAN] Up?~
 @9503 = ~[ARAN] Well, eat right, avoid drinkin' to excess, stop smokin', an' avoid dragons an' liches. Oh, an' vampires. Avoid them, too. other than that, I got naught to advise.~
 @9504 = ~[ARAN] I have heard there be only three big temples here, an' all three are not to be trifled with. Sometimes they hire out work, too. I also heard there be a new religion in town, somethin' about an 'Unseein' one' ore somethin' like that. Figured any god called 'Unseein' was also 'Unfeelin', so I gave it a wide berth.~
@@ -13861,3 +13861,73 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13469 = ~[EDWINA] You will have trouble with your eyes, I think. Perhaps turning them to stone will keep your lusts in check.~
 @13470 = ~[ARAN] Oh, no worries on my account. Your form may be right fine to look at, but you still be an evil, over-educated, stone-hearted, backstabbin', manipulative Red Wizard, wi' all th' trappin's that entails.~
 @13471 = ~[EDWINA] Flattery will get you nowhere. (The moronic baboon. Though his points do have merit. I am still a magnificent specimen.)~
+@13472 = ~[ARAN] Now, I be listenin'...~
+@13473 = ~[ARAN] Well, no Sheri tonight, it seems. An' that be a pity, too. She sings th' kind o' songs I like.~
+@13474 = ~[ARAN] Mayhap if we drop by again an' she be here, you do th' talkin', eh? On account o' I think I might have ticked her off proper last time I tried to get friendly wi' her.~
+@13475 = ~[PC] Let me guess. You made a clumsy pass at her and ended up insulting her.~
+@13476 = ~[PC] Just when was this "last time"?~
+@13477 = ~[PC] That is fine with me.~
+@13478 = ~[PC] What kind of songs do you like?~
+@13479 = ~[PC] I... I do not usually wander up to strangers and talk to them. Even bards and storytellers.~
+@13480 = ~[PC] I do not usually wander up to strangers and talk to them. Even other bards and storytellers. I usually listen without interacting with them.~
+@13481 = ~[ARAN] Aye, she be in right fine form tonight. An any night, for that matter.~
+@13482 = ~[ARAN] But mayhap you should do th' talkin'. I did not do so well on th' communication front last time we spoke. In fact, I mayhap be better off standin' a ways back an' just listenin'.~
+@13483 = ~[PC] The bard over there in the corner? Is she special?~
+@13484 = ~[PC] I do not usually waste my time talking to insignificant people.~
+@13485 = ~[PC] I will take that under consideration. Perhaps I will go listen to her.~
+@13486 = ~[ARAN] Aye, guilty as charged.~
+@13487 = ~[PC] Is she special?~
+@13488 = ~[PC] Fine. If we do go  listen to her, you stay back.~
+@13489 = ~[PC] This habit of offending women you meet... you are working on fixing that, right?~
+@13490 = ~[PC] So, to cut a long story short, you think she is worth hearing, but you should avoid her, right?~
+@13491 = ~[ARAN] There be no accountin' on whether she be better than you nor I on th' vocal front, as to some th' sopranos run, some th' tenors, an' baritones or bass be solid for all sorts o' songs. But she be a far sight better trained than either o' us blighted bastards.~
+@13492 = ~[PC] A coloratura. Wait... she just... that high a range with little or no effort. A Spinto?~
+@13493 = ~[PC] So... you really like her voice. ~
+@13494 = ~[PC] You have no idea how insulting you just were, do you. I have extensive training.~
+@13495 = ~[PC] Do not compare my skills to yours. You can barely speak, let alone sing.~
+@13496 = ~[PC] I would rather not spend my time listening to the competition.~
+@13497 = ~[ARAN] Well, just listen. Notes into th' upper octave as clear as a bell. Diction clean without heavy handed plosives. Th' way she just controlled her dynamics on that last line to throw th' pathos... musical line...~
+@13498 = ~[ARAN] Hells. you did th' trainin' same as I. You *know* how blighted rare it be for a true acuto sfogato soprano t' be playin' bit places an' bars. She should be in Waterdeep, at th' Masked Court.~
+@13499 = ~[PC] I disagree. That upper range is too dark and covered to be a true sfogato. But I can see that you truly love her voice.~
+@13500 = ~[PC] Sopranos get all the attention. We have to work twice as hard to get noticed. I take it she did not want a singing partner...~
+@13501 = ~[PC] Fine. You stay back. Perhaps I will go see what she can sing.~
+@13502 = ~[ARAN] You be th' judge, on account o' you have th' right trainin', eh? But to my untrained ear, she sounds like a blighted Avatar o' Sune made flesh an' blood.~
+@13503 = ~[ARAN] Well, she be a fully trained vocalist, an' her upper register be absolutely clear, wi' no forced notes or improper placement in th' headvoice.... ah, there I go, talkin' shop. Yes. She is blighted good.~
+@13504 = ~[PC] Right now, I need a drink. Perhaps later.~
+@13505 = ~[PC] Is she a better vocalist than I am?~
+@13506 = ~[PC] She... I can hear it. She has a better voice than I do.~
+@13507 = ~[PC] I disagree. That last passage, she clipped two notes, and her breath support is... lacking. If she bends or scoops one more note, I shall have to throw something at her.~
+@13508 = ~[PC] Well, perhaps I should evaluate her. I can always use a careful analysis to better my own craft.~
+@13509 = ~[PC] So... you really like her voice.~
+@13510 = ~[ARAN] Well, just listen to her, an' mayhap a trained bardess like you can explain to me why she can turn a tune t' make a man weep or laugh as easy as I can flick a blade from left to right. She certainly do catch my ear.~
+@13511 = ~[PC] I do not know... That last passage, she clipped two notes, and her breath support is lacking. If she bends or scoops one more note, I shall have to throw something at her.~
+@13512 = ~[PC] Well, perhaps we should evaluate her. I can always use a careful analysis to better my own craft.~
+@13513 = ~[ARAN] Well, I defer to your better judgement, on account o' I hold your opinion in high regard, I do.~
+@13514 = ~[ARAN] Now, that be a bad idea. There be strengths an' weaknesses in any what follow th' craft. You know full well what you are capable of. She may be rare, but you be just as strong.~
+@13515 = ~[ARAN] Aye, somethin' seriously special, an' rare. She be a true acuto sfogato soprano, wi' a range higher than most o' th' coloratura sopranos... err... there I go, talkin' shop. Yes. She is blighted good.~
+@13516 = ~[ARAN] Aye. No interest in me, more be th' pity. Mayhap she be frightened off by th' brilliance o' my manly charms. Either that, or she has been talkin' to Erika at Th' Broken Sword.~
+@13517 = ~[PC] So... you and Erika...~
+@13518 = ~[PC] You have that bad a reputation?~
+@13519 = ~[PC] You seem to have a very high opinion of yourself.~
+@13520 = ~[ARAN] I love th' sound o' her voice, an' that be for sure.~
+@13521 = ~[PC] Is that all you love?~
+@13522 = ~[PC] Anything she can do, I can do better.~
+@13523 = ~[PC] Anything she can sing, I can sing higher.~
+@13524 = ~[PC] You know, I think I should see this... singer.~
+@13525 = ~[ARAN] Hells, no! Th' way her eyes sparkle, it be right nice to see. An' when she takes in a right solid breath...~
+@13526 = ~[ARAN] Err...~
+@13527 = ~[ARAN] Yes. That be all I love about her. That be my story, an' naught can shake me from it. But it don't matter for naught either way. She didn't find my sparkin' to her taste.~
+@13528 = ~[ARAN] Aye. That voice... it caught me right away. But then I had to go an' be a jackass, an' try to spark a bit wi' her. It were before I met you.~
+@13529 = ~[ARAN] There be no deal between us at all. I am not likely to be makin' serious passes at Erika. She has a great sense o' humor, an' I needs be keepin' in good graces wi' Orrin an' Teldra as well. Fun teasin' her, is all.~
+@13530 = ~[ARAN] Well, I mayhap be a bit forward wi' th' ladies. But most o' th' time it be just talk. No harm in that.~
+@13531 = ~[ARAN] Mayhap you be right. But I think that calls for a bit o' a contest later on to decide, eh?~
+@13532 = ~[ARAN] I be right confident in my abilities, to be sure. But I know my limits. Sheri, she be as far out o' my reach as th' nearest star.~
+@13533 = ~[PC] Perhaps she will find me interesting.~
+@13534 = ~[PC] Well, perhaps I should pay her a visit.~
+@13535 = ~[PC] This is a distraction. Go make yourself useful. Go fix the gear, or sharpen something.~
+@13536 = ~[ARAN] I like all sorts o' songs. But when it be Sheri, some sets she sings be on th' bawdy side.~
+@13537 = ~[PC] Does she do more than... sing that kind of song?~
+@13538 = ~[ARAN] About a tenday before I met up wi' you, if I rightly recall.~
+@13539 = ~[ARAN] Busy day, that one. I had to dodge my way out right quick. Great voice, an' a sight better aim wi' crockery than I'd have guessed. But I deserved th' cuts an' bruises she dealt, I did, every last one.~
+@13540 = ~[ARAN] Aye, mayhap. So far, wi' anyone I done seen talk to her, she seems friendly enough. Which kind o' fits wi' th' whole "relatin' to people" thing bards an' bardesses seem to be right good at.~
+@13541 = ~[ARAN] I think you would enjoy th' time spent. Her voice... it be an experience.~
