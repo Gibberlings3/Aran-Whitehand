@@ -794,60 +794,69 @@ END
 /* resources : stores */
 PRINT @30036
 COPY ~aranw/media/stores/c-awtav1.sto~ ~override~
-	PATCH_IF SOURCE_SIZE > 0x9b BEGIN
-		SAY NAME2 @153
-		ADD_STORE_ITEM ~MISC16~ #0 #0 #0 ~IDENTIFIED~ #5	/* Fire Agate Gem */
-		ADD_STORE_ITEM ~MISC17~ #0 #0 #0 ~IDENTIFIED~ #8	/* Lynx Eye Gem */
-		ADD_STORE_ITEM ~MISC18~ #0 #0 #0 ~IDENTIFIED~ #4	/* Sunstone Gem */
-		ADD_STORE_ITEM ~MISC19~ #0 #0 #0 ~IDENTIFIED~ #10	/* Turquoise Gem */
-		ADD_STORE_ITEM ~MISC20~ #0 #0 #0 ~IDENTIFIED~ #5	/* Bloodstone Gem */
-		ADD_STORE_ITEM ~MISC21~ #0 #0 #0 ~IDENTIFIED~ #7	/* Skydrop Gem */
-		ADD_STORE_ITEM ~MISC22~ #0 #0 #0 ~IDENTIFIED~ #5	/* Andar Gem */
-		ADD_STORE_ITEM ~MISC23~ #0 #0 #0 ~IDENTIFIED~ #12	/* Jasper Gem */
-		ADD_STORE_ITEM ~MISC24~ #0 #0 #0 ~IDENTIFIED~ #5	/* Tchazar Gem */
-		ADD_STORE_ITEM ~MISC25~ #0 #0 #0 ~IDENTIFIED~ #3	/* Zircon Gem */
-		ADD_STORE_ITEM ~MISC26~ #0 #0 #0 ~IDENTIFIED~ #5	/* Iol Gem */
-		ADD_STORE_ITEM ~MISC27~ #0 #0 #0 ~IDENTIFIED~ #6	/* Moonstone Gem */
-		ADD_STORE_ITEM ~MISC28~ #0 #0 #0 ~IDENTIFIED~ #4	/* Waterstar Gem */
-		ADD_STORE_ITEM ~MISC29~ #0 #0 #0 ~IDENTIFIED~ #2	/* Ziose Gem */
-		ADD_STORE_ITEM ~MISC30~ #0 #0 #0 ~IDENTIFIED~ #3	/* Chrysoberyl Gem */
-		ADD_STORE_ITEM ~MISC31~ #0 #0 #0 ~IDENTIFIED~ #7	/* Star Diopside Gem */
-		ADD_STORE_ITEM ~MISC32~ #0 #0 #0 ~IDENTIFIED~ #2	/* Shandon Gem */
-		ADD_STORE_ITEM ~MISC33~ #0 #0 #0 ~IDENTIFIED~ #1	/* Aquamarine Gem */
-		ADD_STORE_ITEM ~MISC34~ #0 #0 #0 ~IDENTIFIED~ #4	/* Garnet Gem */
-		ADD_STORE_ITEM ~MISC35~ #0 #0 #0 ~IDENTIFIED~ #12	/* Horn Coral Gem */
-		ADD_STORE_ITEM ~MISC36~ #0 #0 #0 ~IDENTIFIED~ #6	/* Pearl */
-		ADD_STORE_ITEM ~MISC37~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~ /* Sphene Gem */
-		ADD_STORE_ITEM ~MISC38~ #0 #0 #0 ~IDENTIFIED~ #3	/* Black Opal */
-		ADD_STORE_ITEM ~MISC39~ #0 #0 #0 ~IDENTIFIED~ #7	/* Water Opal */
-		ADD_STORE_ITEM ~MISC40~ #0 #0 #0 ~IDENTIFIED~ #12	/* Moonbar Gem */
-		ADD_STORE_ITEM ~MISC41~ #0 #0 #0 ~IDENTIFIED~ #6	/* Star Sapphire */
-		ADD_STORE_ITEM ~MISC6N~ #0 #0 #0 ~IDENTIFIED~ #5	/* Sun Gem */
-		ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Gold Ring */
-		ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Silver Ring */
-		ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Onyx Ring */
-		ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12 ~UNLIMITED~ /* Jade Ring */
-		ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20 ~UNLIMITED~ /* Greenstone Ring */
-		ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Bloodstone Ring */
-		ADD_STORE_ITEM ~RING16~ #0 #0 #0 ~IDENTIFIED~ #2	/* Angel Skin Ring */
-		ADD_STORE_ITEM ~RING17~ #0 #0 #0 ~IDENTIFIED~ #3	/* Flamedance Ring */
-		ADD_STORE_ITEM ~RING18~ #0 #0 #0 ~IDENTIFIED~ #3	/* Fire Opal Ring */
-		ADD_STORE_ITEM ~RING19~ #0 #0 #0 ~IDENTIFIED~ #2	/* Ruby Ring */
-		ADD_STORE_ITEM ~AMUL02~ #0 #0 #0 ~IDENTIFIED~ #8	/* Necklace */
-		ADD_STORE_ITEM ~AMUL04~ #0 #0 #0 ~IDENTIFIED~ #2	/* Studded Necklace with Zios Gems */
-		ADD_STORE_ITEM ~AMUL05~ #0 #0 #0 ~IDENTIFIED~ #3	/* Bluestone Necklace */
-		ADD_STORE_ITEM ~AMUL06~ #0 #0 #0 ~IDENTIFIED~ #3	/* Agni Mani Necklace */
-		ADD_STORE_ITEM ~AMUL07~ #0 #0 #0 ~IDENTIFIED~ #5	/* Rainbow Obsidian Necklace */
-		ADD_STORE_ITEM ~AMUL08~ #0 #0 #0 ~IDENTIFIED~ #5	/* Tiger Cowrie Shell Necklace */
-		ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~	/* Silver Necklace */
-		ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~	/* Gold Necklace */
-		ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #1 ~UNLIMITED~	/* Pearl Necklace */
-		ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4	/* Bloodstone Amulet */
-	END
+	SAY NAME2 @153
+	WRITE_LONG 0x0010 ~0b010001001111~
+	WRITE_LONG  0x14 180 // sell
+	WRITE_LONG  0x18 25 // buy
+	WRITE_SHORT 0x20 90 // diff
+	ADD_STORE_ITEM ~MISC16~ #0 #0 #0 ~IDENTIFIED~ #5	/* Fire Agate Gem */
+	ADD_STORE_ITEM ~MISC17~ #0 #0 #0 ~IDENTIFIED~ #8	/* Lynx Eye Gem */
+	ADD_STORE_ITEM ~MISC18~ #0 #0 #0 ~IDENTIFIED~ #4	/* Sunstone Gem */
+	ADD_STORE_ITEM ~MISC19~ #0 #0 #0 ~IDENTIFIED~ #10	/* Turquoise Gem */
+	ADD_STORE_ITEM ~MISC20~ #0 #0 #0 ~IDENTIFIED~ #5	/* Bloodstone Gem */
+	ADD_STORE_ITEM ~MISC21~ #0 #0 #0 ~IDENTIFIED~ #7	/* Skydrop Gem */
+	ADD_STORE_ITEM ~MISC22~ #0 #0 #0 ~IDENTIFIED~ #5	/* Andar Gem */
+	ADD_STORE_ITEM ~MISC23~ #0 #0 #0 ~IDENTIFIED~ #12	/* Jasper Gem */
+	ADD_STORE_ITEM ~MISC24~ #0 #0 #0 ~IDENTIFIED~ #5	/* Tchazar Gem */
+	ADD_STORE_ITEM ~MISC25~ #0 #0 #0 ~IDENTIFIED~ #3	/* Zircon Gem */
+	ADD_STORE_ITEM ~MISC26~ #0 #0 #0 ~IDENTIFIED~ #5	/* Iol Gem */
+	ADD_STORE_ITEM ~MISC27~ #0 #0 #0 ~IDENTIFIED~ #6	/* Moonstone Gem */
+	ADD_STORE_ITEM ~MISC28~ #0 #0 #0 ~IDENTIFIED~ #4	/* Waterstar Gem */
+	ADD_STORE_ITEM ~MISC29~ #0 #0 #0 ~IDENTIFIED~ #2	/* Ziose Gem */
+	ADD_STORE_ITEM ~MISC30~ #0 #0 #0 ~IDENTIFIED~ #3	/* Chrysoberyl Gem */
+	ADD_STORE_ITEM ~MISC31~ #0 #0 #0 ~IDENTIFIED~ #7	/* Star Diopside Gem */
+	ADD_STORE_ITEM ~MISC32~ #0 #0 #0 ~IDENTIFIED~ #2	/* Shandon Gem */
+	ADD_STORE_ITEM ~MISC33~ #0 #0 #0 ~IDENTIFIED~ #1	/* Aquamarine Gem */
+	ADD_STORE_ITEM ~MISC34~ #0 #0 #0 ~IDENTIFIED~ #4	/* Garnet Gem */
+	ADD_STORE_ITEM ~MISC35~ #0 #0 #0 ~IDENTIFIED~ #12	/* Horn Coral Gem */
+	ADD_STORE_ITEM ~MISC36~ #0 #0 #0 ~IDENTIFIED~ #6	/* Pearl */
+	ADD_STORE_ITEM ~MISC37~ #0 #0 #0 ~IDENTIFIED~ #1   /* Sphene Gem */
+	ADD_STORE_ITEM ~MISC38~ #0 #0 #0 ~IDENTIFIED~ #3	/* Black Opal */
+	ADD_STORE_ITEM ~MISC39~ #0 #0 #0 ~IDENTIFIED~ #7	/* Water Opal */
+	ADD_STORE_ITEM ~MISC40~ #0 #0 #0 ~IDENTIFIED~ #12	/* Moonbar Gem */
+	ADD_STORE_ITEM ~MISC41~ #0 #0 #0 ~IDENTIFIED~ #6	/* Star Sapphire */
+	ADD_STORE_ITEM ~MISC6N~ #0 #0 #0 ~IDENTIFIED~ #5	/* Sun Gem */
+	ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5   /* Gold Ring */
+	ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5   /* Silver Ring */
+	ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5   /* Onyx Ring */
+	ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12   /* Jade Ring */
+	ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20   /* Greenstone Ring */
+	ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5   /* Bloodstone Ring */
+	ADD_STORE_ITEM ~RING16~ #0 #0 #0 ~IDENTIFIED~ #2	/* Angel Skin Ring */
+	ADD_STORE_ITEM ~RING17~ #0 #0 #0 ~IDENTIFIED~ #3	/* Flamedance Ring */
+	ADD_STORE_ITEM ~RING18~ #0 #0 #0 ~IDENTIFIED~ #3	/* Fire Opal Ring */
+	ADD_STORE_ITEM ~RING19~ #0 #0 #0 ~IDENTIFIED~ #2	/* Ruby Ring */
+	ADD_STORE_ITEM ~AMUL02~ #0 #0 #0 ~IDENTIFIED~ #8	/* Necklace */
+	ADD_STORE_ITEM ~AMUL04~ #0 #0 #0 ~IDENTIFIED~ #2	/* Studded Necklace with Zios Gems */
+	ADD_STORE_ITEM ~AMUL05~ #0 #0 #0 ~IDENTIFIED~ #3	/* Bluestone Necklace */
+	ADD_STORE_ITEM ~AMUL06~ #0 #0 #0 ~IDENTIFIED~ #3	/* Agni Mani Necklace */
+	ADD_STORE_ITEM ~AMUL07~ #0 #0 #0 ~IDENTIFIED~ #5	/* Rainbow Obsidian Necklace */
+	ADD_STORE_ITEM ~AMUL08~ #0 #0 #0 ~IDENTIFIED~ #5	/* Tiger Cowrie Shell Necklace */
+	ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #1  	/* Silver Necklace */
+	ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #1  	/* Gold Necklace */
+	ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #1  	/* Pearl Necklace */
+	ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4	/* Bloodstone Amulet */
+	ADD_STORE_ITEM ~POTN08~ #1 #0 #0 ~IDENTIFIED~ #100 /* Potion of Healing */
+	ADD_STORE_ITEM ~POTN52~ #1 #0 #0 ~IDENTIFIED~ #30  /* Potion of Extra Healing */
+	ADD_STORE_ITEM ~POTN20~ #1 #0 #0 ~IDENTIFIED~ #10  /* Antidote */
+	ADD_STORE_ITEM ~POTN42~ #1 #0 #0 ~IDENTIFIED~ #5   /* Potion of Regeneration */
 
 COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 	PATCH_IF SOURCE_SIZE > 0x9b BEGIN
 		SAY NAME2 @154
+		WRITE_LONG  0x14 170 // sell
+		WRITE_LONG  0x18 30 // buy
+		WRITE_SHORT 0x20 95 // diff
 		ADD_STORE_ITEM ~MISC16~ #0 #0 #0 ~IDENTIFIED~ #5	/* Fire Agate Gem */
 		ADD_STORE_ITEM ~MISC17~ #0 #0 #0 ~IDENTIFIED~ #8	/* Lynx Eye Gem */
 		ADD_STORE_ITEM ~MISC18~ #0 #0 #0 ~IDENTIFIED~ #4	/* Sunstone Gem */
@@ -886,12 +895,12 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~RING21~ #0 #0 #0 ~IDENTIFIED~ #1	/* Ring of Infravision	- Special Stock (only in c-awtav02) */
 		ADD_STORE_ITEM ~RING05~ #0 #0 #0 ~IDENTIFIED~ #1	/* Ring of Invisibility	- Special Stock (only in c-awtav02) */
 		ADD_STORE_ITEM ~RING06~ #0 #0 #0 ~IDENTIFIED~ #1	/* Ring of Protection +1	- Special Stock (only in c-awtav02) */
-		ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Gold Ring */
-		ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Silver Ring */
-		ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Onyx Ring */
-		ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12 ~UNLIMITED~ /* Jade Ring */
-		ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20 ~UNLIMITED~ /* Greenstone Ring */
-		ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5 ~UNLIMITED~ /* Bloodstone Ring */
+		ADD_STORE_ITEM ~RING10~ #0 #0 #0 ~IDENTIFIED~ #5  /* Gold Ring */
+		ADD_STORE_ITEM ~RING11~ #0 #0 #0 ~IDENTIFIED~ #5  /* Silver Ring */
+		ADD_STORE_ITEM ~RING12~ #0 #0 #0 ~IDENTIFIED~ #5  /* Onyx Ring */
+		ADD_STORE_ITEM ~RING13~ #0 #0 #0 ~IDENTIFIED~ #12  /* Jade Ring */
+		ADD_STORE_ITEM ~RING14~ #0 #0 #0 ~IDENTIFIED~ #20  /* Greenstone Ring */
+		ADD_STORE_ITEM ~RING15~ #0 #0 #0 ~IDENTIFIED~ #5  /* Bloodstone Ring */
 		ADD_STORE_ITEM ~RING16~ #0 #0 #0 ~IDENTIFIED~ #2	/* Angel Skin Ring */
 		ADD_STORE_ITEM ~RING17~ #0 #0 #0 ~IDENTIFIED~ #3	/* Flamedance Ring */
 		ADD_STORE_ITEM ~RING18~ #0 #0 #0 ~IDENTIFIED~ #3	/* Fire Opal Ring */
@@ -904,10 +913,14 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~AMUL06~ #0 #0 #0 ~IDENTIFIED~ #3	/* Agni Mani Necklace */
 		ADD_STORE_ITEM ~AMUL07~ #0 #0 #0 ~IDENTIFIED~ #5	/* Rainbow Obsidian Necklace */
 		ADD_STORE_ITEM ~AMUL08~ #0 #0 #0 ~IDENTIFIED~ #20	/* Tiger Cowrie Shell Necklace */
-		ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #6 ~UNLIMITED~	/* Silver Necklace */
-		ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #6 ~UNLIMITED~	/* Gold Necklace */
-		ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #7 ~UNLIMITED~	/* Pearl Necklace */
+		ADD_STORE_ITEM ~AMUL09~ #0 #0 #0 ~IDENTIFIED~ #6 	/* Silver Necklace */
+		ADD_STORE_ITEM ~AMUL10~ #0 #0 #0 ~IDENTIFIED~ #6 	/* Gold Necklace */
+		ADD_STORE_ITEM ~AMUL11~ #0 #0 #0 ~IDENTIFIED~ #7 	/* Pearl Necklace */
 		ADD_STORE_ITEM ~AMUL13~ #0 #0 #0 ~IDENTIFIED~ #4	/* Bloodstone Amulet */
+		ADD_STORE_ITEM ~POTN08~ #1 #0 #0 ~IDENTIFIED~ #100 /* Potion of Healing */
+		ADD_STORE_ITEM ~POTN52~ #1 #0 #0 ~IDENTIFIED~ #30  /* Potion of Extra Healing */
+		ADD_STORE_ITEM ~POTN20~ #1 #0 #0 ~IDENTIFIED~ #10  /* Antidote */
+		ADD_STORE_ITEM ~POTN42~ #1 #0 #0 ~IDENTIFIED~ #5   /* Potion of Regeneration */
 	END
 PRINT @30009
 /* resources : area creation */
@@ -1021,11 +1034,15 @@ BEGIN @30012 //component_1_
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
-
-	// replace this for .acm music later - but for now,	add the blank sound reference 
-	COPY ~aranw/media/g3blank.mus~ 	~music~
-	COPY_EXISTING ~songlist.2da~ 		~override~
-		SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
+	
+	/* Make sure we have a blank music file in the install */
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
+		COPY ~aranw/media/Blank.mus~ ~music~
+	END
+	// replace this for .acm music later - but for now,	make sure the blank sound reference works
+	COPY_EXISTING ~songlist.2da~ ~override~
+		SET_2DA_ENTRY 2 1 2 ~Blank~
+		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
 	BUT_ONLY
 
 	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
@@ -1130,10 +1147,15 @@ BEGIN @30013 //component_2_
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	
-	COPY ~aranw/media/g3blank.mus~ 		~music~
-	COPY_EXISTING ~songlist.2da~ 		~override~
-		SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
-		BUT_ONLY
+	/* Make sure we have a blank music file in the install */
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
+		COPY ~aranw/media/Blank.mus~ ~music~
+	END
+	// replace this for .acm music later - but for now,	make sure the blank sound reference works
+	COPY_EXISTING ~songlist.2da~ ~override~
+		SET_2DA_ENTRY 2 1 2 ~Blank~
+		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
+	BUT_ONLY
 
 	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
 
@@ -1237,10 +1259,15 @@ BEGIN @30014 //component_3_
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	
-	COPY ~aranw/media/g3blank.mus~ 		~music~
-	COPY_EXISTING ~songlist.2da~ 		~override~
-		SET_2DA_ENTRY 0 2 3 ~g3blank.mus~
-		BUT_ONLY
+	/* Make sure we have a blank music file in the install */
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
+		COPY ~aranw/media/Blank.mus~ ~music~
+	END
+	// replace this for .acm music later - but for now,	make sure the blank sound reference works
+	COPY_EXISTING ~songlist.2da~ ~override~
+		SET_2DA_ENTRY 2 1 2 ~Blank~
+		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
+	BUT_ONLY
 
 	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
 
@@ -1339,6 +1366,15 @@ BEGIN @30015 //component_4_
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	PRINT @30016
+	/* Make sure we have a blank music file in the install */
+    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
+		COPY ~aranw/media/Blank.mus~ ~music~
+	END
+	// replace this for .acm music later - but for now,	make sure the blank sound reference works
+	COPY_EXISTING ~songlist.2da~ ~override~
+		SET_2DA_ENTRY 2 1 2 ~Blank~
+		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
+	BUT_ONLY
     /* specific info block */
 	APPEND ~c-arandebugger02.log~ ~Component 4 installed. Choice was to not install any audio - no changes beyond the ALWAYS block were made on this installation~
     /* general info block */

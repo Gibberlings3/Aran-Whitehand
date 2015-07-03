@@ -384,9 +384,9 @@ Aran was captured by Bodhi and infected with vampirism, forcing you to slay him.
 @179 = ~[ARAN] Aye, then. I will drink to your health, an' to th' confusion o' your enemies.~ 
 @180 = ~[ARAN] (He looks at you with a keen eye, raising a glass in salute.)~ 
 @181 = ~[ARAN] I can see you be in a quiet mood after all, eh? Suits me right fine. I can think o' worse things to be doin' than sittin' here with you.~ 
-// @182  = 
-// @183  = 
-// @184  = 
+@182  = ~[ARAN] Aye, then, we be in for a right fine adventure. An' mayhap even one worthy o' your bardic talents, <CHARNAME>.~
+@183  = ~[ARAN] I sorta did that once, you know. Used a right fin combnination o' song an' sweettalk. Sold a blighted dwarf his own hammer. Not goin' back to that inn any time soon, believe you me.~
+@184  = ~[ARAN] No offense meant to our leader here, eh, but you an' she both have to admit you bards have a way wi' gettin' th' rest o' us to do things what we wouldn't usually do if we be thinkin' clearly.~
 // @185  = 
 // @186  = 
 // @187  = 
@@ -597,7 +597,7 @@ Maidens a' swoon at his auster."~
 @384  = ~[ARAN] Aye, we are in for an adventure, for sure. Bards be trickier than illusionists. Mostly more entertainin', though.~
 @385  = ~[RAELIS] Why, thank you, sweet boy. That sounds like a high compliment.~
 @386  = ~[ARAN] Your call, o' course, <CHARNAME>. Sounds like a good thing to do. Then again, most bards could talk a dragon into givin' up a scale or two , an' sell it back to him.~
-@387  = ~[RAELIS] Ah! Someone in the Company has been telling that old tale again...~
+@387  = ~[RAELIS] Ah! Someone in the Company has been telling that old dragon-scale tale again...~
 @388  = ~[ARAN] You are playin' a dangerous game, <CHARNAME>, pickin' up work here. There won't be a contract to scribe on this one, I think.~
 @389  = ~[LINVALE] What a charming young man. What a quaint concept... a written contract for work outside of the traditional guild structure. It almost amuses me.~
 @390  = ~[ARAN] I don't hold much by off th' books work wi' a Thieves' Guildmaster. But you are leader, <CHARNAME>. I'd be careful, is all. Most knives play both ends against the middle. And they play permanent-like.~
@@ -4964,7 +4964,7 @@ Yours faithfully, Aran.~
 @4681 = ~[PC] Aran... I... No. I want to be with you, but not... not do everything that we can do.~
 @4682 = ~[PC] I trust you. If we both want something more to happen, it will. If I feel like we are going too far, you can stop.~
 @4683 = ~[PC] I knew this was a mistake. I am already involved with someone else, but you keep pushing. You will completely expose our affair if we do anything in here at all. Are you capable of being a good friend, or should you leave now?~
-@4684 = ~[PC] (Slowly disrobe, folding your clothes carefully, leaning over to run your hands over each ankle and stretch langorously... Settle yourself gently into the bath, allow the soap bubbles to trail along your body...)~
+@4684 = ~[PC] (Slowly disrobe, folding your clothes carefully, leaning over to run your hands over each ankle and stretch languorously... Settle yourself gently into the bath, allow the soap bubbles to trail along your body...)~
 @4685 = ~[ARAN] Right, then, m'lady, do you be teasin' me, or do you want more than a splash o' water? Or do I be readin' everythin' wrong, an' do you really truly want a bath?~
 @4686 = ~[PC] Aran... we are completely alone, and I want you as much as you want me.~
 @4687 = ~[ARAN] (The trip is a short one. He looks keenly about, seeing the baths deserted, and quickly loops his belt to seal the door behind you both.) Aye, then, <CHARNAME>. Only I am a mite particular about security an' all, this bein' so public.~

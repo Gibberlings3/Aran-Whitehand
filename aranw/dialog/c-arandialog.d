@@ -732,13 +732,16 @@ END
 
 /* SoA Interjections : Haer'Dalis search : started */
 I_C_T RAELIS 53 c-aranraelistrickier /* ~Fly, then...fetch our brother away from his captor however you might, and return to us soon.  My prayers go with you, my good <MANWOMAN>.~ */
-== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @384
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) !Class(Player1,BARD_ALL)~ THEN @384
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Class(Player1,BARD_ALL)~ THEN @182
 == RAELIS IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @385
 END
 
 /* SoA Interjections : Haer'Dalis search : reaction */
 I_C_T RAELIS 52 c-aranaelisdragon /* ~(sigh)  It is as I feared.  If you change your mind, child, please do return... I have a feeling Haer'Dalis will not return soon to our side, otherwise.~ */
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @386
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Class("c-aran",BARD_ALL)~ THEN @183
+== C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Class(Player1,BARD_ALL) !Class("c-aran",BARD_ALL)~ THEN @184
 == RAELIS IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @387
 END
 
