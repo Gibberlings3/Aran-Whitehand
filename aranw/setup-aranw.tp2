@@ -43,7 +43,7 @@ REQUIRE_PREDICATE GAME_IS ~bg2 tob bgt bg2ee eet~ @30002
 /* create custom info log */
 /* put some information in the .DEBUG file to help with troubleshooting, and also to the custom debug */
 /* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-COPY ~aranw/blank.log~ ~override/c-arandebugger01.log~
+COPY ~aranw/media/blank.log~ ~override/c-arandebugger01.log~
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\"
 APPEND ~c-arandebugger01.log~ "//\\//\\ Aran Whitehand Component 0 - Begin Log//\\//\\"
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\"
@@ -1030,7 +1030,7 @@ BEGIN @30012 //component_1_
 	FORCED_SUBCOMPONENT @30011
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger02.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger02.log~
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
@@ -1142,7 +1142,7 @@ BEGIN @30013 //component_2_
 	FORCED_SUBCOMPONENT @30011
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger02.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger02.log~
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
@@ -1254,7 +1254,7 @@ BEGIN @30014 //component_3_
 	FORCED_SUBCOMPONENT @30011
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger02.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger02.log~
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
@@ -1361,7 +1361,7 @@ BEGIN @30015 //component_4_
 	FORCED_SUBCOMPONENT @30011
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger02.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger02.log~
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
@@ -1411,7 +1411,7 @@ BEGIN @30019 //component_5_
 	FORCED_SUBCOMPONENT @30018
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger03.log~ // no problem - we want to overwrite on changing any components!
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger03.log~ // no problem - we want to overwrite on changing any components!
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1466,7 +1466,7 @@ BEGIN @30020 //component_6_
 	FORCED_SUBCOMPONENT @30018 
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger03.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger03.log~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1521,7 +1521,7 @@ BEGIN @30021 //component_7_
 	FORCED_SUBCOMPONENT @30018
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger03.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger03.log~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1575,7 +1575,7 @@ BEGIN @30022 //component_8_
 	FORCED_SUBCOMPONENT @30018
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger03.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger03.log~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1629,7 +1629,7 @@ BEGIN @30023 //component_9_
 	FORCED_SUBCOMPONENT @30018
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	COPY ~aranw/blank.log~ ~override/c-arandebugger03.log~
+	COPY ~aranw/media/blank.log~ ~override/c-arandebugger03.log~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - Begin Log//\\//\\"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1684,7 +1684,7 @@ BEGIN @30025 //component_10_
 REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 PRINT @30105
 /* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-COPY ~aranw/blank.log~ ~override/c-arandebugger04.log~
+COPY ~aranw/media/blank.log~ ~override/c-arandebugger04.log~
 APPEND ~c-arandebugger04.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 APPEND ~c-arandebugger04.log~ "//\\//\\ Aran Whitehand Optional Component 10 - Begin Log//\\//\\//\\//\\//"
 APPEND ~c-arandebugger04.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
