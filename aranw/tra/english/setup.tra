@@ -287,18 +287,18 @@ You may want to consult the ReadMe before choosing.~
 @30118    = ~piper's "Stalwort Bearded Young" (light brown hair, fair complexion) installed.~
 @30119    = ~piper's "Mature Bearded" (dark brown hair, medium complexion) installed.~
 @30120    = ~piper's "Stalwort Young" (light brown hair, fair complexion) installed.~
-@30121 = ~Language = %LANGUAGE% ~
-@30122 = ~Architecture = %WEIDU_ARCH% ~
-@30123 = ~Operating System = %WEIDU_OS% ~
-@30124 = ~User Directory = %USER_DIRECTORY% ~
-@30125 = ~Save Game Single Player Directory = %SAVE_DIRECTORY% ~
-@30126 = ~Save Game Multi Player Directory = %MPSAVE_DIRECTORY% ~
-@30127 = ~Running .exe = %WEIDU_EXECUTABLE%~
-@30128 = ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
-@30129 = ~Installation type is: %INTERACTIVE% ( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall). 
+@30121    = ~Language = %LANGUAGE% ~
+@30122    = ~Architecture = %WEIDU_ARCH% ~
+@30123    = ~Operating System = %WEIDU_OS% ~
+@30124    = ~User Directory = %USER_DIRECTORY% ~
+@30125    = ~Save Game Single Player Directory = %SAVE_DIRECTORY% ~
+@30126    = ~Save Game Multi Player Directory = %MPSAVE_DIRECTORY% ~
+@30127     = ~Running .exe = %WEIDU_EXECUTABLE%~
+@30128    = ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
+@30129    = ~Installation type is: %INTERACTIVE% ( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall). 
 ~
-@30130 = ~Author: %TP2_AUTHOR%~
-@30131 = ~IF YOUR .DEBUG IS MISSING INFORMATION
+@30130    = ~Author: %TP2_AUTHOR%~
+@30131    = ~IF YOUR .DEBUG IS MISSING INFORMATION
 due to batch installs or changing components,
 a custom debug file is in the aranw mod folder
 aranw/aranw_0_debugger.log
@@ -307,5 +307,6 @@ aranw/aranw_56789_debugger.log
 and optionally aranw/aranw_opt10_debugger.log
 ~
 @30132    = ~WeiDU says that this game is the Enhanced Edition Trilogy.~
+@30133    = ~Installing Baldurs Gate II: Enhanced Edition scripts.~
 
 

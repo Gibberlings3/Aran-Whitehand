@@ -1009,8 +1009,14 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB scripts */
 	COMPILE ~aranw/baf/c-act218.baf~ // cutscene: wraith summons
 	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
 	EXTEND_TOP ~ar6200.bcs~ ~aranw/baf/c-ar6200_epilog_ext.baf~ // epilogues triggered
-	
 	PRINT @30009
+END
+
+PRINT @30133
+
+ACTION_IF FILE_EXISTS_IN_GAME ~neera10.cre~ THEN BEGIN
+	EXTEND_TOP ~ohndenna.bcs~ ~aranw/baf/c-aranohndenna.baf~
+		USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 END
 
 /* close out and move custom info .log back to subdirectory for easy reading */
