@@ -1302,23 +1302,23 @@ END
 /* ToB Love Talks */
 
 /* ToB Love Talk #1 : back in business */
-IF ~Global("c-arantobrom","GLOBAL",2)~ THEN BEGIN a4813
+IF ~Global("c-arantobrom","GLOBAL",1)~ THEN BEGIN a4813
   SAY @11601
-  ++ @11602 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4820
-  ++ @11603 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4822
-  ++ @11604 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4823
-  ++ @11605 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4824
-  ++ @11606 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4819
-  + ~Global("c-aranintimate","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4814
-  + ~Global("c-aranintimate","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4815
-  + ~Global("c-aranintimate","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4816
-  + ~Global("c-aranintimate","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + @11608 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4817
-  + ~Global("c-aranintimate","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + @11608 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4818
-  + ~RandomNum(5,5)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3183 /* c-aranshutup50 */
-  + ~RandomNum(5,4)~ + @11610 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3184 /* c-aranshutup51 */
-  + ~RandomNum(5,3)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3185 /* c-aranshutup52 */
-  + ~RandomNum(5,2)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3186 /* c-aranshutup53 */
-  + ~RandomNum(5,1)~ + @11611 DO ~SetGlobal("c-arantobrom","GLOBAL",3) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3187 /* c-aranshutup54 */
+  ++ @11602 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4820
+  ++ @11603 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4822
+  ++ @11604 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4823
+  ++ @11605 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4824
+  ++ @11606 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4819
+  + ~Global("c-aranintimate","GLOBAL",0) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4814
+  + ~Global("c-aranintimate","GLOBAL",1) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4815
+  + ~Global("c-aranintimate","GLOBAL",2) Global("c-aranrom","GLOBAL",2)~ + @11607 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4816
+  + ~Global("c-aranintimate","GLOBAL",3) Global("c-aranrom","GLOBAL",2)~ + @11608 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4817
+  + ~Global("c-aranintimate","GLOBAL",4) Global("c-aranrom","GLOBAL",2)~ + @11608 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4818
+  + ~RandomNum(5,5)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3183 /* c-aranshutup50 */
+  + ~RandomNum(5,4)~ + @11610 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3184 /* c-aranshutup51 */
+  + ~RandomNum(5,3)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3185 /* c-aranshutup52 */
+  + ~RandomNum(5,2)~ + @11609 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3186 /* c-aranshutup53 */
+  + ~RandomNum(5,1)~ + @11611 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3187 /* c-aranshutup54 */
 END
 
 IF ~~ a4814
@@ -1514,17 +1514,29 @@ END
   
 
 /* ToB Love Talk #2 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",4) --> Global("c-arantobrom","GLOBAL",5) */
-IF ~Global("c-arantobrom","GLOBAL",4)~ THEN BEGIN a4716
+IF ~Global("c-arantobrom","GLOBAL",3)~ THEN BEGIN a4716
   SAY @11707 
-  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",5) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",5) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",5) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717
-  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",5) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",5) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717
+  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
 END
 /* GOTO ToB Love Talk #2 : statement of intent for seriousness : replies */
 
 /* ToB Love Talk #3 : ask the big question or not */
+
+IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN c-arantemporary_question
+  SAY ~[ARAN] Now, we be supposed to have a big talk here about marriage an' such. But for now, do you think you might marry me someday?~
+  ++ ~[PC] Yes!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+  ++ ~[PC] No!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+  ++ ~[PC] Never!!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+END
+  
+IF ~~ c-aran_exit_temp
+  SAY ~[ARAN] Aye then. That be th' way things will be, then. Until i bring it up in th' next talk, that is.~
+  IF ~~ THEN EXIT
+END
 
 // SetGlobal("c-aranengagement","GLOBAL",0) = not asked about marriage
 // SetGlobal("c-aranengagement","GLOBAL",1) = delay interested in marriage
@@ -1532,13 +1544,13 @@ END
 // SetGlobal("c-aranengagement","GLOBAL",3) = engaged and interested in kids
 // SetGlobal("c-aranengagement","GLOBAL",4) = not interested in marriage
 
-IF ~Global("c-arantobrom","GLOBAL",6)~ THEN BEGIN a4774
+IF ~Global("c-arantobrom","GLOBAL",7)~ THEN BEGIN a4774
   SAY @11713
-  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",7) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
-  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",7) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",7) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",7) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778
-  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",7) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777
+  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
+  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
+  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
+  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778
+  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777
 END
 
 IF ~~ a4775

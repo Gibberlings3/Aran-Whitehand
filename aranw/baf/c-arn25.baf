@@ -2603,7 +2603,7 @@ END
 /* Aran's Romance LoveTalks Fire, c-aranbg2rom, %ARAN_LTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
+	GlobalLT("c-arantobrom","GLOBAL",8)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	CombatCounter(0)	// Not in combat
@@ -2612,7 +2612,7 @@ IF
 	Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
 	Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
 	Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3
-	// Global("c-arantobrom","GLOBAL",7)	 // fire ToB_LT_4
+	Global("c-arantobrom","GLOBAL",7)	 // fire ToB_LT_4
 	// Global("c-arantobrom","GLOBAL",9)	 // fire ToB_LT_5
 	// Global("c-arantobrom","GLOBAL",11)	// fire ToB_LT_6
 	// Global("c-arantobrom","GLOBAL",13)	// fire ToB_LT_7
