@@ -2707,6 +2707,50 @@ IF ~Global("c-aranfriendud","GLOBAL",9)~ THEN BEGIN a1693
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
+/* Saerileth Commentary SoA : Are you sure about this romance? : Dialog */
+IF ~Global("c-aranpcsaerrom","GLOBAL",1)~ THEN BEGIN a5173
+  SAY @13542
+  ++ @13543 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5174
+  ++ @13544 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5175
+  ++ @1889 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5176
+  ++ @13545 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5176
+  ++ @13546 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5175
+  ++ @13547 DO ~SetGlobal("c-aranpcsaerrom","GLOBAL",2)~ + a5182
+END
+
+IF ~~ a5174
+  SAY @13548
+  ++ @13549 + a5176
+  ++ @13545 + a5181
+  ++ @13546 + a5175
+  ++ @13547 + a5182
+END  
+
+IF ~~ a5176
+  SAY @13551
+  ++ @13552 + a5177
+  ++ @13553 + a5178
+  ++ @13554 + a5179
+  ++ @13555 + a5181
+  ++ @13556 + a5175
+END
+
+IF ~~ a5175 SAY @13550 IF ~~ THEN GOTO a5181 END
+IF ~~ a5177 SAY @13557 IF ~~ THEN GOTO a5180 END
+IF ~~ a5178 SAY @13558 IF ~~ THEN GOTO a5180 END
+IF ~~ a5179 SAY @13559 IF ~~ THEN GOTO a5180 END
+IF ~~ a5180 SAY @13560 IF ~~ THEN GOTO a5181 END
+
+IF ~~ a5181
+  SAY @13561
+  ++ @13562 + a5182
+  ++ @13563 + a5182
+  ++ @13564 + a5182 /* heh - Monty Python is fun. But this one might be a good one to lose. */
+  ++ @13565 + a5182
+END
+
+IF ~~ a5182 SAY @13566 IF ~~ THEN EXIT END
+
 /* BG2 Friendship Talks Replies */
 
 /* BG2 FriendTalk 1 c-aranfriendbg2 = 1 : Not Just Another Quasi-Invincible Band Of Protagonists */

@@ -1487,32 +1487,12 @@ IF ~~ a4834
   IF ~~ THEN EXIT
 END
 
-IF ~~ a4835
-  SAY @11702
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4836
-  SAY @11703
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4837
-  SAY @11704
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4838 
-  SAY @11705
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4840
-  SAY @11706
-  IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",3)~ EXIT
-END
+IF ~~ a4835 SAY @11702 IF ~~ THEN EXIT END
+IF ~~ a4836 SAY @11703 IF ~~ THEN EXIT END
+IF ~~ a4837 SAY @11704 IF ~~ THEN EXIT END
+IF ~~ a4838 SAY @11705 IF ~~ THEN EXIT END
+IF ~~ a4840 SAY @11706 IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",3)~ EXIT END
   
-
 /* ToB Love Talk #2 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",4) --> Global("c-arantobrom","GLOBAL",5) */
 IF ~Global("c-arantobrom","GLOBAL",3)~ THEN BEGIN a4716
   SAY @11707 
@@ -1534,7 +1514,7 @@ IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN c-arantemporary_question
 END
   
 IF ~~ c-aran_exit_temp
-  SAY ~[ARAN] Aye then. That be th' way things will be, then. Until i bring it up in th' next talk, that is.~
+  SAY ~[ARAN] Aye then. That be th' way things will be, then. Until I bring it up in th' next talk, that is.~
   IF ~~ THEN EXIT
 END
 

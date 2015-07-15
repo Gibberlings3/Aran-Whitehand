@@ -1,7 +1,7 @@
 /* EPILOGUE VARS if PC does not accept godhood
  * Global("c-aranrom","GLOBAL",2) in romance | !Global("c-aranrom","GLOBAL",2) not in romance
- * IF !Global("c-aranrom","GLOBAL",2) !Alignment(Player1,MASK_EVIL) = evil friend
- * IF !Global("c-aranrom","GLOBAL",2) Alignment(Player1,MASK_EVIL) = god/neutral friend
+ * IF !Global("c-aranrom","GLOBAL",2) Alignment(Player1,MASK_EVIL) = evil friend
+ * IF !Global("c-aranrom","GLOBAL",2) !Alignment(Player1,MASK_EVIL) = good/neutral friend
  * Global("c-aranepiloguefriend","GLOBAL",0) 	// 0 = alignment check, 1 = friends but part ways, 2 = Adventurers Forever, 3 = City Forever, 4 = Country Forever
  * ALL ROM CONDITIONS (must at least set c-aranepiloguerelation and c-aranepiloguelifestyle above 0 or no epilogue will return true...
  * Global("c-aranepiloguemarried","GLOBAL",0)	// 0 or 1
