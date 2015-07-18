@@ -57,9 +57,6 @@ THEN
      SetGlobal("c-araninitiallevel","GLOBAL",6)
 END
 
-
-/* END TEST */
-
 /* tracking intimacy levels */
 /* look for incrementing relationship to kissing */
 IF

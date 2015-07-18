@@ -550,9 +550,33 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 	ADD_JOURNAL TITLE (~Aran Whitehand~) @1720 @1719 @1718 @1717 @1716 @1715 @1714 @1713 @1712 @1711 @1710 @1709 @1708 @1707 @10508 @10507 @10506 @10505 @10504 @10503 @10502 @10501 @10500 @10499 @10498 @10497 @10495 @10482 @10455 @10453 @10451 @10449 @10447 @10445 @10411 @10410 @10405 @13146 @13147 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	ADD_JOURNAL EXISTING TITLE (#74337) @448 @456 @10399 USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	PRINT @30028
-	COMPILE ~aranw/dialog/c-aranbg2ee_content.d~   
-		USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	// COMPILE ~aranw/dialog/c-aranbg2ee_content.d~ USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	/* BG2:EE Interplay - */
+	/* Have to separate it all up to deal with folks who have downloaded and installed only some of the npcs */
+	ACTION_IF FILE_EXISTS_IN_GAME ~dorn10.cre~ THEN BEGIN
+		COMPILE ~aranw/dialog/c-aranbg2ee_dorn.d~ USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+		// EXTEND_BOTTOM ~c-aran.bcs~ ~aranw/baf/c-aranbg2ee_dorn.baf~ <-- UNUSED SO FAR
+		// EXTEND_BOTTOM ~c-arn25.bcs~ ~aranw/baf/c-aranbg2ee_dorn25.baf~ <-- UNUSED SO FAR
+	END 
+	ACTION_IF FILE_EXISTS_IN_GAME ~ohhex10.cre~ THEN BEGIN
+		COMPILE ~aranw/dialog/c-aranbg2ee_hexxat.d~ USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~ 
+		// EXTEND_BOTTOM ~c-aran.bcs~ ~aranw/baf/c-aranbg2ee_hexxat.baf~ <-- UNUSED SO FAR
+		// EXTEND_BOTTOM ~c-arn25.bcs~ ~aranw/baf/c-aranbg2ee_hexxat25.baf~ <-- UNUSED SO FAR
+	END
+	ACTION_IF FILE_EXISTS_IN_GAME ~neera10.cre~ THEN BEGIN
+		COMPILE ~aranw/dialog/c-aranbg2ee_neera.d~
+		// EXTEND_BOTTOM ~c-aran.bcs~ ~aranw/baf/c-aranbg2ee_neera.baf~  <-- UNUSED SO FAR
+		// EXTEND_BOTTOM ~c-arn25.bcs~ ~aranw/baf/c-aranbg2ee_neera25.baf~  <-- UNUSED SO FAR
+		// EXTEND_BOTTOM ~neera.bcs~ ~aranw/baf/c-aranbg2ee_neera.baf~  <-- UNUSED SO FAR
+		EXTEND_TOP ~ohndenna.bcs~ ~aranw/baf/c-aranbg2ee_ohndenna.baf~ USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	END
+	ACTION_IF FILE_EXISTS_IN_GAME ~rasaad10.cre~ THEN BEGIN
+		COMPILE ~aranw/dialog/c-aranbg2ee_rasaad.d~ USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+		// EXTEND_BOTTOM ~c-aran.bcs~ ~aranw/baf/c-aranbg2ee_rasaad.baf~ <-- UNUSED SO FAR
+		// EXTEND_BOTTOM ~c-arn25.bcs~ ~aranw/baf/c-aranbg2ee_rasaad25.baf~  <-- UNUSED SO FAR
+	END
 END 
+
 PRINT @30009
 /* items */
 PRINT @30033
@@ -933,6 +957,12 @@ COPY ~aranw/areas/c-ar01ht.bmp~ ~override~
 COPY ~aranw/areas/c-ar01lm.bmp~ ~override~
 COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
 
+APPEND ~mastarea.2da~
+  ~C-AR01  value~
+UNLESS ~C-AR01~
+
+
+
 /* area script */
 COMPILE ~aranw/baf/c-ar01.baf~
       EVALUATE_BUFFER
@@ -1013,11 +1043,6 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB scripts */
 END
 
 PRINT @30133
-
-ACTION_IF FILE_EXISTS_IN_GAME ~neera10.cre~ THEN BEGIN
-	EXTEND_TOP ~ohndenna.bcs~ ~aranw/baf/c-aranohndenna.baf~
-		USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
-END
 
 /* close out and move custom info .log back to subdirectory for easy reading */
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//"
