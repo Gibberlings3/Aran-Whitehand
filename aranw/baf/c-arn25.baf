@@ -1,3 +1,15 @@
+/* c-arn25.baf top of file */
+
+/* ToB Just Summoned */ 
+IF
+    Global("c-aransummoned","GLOBAL",1)
+	InMyArea(Player1)
+	!StateCheck(Player1,CD_STATE_NOTVALID)
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(Player1)
+	Wait(2)
+END
 
 /* ToB Watcher's Keep */
 IF
