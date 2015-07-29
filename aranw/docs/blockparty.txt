@@ -1,0 +1,6 @@
+C:CreateCreature("AERIE10")
+C:CreateCreature("VICONI11")
+C:CreateCreature("YOSHI11")
+C:CreateCreature("DORN12")
+C:CreateItem("MISC4Q")
+

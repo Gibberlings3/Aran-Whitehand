@@ -1,0 +1,44 @@
+
+// BioWare and "Beamhaul" (Beamdog's Overhaul Division) NPC Romances
+1 = a match for romance but just testing out the waters
+2 = a match for romance and in a committed romance
+3 = a match for romance and the romance has been shut down either by PC or another romance going active
+
+BioWare Canonical NPC GLOBALs:
+JAHEIRAROMANCEACTIVE 1 2 3
+AERIEROMANCEACTIVE 1 2 3
+VICONIAROMANCEACTIVE 1 2 3
+ANOMENROMANCEACTIVE 1 2 3
+
+Overhaul Canonical NPC GLOBALs:
+DornRomanceActive 1 2 3
+NeeraRomanceActive 1 2 3
+HexxatRomanceActive 1 2 3
+RasaadRomanceActive 1 2 3
+
+
+So, for example, a cluatext list "RA_Vic.txt" to be run from clua within game that sets Viconia as the active romance
+
+C:SetGlobal("JAHEIRAROMANCE","GLOBAL",3)
+C:SetGlobal("AERIEROMANCE","GLOBAL",3)
+C:SetGlobal("VICONIAROMANCE","GLOBAL",2)
+C:SetGlobal("ANOMENROMANCE","GLOBAL",0)
+C:SetGlobal("DornRomanceActive","GLOBAL",0)
+C:SetGlobal("NeeraRomanceActive","GLOBAL",0)
+C:SetGlobal("HexxatRomanceActive","GLOBAL",0)
+C:SetGlobal("RasaadRomanceActive","GLOBAL",0)
+
+
+and a reporting script for clua to establish what variables are currently set in romances
+
+C:GetGlobal("JAHEIRAROMANCE","GLOBAL")
+C:GetGlobal("AERIEROMANCE","GLOBAL")
+C:GetGlobal("VICONIAROMANCE","GLOBAL")
+C:GetGlobal("ANOMENROMANCE","GLOBAL")
+C:GetGlobal("DornRomanceActive","GLOBAL")
+C:GetGlobal("NeeraRomanceActive","GLOBAL")
+C:GetGlobal("HexxatRomanceActive","GLOBAL")
+C:GetGlobal("RasaadRomanceActive","GLOBAL")
+
+
+

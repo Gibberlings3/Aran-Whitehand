@@ -1,0 +1,48 @@
+
+
+
+[B] Aran Whitehand BGII:EE FAQ[/b]
+
+Q: So, does this mod work on BGII:EE?
+
+A: Yup. (That's American English for "yes").
+
+Q: Does it have special content that will only work on BGII:EE?
+
+A: Yes. Two banters for SoA content and twop banters for ToB content for each new NPC - Neera, Dorn, Rasaad, and Hexxat.
+
+Q: Is there anything I will miss by installing Aran on BGII - SoA or BGII:EE or vice-versa?
+
+A: Other than the banters written for the new BeamHaul folks being exclusive to BGII:EE, not in this mod. If you install AranAware, currently the BGII - SoA/ToB content has special pathways that adjust to kits and classes from mods like Divine Remix. None of that will operate on BGII:EE. Then again, neither does Divine Remix, so no worries there. 
+
+Q: Why does Aran interject so often in the older content, but not in the new content for Neera, Dorn, Rasaad, and Hexxat?
+
+A: BGII:EE just came out. So, Aran will probably not have much to say until his literary agent really absorbs the new content (rephrase that as "plays the hell out of it").
+ 
+Q: Hey! Aran's Inn is not where it was in the Beta I downloaded from GitHub!
+
+A: I blame the City Planning Department. Don't worry - it is still around. Look to your west, or open up your minimap after exploring the Promenade, and you will see it has relocated right next to the Adventurer's Mart.
+
+Q: Aran does not seem to care about the new romances with Neera, Dorn, Rasaad, or Hexxat.
+
+A: True enough. He probably will in the next version, but for now, he will be blissfully ignorant of any wild romances with newcomers. That's ok - it isn't like he really cares with whom a female PC is sleeping with in addition to himself. At least, not at first...
+
+Q: I SAW SMUT! HE TOUCHED ME WHEN I DIDN"T EXPECT IT! PERVERT!
+
+A: Yup. He does that to female PCs. Unless you tell him not to. In fact, he will give you all sorts of opportunities to say "no", even when *you* push him to try something. If it bothers you, tell him you don't want the romance.
+
+Q: I want the romance, but I really find the poorly written fanfic sex stuff disgusting. Can't I just have the romance without the smut?
+
+A: Well, you can successfully have a chaste romance if you choose roleplaying options. That's your best bet. Other than that, I am afraid this mod just isn't your cup of tea, so to speak.
+
+Q: I want the romance, but I want to play a Male PC. Can't Aran be gay?
+
+A: I guess it is technically possible to do so, though I would argue that as a straight dude I can appreciate a nice looking guy and have a bromance with him without being all hot and bothered by him. I don't have objections to anyone editing him that way. I will point out that the romance stuff was written very specifically and anatomically for a female PC, so unless you rewrite a whole bunch of .tra strings, there are going to be some very, very odd sounding moments. 
+
+Q: I put on the Girdle of Gender Bending, and Aran still won't romance me!
+
+A: That's not a bug - it's a feature. Aran tries to be aware of his surroundings, and when your best bud and employer goes from a 6' tall dude with broad shoulders to a 5'8" tall dudette with some serious curves in *all* the right places... wel, he'd kind of notice. If it really bothers you, find all the references to !HasItemEquiped("belt05",Player1) in Aran's files and delete them before reinstalling him. 
+
+Q: I want to translate this mod into another language.
+
+A: Awesome! Go for it. Luckily, I have set up a traified file that has only unique individual lines so your work is not going to involve lots of extra re-translate-the-same-line. Unfortunately, one of the penalties of doing 5 to 8 responses for the player and giving all sorts of player choice is a rather large file (13147 before BGII:EE content and climbing...). The file is in aranw\tra\english\c-aranw.tra .
