@@ -2,7 +2,7 @@ DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~  /* Camping
 DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restdg")~  /* Dungeon */
 DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restin")~  /* Inn */
 DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restpp")~  /* PocketPlane */
-DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-arnblk")~  /* Fade To Black */
+
 
 IF ~~ t1eb10.0f2 
 SAY ~(Gavin folds you in his arms and eases you onto the bedroll. Tender kisses become more urgent, and the night sounds fade away.)~ 
@@ -66,6 +66,12 @@ IF ~OR(27)
     AreaCheck("AR2602") 
     AreaCheck("AR2603")
     AreaCheck("AR2700") 
-    AreaCheck("AR2800")~ THEN DO ~ClearAllActions() StartCutSceneMode() StartCutScene("c-restco")~  /* Camping Out */
+    AreaCheck("AR2800")~ THEN DO ~SetGlobal("B!GavSex","GLOBAL",1) 
+      IncrementGlobal("B!GavLove","GLOBAL",19) 
+      SetGlobal("B!GavSerious","GLOBAL",3) 
+      SetGlobal("B!GavRA","GLOBAL",2) 
+      ClearAllActions() 
+      StartCutSceneMode() 
+      StartCutScene("b!rest2")~ EXIT // camp
 END  
 

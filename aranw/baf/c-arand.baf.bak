@@ -49,7 +49,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranspar","GLOBAL",2)
 		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)
-		RealSetGlobalTimer("RE_DreamTimer","GLOBAL",300)
 		PlaySong(0)
 		PlaySound("c-arnltl")
 		StartDialogNoSet(Player1)
@@ -96,7 +95,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-aranspar","GLOBAL",5)
 		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)
-		RealSetGlobalTimer("RE_DreamTimer","GLOBAL",300)
 		PlaySong(0)
 		PlaySound("c-arnfti")
 		StartDialogNoSet(Player1)
@@ -119,8 +117,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("c-arandreamstone","GLOBAL",1)
 		SetGlobalTimer("c-aransmalltalk","GLOBAL",300)
-		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)
-		RealSetGlobalTimer("RE_DreamTimer","GLOBAL",300)		
+		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)	
 		PlaySong(0)
 		PlaySound("c-arnfti")
 		StartDialogNoSet(Player1)
@@ -170,8 +167,7 @@ IF
 THEN  
 	RESPONSE #100
 		SetGlobal("c-arandreamstar","LOCALS",1)
-		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)
-		RealSetGlobalTimer("RE_DreamTimer","GLOBAL",300)
+		RealSetGlobalTimer("c-arandreamtalk","GLOBAL",300)	
 		PlaySong(0)
 		PlaySound("c-arnfti")
 		StartDialogNoSet(Player1)

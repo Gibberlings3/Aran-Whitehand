@@ -1023,7 +1023,6 @@ COMPILE ~aranw/baf/c-restco.baf~ /* rest cutscene for camping outside */
 COMPILE ~aranw/baf/c-restin.baf~ /* rest cutscene for inn */
 COMPILE ~aranw/baf/c-restdg.baf~ /* rest cutscene for dungeon */
 COMPILE ~aranw/baf/c-restpp.baf~ /* rest cutscene for pocket plane */
-COMPILE ~aranw/baf/c-arnblk.baf~ /* rest cutscene for unknown or simple: Fade To Black */
 /* NPC Scripts */
 COMPILE ~aranw/baf/c-malcer.baf~ /* override script for Malcer */
 COMPILE ~aranw/baf/c-oskut.baf~ /* override script for Oskut */
