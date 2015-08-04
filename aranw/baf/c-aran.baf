@@ -3465,10 +3465,10 @@ END
 /* Aran's FriendTalks Aim, c-aranfriendbg2, %ARAN_FTT% : available any time */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",23)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
-	OR(12)
+	OR(14)
 		Global("c-aranfriendbg2","GLOBAL",0)	// set up SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",2)	// set up SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",4)	// set up SoA_FT_3
@@ -3480,24 +3480,28 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",16) 	// set up SoA_FT_9
 		Global("c-aranfriendbg2","GLOBAL",18) 	// set up SoA_FT_10
 		Global("c-aranfriendbg2","GLOBAL",20) 	// set up SoA_FT_11
-		Global("c-aranfriendbg2","GLOBAL",22) 	// set up SoA_FT_12		
+		Global("c-aranfriendbg2","GLOBAL",22) 	// set up SoA_FT_12	
+		Global("c-aranfriendbg2","GLOBAL",24)   // set up SoA_FT_13
+		Global("c-aranfriendbg2","GLOBAL",26)   // set up SoA_FT_14		
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
 END
 
-/* Aran's FriendTalks Aim, c-aranfriendbg2, %ARAN_FTT% : available after chapter 5 */
+/* Aran's FriendTalks Aim, c-aranfriendbg2, %ARAN_FTT% : delays some talks to be only available after chapter 5 is over */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalGT("c-aranfriendbg2","GLOBAL",23)
-	GlobalLT("c-aranfriendbg2","GLOBAL",31)	// shuts down sequence when finished
+	GlobalGT("c-aranfriendbg2","GLOBAL",26)
+	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	GlobalGT("Chapter","GLOBAL",5) // Not in Underdark, and must fire post-losing-soul
-	OR(3) 
-		Global("c-aranfriendbg2","GLOBAL",24) // set up SoA_FT_13
-		Global("c-aranfriendbg2","GLOBAL",26) // set up SoA_FT_14
+	OR(5) 
 		Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
 		Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
+		Global("c-aranfriendbg2","GLOBAL",32) // set up SoA_FT_17
+		Global("c-aranfriendbg2","GLOBAL",34) // set up SoA_FT_18
+		Global("c-aranfriendbg2","GLOBAL",36) // set up SoA_FT_19
+	//	Global("c-aranfriendbg2","GLOBAL",38) // set up SoA_FT_20 // not written
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
@@ -3506,7 +3510,7 @@ END
 /* Aran's FriendTalks Fire, c-aranfriendbg2, %ARAN_FTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",30)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
 	InParty(Myself)						// Aran is here
@@ -3531,6 +3535,10 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",27)	// fire SoA_FT_14
 		Global("c-aranfriendbg2","GLOBAL",29)	// fire SoA_FT_15
 		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_16
+		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_17
+		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_18
+		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_19
+	//	Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_20
 THEN
 	RESPONSE #100
 		PlaySong(0)	// play a blank reference, stoping the soundtrack
