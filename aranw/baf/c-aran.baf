@@ -3535,9 +3535,9 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",27)	// fire SoA_FT_14
 		Global("c-aranfriendbg2","GLOBAL",29)	// fire SoA_FT_15
 		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_16
-		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_17
-		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_18
-		Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_19
+		Global("c-aranfriendbg2","GLOBAL",33)	// fire SoA_FT_17
+		Global("c-aranfriendbg2","GLOBAL",35)	// fire SoA_FT_18
+		Global("c-aranfriendbg2","GLOBAL",37)	// fire SoA_FT_19
 	//	Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_20
 THEN
 	RESPONSE #100
