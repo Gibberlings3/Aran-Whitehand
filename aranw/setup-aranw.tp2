@@ -959,7 +959,7 @@ COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
 
 APPEND ~mastarea.2da~
   ~C-AR01  value~
-UNLESS ~C-AR01~
+  UNLESS ~C-AR01~
 
 
 
