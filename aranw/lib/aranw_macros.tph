@@ -486,7 +486,8 @@ DEFINE_PATCH_MACRO ~support_cre_cleanup~ BEGIN
 	WRITE_LONG SPELL_DISRUPTED (BNOT 0x0)
 	WRITE_LONG SET_A_TRAP (BNOT 0x0)
 	WRITE_LONG BIO (BNOT 0x0)
-	WRITE_ASCIIE 0x34	~%DEST_RES%~ #8	/*	small portrait */
+	WRITE_ASCIIE 0x34  ~%DEST_RES%~ #8	/*	small portrait */
+	WRITE_ASCIIE 0x3c  ~%DEST_RES%~ #8  /* medium portrait (not used in most situations) */
 	WRITE_ASCIIE 0x248 ~%DEST_RES%~ #8	/* override AI script */
 	WRITE_ASCII 0x250 ~None~ #8	/* disable class AI script	*/
 	WRITE_ASCII 0x258 ~None~ #8	/*	disable race AI script	*/
@@ -559,8 +560,13 @@ DEFINE_PATCH_MACRO ~aran_cre_setup~ BEGIN
 	WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
 	WRITE_ASCII 0x248 ~C-ARAN~ #8 /*	override script */
 	WRITE_ASCII 0x0268 ~WTARSGT~ #8 /*	Creature script - Default	*/
-	WRITE_ASCII 0x34	~c-aranws~ #8	/* assign small portrait */
-	WRITE_ASCII 0x3c	~c-aranwm~ #8	/* assign medium portrait */
+	PATCH_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+		WRITE_ASCII 0x34	~c-aranwl~ #8	/* assign small portrait : bg2:ee uses one portrait and resizes it on the fly to fit the needed window */
+		WRITE_ASCII 0x3c	~c-aranwl~ #8	/* assign medium portrait : bg2:ee uses one portrait and resizes it on the fly to fit the needed window */
+	END ELSE BEGIN
+		WRITE_ASCII 0x34	~c-aranws~ #8	/* assign small portrait */
+		WRITE_ASCII 0x3c	~c-aranwm~ #8	/* assign medium portrait */
+	END
 	WRITE_BYTE 0x2F 12 /* skin color (light carnation pink) */
 	WRITE_BYTE 0x32 3	/* hair color (light gold) */
 	/* and finally, let's adjust his equipment to match player choices */

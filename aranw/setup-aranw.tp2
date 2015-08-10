@@ -638,19 +638,17 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 	/* resources : portraits : bg2:ee */
 	PRINT @30029
 	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eel.bmp~ ~override/c-aranwl.bmp~ /* Aran's portrait (Nix, default) */
-	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2eem.bmp~ ~override/c-aranwm.bmp~ /* Aran's portrait (Nix, default) */
-	COPY ~aranw/media/portraits_bg2ee/nix_default_bg2ees.bmp~ ~override/c-aranws.bmp~ /* Aran's portrait (Nix, default) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_manson_bg2ees.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_gerald_bg2ees.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_cheris_bg2ees.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_kavain_bg2ees.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_toran_bg2ees.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_erika_bg2ees.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_teldra_bg2ees.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_malcer_bg2ees.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
-	COPY ~aranw/media/portraits_bg2ee/peachplums_orrin_bg2ees.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin */
-	/* Oskut - L10	male fighter */
-	/* Taman - L10	male fighter */
+	COPY ~aranw/media/portraits_bg2ee/c-bouncer_manson.bmp~ ~override/c-aw01ep.bmp~ /* Area C-AW01 Manson - Bouncer on Promenade (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-mercgerald.bmp~ ~override/c-aw01p1.bmp~ /* Area C-AW01 Gerald the Strong (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-halforcmerc_cheris.bmp~ ~override/c-aw01p2.bmp~ /* Area C-AW01 Half-Orc Fighter Cheris	(Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-clericmerc_kavain.bmp~ ~override/c-aw01p3.bmp~ /* Area C-AW01 Kavain, Cleric Merc portrait (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-brawler_toran.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-server_erika.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-mercrecruiter_teldra.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
+	COPY ~aranw/media/portraits_bg2ee/c-tavernkeepandfence_orrin.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin */
+	COPY ~aranw/media/portraits_bg2ee/c-thug_malcer.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
+	COPY ~aranw/media/portraits_bg2ee/c-thug_oskut.bmp~  ~override/c-oskut.bmp~  /* Oskut - L10	male fighter */
+	COPY ~aranw/media/portraits_bg2ee/c-thug_taman.bmp~  ~override/c-taman.bmp~  /* Taman - L10	male fighter */
 END ELSE BEGIN
 	/* resources : portraits : bg2 */
 	PRINT @30030
@@ -664,37 +662,39 @@ END ELSE BEGIN
 	COPY ~aranw/media/portraits_bg2/peachplums_toran_bg2s.bmp~ ~override/c-toran.bmp~ /* Area C-AW01 Toran (Peachplums) */
 	COPY ~aranw/media/portraits_bg2/peachplums_erika_bg2s.bmp~ ~override/c-aw01w1.bmp~ /* Area C-AW01 Erika (Peachplums) */
 	COPY ~aranw/media/portraits_bg2/peachplums_teldra_bg2s.bmp~ ~override/c-aw01tl.bmp~ /* Teldra the Recruiter (Peachplums) */
-	COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
 	COPY ~aranw/media/portraits_bg2/peachplums_orrin_bg2s.bmp~  ~override/c-aw01tk.bmp~ /* Area C-AW01 Tavern Keeper Orrin	*/
-	/* Oskut - L10	male fighter */
-	/* Taman - L10	male fighter */
+	COPY ~aranw/media/portraits_bg2/peachplums_malcer_bg2s.bmp~  ~override/c-malcer.bmp~ /* Malcer the Romantic Foil */
+	COPY ~aranw/media/portraits_bg2/peachplums_taman_bg2s.bmp~  ~override/c-taman.bmp~ /* Oskut - L10	male fighter */
+	COPY ~aranw/media/portraits_bg2/peachplums_oskut_bg2s.bmp~  ~override/c-oskut.bmp~ /* Taman - L10	male fighter */
 END
 PRINT @30009
 /* creatures */
 PRINT @30034
 /* Area C-AW01 Entry Point - Manson - Bouncer on Promenade	*/
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~	 
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~
+	REMOVE_CRE_ITEM ~rndtre02~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~	 
 	SAY NAME1 @140
 	SAY NAME2 @140
-	REMOVE_CRE_ITEM ~rndtre02~
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	COMPILE ~aranw/baf/C-AW01EP.baf~
       EVALUATE_BUFFER
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 /* Area C-AW01 bar/barfight - Toran */
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	
+	REMOVE_CRE_ITEM ~rndtre02~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	SAY NAME1 @141
 	SAY NAME2 @141
-	REMOVE_CRE_ITEM ~rndtre02~
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /* Area C-AW01 Tavern Keeper - Orrin */
-COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~	
+COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~
+	REMOVE_CRE_ITEM ~rndtre02~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~	
 	SAY NAME1 @142
 	SAY NAME2 @142
-	REMOVE_CRE_ITEM ~rndtre02~
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 /* Area C-AW01 Tavern Waitress - Erika */
 COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	SAY NAME1 @143
 	SAY NAME2 @143
 	WRITE_BYTE 0x2C 35 // metal color
@@ -704,30 +704,34 @@ COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~
 	WRITE_BYTE 0x30 40 // leather color
 	WRITE_BYTE 0x31 40 // armor color
 	WRITE_BYTE 0x32 3 // hair color
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /*  Area C-AW01 Tavern Patron - Gerald the Strong - L10 male fighter */
 COPY_EXISTING ~kpgate02.cre~	 ~override/c-aw01p1.cre~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	SAY NAME1 @144
 	SAY NAME2 @144
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /* Area C-AW01 Tavern Patron Cheris	*/
-COPY_EXISTING ~kpsold02.cre~	 ~override/c-aw01p2.cre~	
+COPY_EXISTING ~kpsold02.cre~	 ~override/c-aw01p2.cre~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~	
 	SAY NAME1 @145
 	SAY NAME2 @145
 	WRITE_BYTE 0x2E 45 // major color
 	WRITE_BYTE 0x2F 37 // skin color
 	WRITE_BYTE 0x32 29 // hair color
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /* Area C-AW01 Tavern Patron Kavain - L10 male priest */
-COPY_EXISTING ~kpchap01.cre~	 ~override/c-aw01p3.cre~	
+COPY_EXISTING ~kpchap01.cre~	 ~override/c-aw01p3.cre~
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~	
 	SAY NAME1 @146
 	SAY NAME2 @146
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /* Area C-AW01 Tavern - Teldra the Recruiter */
 COPY_EXISTING ~kpsold07.cre~	 ~override/c-aw01tl.cre~	
+	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 	SAY NAME1 @147
 	SAY NAME2 @147
-	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
+
 /* outside-the-bar fight (females romancing him only) */
  /* Malcer - L10 male fighter */
 COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~
@@ -800,7 +804,7 @@ PRINT @30035
 ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		/* resources : portraits : bg2:ee */
-		COPY ~aranw/media/portraits_bg2ee/peachplums_stedd_bg2ees.bmp~ ~override/c-arwrth.bmp~ /* Stedd, The Ghost Of PTSD (Peachplums) */
+		COPY ~aranw/media/portraits_bg2ee/c-wraithghost_stedd.bmp~ ~override/c-arwrth.bmp~ /* Stedd, The Ghost Of PTSD (Peachplums) */
 	END ELSE BEGIN
 		/* resources : portraits : bg2 */
 		COPY ~aranw/media/portraits_bg2/peachplums_stedd_bg2s.bmp~ ~override/c-arwrth.bmp~ /* Stedd, The Ghost Of PTSD (Peachplums) */
@@ -808,9 +812,9 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 
 	/*	 The Ghost Of PTSD	- L10	male fighter */
 	COPY_EXISTING ~kpgate02.cre~	 ~override/c-arwrth.cre~	
+		LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 		SAY NAME1 @125
 		SAY NAME2 @125
-		LAUNCH_PATCH_MACRO ~support_cre_cleanup~
 		
 	PRINT @30009
 END
@@ -1747,8 +1751,6 @@ ACTION_IF ("arportrait" = 0x2) THEN BEGIN /* Peachplum's "Latest" portrait set (
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/peachplums_aran_latest_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/peachplums_aran_latest_bg2l.bmp~ ~override/c-aranwl.bmp~
@@ -1773,8 +1775,6 @@ ACTION_IF ("arportrait" = 0x3) THEN BEGIN /*	Berelinde's "Boromir" style (dark b
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_bor_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/berelinde_borl.bmp~ ~override/c-aranwl.bmp~
@@ -1799,8 +1799,6 @@ ACTION_IF ("arportrait" = 0x4) THEN BEGIN	/*	Berelinde's "Dragon Age" style (dar
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_da_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/berelinde_dal.bmp~ ~override/c-aranwl.bmp~
@@ -1825,8 +1823,6 @@ ACTION_IF ("arportrait" = 0x5) THEN BEGIN /*	Berelinde's "Scruffy" style (light 
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/berelinde_scruffy_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/berelinde_scruffyl.bmp~ ~override/c-aranwl.bmp~
@@ -1851,8 +1847,6 @@ ACTION_IF ("arportrait" = 0x6) THEN BEGIN	/*	Macmazey's "Don Pedro" style (dark 
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/macmazey_donpedro_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/macmazey_donpedrol.bmp~ ~override/c-aranwl.bmp~
@@ -1877,8 +1871,6 @@ ACTION_IF ("arportrait" = 0x7) THEN BEGIN	/*	Macmazey's "Fantasy Photo" style (l
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/macmazey_longhair_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/macmazey_longhairl.bmp~ ~override/c-aranwl.bmp~
@@ -1903,8 +1895,6 @@ ACTION_IF ("arportrait" = 0x8) THEN BEGIN /*	Macmazey's "Bearded" style (dark ha
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/mcmazey_beardl.bmp~ ~override/c-aranwl.bmp~
@@ -1929,8 +1919,6 @@ ACTION_IF ("arportrait" = 0x9) THEN BEGIN	/*	Macmazey's "No Beard" style (dark h
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_nobeard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/mcmazey_nobeardl.bmp~ ~override/c-aranwl.bmp~
@@ -1955,8 +1943,6 @@ ACTION_IF ("arportrait" = 0xa) THEN BEGIN	/*	Macmazey's "Horatio Photo" style (d
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/mcmazey_photo_h_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/mcmazey_photo_hl.bmp~ ~override/c-aranwl.bmp~
@@ -1981,8 +1967,6 @@ ACTION_IF ("arportrait" = 0xb) THEN BEGIN /*	Peachplum's "Young Fighter" style (
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/peachplums_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/peachplums_youngl.bmp~ ~override/c-aranwl.bmp~
@@ -2007,8 +1991,6 @@ ACTION_IF ("arportrait" = 0xc) THEN BEGIN /* piper's "Stalwort Bearded Young" st
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_beard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/piper_beard_youngl.bmp~ ~override/c-aranwl.bmp~
@@ -2033,8 +2015,6 @@ ACTION_IF ("arportrait" = 0xd) THEN BEGIN	/*	piper's "Mature Bearded" style (dar
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_darker_beard_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/piper_darker_beardl.bmp~ ~override/c-aranwl.bmp~
@@ -2059,8 +2039,6 @@ ACTION_IF ("arportrait" = 0xe) THEN BEGIN /* piper's "Stalwort Young" style (lig
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
 		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eel.bmp~ ~override/c-aranwl.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2eem.bmp~ ~override/c-aranwm.bmp~
-		COPY ~aranw/media/portraits_bg2ee/piper_nobeard_young_bg2ees.bmp~ ~override/c-aranws.bmp~
 	END ELSE BEGIN
 		PRINT @30030
 		COPY ~aranw/media/portraits_bg2/piper_nobeard_youngl.bmp~ ~override/c-aranwl.bmp~
