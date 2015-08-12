@@ -4688,6 +4688,7 @@ END
 /* Race Flirt */
 IF ~~ a4432
   SAY @9780
+  IF ~!Race(Player1,1) !Race(Player1,2) !Race(Player1,3) !Race(Player1,4) !Race(Player1,5) !Race(Player1,6) !Race(Player1,7)~ THEN GOTO a4475 // race.ids can now be extended... which means Trouble.
   IF ~Race(Player1,1)~ THEN GOTO a4475
   IF ~Race(Player1,2)~ THEN GOTO a4476
   IF ~Race(Player1,3)~ THEN GOTO a4477
@@ -5211,8 +5212,14 @@ END
 
 IF ~~ a3804 /* SHARE_MY_BED */
   SAY @6523
-  + ~GlobalLT("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @6524 + a3820 /* PC_IS_SMALL */
-  + ~Global("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @6525 + a3820 /* PC_IS_SMALL */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,ELF)~ + @6524 + a3820 /* PC_IS_SMALL */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,HALF_ELF)~ + @6524 + a3820 /* PC_IS_SMALL */  
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,DWARF)~ + @6524 + a3820 /* PC_IS_SMALL */ 
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,HALFLING)~ + @6524 + a3820 /* PC_IS_SMALL */  
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,ELF)~ + @6525 + a3820 /* PC_IS_SMALL */
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,HALF_ELF)~ + @6525 + a3820 /* PC_IS_SMALL */  
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,DWARF)~ + @6525 + a3820 /* PC_IS_SMALL */  
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,HALFLING)~ + @6525 + a3820 /* PC_IS_SMALL */ 
   ++ @6526 + a3821 /* GET_MORE_THEN_YOU_EXPECT */
   ++ @6527 + a3822 /* SAUCE_FOR_GOOSE_GANDER */
   ++ @6528 + a3823 /* PC_IS_ON_BACK */
@@ -6286,8 +6293,14 @@ END
 IF ~~ a3953 /* ARAN_MOON_STRIP */
   SAY @7066
   ++ @7067 + a3936 /* ARAN_MOON_FRIENDS_EXIT */
-  + ~Global("c-aransex","GLOBAL",0) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @6524 + a3937 /* ARAN_MOON_PLEASEME */
-  + ~GlobalGT("c-aransex","GLOBAL",0) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @6525 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  + ~Global("c-aransex","GLOBAL",0) Race(Player1,ELF)~ + @6524 + a3937 /* ARAN_MOON_PLEASEME */
+  + ~Global("c-aransex","GLOBAL",0) Race(Player1,HALF_ELF)~ + @6524 + a3937 /* ARAN_MOON_PLEASEME */  
+  + ~Global("c-aransex","GLOBAL",0) Race(Player1,DWARF)~ + @6524 + a3937 /* ARAN_MOON_PLEASEME */  
+  + ~Global("c-aransex","GLOBAL",0) Race(Player1,HALFLING)~ + @6524 + a3937 /* ARAN_MOON_PLEASEME */  
+  + ~GlobalGT("c-aransex","GLOBAL",0) Race(Player1,ELF)~ + @6525 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  + ~GlobalGT("c-aransex","GLOBAL",0) Race(Player1,HALF_ELF)~ + @6525 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  + ~GlobalGT("c-aransex","GLOBAL",0) Race(Player1,DWARF)~ + @6525 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
+  + ~GlobalGT("c-aransex","GLOBAL",0) Race(Player1,HALFLING)~ + @6525 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
   ++ @7068 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
   ++ @7069 + a3936 /* ARAN_MOON_FRIENDS_EXIT */
   ++ @7070 + a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
@@ -6315,8 +6328,14 @@ IF ~~ a4061 /* MOON_ORAL */
   ++ @7079 + a4223 /* ARAN_CRAZY */
   ++ @7080 + a3936 /* ARAN_MOON_FRIENDS_EXIT */
   ++ @7081 + a4223 /* ARAN_CRAZY */
-  + ~GlobalLT("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @7082 + a4062 /* ARAN_MOON_ORAL_AGREE */
-  + ~Global("c-aransex","GLOBAL",4) OR(4) Race(Player1,ELF) Race(Player1,HALF_ELF) Race(Player1,DWARF) Race(Player1,HALFLING)~ + @7083 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,ELF)~ + @7082 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,HALF_ELF)~ + @7082 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,DWARF)~ + @7082 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~GlobalLT("c-aransex","GLOBAL",4) Race(Player1,HALFLING)~ + @7082 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,ELF)~ + @7083 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,HALF_ELF)~ + @7083 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,DWARF)~ + @7083 + a4062 /* ARAN_MOON_ORAL_AGREE */
+  + ~Global("c-aransex","GLOBAL",4) Race(Player1,HALFLING)~ + @7083 + a4062 /* ARAN_MOON_ORAL_AGREE */
 END
 
 IF ~~ a4062 /* ARAN_MOON_ORAL_AGREE */
