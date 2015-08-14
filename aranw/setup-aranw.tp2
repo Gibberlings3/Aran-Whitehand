@@ -1052,16 +1052,17 @@ PRINT @30133
 ACTION_IF MOD_IS_INSTALLED ~GAVIN_BG2/SETUP-GAVIN_BG2.TP2~ ~0~ THEN BEGIN
 	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-aran_berelindegift.d~   
     //  USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	COPY_EXISTING ~BAG03D.STO~ ~override/c-pqcase.sto~
 	COPY_EXISTING ~BAG03D.itm~ ~override/c-pqcase.itm~
 		SAY NAME1 ~Ornate Scrivner's Case~
 		SAY NAME2 ~Ornate Scrivner's Case~
-		SAY UNIDENTIFIED_DESC ~This beautifully handcrafted oiled leather container is stiffened with silver inlay and ankheg shell inserts, designed with the conniseur of fine writing implements in mind. The container safely stores multiple small glass and ceramic inkwells for rare inks and reagents, panels for separating different forms of parchment and vellum, and a small cleverly hidden quill-sharpening knife. It appears to be practically indestructable.
+		SAY UNIDENTIFIED_DESC ~This beautifully handcrafted oiled leather container is stiffened with silver inlay and ankheg shell inserts, designed with the connoisseur of fine writing implements in mind. The container safely stores multiple small glass and ceramic inkwells for rare inks and reagents, panels for separating different forms of parchment and vellum, and a small cleverly hidden quill-sharpening knife. It appears to be practically indestructable.
 
 STATISTICS:
 
 Weight: 2
 ~
-		SAY DESC ~This beautifully handcrafted oiled leather container is stiffened with silver inlay and ankheg shell inserts, designed with the conniseur of fine writing implements in mind. The container safely stores multiple small glass and ceramic inkwells for rare inks and reagents, panels for separating different forms of parchment and vellum, and a small cleverly hidden quill-sharpening knife. It appears to be practically indestructable.
+		SAY DESC ~This beautifully handcrafted oiled leather container is stiffened with silver inlay and ankheg shell inserts, designed with the connoisseur of fine writing implements in mind. The container safely stores multiple small glass and ceramic inkwells for rare inks and reagents, panels for separating different forms of parchment and vellum, and a small cleverly hidden quill-sharpening knife. It appears to be practically indestructable.
 
 STATISTICS:
 
