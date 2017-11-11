@@ -97,7 +97,7 @@ PRINT @30128
 APPEND ~c-arandebugger01.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
 PRINT @30129
 APPEND ~c-arandebugger01.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 PRINT @30009
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\"
 
@@ -373,7 +373,7 @@ ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
 	
 	/* PC Refused Godhood, Romance, Not Married With Children, PC as Prince Charming : Adventuring Life : Global("c-aranepiloguemarried","GLOBAL",0) Global("c-aranepiloguechildren","GLOBAL",1) Global("c-aranepiloguerelation","GLOBAL",2) Global("c-aranepiloguelifestyle","GLOBAL",1) */
 	/* TextScreen("C-ARNE24") */
-		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE34.2da~
+		COPY ~aranw/media/blankepilogue.2da~ ~override/C-ARNE24.2da~
 			REPLACE_TEXTUALLY ~PORTRAIT~ ~C-ARANWL~
 			REPLACE 99999 @19  
 	
@@ -1183,7 +1183,7 @@ BEGIN @30012 //component_1_
     APPEND ~c-arandebugger02.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger02.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger02.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	/* close out and move custom info .log back to subdirectory for easy reading */
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - End Log//\\//\\//"
@@ -1295,7 +1295,7 @@ BEGIN @30013 //component_2_
     APPEND ~c-arandebugger02.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger02.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger02.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	/* close out and move custom info .log back to subdirectory for easy reading */
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - End Log//\\//\\//"
@@ -1402,7 +1402,7 @@ BEGIN @30014 //component_3_
     APPEND ~c-arandebugger02.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger02.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger02.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	/* close out and move custom info .log back to subdirectory for easy reading */
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - End Log//\\//\\//"
@@ -1450,7 +1450,7 @@ BEGIN @30015 //component_4_
     APPEND ~c-arandebugger02.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger02.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger02.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	/* close out and move custom info .log back to subdirectory for easy reading */
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - End Log//\\//\\//"
@@ -1509,7 +1509,7 @@ BEGIN @30019 //component_5_
     APPEND ~c-arandebugger03.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger03.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger03.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - End Log//\\//\\//"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1564,7 +1564,7 @@ BEGIN @30020 //component_6_
     APPEND ~c-arandebugger03.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger03.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger03.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - End Log//\\//\\//"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1618,7 +1618,7 @@ BEGIN @30021 //component_7_
     APPEND ~c-arandebugger03.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger03.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger03.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - End Log//\\//\\//"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1672,7 +1672,7 @@ BEGIN @30022 //component_8_
     APPEND ~c-arandebugger03.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger03.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger03.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - End Log//\\//\\//"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -1726,7 +1726,7 @@ BEGIN @30023 //component_9_
     APPEND ~c-arandebugger03.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
     APPEND ~c-arandebugger03.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger03.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 	APPEND ~c-arandebugger03.log~ "//\\//\\ Aran Whitehand Component 5 or 6 or 7 or 8 or 9 - End Log//\\//\\//"
 	APPEND ~c-arandebugger03.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
@@ -2098,7 +2098,7 @@ APPEND ~c-arandebugger04.log~ ~Save Game Multi Player Directory = %MPSAVE_DIRECT
 APPEND ~c-arandebugger04.log~ ~Running .exe = %WEIDU_EXECUTABLE%~
 APPEND ~c-arandebugger04.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
 APPEND ~c-arandebugger04.log~ ~Installation type is: %INTERACTIVE% 
-( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
+( 1 = install is being done interactively (IE you launched setup-mymod.exe and youâ€™re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
 APPEND ~c-arandebugger04.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
 APPEND ~c-arandebugger04.log~ "//\\//\\ Aran Whitehand Optional Component 10 - End Log//\\//\\//\\//\\//\\"
 APPEND ~c-arandebugger04.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\//\\/"
