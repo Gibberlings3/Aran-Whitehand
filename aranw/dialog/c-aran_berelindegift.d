@@ -1,6 +1,6 @@
 /* Adding a gift to Berelinde's gift store in GavinToB - way cool idea. Idea stolen from Sandrah NPC by Roxanne, but built fdrom the original source and adjusted */
 /* Berelinde's work there is in alphabetical order by NPC. So I need to insert it as a reply state... */
-EXTEND_TOP ~B!GIFT~ 0 	EXTEND_TOP ~B!GIFT~ 0 3 END
+EXTEND_TOP ~B!GIFT~ 0 3 END
   IF ~Global("B!GiftAranw","AR0700",0) InParty("c-aran")InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN REPLY ~I'm looking for a gift for Aran.~ GOTO c-giftberelinde
 END
 
