@@ -3518,7 +3518,7 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	!ActuallyInCombat()
 	!See([ENEMY])	// Can't see any enemies
-	OR(16)
+	OR(19)
 		Global("c-aranfriendbg2","GLOBAL",1)	// fire SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",3)	// fire SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",5)	// fire SoA_FT_3
@@ -3538,7 +3538,7 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",33)	// fire SoA_FT_17
 		Global("c-aranfriendbg2","GLOBAL",35)	// fire SoA_FT_18
 		Global("c-aranfriendbg2","GLOBAL",37)	// fire SoA_FT_19
-	//	Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_20
+	//	Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_20 NOT WRITTEN
 THEN
 	RESPONSE #100
 		PlaySong(0)	// play a blank reference, stoping the soundtrack
@@ -3685,14 +3685,14 @@ IF
 		Global("c-aranbg2rom","GLOBAL",10) // set up SoA_LT_6
 		Global("c-aranbg2rom","GLOBAL",12) // set up SoA_LT_7
 		Global("c-aranbg2rom","GLOBAL",14) // set up SoA_LT_8
- //	 Global("c-aranbg2rom","GLOBAL",16) // set up SoA_LT_9
- //	 Global("c-aranbg2rom","GLOBAL",18) // set up SoA_LT_10
- //	 Global("c-aranbg2rom","GLOBAL",20) // set up SoA_LT_11		
- //	 Global("c-aranbg2rom","GLOBAL",22) // set up SoA_LT_12
- //	 Global("c-aranbg2rom","GLOBAL",24) // set up SoA_LT_13
- //	 Global("c-aranbg2rom","GLOBAL",26) // set up SoA_LT_14
- //	 Global("c-aranbg2rom","GLOBAL",28) // set up SoA_LT_15
- //	 Global("c-aranbg2rom","GLOBAL",30) // set up SoA_LT_16
+ //	 Global("c-aranbg2rom","GLOBAL",16) // set up SoA_LT_9 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",18) // set up SoA_LT_10 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",20) // set up SoA_LT_11	NOT WRITTEN	
+ //	 Global("c-aranbg2rom","GLOBAL",22) // set up SoA_LT_12 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",24) // set up SoA_LT_13 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",26) // set up SoA_LT_14 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",28) // set up SoA_LT_15 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",30) // set up SoA_LT_16 NOT WRITTEN
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranbg2rom","GLOBAL",1)
@@ -3720,14 +3720,14 @@ IF
 		Global("c-aranbg2rom","GLOBAL",11) // fire SoA_LT_6
 		Global("c-aranbg2rom","GLOBAL",13) // fire SoA_LT_7
 		Global("c-aranbg2rom","GLOBAL",15) // fire SoA_LT_8
- //	 Global("c-aranbg2rom","GLOBAL",17)	// fire SoA_LT_9
- //	 Global("c-aranbg2rom","GLOBAL",19)	// fire SoA_LT_10
- //	 Global("c-aranbg2rom","GLOBAL",21)	// fire SoA_LT_11
- //	 Global("c-aranbg2rom","GLOBAL",23)	// fire SoA_LT_12
- //	 Global("c-aranbg2rom","GLOBAL",25)	// fire SoA_LT_13
- //	 Global("c-aranbg2rom","GLOBAL",27)	// fire SoA_LT_14
- //	 Global("c-aranbg2rom","GLOBAL",29)	// fire SoA_LT_15
- //	 Global("c-aranbg2rom","GLOBAL",31)	// fire SoA_LT_16
+ //	 Global("c-aranbg2rom","GLOBAL",17)	// fire SoA_LT_9 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",19)	// fire SoA_LT_10 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",21)	// fire SoA_LT_11 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",23)	// fire SoA_LT_12 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",25)	// fire SoA_LT_13 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",27)	// fire SoA_LT_14 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",29)	// fire SoA_LT_15 NOT WRITTEN
+ //	 Global("c-aranbg2rom","GLOBAL",31)	// fire SoA_LT_16 NOT WRITTEN
 THEN
 	RESPONSE #100
 		PlaySong(0)

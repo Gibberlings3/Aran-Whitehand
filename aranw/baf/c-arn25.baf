@@ -2591,10 +2591,10 @@ IF
 	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
-	OR(2)
+	OR(3)
 	Global("c-arantobrom","GLOBAL",2)	// set up ToB_LT_2
 	Global("c-arantobrom","GLOBAL",4)	// set up ToB_LT_3
-	// Global("c-arantobrom","GLOBAL",6)	// set up ToB_LT_4
+	Global("c-arantobrom","GLOBAL",6)	// set up ToB_LT_4
 	// Global("c-arantobrom","GLOBAL",8)	// set up ToB_LT_5
 	// Global("c-arantobrom","GLOBAL",10) 	// set up ToB_LT_6
 	// Global("c-arantobrom","GLOBAL",12) 	// set up ToB_LT_7
@@ -2620,7 +2620,7 @@ IF
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	CombatCounter(0)	// Not in combat
 	!See([ENEMY])	// Can't see any enemies
-	OR(3)
+	OR(4)
 	Global("c-arantobrom","GLOBAL",1)	 // fire ToB_LT_1
 	Global("c-arantobrom","GLOBAL",3)	 // fire ToB_LT_2
 	Global("c-arantobrom","GLOBAL",5)	 // fire ToB_LT_3

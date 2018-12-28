@@ -1518,12 +1518,7 @@ IF ~~ c-aran_exit_temp
   IF ~~ THEN EXIT
 END
 
-// SetGlobal("c-aranengagement","GLOBAL",0) = not asked about marriage
-// SetGlobal("c-aranengagement","GLOBAL",1) = delay interested in marriage
-// SetGlobal("c-aranengagement","GLOBAL",2) = engaged
-// SetGlobal("c-aranengagement","GLOBAL",3) = engaged and interested in kids
-// SetGlobal("c-aranengagement","GLOBAL",4) = not interested in marriage
-
+/* ToB Love Talk #4 :  */
 IF ~Global("c-arantobrom","GLOBAL",7)~ THEN BEGIN a4774
   SAY @11713
   ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
