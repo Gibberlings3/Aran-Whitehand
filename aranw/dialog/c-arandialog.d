@@ -4073,80 +4073,21 @@ IF ~~ a47
   ++ @1737 EXIT
 END
 
-IF ~~ a2325
-  SAY @1738
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2326
-  SAY @1739
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2327
-  SAY @1740
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2328
-  SAY @1741
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2329
-  SAY @1742
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2330
-  SAY @1743
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2331
-  SAY @1744
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2332
-  SAY @1745
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2333
-  SAY @1746
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2334
-  SAY @1747
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2335
-  SAY @1748
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2336
-  SAY @1749
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2337
-  SAY @1750
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2338
-  SAY @1751
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a2339
-  SAY @1752
-  IF ~~ THEN GOTO a48
-END
+IF ~~ a2325 SAY @1738 IF ~~ THEN GOTO a48 END
+IF ~~ a2326 SAY @1739 IF ~~ THEN GOTO a48 END
+IF ~~ a2327 SAY @1740 IF ~~ THEN GOTO a48 END
+IF ~~ a2328 SAY @1741 IF ~~ THEN GOTO a48 END
+IF ~~ a2329 SAY @1742 IF ~~ THEN GOTO a48 END
+IF ~~ a2330 SAY @1743 IF ~~ THEN GOTO a48 END
+IF ~~ a2331 SAY @1744 IF ~~ THEN GOTO a48 END
+IF ~~ a2332 SAY @1745 IF ~~ THEN GOTO a48 END
+IF ~~ a2333 SAY @1746 IF ~~ THEN GOTO a48 END
+IF ~~ a2334 SAY @1747 IF ~~ THEN GOTO a48 END
+IF ~~ a2335 SAY @1748 IF ~~ THEN GOTO a48 END
+IF ~~ a2336 SAY @1749 IF ~~ THEN GOTO a48 END
+IF ~~ a2337 SAY @1750 IF ~~ THEN GOTO a48 END
+IF ~~ a2338 SAY @1751 IF ~~ THEN GOTO a48 END
+IF ~~ a2339 SAY @1752 IF ~~ THEN GOTO a48 END
 
 IF ~~ a48
   SAY @1753
@@ -4170,15 +4111,8 @@ IF ~~ a983 /* replaced with real values in "Aran Aware" component */
   + ~Global("c-aranheartwarder","GLOBAL",1)~ + @1762 + a985
 END
 
-IF ~~ a984
-  SAY @1764
-  IF ~~ THEN GOTO a48
-END
-
-IF ~~ a985
-  SAY @1765
-  IF ~~ THEN GOTO a48
-END
+IF ~~ a984 SAY @1764 IF ~~ THEN GOTO a48 END
+IF ~~ a985 SAY @1765 IF ~~ THEN GOTO a48 END
 
 IF ~~ a49
   SAY @1766
@@ -4226,10 +4160,7 @@ IF ~~ a53
   + ~!Class(Player1,BARD_ALL) !Class(Player1,MAGE_ALL) !Class(Player1,CLERIC_ALL)~ + @1787 + a2330
 END
 
-IF ~~ a54
-  SAY @1788
-  IF ~~ THEN GOTO a2331
-END
+IF ~~ a54 SAY @1788 IF ~~ THEN GOTO a2331 END
 
 IF ~~ a55
   SAY @1789
@@ -4314,15 +4245,8 @@ END
 
 /* a65 in chains */
 
-IF ~~ a66
-  SAY @1827
-  IF ~~ THEN GOTO a63
-END
-
-IF ~~ a4846
-  SAY @1828
-  IF ~~ THEN GOTO a63
-END
+IF ~~ a66 SAY @1827 IF ~~ THEN GOTO a63 END
+IF ~~ a4846 SAY @1828 IF ~~ THEN GOTO a63 END
 
 IF ~~ a67
   SAY @1829
@@ -4490,31 +4414,11 @@ IF ~~ a91
   + ~Global("c-heartwarder","GLOBAL",1)~ + @1890 + a98
 END
 
-IF ~~ a92
-  SAY @1891
-  IF ~~ THEN GOTO a94
-END
-
-IF ~~ a95
-  SAY @1892
-  IF ~~ THEN GOTO a94
-END
-
-IF ~~ a96
-  SAY @1893
-  IF ~~ THEN GOTO a94
-END
-
-IF ~~ a97
-  SAY @1894
-  IF ~~ THEN GOTO a94
-END
-
-IF ~~ a98
-  SAY @1895
-  IF ~~ THEN GOTO a94
-END
-
+IF ~~ a92 SAY @1891 IF ~~ THEN GOTO a94 END
+IF ~~ a95 SAY @1892 IF ~~ THEN GOTO a94 END
+IF ~~ a96 SAY @1893 IF ~~ THEN GOTO a94 END
+IF ~~ a97 SAY @1894 IF ~~ THEN GOTO a94 END
+IF ~~ a98 SAY @1895 IF ~~ THEN GOTO a94 END
 IF ~~ a93 SAY @1896 IF ~~ THEN EXIT END
 IF ~~ a94 SAY @1897 IF ~~ THEN EXIT END
 
@@ -13810,10 +13714,7 @@ IF ~~ a2279
   ++ @5625 + a3260
 END
 
-IF ~~ a2280
-  SAY @5626
-  IF ~~ THEN GOTO a4508
-END
+IF ~~ a2280 SAY @5626 IF ~~ THEN GOTO a4508 END
 
 IF ~~ a4508
   SAY @5627
@@ -14500,9 +14401,7 @@ IF ~~ a852
   ++ @5924 + a853
 END
 
-IF ~~ a853 SAY @5925
-  IF ~~ THEN GOTO a4323
-END
+IF ~~ a853 SAY @5925 IF ~~ THEN GOTO a4323 END
 
 IF ~~ a854
   SAY @5926
@@ -15131,50 +15030,15 @@ IF ~Global("c-arandreamstar","LOCALS",1)~ THEN BEGIN a2193
   ++ @6255 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4348
 END
 
-IF ~~ a4345
-  SAY @6256
-  IF ~~ THEN GOTO a4352
-END
-
-IF ~~ a4346
-  SAY @6256
-  IF ~~ THEN GOTO a4347
-END
-
-IF ~~ a4347
-  SAY @6257
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4352
-  SAY @6258
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4341
-  SAY @6259
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4342
-  SAY @6260
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4343
-  SAY @6261
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4344
-  SAY @6262
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a4348
-  SAY @6263
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
+IF ~~ a4345 SAY @6256 IF ~~ THEN GOTO a4352 END
+IF ~~ a4346 SAY @6256 IF ~~ THEN GOTO a4347 END
+IF ~~ a4347 SAY @6257 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4352 SAY @6258 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4341 SAY @6259 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4342 SAY @6260 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4343 SAY @6261 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4344 SAY @6262 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a4348 SAY @6263 IF ~~ THEN DO ~RestParty()~ EXIT END
 
 /* After Underdark replies */
 IF ~~ a1806
@@ -15462,10 +15326,7 @@ IF ~~ a2206
   ++ @6413 + a2220
 END
 
-IF ~~ a2207
-  SAY @6414
-  IF ~~ THEN GOTO a2215
-END
+IF ~~ a2207 SAY @6414 IF ~~ THEN GOTO a2215 END
 
 IF ~~ a2208
   SAY @6415
@@ -15483,10 +15344,7 @@ IF ~~ a2209
   ++ @6418 + a2220
 END
 
-IF ~~ a2211
-  SAY @6420
-  IF ~~ THEN GOTO a2205
-END
+IF ~~ a2211 SAY @6420 IF ~~ THEN GOTO a2205 END
 
 IF ~~ a2210
   SAY @6421
@@ -15521,30 +15379,11 @@ IF ~~ a2215
   IF ~~ THEN DO ~SetGlobal("c-aranintimate","GLOBAL",1) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
 END
 
-IF ~~ a2216
-  SAY @6435
-  IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
-END
-
-IF ~~ a2217 /* males */
-  SAY @6436
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a2218 /* females  */
-  SAY @6436
-  IF ~~ THEN DO ~SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT
-END
-
-IF ~~ a2219
-  SAY @6437
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a2220
-  SAY @6438
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
+IF ~~ a2216 SAY @6435 IF ~~ THEN DO ~RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT END
+IF ~~ a2217 SAY @6436 IF ~~ THEN DO ~RestParty()~ EXIT END /* males */ 
+IF ~~ a2218 SAY @6436 IF ~~ THEN DO ~SetGlobalTimer("c-aranismad","GLOBAL",ONE_DAY) RealSetGlobalTimer("RE_DreamTimer","GLOBAL",100) RestParty()~ EXIT END /* females  */
+IF ~~ a2219   SAY @6437   IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a2220   SAY @6438   IF ~~ THEN DO ~RestParty()~ EXIT END 
 
 IF ~~ a2221
   SAY @6439
@@ -25130,40 +24969,13 @@ IF ~~ a1557
   + ~!CheckStatLT("c-aran",16,CON) CheckStatLT(Player1,16,CON)~ + @10173 + a1560
 END
 
-IF ~~ a1558
-  SAY @10185
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1559
-  SAY @10186
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1560
-  SAY @10187
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1561
-  SAY @10188
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1562
-  SAY @10189
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1563
-  SAY @10190
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1564
-  SAY @10191
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
+IF ~~ a1558 SAY @10185 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1559 SAY @10186 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1560 SAY @10187 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1561 SAY @10188 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1562 SAY @10189 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1563 SAY @10190 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1564 SAY @10191 IF ~~ THEN DO ~RestParty()~ EXIT END
 
 IF ~~ a1565
   SAY @10192
@@ -25235,43 +25047,16 @@ IF ~~ a1592
   ++ @10213 + a1595
 END
 
-IF ~~ a1593
-  SAY @10215
-  = @10216
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1594
-  SAY @10217
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
-
-IF ~~ a1595
-  SAY @10218
-  IF ~~ THEN DO ~RestParty()~ EXIT
-END
+IF ~~ a1593 SAY @10215 = @10216 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1594 SAY @10217 IF ~~ THEN DO ~RestParty()~ EXIT END
+IF ~~ a1595 SAY @10218 IF ~~ THEN DO ~RestParty()~ EXIT END
 
 /*  Aran Dragon-Slayer Replies */
 
-IF ~~ a710
-  SAY @10219
-  IF ~~ THEN GOTO a714
-END
-
-IF ~~ a711
-  SAY @10220
-  IF ~~ THEN GOTO a714
-END
-
-IF ~~ a712
-  SAY @10221
-  IF ~~ THEN GOTO a714
-END
-
-IF ~~ a713
-  SAY @10222
-  IF ~~ THEN GOTO a714
-END
+IF ~~ a710 SAY @10219 IF ~~ THEN GOTO a714 END
+IF ~~ a711 SAY @10220 IF ~~ THEN GOTO a714 END
+IF ~~ a712 SAY @10221 IF ~~ THEN GOTO a714 END
+IF ~~ a713 SAY @10222 IF ~~ THEN GOTO a714 END
 
 IF ~~ a714
   SAY @10223
@@ -25558,32 +25343,14 @@ IF ~~ a12
   ++ @10323 DO ~AddJournalEntry(@13147,QUEST)~ JOURNAL @13146 + a13
 END
 
-IF ~~ a13
-  SAY @10360
-  IF ~~ THEN DO ~SetGlobal("c-aranjoined","LOCALS",1) JoinParty()~ EXIT
-END
+IF ~~ a13 SAY @10360 IF ~~ THEN DO ~SetGlobal("c-aranjoined","LOCALS",1) JoinParty()~ EXIT END
 
 /*  a14 is a chain */
 
-IF ~~ a15
-  SAY @10361
-  IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",1)~ EXIT
-END
-
-IF ~~ a2916
-  SAY @10362
-  IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",2)~ EXIT
-END
-
-IF ~~ a2917
-  SAY @10363
-  IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",3)~ EXIT
-END
-
-IF ~~ a2918
-  SAY @10364
-  IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",0)~ EXIT
-END
+IF ~~ a15 SAY @10361 IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",1)~ EXIT END
+IF ~~ a2916 SAY @10362 IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",2)~ EXIT END
+IF ~~ a2917 SAY @10363 IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",3)~ EXIT END
+IF ~~ a2918 SAY @10364 IF ~~ THEN DO ~SetGlobal("c-aranknowselm","LOCALS",0)~ EXIT END
 
 /*  a17 is a chain */
 
@@ -26096,75 +25863,20 @@ EraseJournalEntry(@1719)~ UNSOLVED_JOURNAL @1720 + a4287
   ++ @10413 + a33
 END
 
-IF ~~ a1694
-  SAY @10414
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
-END
-
-IF ~~ a4275
-  SAY @10415
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4276
-  SAY @10416
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4277
-  SAY @10417
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4278
-  SAY @10418
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4279
-  SAY @10419
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4280
-  SAY @10420
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4281
-  SAY @10421
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4282
-  SAY @10422
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4283
-  SAY @10423
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4284
-  SAY @10424
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4285
-  SAY @10425
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4286
-  SAY @10426
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
-
-IF ~~ a4287
-  SAY @10427
-  IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
-END
+IF ~~ a1694 SAY @10414 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT END
+IF ~~ a4275 SAY @10415 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4276 SAY @10416 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4277 SAY @10417 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4278 SAY @10418 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4279 SAY @10419 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4280 SAY @10420 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4281 SAY @10421 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4282 SAY @10422 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4283 SAY @10423 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4284 SAY @10424 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4285 SAY @10425 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4286 SAY @10426 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
+IF ~~ a4287 SAY @10427 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 0  */
 IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",0)~ THEN BEGIN a22
@@ -28432,32 +28144,11 @@ IF ~~ a2455
   IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN EXTERN C-ARANJ a2497
 END
 
-IF ~~ a2456
-  SAY @10810
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",1)~ GOTO a2444
-END
-
-IF ~~ a2457
-  SAY @10811
-  = @10812
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",2)~ + a2445
-END
-
-IF ~~ a2458
-  SAY @10813
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",3)~ GOTO a2446
-END
-
-IF ~~ a2459
-  SAY @10814
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",4)~ GOTO a2445
-END
-
-IF ~~ a2460
-  SAY @10815
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",5)~ GOTO a2445
-END
-
+IF ~~ a2456 SAY @10810 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",1)~ GOTO a2444 END
+IF ~~ a2457 SAY @10811 = @10812 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",2)~ + a2445 END
+IF ~~ a2458 SAY @10813 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",3)~ GOTO a2446 END
+IF ~~ a2459 SAY @10814 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",4)~ GOTO a2445 END
+IF ~~ a2460 SAY @10815 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",5)~ GOTO a2445 END
 IF ~~ a2461
   SAY @10816
   + ~!Global("c-heartwarder","GLOBAL",1)~ + @10817 DO ~SetGlobal("c-pctavern","C-AR01",6)~ + a2446
@@ -28468,10 +28159,7 @@ IF ~~ a2461
   + ~InPartyAllowDead("c-aran")~ + @10822 DO ~SetGlobal("c-pctavern","C-AR01",6)~ + a2466
 END
 
-IF ~~ a2462
-  SAY @10823
-  IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",7)~ GOTO a2446
-END
+IF ~~ a2462 SAY @10823 IF ~~ THEN DO ~SetGlobal("c-pctavern","C-AR01",7)~ GOTO a2446 END
 
 /* repeatedly plays at GT(7) to signal that there is no more small-talk */
 IF ~~ a2463 SAY @10824 IF ~~ THEN GOTO a2445 END
@@ -28589,10 +28277,7 @@ IF ~~ a2485
   ++ @10851 + a2483
 END
 
-IF ~~ a2486
-  SAY @10858
-  IF ~~ THEN GOTO a2489
-END
+IF ~~ a2486 SAY @10858 IF ~~ THEN GOTO a2489 END
 
 IF ~~ a2487
   SAY @10859
@@ -28601,10 +28286,7 @@ IF ~~ a2487
   ++ @10862 + a2488
 END
 
-IF ~~ a2488
-  SAY @10863
-  IF ~~ THEN GOTO a2489
-END
+IF ~~ a2488 SAY @10863 IF ~~ THEN GOTO a2489 END
 
 IF ~~ a2489
   SAY @10864
@@ -28613,15 +28295,8 @@ IF ~~ a2489
   ++ @10359 + a2491
 END
 
-IF ~~ a2490
-  SAY @10865
-  IF ~~ THEN DO ~SetGlobal("c-awtavkquest","C-AR01",1) GiveItemCreate("c-awpkg1",Player1,0,0,0)~ GOTO a2446
-END
-
-IF ~~ a2491
-  SAY @10866
-  IF ~~ THEN GOTO a2445
-END
+IF ~~ a2490 SAY @10865 IF ~~ THEN DO ~SetGlobal("c-awtavkquest","C-AR01",1) GiveItemCreate("c-awpkg1",Player1,0,0,0)~ GOTO a2446 END
+IF ~~ a2491 SAY @10866 IF ~~ THEN GOTO a2445 END
 
 IF ~~ a2492
   SAY @10867
