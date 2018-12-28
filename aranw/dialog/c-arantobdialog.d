@@ -11352,8 +11352,8 @@ Global("EdwinRomanceActive", "GLOBAL", 1)
 Global("EdwinRomanceActive", "GLOBAL", 2)
 Global("J#KelseyRomanceActive","GLOBAL",2)
 Global("TsujathaRomanceActive","GLOBAL",2)
-Global("LS_HaerDalisRomance","GLOBAL",1)
-Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+Global("LS_HaerDalisRomanceActive","GLOBAL",2)
 Global("ADAngelRomanceActive","GLOBAL",2)
 GlobalGT("SolaTalk","GLOBAL",14)
 Global("P#KivanRomanceActive","GLOBAL",2)
@@ -11369,7 +11369,7 @@ THEN C-ARN25B c-arantob33b1
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @12836
 == BAERIE25 IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @12837 
 /* Haer'Dalis, Aeryn */
-== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN @12838
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomanceActive","GLOBAL",1)  Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ THEN @12838
 /* Angelo, Sister Vigilante */
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN @12839
 /* Sarevok, Aeryn */
@@ -11421,8 +11421,8 @@ Global("EdwinRomanceActive", "GLOBAL", 1)
 Global("EdwinRomanceActive", "GLOBAL", 2)
 Global("J#KelseyRomanceActive","GLOBAL",2)
 Global("TsujathaRomanceActive","GLOBAL",2)
-Global("LS_HaerDalisRomance","GLOBAL",1)
-Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+Global("LS_HaerDalisRomanceActive","GLOBAL",2)
 Global("ADAngelRomanceActive","GLOBAL",2)
 GlobalGT("SolaTalk","GLOBAL",14)
 Global("P#KivanRomanceActive","GLOBAL",2)
@@ -11438,7 +11438,7 @@ THEN C-ARN25B c-arantob33b2
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @12836
 == BJAHEI25 IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @12860 
 /* Haer'Dalis, Aeryn */
-== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN @12838
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomanceActive","GLOBAL",1)  Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ THEN @12838
 /* Angelo, Sister Vigilante */
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN @12839
 /* Sarevok, Aeryn */
@@ -11490,8 +11490,8 @@ Global("EdwinRomanceActive", "GLOBAL", 1)
 Global("EdwinRomanceActive", "GLOBAL", 2)
 Global("J#KelseyRomanceActive","GLOBAL",2)
 Global("TsujathaRomanceActive","GLOBAL",2)
-Global("LS_HaerDalisRomance","GLOBAL",1)
-Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+Global("LS_HaerDalisRomanceActive","GLOBAL",2)
 Global("ADAngelRomanceActive","GLOBAL",2)
 GlobalGT("SolaTalk","GLOBAL",14)
 Global("P#KivanRomanceActive","GLOBAL",2)
@@ -11507,7 +11507,7 @@ THEN C-ARN25B c-arantob33b3
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @12836
 == BNALIA25 IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @12870 
 /* Haer'Dalis, Aeryn */
-== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN @12838
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomanceActive","GLOBAL",1)  Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ THEN @12838
 /* Angelo, Sister Vigilante */
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN @12839
 /* Sarevok, Aeryn */
@@ -11559,8 +11559,8 @@ Global("EdwinRomanceActive", "GLOBAL", 1)
 Global("EdwinRomanceActive", "GLOBAL", 2)
 Global("J#KelseyRomanceActive","GLOBAL",2)
 Global("TsujathaRomanceActive","GLOBAL",2)
-Global("LS_HaerDalisRomance","GLOBAL",1)
-Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+Global("LS_HaerDalisRomanceActive","GLOBAL",2)
 Global("ADAngelRomanceActive","GLOBAL",2)
 GlobalGT("SolaTalk","GLOBAL",14)
 Global("P#KivanRomanceActive","GLOBAL",2)
@@ -11576,7 +11576,7 @@ THEN C-ARN25B c-arantob33b4
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @12836
 == BMAZZY25 IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @12880 
 /* Haer'Dalis, Aeryn */
-== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN @12838
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomanceActive","GLOBAL",1)  Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ THEN @12838
 /* Angelo, Sister Vigilante */
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN @12839
 /* Sarevok, Aeryn */
@@ -11626,8 +11626,8 @@ Global("EdwinRomanceActive", "GLOBAL", 1)
 Global("EdwinRomanceActive", "GLOBAL", 2)
 Global("J#KelseyRomanceActive","GLOBAL",2)
 Global("TsujathaRomanceActive","GLOBAL",2)
-Global("LS_HaerDalisRomance","GLOBAL",1)
-Global("LS_HaerDalisRomance","GLOBAL",2)
+Global("LS_HaerDalisRomanceActive","GLOBAL",1)
+Global("LS_HaerDalisRomanceActive","GLOBAL",2)
 Global("ADAngelRomanceActive","GLOBAL",2)
 GlobalGT("SolaTalk","GLOBAL",14)
 Global("P#KivanRomanceActive","GLOBAL",2)
@@ -11643,7 +11643,7 @@ THEN C-ARN25B c-arantob33b5
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @12889
 == BKELDO25 IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN @12890 
 /* Haer'Dalis, Aeryn */
-== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomance","GLOBAL",1)  Global("LS_HaerDalisRomance","GLOBAL",2)~ THEN @12838
+== C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) OR(2) Global("LS_HaerDalisRomanceActive","GLOBAL",1)  Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ THEN @12838
 /* Angelo, Sister Vigilante */
 == C-ARN25B IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) Global("ADAngelRomanceActive","GLOBAL",2)~ THEN @12839
 /* Sarevok, Aeryn */
