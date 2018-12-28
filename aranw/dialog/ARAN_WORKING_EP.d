@@ -1,15 +1,184 @@
 
-///////////////// current code
+/// WARNING
+////  WORKSPACE
+///////   DOI NOT COMPILE!!!
+
+
+
+///////////////// current code to rebuild 
 /* ToB Love Talk #2 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",4) --> Global("c-arantobrom","GLOBAL",5) */
 IF ~Global("c-arantobrom","GLOBAL",3)~ THEN BEGIN a4716
-  SAY @11707 
-  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717
-  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  SAY @11707 // [ARAN] You know, I do be downright lucky.
+  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718 // [PC] You have me, so that is true.
+  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718 // [PC] You have fallen in love with me.
+  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717 // [PC] Well, so far, your cooking has not actually killed anyone. Though that last curry was a little too hot.
+  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718 // [PC] I consider myself lucky, as well.
+  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718 // [PC] Why are you looking at me that way?
 END
 /* GOTO ToB Love Talk #2 : statement of intent for seriousness : replies */
+/* ToB Love Talk #2 : statement of intent for seriousness : replies */
+IF ~~ a4717
+  SAY @12192
+  IF ~~ THEN GOTO a4718
+END
+
+IF ~~ a4718
+  SAY @12193
+  ++ @12194 + a4719
+  ++ @12195 + a4724
+  ++ @12196 + a4724
+  ++ @12197 + a4721
+  ++ @12198 + a4724
+END
+  
+IF ~~ a4719
+  SAY @12199  
+  ++ @12200 + a4721
+  ++ @12201 + a4723
+  ++ @12202 + a4720
+  ++ @12203 + a4720
+  ++ @12204 + a4720
+END
+
+IF ~~ a4720
+  SAY @12205
+  ++ @12206 + a4723
+  ++ @12207 + a4723
+  ++ @12208 + a4722
+  ++ @12209 + a4724
+  ++ @12210 + a4724
+END
+  
+IF ~~ a4721
+  SAY @3601
+  ++ @12208 + a4722
+  ++ @12211 + a4724
+  ++ @12206 + a4723
+  ++ @12212 + a4724
+  ++ @12213 + a4722
+END
+  
+IF ~~ a4722
+  SAY @12214
+  ++ @12201 + a4723
+  ++ @12215 + a4724
+  ++ @12216 + a4724
+  ++ @12217 + a4724
+  ++ @12218 + a4724
+END
+
+IF ~~ a4723
+  SAY @12219
+  ++ @12220 + a4724
+  ++ @12221 + a4724
+  ++ @12222 + a4724
+  ++ @12223 + a4724
+  ++ @12224 + a4724
+END
+
+IF ~~ a4724
+  SAY @12225
+  ++ @12226 + a4725
+  ++ @12227 + a4725
+  ++ @12228 + a4725
+  ++ @12229 + a4725
+  ++ @12230 + a4725
+END
+
+IF ~~ a4725
+  SAY @12231
+  ++ @12232 + a4726
+  ++ @12233 + a4726
+  ++ @12234 + a4726
+  ++ @12235 + a4726
+  ++ @12236 + a4726
+END
+
+IF ~~ a4726
+  SAY @12237 
+  ++ @12238 + a4727
+  ++ @12239 + a4727
+  ++ @12240 + a4727 
+  ++ @12241 + a4736
+  ++ @12242 + a4727
+END
+  
+IF ~~ a4727
+  SAY @12243
+  ++ @12244 + a4736
+  ++ @12245 + a4728
+  ++ @12246 + a4728
+  ++ @12247 + a4728
+  ++ @12248 + a4728
+END
+  
+IF ~~ a4728
+  SAY @12249 
+  ++ @12250 + a4729
+  ++ @12244 + a4736
+  ++ @12251 + a4729
+  ++ @12252 + a4729
+  ++ @12253 + a4729
+END
+  
+IF ~~ a4729
+  SAY @12254 
+  ++ @12255 + a4730
+  ++ @12256 + a4730
+  ++ @12257 + a4736
+  ++ @12258 + a4730
+  ++ @12259 + a4730
+END
+
+IF ~~ a4730
+  SAY @12260 
+  ++ @12261 + a4731
+  ++ @12262 + a4731
+  ++ @12263 + a4731
+  ++ @12264 + a4731
+  ++ @12265 + a4736
+END
+
+IF ~~ a4731
+  SAY @12266 
+  ++ @12267 + a4732
+  ++ @12268 + a4732
+  ++ @12269 + a4732
+  ++ @12270 + a4736
+  ++ @3589 + a4736
+END
+
+IF ~~ a4732
+  SAY @12271 
+  ++ @12272 + a4735
+  ++ @12273 + a4733
+  ++ @12274 + a4736
+  ++ @12275 + a4734
+  ++ @12276 + a4736
+END
+  
+IF ~~ a4733
+  SAY @12277
+  IF ~~ THEN GOTO a4735
+END
+
+IF ~~ a4734
+  SAY @12278
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4735 // romance continued
+  SAY @12279
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4736 // romance retired
+  SAY @12280 
+  = @12281
+  IF ~~ THEN DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3)~ EXIT // full romance shutdown
+END
+
+
 
 /* ToB Love Talk #3 : ask the big question or not */
 
@@ -25,125 +194,124 @@ IF ~~ c-aran_exit_temp
   IF ~~ THEN EXIT
 END
 
-// SetGlobal("c-aranengagement","GLOBAL",0) = not asked about marriage
-// SetGlobal("c-aranengagement","GLOBAL",1) = delay interested in marriage
-// SetGlobal("c-aranengagement","GLOBAL",2) = engaged
-// SetGlobal("c-aranengagement","GLOBAL",3) = engaged and interested in kids
-// SetGlobal("c-aranengagement","GLOBAL",4) = not interested in marriage
+/* ToB Love Talk #4 :  */
 
 IF ~Global("c-arantobrom","GLOBAL",7)~ THEN BEGIN a4774
-  SAY @11713
-  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
-  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778
-  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777
+  SAY @11713 // [ARAN] I done got word Kartuck be married now. He finally tied th' knot wi' that lass o' his.
+  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775 // [PC] So, don't you have something to ask me?
+  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776 // [PC] Who is Kartuck?
+  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776 // [PC] Were we invited to the wedding?
+  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778 // [PC] I like weddings. I like them a lot.
+  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777 // [PC] Why on earth would anyone want to get married?
 END
 
 IF ~~ a4775
-  SAY @11719
-  ++ @11720 + a4779
-  ++ @11721 + a4783
-  ++ @11722 + a4782
-  ++ @11723 + a4779
-  ++ @11724 + a4779
+  SAY @11719 // [ARAN] Like what?
+  ++ @11720 + a4779 // [PC] I thought you might want some kind of assurance. About our love. Something long term.
+  ++ @11721 + a4783 // [PC] Oh, I don't know. Something.
+  ++ @11722 + a4782 // [PC] Do I have to prompt you for everything?
+  ++ @11723 + a4779 // [PC] Think carefully, Aran. And notice the distinct absence of a ring on my finger, symbolizing the eternal circle of love.
+  ++ @11724 + a4779 // [PC] Like why we have not talked about getting married.
 END
 
 IF ~~ a4776
-  SAY @11725
-  = @11726
-  = @11727
-  ++ @11717 + a4778
-  ++ @11718 + a4777
-  ++ @11728 + a4779
-  ++ @11729 + a4778
+  SAY @11725 // [ARAN] Oh, just an ol' friend from th' 'Fist. They knew better than to invite those o' us what be on th' campaign, since we might be pressed hard to make it back for th' ceremonies.
+  = @11726 // [ARAN] He an' his lady-love be a right fine pair, they do. They has a Helmite marriage, an' then shipped out to Maztica. Apparently, th' food were great, th' drink was strong, an' th' bachelorette party only had three what needed a healer.
+  = @11727 // [ARAN] No troubles wi' th' bachelor party, at least ones talked about, on account o' Hera, she be th' jealous type. But they will be happy enough carvin' out a Freehold in th' colony. His axework be strong, an' her swordwork be quick, an' between th' two there be little what can stop 'em.
+  ++ @11717 + a4778 // 
+  ++ @11718 + a4777 //
+  ++ @11728 + a4779 // [PC] They sound like they are well suited to each other. Kind of like you and I are.
+  ++ @11729 + a4778 // [PC] So... is there anything you want to ask me?
 END
 
 
 IF ~~ a4777
-  SAY @11730
-  ++ @11731 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784
-  ++ @11732 + a4779
-  ++ @11733 + a4779
-  ++ @11734 + a4779
-  ++ @11735 + a4784
+  SAY @11730 // [ARAN] So, if someone asked you to marry them, then you would...
+  ++ @11731 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784 // [PC] ...tell them they are an idiot and that they are wasting their time. Life is to be experienced, not shackled.
+  ++ @11732 + a4779 // [PC] It depends on who is asking.
+  ++ @11733 + a4779 // [PC] ...tell them that my boyfriend Aran is going to be very upset if I say yes.
+  ++ @11734 + a4779 // [PC] ...tell them that I will ask him to marry me when I am ready. I need to make up my own mind on my own terms.
+  ++ @11735 + a4784 // [PC] ...ignore the question.
 END
 
 IF ~~ a4778
-  SAY @11736
-  ++ @11737 + a4779
-  ++ @11738 + a4777
-  ++ @11739 + a4777
-  ++ @11740 + a4779
-  ++ @1889 + a4777
+  SAY @11736 // [ARAN] Do that be some kind o' hint?
+  ++ @11737 + a4779 // [PC] No, of course not.
+  ++ @11738 + a4777 // [PC] Not really. You probably have already realized that I think marriage is a bad idea.
+  ++ @11739 + a4777 // [PC] Maybe it is, maybe it isn't.
+  ++ @11740 + a4779 // [PC] If by hint, you mean an obvious blazing sign that says "I love you and want to marry you", then sure, I guess it is a hint.
+  ++ @1889 + a4777 // [PC] Yes.
 END
 
 IF ~~ a4779
-  SAY @11741
-  ++ @11742 + a4780
-  ++ @11743 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784
-  ++ @11744 + a4781
-  ++ @11745 + a4781
-  ++ @11746 + a4781
-  ++ @11747 + a4785
+  SAY @11741 // [ARAN] I never thought you wanted anythin' like that.
+  ++ @11742 + a4780 // [PC] Why not?
+  ++ @11743 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784 // [PC] I don't. But you might.
+  ++ @11744 + a4781 // [PC] Of course. I may not be a woman who wants a small cottage in a nice quiet village with lots of children running around, but that doesn't mean that I don't want love, marriage, and a life partner.
+  ++ @11745 + a4781 // [PC] I have a dream that someday, just one little part of my life is normal. A small cottage, a loving husband, children...
+  ++ @11746 + a4781 // [PC] I have not really thought about it. But I know I love you, and I know you love me. I think that when that happens, and the time is right, it makes sense that we should be married.
+  ++ @11747 + a4785 // [PC] Oh, I am not opposed to the concept of marriage. I am only opposed to the two of us getting married.~
 END
 
 IF ~~ a4780
-  SAY @11748
-  ++ @11749 + a4781
-  ++ @11750 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784
-  ++ @11751 + a4781
-  ++ @11752 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784 
+  SAY @11748 // [ARAN] Well, souls bondin' need souls, an' you were missing a fair part o' yours.  I'd be happy with half, but you... probably not.
+  ++ @11749 + a4781 // [PC] I have my full soul now.
+  ++ @11750 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784 // [PC] I don't mind, but I don't really think I am interested in getting married. But you might be.
+  ++ @11751 + a4781 // [PC] I would be happy with anything we share.
+  ++ @11752 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784  // [PC] I suppose you are right. Besides, I have decided I don't really ever want to get married.
 END
 
 IF ~~ a4781
-  SAY @11753
-  ++ @11754 + a4783
-  ++ @11755 + a4782
-  ++ @11756 + a4783
-  ++ @11757 + a4783
-  ++ @11758 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784 
+  SAY @11753 // [ARAN] Why would you want me?
+  ++ @11754 + a4783 // [PC] You have to ask?
+  ++ @11755 + a4782 // [PC] Scared?
+  ++ @11756 + a4783 // [PC] I don't just want you, Aran. I need you.
+  ++ @11757 + a4783 // [PC] I don't want you, don't need you, and I really don't like the whole marriage idea. But then you say something, or turn against the light, and my breath catches in my throat.
+  ++ @11758 DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ + a4784  // [PC] I wouldn't want you, or anybody else for that matter. I don't really want to get married.
 END
 
 IF ~~ a4782
-  SAY @3601 
+  SAY @3601 // [ARAN] Aye.
   IF ~~ THEN GOTO a4783
 END
 
 IF ~~ a4783
-  SAY @11759
-  ++ @11760 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // delay interested in marriage
-  ++ @8649 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // delay interested in marriage
-  ++ @2782 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // delay interested in marriage
-  ++ @11761 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // delay interested in marriage
-  ++ @11762 + a4786 // shut down talking about marriage
-  ++ @11763 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // delay interested in marriage
+  SAY @11759 //[ARAN] You already know I'd follow you past death's door, an' right into any o' th' various versions o' hell.
+  ++ @11760 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // [PC] A woman wants more.
+  ++ @8649 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // [PC] Forget I said anything.
+  ++ @2782 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // [PC] I know.
+  ++ @11761 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // [PC] But how do you know that I would do the same?
+  ++ @11762 + a4786 // [PC] You know, I don't think this conversation is headed in the right direction. I am never, ever going to be interested in marrying you.
+  ++ @11763 DO ~SetGlobal("c-aranengagement","GLOBAL",1)~ EXIT // [PC] Sometimes you are just so... so... dense.
 END
 
 IF ~~ a4784
-  SAY @11759
-  = @11764
+  SAY @11759 // [ARAN] You already know I'd follow you past death's door, an' right into any o' th' various versions o' hell.
+  = @11764 // [ARAN] As for th' whole contract thing, well... I suspect if I were th' marryin' type, it would be you. But since you aren't, then that be a part o' life what I will just skip, on account o' there really never could be anyone else.
   IF ~~ THEN EXIT
 END
 
 IF ~~ a4785
-  SAY @11765
+  SAY @11765 // [ARAN] I were about to say some blighted romantic thing like you already knowin' I'd follow you past death's door, an' right into any o' th' various versions o' hell, but truth be told that last were a mite bit cold. Mayhap you were jokin'. But I was bein' right serious, I was.
   IF ~~ THEN EXIT
 END
 
 IF ~~ a4786
-  SAY @11766
+  SAY @11766 // [ARAN] One day, mayhap right soon, I am goin' to run up against th' gods. An' I am goin' to ask them each in turn why in th' nine hells they made me so's I can never understand women in any way, shape, or form.
   IF ~~ THEN DO ~SetGlobal("c-aranengagement","GLOBAL",4)~ EXIT
 END
-//
+
 
 New Change - use this state to determine marriage state and children state if agreed 
 
 IF ~~ talktomemore_aran
 
 
-
-
+// @185  = 
+// @186  = 
+// @187  = 
+// @188  = 
+// @13736  is the last dilled .tra number
 
 
 /* 
