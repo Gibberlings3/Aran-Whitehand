@@ -933,10 +933,7 @@ IF ~~ a4251
   IF ~GlobalGT("c-aranrom","GLOBAL",0) GlobalLT("c-aranrom","GLOBAL",3) Gender(Player1,FEMALE) !HasItemEquiped("belt05",Player1)~ THEN GOTO a4253
 END
 
-IF ~~ a4252
-  SAY @11475
-  IF ~~ THEN GOTO a4254
-END
+IF ~~ a4252 SAY @11475 IF ~~ THEN GOTO a4254 END
 
 IF ~~ a4253
   SAY @11476
@@ -949,10 +946,7 @@ IF ~~ a4253
   ++ @11480 + a3866 /* FIGHT_EXIT */
 END
 
-IF ~~ a4254
-  SAY @11481
-  IF ~~ THEN EXIT
-END
+IF ~~ a4254 SAY @11481 IF ~~ THEN EXIT END
 
 
 /* ToB Plot Talk : Sarevok chosen as companion: Activate after a week */
@@ -992,10 +986,7 @@ IF ~~ a2244
   ++ @11492 + a2245
 END
 
-IF ~~ a2245
-  SAY @11493
-  IF ~~ THEN GOTO a2243
-END
+IF ~~ a2245 SAY @11493 IF ~~ THEN GOTO a2243 END
 
 IF ~~ a2243
   SAY @11494
@@ -1116,21 +1107,9 @@ IF ~~ a2257
   ++ @11553 + a2260
 END
 
-IF ~~ a2258
-  SAY @11554
-  IF ~~ THEN GOTO a2259
-END
-
-IF ~~ a2259
-  SAY @11555
-  = @11556
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a2260
-  SAY @3601
-  IF ~~ THEN EXIT
-END
+IF ~~ a2258 SAY @11554 IF ~~ THEN GOTO a2259 END
+IF ~~ a2259 SAY @11555 = @11556 IF ~~ THEN EXIT END
+IF ~~ a2260 SAY @3601 IF ~~ THEN EXIT END
 
 
 /* for followup: BCS
@@ -1321,35 +1300,12 @@ IF ~Global("c-arantobrom","GLOBAL",1)~ THEN BEGIN a4813
   + ~RandomNum(5,1)~ + @11611 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3187 /* c-aranshutup54 */
 END
 
-IF ~~ a4814
-  SAY @11612
-  IF ~~ THEN GOTO a4824
-END
-
-IF ~~ a4815
-  SAY @11613
-  IF ~~ THEN GOTO a4824
-END
-
-IF ~~ a4816
-  SAY @11614
-  IF ~~ THEN GOTO a4824
-END
-
-IF ~~ a4817
-  SAY @11615
-  IF ~~ THEN GOTO a4824
-END
-
-IF ~~ a4818
-  SAY @11616
-  IF ~~ THEN GOTO a4824
-END
-
-IF ~~ a4819
-  SAY @11617
-  IF ~~ THEN GOTO a4824
-END
+IF ~~ a4814 SAY @11612 IF ~~ THEN GOTO a4824 END
+IF ~~ a4815 SAY @11613 IF ~~ THEN GOTO a4824 END
+IF ~~ a4816 SAY @11614 IF ~~ THEN GOTO a4824 END
+IF ~~ a4817 SAY @11615 IF ~~ THEN GOTO a4824 END
+IF ~~ a4818 SAY @11616 IF ~~ THEN GOTO a4824 END
+IF ~~ a4819 SAY @11617 IF ~~ THEN GOTO a4824 END
 
 IF ~~ a4820
   SAY @11618
@@ -1360,10 +1316,7 @@ IF ~~ a4820
   ++ @11623 + a4822
 END
 
-IF ~~ a4821
-  SAY @11624
-  IF ~~ THEN GOTO a4829
-END
+IF ~~ a4821   SAY @11624   IF ~~ THEN GOTO a4829 END
 
 IF ~~ a4822
   SAY @11625
@@ -1785,10 +1738,7 @@ IF ~~ a2817
   + ~RandomNum(3,1)~ + @11830 + a3205 /* c-aranshutup72 */
 END
 
-IF ~~ a2818
-  SAY @11845
-  IF ~~ THEN GOTO a2815
-END
+IF ~~ a2818 SAY @11845 IF ~~ THEN GOTO a2815 END
 
 IF ~~ a2819
   SAY @11846
@@ -1829,35 +1779,12 @@ IF ~~ a2822
   ++ @11866 + a2827
 END
 
-IF ~~ a2823
-  SAY @11867
-  IF ~~ THEN GOTO a2828
-END
-
-IF ~~ a2824
-  SAY @11868
-  IF ~~ THEN GOTO a2828
-END
-
-IF ~~ a2825
-  SAY @11869
-  IF ~~ THEN GOTO a2828
-END
-
-IF ~~ a2826
-  SAY @11870
-  IF ~~ THEN GOTO a2828
-END
-
-IF ~~ a2827
-  SAY @11871
-  IF ~~ THEN GOTO a2828
-END
-
-IF ~~ a2828
-  SAY @11872
-  IF ~~ THEN EXIT
-END
+IF ~~ a2823 SAY @11867 IF ~~ THEN GOTO a2828 END
+IF ~~ a2824 SAY @11868 IF ~~ THEN GOTO a2828 END
+IF ~~ a2825 SAY @11869 IF ~~ THEN GOTO a2828 END
+IF ~~ a2826 SAY @11870 IF ~~ THEN GOTO a2828 END
+IF ~~ a2827 SAY @11871 IF ~~ THEN GOTO a2828 END
+IF ~~ a2828 SAY @11872 IF ~~ THEN EXIT END
 
 IF ~~ a2829
   SAY @11873
@@ -2044,31 +1971,13 @@ IF ~~ a2848
   ++ @11967 +  a2846
 END
 
-IF ~~ a2849
-  SAY @11968
-  IF ~~ THEN EXIT
-END
+IF ~~ a2849 SAY @11968 IF ~~ THEN EXIT END
 
 /* ToB 2 : "My kingdom for a horse." Complaints of walking. Everywhere. - Idea by Igneous : followup */
-IF ~~ a2765
-  SAY @11969
-  IF ~~ THEN GOTO a2770
-END
-
-IF ~~ a2766
-  SAY @11970
-  IF ~~ THEN GOTO a2770
-END
-
-IF ~~ a2767
-  SAY @11971
-  IF ~~ THEN GOTO a2770
-END
-
-IF ~~ a2768
-  SAY @11972
-  IF ~~ THEN GOTO a2770
-END
+IF ~~ a2765 SAY @11969 IF ~~ THEN GOTO a2770 END
+IF ~~ a2766 SAY @11970 IF ~~ THEN GOTO a2770 END
+IF ~~ a2767 SAY @11971 IF ~~ THEN GOTO a2770 END
+IF ~~ a2768 SAY @11972 IF ~~ THEN GOTO a2770 END
 
 IF ~~ a2769 /*  7 options */
   SAY @11973

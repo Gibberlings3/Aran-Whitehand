@@ -679,6 +679,7 @@ COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01ep.cre~
 	COMPILE ~aranw/baf/C-AW01EP.baf~
       EVALUATE_BUFFER
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+	  
 /* Area C-AW01 bar/barfight - Toran */
 COPY_EXISTING ~kpgrd01.cre~	 ~override/c-toran.cre~	
 	REMOVE_CRE_ITEM ~rndtre02~
@@ -692,6 +693,7 @@ COPY_EXISTING ~kpgrd01.cre~	 ~override/c-aw01tk.cre~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~	
 	SAY NAME1 @142
 	SAY NAME2 @142
+	
 /* Area C-AW01 Tavern Waitress - Erika */
 COPY_EXISTING ~wench1.cre~	 ~override/c-aw01w1.cre~
 	LAUNCH_PATCH_MACRO ~support_cre_cleanup~
@@ -748,6 +750,7 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-malcer.cre~
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld06~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~sw1h41~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+	
 /* Oskut - L10	male fighter */
 COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~	
 	REMOVE_CRE_ITEM ~sw2h01~
@@ -764,6 +767,7 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-oskut.cre~
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~sw1h05~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+	
 /* Taman - L10	male fighter */
 COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~	
 	REMOVE_CRE_ITEM ~sw2h01~
@@ -779,12 +783,14 @@ COPY_EXISTING ~kpgate02.cre~	 ~override/c-taman.cre~
 	ADD_CRE_ITEM ~chan04~ #0 #0 #0 IDENTIFIED ARMOR
 	ADD_CRE_ITEM ~shld05~ #0 #0 #0 IDENTIFIED SHIELD
 	ADD_CRE_ITEM ~blun21~ #0 #0 #0 IDENTIFIED WEAPON1 EQUIP
+	
 /* resources : romance vampiric abduction */
 /* Vamp'd Aran's Body */ 
 COPY_EXISTING ~miscbm.itm~ ~override/c-avbody.itm~
 	SAY NAME1 @151
 	SAY NAME2 @151
 	SAY UNIDENTIFIED_DESC @152
+	
 /* Vamp'd Aran */
 COPY_EXISTING ~vampano.cre~ ~override/c-arnvmp.cre~ 
 	REMOVE_CRE_ITEM ~miscbm~
@@ -965,7 +971,11 @@ APPEND ~mastarea.2da~
   ~C-AR01  value~
   UNLESS ~C-AR01~
 
-
+/* add area to cheat console in BG2EE/EET for testing/jumping about */
+/* lua table operation: table.insert (table, [pos,] value) with default being n+1 at end */
+ACTION_IF GAME_IS ~bg2ee eet~ BEGIN	
+	APPEND ~BGEE.LUA~	~table.insert(cheatAreas, 1, {"C-AR01", "The Broken Sword Inn"} )~
+END // of lua addition
 
 /* area script */
 COMPILE ~aranw/baf/c-ar01.baf~
@@ -1051,7 +1061,7 @@ PRINT @30133
 
 ACTION_IF MOD_IS_INSTALLED ~GAVIN_BG2/SETUP-GAVIN_BG2.TP2~ ~0~ THEN BEGIN
 	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-aran_berelindegift.d~   
-    //  USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
+      USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 	COPY_EXISTING ~BAG03D.STO~ ~override/c-pqcase.sto~
 	COPY_EXISTING ~BAG03D.itm~ ~override/c-pqcase.itm~
 		SAY NAME1 ~Ornate Scrivner's Case~
@@ -1070,7 +1080,7 @@ Weight: 2
 ~
 END
 
-/* close out and move custom info .log back to subdirectory for easy reading */
+/* close out and copy custom info .log back to subdirectory for easy reading */
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//"
 APPEND ~c-arandebugger01.log~ "//\\//\\ Aran Whitehand Component 0 - End Log//\\//\\/"
 APPEND ~c-arandebugger01.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//"
@@ -1184,7 +1194,7 @@ BEGIN @30012 //component_1_
     APPEND ~c-arandebugger02.log~ ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
     APPEND ~c-arandebugger02.log~ ~Installation type is: %INTERACTIVE% 
 ( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall).~
-	/* close out and move custom info .log back to subdirectory for easy reading */
+	/* close out and copy custom info .log back to subdirectory for easy reading */
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
 	APPEND ~c-arandebugger02.log~ "//\\//\\ Aran Whitehand Component 1 or 2 or 3 or 4 - End Log//\\//\\//"
 	APPEND ~c-arandebugger02.log~ "//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\\\//\\//\\//\\"
