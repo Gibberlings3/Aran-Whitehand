@@ -957,26 +957,36 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~POTN42~ #1 #0 #0 ~IDENTIFIED~ #5   /* Potion of Regeneration */
 	END
 PRINT @30009
+
 /* resources : area creation */
 PRINT @30037
 COPY ~aranw/areas/c-ar01.are~ 	~override~
-COPY ~aranw/areas/c-ar01.tis~ 	~override~
 COPY ~aranw/areas/c-ar01.mos~ 	~override~
 COPY ~aranw/areas/c-ar01.wed~ 	~override~
 COPY ~aranw/areas/c-ar01ht.bmp~ ~override~
 COPY ~aranw/areas/c-ar01lm.bmp~ ~override~
 COPY ~aranw/areas/c-ar01sr.bmp~ ~override~
 
+ACTION_IF GAME_IS ~soa tob bgt~ THEN BEGIN
+  PRINT ~Installing BG2 Area resources~
+  COPY ~aranw/areas/c-ar01_bg2.tis~ ~override/c-ar01.tis~
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  PRINT ~Installing BG2EE Area resources~
+  COPY ~aranw/areas/c-ar01_ee.tis~ ~override/c-ar01.tis~
+  COPY ~aranw/areas/car0100.pvrz~ ~override~  
+  COPY ~aranw/areas/car0101.pvrz~ ~override~ 
+  COPY ~aranw/areas/car0102.pvrz~ ~override~ 
+  /* add area to cheat console in BG2EE/EET for testing/jumping about */
+  /* lua table operation: table.insert (table, [pos,] value) with default being n+1 at end */
+  APPEND ~BGEE.LUA~	~table.insert(cheatAreas, 1, {"C-AR01", "The Broken Sword Inn"} )~
+END
+
 APPEND ~mastarea.2da~
-  ~C-AR01  value~
-  UNLESS ~C-AR01~
-
-/* add area to cheat console in BG2EE/EET for testing/jumping about */
-/* lua table operation: table.insert (table, [pos,] value) with default being n+1 at end */
-ACTION_IF GAME_IS ~bg2ee eet~ BEGIN	
-	APPEND ~BGEE.LUA~	~table.insert(cheatAreas, 1, {"C-AR01", "The Broken Sword Inn"} )~
-END // of lua addition
-
+  ~myarea  value~
+  UNLESS ~myarea~
+  
 /* area script */
 COMPILE ~aranw/baf/c-ar01.baf~
       EVALUATE_BUFFER
