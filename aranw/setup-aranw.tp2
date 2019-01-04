@@ -261,7 +261,7 @@ COMPILE EVALUATE_BUFFER ~aranw/dialog/c-arandialog.d~
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
 PRINT @30009	  
 /* ToB dialog file */	  
-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN 
+ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN 
 	PRINT @30032
 	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-arantobdialog.d~
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
@@ -820,7 +820,7 @@ PRINT @30009
 
 /* ToB-only .cres */
 PRINT @30035
-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN
+ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		/* resources : portraits : bg2:ee */
 		COPY ~aranw/media/portraits_bg2ee/c-wraithghost_stedd.bmp~ ~override/c-arwrth.bmp~ /* Stedd, The Ghost Of PTSD (Peachplums) */
@@ -1068,7 +1068,7 @@ COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
 
 PRINT @30009
 
-ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN /* ToB scripts */
+ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN /* ToB scripts */
 	PRINT @30040
 	COMPILE EVALUATE_BUFFER ~aranw/baf/c-arn25.baf~ // joined ToB script
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
@@ -1509,7 +1509,7 @@ BEGIN @30019 //component_5_
 	/* Ask for choices and patch the .cre */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB .cre	file
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
 		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
@@ -1564,7 +1564,7 @@ BEGIN @30020 //component_6_
 	/* Ask for choices and patch the .cre */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB .cre file
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
 		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
@@ -1618,7 +1618,7 @@ BEGIN @30021 //component_7_
 	/* Ask for choices and patch the .cre */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB .cre file
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
 		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
@@ -1672,7 +1672,7 @@ BEGIN @30022 //component_8_
 	/* Ask for choices and patch the .cre */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB .cre file
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
 		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
@@ -1726,7 +1726,7 @@ BEGIN @30023 //component_9_
 	/* Ask for choices and patch the .cre */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee~ THEN BEGIN // ToB .cre file
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
 		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
 			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
 			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
