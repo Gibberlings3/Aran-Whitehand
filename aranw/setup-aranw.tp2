@@ -19,6 +19,20 @@ ALWAYS
 	INCLUDE ~aranw/lib/aranw_macros.tph~ /* define all macros */
 	/* .ids patching to make sure everything is in place */
     INCLUDE ~aranw/lib/ids_patching.tph~ /* checks for expected .ids resources */
+	
+ 	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter THEN BEGIN  /* check to make this happen only once per install */
+		ACTION_IF GAME_IS ~eet~ BEGIN
+			OUTER_SET bg2_chapter = 12
+		END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+		END
+		OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+		OUTER_SET bg2_chapter = bg2_chapter + 1
+		OUTER_SPRINT name_source ~bg2_chapter_%i%~
+		OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+		END 
+	END
+	
 	ACTION_IF GAME_IS ~bg2ee eet~ BEGIN	
 	/* HANDLE_CHARSETS */
 	/* BG2:EE tra conversion courtesy of weidu and iconv */
@@ -34,6 +48,7 @@ ALWAYS
 	OUTER_SPRINT tra_version ~c-aranw~
 	OUTER_SPRINT aranw_version @30001
 END
+
 LANGUAGE	~English~ 
 			~english~ 
 			~aranw\tra\english\c-aranw.tra~ 
@@ -2573,6 +2588,6 @@ BEGIN ~piperb's "Stalwort Young" (light brown hair, fair complexion)~ DESIGNATED
 	PRINT @30009
 
 	
-	//	PRINT @30106
+	/*	PRINT @30106 */
 	
-/* end of file. Finis. C'est tout. That's all. Waaaaay too much time and craziness spent on this - hope you enjoy the mod! */
+/* end of file. Finis. C'est tout. That's all. Waaaaay too much time and craziness spent on this - hope you enjoy the mod! */ 

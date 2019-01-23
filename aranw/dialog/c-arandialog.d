@@ -21332,7 +21332,7 @@ IF ~~ a972 SAY @8545 IF ~~ THEN EXIT END
 /* OR(17) AreaCheck("AR2100") AreaCheck("AR2101") AreaCheck("AR2102") AreaCheck("AR2200") AreaCheck("AR2201") */
 /* AreaCheck("AR2202") AreaCheck("AR2203") AreaCheck("AR2204") AreaCheck("AR2205") AreaCheck("AR2206") AreaCheck("AR2207") AreaCheck("AR2208") */
 /* AreaCheck("AR2209") AreaCheck("AR2210") AreaCheck("AR2400") AreaCheck("AR2401") AreaCheck("AR2402")  */
-IF ~IsGabber(Player1) Global("chapter","GLOBAL",5)~ THEN BEGIN a1073
+IF ~IsGabber(Player1) Global("chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN a1073
   SAY @8546
   /* General Options, both Male PC and female PC */
   /* voice/string fixer */
@@ -21469,7 +21469,7 @@ END
 
 /* PID 3: Options for PC <> Aran, everywhere else */
 
-IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
+IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN a1077
  SAY @8598
   /* General Options, both Male PC and female PC */
   /* voice/string fixer */
@@ -21478,15 +21478,15 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",5)~ THEN BEGIN a1077
   + ~Global("c-silencearan","GLOBAL",0)~ + @8548 + a990 /* c-aransilence */
   + ~Global("c-silencearan","GLOBAL",1)~ + @8549 + a991 /* c-arantalkok */
   /* chapter - dependent (1) */
-  + ~Global("Chapter","GLOBAL",2) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1078 /*  search for your girlfriend, or not. */
-  + ~Global("Chapter","GLOBAL",3) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1079 /*  with friends like these, who needs enemies. */
-  + ~Global("Chapter","GLOBAL",3) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1080 /*  with friends like these,  we are likely to be a midnight snack. */
-  + ~Global("Chapter","GLOBAL",2) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1237 /*  search for your girlfriend, or not. */
-  + ~Global("Chapter","GLOBAL",3) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1238 /*  with friends like these, who needs enemies. */
-  + ~Global("Chapter","GLOBAL",3) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1239 /*  with friends like these,  we are likely to be a midnight snack. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_2%) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1078 /*  search for your girlfriend, or not. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1079 /*  with friends like these, who needs enemies. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",0)~ + @8600 + a1080 /*  with friends like these,  we are likely to be a midnight snack. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_2%) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1237 /*  search for your girlfriend, or not. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1238 /*  with friends like these, who needs enemies. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1239 /*  with friends like these,  we are likely to be a midnight snack. */
   + ~!Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",3)~ + @8600 + a1081 /*  it ain't over 'til the dead lady sings. */
   + ~Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",3)~ + @8600 + a1082 /*  ding, dong, the biatch be dust (which old biatch? The Wicked Biatch!) */
-  + ~Global("Chapter","GLOBAL",7)~ + @8600 + a1083  /* Chapter 7: Suldanessellar, Capitol of Plot Devices, then straight to hell. Literally. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @8600 + a1083  /* Chapter 7: Suldanessellar, Capitol of Plot Devices, then straight to hell. Literally. */
   + ~!Class("c-aran",BARD_ALL)~ + @8601 + a1672
   + ~Class("c-aran",BARD_ALL)~ + @8601 + a1671
   + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 + a1673

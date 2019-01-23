@@ -892,7 +892,7 @@ IF
 	InParty(Myself)
 	Global("RE_SaemonFlirt","GLOBAL",1)
 	Global("c-arnRESaemon","LOCALS",0)
-	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",%bg2_chapter_4%)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
@@ -903,7 +903,7 @@ IF
 	InParty(Myself)
 	Global("RE_SolaufeinFlirt","GLOBAL",1)
 	Global("c-arnRESolaufein","LOCALS",0)
-	!Global("Chapter","GLOBAL",4)
+	!Global("Chapter","GLOBAL",%bg2_chapter_4%)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
@@ -914,7 +914,7 @@ IF
 	InParty(Myself)
 	Global("RE_TalakFlirt","GLOBAL",1)
 	Global("c-arnRETalak","LOCALS",0)
-	!Global("Chapter","GLOBAL",5)
+	!Global("Chapter","GLOBAL",%bg2_chapter_5%)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 THEN
 	RESPONSE #100
@@ -3467,7 +3467,7 @@ END
 IF
 	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	!Global("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark - specialized talks for that
 	OR(14)
 		Global("c-aranfriendbg2","GLOBAL",0)	// set up SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",2)	// set up SoA_FT_2
@@ -3512,7 +3512,7 @@ END
 IF
 	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	!Global("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark - specialized talks for that
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
@@ -3550,7 +3550,7 @@ END
 /* Aran's Underdark FriendTalks Aim, c-aranfriendud, %ARAN_FTT% : Setup */
 /* This block sets up the underdark talks */
 IF
-	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
+	Global("Chapter","GLOBAL",%bg2_chapter_5%) // In Underdark - specialized talks
 	Global("c-aranfriendsetud","GLOBAL",0)
 THEN
 	RESPONSE #100
@@ -3562,7 +3562,7 @@ END
 /* This block takes the even variables set in dialog, and advances them to the odd */
 
 IF
-	Global("Chapter","GLOBAL",5) // In Underdark - specialized talks
+	Global("Chapter","GLOBAL",%bg2_chapter_5%) // In Underdark - specialized talks
 	GlobalLT("c-aranfriendud","GLOBAL",9)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	OR(5)
@@ -3581,7 +3581,7 @@ END
 IF
 	GlobalLT("c-aranfriendud","GLOBAL",10)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	Global("Chapter","GLOBAL",5) // In Underdark
+	Global("Chapter","GLOBAL",%bg2_chapter_5%) // In Underdark
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
@@ -3673,7 +3673,7 @@ IF
 	GlobalLT("c-aranbg2rom","GLOBAL",15)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	GlobalGT("c-aranfriendbg2","GLOBAL",5) //	FT 3 has played
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	!Global("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark - specialized talks for that
 	Global("c-aranmatch","GLOBAL",1) // romance matched
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	OR(8)
@@ -3707,7 +3707,7 @@ IF
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 	GlobalLT("c-aranbg2rom","GLOBAL",16)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
-	!Global("Chapter","GLOBAL",5) // Not in Underdark - specialized talks for that
+	!Global("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark - specialized talks for that
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	CombatCounter(0)	// Not in combat
 	!See([ENEMY])	// Can't see any enemies
