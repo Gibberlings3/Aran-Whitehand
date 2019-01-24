@@ -262,7 +262,7 @@ IF
 	PartyRested()
 	InParty(Myself)
 	Global("c-aranwakeup","LOCALS",0)
-	GlobalGT("Chapter","GLOBAL",5)
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)
 	!Global("c-aranspar","GLOBAL",7)
 	CombatCounter(0)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
@@ -3494,7 +3494,7 @@ IF
 	GlobalGT("c-aranfriendbg2","GLOBAL",26)
 	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	GlobalGT("Chapter","GLOBAL",5) // Not in Underdark, and must fire post-losing-soul
+	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark, and must fire post-losing-soul
 	OR(5) 
 		Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
 		Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16

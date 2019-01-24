@@ -816,73 +816,73 @@ END
 
 /* Watcher's Keep, SoA Version : FSDRAGON  */
 I_C_T FSDRAGON 0 c-arn25dra0 /* I am the fearsome death that awaits those that would break the seal. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @416
-== FSDRAGON IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @417
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @416
+== FSDRAGON IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @417
 END
 
 /* Watcher's Keep, SoA Version : FSSPIR2  */
 I_C_T FSSPIR2 1 c-arn25spi1 /* I am the Keeper of the Key, the One Left Behind.  Duty compels me to remain, to stand guard over one of the keys to the final seal. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @418
-== FSSPIR2 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @419
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @418
+== FSSPIR2 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @419
 END
 
 /* Watcher's Keep, SoA Version :  GORAPP1  */
 I_C_T GORAPP1 6 c-arn25ap6 /* Odren intended it be thee to sacrifice thy life, rather than make his own sacrifice willingly.  He also failed to tell thee the scope of the evil that lies within...the Imprisoned One is Demogorgon, Prince of Demons. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @420
-== GORAPP1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @421
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @420
+== GORAPP1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @421
 END
 
 /* Watcher's Keep, SoA Version :  GORDEMO */
 I_C_T GORDEMO 1 c-arn25pod1 /* You do not see anything physical within the chamber...but you feel its presence all around you.  A phantasmal hand brushes your cheek, a curious gesture that startles you and is gone just as quickly. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @422
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @422
 END
 
 /* Watcher's Keep, SoA Version : GORMAD (2)  */
 I_C_T GORMAD1 1 c-arn25yak1 /* Yakman talk talk talk all the time, he was told... Talkative Yakman!  Once came with party, all looking for treasure, Yakman talk talk talk all the time.  Now they are all dead and only Yakman left, lost lost.  Lonely Yakman! */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @423
-== GORMAD1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @424
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @423
+== GORMAD1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @424
 END
 
 I_C_T GORMAD1 34 c-arn25tm34 /* 'Yakman'?  That...that was that ridiculous nickname that atrocious little halfling kept calling me.  My name is Tamorlin.  Wh...where is my party?  Where am I? */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @425
-== GORMAD1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @426
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @425
+== GORMAD1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @426
 END
 
 /* Watcher's Keep, SoA Version : GORODR1 (5) */
 I_C_T GORODR1 2 c-arn25od2 /* norom - Greetings to you, my friend.  I believe I have heard of you...you are <GABBER>, one of the companions of the Child of Bhaal.  Please, I must speak to <PRO_HIMHER>! */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) !Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @427
-== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) !Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @428
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) !Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @427
+== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) !Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @428
 END
 
 I_C_T GORODR1 2 c-arn25od2 /* rom - Greetings to you, my friend.  I believe I have heard of you...you are <GABBER>, one of the companions of the Child of Bhaal.  Please, I must speak to <PRO_HIMHER>! */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @429
-== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @428
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @429
+== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) Global("c-aranrom","GLOBAL",2) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @428
 END
 
 I_C_T GORODR1 10 c-arn25od10 /* The old prison would not hold this great evil for long, He said.  Our order would have to maintain a vigil, to watch for the day when the evil would begin to break the great seals and escape. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @430
-== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @431
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @430
+== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @431
 END
 
 I_C_T GORODR1 50 c-arn25od50 /* You knew not what you did, <GABBER>, so your foolishness can be forgiven, I am sure.  Farewell to you. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @432
-== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @433
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @432
+== GORODR1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @433
 END
 
 I_C_T GORODR1 53 c-arn25od53 /* The Imprisoned One is none other than Demogorgon, Prince of Demons.  We did not think he could... be defeated... and so we sought someone else to take our place and seal the demon within the Keep. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @434
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @434
 END
 
 /* Watcher's Keep, SoA Version : GORPRI1  */
 I_C_T GORPRI1 2 c-arn25pipe /* (needs passback) I apologize for my... undeserved reaction.  I will take my slippers and let you finish your work here. Look through the sarcophagus if you wish. */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @435
-== GORPRI1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @436
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @435
+== GORPRI1 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @436
 END
 
 /* Watcher's Keep, SoA Version : GORSUC01  */
 I_C_T GORSUC01 0 c-arn25suc0 /* Ahhh, look here, dear ladies.  Yet another hapless wanderer, drifting through these endless portals.  Is it lost, do you think?  Shall we ask it? */
-== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @437
-== GORSUC01 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",8) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @438
+== C-ARANJ IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @437
+== GORSUC01 IF ~Global("c-silencearan","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @438
 END
 
 /* Plot Talks: SoA: Tree of Life Extension, Part A */
@@ -4573,8 +4573,8 @@ END
 
 IF ~~ a3341
   SAY @1959
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @1960 + a3342
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @1961 + a3342  
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @1960 + a3342
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @1961 + a3342  
   ++ @1962 + a3332
   ++ @1963 + a3331
   ++ @1964 + a3330
@@ -4597,12 +4597,12 @@ END
 
 IF ~~ a3343
   SAY @1972
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @1973 + a3342
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @1974 + a3341
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @1975 + a3341
-  + ~GlobalGT("Chapter","GLOBAL",5)~ + @1976 + a3340
-  + ~GlobalGT("Chapter","GLOBAL",5) Gender(Player1,MALE)~ + @1977 + a3340
-  + ~GlobalGT("Chapter","GLOBAL",5) Gender(Player1,FEMALE)~ + @1978 + a3340
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @1973 + a3342
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @1974 + a3341
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @1975 + a3341
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @1976 + a3340
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Gender(Player1,MALE)~ + @1977 + a3340
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) Gender(Player1,FEMALE)~ + @1978 + a3340
   ++ @1979 + a3339
   ++ @1980 + a3338
   ++ @1981 + a3337
@@ -10151,8 +10151,8 @@ END
 IF ~~ a597
   SAY @3972
   ++ @3973 + a600
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @3974 + a601
-  + ~GlobalGT("Chapter","GLOBAL",3)~ + @3975 + a602
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @3974 + a601
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @3975 + a602
   ++ @3976 + a603
   ++ @3977 + a604
   ++ @3978 + a605
@@ -10162,8 +10162,8 @@ END
 IF ~~ a598
   SAY @3980
   ++ @3973 + a600
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @3981 + a601
-  + ~GlobalGT("Chapter","GLOBAL",3)~ + @3975 + a602
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @3981 + a601
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @3975 + a602
   ++ @3976 + a603
   ++ @3977 + a604
   ++ @3978 + a605
@@ -10173,8 +10173,8 @@ END
 IF ~~ a599
   SAY @3983
   ++ @3973 + a600
-  + ~GlobalLT("Chapter","GLOBAL",4)~ + @3981 + a601
-  + ~GlobalGT("Chapter","GLOBAL",3)~ + @3975 + a602
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_4%)~ + @3981 + a601
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @3975 + a602
   ++ @3976 + a603
   ++ @3977 + a604
   ++ @3978 + a604
@@ -16142,8 +16142,8 @@ END
 
 IF ~~ a3423 /* LOOKING_1_UNSURE */
   SAY @6733
-  + ~GlobalGT("Chapter","GLOBAL",5)~ + @6734 + a3424 /* SOUL_PASSTHROUGH */
-  + ~GlobalLT("Chapter","GLOBAL",6)~ + @6735 + a3424 /* SOUL_PASSTHROUGH */
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%)~ + @6734 + a3424 /* SOUL_PASSTHROUGH */
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_6%)~ + @6735 + a3424 /* SOUL_PASSTHROUGH */
   ++ @6736 + a3421 /* JUST_FRIENDS_INN_EXIT */
   ++ @6737 + a3425 /* MAKEOUT_INN_EXIT */
   ++ @6738 DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a3422 /* LOOKING_ARAN_2_RESPONDS */
@@ -21484,8 +21484,8 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN a1
   + ~Global("Chapter","GLOBAL",%bg2_chapter_2%) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1237 /*  search for your girlfriend, or not. */
   + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1238 /*  with friends like these, who needs enemies. */
   + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1239 /*  with friends like these,  we are likely to be a midnight snack. */
-  + ~!Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",3)~ + @8600 + a1081 /*  it ain't over 'til the dead lady sings. */
-  + ~Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",3)~ + @8600 + a1082 /*  ding, dong, the biatch be dust (which old biatch? The Wicked Biatch!) */
+  + ~!Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @8600 + a1081 /*  it ain't over 'til the dead lady sings. */
+  + ~Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @8600 + a1082 /*  ding, dong, the biatch be dust (which old biatch? The Wicked Biatch!) */
   + ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @8600 + a1083  /* Chapter 7: Suldanessellar, Capitol of Plot Devices, then straight to hell. Literally. */
   + ~!Class("c-aran",BARD_ALL)~ + @8601 + a1672
   + ~Class("c-aran",BARD_ALL)~ + @8601 + a1671
@@ -25229,8 +25229,8 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN a1
   ++ @10328 + a4
   ++ @10329 + a3
   ++ @10330 + a5
-  + ~GlobalLT("Chapter","GLOBAL",3)~ + @10331 + a18
-  + ~GlobalGT("Chapter","GLOBAL",2)~ + @10332 + a19
+  + ~GlobalLT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @10331 + a18
+  + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_2%)~ + @10332 + a19
   + ~RandomNum(5,1)~ + @10317 + a7
   + ~RandomNum(5,2)~ + @10333 + a8
   + ~RandomNum(5,3)~ + @10334 + a9
@@ -29658,17 +29658,17 @@ END
 
 /* I. Player Teases with lots and lots of flirts - from .bcs */
 
-IF ~Global("c-arangoaded","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3353 /* TOO_MUCH_TEASING */
+IF ~Global("c-arangoaded","GLOBAL",2) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a3353 /* TOO_MUCH_TEASING */
   SAY @11298
   IF ~~ THEN EXTERN C-ARANJ a4356
 END
 /* I. Player Teases with lots and lots of flirts - delayed by PC - from .bcs */
-IF ~Global("c-arangoaded","GLOBAL",5) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a4357 /* TOO_MUCH_TEASING_RETRY */
+IF ~Global("c-arangoaded","GLOBAL",5) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a4357 /* TOO_MUCH_TEASING_RETRY */
   SAY @11298
   IF ~~ THEN EXTERN C-ARANJ a3361
 END
 /* Night Visit from requests or flirts */
-IF ~Global("c-arannightvisit","GLOBAL",2) GlobalLT("Chapter","GLOBAL",8)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
+IF ~Global("c-arannightvisit","GLOBAL",2) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a3799 /* START_ARAN_PC_BOOTY_CALL */
   SAY @11299
   ++ @11300 DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",120)~ EXIT
   + ~Global("c-arankisses","GLOBAL",0)~ + @11301 DO ~SetGlobal("c-arannightvisit","GLOBAL",0) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) RealSetGlobalTimer("c-arandreamtalk","GLOBAL",120)~ EXTERN C-ARANJ a3576 /* START_LADY_OF_THE_WARM_LIPS */

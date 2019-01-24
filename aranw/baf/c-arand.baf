@@ -134,7 +134,7 @@ IF
 	!RealGlobalTimerNotExpired("c-arandreamtalk","GLOBAL")
 //	!RealGlobalTimerExpired("RE_DreamTimer","GLOBAL")  
 	Gender(Player1,FEMALE)
-	GlobalLT("Chapter","GLOBAL",5)
+	GlobalLT("Chapter","GLOBAL",%bg2_chapter_5%)
 	CombatCounter(0)
 	!StateCheck(Myself,CD_STATE_NOTVALID)
 	!StateCheck(Player1,CD_STATE_NOTVALID)
