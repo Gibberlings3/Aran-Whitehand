@@ -4,6 +4,300 @@
 ///////   DOI NOT COMPILE!!!
 
 
+/* ToB FriendTalk */
+
+/* FT 20: Tools, Weapons, and Intention */
+IF ~STATE_START_CONDITION~ THEN BEGIN c_wielder
+  SAY ~[ARAN] You know, you be a bit more powerful than you seem to realize.~
+  ++ ~[PC] I don't know. It feels like I am becoming a weapon.~ + c_person
+  ++ ~[PC] I realize exactly how powerful a weapon I am becoming.~ + c_person
+  ++ ~[PC] No, I am not.~ + c_notwhat  
+  ++ ~[PC] What about you? You seem to have grown a bit since we first met in that inn room.~ + c_not_about_me
+  ++ ~[PC] This is a bad time to have another one of your deep existential conversations.~ + delay_exit_state
+END
+
+IF ~~ c_notwhat
+  SAY ~[ARAN] Not what? Not powerful, not realize?~
+  ++ ~[PC] Not powerful.~ + c_not_powerful
+  ++ ~[PC] I don't think I am any more or less powerful than when I started out.~ + c_not_powerful
+  ++ ~[PC] I seem to have trouble realizing exactly how powerful I have become.~ c_not_realize
+  ++ ~[PC] I don't know. I am still figuring out who I really am.~ + c_direction
+  ++ ~[PC] This is a bad time to have another one of your deep existential conversations.~ + delay_exit_state
+END
+
+IF ~~ c_not_realize
+  SAY ~[ARAN] Mayhap it scares you a bit. It scares me, somehow, but more on your account than on mine.~
+  IF ~~ THEN GOTO c_person
+END
+
+IF ~~ delay_exit_state
+  SAY ~[ARAN] Now we have been naught but good companions for a fair while now. Can a lad have a real conversation about all this?~
+  ++ ~[PC] I don't like talking about all the power I have gained. It feels like I am becoming a weapon.~ + c_person
+  ++ ~[PC] I do not need to talk about it. I realize exactly how powerful a weapon I am becoming.~ + c_person
+  ++ ~[PC] I suppose. You know, you seem to have grown a bit since we first met in that inn room.~ + c_not_about_me
+  ++ ~[PC] I did not ask for any of this, Aran. It was forced on me. Talking about it is useless.~ + exit_state_supportive
+  ++ ~[PC] Shut up, Aran.~ + exit_state
+ END 
+  
+IF ~~ c_not_powerful
+  SAY ~[ARAN] That be th' largest load o' crap I done heard from you, ever.~
+  ++ ~[PC] Look... it scares me, Aran. Even talking about it scares me.~ + c_scares_me
+  ++ ~[PC] Well, you were due some retribution for the loads you throw around. What is next, casting me as the future Ruler of Toril?~ + c_cooking
+  ++ ~[PC] I may be gaining power, but I do not seem to have any power over my own direction. I get tossed from battle to battle on the wind.~ + c_direction
+  ++ ~[PC] Perhaps your head would look better if it was separated from your body. You have gone way past what I tolerate from you, sellsword.~ + exit_state  
+  ++ ~[PC] Shut up, Aran.~ + exit_state
+END
+
+IF ~~ c_scares_me
+  SAY ~[ARAN] There be naught to be scared about, as long as you be in charge o' yourself. Your power be a sharp weapon, for sure.~
+  IF ~~ THEN GOTO c_person
+END
+
+IF ~~ c_person
+  SAY ~[ARAN] Weapons be tools, and naught else. It takes a person weildin' th' sword to make th' call, an' direct th' cut or thrust. Otherwise, th' sword be a heavy decoration good for naught but trippin' over, eh?~
+  ++ ~[PC] I agree. But right now, I have a feeling I am not completely in command of my destiny. Who is really directing me?~ + c_direction
+  ++ ~[PC] That is why all this is important. I have the power to shape things, the strength to control it, and the willingness to direct it where I choose.~ + c_youareyou
+  ++ ~[PC] That is why all this is important. I have the power to shape things, but I may not have the strength to control it.~ + c_direction
+  ++ ~[PC] I did not ask for any of this, Aran. It was forced on me.~ + exit_state_supportive
+  ++ ~[PC] I don't think I want to talk about this any more. We should move on.~ + exit_state
+END
+
+IF ~~ c_youareyou
+  SAY ~[ARAN] I just hope you be th' one really callin' th' shots, an' not some blighted mage or god or some such bein' behind th' scenes.~
+  ++ ~[PC] If it appears others are dictating my actions, just remember... it is not the one who strikes first who wins the battle. It is the one who strikes last.~ + c_strikeslast
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + c_direction
+  ++ ~[PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along.~ + exit_state
+  ++ ~[PC] The gods mess about on the game board. We just have to take it from them and make it serve our will.~ + exit_state
+  ++ ~[PC] I don't think I want to talk about this any more. We should move on.~ + delay_exit_state
+END
+
+IF ~~ c_strikeslast
+  SAY ~[ARAN] I suppose you be right. Only, if th' first strike be powerful enough, sometimes it wins outright, eh?~
+  ++ ~[PC] Are you questioning my ability to use my power effectively?~ + c_effectively
+  ++ ~[PC] This is more than a simple mercenary campaign. It takes time to build power, and sometimes it takes doing what others want in order to get what I want.~ + exit_state
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + exit_follower_state
+  ++ ~[PC] The secret to my overbearing power is eating your curry. It will be my tool for conquest.~ + c_cooking
+  ++ ~[PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along.~ + exit_state
+  ++ ~[PC] The gods mess about on the game board. We just have to take it from them and make it serve our will.~ + exit_state
+END
+
+IF ~~ c_direction
+  SAY ~[ARAN] Tyr's Eye, I blighted well hope you are th' one directin' yourself. You, I have some understandin' about, an' I put my trust in your judgement. Most others, not so much.~
+  ++ ~[PC] Then I had better learn how to wield myself effectively.~ + c_effectively
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + c_direction
+  ++ ~[PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along.~ + exit_state
+  ++ ~[PC] The gods mess about on the game board. We just have to take it from them and make it serve our will.~ + exit_state
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + exit_follower_state
+END
+
+IF ~~ c_effectively
+  SAY ~[ARAN] Effectively be part o' th' matter, I guess. But I were hopin' for more along th' lines o' compassionately.~
+  ++ ~[PC] I think you had better define what you mean by 'compassionately'.~ + c_define_compassionately
+  ++ ~[PC] It takes time to build power, and sometimes it takes doing what others want in order to get what I want. In the end, though, my will is what matters.~ + exit_state
+  ++ ~[PC] I weigh my decisions carefully when I can. But sometimes, people get hurt no matter what I choose.~ + exit_state 
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + exit_follower_state
+  ++ ~[PC] Effectively, compassionately... just words. Sometimes we just have to do what is in front of us and move on.~ + exit_state
+END
+
+IF ~~ c_define_compassionately
+  SAY ~[ARAN] Hey, now, I hold my own counsel on that. Sometimes people get killed an' things get destroyed on account o' there be no choice.~
+  = ~[ARAN] It be th' needless actions what might be held off on account o' compassion.~
+  ++ ~[PC] We agree on that, Aran. We would not be traveling together if we did not.~ + exit_state
+  ++ ~[PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead.~ + exit_follower_state
+  ++ ~[PC] I find myself doing no needless actions. Everything I do is designed to build my own power and control my own destiny.~ + exit_follower_state
+  ++ ~[PC] I weigh my decisions carefully when I can. But sometimes, people get hurt no matter what I choose.~ + exit_state 
+  ++ ~[PC] I weigh my decisions carefully when I can. But people getting hurt is their problem, not mine.~ + exit_follower_state 
+END
+	
+IF ~~ c_cooking
+  SAY ~[ARAN] Aye, now there be a thought. <CHARNAME>, th' Force o' Faerun, Ruler o' All Toril, built up by serial doses o' my famous gut-bustin' fire-breathin' curry.~
+  ++ ~[PC] Me? Ruler of all that I survey? Now that is a laugh.~ + exit_follower_state
+  ++ ~[PC] Me? Ruler of all I survey? Of course. I shall make you my Chief Wineskin Washer. And Chief Wineskin Emptier, as well.~ + exit_fun_state
+  ++ ~[PC] I think I might be more comfortable if you were in charge. Well, more in danger of bar brawls, but at least I would not be everyone's target.~ + exit_follower_state
+  ++ ~[PC] Laugh all you want, Aran, my boy. I intend to find my own path, even if it means conquering the very Planes themselves to do it.~ + exit_state_lighthearted
+  ++ ~[PC] Dear gods... the curry. Somehow, I knew that was the source of true power. I shall place you in charge of all cooking. And cleaning.~ + exit_fun_state
+END
+
+IF ~~ exit_state
+  SAY ~[ARAN] I suppose you be right. But there be plenty o' time ahead to talk. Mayhap we pick this up later.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ exit_fun_state
+  SAY ~[ARAN] Now that sounds right fine, it does. In fact, here be th' first duty entrusted me, all done already. One wineskin, empty, an' just beggin' for a dip in th' water!~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ exit_follower_state
+  SAY ~[ARAN] Think about what you just said right careful, there. You already be a fair sight more powerful than I could hope to get. I don't mind bein' your sword, an' even bein' a tool to be used by you.~
+  = ~[ARAN] Me, I can make a cut here or there, an' mayhap be useful in a limited way. You... you will influence th' whole o' blighted Toril, an' mayhap more.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ exit_state_lighthearted
+  SAY ~[ARAN] An' I believe you will do just that, too. Mayhap I needs be expandin' my cookin' options. Takes a might large bit o' food to fuel Planar domination.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ exit_state_supportive
+  SAY ~[ARAN] Don't you be worryin' naught about that. You take charge o' your destiny, forced or not, an' I will be right here to make sure things work out for th' best.~
+  IF ~~ THEN EXIT
+END
+
+
+/* Aran Romance vs Anomen Romance - Perspectives and Personalities */
+/* ToB New LT 1 after summoning dialogue has run */
+IF  ~Global()~ THEN BEGIN h100
+  SAY ~[ARAN] Mayhap this be a bad time, but you know me... always talkin' out o' turn. I need to ask you, though... ~
+  = ~[ARAN] Any regrets? I mean, so far, you done experienced more trouble than a thousand others what walk Toril.~
+  ++ ~[PC] No regrets. In the end, I will get things accomplished my way.~ + h113
+  ++ ~[PC] What's the matter, Aran? Are you having regrets about a life of neverending adventure?~ + h114
+  ++ ~[PC] Only one regret, Aran... I regret that I have not had enough time to start building a family with you.~ + h101
+  ++ ~[PC] My only regret is you. I should never have brought you here.~ + h106
+  ++ ~[PC] Well, I always wanted to be an exotic Calishite dancer....~ + h107 
+END
+
+IF ~~ h114
+  SAY ~[ARAN] Well, mayhap I do. Accomplishin' great deeds an' becomin' the most known name in this part o' th' world, right up there wi' Elmister an' Blackstaff, that seemed like a great idea at the time, eh?~
+  = ~[ARAN]But we have already done all that, an' received naught but more trouble for th' pain.  Even worse, it be your name alone what gets out there, really.~
+  + ~CheckStatGT(Player1,12,WIS)~ + ~[PC] You do not really want that fame for yourself, Aran. You just said it was thankless pain. Does it really hurt you that I am more famous than you?~ + h110
+  + ~CheckStatGT(Player1,15,INT)~ + ~[PC] So you feel that you are getting less fame than you deserve? Or do you feel I am getting too much credit?~ + h110
+  ++ ~[PC] Fame, fortune, infamy, power, bard's tales and songs... I would give it all up if I could start life over as an exotic Calishite dancer.~ + h107 
+  + ~Alignment(Player1,MASK_GOOD)~ +  ~[PC] What is wrong with me being famous?~ + h103
+  + ~!Alignment(Player1,MASK_GOOD)~ +  ~[PC] What is wrong with me being famous? Or infamous?~ + h104
+  ++ ~[PC] Your name is out there as much as mine.~ + h102
+  ++ ~[PC] I did not ask for this.~ + h102
+  ++ ~[PC] I deserve every bit of fame. You are useful, but secondary.~ + h106
+END
+
+IF ~~ h101
+  SAY ~[ARAN] Chauntea's Golden Arms. A child, hearth an' home, when you keep gettin' dragged into th' worst parts o' th' god's conflicts? That be an invitation to disaster, eh? But it be a nice dream.~
+  IF ~~ THEN GOTO h102
+END
+
+IF ~~ h102
+  SAY ~[ARAN] You always come out on top, but it be a sure bet that your life will never be what folks call 'ordinary'.~
+  ++ ~[PC] Does that bother you?~ + h105
+  ++ ~[PC] I like it on top. Actually, I like it on the bottom, and in several other very fun variants...~ + h114
+  ++ ~[PC] Did you want things to be very different than they are now?~ + h105
+  ++ ~[PC] I was never ordinary. You, on the other hand, are very ordinary. One of you on every streetcorner.~ + h106
+  ++ ~[PC] I never wanted to be ordinary.~ + h113
+END
+
+IF ~~ h103
+  SAY ~[ARAN] Doin' th' right thing by others seems to be more about th' harp edge o' th' sword an' less about talkin'. That do get a bit tirin' to th' spirit, is all.~
+  IF ~~ THEN GOTO h110
+END
+
+IF ~~ h104
+  SAY ~[ARAN] I mean, I know my place, an' you call th' targets. That be th' right o' it.~
+  IF ~~ THEN GOTO h110
+END
+
+IF ~~ h105
+  SAY ~[ARAN] Sometimes. I wish that the world would remake itself, an' leave you a mite bit o' space for yourself. You know, some o' those ordinary dreams we might be makin' together.~
+  IF ~Alignment(Player1,MASK_GOOD)~ THEN GOTO h103
+  IF ~!Alignment(Player1,MASK_GOOD)~ THEN GOTO h104
+END
+
+IF ~~ h106
+  SAY ~[ARAN] Well hells, that be right cold o' you.~
+  ++ ~[PC] Truth is cold. Power is cold. I am cold. I think it is about time you stop talking and warmed me up.~ + h114
+  ++ ~[PC] You never really understand when I am teasing you. Perhaps if I said it with a pouty face, like a Calishite dancer?~ + h107
+  ++ ~[PC] Try again. You can do better with your compliments. How do you feel when I am here with you?~ + h116
+  ++ ~[PC] Truth is cold. Power is cold. Reality is reality, and we can do little to change it.~ + h117
+  ++ ~[PC] I am sorry. You mean well. I am just a little on edge.~ + h110
+END
+
+IF ~~ h107 
+  SAY ~[ARAN] Now that be a mental image I am not likely to get out o' my head any time soon! I can just see it now - I'd be a right smart protector. Only I'd want all th' dancin' to be for me, eh?~
+  ++ ~[PC] Seriously. I would give it all up. I never wanted to be the sharp edge of a blade gods wield about like crazed bandits. I would rather be a Calshite dancer. It amounts to the same thing... being continually used by others for their own pleasure and profit.~ + h111
+  ++ ~[PC] And every dance would be for you. Maybe you would even dance for me. Or we could dance together...~ + h112
+  + ~CheckStatGT(Player1,15,INT)~ + ~[PC] Ahha! I have successfully distracted you from your deep and dreary introspection! I shall follow up with some sharp satire, a witticism or two, followed by an intensive bought of kissing.~ + h108
+  + ~CheckStatGT(Player1,12,WIS)~ + ~[PC] I know you had some important feelings to discuss, Aran, but I need more distraction and less thinking right now. So you have a woman with low willpower in need of a boost of self-esteem, standing right here, loosening her clothing a little...~ + h114
+  ++ ~[PC] I was teasing you. Sometimes you are really slow.~ + h113
+  ++ ~[PC] So tell me why I am worth all this trouble.~ + h116
+END
+
+IF ~~ h108
+  SAY ~[ARAN] Hey, I be serious here! How is a man supposed to be a right good partner when...~
+  ++ ~[PC] I know how you feel, Aran. You don't have to tell me all the time.~ + h109
+  ++ ~[PC] You can be a good partner by assuring me that you will always be there for me.~ + h109
+  ++ ~[PC] I thought we had settled all this long ago. Why does it bother you that you and I have different strengths?~ + h109
+  ++ ~[PC] We have one area where we will always be equal. We both love each other very, very much.~ + h109  
+  ++ ~[PC] You are still talking. You are wasting my time.~ + h111
+END
+
+IF ~~ h109
+  SAY ~[ARAN] I... Melliki's Wild Whiskers. I think I be a bloody idiot. I didn't realize I was bein' such a fool. You be right, <CHARNAME>. An' the only measure o' accomplishment that I need, anyhow, be your comfort.~
+  ++ ~[PC] Hey, is this deep conversation just another way of getting me into your bedroll?~ + h114
+  ++ ~[PC] Blood, conflict, strife, murder, death, the end of the world as we know it, and I feel fine. Come on, it is exciting, isn't it?~ + h111
+  ++ ~[PC] So tell me why I am worth all this trouble.~ + h116
+  ++ ~[PC] I agree that you are an idiot.~ + h110
+  ++ ~[PC] Well then, you had better get me a really nice set of boots. That would make me more comfortable.~ + h118
+END
+
+
+IF ~~ h113
+  SAY ~[ARAN] I don't rightly know whether you be jokin'. Sometimes I feel like th' current sitution be what you love to do.~
+  ++ ~[PC] Joking, of course. Things never work out quite the way I plan.~ + h110
+  ++ ~[PC] Don't be silly. I am strong enough to bend Fate's pathways to my will. I have you, don't I?~ + h115
+  ++ ~[PC] Blood, conflict, strife, murder, death, the end of the world as we know it, and I feel fine. Come on, it is exciting, isn't it?~ + h108
+  ++ ~[PC] None of the above. But the Fates will not be denied. I am just glad that they included you along the way.~ + h115
+  ++ ~[PC] Hey, is this deep conversation just another way of getting me into your bedroll?~ + h114  
+END
+
+IF ~~ h116
+  SAY ~[ARAN] Now, you be a sight for sore eyes, an' just bein' by your side makes me feel like I be ten feet tall.~
+  ++ ~[PC] So I damage your eyesight and make you puffed up to the size of a giant. Great. I suppose I also make you gassy?~ + h111
+  ++ ~[PC] I think you are trying to compliment me... but it is missing the mark.~ + h110
+  ++ ~[PC] I could compliment you as well, but it is silly. We have more important things to be focused on.~ + h111
+  ++ ~[PC] And you make me feel practically invinceable, supported, and loved.~ + h114
+  ++ ~[PC] I know. I have that effect on people.~ + h115
+END
+
+IF ~~ h110
+  SAY ~[ARAN] Look... mayhap my words be all wrong for what I be tryin' to say. I want naught more fame, naught more fortune, as long as I can be wi' you. But...~
+  ++ ~[PC] You don't have to talk to comfort me. You could take action.~ + h114
+  ++ ~[PC] But. There is always a "but" with you. I thought you were completely mine.~ + h115
+  ++ ~[PC] Your words were wrong, and you are making it worse.~ + h111
+  ++ ~[PC] Your words are fine. Your actions are fine. Me, I am not fine.~ + h115
+  ++ ~[PC] Dreary, boring, talk talk talk. We need to find something to kill, and quickly.~ + h114
+END
+
+IF ~~ THEN BEGIN h111
+  SAY ~[ARAN] Aye, now, that be me. Always tryin' to cheer you up a mite bit, an' failin'.~
+  ++ ~[PC] You succeeded. At least you distracted me for a little while, and I could pretend things were normal.~ + h112
+  ++ ~[PC] You are right. Next time, you could try telling me a story, or acting out part of a play, or something.~ + h112
+  ++ ~[PC] Next time you want to distract me, you could try something more physical...~ + h114
+  ++ ~[PC] I am not sure the distraction worked, but I appreciate you trying.~ + h115
+  ++ ~[PC] There are some situations where nothing you can do can provide comfort.~ + h115
+END
+
+IF ~~ h112
+  SAY ~[ARAN]  Well, now, if we be play actin', the least I can do is play along, eh? I done heard o' plays where clothin' be optional, too. Mayhap that would be th' right kind o' distraction to cheer you up.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ h114
+  SAY ~[ARAN] Can we skip right to th' part where you tackle me an' start th' kissin'? When you talk like that to me, it gets me right excited, it does!~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ h117
+  SAY ~[ARAN] I believe some o' that, but not all.~
+  IF ~~ THEN GOTO h115
+END
+
+IF ~~ h115
+  SAY ~[ARAN] I done signed a contract wi' you in my heart a while back, <CHARNAME>. Good times an' bad times, I be your shield. Small comfort, but comfort to you, I hope.~
+  IF ~~ THEN EXIT
+END
+
+IF ~~ h118
+  SAY ~[ARAN] One decent pair o' boots? That could be done. I will keep a sharp eye out, eh?~
+  IF ~~ THEN EXIT
+END
 
 ///////////////// current code to rebuild 
 /* ToB Love Talk #2 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",4) --> Global("c-arantobrom","GLOBAL",5) */
