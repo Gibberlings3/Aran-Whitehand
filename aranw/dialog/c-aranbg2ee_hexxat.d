@@ -32,7 +32,7 @@ EXIT
 
 /* ToB: Aran > Hexxat : Trust */
 CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) 
-InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID) 
+InParty("Hexxat") InMyArea("Hexxat") !StateCheck("Hexxat",CD_STATE_NOTVALID) 
 InParty(Myself) !StateCheck(Myself,CD_STATE_NOTVALID)
 Global("c-arantobhexxat","GLOBAL",0)~ THEN C-ARN25B a5110
 @13359
