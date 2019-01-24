@@ -30,7 +30,7 @@ ALTER_TRANS SALVANAS  // file name
 BEGIN 24 END // state number (can be more than one)
 BEGIN 0 END // transition number (can be more than one)
 BEGIN // list of changes, see below for flags
-  "TRIGGER" ~OR(4) Global("c-aransalvanas","LOCALS",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
+  "TRIGGER" ~OR(4) Global("c-aransalvanas","GLOBAL",1) !InParty("c-aran") !InMyArea("c-aran") StateCheck("c-aran",CD_STATE_NOTVALID)~
 END
 
 EXTEND_BOTTOM SALVANAS 24
