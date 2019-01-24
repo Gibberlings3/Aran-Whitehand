@@ -1068,7 +1068,7 @@ EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initi
 /* Regular Scripts */
 COMPILE EVALUATE_BUFFER ~aranw/baf/c-aran.baf~ /* override script */
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
-COMPILE ~aranw/baf/c-arand.baf~ /* SoA dreamscript */
+COMPILE EVALUATE_BUFFER ~aranw/baf/c-arand.baf~ /* SoA dreamscript */
 COMPILE ~aranw/baf/c-aranx.baf~ /* out-of-party combat script */
 /* Rest-but-don't-trigger-player1D */
 COMPILE ~aranw/baf/c-restco.baf~ /* rest cutscene for camping outside */
