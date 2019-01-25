@@ -4781,7 +4781,7 @@ Yours faithfully, Aran.~
 @4498 = ~[ARAN] (His face turns toward you, then away.)~
 @4499 = ~[ARAN] (His attention settles quickly on a young barmaid. She seems fascinated by his stories, leaning closer to him with each drink she serves, and resting a familiar hand on his muscled arm. Her giggles are strong enough to be heard from your vantage point.)~
 @4500 = ~[ARAN] (His face turns toward yours again, and he lifts his glass in your direction.)~
-@4501 = ~[ARAN] He tosses coins across the table to the server, and leaves.)~
+@4501 = ~[ARAN] (He tosses coins across the table to the server, and leaves.)~
 @4502 = ~[ARAN] Aye, you look a mite worse for th' wear, eh? Here let me buy you a drink.~
 @4503 = ~[PC] No thank you. I prefer women.~
 @4504 = ~[PC] If this is a prelude to getting me to sleep with you...~
@@ -7948,7 +7948,7 @@ Yours faithfully, Aran.~
 @7665 = ~[ARAN] (Roughened skin and strong callouses stand testament to his toils, but his touch is surprisingly light and soft. He looks at you through the basket weave made by your fingers and his, a smile playing about his lips.)~
 @7666 = ~[ARAN] (You sit for a time, his hands warm and rough on yours. Idly, he toys with your fingers, lifting one hand for inspection... and then gently kisses your open palm.)~
 @7667 = ~[ARAN] (His return kisses brush your fingertips, your palms, your inner wrist.)~
-@7668 = ~[ARAN] His slow, lingering kisses touch your upper lip, then your lower, before finally reaching center with gratifying intensity.)~
+@7668 = ~[ARAN] (His slow, lingering kisses touch your upper lip, then your lower, before finally reaching center with gratifying intensity.)~
 @7669 = ~[ARAN] (His lips catch yours with urgent hunger, his hands cupping you close to his smooth chest.)~
 @7670 = ~[ARAN] (His kiss is a thunderclap of strength, followed by a long slow rain of beseeching, intoxicating nibbles.)~
 @7671 = ~[ARAN] His arms surround you, shelter you. His kisses are slow but steady, a long feast of desire.)~
@@ -8190,7 +8190,7 @@ Yours faithfully, Aran.~
 @7907 = ~[PC] (Accept his fingers playing about you, in you, rocking steadily against him.)~
 @7908 = ~[PC] (Spread yourself as wide as you can, opening yourself fully to his advancing fingers.)~
 @7909 = ~[PC] I think you should replace those fingers with something else.~
-@7910 = ~[ARAN] His eyes light with desire, his breath hot on your body as he responds to your pleasure.)~
+@7910 = ~[ARAN] (His eyes light with desire, his breath hot on your body as he responds to your pleasure.)~
 @7911 = ~[ARAN] (There is a moment of hesitation as you study each other's reactions, eyes widening and eyelashes fluttering, breath in random intake, heads thrown back against the feel of him slowly entering you.)~
 @7912 = ~[ARAN] (His wordless groan fills your senses as his hands smooth upward along your backbone, matching his progress within you. They caress and smooth, even as he finds his rhythm, pushing you gently forward again and again.)~
 @7913 = ~[ARAN] (His gentle motion forward pauses as he looks deeply into your eyes... and then he rolls you in his arms, catching both wrists as he towers above you.)~
@@ -13105,7 +13105,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12721 = ~[PC] Just checking.~
 @12722 = ~[ARAN] You haven't told me to bugger off permanent, though you do seem a trifle short wi' me from time to time. Then again, you done got a huge amount to think about lately. I think we be friends. Why do you be askin'?~
 @12723 = ~[ARAN] You told me to not try to confuse things by bein' friends, so we be supposed to keep to th' professional side. You command, I follow. Then you pay me. Why do you be askin'?~
-@12724 = ~[HGWRA01] What of the inevitable pain you must cause to the one you love? This man, the one whom you call @68.~
+@12724 = ~[HGWRA01] What of the inevitable pain you must cause to the one you love? This man, the one whom you call Aran.~
 @12725 = ~[ARAN] What in Cyric's Blighted Breath do this windbag be talkin' about? You be in control o' th' bloodurges...~
 @12726 = ~[C-ARWRTH] Aran? Aye, Whitehand, light a torch or somethin'. It is as dark as hells here...~ [C-ARW001]
 @12727 = ~[ARAN] What in th' nine hells... you be dead an' buried. Someone get me some holy water right quick, eh? You were no good when you was alive, an' I don't rightly want to see you now you be dead.~
