@@ -10825,7 +10825,7 @@ CHAIN C-ARN25J a3210
 == C-ARN25J IF ~Gender(Player1,MALE) !HasItemEquiped("belt05",Player1) !Global("c-apcdeclaresellsword","GLOBAL",0) !Global("c-silencearan","GLOBAL",0)~ THEN @11284
 == C-ARN25J IF ~HasItemEquiped("belt05",Player1)~ THEN @11285
 END
-+ ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + @11286 EXIT
+++ @11286 EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + @11287 EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",0) !HasItemEquiped("belt05",Player1)~ + @11288 DO ~SetGlobal("c-apcdeclaresellsword","GLOBAL",1)~ EXIT
 + ~Global("c-aranrom","GLOBAL",0) Global("c-apcdeclaresellsword","GLOBAL",1) !HasItemEquiped("belt05",Player1)~ + @11289 EXIT
