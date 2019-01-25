@@ -2482,7 +2482,7 @@ END
 /* Friend Talks Setup	*/
 IF
 	Global("c-aranfriendtobstart","GLOBAL",0)	 // Not evaluated true yet
-	Global("c-aranfriendtobstart","GLOBAL",0)	 // Not evaluated true yet
+	Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
@@ -2494,7 +2494,7 @@ END
 /* Friend Talks Primed	*/
 IF
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
-	Global("c-aranfriendtobstart","GLOBAL",1)	 // Not evaluated true yet
+	Global("c-aranfriendtobstart","GLOBAL",1)	 // Set to 1
 	Global("c-aranfriendtob","GLOBAL",0)	 // Not evaluated true yet
 	InParty(Myself)						// Aran is here
 	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
@@ -2577,6 +2577,21 @@ IF
 THEN
 	RESPONSE #100								// 100% of the time
 	SetGlobal("c-aranmatch","GLOBAL",1)	// Matched
+	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%)	// Minimum Real Time until first LT
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%) // Tee up flirt timer
+END
+
+/* Love Talk Initial Check Followup (and for games where c-aranmatch persists)*/
+IF	
+	Global("c-aranmatch","GLOBAL",1)		 // Not evaluated
+	Global("c-arantobrom","GLOBAL",0)		// no other LTs have played
+	InParty(Myself)						// Aran is here
+	!StateCheck(Myself,CD_STATE_NOTVALID)	// Aran is ok
+	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
+	Gender(Player1,FEMALE)				 // Player1 is female
+	!HasItemEquiped("belt05",Player1)		 // Girdle of sex change not on Player1
+THEN
+	RESPONSE #100								// 100% of the time
 	SetGlobal("c-arantobrom","GLOBAL",1)		 //	Tee up ToB_LT_1
 	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%)	// Minimum Real Time until first LT
 	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%) // Tee up flirt timer
@@ -2588,7 +2603,7 @@ END
 /* Aran's Romance LoveTalks Aim, c-arantobrom, %ARAN_LTT% */
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
-	GlobalLT("c-arantobrom","GLOBAL",6)	// shuts down sequence when finished
+	GlobalLT("c-arantobrom","GLOBAL",7)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranromtimer","GLOBAL")	// Timer Expired
 	!HasItemEquiped("belt05",Player1) // Not using Girdle of sex change
 	OR(3)
