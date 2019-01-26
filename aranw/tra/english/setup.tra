@@ -1,4 +1,4 @@
-@30001    = ~RC_1 01.24.2019~ 
+@30001    = ~RC_1 01.26.2019~ 
 @30002    = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, BGII:Enhanced Edition, or Enhanced Edition Trilogy. Stopping installation. * * *~
 @30003    = ~WeiDU says that this game has BGII - SoA content.~
 @30004    = ~WeiDU says that this game has BGII - ToB content.~
@@ -6,13 +6,11 @@
 @30006    = ~WeiDU says that this game has BGII:EE content.~
 @30007    = ~The version of Aran Whitehand being installed is:~
 @30008    = ~Weidu defined variables on this install:~
-@30009    = ~* * * * *~
+@30009    = ~* * * * * * * * * * * * * * * *~
 @30010    = ~Install Aran Whitehand for SoA and ToB~
 @30011    = ~Install Audio Files~
 @30012    = ~Install Soundset, Voiced lines, and Music 
-NOTE: no voiced lines yet. I suggest using 2, 3, or 4.
-This forced subcomponent is included to keep the 
-component numbers stable when voicing is added.~
+NOTE: no voiced lines yet. I suggest using 2, 3, or 4.~
 @30013    = ~Install Only Soundset and Music~
 @30014    = ~Install Only Soundset~
 @30015    = ~Do not install any audio~
@@ -27,7 +25,7 @@ component numbers stable when voicing is added.~
 @30024    = ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
 @30025    = ~Choose Aran's Portrait~
 @30026    = ~Installing Aran's default settings (Soldier).~
-@30027    = ~BGII:EE detected. Managing journal entries.~
+@30027    = ~BGII:EE or EET detected. Managing journal entries.~
 @30028    = ~BGII:EE content is being installed.~
 @30029    = ~BGII:EE portraits are being installed.~
 @30030    = ~BGII portraits are being installed.~
@@ -42,11 +40,8 @@ component numbers stable when voicing is added.~
 @30039    = ~Installing SoA scripts...~
 @30040    = ~Installing ToB scripts...~
 @30041    = ~ToB file patched to match.~
-@30042    = ~Set Talk and Flirt Timers
-	[1] Install Default Timers
-	[2] Customize Timers
-Please type 1 or 2 and press enter.~
-@30043    = ~Speed: minimum 1 hour real time between dialogues (Default, recommended)~
+@30042    = ~Customize Talk And Flirt Timers~
+@30043    = ~Content Speed: minimum 1 hour real time between dialogues (Default, recommended)~
 @30044    = ~Initial Lovetalk offset by 40 minutes~
 @30045    = ~Initial NPC-Initiated Flirt offset by 20 minutes~
 @30046    = ~So if you are in a romance with him 
@@ -69,20 +64,9 @@ especially when you run out of timered content!~
 	[4] approximately 45 minutes real time minimum between friendship dialogues
 	[5] approximately 1 hour 30 minutes real time minimum friendship between dialogues
 	[6] approximately 2 hours real time minimum between friendship dialogues~
-@30049   = ~Please type 1, 2, 3, 4, 5 or 6 and press enter.~
-@30050   = ~So if you are in a romance with him 
-and never stop the romance, 
-after the lovetalks start (after friendship talk 3),
-the timer sequence will start 
-hourly FriendTalk, 
-NPC Flirt 20 minutes later, 
-and RomanceTalk 20 minutes after that, 
-then 20 minutes later the next FriendTalk fires. 
-Please note that the timers are not exact, and 
-variations within the game may mean 
-bursts of activity followed by long waits...
-especially when you run out of timered content!~
-@30051    = ~Speed: minimum 15 minutes real time between dialogues~
+@30049   = ~Customize Aran Whitehand: Timers~
+@30050   = ~Customize Aran Whitehand: Portraits~
+@30051    = ~Content Speed: minimum 15 minutes real time between dialogues~
 @30052    = ~Initial Lovetalk offset by 10 minutes~
 @30053    = ~Initial NPC-Initiated Flirt offset by 5 minutes~
 @30054    = ~So if you are in a romance with him 
@@ -97,7 +81,7 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30055    = ~Speed: minimum 30 minutes real time between dialogues~
+@30055    = ~Content Speed: minimum 30 minutes real time between dialogues~
 @30056    = ~Initial Lovetalk offset by 20 minutes~
 @30057    = ~Initial NPC-Initiated Flirt offset by 10 minutes~
 @30058    = ~So if you are in a romance with him 
@@ -112,7 +96,7 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30059    = ~Speed: minimum 45 minutes real time between dialogues~
+@30059    = ~Content Speed: minimum 45 minutes real time between dialogues~
 @30060    = ~Initial Lovetalk offset by 30 minutes~
 @30061    = ~Initial NPC-Initiated Flirt offset by 15 minutes~
 @30062    = ~So if you are in a romance with him and never stop the romance, 
@@ -126,7 +110,7 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30063    = ~Speed: minimum 1 hour 30 minutes real time between dialogues~
+@30063    = ~Content Speed: minimum 1 hour 30 minutes real time between dialogues~
 @30064    = ~Initial Lovetalk offset by 60 minutes~
 @30065    = ~Initial NPC-Initiated Flirt offset by 30 minutes~
 @30066    = ~So if you are in a romance with him 
@@ -141,7 +125,7 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30067    = ~Speed: minimum 2 hours real time between dialogues~
+@30067    = ~Content Speed: minimum 2 hours real time between dialogues~
 @30068    = ~Initial Lovetalk offset by 80 minutes~
 @30069    = ~Initial NPC-Initiated Flirt offset by 40 minutes~
 @30070    = ~So if you are in a romance with him 
@@ -258,55 +242,39 @@ Please choose from the following starting weapon choices:
 Please select 1, 2, 3, 4, or 5 and press enter.~
 @30105    = ~There are many alternate portraits from which to choose. 
 You may want to consult the ReadMe before choosing.~
-@30106    = ~Please enter your choice and press return:
-[1] Keep Nix's "Default" portrait (fair hair, fair complexion)
-[2] Peachplum's "Latest" (dark brown hair, fair complexion)
-[3] berelinde's "Boromir" (dark brown hair, fair complexion)
-[4] berelinde's "Dragon Age" (dark hairr, dark complexion)
-[5] berelinde's "Scruffy" (light brown hair, fair complexion)
-[6] McMazey's "Don Pedro" (dark hair, dark complexion)
-[7] McMazey's "Fantasy Photo" (long brown hair, light complexion)
-[8] McMazey's "Bearded" (dark hair, light complexion)
-[9] McMazey's "No Beard" (dark hair, light complexion)
-[10] McMazey's "Horatio Photo" (dark hair, light complexion)
-[11] Peachplums' "Young Fighter" (red hair, fair complexion)
-[12] piperb's "Stalwort Bearded Young" (light brown hair, fair complexion)
-[13] piperb's "Mature Bearded" (dark brown hair, medium complexion)
-[14] piperb's "Stalwort Young" (light brown hair, fair complexion) ~
-@30107    = ~Nix's "Default" portrait (fair hair, fair complexion) installed.~
-@30108    = ~Pechplum's "Latest" portrait (fair hair, fair complexion) installed.~
-@30109    = ~Berelinde's "Boromir" (dark brown hair, fair complexion) installed.~
-@30110    = ~Berelinde's "Dragon Age" (dark hair, dark complexion) installed.~
-@30111    = ~Berelinde's "Scruffy"(light brown hair, fair complexion) installed.~
-@30112    = ~Macmazey's "Don Pedro" (dark hair, dark complexion) installed.~
-@30113    = ~Macmazey's "Fantasy Photo" (long brown hair, light complexion) installed.~
-@30114    = ~Macmazey's	"Bearded" (dark hair, light complexion) installed.~
-@30115    = ~Macmazey's "No Beard" (dark hair, light complexion) installed.~
-@30116    = ~Macmazey's "Horatio Photo" (dark hair, light complexion)installed.~
-@30117    = ~Peachplum's "Young Fighter" (red hair, fair comlpexion) installed.~
-@30118    = ~piper's "Stalwort Bearded Young" (light brown hair, fair complexion) installed.~
-@30119    = ~piper's "Mature Bearded" (dark brown hair, medium complexion) installed.~
-@30120    = ~piper's "Stalwort Young" (light brown hair, fair complexion) installed.~
+@30106    = ~Default timers chosen - no change to files necessary.~
+@30107    = ~Nix's "Default" portrait (fair hair, fair complexion)~
+@30108    = ~Peachplum's "Latest" portrait (fair hair, fair complexion)~
+@30109    = ~Berelinde's "Boromir" (dark brown hair, fair complexion)~
+@30110    = ~Berelinde's "Dragon Age" (dark hair, dark complexion)~
+@30111    = ~Berelinde's "Scruffy"(light brown hair, fair complexion)~
+@30112    = ~Macmazey's "Don Pedro" (dark hair, dark complexion)~
+@30113    = ~Macmazey's "Fantasy Photo" (long brown hair, light complexion)~
+@30114    = ~Macmazey's	"Bearded" (dark hair, light complexion)~
+@30115    = ~Macmazey's "No Beard" (dark hair, light complexion)~
+@30116    = ~Macmazey's "Horatio Photo" (dark hair, light complexion)~
+@30117    = ~Peachplum's "Young Fighter" (red hair, fair comlpexion)~
+@30118    = ~piper's "Stalwort Bearded Young" (light brown hair, fair complexion)~
+@30119    = ~piper's "Mature Bearded" (dark brown hair, medium complexion)~
+@30120    = ~piper's "Stalwort Young" (light brown hair, fair complexion)~
 @30121    = ~Language = %LANGUAGE% ~
 @30122    = ~Architecture = %WEIDU_ARCH% ~
 @30123    = ~Operating System = %WEIDU_OS% ~
 @30124    = ~User Directory = %USER_DIRECTORY% ~
 @30125    = ~Save Game Single Player Directory = %SAVE_DIRECTORY% ~
 @30126    = ~Save Game Multi Player Directory = %MPSAVE_DIRECTORY% ~
-@30127     = ~Running .exe = %WEIDU_EXECUTABLE%~
+@30127 	  = ~Running .exe = %WEIDU_EXECUTABLE%~
 @30128    = ~Mod name (as seen by WeiDU) = %TP2_FILE_NAME%~
 @30129    = ~Installation type is: %INTERACTIVE% ( 1 = install is being done interactively (IE you launched setup-mymod.exe and you’re installing mymod), or 0 = the install is being done non-interactively (IE you launched setup-mymod.exe and now weidu is reinstalling othermod due to the domino uninstall and reinstall). 
 ~
-@30130    = ~Author: %TP2_AUTHOR%~
-@30131    = ~IF YOUR .DEBUG IS MISSING INFORMATION
-due to batch installs or changing components,
-a custom debug file is in the aranw mod folder
-aranw/aranw_0_debugger.log
-aranw/aranw_1234_debugger.log
-aranw/aranw_56789_debugger.log
-and optionally aranw/aranw_opt10_debugger.log
+@30130    = ~Author = %TP2_AUTHOR%~
+@30131    = ~There is an easier to read custom debug file in the override folder:
+override/c-arandebugger01.log
 ~
 @30132    = ~WeiDU says that this game is the Enhanced Edition Trilogy.~
 @30133    = ~Installing Baldurs Gate II: Enhanced Edition scripts.~
-
-
+@30134    = ~* * * Aran Whitehand - Begin Log * * *~
+@30135    = ~Portrait installed on c-aran7.cre (SoA)~
+@30136    = ~Portrait installed on c-aran13.cre (ToB)~
+@30137    = ~Customize Portraits~
+@30138    = ~Mod folder as seen by WeiDU - %MOD_FOLDER%~

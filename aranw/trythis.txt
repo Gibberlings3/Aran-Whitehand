@@ -1,0 +1,55 @@
+
+
+C-ARAN.baf
+ 	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%) // Minimum Real Time until first LT 
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%)  // Tee up flirt timer 
+C-ARN25.baf
+	RealSetGlobalTimer("c-aranromtimer","GLOBAL",%choseninitialrom%)	// Minimum Real Time until first LT
+	RealSetGlobalTimer("c-aranflirttimer","GLOBAL",%choseninitialflirt%) // Tee up flirt timer	
+	
+	
+// ARAN_FTT c-aranfriendtimer
+// ARAN_LTT RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%) c-arandialog.d 
+// ARAN_FLIRT c-aranflirttimer
+// choseninitialrom 
+// choseninitialflirt
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY c-aran_timers BEGIN
+  C-ARANJ  => c-aranfriendtimer
+  C-ARANJ  =>
+  C-ARN25J  =>
+  Anomen  => AnomenRomance
+  Dorn    => DornLovetalksTimer
+  Dorn25  => DornToBLovetalksTimer
+  Hexxa25 => HexxatToBLovetalksTimer
+  Hexxat  => HexxatLovetalksTimer
+  Jahe25  => JaheiraRomance
+  Jaheira => JaheiraRomance
+  Neer25  => NeeraToBLovetalksTimer
+  Neera   => NeeraLovetalksTimer
+  Rasaad  => RasaadLovetalksTimer
+  Vico25  => ExpViconiaRomance
+  Viconia => ViconiaRomance
+  rasa25  => RasaadToBLovetalksTimer
+END
+
+ACTION_PHP_EACH cd_romances_timers AS script => variable BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%script%.bcs~ THEN BEGIN
+  
+    COPY_EXISTING ~%script%.bcs~ ~override~
+	  DECOMPILE_AND_PATCH BEGIN
+	    REPLACE_EVALUATE ~RealSetGlobalTimer("%variable%","GLOBAL",\([^)]+\))~ BEGIN
+          PATCH_IF IS_AN_INT MATCH1 BEGIN
+		    SET time = MATCH1
+		  END ELSE BEGIN
+            SET time = IDS_OF_SYMBOL (~GTIMES~ ~%MATCH1%~) // should convert stuff like EIGHT_HOURS to numeric value
+          END
+          SET time = ((time * romance_speed_factor) / 100) 
+        END ~RealSetGlobalTimer("%variable%","GLOBAL",%time%)~	
+	  END
+	  BUT_ONLY
+	  
+  END
+
+END  
