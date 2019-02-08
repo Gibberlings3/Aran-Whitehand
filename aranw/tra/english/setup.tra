@@ -1,4 +1,4 @@
-@30001    = ~RC_1 01.26.2019~ 
+@30001    = ~RC_Amellg 02.08.2019~ 
 @30002    = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, BGII:Enhanced Edition, or Enhanced Edition Trilogy. Stopping installation. * * *~
 @30003    = ~WeiDU says that this game has BGII - SoA content.~
 @30004    = ~WeiDU says that this game has BGII - ToB content.~
@@ -8,20 +8,19 @@
 @30008    = ~Weidu defined variables on this install:~
 @30009    = ~* * * * * * * * * * * * * * * *~
 @30010    = ~Install Aran Whitehand for SoA and ToB~
-@30011    = ~Install Audio Files~
-@30012    = ~Install Soundset, Voiced lines, and Music 
-NOTE: no voiced lines yet. I suggest using 2, 3, or 4.~
-@30013    = ~Install Only Soundset and Music~
-@30014    = ~Install Only Soundset~
-@30015    = ~Do not install any audio~
+@30011    = ~Change Audio Files~
+@30012    = ~Change Aran Whitehand's Class ~
+@30013    = ~Replace Guitar Music with Midaevil Music~
+@30014    = ~Replace Guitar Music with Brass Ensemble Music~
+@30015    = ~Customize Aran Whitehand: Music~
 @30016    = ~No soundset, music, or voiced lines files are installed.~
 @30017    = ~Aran Whitehand must be installed for this to work.~
-@30018    = ~Choose Which Aran Configuration to install~
-@30019    = ~Aran Whitehand, default configuration (Soldier)~
-@30020    = ~Aran Whitehand, Mage Dual-Class stats, choose configuration (Tinker)~
-@30021    = ~Aran Whitehand, Cleric Dual-Class stats, choose configuration (Tailor)~
-@30022    = ~Aran Whitehand, Fighter stats, choose configuration (Soldier)~
-@30023    = ~Aran Whitehand, Thief Dual-Class stats, choose configuration (Spy)~
+@30018    = ~Customize Aran Whitehand: Class~
+@30019    = ~Aran Whitehand, Fighter Single Class Stats, default (Soldier)~
+@30020    = ~Aran Whitehand, Mage Dual-Class stats (Tinker)~
+@30021    = ~Aran Whitehand, Cleric Dual-Class stats (Tailor)~
+@30022    = ~You already have Aran's Fighter Single Class .cre installed. No action taken.~ 
+@30023    = ~Aran Whitehand, Thief Dual-Class stats, (Spy)~
 @30024    = ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
 @30025    = ~Choose Aran's Portrait~
 @30026    = ~Installing Aran's default settings (Soldier).~
@@ -146,7 +145,7 @@ especially when you run out of timered content!~
 	[3] Vox Vulgaris (midaevil wih a twist)
 Please type 1, 2, or 3, and press enter.~
 @30072    = ~Default unaccompanied guitar soundtrack chosen~
-@30073    = ~Vox Vulgaris soundtrack chosen~
+@30073    = ~Vox Vulgaris (midaevil wih a twist) soundtrack chosen~
 @30074    = ~Brass soundtrack chosen~
 @30075    = ~Aran is down-and-out poor~
 @30076    = ~Aran is of average wealth~

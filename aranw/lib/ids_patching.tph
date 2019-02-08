@@ -1,7 +1,3 @@
-/* Repair shout.ids if necessary */   
-COPY_EXISTING ~action.ids~ ~override~
-  REPLACE_TEXTUALLY ~^106 Shout(.*$~ ~106 Shout(I:ID*SHOUTIDS)~
-BUT_ONLY_IF_IT_CHANGES
 
 /* STATE.IDS additions (mirrors G3 BG2 Fixpack, SCSII and IESDP code), following Wisp/AvengerRR's example */
 APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~ UNLESS ~CD_STATE_NOTVALID~                   // CamDawg's custom IsValidForPartyDialogue() state
@@ -20,19 +16,6 @@ COPY_EXISTING ~trigger.ids~ ~override~
   REPLACE_TEXTUALLY ~\bHeard(O:Object\*,I:ID\*)~
           ~Heard(O:Object*,I:ID*SHOUTIDS)~
   BUT_ONLY_IF_IT_CHANGES
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~shoutids.ids~ THEN BEGIN
-
-<<<<<<<<shoutids.ids
-90
-123 HEALME
-124 ASSIST
-125 ALERT
-126 SOLAR_STANCE
->>>>>>>>
-COPY ~shoutids.ids~ ~override~
-
-END
 
 /* kit.ids repairs, in case Fixpack not installed */
 COPY_EXISTING ~kit.ids~ ~override~

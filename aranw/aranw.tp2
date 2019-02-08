@@ -16,9 +16,12 @@ README ~aranw/docs/readme-aranw-%LANGUAGE%.html~ ~aranw/docs/readme-aranw.html~
 
 ALWAYS 
 	INCLUDE ~aranw/lib/regexp.tph~ /* extra regexp vars */
-	INCLUDE ~aranw/lib/aranw_macros.tph~ /* define all macros */
-	/* .ids patching to make sure everything is in place */
     INCLUDE ~aranw/lib/ids_patching.tph~ /* checks for expected .ids resources */
+	INCLUDE ~aranw/lib/aranw_macros.tph~ /* define all in-project macros */
+	
+	ACTION_IF GAME_IS ~soa tob bgt~ BEGIN
+		INCLUDE ~aranw/lib/tob2soa.tph~ /* checks for expected .ids resources */
+	END
 	
  	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter THEN BEGIN  /* check to make this happen only once per install */
 		ACTION_IF GAME_IS ~eet~ BEGIN
@@ -923,7 +926,7 @@ COPY ~aranw/media/stores/c-awtav2.sto~ ~override~
 		ADD_STORE_ITEM ~POTN42~ #1 #0 #0 ~IDENTIFIED~ #5   /* Potion of Regeneration */
 	END
 PRINT @30009
-	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /* resources : area creation */
 PRINT @30037
@@ -989,10 +992,9 @@ COPY_EXISTING ar0700.are override
 	END
 	ADD_MAP_NOTE #2254 #1342 ~blue~ @13144
 PRINT @30009
-	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-/* install scripts */
-PRINT @30039
-/* underdark trigger */
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+/* Install all the scripts : */
+/* Underdark trigger Scripts */
 EXTEND_BOTTOM ~ar2102.bcs~ ~aranw\baf\c-aranunderdarkstart.baf~ /* sets up filter indicating drow avatar and spelunking */
 EXTEND_BOTTOM ~ar2500.bcs~ ~aranw\baf\c-aranunderdarkend.baf~	/* shuts down underdark filter */
 /* Vampire Scripty Stuff */
@@ -1003,7 +1005,7 @@ EXTEND_BOTTOM ~cleanse.bcs~ ~aranw\baf\c-aranvampirecleanse.baf~ /* restoring ar
 COMPILE ~aranw/baf/c-abvamp.baf~ /* aran vampired cutscene */
 COMPILE ~aranw/baf/c-vampai.baf~ /* vampire ai script for c-arnvmp */
 COMPILE ~aranw/baf/c-arnvmp.baf~ /* vampire override script for c-arnvmp */
-/* Night Talks */
+/* Night Talks Scripts */
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-nighttalk.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 EXTEND_TOP ~player1d.bcs~ ~aranw\baf\c-goaded.baf~ /* adds "goaded" dialog initiation for dreamscripts */
 /* Regular Scripts */
@@ -1014,16 +1016,15 @@ COMPILE ~aranw/baf/c-aranx.baf~ /* out-of-party combat script */
 /* Rest-but-don't-trigger-player1D */
 COMPILE ~aranw/baf/c-restco.baf~ /* rest cutscene for camping outside */
 COMPILE ~aranw/baf/c-restin.baf~ /* rest cutscene for inn */
-COMPILE ~aranw/baf/c-restdg.baf~ /* rest cutscene for dungeon */
-COMPILE ~aranw/baf/c-restpp.baf~ /* rest cutscene for pocket plane */
-COMPILE ~aranw/baf/c-arnblk.baf~ /* rest cutscene for unknown or simple: Fade To Black */
+COMPILE ~aranw/baf/c-restdg.baf~ /* rest cutscene for dungeon - CURRENTLY UNUSED IN PROJECT 02.08.2019 */
+COMPILE ~aranw/baf/c-restpp.baf~ /* rest cutscene for pocket plane - CURRENTLY UNUSED IN PROJECT 02.08.2019 */
+COMPILE ~aranw/baf/c-arnblk.baf~ /* rest cutscene for unknown or simple: Fade To Black - CURRENTLY UNUSED IN PROJECT 02.08.2019 */
 /* NPC Scripts */
 COMPILE ~aranw/baf/c-malcer.baf~ /* override script for Malcer */
 COMPILE ~aranw/baf/c-oskut.baf~ /* override script for Oskut */
 COMPILE ~aranw/baf/c-taman.baf~ /* override script for Taman */
-
 PRINT @30009
-	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN /* ToB scripts */
 	PRINT @30040
@@ -1035,9 +1036,10 @@ ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN /* ToB scripts */
 	EXTEND_TOP ~cut218g.bcs~ ~aranw/baf/c-wraithend_cut218g.baf~ // get rid of wraith
 	EXTEND_TOP ~ar6200.bcs~ ~aranw/baf/c-ar6200_epilog_ext.baf~ // epilogues triggered
 	PRINT @30009
-		APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 END
 
+/* Gavin Gift Addition if Gavin is installed before AranW */
 ACTION_IF MOD_IS_INSTALLED ~GAVIN_BG2/SETUP-GAVIN_BG2.TP2~ ~0~ THEN BEGIN
 	COMPILE EVALUATE_BUFFER ~aranw/dialog/c-aran_berelindegift.d~   
       USING ~aranw/tra/%LANGUAGE%/%tra_version%.tra~
@@ -1057,38 +1059,26 @@ STATISTICS:
 
 Weight: 2
 ~
+	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 END
 
+/* Put Sounds Into Game - note - .WAVC to make it easy to copy into all forms of the game without additional manipulation */
 
-/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-PRINT @30103
-PRINT @30131
-PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+/* Make sure we have a blank music file in the install */
+ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
+	COPY ~aranw/media/Blank.mus~ ~music~
+END
+/* replace this for .acm music later - but for now,	make sure the blank sound reference works */
+COPY_EXISTING ~songlist.2da~ ~override~
+	SET_2DA_ENTRY 2 1 2 ~Blank~
+	SET_2DA_ENTRY 2 2 2 ~Blank.mus~
+BUT_ONLY
 
-/* Install sounds via FORCED_SUBCOMPONENT */
-
-BEGIN @30012 //component_1_
-	FORCED_SUBCOMPONENT @30011
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-
-	/* Make sure we have a blank music file in the install */
-    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
-		COPY ~aranw/media/Blank.mus~ ~music~
-	END
-	// replace this for .acm music later - but for now,	make sure the blank sound reference works
-	COPY_EXISTING ~songlist.2da~ ~override~
-		SET_2DA_ENTRY 2 1 2 ~Blank~
-		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
-	BUT_ONLY
-
-	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
-
-	// set up what sounds need to be installed for this component to be covered
-	ACTION_CLEAR_ARRAY	~sounds~
-	ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+OUTER_SET soundchoice_aw = 1 //J Sayles
+LAUNCH_ACTION_MACRO ~chooseasoundtrack~
+/* set up what sounds need to be installed for this component to be covered */
+ACTION_CLEAR_ARRAY	~sounds~
+ACTION_DEFINE_ARRAY ~sounds~ BEGIN
 		~c-aws001~
 		~c-aws002~
 		~c-aws003~
@@ -1140,226 +1130,27 @@ BEGIN @30012 //component_1_
 		~c-arnltl~
 		~c-arandf~
 		~c-arands~
-	END
-	// look for the resulting .wavc files and copy them into the game 
-	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
+END
+/* look for the resulting .wavc files and copy them into the game */
+ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+	ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
 			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
-		END
 	END
-    /* specific info block */
-    /* general info block */
-	APPEND ~c-arandebugger01.log~ ~The .tra file says that the version of Aran Whitehand being installed is %aranw_version%~
-    APPEND ~c-arandebugger01.log~ ~WeiDU thinks that this is Component %COMPONENT_NUMBER%~
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30013 //component_2_
-	FORCED_SUBCOMPONENT @30011
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	/* Make sure we have a blank music file in the install */
-    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
-		COPY ~aranw/media/Blank.mus~ ~music~
-	END
-	// replace this for .acm music later - but for now,	make sure the blank sound reference works
-	COPY_EXISTING ~songlist.2da~ ~override~
-		SET_2DA_ENTRY 2 1 2 ~Blank~
-		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
-	BUT_ONLY
+END
 
-	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
-
-	/* set up what sounds need to be installed for this component to be covered */
-	ACTION_CLEAR_ARRAY	~sounds~
-	ACTION_DEFINE_ARRAY ~sounds~ BEGIN
-		~c-aws001~
-		~c-aws002~
-		~c-aws003~
-		~c-aws004~
-		~c-aws005~
-		~c-aws006~
-		~c-aws007~
-		~c-aws008~
-		~c-aws009~
-		~c-aws010~
-		~c-aws011~
-		~c-aws012~
-		~c-aws013~
-		~c-aws014~
-		~c-aws015~
-		~c-aws016~
-		~c-aws017~
-		~c-aws018~
-		~c-aws019~
-		~c-aws020~
-		~c-aws021~
-		~c-aws022~
-		~c-aws023~
-		~c-aws024~
-		~c-aws025~
-		~c-aws026~
-		~c-aws027~
-		~c-aws028~
-		~c-aws029~
-		~c-aws030~
-		~c-aws031~
-		~c-aws032~
-		~c-aws033~
-		~c-aws034~
-		~c-aws035~
-		~c-aws036~
-		~c-aws037~
-		~c-aws038~
-		~c-aws039~
-		~c-aws040~
-		~c-aws041~
-		~c-aws042~
-		~c-aws043~
-		~c-aws044~
-		~c-aws045~
-		~c-arnfth~
-		~c-arnfti~
-		~c-arnltl~
-		~c-arandf~
-		~c-arands~
-	END
-	/* look for the resulting .wavc files and copy them into the game */
-	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
-			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
-		END
-	END
-
-    /* specific info block */
-	APPEND ~c-arandebugger01.log~ ~Component 2 installed. Aran's .cre soundset and Music in .wavc were placed into the game.~
-    /* general info block */
-    /* specific info block */
-    /* general info block */
-	APPEND ~c-arandebugger01.log~ ~The .tra file says that the version of Aran Whitehand being installed is %aranw_version%~
-    APPEND ~c-arandebugger01.log~ ~WeiDU thinks that this is Component %COMPONENT_NUMBER%~
-
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30014 //component_3_
-	FORCED_SUBCOMPONENT @30011
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	
-	/* Make sure we have a blank music file in the install */
-    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
-		COPY ~aranw/media/Blank.mus~ ~music~
-	END
-	// replace this for .acm music later - but for now,	make sure the blank sound reference works
-	COPY_EXISTING ~songlist.2da~ ~override~
-		SET_2DA_ENTRY 2 1 2 ~Blank~
-		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
-	BUT_ONLY
-
-	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
-
-	/* set up what sounds need to be installed for this component to be covered */
-	ACTION_CLEAR_ARRAY	~sounds~
-	ACTION_DEFINE_ARRAY ~sounds~ BEGIN
-		~c-aws001~
-		~c-aws002~
-		~c-aws003~
-		~c-aws004~
-		~c-aws005~
-		~c-aws006~
-		~c-aws007~
-		~c-aws008~
-		~c-aws009~
-		~c-aws010~
-		~c-aws011~
-		~c-aws012~
-		~c-aws013~
-		~c-aws014~
-		~c-aws015~
-		~c-aws016~
-		~c-aws017~
-		~c-aws018~
-		~c-aws019~
-		~c-aws020~
-		~c-aws021~
-		~c-aws022~
-		~c-aws023~
-		~c-aws024~
-		~c-aws025~
-		~c-aws026~
-		~c-aws027~
-		~c-aws028~
-		~c-aws029~
-		~c-aws030~
-		~c-aws031~
-		~c-aws032~
-		~c-aws033~
-		~c-aws034~
-		~c-aws035~
-		~c-aws036~
-		~c-aws037~
-		~c-aws038~
-		~c-aws039~
-		~c-aws040~
-		~c-aws041~
-		~c-aws042~
-		~c-aws043~
-		~c-aws044~
-		~c-aws045~
-	END
-	/* look for the resulting .wavc files and copy them into the game */
-	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
-		ACTION_IF (NOT FILE_EXISTS_IN_GAME ~%sound%.wav~) BEGIN
-			COPY ~aranw/media/wavc/%sound%.wav~ ~override~
-		END
-	END
-	
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30015 //component_4_
-	FORCED_SUBCOMPONENT @30011
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-
-	PRINT @30016
-	/* Make sure we have a blank music file in the install */
-    ACTION_IF (NOT FILE_EXISTS_IN_GAME ~Blank.mus~) BEGIN
-		COPY ~aranw/media/Blank.mus~ ~music~
-	END
-	// replace this for .acm music later - but for now,	make sure the blank sound reference works
-	COPY_EXISTING ~songlist.2da~ ~override~
-		SET_2DA_ENTRY 2 1 2 ~Blank~
-		SET_2DA_ENTRY 2 2 2 ~Blank.mus~
-	BUT_ONLY
-
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 /* Aran's base .cre setup and configuration */
-
-BEGIN @30019 //
-	FORCED_SUBCOMPONENT @30018
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	 // no problem - we want to overwrite on changing any components!
-
+PRINT @30019  /* ~Aran Whitehand, Fighter Single Class Stats, default (Soldier)~ */
+	OUTER_SPRINT aranw_crechoice @30019
+	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
 	/* register choice */
-	OUTER_SET class_choice = 5
-	/* Ask for choices and patch the .cre */
+	OUTER_SET ~class_choice_aw~ = 3
+	/* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
+	OUTER_SET ~aran_wealth~ = 2 // experienced mercenary with some resources
+	OUTER_SET ~aran_armor_choice~ = 4 // splint
+	OUTER_SET ~aran_weapon_choices~ = 5 // weapon set 8, Bastard Sword, Shield, Long Bow
+	/* Patch the proper base .cre accordingly and copy it into the game */
 	LAUNCH_ACTION_MACRO ~customized_cre_choice~
 	/* create the ToB version if ToB is installed */
 	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
@@ -1380,120 +1171,6 @@ BEGIN @30019 //
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
-BEGIN @30020
-	FORCED_SUBCOMPONENT @30018 
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-
-	/* register choice */
-	OUTER_SET class_choice = 1
-	/* Ask for choices and patch the .cre */
-	LAUNCH_ACTION_MACRO ~customized_cre_choice~
-	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
-		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
-			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
-			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
-			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
-		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
-	END ELSE BEGIN
-		PRINT @30024
-		APPEND ~c-arandebugger01.log~ ~No version of ToB content detected via GAME_IS; .cre not patched~
-	END
-	
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30021 //component_7_
-	FORCED_SUBCOMPONENT @30018
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	
-	/* register choice */
-	OUTER_SET class_choice = 2
-	/* Ask for choices and patch the .cre */
-	LAUNCH_ACTION_MACRO ~customized_cre_choice~
-	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
-		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
-			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
-			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
-			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
-		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
-	END ELSE BEGIN
-		PRINT @30024 /* ~No version of ToB content detected via GAME_IS; .cre not patched~ */
-		OUTER_SPRINT aranw_repcrec @30024
-		APPEND ~c-arandebugger01.log~ ~%aranw_repcrec%~
-	END
-
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30022 //component_8_
-	FORCED_SUBCOMPONENT @30018
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	
-	/* register choice */
-	OUTER_SET class_choice = 3
-	/* Ask for choices and patch the .cre */
-	LAUNCH_ACTION_MACRO ~customized_cre_choice~
-	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
-		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
-			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
-			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
-			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
-		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
-	END ELSE BEGIN
-		PRINT @30024
-		APPEND ~c-arandebugger01.log~ ~No version of ToB content detected via GAME_IS; .cre not patched~
-	END
-
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-BEGIN @30023 //component_9_
-	FORCED_SUBCOMPONENT @30018
-	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
-	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
-	
-	/* register choice */
-	OUTER_SET class_choice = 4
-	/* Ask for choices and patch the .cre */
-	LAUNCH_ACTION_MACRO ~customized_cre_choice~
-	/* create the ToB version if ToB is installed */
-	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
-		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
-			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
-			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
-			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
-			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
-		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
-	END ELSE BEGIN
-		PRINT @30024
-		APPEND ~c-arandebugger01.log~ ~No version of ToB content detected via GAME_IS; .cre not patched~
-	END
-
-	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
-	PRINT @30103
-	PRINT @30131
-	PRINT @30009
-APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
-	
-
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\
@@ -1510,16 +1187,180 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
+BEGIN @30020 DESIGNATED 300 /* ~Aran Whitehand, Mage Dual-Class stats (Tinker)~ */
+	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
+	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	OUTER_SPRINT aranw_crechoice @30020
+	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
+	/* register choice */
+	/* mage dual-class build class_choice_aw = 1 */
+	OUTER_SET ~class_choice_aw~ = 1
+	/* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
+	OUTER_SET ~aran_wealth~ = 2 // experienced mercenary with some resources
+	OUTER_SET ~aran_armor_choice~ = 1 // leather
+	OUTER_SET ~aran_weapon_choices~ = 3 // weapon choice 3, Long Sword, Shield, Potions of healing
+	/* Patch the proper base .cre accordingly and copy it into the game */
+	LAUNCH_ACTION_MACRO ~customized_cre_choice~
+	/* create the ToB version if ToB is installed */
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
+		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
+		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
+	END ELSE BEGIN
+		PRINT @30024
+		APPEND ~c-arandebugger01.log~ ~No version of ToB content detected via GAME_IS; .cre not patched~
+	END
+	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
+	PRINT @30103
+	PRINT @30131
+	PRINT @30009
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	
+BEGIN @30021 DESIGNATED 310 /* ~Aran Whitehand, Cleric Dual-Class stats (Tailor)~ */
+	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
+	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	OUTER_SPRINT aranw_crechoice @30021
+	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
+	/* register choice */
+	/* cleric dual-class build class_choice_aw = 2 */
+	OUTER_SET ~class_choice_aw~ = 2
+	/* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
+	OUTER_SET ~aran_wealth~ = 2 // experienced mercenary with some resources
+	OUTER_SET ~aran_armor_choice~ = 3 // Chain
+	OUTER_SET ~aran_weapon_choices~ = 3 // choice 3, weapon set 12 Long Sword, Shield, Hammer
+	/* Patch the proper base .cre accordingly and copy it into the game */ 
+	LAUNCH_ACTION_MACRO ~customized_cre_choice~
+	/* create the ToB version if ToB is installed */
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
+		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
+		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
+	END ELSE BEGIN
+		PRINT @30024 /* ~No version of ToB content detected via GAME_IS; .cre not patched~ */
+		OUTER_SPRINT aranw_repcrec @30024
+		APPEND ~c-arandebugger01.log~ ~%aranw_repcrec%~
+	END
+	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
+	PRINT @30103
+	PRINT @30131
+	PRINT @30009
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	
+BEGIN @30019 DESIGNATED 320 /* ~Aran Whitehand, Fighter Single Class Stats, default (Soldier)~ */
+	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
+	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	OUTER_SPRINT aranw_crechoice @30019
+	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
+	/* Default materials already onboard - do nothing at this time. */
+	PRINT @30022 /* ~You already have Aran's Fighter Single Class .cre installed. No action taken.~ */
+	OUTER_SPRINT aranw_donot @30022
+	APPEND ~c-arandebugger01.log~ ~%aranw_donot%~
+	/* In the future, we could use this to add a kit or something else. Right now this is here because folks need a "I Changed My Mind"
+	but since they grew up with GUI it is counterintuitive to say "n" */
+	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
+	PRINT @30103
+	PRINT @30131
+	PRINT @30009
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	
+BEGIN @30023 DESIGNATED 330 /* ~Aran Whitehand, Thief Dual-Class stats, (Spy)~ */
+	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
+	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	OUTER_SPRINT aranw_crechoice @30023
+	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
+	/* register choice */
+    /* thief dual-class build class_choice_aw = 4 */
+	OUTER_SET ~class_choice_aw~ = 4
+	/* Set up the variables for a default .cre so BWP folks don't have to deal with READLN */
+	OUTER_SET ~aran_wealth~ = 2 // experienced mercenary with some resources
+	OUTER_SET ~aran_armor_choice~ = 2 // Studded Leather
+	OUTER_SET ~aran_weapon_choices~ = 5 // Short Sword, Shield, Crossbow
+	/* Patch the proper base .cre accordingly and copy it into the game */
+	LAUNCH_ACTION_MACRO ~customized_cre_choice~
+	/* create the ToB version if ToB is installed */
+	ACTION_IF GAME_IS ~tob bgt bg2ee eet~ THEN BEGIN // ToB .cre file
+		COPY_EXISTING ~c-aran7.cre~ ~override/c-aran13.cre~
+			WRITE_LONG 0x18 2500000 // current XP 2500000, ToB start
+			WRITE_ASCII 0x2cc ~C-ARN25A~ #8 /* dialogue */
+			WRITE_ASCII 0x280 ~C-ARAN~ #32 /* DV */
+			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
+		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
+	END ELSE BEGIN
+		PRINT @30024
+		APPEND ~c-arandebugger01.log~ ~No version of ToB content detected via GAME_IS; .cre not patched~
+	END
+	/* Remind users about SETUP-ARANW.DEBUG and the custom .log files in aranw */
+	PRINT @30103
+	PRINT @30131
+	PRINT @30009
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\
-///// Optional Equipment Choices Subcomponents         \\\\\
+///// Optional Sound Choices Subcomponents         \\\\\
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
-
+/* Change sounds via SUBCOMPONENT */
+BEGIN @30013 DESIGNATED 400 /* Replace Guitar Music with Midaevil Music */
+	SUBCOMPONENT @30011 /* Change Audio Files */
+	GROUP @30015  /* ~Customize Aran Whitehand: Music~ */	
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
+	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	OUTER_SET soundchoice_aw = 2 //Vox Vulgaris
+	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
+	/* set up what sounds need to be installed for this component to be covered */
+	ACTION_CLEAR_ARRAY	~sounds~
+	ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+		~c-arnfth~
+		~c-arnfti~
+		~c-arnltu~
+		~c-arnltl~
+		~c-arandf~
+		~c-arands~
+	END
+	/* look for the resulting .wavc files and copy them into the game */
+	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+		COPY ~aranw/media/wavc/%sound%.wav~ ~override~
+	END
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	
+BEGIN @30014 DESIGNATED 410 /* Replace Guitar Music with Brass Ensemble Music */
+	SUBCOMPONENT @30011 /* Change Audio Files */
+	GROUP @30015  /* ~Customize Aran Whitehand: Music~ */
+	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
+	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
+	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
+	OUTER_SET soundchoice_aw = 3 //Brass
+	LAUNCH_ACTION_MACRO ~chooseasoundtrack~
+	/* set up what sounds need to be installed for this component to be covered */
+	ACTION_CLEAR_ARRAY	~sounds~
+	ACTION_DEFINE_ARRAY ~sounds~ BEGIN
+		~c-arnfth~
+		~c-arnfti~
+		~c-arnltu~
+		~c-arnltl~
+		~c-arandf~
+		~c-arands~
+	END
+	/* look for the resulting .wavc files and copy them into the game */
+	ACTION_PHP_EACH ~sounds~ AS ~index~ => ~sound~ BEGIN
+		COPY ~aranw/media/wavc/%sound%.wav~ ~override~
+	END
+APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1530,7 +1371,7 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 /* Customize Talk And Flirt Timers */
-BEGIN @30043 DESIGNATED 200 /* ~Content Speed: minimum 1 hour real time between dialogues (Default, recommended)~ */
+BEGIN @30043 DESIGNATED 500 /* ~Content Speed: minimum 1 hour real time between dialogues (Default, recommended)~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
@@ -1546,7 +1387,7 @@ BEGIN @30043 DESIGNATED 200 /* ~Content Speed: minimum 1 hour real time between 
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
-BEGIN @30051 DESIGNATED 210 /* ~Content Speed: minimum 15 minutes real time between dialogues~ */
+BEGIN @30051 DESIGNATED 510 /* ~Content Speed: minimum 15 minutes real time between dialogues~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
@@ -1580,7 +1421,7 @@ BEGIN @30051 DESIGNATED 210 /* ~Content Speed: minimum 15 minutes real time betw
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
-BEGIN @30055 DESIGNATED 220 /* ~Content Speed: minimum 30 minutes real time between dialogues~ */
+BEGIN @30055 DESIGNATED 520 /* ~Content Speed: minimum 30 minutes real time between dialogues~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
@@ -1614,7 +1455,7 @@ BEGIN @30055 DESIGNATED 220 /* ~Content Speed: minimum 30 minutes real time betw
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
-BEGIN @30059 DESIGNATED 230 /* ~Content Speed: minimum 45 minutes real time between dialogues~ */
+BEGIN @30059 DESIGNATED 530 /* ~Content Speed: minimum 45 minutes real time between dialogues~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
@@ -1648,7 +1489,7 @@ BEGIN @30059 DESIGNATED 230 /* ~Content Speed: minimum 45 minutes real time betw
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
-BEGIN @30063 DESIGNATED 240 /* ~Content Speed: minimum 1 hour 30 minutes real time between dialogues~ */
+BEGIN @30063 DESIGNATED 540 /* ~Content Speed: minimum 1 hour 30 minutes real time between dialogues~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
@@ -1682,7 +1523,7 @@ BEGIN @30063 DESIGNATED 240 /* ~Content Speed: minimum 1 hour 30 minutes real ti
 	PRINT @30009
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
-BEGIN @30067 DESIGNATED 250 /* ~Content Speed: minimum 2 hours real time between dialogues~ */
+BEGIN @30067 DESIGNATED 550 /* ~Content Speed: minimum 2 hours real time between dialogues~ */
 	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
 	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
