@@ -1,582 +1,803 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
+  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+
   <title>Aran Whitehand</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <meta name="description" content="NPC Mod for BG2" />
   <meta name="keywords" content=
-  "Baldur&#39;s Gate 2,Baldurs Gate 2,Shadows of Amn,Throne of Bhaal,BG2,ToB,SoA,Mod,BG2EE,BG2:EE,BGII:EE,Aran Whitehand,NPC,Mod,Gibberlings3" />
-  <meta name="author" content="cmorgan" />
-  <link rel="stylesheet" href="../style/g3readme.css" type="text/css" />
+  "Baldur&#39;s Gate 2,Baldurs Gate 2,Shadows of Amn,Throne of Bhaal,BG2,ToB,SoA,Mod,BG2EE,BG2:EE,BGII:EE,Aran Whitehand,NPC,Gibberlings3,EET,BGT" />
+  <link rel="stylesheet" href="../style/g3readme_cam_022916.css" type="text/css" />
   <link href="../style/g3icon.ico" rel="icon" type="image/bmp" />
 </head>
 
 <body>
-  <h1>Aran Whitehand</h1>
-
-  <div class="section">
-    <strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a></strong><br />
-    <strong>Author:<br />
-    <a href="http://forums.gibberlings3.net/?showuser=844">cmorgan</a></strong>
-
-    <p><strong>On the web: <a href="http://www.gibberlings3.net/aranw/index.php">Home page</a></strong> and <strong><a href=
-    "http://forums.gibberlings3.net/index.php?showforum=159">discussion forum</a></strong><br />
-    <br /></p>
-
-    <p><strong>Version: 1 <a href="http://www.gibberlings3.net/downloads/#aranw">Check for the most recent
-    version</a></strong><br />
-    <strong>Languages:</strong> English<br />
-    <strong>Platforms:</strong> Windows, Mac OS X, and Linux<br />
-    <strong>Games:</strong> BGII - SoA, BGII - ToB, BGT, and BGII:EE<br /></p>
-  </div>
-    <div class="section">
-	<p><a href="../docs/secondarycharacters.html">Secondary Characters</a> | <a href="../docs/readme-aranw.html">ReadMe</a> | <a href="../docs/alternateportraits.html">Alternate Portraits</a></p>
-	</div>
-	
-  <h2>Contents</h2>
-
-  <div class="section">
-    <strong><a href="#notes">Notes</a><br />
-    <a href="#overview">Overview</a><br />
-    <a href="#compat">Compatibility</a><br />
-    <a href="#install">Installation</a><br />
-    <a href="#compon">Components</a><br />
-    <a href="#modder">Modder Notes</a><br />
-    <a href="#thanks">Thanks and Acknowledgments</a><br />
-    <a href="#contact">Contact and Copyright Information</a><br />
-    <a href="#history">Version History</a></strong>
-  </div>
-
-  <h2><a name="notes" id="notes">Notes</a></h2>
-
-  <div class="section">
-    <p><img src="../media/portraits_bg2/nix_default_bg2m.bmp" alt="nix_defaultm.bmp" style="float:left;margin:0 5px 0 0;" /> This
-    is the first "real" release, but Aran has been wandering around various installs for nearly 8 years now. I hope you enjoy the "final" product as much as I have enjoyed writing and coding him. Thanks to all of the members of the i.e. modding community who have contributed in lots of cool ways to this project.<br />
-    <br />
-    <b>The Mod Concept</b><br />
-    NPCs work in many different ways, based primarily on the original BioWare model. What happens, though, if we try a more
-    &#39;self aware&#39; NPC, allowing player choice for some of the fundamentals? Is an NPC&#39;s character his class and stats,
-    or is it really a personality? Can an NPC still be true to himself, even when a player chooses to turn them into a new class
-    combination? This mod explores the idea that jobs may come and go, and in the heart of an accountant may lie a lion, even if
-    the body doesn&#39;t quite show it off. The NPC should be able to adapt to being a new class or kit combination, while
-    retaining his core personality. As a side project, the intent is to post code in the forum to eventually tie to tutorials and
-    provide insight into the decisionmaking process when turning an idea into functional code.<br />
-    Aran Whitehand is functionally a Companion mod. He has minor optional quests with a new area, but comes with no special weapons
-    or upgradeable items - his specialty is in interacting with the members of the party and adapting to situations. For him, the
-    job is paramount, and his job is supporting the player. He is no stranger to having to carry out orders which bend morality,
-    though he hates doing so. It should be noted that this mod is designed by adults for adults, and should not be installed unless
-    you are comfortable with Faerunian swearing, occasional adult themes, and NC - 17 to R rated content in the Romance
-    portion.</p>
-  </div>
-
-  <h2><a name="overview" id="overview">Overview</a></h2>
-
-  <div class="section">
-    <p><b>The Companion NPC</b><br />
-    <b>Aran Whitehand</b> is a human fighter and scribe for BG2, dual classable, so that he can be Tinker, Tailor, Soldier, Spy...
-    whatever your party needs. Basically, a human utility player taken along for the friendship/cuddling. &quot;Specials&quot;
-    include creation of scrolls through dialog and timer when in a party with another canonical mage. Primarily a male friend who
-    can grow into an extended courtship/romance, romanceable by female PCs, Aran has his own sense of humor and specializes in
-    bringing others into the conversation.</p>
-  </div>
-
-  <h2>Statistics</h2>
-
-  <div class="section">
-    <p><img src="../media/sword.png" alt="sword.png" style="float:left;margin:0 5px 0 0;" /> &quot;Warrior&quot; configuration
-    [DEFAULT][player options on install, fighter]<br />
-    <br />
-    17 Strength<br />
-    16 Dexterity<br />
-    15 Constitution<br />
-    12 Intelligence<br />
-    13 Wisdom<br />
-    12 Charisma<br /></p>
-
-    <p><img src="../media/pen.png" alt="pen.png" style="float:left;margin:0 5px 0 0;" /> &quot;Poet&quot; configuration [player
-    options on install, for Cleric dual class]<br />
-    16 Strength<br />
-    13 Dexterity<br />
-    15 Constitution<br />
-    12 Intelligence<br />
-    17 Wisdom<br />
-    12 Charisma<br /></p>
-
-    <p><img src="../media/pensword.png" alt="pensword.png" style="float:left;margin:0 5px 0 0;" /> &quot;Thinker&quot;
-    configuration [player options on install, for Mage dual class]<br />
-    16 Strength<br />
-    13 Dexterity<br />
-    15 Constitution<br />
-    17 Intelligence<br />
-    12 Wisdom<br />
-    12 Charisma<br /></p>
-
-    <p><img src="../media/swordpen.png" alt="swordpen.png" style="float:left;margin:0 5px 0 0;" /> &quot;Survivor&quot;
-    configuration [player options on install, for Thief dual class]<br />
-    16 Strength<br />
-    17 Dexterity<br />
-    15 Constitution<br />
-    13 Intelligence<br />
-    12 Wisdom<br />
-    12 Charisma<br /></p>
-  </div>
-
-  <h2>Friendship</h2>
-
-  <div class="section">
-    <p>Aran will befriend any protagonist of any race or alignment,though how he reacts to situations will definitely let the
-    player know how he feels. A rough - around - the - edges man, accustomed to mercenary sevice and caravan work both in front of
-    and protecting the books, Aran hires on as a scribe or accountant as well as protection. He has learned to work with
-    practically anyone not Drow, and chase any female within arms reach. His language is rough, his approach unrefined. And if you
-    don&#39;t like it, he will gladly tell you exactly what your opinion is worth.</p>
-  </div>
-
-  <h2>Romance</h2>
-
-  <div class="section">
-    <p>Aran will romance any female protagonist of any race save Drow, or any alignment. Again, how he reacts will definitely let
-    the player understand his position. Good men fall for bad women as quickly as for good ones, and sometimes opposites really do
-    attract. But romance on the trail is awkward, with a group of adventurers around, and the road to romance is both rocky and
-    complicated. Exactly how does a strong man feel when his significant other turns out to be infinitely stronger than he, on so
-    many levels? Can the two of you negotiate the attraction into something of an equal relationship, or is this destined to fail?
-    For a sample of lovetalks, please visit the forums.</p>
-
-    <p style="color:red">WARNING. FEMALE PC ROMANCE CAN BE &quot;NOT SAFE FOR WORK&quot;.</p>
-
-    <p>Although your female PC has many opportunities to manage the physical side of the relationship and can always shut him down
-    or start him up, if a female player character romances him there is specific, detailed, graphic, poorly written fanfic smut
-    that will make for a workplace conversation that you DO NOT want to have. If you have played Romantic Encounters for BG2, Sheri
-    and Renal are relatively tame by comparison. YOU HAVE BEEN WARNED. (If you don&#39;t want it at all, play him with a male PC,
-    and all will be completely fine.)</p>
-  </div>
-
-  <h2>Joining the Party</h2>
-
-  <div class="section">
-    <p>When Aran Whitehand meets the party, he is looking for work having dropped from the rolls of a mercenary regiment. Look for
-    him in the new inn &quot;The Broken Sword&quot;, found on the Promenade just North of the Adventurer's Mart and just West of the Circus Tents. The bouncer's name is Manson.</p>
-  </div>
-
-  <h2>Customization</h2>
-
-  <div class="section">
-    <p>Portrait choices currently available are <a href="../docs/alternateportraits.html">here</a>.</p>
-  </div>
-
-  <h2>Minor Characters</h2>
-
-  <div class="section">
-    Minor characters and the portraits they use, all commissioned from Peachplums, are <a href=
-    "../docs/secondarycharacters.html">here</a>.
-  </div>
-
-  <h2><a name="compat" id="compat">Compatibility</a></h2>
-
-  <div class="section">
-    <p><strong>Aran Whitehand</strong> is designed for use on BGII - SoA, BGII - ToB, BGT, and BGII:EE.</p>
-  </div>
-
-  <h2><a name="install" id="install">Installation</a></h2>
-
-  <div class="section">
-    <p><br />
-    <strong>Windows</strong><br />
-    This mod is packaged and installed with <acronym title="Weimer Dialogue Utility">WeiDU</acronym> and is distributed as a
-    self-extracting archive. To install, simply double-click the archive and follow the instructions on screen.<br />
-    <br />
-    Alternatively, the files can be extracted from the archive using <a href="http://www.rarlab.com/">WinRAR</a>. If properly
-    extracted, you should have an &quot;aranw&quot; folder and the file &quot;setup-aranw.exe&quot; in your game folder. To
-    install, simply double-click setup-aranw.exe and follow the instructions on screen.<br />
-    <br />
-    Please run setup-aranw in your game folder to reinstall, uninstall or otherwise change components.<br />
-    <br />
-    <strong>Mac OS X</strong><br />
-    <em>If the mod was previously installed, uninstall it before extracting the new version.</em> Aran Whitehand is packaged and
-    installed with <acronym title="Weimer Dialogue Utility">WeiDU</acronym>. To install, simply extract the contents of the mod
-    into your game folder. If properly extracted, you should have an &quot;aranw&quot; folder, setup-aranw, and setup-aranw.command
-    in your game folder. To install, simply double-click <strong>setup-aranw.command</strong> and follow the instructions on
-    screen.<br />
-    <br />
-    <strong>Linux</strong><br />
-    Extract the contents of the mod to the folder of the game you wish to modify. Download the latest version of WeiDU for Linux
-    from <a href="http://www.weidu.org/~thebigg"><acronym title="Weimer Dialogue Utility">WeiDU</acronym>.org</a> and copy WeiDU
-    and WeInstall to /usr/bin. Following that, open a terminal and cd to your BG2 installation directory, run &#39;tolower&#39; and
-    answer Y to both queries. You can avoid running the second option (linux.ini) if you&#39;ve already ran it once in the same
-    directory. To save time, the archive is already tolowered, so there&#39;s no need to run the first option (lowercasing file
-    names) either if you&#39;ve extracted only this mod since the last time you lower cased file name. If you&#39;re unsure,
-    running tolower and choosing both options is the safe bet. Run <strong>WeInstall aranw</strong> in your game folder to install
-    the mod. Then run <strong>wine BGMain.exe</strong> and start playing.</p>
-  </div>
-
-  <h2><a name="compon" id="compon">Components</a></h2>
-
-  <div class="section">
-    <strong>Component 0 : Install Aran Whitehand</strong><br />
-    Installs Aran Whitehand on BGII - SoA, BGII - ToB, BGT, or BGII:EE<br />
-    Player Choices:<br />
-    1. Set Talk and Flirt Timers : [1] Use Default or [2] Customize<br />
-    <strong>Component 1 : Install Audio</strong><br />
-    Player Choices:<br />
-    [1] Install Soundset, Voiced lines, and Music<br />
-    [2] Install Only Soundset and Music<br />
-    [3] Install Only Soundset<br />
-    [4] Do not install any audio<br />
-    [NOTE: Currently, there are no voiced lines, so installing 1 or 2 above gives you everything currently enabled.]<br />
-    <strong>Component 2 : Aran Configuration</strong><br />
-    Player Choices:<br />
-    [1] Aran Whitehand, default configuration (Soldier) or one of four customizations.<br />
-    <br />
-    [2] Aran Whitehand, Mage Dual-Class stats configuration (Tinker)<br />
-    [3] Aran Whitehand, Cleric Dual-Class stats configuration (Tailor)<br />
-    [4] Aran Whitehand, Fighter stats configuration (Soldier)<br />
-    [5] Aran Whitehand, Thief Dual-Class stats configuration (Spy)<br />
-    <br />
-    If you choose to customize, you can set the following:<br />
-    - modify starting Aran to be poor, average, or rich<br />
-    - see his current proficiencies and adjust his carried equipment<br />
-    - choose what armor he comes with<br />
-    <br />
-    <strong>Component 3 : Alternate portraits</strong><br />
-    Portrait choices currently available are <a href="../docs/alternateportraits.html">here</a>.
-  </div>
-
-  <h2><a name="follow" id="follow">Optional Follow-On Mods</a></h2>
-
-  <div class="section">
-    <p><strong><a href="http://www.gibberlings3.net/crossmod/">G3 Crossmod Banter Pack</a> for BG2, BG2:EE, BGT, or EET </strong><br />
-    Aran and several other mod NPCs have banters if you install Crossmod BG2 at the end of your install (after the other NPCs are installed).</p>
-  </div>
-
-  <h2><a name="modder" id="modder">Modder Notes</a></h2>
-
-  <div class="section">
-    <p>The philosophy driving coding in this project is to preserve technical operating compatibility with as wide a range of other
-    mods as possible. I leave it up to the player to define &#39;conceptual incompatibility&#39; - there are so many mods out there
-    now that I think players have the right to choose to add, subtract, or modify within their games without me making those
-    decisions up front. Hey, I am a hobbyist, not a professional - if you want professional stuff, go buy it! Some of the things
-    done to support this are listed here:</p>
-
-    <ul>
-      <li>{add text here explaining technical compatability}</li>
-    </ul>
-  </div>
-
-  <h2><a name="funstuff" id="funstuff">Fun Things To Do With Aran</a></h2>
-
-  <div class="section">
-    <ul>
-      <li>Hang around the Broken Sword for awhile, and you&#39;ll find table chatter. The non-joinable NPCs there have some
-      conversations, too. Look for additional content there in later releases.</li>
-
-      <li>Kick him out and take him back in in different ways, in different areas.</li>
-
-      <li>Have a sparring session with him, friend or not, romance or not. All are different, and take advantage of RandomNumber
-      generation, so... expect things to be different every playthrough.</li>
-
-      <li>Ask him for advice in different areas.</li>
-
-      <li>Get him drunk. Several times.</li>
-
-      <li>Charm him, and chat...</li>
-
-      <li>Romance: Play an evil female PC and treat him badly... scratch him, bite him, and see what he does.</li>
+  <div id="container">
+    <div class="ribbon_menu">
+      <ul>
+        <li>
+          <a href="#Overview">Overview</a>
+        </li>
+
+        <li>
+          <a href="#Compatibility">Compatibility</a>
+        </li>
+
+        <li>
+          <a href="#Bugs">Bug Reporting</a>
+        </li>
+
+        <li>
+          <a href="#Installation">Installation</a>
+        </li>
+
+        <li>
+          <a href="#Contents">Contents</a>
+        </li>
+
+        <li>
+          <a href="#AltPortraits">Alternate Portraits</a>
+        </li>
+
+        <li>
+          <a href="#Secondary">Story Characters</a>
+        </li>
+
+        <li>
+          <a href="#Funstuff">Fun Stuff</a>
+        </li>
+
+        <li>
+          <a href="#Contact">Contact</a>
+        </li>
+
+        <li>
+          <a href="#Thanks">Thanks</a>
+        </li>
+
+        <li>
+          <a href="#Credits">Credits</a>
+        </li>
+
+        <li>
+          <a href="#History">History</a>
+        </li>
+      </ul><span><img src="../style/g3_logo_2018.gif" width="237" height="83" alt="G3" /></span>
+    </div>
+
+    <div class="ribbon_bubble">
+      <div class="ribbon_rectangle">
+        <h1>Aran Whitehand</h1>
+      </div>
+
+      <div class="ribbon_triangle-l"></div>
+
+      <div class="ribbon_triangle-r"></div>
+
+      <div class="ribbon_rectangle">
+        <h1>An NPC for BG2:SoA, BG2:ToB, BG2:EE, BGT, and EET</h1>
+      </div>
+
+      <div class="ribbon_triangle-l"></div>
+
+      <div class="ribbon_triangle-r"></div>
+
+      <div class="section">
+        <p><strong><a href="http://www.gibberlings3.net/">A Gibberlings Three Mod</a><br />
+        Author:</strong> <a href="https://www.gibberlings3.net/profile/844-cmorgan/">cmorgan</a><br />
+        <strong>On the web:</strong> <a href="https://www.gibberlings3.net/mods/npcs/aranw/">Home page</a>, <a href=
+        "https://www.gibberlings3.net/forums/forum/159-aran-whitehand/">discussion forum</a>, and <a href=
+        "https://github.com/Gibberlings3/Aran-Whitehand/">GitHub</a></p>
+
+        <p><strong>Version BETA LURIDEL</strong><br />
+        <strong>Languages:</strong> English<br />
+        <strong>Platforms:</strong> Windows (development)</p>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="Overview" name="Overview"></a>
+
+        <h2>Overview</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
+
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <p><img src="../media/document_png/nix_default_bg2eel.png" alt="nix_default_bg2eel.png" width="150" height="220" style=
+        "float:left;margin:0 5px 0 0;" /> This is the first &quot;real&quot; release, but Aran has been wandering around various
+        installs for over a decade now. I hope you enjoy the &quot;final&quot; product as much as I have enjoyed writing and coding
+        him. Thanks to all of the members of the i.e. modding community who have contributed in lots of cool ways to this
+        project.<br />
+        <br />
+        <b>The Mod Concept</b><br />
+        NPCs work in many different ways, based primarily on the original BioWare model. What happens, though, if we try a more
+        &#39;self aware&#39; NPC, allowing player choice for some of the fundamentals? Is an NPC&#39;s character his class and
+        stats, or is it really a personality? Can an NPC still be true to himself, even when a player chooses to turn them into a
+        new class combination? This mod explores the idea that jobs may come and go, and in the heart of an accountant may lie a
+        lion, even if the body doesn&#39;t quite show it off. The NPC should be able to adapt to being a new class or kit
+        combination, while retaining his core personality. As a side project, the intent is to post code in the forum to eventually
+        tie to tutorials and provide insight into the decisionmaking process when turning an idea into functional code.<br />
+        Aran Whitehand is functionally a Companion mod. He has minor optional quests with a new area, but comes with no special
+        weapons or upgradeable items - his specialty is in interacting with the members of the party and adapting to situations.
+        For him, the job is paramount, and his job is supporting the player. He is no stranger to having to carry out orders which
+        bend morality, though he hates doing so. It should be noted that this mod is designed by adults for adults, and should not
+        be installed unless you are comfortable with Faerunian swearing, occasional adult themes, and NC - 17 to R rated content in
+        the Romance portion.</p>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="Compatibility" name="Compatibility"></a>
 
-      <li>Romance: Get into an argument with him, and wen he comes looking to make up, refuse. Or you could try apologising.
-      Sometimes he actually accepts.</li>
+        <h2>Compatibility</h2>
+      </div>
 
-      <li>Romance: The naughty bits are rather varied and exhaustive. Or at least they try to be. Encourage him, don&#39;t
-      encourage him, make him work for it... play however you like.</li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>Install AranW_Aware after all other NPC mods and Divine Remix, and he will banter with mod added NPCs.</li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>Play him on BGII:EE. He has content and banters with the BeamHaul crowd, too.</li>
-    </ul>
-  </div>
+      <div class="section">
+        <p>This mod is designed to work with Baldur&#39;s Gate II: Enhanced Edition or Baldur&#39;s Gate II: Shadows of Amn
+        <strong>with or without</strong> the Throne of Bhaal expansion pack, as well as the BGT and EET conversions. The mod should
+        be compatible with other <acronym title="Weimer Dialogue Utility">WeiDU</acronym> mods. For more information on
+        compatibility, check out the <a href="https://www.gibberlings3.net/forums/forum/159-aran-whitehand/">discussion
+        forum</a>.</p>
+      </div>
 
-  <h2><a name="thanks" id="thanks">Thanks and Acknowledgements</a></h2>
+      <div class="ribbon_rectangle_h2">
+        <a id="Bugs" name="Bugs"></a>
 
-  <div class="section">
-    <p>The current list of folks who have contributed and I wish to thank is on Aran&#39;s forum... or it will be once I have
-    gotten that organized</p>
+        <h2>Bug Reporting</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
 
-    <p>There is an entire community of folks to thank, for all sorts of reasons, so someone is going to get left out and I am going
-    to be very embarrassed. But the folks who really make things fun when working through i.e. stuff, the folks who assisted in
-    proofreading, giving critical feedback, and sending those PMs and messages saying &quot;YES!&quot; or &quot;NOOOOO!!!!!!&quot;
-    are all part of this mod. The good parts. The bad parts are all mine.</p>
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <p>If you should encounter any bugs, please report them to the author at the <a href=
+        "https://www.gibberlings3.net/forums/forum/159-aran-whitehand/">Aran Whitehand</a> forum.</p>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="Installation" name="Installation"></a>
+
+        <h2>Installation</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
+
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <p><strong>Enhanced Editions Note</strong><br />
+        The Enhanced Editions are actively supported games. Please note that every patch update will wipe your current mod setup!
+        If in the middle of a modded game you might want to delay the patch update (if possible) as even after reinstalling the
+        mods, you might not be able to continue with your old savegames. Alternatively, copy the whole game&#39;s folder into a new
+        one that can be modded and will stay untouched by game patches. For BG:EE it is important that you install the mod to the
+        language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error
+        messages.</p>
+
+        <p><strong>Windows</strong><br />
+        Aran Whitehand for Windows (aranw) is distributed as a self-extracting archive and includes a WeiDU installer. To install,
+        simply double-click the archive and follow the instructions on screen.</p>
+
+        <p>Alternatively, the files can be extracted into your game directory using <a href=
+        "http://www.7-zip.org/download.html">7zip</a> or <a href="http://www.rarlab.com/download.htm">WinRAR</a>. When properly
+        extracted, your game directory will contain <strong>setup-aranw.exe</strong> and the folder <strong>arranw</strong>. To
+        install, double-click <strong>setup-aranw.exe</strong> and follow the instructions on screen.</p>
+
+        <p>You can run <strong>setup-aranw.exe</strong> in your game folder to reinstall, uninstall or otherwise change
+        components.</p>
+
+        <p><strong>Mac OS X</strong><br />
+        Aran Whitehand (aranw) for Mac OS X *** will eventually be *** distributed as a compressed tarball and includes a WeiDU
+        installer.</p>
+
+        <p>First, extract the files from the tarball into your game directory. When properly extracted, your game directory will
+        contain <strong>setup-aranw</strong>, <strong>setup-aranw.command</strong>, and the folder <strong>aranw</strong>. To
+        install, double-click <strong>setup-aranw.command</strong> and follow the instructions on screen.</p>
+
+        <p>You can run <strong>setup-aranw.command</strong> in your game folder to reinstall, uninstall or otherwise change
+        components.</p>
+
+        <p><strong>Linux</strong><br />
+        Aran Whitehand for Linux is distributed as a compressed tarball and does not include a WeiDU installer.</p>
+
+        <p>Extract the contents of the mod to the folder of the game you wish to modify.</p>
+
+        <p>Download the latest version of WeiDU for Linux from <a href="http://www.weidu.org/%7Ethebigg/">WeiDU.org</a> and copy
+        WeiDU and WeInstall to /usr/bin. Following that, open a terminal, cd to your game installation directory, run tolower and
+        answer Y to both queries. You can avoid running the second option (linux.ini) if you&#39;ve already ran it once in the same
+        directory. To save time, the archive is already tolowered, so there&#39;s no need to run the first option (lowercasing file
+        names) either if you&#39;ve extracted only this mod since the last time you lowercased file names. If you&#39;re unsure,
+        running tolower and choosing both options is the safe bet.</p>
+
+        <p>To install, run WeInstall amber in your game folder. Then run wine BGMain.exe and start playing.</p>
+
+        <p><strong>Note for Complete Uninstallation</strong><br />
+        In addition to the methods above for removing individual components, you can completely uninstall the mod using setup-aranw
+        --uninstall at the command line to remove all components without wading through prompts. .</p>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="Contents" name="Contents"></a>
+
+        <h2>Contents</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
+
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <h2>The Companion NPC</h2>
+
+        <p><b>Aran Whitehand</b> is a human fighter and scribe for BG2, dual classable, so that he can be Tinker, Tailor, Soldier,
+        Spy... whatever your party needs. Basically, a human utility player taken along for the friendship/cuddling.
+        &quot;Specials&quot; include creation of scrolls through dialog and timer when in a party with another canonical mage.
+        Primarily a male friend who can grow into an extended courtship/romance, romanceable by female PCs, Aran has his own sense
+        of humor and specializes in bringing others into the conversation.</p>
+
+        <h2>Statistics</h2>
+
+        <p><strong>&quot;Warrior&quot; configuration [DEFAULT]</strong> [player options on install, fighter]<br />
+        <img src="../media/document_png/sword.png" alt="sword.png" width="140" height="140" style="float:left;margin:0 10px 0 0;" /> 17
+        Strength<br />
+        16 Dexterity<br />
+        15 Constitution<br />
+        12 Intelligence<br />
+        13 Wisdom<br />
+        12 Charisma<br /></p>
+
+        <p><strong>&quot;Poet&quot; configuration</strong> [player options on install, for Cleric dual class]<br />
+        <img src="../media/document_png/pen.png" alt="pen.png" width="140" height="140" style="float:left;margin:0 10px 0 0;" /> 16
+        Strength<br />
+        13 Dexterity<br />
+        15 Constitution<br />
+        12 Intelligence<br />
+        17 Wisdom<br />
+        12 Charisma<br /></p>
+
+        <p><strong>&quot;Thinker&quot; configuration</strong> [player options on install, for Mage dual class]<br />
+        <img src="../media/document_png/pensword.png" alt="pensword.png" width="140" height="140" style="float:left;margin:0 10px 0 0;" /> 16
+        Strength<br />
+        13 Dexterity<br />
+        15 Constitution<br />
+        17 Intelligence<br />
+        12 Wisdom<br />
+        12 Charisma<br /></p>
+
+        <p><strong>&quot;Survivor&quot; configuration</strong> [player options on install, for Thief dual class]<br />
+        <img src="../media/document_png/swordpen.png" alt="swordpen.png" width="140" height="140" style="float:left;margin:0 10px 0 0;" /> 16
+        Strength<br />
+        17 Dexterity<br />
+        15 Constitution<br />
+        13 Intelligence<br />
+        12 Wisdom<br />
+        12 Charisma<br /></p>
+
+        <h2>Friendship</h2>
 
-    <p>First off, Domi is a goddess whose work with Dynaheir in BG1NPC originally inspired me to get off of my lazy behind and
-    actually become involved in modding. I thank her, curse her, swear at her, and then swear by her, all usually within the same
-    20 minutes. Thanks to CamDawg, Grim Squeaker, Smoketest, devSin, Wisp, Taimon, Ascension64, igi, eric, Steve, and Miloch, who
-    all show me how things work and manage not to call me an ignorant jackass to my face (mostly). And infinite thanks to Nythrun,
-    who showed me patience, great humor, and the power of &quot;just do it.&quot;</p>
+        <p>Aran will befriend any protagonist of any race or alignment,though how he reacts to situations will definitely let the
+        player know how he feels. A rough - around - the - edges man, accustomed to mercenary sevice and caravan work both in front
+        of and protecting the books, Aran hires on as a scribe or accountant as well as protection. He has learned to work with
+        practically anyone not Drow, and chase any female within arms reach. His language is rough, his approach unrefined. And if
+        you don&#39;t like it, he will gladly tell you exactly what your opinion is worth.</p>
 
-    <p>And though he will make an obscene comment or involve Aran in a Dodecahedron mod in retaliation, special thanks to &quot;the
-    bigg&quot;. Not just for years of patience and help, but for continuing to support, clean up, extend, and rebuild Weimer&#39;s
-    Dialog Utility making it relevant and powerful for today&#39;s modders.</p>
+        <h2>Romance</h2>
 
-    <p>On this specific project, huge thanks go to Berelinde, who has helped me bounce ideas, clean up/rebuild code, warned me when
-    I was getting really gross, poked at me when I slacked, asked the &quot;duh&quot; questions that have set me on new paths,
-    reminded me when I have started doing boneheaded things in code, and provided solid criticism. Jastey has been there regularly,
-    giving great specific feedback; without these two strong modders as friends, working on and discussing things at Tolkein Across
-    The Water, the biggest challenges in the mod would never have been attempted, let alone written. To the Two Mistresses of
-    Modding Mayhem, I tip my cap in appreciation, and let you know that you have helped me get hours of enjoyment out of the
-    modding challenge. It is great to work with you!</p>
+        <p>Aran will romance any female protagonist of any race save Drow, or any alignment. Again, how he reacts will definitely
+        let the player understand his position. Good men fall for bad women as quickly as for good ones, and sometimes opposites
+        really do attract. But romance on the trail is awkward, with a group of adventurers around, and the road to romance is both
+        rocky and complicated. Exactly how does a strong man feel when his significant other turns out to be infinitely stronger
+        than he, on so many levels? Can the two of you negotiate the attraction into something of an equal relationship, or is this
+        destined to fail? For a sample of lovetalks, please visit the forums.</p>
 
-    <p>Special thanks to Peachplums for her donated artwork - check her out at http://peachplums.deviantart.com/ and follow her
-    work!</p>
+        <p style="color:red">WARNING. FEMALE PC ROMANCE CAN BE &quot;NOT SAFE FOR WORK&quot;.</p>
 
-    <p>Lots of people have helped out in this &quot;open code&quot; mod experiment, many with behind-the-scenes PMs that have
-    opened new ideas or closed up old ones, others with clear and helpful bug and typo hunting, and still others with the ticklish
-    and sensitive &quot;proofread the smut&quot; quotient. My appreciation is fierce. In most cases, my thanks has been to write
-    specific pathways or open branches in response to their own particular personal protagonist preference (their &quot;ppp&quot;),
-    but some angels have given feedback without indicating what they like in their ppp, so the only coin I have in repayent is
-    acknowledgement of contribution. A partial list follows:</p>
+        <p>Although your female PC has many opportunities to manage the physical side of the relationship and can always shut him
+        down or start him up, if a female player character romances him there is specific, detailed, graphic, poorly written fanfic
+        smut that will make for a workplace conversation that you DO NOT want to have. If you have played Romantic Encounters for
+        BG2, Sheri and Renal are relatively tame by comparison. YOU HAVE BEEN WARNED. (If you don&#39;t want it at all, play him
+        with a male PC, and all will be completely fine.)</p>
 
-    <ul>
-      <li>PeachPlums</li>
+        <h2>Joining the Party</h2>
 
-      <li>RavenBlack</li>
+        <p>When Aran Whitehand meets the party, he is looking for work having dropped from the rolls of a mercenary regiment. Look
+        for him in the new inn &quot;The Broken Sword&quot;, found on the Promenade just North of the Adventurer&#39;s Mart and
+        just West of the Circus Tents. The bouncer&#39;s name is Manson.</p>
 
-      <li>Ipsy</li>
+        <p><strong>BETA USERS PLEASE NOTE: Aran&#39;s starting location is patched into the Promenade. Currently the code does not
+        parse saved games to edit in his area;</strong> to get him, you need to start a new game or proceed from a save anywhere
+        before first arriving on the Promenade (I often test from the initial dungeon saves).</p>
 
-      <li>Nix</li>
+        <h2>Customization</h2>
 
-      <li>KIrving</li>
+        <p>In addition to setting Aran up as one four potential dual-class options, there are components to change his content
+        timers, and his portrait in-game. You will be asked about those potential choices on install, but they are completely
+        optional - his default install parameters are as follows: *****INSERT DEFAULT STUFF INFORMATION HERE LATER CMORGAN WAKE UP
+        AND DO THIS BEFORE RELEASE.<br />
+        Before your installation proceeds, you might want to take a look at your options under portraits shown below.</p>
+      </div>
 
-      <li>Ajnos</li>
+      <div class="ribbon_rectangle_h2">
+        <a id="AltPortraits" name="Alternate Portraits"></a>
 
-      <li>KathStoneDog</li>
+        <h2>Alternate Portraits</h2>
+      </div>
 
-      <li>McMazey</li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>Jessception</li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>Aeryn</li>
+      <div class="section">
+        <p>Portrait choices currently available are <a href="../docs/alternateportraits.html">in this document here</a>, or
+        online in <a href="https://www.gibberlings3.net/gallery/album/29-aran-whitehand/">this gallery here.</a></p>
+      </div>
 
-      <li>Luridel</li>
+      <div class="ribbon_rectangle_h2">
+        <a id="Secondary" name="Story Characters"></a>
 
-      <li>Ardanis</li>
+        <h2>Story Characters</h2>
+      </div>
 
-      <li>Miloch</li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>Wisp</li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>devSin</li>
+      <div class="section">
+        Minor characters and the portraits they use, all commissioned from <a href=
+        "https://www.gibberlings3.net/profile/3871-peachplums/">Peachplums</a>, are <a href="../docs/othercharacters.html">found
+        here</a>.
+      </div>
 
-      <li>the bigg</li>
+      <div class="ribbon_rectangle_h2">
+        <a id="Funstuff" name="Funstuff"></a>
 
-      <li>K&#39;aeloree</li>
+        <h2>Fun Things To Do With Aran</h2>
+      </div>
 
-      <li>Marla Wolfblade</li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>erik</li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>Igneous</li>
+      <div class="section">
+        <ul>
+          <li>The &quot;PiD&quot;, or &quot;Player Initiated Dialogue&quot; where you initiate conversation directly with Aran
+          in-game, is your friend. You can do all sorts of things, including rewrite history. If you correct him, he will happily
+          believe what you tell him is the absolute and gospel truth - and set his variables accordingly. (Don&#39;t you wish
+          people were like that?)</li>
 
-      <li>Kessi</li>
+          <li>Hang around the Broken Sword for awhile, and you&#39;ll find table chatter. The non-joinable NPCs there have some
+          conversations, too. Look for additional content there in later releases.</li>
 
-      <li>yarpen</li>
+          <li>Kick him out and take him back in in different ways, in different areas.</li>
 
-      <li>Autumn Bard</li>
+          <li>Have a sparring session with him, friend or not, romance or not. All are different, and take advantage of
+          RandomNumber generation, so... expect things to be different every playthrough.</li>
 
-      <li>Ericp07</li>
+          <li>Ask him for advice in different areas.</li>
 
-      <li>Mike1072</li>
+          <li>Get him drunk. Several times.</li>
 
-      <li>igi</li>
+          <li>Charm him, and chat...</li>
 
-      <li>Nythrun</li>
+          <li>Romance: Play an evil female PC and treat him badly... scratch him, bite him, and see what he does.</li>
 
-      <li>Shaitan</li>
+          <li>Romance: Get into an argument with him, and when he comes looking to make up, refuse. Or you could try apologising.
+          Sometimes he actually accepts. Sometimes he apologises. Sometimes he is an ignorant prat and holds a grudge...</li>
 
-      <li>plainab</li>
+          <li>Romance: The naughty bits are rather varied and exhaustive. Or at least they try to be. Encourage him, don&#39;t
+          encourage him, make him work for it... play it however you like.</li>
 
-      <li>Domi</li>
+          <li>Install Crossmod Banter Pack after all other NPC mods and some other mods like Divine Remix, and he will banter with
+          mod added NPCs.</li>
 
-      <li>NOTE TO SELF: RECHECK PMS AND POSTS FOR CONTRIBUTORS!!! And for folks who would rather remain anonymous.</li>
-    </ul>
+          <li>Like their authors Berelinde and cmorgan, Gavin and Aran have a good friendship. As a result, there is more content,
+          noth friendship and romance, between the two. Install Gavin before Aran, and you will have more content between the two
+          of them.</li>
 
-    <p>This project has been a blast, even on days when I just wanted to throw it all in and go whack something in Mount &amp;
-    Blade or take over the world in Civ III/IV/BTS/V/GK (the project took that long!!). That is entirely due to folks poking at
-    Aran with long sticks, asking questions, giving feedback, and making me rethink things.</p>
+          <li>Play him on BGII:EE/EET. He has content and banters with the BeamHaul crowd, too.</li>
+        </ul>
+      </div>
 
-    <h2><a name="tools" id="tools">Tools Used in Creation</a></h2>
+      <div class="ribbon_rectangle_h2">
+        <a id="Contact" name="Contact"></a>
 
-    <ul>
-      <li>
-        <a href="http://weidu.org/main.html#weidu"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> by Wes Weimer and
-        the bigg
-      </li>
+        <h2>Contact Information</h2>
+      </div>
 
-      <li style="list-style: none; display: inline">
-        <a href="http://winmerge.org/">WinMerge</a> <acronym title="GNU&#39;s Not Unix">GNU</acronym> freeware file comparison
-        utility, developed: Grim; Project Lead: List
-      </li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>
-        <a href="http://www.jedit.org/">jEdit Programmer&#39;s Text Editor</a>
-      </li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>
-        <a href="http://www.context.cx/">ConTEXT</a> by Eden Kirin
-      </li>
+      <div class="section">
+        <p>This mod was created by <a href="https://www.gibberlings3.net/profile/844-cmorgan/">cmorgan</a>. You can visit <a href=
+        "http://www.gibberlings3.net/">The Gibberlings Three</a> for information on this and any other mods on which the community
+        may be working.</p>
+      </div>
 
-      <li>
-        <a href="http://www.textpad.com/">TextPAD</a> purchased version 5 by Helios Software Solutions
-      </li>
+      <div class="ribbon_rectangle_h2">
+        <a id="Thanks" name="Thanks"></a>
 
-      <li>
-        <a href="http://www.textpad.com/">WildEdit</a> purchased version 1.1 by Helios Software Solutions
-      </li>
+        <h2>Thanks and Acknowledgements</h2>
+      </div>
 
-      <li>
-        <a href="http://www.crimsoneditor.com/">Crimson Editor</a> by Ingyu Kang
-      </li>
+      <div class="ribbon_triangle_h2-l"></div>
 
-      <li>
-        <a href="http://forums.gibberlings3.net/index.php?showforum=137"><acronym title=
-        "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> by Avenger
-      </li>
+      <div class="ribbon_triangle_h2-r"></div>
 
-      <li>
-        <a href="http://iesdp.gibberlings3.net/"><acronym title=
-        "Infinity Engine Structures Description Project">IESDP</acronym></a> maintained by igi and Avenger
-      </li>
+      <div class="section">
+        <p>The current list of folks who have contributed and I wish to thank is on Aran&#39;s forum... or it will be once I have
+        gotten that organized</p>
 
-      <li>
-        <a href="http://forums.pocketplane.net/index.php/topic,22727.msg297145.html#msg297145">Near Infinity</a> by Jon Olav
-        Hauglid, FredSRichardson, devSin, and Wisp
-      </li>
+        <p>There is an entire community of folks to thank, for all sorts of reasons, so someone is going to get left out and I am
+        going to be very embarrassed. But the folks who really make things fun when working through i.e. stuff, the folks who
+        assisted in proofreading, giving critical feedback, and sending those PMs and messages saying &quot;YES!&quot; or
+        &quot;NOOOOO!!!!!!&quot; are all part of this mod. The good parts. The bad parts are all mine.</p>
 
-      <li>
-        <a href="http://www.mud-master.com/shadowkeeper/">Shadowkeeper</a> by Mud-Master
-      </li>
+        <p>First off, Domi is a goddess whose work with Dynaheir in BG1NPC originally inspired me to get off of my lazy behind and
+        actually become involved in modding. I thank her, curse her, swear at her, and then swear by her, all usually within the
+        same 20 minutes. Thanks to CamDawg, Grim Squeaker, Smoketest, devSin, Wisp, Taimon, Ascension64, igi, eric, Steve, and
+        Miloch, who all show me how things work and manage not to call me an ignorant jackass to my face (mostly). And infinite
+        thanks to Nythrun, who showed me patience, great humor, and the power of &quot;just do it.&quot;</p>
 
-      <li>
-        <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> jEdit Highlighters</a> by
-        cmorgan
-      </li>
+        <p>And though he will make an obscene comment or involve Aran in a Dodecahedron Smut Mod in retaliation, special thanks to
+        &quot;the bigg&quot;. Not just for years of patience and help, but for huge work behind the scenes to support, clean up,
+        extend, and rebuild Weimer&#39;s Dialog Utility making it relevant and powerful for today&#39;s modders.</p>
 
-      <li>
-        <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> ConTEXT Highlighters</a> by
-        Idobek, updated by cmorgan
-      </li>
+        <p>On this specific project, huge thanks go to Berelinde, who has helped me bounce ideas, clean up/rebuild code, warned me
+        when I was getting really gross, poked at me when I slacked, asked the &quot;duh&quot; questions that have set me on new
+        paths, reminded me when I have started doing boneheaded things in code, and provided solid criticism. Jastey has been there
+        regularly, giving great specific feedback; without these two strong modders as friends, working on and discussing things at
+        Tolkein Across The Water, the biggest challenges in the mod would never have been attempted, let alone written. To the Two
+        Mistresses of Modding Mayhem, I tip my cap in appreciation, and let you know that you have helped me get hours of enjoyment
+        out of the modding challenge. It is great to work with you!</p>
 
-      <li>
-        <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> Crimson Editor
-        Highlighters</a> by cmorgan
-      </li>
+        <p>Special thanks to Peachplums for her donated artwork - check her out at http://peachplums.deviantart.com/ and follow her
+        work!</p>
 
-      <li>
-        <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> TextWrangler
-        Highlighters</a> by cmorgan
-      </li>
+        <p>Lots of people have helped out in this &quot;open code&quot; mod experiment, many with behind-the-scenes PMs that have
+        opened new ideas or closed up old ones, others with clear and helpful bug and typo hunting, and still others with the
+        ticklish and sensitive &quot;proofread the smut&quot; quotient. My appreciation is fierce. In most cases, my thanks has
+        been to write specific pathways or open branches in response to their own particular personal protagonist preference (their
+        &quot;ppp&quot;), but some angels have given feedback without indicating what they like in their ppp, so the only coin I
+        have in repayent is acknowledgement of contribution. A partial list follows:</p>
 
-      <li>
-        <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> NotePad++ Highlighters</a>
-        by mike 1072 and cmorgan
-      </li>
+        <ul>
+          <li>Amellg</li>
 
-      <li>
-        <a href="http://www.zoom.co.jp/">ZOOM H4next</a> Handy Prortable digital Audio recording device<br />
-      </li>
+          <li>PeachPlums</li>
 
-      <li>
-        <a href="http://audacity.sourceforge.net/Audacity">Audacity</a> free, open source, cross-platform software for recording
-        and editing sounds
-      </li>
-    </ul>
-  </div>
+          <li>RavenBlack</li>
 
-  <h2>Musical Themes Used</h2>
+          <li>Ipsy</li>
 
-  <div class="section">
-    <p><a href="http://www.jsayles.com/familypages/earlymusic.htm">JSayles Early Music</a> - &quot;All MP3 recordings listed below,
-    may be downloaded and distributed free of charge. The recordings may be used for any purpose whatsoever. In fact, that&#39;s
-    the only reason I&#39;m doing this to promote Early Music, and especially to promote the musical selections recorded
-    below.&quot; - J. Sayles, performer</p>
+          <li>Nix</li>
 
-    <ul>
-      <li>aranw/media/wavc/set2_1_orosetta.wav /* 1 friend, upbeat */</li>
+          <li>KIrving</li>
 
-      <li>aranw/media/wavc/set2_2_praetorius.wav /* 2 friend, introspective */</li>
+          <li>Ajnos</li>
 
-      <li>aranw/media/wavc/set2_3_sweetnymphcometothylover.wav /* 3 love, upbeat */</li>
+          <li>KathStoneDog</li>
 
-      <li>aranw/media/wavc/set2_4_aprilinmistressface.wav /* 4 love, introspective */</li>
+          <li>McMazey</li>
 
-      <li>aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast */</li>
+          <li>Jessception</li>
 
-      <li>aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective */</li>
-    </ul>
+          <li>Aeryn</li>
 
-    <p>Vox Vulgaris - middle ages with a twist. Source - The group. Selections clipped from three of their online materials,
-    Cantiga 166, Rokatanc, and Saltarello. Pieces are in public domain, but the performance is copyrighted - probably shorter than
-    the &quot;you are stealing this&quot; time index, but if an official someone objects for use in a free mod, I&#39;ll just use
-    it on my own install. I have to thank the husband and wife team that developed mount &amp; Blade, because I didn&#39;t know
-    there was such great midaevil re-covers from groups like Vox Vulgaris and Hungary Debrecen, until modders put them into their
-    M&amp;B mods!</p>
+          <li>Luridel</li>
 
-    <ul>
-      <li>aranw/media/wavc/set3_1_vox_vulgaris_rokatanc.wav /* 1 friend, upbeat */</li>
+          <li>Ardanis</li>
 
-      <li>aranw/media/wavc/set3_2_vox_vulgaris_rokatanc.wav /* 2 friend, introspective */</li>
+          <li>Miloch</li>
 
-      <li>aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 3 love, upbeat */</li>
+          <li>Wisp</li>
 
-      <li>aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 4 love, introspective */</li>
+          <li>devSin</li>
 
-      <li>aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast */</li>
+          <li>the bigg</li>
 
-      <li>aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav /* 6 inn, introspective */</li>
-    </ul>
+          <li>K&#39;aeloree</li>
 
-    <p>Brass ensemble, Suzato, The Danseyre. Renaissance, done in a brass arrangement. Czech Brass. Source - Czech Brass album
-    &quot;Virtuosi Baroque Music&quot;, on the Sonnleitner Verlag label. Copyrighted, so if someone objects to the rip for a free
-    mod, I&#39;ll take it out. But if you find one of their recordings, they are solid brass, more calm in their interpretations
-    that the Philip Jones Brass Ensemble or Canadian Brass.</p>
+          <li>Marla Wolfblade</li>
 
-    <ul>
-      <li>aranw/media/wavc/set1_1_suzato_danserye_mourisque.wav /* 1 friend, upbeat */</li>
+          <li>erik</li>
 
-      <li>aranw/media/wavc/set1_2_suzato_danserye_battaille.wav /* 2 friend, introspective */</li>
+          <li>Igneous</li>
 
-      <li>aranw/media/wavc/set1_3_suzato_danserye_bransle.wav /* 3 love, upbeat */</li>
+          <li>Kessi</li>
 
-      <li>aranw/media/wavc/set1_4_suzato_danserye_monamy.wav /* 4 love, introspective */</li>
+          <li>yarpen</li>
 
-      <li>aranw/media/wavc/set1_5_praetorius_volte.wav /* 5 drunk or in an inn, fast */</li>
+          <li>Autumn Bard</li>
 
-      <li>aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective */</li>
-    </ul>
-  </div>
+          <li>Ericp07</li>
 
-  <h2><a name="contact" id="contact">Contact and Copyright Information</a></h2>
+          <li>Mike1072</li>
 
-  <div class="section">
-    <p>This mod is not developed, supported, or endorsed by BioWare&quot; BeamDog&quot;, Overhaul&quot;, or
-    Interplay/BlackIsle&quot;. It is not released under any license at all, because it is a EULA-breaking Law-shirking Free Random
-    Expression Of Fun(tm), and the only &quot;license&quot; it could fit under is probably not enforceable in any way shape or
-    form. I hereby grant anyone the freedom to do anything they want with it. If you rip off large parts of it, contact Aran
-    Sorkin, Joss Whedon, and any number of other sci-fi and fantasy authors and pay them, because any good stuff in here is
-    probably rephrases of their work that have been floating about in my brain for years, only &quot;Forgotten Reams-Ized&quot;. If
-    there are any copyright issues or this statement needs revision then please contact me and advise me what to do about it. This
-    mod was created to be freely enjoyed, mercilessly hated, or stalwartly ignored by all Baldur&#39;s Gate II players. If you are
-    looking to make a buck or two off of it, you really have not played the mod. I&#39;d advise you to do so, especially the
-    naughty bits, because that will kill any ideas you had about actually, you know... profiting :) .</p>
-  </div>
+          <li>igi</li>
 
-  <h2><a name="history" id="history">Version History</a></h2>
+          <li>Nythrun</li>
 
-  <div class="section">
-    <p><strong>Version 1 - November, 2013</strong></p>
+          <li>Shaitan</li>
 
-    <ul>
-      <li>Let the bug-hunt begin!</li>
-    </ul>
+          <li>plainab</li>
+
+          <li>Domi</li>
+
+          <li>Miloch</li>
+
+          <li>NOTE TO SELF: RECHECK PMS AND POSTS FOR CONTRIBUTORS!!! And for folks who would rather remain anonymous.</li>
+        </ul>
+
+        <p>This project has been a blast, even on days when I just wanted to throw it all in and go whack something in Mount &amp;
+        Blade or take over the world in Civ III/IV/BTS/V/GK/VI/VI:Rise and Fall (the project took that long!!). That is entirely
+        due to folks poking at Aran with long sticks, asking questions, giving feedback, and making me rethink things.</p>
+
+        <p><strong>Tools and Resources Used in Creation</strong></p>
+
+        <ul>
+          <li>
+            <a href="http://weidu.org/main.html#weidu"><acronym title="Weimer Dialogue Utility">WeiDU</acronym></a> by Wes Weimer
+            and the bigg and Wisp
+          </li>
+
+          <li>
+            <a href="http://winmerge.org/">WinMerge</a> <acronym title="GNU&#39;s Not Unix">GNU</acronym> freeware file comparison
+            utility, developed: Grim; Project Lead: List
+          </li>
+
+          <li>
+            <a href="http://www.jedit.org/">jEdit Programmer&#39;s Text Editor</a> by an entire world of open-source developers
+          </li>
+
+          <li>
+            <a href="http://www.context.cx/">ConTEXT</a> by Eden Kirin
+          </li>
+
+          <li>
+            <a href="http://www.textpad.com/">TextPAD</a> purchased version 5 by Helios Software Solutions
+          </li>
+
+          <li>
+            <a href="http://www.textpad.com/">WildEdit</a> purchased version 1.1 by Helios Software Solutions
+          </li>
+
+          <li>
+            <a href="http://www.crimsoneditor.com/">Crimson Editor</a> by Ingyu Kang
+          </li>
+
+          <li>
+            <a href="http://forums.gibberlings3.net/index.php?showforum=137"><acronym title=
+            "Dragonlance Total Conversion Editor Pro">DLTCEP</acronym></a> by Avenger
+          </li>
+
+          <li>
+            <a href="http://iesdp.gibberlings3.net/"><acronym title=
+            "Infinity Engine Structures Description Project">IESDP</acronym></a> maintained by igi and Avenger
+          </li>
+
+          <li>
+            <a href="http://forums.pocketplane.net/index.php/topic,22727.msg297145.html#msg297145">Near Infinity</a> by Jon Olav
+            Hauglid, FredSRichardson, devSin, and Wisp
+          </li>
+
+          <li>
+            <a href="http://www.mud-master.com/shadowkeeper/">Shadowkeeper</a> by Mud-Master
+          </li>
+
+          <li>
+            <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> jEdit Highlighters</a>
+            by cmorgan
+          </li>
+
+          <li>
+            <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> ConTEXT
+            Highlighters</a> by Idobek, updated by cmorgan
+          </li>
+
+          <li>
+            <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> Crimson Editor
+            Highlighters</a> by cmorgan
+          </li>
+
+          <li>
+            <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> TextWrangler
+            Highlighters</a> by cmorgan
+          </li>
+
+          <li>
+            <a href="http://dev.gibberlings3.net/"><acronym title="Weimer Dialogue Utility">WeiDU</acronym> NotePad++
+            Highlighters</a> by mike 1072 and cmorgan &lt;&lt; OLD - use Argent77&#39;s...
+          </li>
+
+          <li>
+            <a href="https://github.com/Argent77/NotePad_PlusPlus_WeiDU">Argent77&#39;s NotePadPlusPlus <acronym title=
+            "Weimer Dialogue Utility">WeiDU</acronym> Highlighters</a>, by Argent77
+          </li>
+
+          <li>
+            <a href="http://www.zoom.co.jp/">ZOOM H4next</a> Handy Portable Digital Audio recording device<br />
+          </li>
+
+          <li>
+            <a href="http://audacity.sourceforge.net/Audacity">Audacity</a> free, open source, cross-platform software for
+            recording and editing sounds
+          </li>
+
+          <li>
+            <a href="http://www.shsforums.net/topic/58219-tile2ee-a-mos-and-tis-converter/">Tile2EE</a>, A MOS and TIS converter by
+            argent77
+          </li>
+        </ul>
+
+        <p><strong>Musical Themes Used</strong></p>
+
+        <p><a href="http://www.jsayles.com/familypages/earlymusic.htm">JSayles Early Music</a> - &quot;All MP3 recordings listed
+        below, may be downloaded and distributed free of charge. The recordings may be used for any purpose whatsoever. In fact,
+        that&#39;s the only reason I&#39;m doing this to promote Early Music, and especially to promote the musical selections
+        recorded below.&quot; - J. Sayles, performer</p>
+
+        <ul>
+          <li>aranw/media/wavc/set2_1_orosetta.wav /* 1 friend, upbeat */</li>
+
+          <li>aranw/media/wavc/set2_2_praetorius.wav /* 2 friend, introspective */</li>
+
+          <li>aranw/media/wavc/set2_3_sweetnymphcometothylover.wav /* 3 love, upbeat */</li>
+
+          <li>aranw/media/wavc/set2_4_aprilinmistressface.wav /* 4 love, introspective */</li>
+
+          <li>aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast */</li>
+
+          <li>aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective */</li>
+        </ul>
+
+        <p>Vox Vulgaris - middle ages with a twist. Source - The group. Selections clipped from three of their online materials,
+        Cantiga 166, Rokatanc, and Saltarello. Pieces are in public domain, but the performance is copyrighted - probably shorter
+        than the &quot;you are stealing this&quot; time index, but if an official someone objects for use in a free mod, I&#39;ll
+        just use it on my own install. I have to thank the husband and wife team that developed mount &amp; Blade, because I
+        didn&#39;t know there was such great midaevil re-covers from groups like Vox Vulgaris and Hungary Debrecen, until modders
+        put them into their M&amp;B mods!</p>
+
+        <ul>
+          <li>aranw/media/wavc/set3_1_vox_vulgaris_rokatanc.wav /* 1 friend, upbeat */</li>
+
+          <li>aranw/media/wavc/set3_2_vox_vulgaris_rokatanc.wav /* 2 friend, introspective */</li>
+
+          <li>aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 3 love, upbeat */</li>
+
+          <li>aranw/media/wavc/set3_3_vox_vulgaris_cantiga_166.wav /* 4 love, introspective */</li>
+
+          <li>aranw/media/wavc/set2_5_riuriuchiu.wav /* 5 drunk or in an inn, fast */</li>
+
+          <li>aranw/media/wavc/set3_6_vox_vulgaris_saltarello.wav /* 6 inn, introspective */</li>
+        </ul>
+
+        <p>Brass ensemble, Suzato, The Danseyre. Renaissance, done in a brass arrangement. Czech Brass. Source - Czech Brass album
+        &quot;Virtuosi Baroque Music&quot;, on the Sonnleitner Verlag label. Copyrighted, so if someone objects to the rip for a
+        free mod, I&#39;ll take it out. But if you find one of their recordings, they are solid brass, more calm in their
+        interpretations that the Philip Jones Brass Ensemble or Canadian Brass.</p>
+
+        <ul>
+          <li>aranw/media/wavc/set1_1_suzato_danserye_mourisque.wav /* 1 friend, upbeat */</li>
+
+          <li>aranw/media/wavc/set1_2_suzato_danserye_battaille.wav /* 2 friend, introspective */</li>
+
+          <li>aranw/media/wavc/set1_3_suzato_danserye_bransle.wav /* 3 love, upbeat */</li>
+
+          <li>aranw/media/wavc/set1_4_suzato_danserye_monamy.wav /* 4 love, introspective */</li>
+
+          <li>aranw/media/wavc/set1_5_praetorius_volte.wav /* 5 drunk or in an inn, fast */</li>
+
+          <li>aranw/media/wavc/set2_6_comeagain.wav /* 6 inn, introspective */</li>
+        </ul>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="Credits" name="Credits"></a>
+
+        <h2>Credits and Copyright Information</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
+
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <p><strong>Author:</strong></p>
+
+        <ul>
+          <li>
+            <a href="https://www.gibberlings3.net/profile/844-cmorgan/">cmorgan</a>
+          </li>
+        </ul>
+
+        <p><strong>Copyright and Distribution:</strong></p>
+
+        <p>This mod is not developed, supported, or endorsed by BioWare&quot; BeamDog&quot;, Overhaul&quot;, or
+        Interplay/BlackIsle&quot;.<br />
+        It is currently licensed under the &quot;G3RA&quot; licence, to wit -<br />
+        <strong>Gibberling3 Rules All</strong> (like Tiax, only on the web).<br />
+        The website Gibberling3 and its owner of record is my sole distributor of this mod. In my absence, any Gibberling from G3
+        has my complete trust and authority to change anything and all things to match current G3 beliefs. This includes changing
+        my license to an established legal one, changing the distribution package, editing and removing and expanding and revising
+        any and all code and/or content, establishing approved and authorized mirrors and backups, and porting any content into new
+        game platforms. For all intents and purposes, any Gibberling is functionally Me In Person (and if they guess wrong and I
+        disagree with something we will fight it out in private and fix it later). We are a team, and I believe in them fully and
+        without reservation, period, full stop.</p>
+
+        <p>Mod authors wishing to create crossmod components collaboratively are welcome to contact me. Authors who would like to
+        create crossmod content in my absence are hereby given permission to do so, with the caveat that any Gibberling can
+        exercise creative control and editing over the content given to the Crossmod Banter Pack up to and including denying
+        permission if the writing&#39;s quality or tone are deemed insufficient by them.</p>
+
+        <p><strong>Personal Note:</strong><br />
+        If you are a reasonable person who values your own original work, please think before using other folk&#39;s stuff in your
+        own mod. Yes - we modify published game code and content - but doing that to other modders work is a crappy thing to do. No
+        matter how much you want the mods to be part of your game experience, the only &quot;payment&quot; a modder gets is players
+        commenting on their work. Their work, not your redefinition of it. The community can work cooperatively on content, and you
+        can always build your own mods on top of an install without taking over other people&#39;s NPCs and Quests. Please think,
+        and remember that however fiercely you want to tell your own story to the world, the other modders felt the same way. They
+        refrained from messing about with your stuff. Please do the same for theirs.</p>
+      </div>
+
+      <div class="ribbon_rectangle_h2">
+        <a id="History" name="History"></a>
+
+        <h2>Version History</h2>
+      </div>
+
+      <div class="ribbon_triangle_h2-l"></div>
+
+      <div class="ribbon_triangle_h2-r"></div>
+
+      <div class="section">
+        <p><strong>beta_luridel (06.30.2015)</strong></p>
+
+        <ul>
+          <li>
+            <a href="https://github.com/Gibberlings3/Aran-Whitehand/commit/4bbeb5925cc28c0376f196628489a8b986eae710">changelog</a>
+          </li>
+        </ul>
+
+        <p><strong>beta_maidenshadow (06.25.2015)</strong></p>
+
+        <ul>
+          <li>
+            <a href="https://github.com/Gibberlings3/Aran-Whitehand/commit/244d840fc389fc296ac4669afb63ce042ff119ca">changelog</a>
+          </li>
+        </ul>
+
+        <p><strong>beta_ravenblack (11.09.2011)</strong></p>
+
+        <ul>
+          <li>
+            <a href="https://github.com/Gibberlings3/Aran-Whitehand/commit/a90b7ba744e5ac09237ec3b40223c8a5fea91738">changelog</a>
+          </li>
+        </ul>
+
+        <p><strong>beta_piperb (10.28.2011)</strong></p>
+
+        <ul>
+          <li>
+            <a href="https://github.com/Gibberlings3/Aran-Whitehand/commit/c6a297ac4852b554ae315aadd52a7eb574fb9440">changelog</a>
+          </li>
+        </ul>
+
+        <p><strong>Pre-2011 Development and Concept Builds</strong></p>
+
+        <ul>
+          <li>Lots of smaller independent builds built for playtesters, long since lost in the mists of ancient history and the
+          glittery decay of spinning magnetic discs meeting their inevitable slide into oblivion.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </body>
 </html>

@@ -20964,7 +20964,7 @@ IF ~~ a4769 SAY @8408 IF ~~ THEN EXIT END
 /* Siefer's Horace is only available through PM/private distribution, and needs minor editing of .d for modern installs. May need permissions to update it and put it back in operation. */
 
 /* For quickness of evaluation, let's try a recast of the "Other People Talking PID". */
-IF ~!IsGabber(Player1)~ THEN a870
+IF ~!IsGabber(Player1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN a870
   SAY @8409
   IF ~~ THEN GOTO a1511
   IF ~IsGabber("c-aran")~ THEN GOTO a1686
@@ -21469,7 +21469,7 @@ END
 
 /* PID 3: Options for PC <> Aran, everywhere else */
 
-IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN a1077
+IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",%bg2_chapter_5%) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a1077
  SAY @8598
   /* General Options, both Male PC and female PC */
   /* voice/string fixer */
@@ -21484,9 +21484,9 @@ IF ~IsGabber(Player1) !Global("Chapter","GLOBAL",%bg2_chapter_5%)~ THEN BEGIN a1
   + ~Global("Chapter","GLOBAL",%bg2_chapter_2%) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1237 /*  search for your girlfriend, or not. */
   + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForAran","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1238 /*  with friends like these, who needs enemies. */
   + ~Global("Chapter","GLOBAL",%bg2_chapter_3%) Global("WorkingForBodhi","GLOBAL",1) Global("KnowsCowledBribe","LOCALS",1)~ + @8600 + a1239 /*  with friends like these,  we are likely to be a midnight snack. */
-  + ~!Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @8600 + a1081 /*  it ain't over 'til the dead lady sings. */
+  + ~!Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%) GlobalLT("Chapter","GLOBAL",%bg2_chapter_7%)~ + @13737 + a1081 /*  it ain't over 'til the dead lady sings. */
   + ~Dead("C6Bodhi") GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @8600 + a1082 /*  ding, dong, the biatch be dust (which old biatch? The Wicked Biatch!) */
-  + ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @8600 + a1083  /* Chapter 7: Suldanessellar, Capitol of Plot Devices, then straight to hell. Literally. */
+  + ~Global("Chapter","GLOBAL",%bg2_chapter_7%)~ + @13737 + a1083  /* Chapter 7: Suldanessellar, Capitol of Plot Devices, then straight to hell. Literally. */
   + ~!Class("c-aran",BARD_ALL)~ + @8601 + a1672
   + ~Class("c-aran",BARD_ALL)~ + @8601 + a1671
   + ~OR(8) Global("c-arangogstory","LOCALS",1) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 + a1673
@@ -25005,12 +25005,12 @@ END
 
 IF ~~ a1589
   SAY @10197
-  + ~Gender(Player1,FEMALE)~ + @10198 + a1513
-  + ~Gender(Player1,MALE)~ + @10198 + a1514
-  + ~Gender(Player1,FEMALE)~ + @10199 + a1515
-  + ~Gender(Player1,MALE)~ + @10200 + a1516
-  + ~Gender(Player1,FEMALE)~ + @10201 + a1517
-  + ~Gender(Player1,MALE)~ + @10201 + a1518
+  + ~Gender(Player1,FEMALE)~ + @10198 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1513
+  + ~Gender(Player1,MALE)~ + @10198 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1514
+  + ~Gender(Player1,FEMALE)~ + @10199 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1515
+  + ~Gender(Player1,MALE)~ + @10200 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1516
+  + ~Gender(Player1,FEMALE)~ + @10201 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1517
+  + ~Gender(Player1,MALE)~ + @10201 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1518
   + ~Gender(Player1,FEMALE)~ + @1025 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1590
   + ~Gender(Player1,MALE) RandomNum(2,1)~ + @1025 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1647
   + ~Gender(Player1,MALE) RandomNum(2,2)~ + @1025 DO ~SetGlobal("c-arandrunk","GLOBAL",4) SetGlobalTimer("c-aransmalltalk","GLOBAL",300) SetGlobalTimer("c-aranisdrunk","GLOBAL",TWO_DAYS)~ + a1591

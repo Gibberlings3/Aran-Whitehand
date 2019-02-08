@@ -11738,7 +11738,8 @@ CHAIN IF ~CombatCounter(0) !Detect([ENEMY]) Global("c-arntob18b","GLOBAL",0) InP
 == C-ARN25B IF ~InParty("Skiedv") !InParty("M#Eldoth")~ THEN @12964
 == C-ARN25B IF ~InParty("Skiedv") InParty("M#Eldoth")~ THEN @12965
 == C-ARN25B IF ~InParty("O#Tiax")~ THEN @12966
-== C-ARN25B IF ~InParty("Yesli")~ THEN @12967== C-ARN25B IF ~InParty("CMALORA")~ THEN @12968
+== C-ARN25B IF ~InParty("Yesli")~ THEN @12967
+== C-ARN25B IF ~InParty("CMALORA")~ THEN @12968
 == C-ARN25B @12969
 EXTERN BJAHEI25 a4256
 
