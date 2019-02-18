@@ -1893,7 +1893,7 @@ Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may no
 @1676 = ~[ARAN] Great way to make me feel better, eh? Corellon's Sword, do you really be comparin' me to Kivan? He has done more livin' an' more yin' than seven generations o' Whitehands combined.~
 @1677 = ~[ARAN] Great way to make me feel better, eh? Allison has most o' th' same issues I have, only she has a mite more grace under pressure. Me, I just like to take that pressure an' complain bitterly about it, until somethin' walks by that has to be killed. I think they call it 'occupational therapy'.~
 @1678 = ~[ARAN] Great way to make me feel better, eh? Now why bring Kitanya into this? I be my own bundle o' problems, concerns, an' issues, thank you very much. Though mayhap you have a point. I could concentrate on her buttocks, an' they might provide a powerful distraction...~
-@1679 = ~[ARAN] Great way to make me feel better, eh? Rylorn doesn't worry so much about th' long term, as far as I can tell. Me, I keep seein' shadows, an' expectin' they are filled wi' death, dismemberment, an' a long sow painful torture... not rightly in that order, neither.~
+@1679 = ~[ARAN] Great way to make me feel better, eh? Rylorn doesn't worry so much about th' long term, as far as I can tell. Me, I keep seein' shadows, an' expectin' they are filled wi' death, dismemberment, an' a long slow painful torture... not rightly in that order, neither.~
 @1680 = ~[ARAN] Great way to make me feel better, eh? Now you have been doin' a powerful lot o' cheatin', there. Saerileth refuses to enter Underdark.~
 @1681 = ~[ARAN] Great way to make me feel better, eh? Bruce is too drunk to be scared. I saw him tryin' to make out wi' a slimepod. Luckily, seems like his breath killed off any residual spores.~
 @1682 = ~[ARAN] Great way to make me feel better, eh? Sime has a way o' cuttin' right through distractions. Me, not so much.~
@@ -1997,7 +1997,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @1748 = ~[ARAN] There be lots o' wild things in Thieves Cant, but there be little overlap. Not that I'd know much about th' Cant, mind you.~
 @1749 = ~[ARAN] I had me a mite bit o' trouble first time I got to th' Dale lands. They use a bit different trade-speak, an' some o' th' words we use are considered an insult. A word to th' wise... don't be callin' a Dale wizard a 'wand'. They get downright testy.~
 @1750 = ~[ARAN] Sometimes I think all this would be a bit easier if everyone used th' same words for th' same things. But then again, a decent inn by th' docks in any given town might have a hundred languages among only fifty patrons, so it just goes to show how we like to make life complicated, eh?~
-@1751 = ~[ARAN] You should hear some o' this talk among th' new hires. They start usin' it wi' everyone, to sow they are part o' th' team. O' course, that backfires a bit, usually. Marks 'em as green.~
+@1751 = ~[ARAN] You should hear some o' this talk among th' new hires. They start usin' it wi' everyone, to show they are part o' th' team. O' course, that backfires a bit, usually. Marks 'em as green.~
 @1752 = ~[ARAN] Now I don't say yea or nay to that, on account o' loose lips might get me in a mite bit o' trouble. No sense gettin' anyone upset, even accidentally.~
 @1753 = ~[ARAN] Anythin' else you want to clear up? Gotta know the folks you are fightin' along side, to be safe.~
 @1754 = ~[PC] Yes. I still don't quite get all the terms you just used. I want to ask about another one.~
@@ -2048,7 +2048,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @1799 = ~[PC] Well, perhaps I can change your mind about that.~
 @1800 = ~[PC] Fair enough. So the 'look but don't touch' rule applies.~
 @1801 = ~[PC] You used some terms back there I didn't get. Some definitions? Because I really didn't understand you.~
-@1802 = ~[PC] A pity. But then again, it really isn't a choice type of thing, is it. At least we can hit the bars together and not be poaching each other's territory.~
+@1802 = ~[PC] A pity. But then again, it really isn't a choice type of thing. At least we can hit the bars together and not be poaching each other's territory.~
 @1803 = ~[PC] You are a bit full of yourself, aren't you?~
 @1804 = ~[PC] Watch it, sellsword - you made a big assumption there.~
 @1805 = ~[ARAN] Most times, I keep to myself. And you are not so bad yourself, <CHARNAME>. Kinda easy on the eyes.~
@@ -2516,7 +2516,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2267 = ~[PC] I may not know exactly what I am doing, but you should trust me.~
 @2268 = ~[PC] Great. A sellsword with a death wish. Just what I wanted.~
 @2269 = ~[ARAN] I was jokin', <CHARNAME>. To be right honest, danger attracts to you like bees to honey, eh? That be excitin'. Gives me a sense o' bein' part o' somethin' big.~
-@2270 = ~[PC] Then you are a fool. The only things that count in this life are power, wealth, and freedom to do as one wishes. Fame comes when you have enough of the other two.~
+@2270 = ~[PC] Then you are a fool. The only things that count in this life are power, wealth, and freedom to do as one wishes. Fame comes when you have enough of all three.~
 @2271 = ~[ARAN] Well now, that be right kind o' you. I will be keepin' my eyes open for a village o' redheaded young lasses to retire to, an' you can name it after me. But to be fair, I was jokin', <CHARNAME>. Danger attracts to you like bees to honey, eh? That be excitin'. Gives me a sense o' bein' part o' somethin' big.~
 @2272 = ~[PC] I did not ask for any of this, Aran. But I intend to finish it.~
 @2273 = ~[ARAN] When you pick a target as nasty as that slippery bastard, you might get an edge up if you look at th' whole target, not just what you are aimin' at, an' try to get ahead o' his game. Chasin' him around so he can lead you where he wants you be poor strategy.~
@@ -2606,7 +2606,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2357 = ~[PC] I am a Holy Strategist of the Red Knight. I must seek to win battles in the most efficient way, and to do that I need to experience the battles we fight, and try to understand the changes that I make to adapt to new conditions.~
 @2358 = ~[PC] I am a Nightcloak of Shar. If She did not wish me to change, She would stop it.~
 @2359 = ~[PC] I am a Battleguard of Tempus. As long as I draw breath, I can fight. And each fight will serve Tempus. For Him, I embrace change.~
-@2360 = ~[PC] I am a Authlim of Iyachtu Xvim. We do not question His ways, on pain of hideous torture. If He did not want me to change, I would not.~
+@2360 = ~[PC] I am an Authlim of Iyachtu Xvim. We do not question His ways, on pain of hideous torture. If He did not want me to change, I would not.~
 @2361 = ~[ARAN] I can see that right clear, I can. "Pardon me, mister evil undead thing o' horror wi' blood-drippin' fangs. Stand aside. This here be <CHARNAME>!"~
 @2362 = ~[PC] I have definitely changed. When I was first starting out, I would have thought you were crazy, saying things like that. Now, things have definitely changed.~
 @2363 = ~[PC] I wish I could find that funny. Unfortunately, the way things have changed, it is actually a possibility.~
@@ -2646,15 +2646,15 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2397 = ~[PC] And yet I do not seem to have the power to get you to just walk with me, instead of starting an odd conversation...~
 @2398 = ~[PC] I will trade the power and knowledge gained for a few moments of peace and reflection.~
 @2399 = ~[PC] I understand what you are saying. I just wish that life were more about working together and less about senseless loss and destruction.~
-@2400 = ~[PC] At least I get something out of each one. You just get more opportunities to exercise you vocabulary of oaths and swearwords. By the way, that last one... I think it was anatomically impossible without magical intervention..~
+@2400 = ~[PC] At least I get something out of each one. You just get more opportunities to exercise your vocabulary of oaths and swearwords. By the way, that last one... I think it was anatomically impossible without magical intervention.~
 @2401 = ~[ARAN] Aye. You have a point there. Me, though... I find myself a bit more resistant to th' concept o' "inevitability" these days. There be a powerful large amount o' change I done seen in myself. Some good, some bad, some indifferent. It makes me wonder if just dealin' wi' battle all th' time really changes who we be, or if it just builds a core o' armor around who we be.~
 @2402 = ~[PC] Battlefield philosophy? I learn something new about you each day.~
 @2403 = ~[PC] Wasting time wondering if the experiences you have are going to make you a different person or if they are going to simply be a new set of tools that you can use is a waste of time. In the end, you are what you present to the outside world, no matter what goes on inside.~
 @2404 = ~[PC] What is inside is what counts. Finding ways of killing our enemies has little to do with who you are as a person. It is just a set of skills that help you move through life.~
 @2405 = ~[PC] I think you will find a balance. I may not. But then again, you are not me.~
 @2406 = ~[PC] You resist the concept of inevitability because you want to think that you have freedom. But the gods are the ones with freedom. We just play around the edges.~
-@2407 = ~[PC] You can let what you do define you, or you can choose what you do to accomplish your goals. Killing things does not change who you are. Thee is nothing inevitable about life, except that we all move on. And some liches have even put a semi-permanent stop to that.~
-@2408 = ~[ARAN] Why, sure enough. I can see th' whole thing might have put you off thinkin' or talkin', so I be right happy you let me chatter on. Passes th' time, it does.~
+@2407 = ~[PC] You can let what you do define you, or you can choose what you do to accomplish your goals. Killing things does not change who you are. There is nothing inevitable about life, except that we all move on. And some liches have even put a semi-permanent stop to that.~
+@2408 = ~[ARAN] Why, sure enough. I can see th' whole thing might have put you off thinkin' or talkin', so I be right happy you let me chatter on. Passes th' time, it do.~
 @2409 = ~[ARAN] You do have an active imagination, eh? No matter. You successfully got me clean off topic an' now I forgot what we be talkin' about.~
 @2410 = ~[ARAN] I'd best be gettin' on wi' what we are doin', anyways.~
 @2411 = ~[ARAN] All the more reason to take a swing or two, when there be no enemies about, eh?~
@@ -2724,7 +2724,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2475 = ~[PC] Well, if you insist on embarrassing yourself, sure. But we should use practice weapons to make sure we don't have any accidents.~
 @2476 = ~[PC] There is nothing that says a faithful follower with agility and style cannot teach a fighter how to fight. I would enjoy teaching you, Aran.~
 @2477 = ~[PC] And here I thought you had been distracted by all that ink and study. Good to see you remembering what really matters is faith and focus. I suspect we will not set our respective gods at each other's throats with a friendly sparring match.~
-@2478 = ~[PC] Why should I bother? I an pray for assistance, and then attack from a position of advantage. Go find a fighter who likes long drawn out engagements to spar with, Aran.~
+@2478 = ~[PC] Why should I bother? I can pray for assistance, and then attack from a position of advantage. Go find a fighter who likes long drawn out engagements to spar with, Aran.~
 @2479 = ~[ARAN] Well, your fightin' ways have been slowed down a mite on account o' all that work on stealth an' trackin', an' all that spellswork. This be th' perfect time to catch up a bit, eh?~
 @2480 = ~[PC] I suspect that a good spar is more useful for you then it is for me, but I will indulge you.~
 @2481 = ~[PC] And here I thought you had been distracted by all that ink and study. Good to see a fellow druid remembering that what really matters is Nature's balance.~
@@ -2755,7 +2755,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2506 = ~[ARAN] Right then. Let's be gettin'...~
 @2507 = ~[ARAN] Oh, Corellon's Uncertain Chastity, this be a bad idea right now. We are makin' progress, an' here I go interruptin' again. Plus, all my sparrin' gear be packed at the bottom o' things, on account o' we need other things ready at hand more. Look, how about when we settle into camp for a rest? Next time we be outside someplace we can move about freely? Some evenin', when we be campin'.~
 @2508 = ~[PC] That sounds fine to me.~
-@2509 = ~[PC] You are not going to let this go until we spar, are you. Fine. Next time we set up camp outside in the evening, I will look for you.~
+@2509 = ~[PC] You are not going to let this go until we spar, are you? Fine. Next time we set up camp outside in the evening, I will look for you.~
 @2510 = ~[PC] No, thank you. I think it would be a waste of my time.~
 @2511 = ~[PC] Are you sure that you want to spar, or do you have romance in mind?~
 @2512 = ~[PC] Chicken. You are worse than Melicamp. At least he had an excuse.~
@@ -3152,7 +3152,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @2903 = ~[PC] (Twist your wrist, deflecting his blow and flicking your blade toward his throat.)~
 @2904 = ~[PC] Is that a rabbit in your pocket, or are you just happy to see me?~
 @2905 = ~[PC] So, do you give up? (Thrust savagely toward his right shoulder.)~
-@2906 = ~[PC] Come on, you know you want to surrender to me... or do I want to surrender myself tp you? (Slash your foil toward his throat.)~
+@2906 = ~[PC] Come on, you know you want to surrender to me... or do I want to surrender myself to you? (Slash your foil toward his throat.)~
 @2907 = ~[PC] I seem to be doing quite well. But your face is turning a little red, Aran (Thrust savagely toward his right shoulder.)~
 @2908 = ~[PC] This fight feels like it has gone on for hours... (Twist quickly, ducking under his blade.)~
 @2909 = ~[ARAN] (Soft moonlight falls across his face as he circles to the right, sword's point toward you.)~
@@ -3615,8 +3615,8 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @3366 = ~[PC] I really do not know what you are talking about. Imoen has always been a close friend.~
 @3367 = ~[PC] I really do not know what you are talking about. Nalia is just a friend.~
 @3368 = ~[PC] I really do not know what you are talking about.~
-@3369 = ~[PC] I really do not know what you are talking about. Kivan just trust me more than he trusts others.~
-@3370 = ~[PC] I really do not know what you are talking about. Nathaniel just trust me more than he trusts others.~
+@3369 = ~[PC] I really do not know what you are talking about. Kivan just trusts me more than he trusts others.~
+@3370 = ~[PC] I really do not know what you are talking about. Nathaniel just trusts me more than he trusts others.~
 @3371 = ~[PC] I really do not know what you are talking about. Solaufein just trusts me more than he trusts others.~
 @3372 = ~[PC] I really do not know what you are talking about. Tsujatha just has different ways.~
 @3373 = ~[PC] I really do not know what you are talking about. Valygar just likes to talk with me.~
@@ -4870,7 +4870,7 @@ Yours faithfully, Aran.~
 @4587 = ~[PC] Let me think about the big picture. You worry about killing the opposition.~
 @4588 = ~[PC] We bother because we are alive. Chaos does not require anything more than our being willing to get in there and mix things up.~
 @4589 = ~[PC] You think too much.~
-@4590 = ~[PC] Are you having some kind of mid-career crisis? Should I get you to a god brothel and let you get it out of your system?~
+@4590 = ~[PC] Are you having some kind of mid-career crisis? Should I get you to a good brothel and let you get it out of your system?~
 @4591 = ~[ARAN] You know, you be a real arsehole, sometimes. I come down here lookin' for a mite bit o' time to reflect, an' you come down all high an' mighty an' tell me I can't handle th' job, an' threaten to replace me? Kelemvor's Scythe, you got a funny way of inspirin' th' troops.~
 @4592 = ~[PC] Hey, the truth hurts. Get yourself together, or I will drop you and replace you with someone who actually has testicles.~
 @4593 = ~[PC] We are alone, so I will let that slide... once. Now shut up and soldier, soldier.~
@@ -4903,7 +4903,7 @@ Yours faithfully, Aran.~
 @4620 = ~[PC] That water looks calm, cool, and very very still.~
 @4621 = ~[PC] I am not paying you to stand around 'thinking'. Get back on the job.~
 @4622 = ~[ARAN] You know, there be times when I be my own man, eh? Just leave me alone for a bit, an' I'll be back on task an' rarin' to go kill th' next band o' idiots what think they can take us on.~
-@4623 = ~[ARAN] But just for a minute, I want no part o' drinkin', fightin', swearin', wanderin', or any other kin o' " 'in " th' gods can come up with. I just want to be alone wi' my thoughts.~
+@4623 = ~[ARAN] But just for a minute, I want no part o' drinkin', fightin', swearin', wanderin', or any other kind o' " 'in " th' gods can come up with. I just want to be alone wi' my thoughts.~
 @4624 = ~[ARAN] *cough* Bane's Brazen Bony Backside, that does hit th' spot. I may need somethin' else to stop it burnin' a hole in my stomach, though. What th' distiller put in there - ankheg spittle?~
 @4625 = ~[ARAN] Sune's Tempestuous Tits, boyo, starlight be romantic, but you don't want a grassy field for that sort o' recreation. Th' grass tickles, th' ground be cold an' hard, an' I won't even start discussin' th' ants.~
 @4626 = ~[ARAN] Hells no. I like water, an I like th' way it calms me down, but you won't hear me complainin' to loudly an' whinin' on an' on. For one thing, I be alive to complain. That sure as all hells beats th' alternative, in my book.~
@@ -5113,7 +5113,7 @@ Yours faithfully, Aran.~
 @4830 = ~[PC] My hands brushing across those lean hard stomach muscles might give you a hint. Or the fact that they seem to drift south to find something much harder...~
 @4831 = ~[PC] It is hard to miss a woman holding her nude body pressed against yours, even though you seem to have troubles with subtlety like that.~
 @4832 = ~[PC] I think you should go away. Now.~
-@4833 = ~[ARAN] True enough. I have some troubles wi' subtlety. For instance, I know th' feel o' you pressed up against me like this be a gift o' th' gods. But there be this bath, an' I still don't rightly know if th' bath be a ruse or jut for afterwards, eh?~
+@4833 = ~[ARAN] True enough. I have some troubles wi' subtlety. For instance, I know th' feel o' you pressed up against me like this be a gift o' th' gods. But there be this bath, an' I still don't rightly know if th' bath be a ruse or just for afterwards, eh?~
 @4834 = ~[PC] Just a bath, Aran. Come on, I am halfway into the water already. You can scrub my back. That was fun. You have such interesting reactions to my body.~
 @4835 = ~[PC] Wait... I have changed my mind. I see the way you are looking at me, Aran. But I can't do anything to help you right now. I am spoken for, and I intend to be faithful.~
 @4836 = ~[PC] Shall I be forward? I want you to forget all about the bath, and just kiss me.~
@@ -5149,7 +5149,7 @@ Yours faithfully, Aran.~
 @4866 = ~[PC] (Study his form closely, watching him move in the water.)~
 @4867 = ~[PC] (Remove the rest of your clothing and move into the water beside him. Hand him soap and a cloth, gathering your hair off of your neck and turning your back to him.)~
 @4868 = ~[PC] Oh, fine. Here... I will take these things off and get in there too. It looks too inviting.~
-@4869 = ~[ARAN] Aye, I do understand. It just seems to be my overactive imagination, on account o' I think I see hunger in your eyes when you be lookin' at me. A lad can dream, I guess. But IO am behavin' right proper, I am. See, this be me, just takin' a bath.~
+@4869 = ~[ARAN] Aye, I do understand. It just seems to be my overactive imagination, on account o' I think I see hunger in your eyes when you be lookin' at me. A lad can dream, I guess. But I am behavin' right proper, I am. See, this be me, just takin' a bath.~
 @4870 = ~[ARAN] Right then. First one in be a blighted kobold, eh?~
 @4871 = ~[ARAN] (There is little finesse in the removal of clothing, and the splash resulting from his exuberant entrance threatens to swamp the floor.)~
 @4872 = ~[ARAN] (There is a tremendous splashing as he joins you, his clothing strewn about haphazardly beside the pile of towels nearby.)~
@@ -5709,7 +5709,7 @@ Yours faithfully, Aran.~
 @5426 = ~[ARAN] I guess th' question be, do you want me to help wash this while all that armor be on, or off?~
 @5427 = ~[PC] (The sound of metal hitting the floor echoes in your ears as you undo each lace and belt slowly, savoring his reaction.) Does this answer your question?~
 @5428 = ~[PC] Just wash the ink off of the armor, Aran. No amorous advances, thank you.~
-@5429 = ~[PC] You know, you talk too much, and you take way to many liberties. You should leave. Now.~
+@5429 = ~[PC] You know, you talk too much, and you take way too many liberties. You should leave. Now.~
 @5430 = ~[PC] Do you ever think about anything but sex?~
 @5431 = ~[ARAN] Last time I checked, I was male. Does that answer th' question?~
 @5432 = ~[PC] Yes. (The sound of metal hitting the floor echoes in your ears as you undo each lace and belt protecting you, savoring his reaction as you disrobe.)~
@@ -5787,7 +5787,7 @@ Yours faithfully, Aran.~
 @5504 = ~[PC] Now that was fun, don't you think? And if you ever tell anyone we did this, you are a dead man. Understand?~
 @5505 = ~[PC] (Lean back against him, patting his cheek gently and whisper...) This can be our little secret.~
 @5506 = ~[PC] I... I don't know what came over me. This is all wrong! Can you keep it a secret? Please?~
-@5507 = ~[PC] That was a new experience. I might want to do that again sometime. I take it you mightbe willing...~
+@5507 = ~[PC] That was a new experience. I might want to do that again sometime. I take it you might be willing...~
 @5508 = ~[ARAN] Now, I can hold out as long as you can. Mayhap more. I think it would be right fun to see how many little gasps I can bring out while you be concentratin' on scribin'. Wi' any luck, we both will win.~
 @5509 = ~[ARAN] Hey, now, this be a mite bit public, an' you seem to be interested in things o' a more personal nature.~
 @5510 = ~[PC] No one can see anything, Aran. Just relax and help me concentrate on the task at hand.~
@@ -6452,7 +6452,7 @@ Yours faithfully, Aran.~
 @6169 = ~[PC] I thought you were a cleric, Aran. That should mean you only swear by your own god.~
 @6170 = ~[PC] I am not taking any of those, Aran. Just settle down and choose one god or goddess, will you?~
 @6171 = ~[PC] I was speaking of being less socially awkward. The theology does not interest me. There are no gods, just very powerful beings that demand worship and followers.~
-@6172 = ~[VALYGAR] Why not risk the gods wrath? Their love or their displeasure amounts to the same thing.~
+@6172 = ~[VALYGAR] Why not risk the god's wrath? Their love or their displeasure amounts to the same thing.~
 @6173 = ~[ARAN] Aye, now, you can't rightly believe that, Valygar.~
 @6174 = ~[VALYGAR] I most certainly do. Praise them or curse them, praise by them and curse through them, it matters not.~
 @6175 = ~[ARAN] That is too far for my blood, friend. I claim Tymora as my favorite from time to time, an' swear usin' some other on other days, to be sure. But no faith in the gods is askin' for trouble I want no part of.~
@@ -6494,7 +6494,7 @@ Yours faithfully, Aran.~
 @6211 = ~[PC] So, sellsword. Are you man enough to follow me to your doom?~
 @6212 = ~[ARAN] You know, I swear by plenty o' gods, <CHARNAME>. And make no mistake, I'm right scared.~
 @6213 = ~[ARAN] But I got more faith that you will prevail than in th' entire pantheon. If you leave it to me, I'll choose to be where I belong, backin' your play, no matter th' odds.~
-@6214 = ~[ARAN] Besides my own god, I hold no other bein' before you. If it is  all right wi' you, I'll stay where I belong - backin' your play, no matter th' odds.~
+@6214 = ~[ARAN] Besides my own god, I hold no other bein' before you. If it is all right wi' you, I'll stay where I belong - backin' your play, no matter th' odds.~
 @6215 = ~[ARAN] I came out o' th' Moonshae Isles wi' a fair amount o' experience, an' a decent respect for th' mercenary life. I wanted shut o' th' Axes, anyways, an' a friend mentioned there were some right heavy troop deployments on the border wi' Amn. So, I went an' signed up for th' highest pay I could. Just in time for a series o' pitched battles against th' Chill an' them Iron Throne bastards, though we didn't rightly know who it was reinforcin' them at th' time. I served my battles, an' some police duty, an' I developed decent respect for th' Flamin' Fist.~
 @6216 = ~[ARAN] But things got a mite bit awkward. You done talked to Dosan on this, I am right sure, an' from both your an' his perspectives it was a mite more than awkward, eh?~
 @6217 = ~[ARAN] But things got a mite bit awkward. Strange orders, an' stranger countermands, an' then a big reorganization up top somewhere.~
@@ -6532,7 +6532,7 @@ Yours faithfully, Aran.~
 @6249 = ~[PC] (Gaze silently up at the twinkling lights far above you.)~
 @6250 = ~[PC] There are lots more interesting things to look at than those far off lights.~
 @6251 = ~[PC] Are you feeling all nostalgic and weepy again? Good god, man. You must be in love.~
-@6252 = ~[PC] It kind of makes you think. What kind of powerful creatures can wander around those far-off tings at will?~
+@6252 = ~[PC] It kind of makes you think. What kind of powerful creatures can wander around those far-off things at will?~
 @6253 = ~[PC] Is this another attempt to get me into your bedroll?~
 @6254 = ~[PC] (Study his profile carefully, his face slightly glowing in reflected starlight.)~
 @6255 = ~[PC] Right. This is a waste of time. I'm tired. Have fun staring vacantly at the sky.~
@@ -7274,7 +7274,7 @@ Yours faithfully, Aran.~
 @6991 = ~[PC] Oh, just shut up and kiss me.~
 @6992 = ~[PC] No, it is not. If someone promises something, I expect them to deliver, no matter what they claim.~
 @6993 = ~[PC] I... I can't promise anything. But if you want me, ask me what I want.~
-@6994 = ~[ARAN] You say you be practical, but that you would expect th' moon. Now that be completely impossible to achieve. I get th' inference, it bein' that if I say somethin' it better be becked up an' truthful. But even I can't rightly do th' impossible, an' I be romantic enough to say somethin' wild in th' eat o' th' moment, so to speak.~
+@6994 = ~[ARAN] You say you be practical, but that you would expect th' moon. Now that be completely impossible to achieve. I get th' inference, it bein' that if I say somethin' it better be becked up an' truthful. But even I can't rightly do th' impossible, an' I be romantic enough to say somethin' wild in th' heat o' th' moment, so to speak.~
 @6995 = ~[ARAN] How about I start wi' a simple promise, an' work my way up through improbable, until I get to only slightly impossible?~
 @6996 = ~[PC] How about we drop this ridiculous discussion and walk together, as two friends out for a stroll?~
 @6997 = ~[PC] Well, if you wanted a more practical application, then a romantic thing might be to... well, to touch me.~
@@ -7906,7 +7906,7 @@ Yours faithfully, Aran.~
 @7623 = ~[PC] The way you are looking at me, I think I see the two of us, completely naked, exploring all sorts of... hey! Careful, that cloth might tear!~
 @7624 = ~[PC] Don't you think we should stop? This is getting very confusing...~
 @7625 = ~[ARAN] Sune's Blissful Release, you want to stop now? I am on fire for you. Let me please you.~
-@7626 = ~[PC] No, I don't want to do everything that the of us could do... but I think I will please you. I wonder what happens when I take the tip of my tongue and do this... and this... perhaps if I just play a little with hmmmmm...~
+@7626 = ~[PC] No, I don't want to do everything that the two of us could do... but I think I will please you. I wonder what happens when I take the tip of my tongue and do this... and this... perhaps if I just play a little with hmmmmm...~
 @7627 = ~[PC] What would please me most is just the two of us, completely naked, exploring all sorts of... hey! Careful, that might tear!~
 @7628 = ~[ARAN] Aye now, do you be wantin' to stop? Things might get a bit heavy, here...~
 @7629 = ~[PC] Gods, no. Whatever you do, do not stop now...~
@@ -8336,7 +8336,7 @@ Yours faithfully, Aran.~
 @8053 = ~[ARAN] Aye, now. Mayhap some lines are meant to be crossed another night, another way. Starlight be a fine romantic notion, but it ends, an' then daylight means takin' stock an' reapin' consequences.~
 @8054 = ~[ARAN] That would be right kind o' you, but I think that might wait a bit. Not so fair to th' girl you be findin', after all. I don't see naught in th' way o' findin' anyone who could successfully compete wi' you.~
 @8055 = ~[ARAN] No. When I get th' right signals, I act. But somethin' be not quite right here. I think I done pressed too hard, an' told too much. Mayhap I should be on about my business. But if you ever decide to have a bit o' pleasure, I be th' man for th' job. Just ask.~
-@8056 = ~[ARAN] Now, there be a bit o' a problem here. You think strength be causin' pain an' forcin' my will on yours. You see that as th' way to win your respect. Problem is, I don't rightly see things that way. I want someone who can give voice to their pleasure, an' be an equal, not some ~
+@8056 = ~[ARAN] Now, there be a bit o' a problem here. You think strength be causin' pain an' forcin' my will on yours. You see that as th' way to win your respect. Problem is, I don't rightly see things that way. I want someone who can give voice to their pleasure, an' be an equal.~
 @8057 = ~[ARAN] (He pushes apart from you.) If you be lookin' for this sort o' ugliness, then tell me it be over. You won't be gettin' that kind o' thing from me.~
 @8058 = ~[ARAN] Well, it sure as Sune's Breath sounded like you meant it. I'll be on my way. I am sure you can find some other poor bastard to torment. Good luck to you on that.~
 @8059 = ~[ARAN] First you want me, then you don't want me. I do believe I have fallen under th' spell o' th' most chaotic woman I could possibly meet.~
@@ -8591,7 +8591,7 @@ Yours faithfully, Aran.~
 @8308 = ~[PC] (You stand up and brush yourself off, turning your back to him as you walk away.)~
 @8309 = ~[ARAN] (From the sounds of things, he makes his way noisily out of the water and picks up his towel.)~
 @8310 = ~[PC] I am keeping my eyes averted, but I'd like to be able to see you. Modestly attired, of course. Can I look yet?~
-@8311 = ~[PC] Are you trying to get me to picture ~
+@8311 = ~[PC] Are you trying to get me to picture you in my head, or just trying to get me to look?~
 @8312 = ~[PC] (Blush brightly at the thoughts running through your head.)~
 @8313 = ~[PC] (Sniff disdainfully and begin tapping your fingers together impatiently.)~
 @8314 = ~[PC] I think I will see you later. I need to get going.~
@@ -9119,7 +9119,7 @@ Yours faithfully, Aran.~
 @8836 = ~[PC] Wait. I am sorry. Let's forget any of this happened.~
 @8837 = ~[PC] You are so... so... Go on. Go sulk, or pout, or whatever you want to do. I don't want to talk to you anyways! I... I hate you! (burst into tears.)~
 @8838 = ~[ARAN] Now, hey, wait... I be right sorry, eh? I just felt you were takin' advantage o' me right an' left, an' I.. oh, for Tymora's Smile, stop wi' th' waterworks, eh?~
-@8839 = ~[PC] That is not enough. Words are never enough. I mean, you just talk,I just talk, and then we fight... You must hate me.~
+@8839 = ~[PC] That is not enough. Words are never enough. I mean, you just talk, I just talk, and then we fight... You must hate me.~
 @8840 = ~[PC] Gods, I am crying like a little girl. It is my fault, Aran, not yours. Of course we are fine.~
 @8841 = ~[PC] I don't know why it hurts so much that I have to cry. I do not always understand you, or what you want of me, Aran. But you are a part of my life now.~
 @8842 = ~[PC] I don't know why you don't hate me. I am a soulless monster, driven in so many different directions I don't even know why I wake up in the morning. You do not need to be weighed down by all of this. You deserve better.~
@@ -9175,7 +9175,7 @@ Yours faithfully, Aran.~
 @8892 = ~[ARAN] I'd be guessin' that it usually involves sittin' around a big cauldron pokin' at our simmerin' corpses, wonderin' how much spice to add to us.~
 @8893 = ~[ARAN] Fun? Well... let's just be sayin' that if some creature actually enjoys bein' in this place, I be in no hurry to find out how they spend their free time.~
 @8894 = ~[ARAN] Oh, they didn't tell you? Most o' these critters around here have second lives as investment bankers in Trademeet. This just be th' place where they relax an' let their hair down, so to speak.~
-@8895 = ~[ARAN] ...an' here we be, wanderin' about wi' great great, shinin' magical weapons, an' a fool's errand to run. Mayhap we should go to bed, an' forget th' whole wanderin' about in th' dark, eh?~
+@8895 = ~[ARAN] ...an' here we be, wanderin' about wi' great powerful shinin' magical weapons, an' a fool's errand to run. Mayhap we should go to bed, an' forget th' whole wanderin' about in th' dark, eh?~
 @8896 = ~[ARAN] Hey, what say we spark of a little bit o' a fire, an' run around screamin' "run for your lives! run for your lives"? That would clear out a bar or two, an' then we could settle down in comfort for some serious drinkin'... at least until th' Watch caught us.~
 @8897 = ~[ARAN] Now, I do remember a small detail I was on what went into th' districts in Baldur's gate, back wi' th' 'Fist. There was some jackass what kept tryin' to steal things from th' Gond temple there, an' orders was to wander th' place an' keep th' locals from gettin' clobbered or accosted or some such rot.~
 @8898 = ~[ARAN] O' course, it turned out there were not much in th' way o' night life, except some occasional drunken louts an' a thief or two. So wanderin' around in shiny field plate wi' torches was kind o' pointless, which I did point out to th' Sergeant a mite forcefully.~
@@ -9186,7 +9186,7 @@ Yours faithfully, Aran.~
 @8903 = ~[ARAN] Now, that be a right fine idea. An' then, we could start yellin' an' bangin' on pans, an' singin', an' generally carryin' on. Because, you see, actually we be a four-thousand strong wing o' th' Purple Dragon Knights, out for a lark, and we are just itchin' for a horde o' hostile creatures to come an' give us a mite bit o' sport.~
 @8904 = ~[ARAN] You know, there be times when I be a mite bit worried about you, m'<PRO_GIRLBOY>. You do have th' damnedest notions at times.~
 @8905 = ~[ARAN] Oh, right, didn't I tell you? Th' shoulder - it be a mite stiff today. Mayhap too stiff fore gatherin' firewood. Old war injury. Got it... err... yeah, got it fightin' off three Fire Giants singlehanded, back in Moonshae, sure I did. Now, would I be tellin' you a falsehood, just to get out o' a few licks o' work? Me? Never...~
-@8906 = ~[ARAN] Yep, it does have some opportunities for adventure. O' course, it also has bugs. Nasty, bloodsuckin' little vampiric bugs what drive a man crazy. An' gnats. An' snakes.Mayhap even worse. Hey, what did you be sayin' about likin' forests? On account o' I think I done changed my mind. Hate 'em.~
+@8906 = ~[ARAN] Yep, it does have some opportunities for adventure. O' course, it also has bugs. Nasty, bloodsuckin' little vampiric bugs what drive a man crazy. An' gnats. An' snakes. Mayhap even worse. Hey, what did you be sayin' about likin' forests? On account o' I think I done changed my mind. Hate 'em.~
 @8907 = ~[ARAN] Why, to be sure, there be a right fine little stream a ways back, if we were to purify th'... hey. Was that some kind o' commentary on th' way I smell? I wash every day, whether I be needin' it or not!~
 @8908 = ~[ARAN] *cough*~ [c-blank]
 @8909 = ~[c-aws004] By Tymora's bright coin, you make some strange decisions. I don't rightly agree.~ [c-aws004]
@@ -9214,7 +9214,7 @@ Yours faithfully, Aran.~
 @8931 = ~[ARAN] For Shar's Spite, do it silently. Too many ears, an' you don't pray to th' right gods for the congregation with in earshot, eh?~
 @8932 = ~[ARAN] Ask me again when we get out o' this blighted place. Right now, I think that mushroom over there grew ears. Literally.~
 @8933 = ~[ARAN] Until you said that phrase here in th' Underdark, I might o' considered it. Now, I just have to ask if there is a requirement o' low wisdom an' extremely low intelligence for your Order...~
-@8934 = ~[ARAN] Shar's Sphincter! What do you bloody well think you be doin'? That light must have shown our position for a half-mile in any given direction. You might have saved time, stripped us all naked, painted us in luminescent paint, an' danced around singin' 'look here, fresh meat! all you can eat, 2cp!'~
+@8934 = ~[ARAN] Shar's Sphincter! What do you bloody well think you be doin'? That light must have shown our position for a half-mile in any given direction. You might have saved time, stripped us all naked, painted us in luminescent paint, an' danced around singin' 'look here, fresh meat! All you can eat, 2cp!'~
 @8935 = ~[ARAN] You are a better <PRO_MANWOMAN> than I, <CHARNAME>. I will take a pass, on account o' I am sleepin' wi' one eye open, an' dreamin' wi' both open. Until we get out o th' Underdark, I am not relaxin' at all.~
 @8936 = ~[ARAN] Well, I tried to make some out o' one o' them mushrooms, but th' bloody mushroom grew fangs an' tried to bite. So I am on tight rationin' until we get to th' surface, I am afraid. Sorry.~
 @8937 = ~[ARAN] Fear be a powerful motivator. I be bloody well motivated.~
@@ -9239,7 +9239,7 @@ Yours faithfully, Aran.~
 @8956 = ~[ARAN] <CHARNAME> You be th' first, last, an' only person what ever asked me to delve Underdark. An' to tell th' truth...~
 @8957 = ~[ARAN] Look, I follow you an' my sword be yours. But this place, I won't rightly revisit willingly, no matter who is tellin' me to go. No more Underdark for this boy, ever, if I have any say in th' matter.~
 @8958 = ~[ARAN] Well, Mielikki's Quick Temper, why didn't you say somethin' before? Here I go all pesterin' you an' buggin' you, and you let me ramble on like a fool! Sorry, <CHARNAME>, I didn't mean no harm. I'll quit pesterin' you, an' stick to bein' friends.~
-@8959 = ~[ARAN] Well, by Halani Celanil's Leafy Tresses, you do be a fickle one, eh? Leadin' me on like that, It be downright wrong. I done got no choice, I guess.~
+@8959 = ~[ARAN] Well, by Halani Celanil's Leafy Tresses, you do be a fickle one, eh? Leadin' me on like that, it be downright wrong. I done got no choice, I guess.~
 @8960 = ~[ARAN] I can't say that I don't want you, <CHARNAME>. But be careful, eh? I can be a right bastard to anythin' crossin' my path, but you... wi' you, I seem to wear my heart outside th' armor, so to speak.~
 @8961 = ~[ARAN] Right, then. Got it. I'll be keepin' my mouth to myself. Not on account o' Anomen, just on account o' you. I can live wi' that.~
 @8962 = ~[ARAN] Right, then. Got it. I can live wi' that. I'll be easy on th' blighted stuffy bastard, I will, just for your sake.~
@@ -9383,7 +9383,7 @@ The keyhole in her door.'~
 @9077 = ~[ARAN] No, it don't rightly work that way. See, this be more copywork than inspiration, an' trickin' th' magic into thinkin' it be th' right place to be don't rightly work so well when there be a god actively grantin' th' power. Trickin' gods, well, that's a bit more dangerous than most people want to be tryin'.~
 @9078 = ~[ARAN] Mayhap someday, when my god decides to get that whole side o' my faith active. But not through this process, ever. See, this be more copywork than inspiration, an' trickin' th' magic into thinkin' it be th' right place to be don't rightly work so well when there be a god actively grantin' th' power. Trickin' gods, well, that's a bit more dangerous than most people want to be tryin'.~
 @9079 = ~[ARAN] Look, I get th' same skills as anyone else what studies magic. I get strong enough an' experienced enough, th' bloody things write themselves right out o' my head an' onto the blank parchment, pretty as you please. I can do what any mage does, an' write spells out o' my own head, if I have 'em memorized myself.~
-@9080 = ~[ARAN] This work, it be right different. This be more copywork, an' then trickin' th' magic into thinkin' it be th' right place to be, sort of. There's advantages to this, though. It be cheaper, works wi' any mage in th' party what has spells ready to cast,  an' most o' all, no one has to rest for th' spell. The magic, it just builds up, see?~
+@9080 = ~[ARAN] This work, it be right different. This be more copywork, an' then trickin' th' magic into thinkin' it be th' right place to be, sort of. There's advantages to this, though. It be cheaper, works wi' any mage in th' party what has spells ready to cast, an' most o' all, no one has to rest for th' spell. The magic, it just builds up, see?~
 @9081 = ~[ARAN] Look, I got a touch, I do. I know a mage what's strong enough an' experienced enough, they just prepare an' then th' bloody things write themselves right out o' their head an' onto the blank parchment, pretty as you please.~
 @9082 = ~[ARAN] This work, it be right different. This be more copywork, an' then trickin' th' magic into thinkin' it be th' right place to be, sort of. There's advantages to this, though. It be cheaper, it needs no high level magickin' an' most o' all, no one has to rest for th' spell. Th' magic, it just builds up, see?~
 @9083 = ~[ARAN] Sure, I will take a break. I have a mite o' letter writin' to catch up on, anyways.~
@@ -9776,7 +9776,7 @@ The keyhole in her door.'~
 @9470 = ~[ARAN] Scared th' crap right out o' me, there, <CHARNAME>. Usually, I see a glowin' ball o' energy headed my direction from any sort o' spellcaster, I say a prayer an' expect to be facin' Kelemvor to explain why none o' th' gods want my sorry arse pollutin' their domain.~
 @9471 = ~[ARAN] Well, sure, I can try that. Only, you call it meditatin'. I usually just call it a nap.~
 @9472 = ~[ARAN] No bloody way, m'<PRO_GIRLBOY>... I am runnin' short. Besides, I done seen what you do wi' your quill, an' I suspect it might be better for sheep, cows, reeds, an' trees everywhere if you dictate, an' leave the writin' to me.~
-@9473 = ~[ARAN] Well, I been practicin'. Last night, I only set my hair on fire twice, an' I am pretty sure I managed no polymorph that cup back into... hells. Nope. It's still in spider form, an' crawlin' around in my gear.~
+@9473 = ~[ARAN] Well, I been practicin'. Last night, I only set my hair on fire twice, an' I am pretty sure I managed to polymorph that cup back into... hells. Nope. It be still in spider form, an' crawlin' around in my gear.~
 @9474 = ~[ARAN] Last person to say that was my old trainer. If you be anythin' like him, I suspect that really means 'Aran, you stupid bastard, next chance I get I am goin' to show you how to kill things by beatin' th' crap out o' you.' ~
 @9475 = ~[ARAN] Why, absolutely, workin' on one right now. Here, let me...~
 @9476 = ~[ARAN] (*click*)~
@@ -10578,7 +10578,7 @@ On the keyhole in her door.~
 @10242 = ~[ARAN] True enough, <CHARNAME>. You do be a gentleman. Good on you, then, takin' a walk on th' wild side. Not sure I'd choose a Drowess, but since you be loosenin' up a little, I got a girl in Nashkel I can introduce you to I think you will like right fine!~
 @10243 = ~[ARAN] I won't say a Drowess be th' right choice o' bedpartner, but next inn, I'll buy an' you talk. I done heard they can kill you by erotic onslaught.~
 @10244 = ~[ARAN] True enough, <CHARNAME>. Should o' thought o' that myself. Pity, though - think o' th' stories you could have told th' boys, eh?~
-@10245 = ~[ARAN] Hells yes, man... spill it! Hold on.. I need to sharpen my quill, an'  write this down. Start over. You said there was feathers?~
+@10245 = ~[ARAN] Hells yes, man... spill it! Hold on. I need to sharpen my quill, an' write this down. Start over. You said there was feathers?~
 @10246 = ~[ARAN] Come on, <CHARNAME> - you tend to be one mean bitch. That's what makes you so desirable, eh? Well, if you need to practice any o' th' moves you learned, you know where to find me. I'm a right good student, I am.~
 @10247 = ~[ARAN] Well, m'Lady <CHARNAME> - a walk on th' wild side might have been right fun, if you did. But I can be right wild too, if you was to want that kind o' attention. And wi' me, you know I'm not goin' to stab you in th' back. (There be a crude joke there, somewhere, but I'm not goin' to go there, eh?).~
 @10248 = ~[ARAN] True enough, <CHARNAME>. You do be a lady. Mayhap I'm just jealous, a bit. Wild flings, an' such, well, if you get into th' mood for such, you could look closer to home for that. I'm not rightly chopped liver, you know.~
@@ -10616,7 +10616,7 @@ On the keyhole in her door.~
 @10280 = ~[ARAN] I told you about gettin' in wi' th' Fist, but do you want to be hearin' it again?~
 @10281 = ~[ARAN] I could tell you again about th' time Kravitch an' I got into some trouble wi' a few monks travellin' north o' Beregost, if you want.~
 @10282 = ~[ARAN] I remember that story on th' effects o'  gogondy...~
-@10283 = ~[ARAN] I think I done old you o' th' time we run off those Northmen up in th' Isles a couple o' times, unless you want to be hearin' it again.~
+@10283 = ~[ARAN] I think I done told you o' th' time we run off those Northmen up in th' Isles a couple o' times, unless you want to be hearin' it again.~
 @10284 = ~[ARAN] I think I told you o' th' time we run off those Northmen up in th' Isles, unless you want to be hearin' it again.~
 @10285 = ~[ARAN] I think I remember tellin' you about th' dangers o' gogondy...~
 @10286 = ~[ARAN] That be all I can remember tellin' you about, anyhow.~
@@ -10624,7 +10624,7 @@ On the keyhole in her door.~
 @10288 = ~[PC] Tell me about Calimport.~
 @10289 = ~[PC] That Gerris fellow - the one you talked about when we first met. Tell me that story again.~
 @10290 = ~[PC] Tell me about the trading gone bad.~
-@10291 = ~[PC] Tell me how you  ended up in the Flaming Fist again.~
+@10291 = ~[PC] Tell me how you ended up in the Flaming Fist again.~
 @10292 = ~[PC] Tell me about that battle up in Moonshae again.~
 @10293 = ~[PC] Aran... tell me about losing Gwyneth again?~
 @10294 = ~[PC] That story about the monks. I don't think I remember it.~
@@ -10756,7 +10756,7 @@ Aran has rejoined me. With any luck, I will be able to rely on his talents while
 @10414 = ~[ARAN] Well, you had me a mite bit confused, for a minute there. Sure thing, I be stayin'.~
 @10415 = ~[ARAN] Aye. Teldra might even have some good stories to swap, an' I can always bother Erika. Mayhap I will go find th' dice table, an' win me some interestin' trinkets, eh?~
 @10416 = ~[ARAN] Blighted hells, I haven't had a good lusty sing in a bit. I'll go over there an' see what new songs I can learn. Mayhap trade a few o' th' bawdy... errr well, hells. I'll just go wet my whistle, an' learn what I can learn.~
-@10417 = ~[ARAN] Mayhap I will find a nice place in a corner, an' see what tere be to see. Not one for th' pits m'self. Too many ways things like that can leave a man less than he used to be, body or soul, eh?~
+@10417 = ~[ARAN] Mayhap I will find a nice place in a corner, an' see what there be to see. Not one for th' pits m'self. Too many ways things like that can leave a man less than he used to be, body or soul, eh?~
 @10418 = ~[ARAN] Hmmm... what did you say? Got a mite bit distracted there. Wait here? Fine by me. You run along, an' come pick me up later, eh? I'll just enjoy th' scenery.~
 @10419 = ~[ARAN] Right. Leave th' poor sellsword to do th' books an' clean up th' accounts, while you go galivantin' around Faerun solvin' th' world's problems. Sune's Sweet Sighs, don't actors realize all those special effects cost coin? Usin' a blighted spell wi' a pearl in th' components, when a minor cantrip would work. We need to hire on an illusionist, before th' blighted players sped us out o' house an' home!~
 @10420 = ~[ARAN] Sure thing. I might be able to sweet-talk th' cook into tradin' for some nice spices. That larder... hells, someone knows how to blighted well cook.~
@@ -11174,7 +11174,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10790 = ~[C-AW01TK] This was mildly entertaining. A pair of dwarves visited a few days ago, attempting some expedition for some reason or other. Something about temples, and dead gods, and finding mithral. Unfortunately, they had a falling out, and left unhappy. Alive, but unhappy. I do not know where they went after that minor incident.~
 @10791 = ~[PC] Are you sure there is nothing else of interest that you might tell me?~
 @10792 = ~[PC] No, I think I am done here.~
-@10793 = ~[PC] You don't happen to know where I could purchase some pure mithral, do you... I heard that you might have a private stock you are willing to sell.~
+@10793 = ~[PC] You don't happen to know where I could purchase some pure illithium, do you... I heard that you might have a private stock you are willing to sell.~
 @10794 = ~[C-AW01TK] There were some travelers seeking protection on their journeys to Trademeet here yesterday, but Teldra already set them up with assistance from one of the minor mercenary groups she represents. There could be others who are interested in such protections, I imagine.~
 @10795 = ~[C-AW01TK] I have heard that the Copper Coronet has many opportunities for freelance work. I wish that I had the connections that establishment seems to have, for I could greatly increase my profit. Most of what Teldra offers is long term... which means she empties my bar as well as my ale supplies.~
 @10796 = ~[PC] You seem to have the same greeting for me each time I meet you. Do you say that to every customer?~
@@ -11253,7 +11253,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10869 = ~[C-AW01TK] Of course. Oh my... I seem to have just found a few gems lying about, lonely and unclaimed... I shall go over there and help some customers.~
 @10870 = ~[C-AW01TK] This is awkward. I do not ordinarily serve those who break contracts. Teldra is my biggest source of income, and she has indicated she feels you have broken your word. Ordinarily, I would simply refuse to serve you.~
 @10871 = ~[C-AW01TK] Unfortunately, I did make a contract with you, if only a paltry one. And I do not break my word. So, grudgingly, I will honor my contract.~
-@10872 = ~[C-AW01TK] Ah, I  must not have made myself clear. Teldra contracts mercenaries. Therefore, mercenaries come here, and they spend coin. They trade for gems and jewelry. They talk to each other, and they drink. If Teldra goes away, most of my business follows her.~
+@10872 = ~[C-AW01TK] Ah, I must not have made myself clear. Teldra contracts mercenaries. Therefore, mercenaries come here, and they spend coin. They trade for gems and jewelry. They talk to each other, and they drink. If Teldra goes away, most of my business follows her.~
 @10873 = ~[C-AW01TK] In addition, I have a reputation to maintain. I serve Blue Boar and Blacktalon equally, under the bond that says 'a contract is a contract - nothing personal'. That only works when everyone knows there is a single golden rule... don't break a contract.~
 @10874 = ~[C-AW01TK] Rumor has it that you break contracts. So, I am afraid that you have become persona non grata here. I am sure you can find another establishment to frequent. Do have a nice day.~
 @10875 = ~[C-AW01TK] I am sure you can find some place more suited to your kind. Your abrupt departure would be appreciated.~
@@ -11272,7 +11272,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @10888 = ~[NALIA] Look at it this way: perhaps it is just the gods' way of telling you that there are far more people who need assistance in minor ways than in major ways, yes?~
 @10889 = ~[C-AW01TK] You do seem to be a talkative lot. But I appreciate your attention to this small matter.~
 @10890 = ~[ARAN] I should have guessed Orrin would be payin' off usin' stock. His business has not been that solid lately, on account o' all th' hirin' out. Everyone comes in tradin' for coin, then spendin' it on gear an' such elsewhere.~
-@10891 = ~[EDWIN] (mutter) Should have left the lot of you log ago.~
+@10891 = ~[EDWIN] (mutter) Should have left the lot of you long ago.~
 @10892 = ~[HAERDALIS] The reward is not as interesting as the task, my sparrows... or, perhaps it is.~
 @10893 = ~[JAHEIRA] I told you we were wasting our time with minor distractions.~
 @10894 = ~[JAN] Ah, jewels and gems. My Cousin Gardenia had a soft spot for all things sparkley and shiny. When her husband Oneshoe passed away, she showed up at his funeral destitute. The family asked where all of their money had gone, and she gave an accounting... 50 gold for the funeral, 200 gold for the mourners, 500 gold to the Temple, and 20,000 gold for the memorial stone. We all asked, of course, how large a 20,000 gold piece memorial stone was.~
@@ -11507,7 +11507,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11123 = ~[C-AW01TL] I know Orrin, the owner of this place, does trading in gems and jewelry. I have heard he even has decent stock if you have lots of coin, or do him a favor or two. But as for weapons trainers, not really. Unless you count Aran.~
 @11124 = ~[C-AW01TL] I make a decent living coordinating hires for mercenaries, nothing else. If you want a matchmaker, find someone else.~
 @11125 = ~[C-AW01TL] Gods, another one. Look, boyo, you are kind of cute, but business is business. Keep all that sweet talk for the next drunken half-orc female who wanders by. Now, on the subject of business...~
-@11126 = ~[C-AW01TL] Gods, a female Aran. Look, you are kind of cute, and I am very.... flexible, in all the right ways... but business is business. Keep all that sweet talk for the next drunken half-orc who wanders by. Now, on the subject of business...~
+@11126 = ~[C-AW01TL] Gods, a female Aran. Look, you are kind of cute, and I am very... flexible, in all the right ways... but business is business. Keep all that sweet talk for the next drunken half-orc who wanders by. Now, on the subject of business...~
 @11127 = ~[C-AW01TL] Aran sure looks worse for the wear, there. I hope that heals up nicely. Hells, I hope it heals, period.~
 @11128 = ~[C-AW01TL] So, what brings you back to me?~
 @11129 = ~[C-AW01TL] That being said, I'll see you upstairs. Drink up... I intend to find out just how much endurance you have!~
@@ -11532,7 +11532,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11148 = ~[ARAN] Ma'am, yes ma'am.~
 @11149 = ~[C-TORAN] Hey, don't poke me... I don't want any trouble.~
 @11150 = ~[C-TORAN] Worst deal I even made. I'll move over here, out of the way.~
-@11151 = ~[C-TORAN] No problem here. I  will keep my mouth shut.~
+@11151 = ~[C-TORAN] No problem here. I will keep my mouth shut.~
 @11152 = ~[C-TORAN] Just drinking my wages, same as always.~
 @11153 = ~[C-TORAN] Every time I get a contract finished, I say I am going to quit and invest the money. Then I come here, and all I invest in is more drink.~
 @11154 = ~[C-TORAN] Too many contracts for guard duty. It starts to eat at you, standing there for hours, watching a wall. Makes a man want to drink.~
@@ -11841,7 +11841,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11457 = ~[ARAN] That be a nice sentiment. I don't think it be practical, but then again, sometimes I make myself a little space in my head an' go there, all by myself, just to remember what I be fightin' for. Just... just don't be stayin' there too long, eh?~
 @11458 = ~[ARAN] Th' problem wi' hidin' away in your head is that your head be attached to th' mortal world. An' hidin' for a little mayhap gives some respite, but it does naught for actually changin' things or protectin' us from bein' th' next target o' this bloodshed.~
 @11459 = ~[ARAN] I know I have been awkward an' all, but I should know better. You call th' shots, <CHARNAME>. Do we be fine wi' each other?~
-@11460 = ~[ARAN] Now that be a sight. Those stars seem  to cover th' whole sky, or what we can see o' it.~
+@11460 = ~[ARAN] Now that be a sight. Those stars seem to cover th' whole sky, or what we can see o' it.~
 @11461 = ~[PC] I prefer to keep my eyes focused nearer to reality. The only good use for starlight is exposing your enemies when they are stupid enough to move across open terrain without cover.~
 @11462 = ~[PC] They do have a way of reminding us that some things never change. All we do, all we attain, all we suffer... they just keep shining, completely untouched.~
 @11463 = ~[PC] They are very cold. Almost eyes, watching us, judging us, evaluating us.~
@@ -12015,7 +12015,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11631 = ~[PC] Aran, do you smile at me like that because you love me?~
 @11632 = ~[PC] Look, Aran, before you say anything else... I think we should just be friends. I think you may be getting too emotionally involved.~
 @11633 = ~[PC] That is very disturbing. You do know you are just a minor diversion, right? I have no grand plans for you and I to found a dynasty or anything.~
-@11634 = ~[ARAN] Mayhap I am havin' troubles just sayin' it. I mean to say, well.... I think I love you.~
+@11634 = ~[ARAN] Mayhap I am havin' troubles just sayin' it. I mean to say, well... I think I love you.~
 @11635 = ~[PC] Why, I would never have guessed that you had such deep feelings for me. Is that why you constantly try to kiss me?~
 @11636 = ~[PC] Why, I would never have guessed that you had such deep feelings for me. Is that why you constantly touch me and kiss me?~
 @11637 = ~[PC] Why, I would never have guessed that you had such deep feelings for me. I mean, we have only explored almost everything we can together physically. Well, everything that doesn't make us worried about having children, that is.~
@@ -12039,7 +12039,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11655 = ~[PC] Somehow, the way you are looking at me, I get the feeling you are about to make some important declaration of your deep feelings for me, no matter how hard I try to delay you.~
 @11656 = ~[PC] I think we should save such deep matters for another discussion, Aran. We should just be happy with what we have.~
 @11657 = ~[PC] Well, if all of our tasks were over, what specifically would you be proposing?~
-@11658 = ~[PC] If you are askinhg about my choice of companionship, you know that I am not tied down to any one person right now.~
+@11658 = ~[PC] If you are asking about my choice of companionship, you know that I am not tied down to any one person right now.~
 @11659 = ~[PC] If we are talking about jobs, you do know that you have yet to clean my gear. And there are weapons that need attention. Oh, and you were going to write me some poetry. You seem to have quite a few tasks ahead of you before you get to sleep tonight.~
 @11660 = ~[ARAN] Well, yes. But seein' as how you be phrasin' that, I am not so sure that would be a right good idea, eh?~
 @11661 = ~[PC] It would be a good idea. Could be a good idea. Oh, I don't know...~
@@ -12216,7 +12216,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11832 = ~[PC] Sometimes just being there is not the right decision. Sometimes... sometimes being there puts a sister in more danger.~
 @11833 = ~[PC] I failed to protect Imoen. Irenicus took her and tortured her, and I will never be truly able to atone for that.~
 @11834 = ~[PC] I guess feelings about protecting little sisters are the same everywhere, to some degree. We agree on that.~
-@11835 = ~[PC] We both care about our 'family', whether bonded by the blood of  god, the blood of a normal parent, or just bonded because of our adopted companions.~
+@11835 = ~[PC] We both care about our 'family', whether bonded by the blood of a god, the blood of a normal parent, or just bonded because of our adopted companions.~
 @11836 = ~[PC] If you call having to chase Imoen's captors across the face of Toril while scrounging for coin and resources in the process "protecting", then I don't think that word means what you think it means.~
 @11837 = ~[ARAN] Do you give naught in th' way o' thinkin' about balancin' th' two sides?~
 @11838 = ~[PC] I give it thought. But the common good always ends up being the course I try to take.~
@@ -12269,7 +12269,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11885 = ~[PC] The world needs people who are ready to put aside personal fears, however small, and just do the right thing. I am glad you are part of the team.~
 @11886 = ~[PC] I need to prevail. There is too much harm that could be done to too many people if I fail. I am glad you are at my side, helping me finish this.~
 @11887 = ~[PC] No, I suppose not... you have been eating way too much of your own cooking for you to do anything 'lightly', my friend!~
-@11888 = ~[ARAN] Aye, that too. Just like it be her prerogative to try to fix you up wi' her friends, steal th' best part o' any meal you share, tell you your fashion sense be that o' a troll,  an' generally tease th' livin' hells out o' you at every opportunity.~
+@11888 = ~[ARAN] Aye, that too. Just like it be her prerogative to try to fix you up wi' her friends, steal th' best part o' any meal you share, tell you your fashion sense be that o' a troll, an' generally tease th' livin' hells out o' you at every opportunity.~
 @11889 = ~[ARAN] That don't rightly track wi' what you did to protect Imoen, now, do it?~
 @11890 = ~[PC] Imoen was a side issue. Irenicus should not have tried to challenge me in that way.~
 @11891 = ~[PC] I can have the luxury of having family ties, especially as they are divine. You can't.~
@@ -12549,7 +12549,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12165 = ~[PC] Perhaps we can set you up with a nice comfortable place when this is all over. One without the stresses and strains of inter-planar travel.~
 @12166 = ~[PC] I suppose you would prefer a more comfortable place, perhaps an inn or some tavern...~
 @12167 = ~[PC] I know it is not the best in accomodations, but it is safe and instantly accessible. And right now that is what we need.~
-@12168 = ~[PC] I may have some divine blod, but I am not as powerful as you think. We may not survive our next challenge, you know. Nothing is written in stone.~
+@12168 = ~[PC] I may have some divine blood, but I am not as powerful as you think. We may not survive our next challenge, you know. Nothing is written in stone.~
 @12169 = ~[PC] That's going a little far, don't you think? You could be mistaken for the God of Irrelevant Digression.~
 @12170 = ~[ARAN] Now that sounds right nice. Someplace where th' most travellin' be from th' mug bein' on th' table to it bein' on my lips sounds right fine by me.~
 @12171 = ~[ARAN] Aye. Like it or no, there be no place safer right now. But when this mess all be over, I think th' best base o' operations for yours truly might be a nice cottage somewhere th' hells away from everythin' an' anythin'.~
@@ -12565,14 +12565,14 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12181 = ~[PC] You know, we have been doing this so long that we are starting to repeat our conversations. Gorion was like that. He would tell the same stories, and start the same conversations again and again. Perhaps you are getting old.~
 @12182 = ~[ARAN] See, that proves m' point. That blighted plane o' yours has me all addled an' not thinkin' straight!~
 @12183 = ~[ARAN] Sune's Sweet Song, don't be talkin' that way! There be an end to everythin'. An' given our past history, we will end up on top no matter what th' Fates decide to send our way.~
-@12184 = ~[PC] We may end up on top, but someone always gets hurt in the process. You can't make an omlette without breaking eggs.~
-@12185 = ~[PC] Fates don't decide anything, Aran. We have to build our future as we go along. So, in essense, you are personally responsible for your own destiny.~
+@12184 = ~[PC] We may end up on top, but someone always gets hurt in the process. You can't make an omelette without breaking eggs.~
+@12185 = ~[PC] Fates don't decide anything, Aran. We have to build our future as we go along. So, in essence, you are personally responsible for your own destiny.~
 @12186 = ~[ARAN] An' here, that blighted well did remind me o' why I were startin' this whole conversation. Addled. Eggs. Scrambled eggs. We need to get someplace where we can stock up on supplies.~
 @12187 = ~[PC] No, I think we should stick with hardtack and water for the time being.~
 @12188 = ~[PC] I think that is a great idea. Just as long as I do the cooking.~
 @12189 = ~[PC] Sometimes it is a wonder your mind works at all. Your jaws and lungs work overtime, but your mind seems to be missing.~
 @12190 = ~[ARAN] Blighted hells, you know how to bring a lad down, eh? Mayhap I will go wander on an' think o' more happy thoughts, like bein' captured by Drow an' tortured. Or bein' th' appetizer for some dragon.~
-@12191 = ~[ARAN] Aye, I do tend to talk too much. Which probably be why I done forgot what it were I had on my mind to begin with. Mayhap I should start scribblin' down my thoughts before I satrt talkin'. Or mayhap I'll just wander along an' see if I can remember on my own.~
+@12191 = ~[ARAN] Aye, I do tend to talk too much. Which probably be why I done forgot what it were I had on my mind to begin with. Mayhap I should start scribblin' down my thoughts before I start talkin'. Or mayhap I'll just wander along an' see if I can remember on my own.~
 @12192 = ~[ARAN] Ah, witty reepartay, on account o' you know just how to tease me. I hope I done used that word right.~
 @12193 = ~[ARAN] I suspect this be where I tell you I love you, eh?~
 @12194 = ~[PC] I love it when you say that.~
@@ -12732,7 +12732,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12348 = ~[ARAN] You blighted Firewalkers be all th' same, carin' for not much but th' burn. I was restin' up proper, an' here you have to go get all lighted up an' on fire again.~
 @12349 = ~[PC] We come from the Fire, we go to the Fire. Why waste time questioning Kossuth's motives? Though you seem to have a good idea of what we believe. Should I mention in my prayers that you have joined the fold?~
 @12350 = ~[ARAN] Silverstars may have th' Moonmaiden in their corner, but when I look around this place, it looks like we won't be seein' much o' Her face any time soon.~
-@12351 = ~[PC] Selune will find us, even in this place.But I didn't know you were coming to see the light. Should I mention in my prayers that you have joined the fold?~
+@12351 = ~[PC] Selune will find us, even in this place. But I didn't know you were coming to see the light. Should I mention in my prayers that you have joined the fold?~
 @12352 = ~[ARAN] I would o' thought a Holy Strategist wouldn't get caught wi' their trousers down an' all their parts exposed. You know, have some backup? One hint o' some esoteric Tel'Qessirim ruin, an' you go an' investigate alone, an' get magically swept to th' Red Lady only knows where.~
 @12353 = ~[PC] The Red Fellowship has had some bad miscalculations before. I seem to have done the same. Perhaps I need more study and prayer.~
 @12354 = ~[ARAN] I thought I was used to all your Nightcloak ways, but Shar's Caress... one hint o' some esoteric Tel'Qessirim ruin, an' you go an' investigate alone, an' get magically swept to Shar only knows where.~
@@ -12781,7 +12781,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12397 = ~[PC] You have many things to offer. I just needed to see how you would react. I am happy to have you as my lover again.~
 @12398 = ~[ARAN] I am th' one left bloody well holdin' th' drinks, while you... you... oh, hells. I don't rightly know what I did wrong, but I know I can't blighted well live wi' out you in my life.~
 @12399 = ~[ARAN] I want to be mad, I do... I am th' one left bloody well behind. But when you look at me like that, I am not rightly goin' to resist, eh? I can't blighted well live wi' out you in my life.~
-@12400 = ~[ARAN] Well, that be a nice thing to say. Do I get a bonus,too, or do you want me to see if I can get into th' Whores' Guild while I be at it?~
+@12400 = ~[ARAN] Well, that be a nice thing to say. Do I get a bonus, too, or do you want me to see if I can get into th' Whores' Guild while I be at it?~
 @12401 = ~[PC] If you can't handle being friends, then I don't need you around sulking like a stupid little apprentice whining over his lost love. Are you in, or out?~
 @12402 = ~[PC] I am sorry if I hurt your feelings, but this is the way it has to be. Are you in, or out?~
 @12403 = ~[PC] So being friends is out. Fine. Can you serve me, or should I find someone else who can do the job instead?~
@@ -12849,7 +12849,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12465 = ~[ARAN] Xvim's Spit. Whoops... probably better curb my language a mite in here. Looks like I might be loser to th' source.~
 @12466 = ~[ARAN] Make up your blighted Lolth-kissed mind, will you? If you don't need me, I got twin blonds to calm. An' I need to find both gems an' chocolate, right quick.~
 @12467 = ~[ARAN] I don't rightly know what to say. On th' work side, I thought we had a contract, but then I looked up, an' you had disappeared. But I guess we could pick right up where we left off. I had little enough time to figure out what I was doin'.~
-@12468 = ~[ARAN] As far as th' whole romance thing goes, sometimes I wonder why I let myself get all wrapped up in you. Then I look at you, or hear  your voice, or mayhap smell a bit o' your hair, an' I can't rightly help myself. I might not be th' most powerful man around, but I love you.~
+@12468 = ~[ARAN] As far as th' whole romance thing goes, sometimes I wonder why I let myself get all wrapped up in you. Then I look at you, or hear your voice, or mayhap smell a bit o' your hair, an' I can't rightly help myself. I might not be th' most powerful man around, but I love you.~
 @12469 = ~[ARAN] If you ever want to change things between th' two o' us, all you have to do is ask. I be strong enough to do what you want, no matter th' cost.~
 @12470 = ~[ARAN] So, what do ye call a male Drow without a girlfriend?~
 @12471 = ~[ARAN] Don't look at me, <CHARNAME>. I had this great idea that we'd be housed up in a nice inn, just you and me, all cosy and comfy. But you said somethin' about savin' the world, or takin' it over, or somethin' like that, and I had to go say "sure, sounds like a fun tenday".~
@@ -12859,7 +12859,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12475 = ~[ARAN] Hey, I am not readin' my code correctly. Contact cmorgan at www.gibberlings3.net, on account o' somethin' is not right. Line a4534 is playin' out in dialog, which means No Valid Links Or Replies.~
 @12476 = ~[PC] This is not working out. I should leave.~
 @12477 = ~[ARAN] Now, what does my little hell-cat want now, eh?~
-@12478 = ~[ARAN] Now, was that so  painful? You could have come over an' said you might be interested in a little sparkin', you know.~
+// @12478 = 
 @12479 = ~[PC] Me. Shhh. Just need to unlace this... and... there. Gods... slowly...~
 @12480 = ~[ARAN] Sharess' Sweet Sighs, I thank Her Name you chose to spend your time wi' me this way. Just be careful, on account o' I am about to...~
 @12481 = ~[PC] Walking with you here is a nice rest from all of the day's cares. But then again, lots of things can happen on at night.~
@@ -12870,7 +12870,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12486 = ~[PC] (Take his hardness and place it where it belongs, just barely inside of you.)~
 @12487 = ~[PC] This... this is just right. Right here, under these stars, I could kiss you for hours.~
 @12488 = ~[ARAN] Bane's bones, m'lady wildfire, this be a right odd place to ask for a bit o' time alone. Mayhap I can come by an' see you  next time we rest?~
-@12489 = ~[PC] If you were into spanking, I would have know that by now. What do you want?~
+@12489 = ~[PC] If you were into spanking, I would have known that by now. What do you want?~
 @12490 = ~[PC] (Turn quickly and grab at his waist, pulling him close.) I need you, right now. Quickly. Discreetly.~
 @12491 = ~[ARAN] (The clatter of codpiece and armor fill your ears as he responds, his fierce thrust rocking you forward onto your forearms. His thrusts are wild, driving deep, relentless and merciless in their intensity. His breath whispers close behind you as he moves faster and faster, until he presses as far forward into you as he can... and a shuddering sigh escapes his lips.)~
 @12492 = ~[ARAN] (Aran's quick steps mark his movements as he paces back and forth. His back is to you as you approach him. You are alone together for what brief time you can find.)~
@@ -13045,9 +13045,9 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12661 = ~[ARAN] I don't rightly know. By Tymora's Bright Eyes, there's more than enough adventure around here for this lad. I could use a good belt o' hard spirits. Th' drinkin' kind, I mean.~
 @12662 = ~[ARAN] Never did get it done. Helm's Arse, if it hasn't broken free again.~
 @12663 = ~[ARAN] Does a Suneite enjoy a great piece o' art? Hells, yes. Except I want to use my own dice this time. I still owe you three dragons an' a crescent from last time.~
-@12664 = ~[ARAN] That's right fine wi' me. I have been preppin' for somethin' special. Always thought all this slaughter was goin' to waste, so I was figurin' on doin' a nice stew with our next adversary as th' main course. Exceptin' humans, that is. Or litches. Re-hydration might be a bitch. Or elementals. Too tough to cook. An' no spiders. A nice dragon curry, perhaps?~
+@12664 = ~[ARAN] That's right fine wi' me. I have been preppin' for somethin' special. Always thought all this slaughter was goin' to waste, so I was figurin' on doin' a nice stew with our next adversary as th' main course. Exceptin' humans, that is. Or liches. Re-hydration might be a bitch. Or elementals. Too tough to cook. An' no spiders. A nice dragon curry, perhaps?~
 @12665 = ~[ARAN] Well, now that you mention it, NO. But I did put more paddin' under my armor. That last combat, I got me a blighted bruise th' size o' two hands, on account o' my paddin' was a mite understrength. Serves me right for not checkin' on it.~
-@12666 = ~[ARAN] Am I doin' that again? I don't now where I picked that up. Probably one o' them damned bards, I guess. Sorry.~
+@12666 = ~[ARAN] Am I doin' that again? I don't know where I picked that up. Probably one o' them damned bards, I guess. Sorry.~
 @12667 = ~[ARAN] Well, we got that, for sure. Tymora's Light Fingers, if I'd have been smart, I would have wished for a ton o' gold, instead. I just figured the gods weren't listenin', so I got all wise with my mouth. Serves me right.~
 @12668 = ~[ARAN] Cyric's Stinkin' Arse, I didn't expect them to take me serious. All I asked was for a little adventure, and here we get stuck wi' changin' the whole world!~
 @12669 = ~[ARAN] You know, you scare th' crap out o' me when you say things like that. Somehow I suspect your next statement will be 'Demonic Dragons with Wraith Henchmen? Pfft. Aran, go take care of them, while I boil us up a nice pot of tea'.~
@@ -13206,7 +13206,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12822 = ~[SAREVOK] No.~
 @12823 = ~[ARAN] Why not? You have done far worse in th' past, an' you hold no contract sacred.~
 @12824 = ~[SAREVOK] I cannot.~
-@12825 = ~[ARAN] You  can't rightly betray <PRO_HIMHER>, or you choose not to?~
+@12825 = ~[ARAN] You can't rightly betray <PRO_HIMHER>, or you choose not to?~
 @12826 = ~[SAREVOK] Both.~
 @12827 = ~[ARAN] I don't rightly understand.~
 @12828 = ~[SAREVOK] That is not my problem, sellsword. Come to me when you have tasted the glories of unadulterated strength, when you have fools who follow you to their destruction regardless of cost to themselves, when you have ultimate power just within your reach...~
@@ -13282,7 +13282,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12898 = ~[VALYGAR] I am not wrong. Magic is a force that corrupts all who use it.~
 @12899 = ~[ARAN] <CHARNAME>, <PRO_HESHE> be a right powerful user o' magic.~
 @12900 = ~[VALYGAR] An occurrence which troubles me greatly. I think <PRO_HESHE> should proceed carefully.~
-@12901 = ~[ARAN] <CHARNAME>, <PRO_HESHE> an I both be right powerful users o' magic.~
+@12901 = ~[ARAN] <CHARNAME>, <PRO_HESHE> an' I both be right powerful users o' magic.~
 @12902 = ~[VALYGAR] An occurrence which troubles me greatly. Both of you should proceed carefully.~
 @12903 = ~[ARAN] I be a right powerful user o' magic.~
 @12904 = ~[VALYGAR] An occurrence which troubles me greatly. You should proceed carefully.~
@@ -13569,7 +13569,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13177 = ~[PC] Your biggest worry should be how to procure curry powder and store it without accidentally getting it into your smallclothes.~
 @13178 = ~[PC] Hey, we are wandering about a huge trapped guarded stone fortress with unspeakably horrendous adversaries lurking at every turn. What could possibly go wrong?~
 @13179 = ~[PC] I think we are safe here. There is less to worry about when you are tucked away in a planar pocket. Unless, of course, this is just a dream, and when I wake up the whole bubble just disappears with you inside it.~
-@13180 = ~[PC] Perhaps we should talk about being worried when we are not in a city that has had Fire giants slamming huge rocks into it. I think some of the timers over there look a little worse for the wear...~
+@13180 = ~[PC] Perhaps we should talk about being worried when we are not in a city that has had Fire giants slamming huge rocks into it. I think some of the timbers over there look a little worse for the wear...~
 @13181 = ~[PC] I think you need a drink. If we are going to sit around in the Tankard Tree worrying about beams damaged by seigework, and the possibility of the roof falling in on us, we need to do it while drunk.~
 @13182 = ~[PC] I think you need to order us drinks. If we are going to sit around and worry about who is spying on us right this very minute and plotting our slow death by unspeakable tortures, we need to do it while drunk.~
 @13183 = ~[PC] Do not fret, Aran. Waukeen will protect Her temple. Unless she really is gone, and a new goddess is just messing about giving her worshipers powers...~
@@ -13622,7 +13622,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13230 = ~[ARAN] Now I will say, that be not as bad as I once thought. It done happened to me once or twice, an' it be survivable. O' course, when th' current lover be a cute little assassin, you got to watch your food an' drink for a few months, but usually there be a way to make it up to them.~
 @13231 = ~[ARAN] Stop lookin' at me like that. It be a story for another day an' time. Besides, I almost think you be jokin' wi' me, anyways.~
 @13232 = ~[PC] Almost? Of course I was. I thought you were joking, too. Were you actually questioning my courage?~
-@13233 = ~[ARAN]  Now I almost believe that.~
+@13233 = ~[ARAN] Now I almost believe that.~
 @13234 = ~[PC] Almost? Are you questioning my courage?~
 @13235 = ~[ARAN] Well, I am not sure I have an answer what will serve. There be a fair number o' things that scare me. What be th' context you want to know, eh?~
 @13236 = ~[PC] What scares you about me?~
@@ -13726,7 +13726,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13334 = ~[ARAN] Now why in Sune Firehair's name would I be flirtin' wi' you, when you an' <CHARNAME> are quite th' item?~
 @13335 = ~[NEERA] Well... sometimes, it helps to have a little jealousy. Make <PRO_HIMHER> realize what <PRO_HESHE> has.~
 @13336 = ~[ARAN] Neera... look at <PRO_HIMHER>. Now look at me. Do you think there be any profit in' stressin' exactly how little I have to offer in comparison, save loyalty?~
-@13337 = ~[NEERA] That's the point. I don't want any actual jealousy. I just want <PRO_HIMHER> to remember. I mean, how could anyone see you as a SERIOUS romatic threat?~
+@13337 = ~[NEERA] That's the point. I don't want any actual jealousy. I just want <PRO_HIMHER> to remember. I mean, how could anyone see you as a SERIOUS romantic threat?~
 @13338 = ~[ARAN] Way to make a lad feel two inches tall. Wi' friends like you, who needs enemies?~
 @13339 = ~[ARAN] You know how I feel about <CHARNAME>.~
 @13340 = ~[NEERA] Oh, I don't know. Sometimes loyal and faithful ends up being dull and boring. Perhaps you need to spice things up a bit.~
@@ -13776,7 +13776,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13384 = ~[RASAAD] First, take a deep breath, and calm your mind.~
 @13385 = ~[ARAN] Aye. Done.~
 @13386 = ~[RASAAD] Not if you are speaking. Take a deep breath, hold it... now gently exhale.~
-@13387 = ~[ARAN] .... ~
+@13387 = ~[ARAN] ... ~
 @13388 = ~[ARAN] Done.~
 @13389 = ~[RASAAD] You broke concentration too early. Try again. Take a deep breath, hold it... now gently exhale...~
 @13390 = ~[ARAN] I think you just wanted to shut me up.~
@@ -13877,7 +13877,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13485 = ~[PC] I will take that under consideration. Perhaps I will go listen to her.~
 @13486 = ~[ARAN] Aye, guilty as charged.~
 @13487 = ~[PC] Is she special?~
-@13488 = ~[PC] Fine. If we do go  listen to her, you stay back.~
+@13488 = ~[PC] Fine. If we do go listen to her, you stay back.~
 @13489 = ~[PC] This habit of offending women you meet... you are working on fixing that, right?~
 @13490 = ~[PC] So, to cut a long story short, you think she is worth hearing, but you should avoid her, right?~
 @13491 = ~[ARAN] There be no accountin' on whether she be better than you nor I on th' vocal front, as to some th' sopranos run, some th' tenors, an' baritones or bass be solid for all sorts o' songs. But she be a far sight better trained than either o' us blighted bastards.~
@@ -13887,12 +13887,12 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13495 = ~[PC] Do not compare my skills to yours. You can barely speak, let alone sing.~
 @13496 = ~[PC] I would rather not spend my time listening to the competition.~
 @13497 = ~[ARAN] Well, just listen. Notes into th' upper octave as clear as a bell. Diction clean without heavy handed plosives. Th' way she just controlled her dynamics on that last line to throw th' pathos... musical line...~
-@13498 = ~[ARAN] Hells. you did th' trainin' same as I. You *know* how blighted rare it be for a true acuto sfogato soprano t' be playin' bit places an' bars. She should be in Waterdeep, at th' Masked Court.~
+@13498 = ~[ARAN] Hells. You did th' trainin' same as I. You *know* how blighted rare it be for a true acuto sfogato soprano t' be playin' bit places an' bars. She should be in Waterdeep, at th' Masked Court.~
 @13499 = ~[PC] I disagree. That upper range is too dark and covered to be a true sfogato. But I can see that you truly love her voice.~
 @13500 = ~[PC] Sopranos get all the attention. We have to work twice as hard to get noticed. I take it she did not want a singing partner...~
 @13501 = ~[PC] Fine. You stay back. Perhaps I will go see what she can sing.~
 @13502 = ~[ARAN] You be th' judge, on account o' you have th' right trainin', eh? But to my untrained ear, she sounds like a blighted Avatar o' Sune made flesh an' blood.~
-@13503 = ~[ARAN] Well, she be a fully trained vocalist, an' her upper register be absolutely clear, wi' no forced notes or improper placement in th' headvoice.... ah, there I go, talkin' shop. Yes. She is blighted good.~
+@13503 = ~[ARAN] Well, she be a fully trained vocalist, an' her upper register be absolutely clear, wi' no forced notes or improper placement in th' headvoice... ah, there I go, talkin' shop. Yes. She is blighted good.~
 @13504 = ~[PC] Right now, I need a drink. Perhaps later.~
 @13505 = ~[PC] Is she a better vocalist than I am?~
 @13506 = ~[PC] She... I can hear it. She has a better voice than I do.~
@@ -13960,8 +13960,8 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13567 = ~[ARAN] Heh. Apparently, I have been wanderin' wi' you so long that I have followers o' my own now.~
 @13568 = ~[ARAN] I do be guessin' that when a lad gets to a certain point, folks think he be worth backin' up. Just never thought I'd have that happen.~
 @13569 = ~[PC] Congratulations! How did this all happen?~
-@13570 = ~[PC] This is a distraction. We  need assistance here and now, not some long term plan.~
-@13571 = ~[PC] Aran Whitehand. Adventurer, Raconteur..... Landlord.~
+@13570 = ~[PC] This is a distraction. We need assistance here and now, not some long term plan.~
+@13571 = ~[PC] Aran Whitehand. Adventurer, Raconteur... Landlord.~
 @13572 = ~[PC] Could any of them be useful to us right now?~
 @13573 = ~[PC] So you are leaving and starting your own project.~
 @13574 = ~[PC] I hope it works out for you. Now stop talking and move along.~
@@ -13982,7 +13982,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13589 = ~[ARAN] I am not rightly sure. They have a bit more experience than th' average soldier, but most o' them are just lookin' to stop wanderin' around old ruins an' attemptin' to avoid a hideous death over a few coppers an a tradebar's worth o' figurines.~
 @13590 = ~[ARAN] Tyr's Eye, how could you be thinkin' that? They be perfectly self sufficient, except for some coin an' some basic directions. No call for me to go sit an' supervise.~
 @13591 = ~[PC] You have no independent experience. You are not there in person. You have a habit of getting distracted. These are not positive indicators for this kind of venture.~
-@13592 = ~[PC] WWait, back up... someone actually sees you as a... a... leader? Gods, they really do not know with whom they are dealing!~
+@13592 = ~[PC] Wait, back up... someone actually sees you as a... a... leader? Gods, they really do not know with whom they are dealing!~
 @13593 = ~[PC] Where did you find them? Or did they just hear about you on the road, and decide to seek you out?~
 @13594 = ~[ARAN] Well, I have a little bit o' land my father traded for, up on th' Sword Coast. I figured wi' th' coin from adventurin', I'd set up a small tower an' tradin' port right on th' coast.~
 @13595 = ~[PC] A lighthouse? Or some sort of library tower? A shipbuilding operation might be very handy in that location.~
@@ -14036,7 +14036,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13643 = ~[ARAN] I think it be worth a look.~
 @13644 = ~[PC] You are an incurable optimist, aren't you.~
 @13645 = ~[PC] Do you have any specific advice you can give them?~
-@13646 = ~[ARAN] So, healin' advice, check. Supplies, includin' some decent rope an' mayhap a sack o' four or two, check.~
+@13646 = ~[ARAN] So, healin' advice, check. Supplies, includin' some decent rope an' mayhap a sack o' flour or two, check.~
 @13647 = ~[PC] Tell them to prepare for giant spiders, wandering vampiric mists, flesh golems, and random but inevitable death.~
 @13648 = ~[PC] I hope they know the difference between a wet mossy rock and a grey ooze.~
 @13649 = ~[PC] Burial shrouds. Lots of burial shrouds. Something to haul their broken bodies home.~
@@ -14063,7 +14063,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13670 = ~[PC] What is wrong?~
 @13671 = ~[PC] Yes. You are still swearing, and your accent is still very strong. All my careful re-training work on you has vanished.~
 @13672 = ~[PC] Whatever it is, Aran, we do not have time to deal with it right now.~
-@13673 = ~[ARAN] That band o' adventurers what attached themselves to me went ahead into th' cave. An' they found....~
+@13673 = ~[ARAN] That band o' adventurers what attached themselves to me went ahead into th' cave. An' they found...~
 @13674 = ~[ARAN] Naught.~
 @13675 = ~[ARAN] Great piles o' grand stinkin' heapin' blighted NOTHIN'.~
 @13676 = ~[PC] Well, that was always a possibility. Sometimes a cave is just a cave.~
@@ -14072,7 +14072,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13679 = ~[PC] They survived!~
 @13680 = ~[PC] I am serious. We do not have time to deal with it right now. We need to drop this and move on.~
 @13681 = ~[ARAN] WE wander about tryin' to get from here to there an' back all intact, an' are swarmed wi' monsters o' myth an' legend. THEY set out to find adventure, an' find th' start o' a great root cellar.~
-@13682 = ~[PC] Aran... have you ever really looked at how different we are from.... ordinary?~
+@13682 = ~[PC] Aran... have you ever really looked at how different we are from... ordinary?~
 @13683 = ~[PC] Wait a minute. This is good news. No Underdark exits, no tribe of goblins to fight off, and they can excavate the stone to build fortifications and buildings!~
 @13684 = ~[PC] I blame the leadership. Particularly your lack of leadership.~
 @13685 = ~[PC] This is a distraction. You need to tell them to stick to the business of planning the settlement, and leave the adventuring to us.~
@@ -14104,13 +14104,13 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13711 = ~[ARAN]  Now, that be right harsh. Not every adventure be a great haul o' lewels an' items. Sometimes just findin' a new safer route, or mayhap some usable rock be a step forward.~
 @13712 = ~[ARAN] I got me some pebbles what can be called an' swapped between large spaces. Blighted expensive to use, on account o' the time spent on th' other end by th' mage or sorceror callin' th' stone, but it can bring along a sheet o' vellum all wrapped up tight an' sealed. Naught in th' way o' more, but it works passably to get th' stones to swap places.~
 @13713 = ~[ARAN] From there, th' courier network takes it on right fine. How in th' hells else would I be able to get an' receive messages in some o' th' places we have been?~
-@13714 = ~[PC] I.... had never though about that.~
+@13714 = ~[PC] I... had never though about that.~
 @13715 = ~[PC] Perhaps it is time to let your followers know that they should stick to building a simple settlement.~
 @13716 = ~[PC] Transferring messages via magical displacement of pebbles, followed by a courier system. Oh, let me count the many, many ways that could go wrong...~
 @13717 = ~[PC] Well, I am sorry that your first big independent expedition ended in failure.~
 @13718 = ~[PC] Well, I am sorry that you do not see how much they have accomplished on your behalf.~
 @13719 = ~[ARAN] Hells. I just be disappointed, is all. But I did see somethin' in one o' those sets o' notes I picked up a ways back... hmmm...~
-@13720 = ~[ARAN] Swordcoastswordcoastswordcoast... err, no, that be naught.... lookin' for th' coastal region, not inland... ~
+@13720 = ~[ARAN] Swordcoastswordcoastswordcoast... err, no, that be naught... lookin' for th' coastal region, not inland... ~
 @13721 = ~[ARAN] Mayhap... yes. There be an abandoned tower only two days travel up th' coast. Right here. Mayhap they will have better luck there. Now, to send off some sort o' plan...~
 @13722 = ~[PC] I'm looking for a gift for Aran.~ 
 @13723 = ~[B!GIFT] Hmmmm. A warrior, but with inkstains on his hands, and especially his thumb...~
