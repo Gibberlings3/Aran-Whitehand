@@ -387,9 +387,9 @@ Aran was captured by Bodhi and infected with vampirism, forcing you to slay him.
 @182  = ~[ARAN] Aye, then, we be in for a right fine adventure. An' mayhap even one worthy o' your bardic talents, <CHARNAME>.~
 @183  = ~[ARAN] I sorta did that once, you know. Used a right fin combnination o' song an' sweettalk. Sold a blighted dwarf his own hammer. Not goin' back to that inn any time soon, believe you me.~
 @184  = ~[ARAN] No offense meant to our leader here, eh, but you an' she both have to admit you bards have a way wi' gettin' th' rest o' us to do things what we wouldn't usually do if we be thinkin' clearly.~
-// @185  = 
-// @186  = 
-// @187  = 
+@185  = ~[PC] Just tell me any story about an old friend.~
+@186  = ~[PC] Just tell me any story about your past battles.~
+@187  = ~[PC] Just tell me any story about alcohol.~
 // @188  = 
 @189  = ~[ARAN] Small! Naught about me could rightly be called small! You should see th' size o' my... err... yep. Teeth. Sorry. Shuttin' up an' soldierin'.~
 @190  = ~[ARAN] Now, to be fair, they were a mite bit useful. Watchin' 'em bumble around an' fall over themselves, it were as entertainin' as one o' them plays or follies, or such.~

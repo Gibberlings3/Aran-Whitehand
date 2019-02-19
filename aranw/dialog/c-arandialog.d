@@ -3321,8 +3321,8 @@ END
 IF ~~ a1671
   SAY @1404
   = @1405
-  IF ~Global("c-arancarbonara","LOCALS",0)~ GOTO a1433
-  IF ~Global("c-arancalimport","LOCALS",0)~ GOTO a1432
+  IF ~Global("c-arancalimport","LOCALS",0)~ GOTO a1433 /* First Time in Calimport */ 
+  IF ~Global("c-arancarbonara","LOCALS",0)~ GOTO a1432 /* Burned Rat and Flatbread */
   IF ~Global("c-arangerris","LOCALS",0)~ GOTO a1674
   IF ~Global("c-arandadtrade","LOCALS",0)~ GOTO a1675
   IF ~Global("c-aranfistfight","LOCALS",0)~ GOTO a1676
@@ -3334,8 +3334,8 @@ END
 
 IF ~~ a1672
   SAY @1406
-  IF ~Global("c-arancarbonara","LOCALS",0)~ GOTO a1433
-  IF ~Global("c-arancalimport","LOCALS",0)~ GOTO a1432
+  IF ~Global("c-arancarbonara","LOCALS",0)~ GOTO a1432 /* Burned Rat and Flatbread */
+  IF ~Global("c-arancalimport","LOCALS",0)~ GOTO a1433 /* First Time in Calimport */ 
   IF ~Global("c-arangerris","LOCALS",0)~ GOTO a1674
   IF ~Global("c-arandadtrade","LOCALS",0)~ GOTO a1675
   IF ~Global("c-aranfistfight","LOCALS",0)~ GOTO a1676
@@ -22578,8 +22578,11 @@ END
 /* UD Manipulative/Autocratic/Demanding 3 */
 IF ~~ a1273
   SAY @9045
-  + ~Global("c-arancarbonara","LOCALS",0)~ + @9046 + a1432 /* RETURN TO THIS FOR THE OTHER STORY SEQUENCE ADDITIONS  */
-  + ~Global("c-arancalimport","LOCALS",0)~ + @9047 + a1433
+  + ~Global("c-arancarbonara","LOCALS",0)~ + @9046 + a1432  
+  + ~Global("c-arancalimport","LOCALS",0)~ + @9047 + a1433 /* First Time in Calimport */
+  + ~Global("c-aranfistfight","LOCALS",0)~ + @186 + a1676
+  + ~Global("c-arankravitchstory","LOCALS",0)~ + @185 + a1677
+  + ~Global("c-arangogstory","LOCALS",0)~ + @187 + a2587
   ++ @9048 EXIT
   + ~RandomNum(3,1)~ + @9049 + a1979 /* c-aranshutup73 */
   + ~RandomNum(3,2)~ + @9049 + a1980 /* c-aranshutup74 */
@@ -24359,9 +24362,7 @@ END
 IF ~~ a1779 SAY @9925 IF ~~ THEN EXIT END
 IF ~~ a1782 SAY @9926 IF ~~ THEN EXIT END
 
-/* Gog Story */
-
-IF ~~ a2587
+IF ~~ a2587 /* Gog Story */
   SAY @9927
   ++ @9928 DO ~SetGlobal("c-arangogstory","LOCALS",1)~ + a2589
   ++ @9929 DO ~SetGlobal("c-arangogstory","LOCALS",1)~ + a2588
