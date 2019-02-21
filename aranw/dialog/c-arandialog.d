@@ -10155,8 +10155,8 @@ IF ~~ a597
   + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @3975 + a602
   ++ @3976 + a603
   ++ @3977 + a604
-  ++ @3978 + a605
-  + ~Global("BodhiAppear","GLOBAL",1) GlobalLT("WorkingForAran","GLOBAL",1) GlobalLT("WorkingForBodhi","GLOBAL",1)~ + @3979 + a606
+  ++ @3978 + a604
+  + ~Global("BodhiAppear","GLOBAL",1) GlobalLT("WorkingForAran","GLOBAL",1) GlobalLT("WorkingForBodhi","GLOBAL",1)~ + @3979 + a605
 END
 
 IF ~~ a598
@@ -10166,7 +10166,7 @@ IF ~~ a598
   + ~GlobalGT("Chapter","GLOBAL",%bg2_chapter_3%)~ + @3975 + a602
   ++ @3976 + a603
   ++ @3977 + a604
-  ++ @3978 + a605
+  ++ @3978 + a604
   + ~Global("BodhiAppear","GLOBAL",1) GlobalLT("WorkingForAran","GLOBAL",1) GlobalLT("WorkingForBodhi","GLOBAL",1)~ + @3982 + a605
 END
 
@@ -10213,7 +10213,7 @@ IF ~~ a603
   ++ @4000 + a611
   ++ @4001 + a610
   ++ @3992 DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
-  ++ @4002 +  a394 /* yes, a394 is correct -  "Aye, you be a woman after my own heart. Cheers." Inference is a rude gesture, but people can read it how they like for the characters involved, of course. */
+  ++ @4002 + a394 /* yes, a394 is correct -  "Aye, you be a woman after my own heart. Cheers." Inference is a rude gesture, but people can read it how they like for the characters involved, of course. */
 END
 
 IF ~~ a604
@@ -10256,6 +10256,13 @@ IF ~~ a606
   + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4031 + a607  /* PPG Xan "O#XAN" */
   + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4032 + a607
   + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4033 + a607  /* RosenRanken Ajantis */
+  + ~InParty("rh#Adrian") Global("rh#AdrianRomanceActive","GLOBAL",2)~ + @13738 + a607 /* SHS Adrian By Rhaella */
+  + ~InParty("Dorn") Global("DornRomanceActive","GLOBAL",2)~ + @13739 + a608 /* Dorn by Beamdog */
+  + ~InParty("Haerdalis") Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ + @13740 + a607 /* SHS HaerDalis Romance by Kaeloree */
+  + ~InParty("Arath") Global("LK#ArathRomanceActive","GLOBAL",2)~ + @13741 + a607 /* Arath by K'aeloree */
+  + ~InParty("SK#Neht") Global("SK#NehtRomanceActive","GLOBAL",2)~ + @13742 + a607 /* Sir Neh’taniel by Skye and Kitanna */
+  + ~InParty("T1Dar") Global("T1DarRomanceActive","GLOBAL",2)~ + @13743 + a607 /* Darian */
+  + ~InParty("Yoshimo") Global("YoshimoRomanceActive","GLOBAL",2)~ + @13744 + a607 /* Yoshimo Romance */
 END
 
 IF ~~ a607
@@ -10305,6 +10312,14 @@ IF ~~ a610
   + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4060 + a615  /* PPG Xan "O#XAN" */
   + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4061 + a615 /* SHS Faren FHFarenRomanceActive=2 */
   + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4062 + a615  /* RosenRanken Ajantis */
+  + ~InParty("rh#Adrian") Global("rh#AdrianRomanceActive","GLOBAL",2)~ + @13745 + a615 /* SHS Adrian By Rhaella */
+  + ~InParty("Dorn") Global("DornRomanceActive","GLOBAL",2)~ + @13746 + a615 /* Dorn by Beamdog */
+  + ~InParty("Haerdalis") Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ + @13747 + a615 /* SHS HaerDalis Romance by Kaeloree */
+  + ~InParty("Arath") Global("LK#ArathRomanceActive","GLOBAL",2)~ + @13748 + a615 /* Arath by K'aeloree */
+  + ~InParty("SK#Neht") Global("SK#NehtRomanceActive","GLOBAL",2)~ + @13749 + a615 /* Sir Neh’taniel by Skye and Kitanna */
+  + ~InParty("T1Dar") Global("T1DarRomanceActive","GLOBAL",2)~ + @13750 + a615 /* Darian */
+  + ~InParty("Yoshimo") Global("YoshimoRomanceActive","GLOBAL",2)~ + @13751 + a615 /* Yoshimo Romance */
+  ++ @13465 + a610b
   ++ @4063 + a611
 END
 
@@ -10325,42 +10340,95 @@ IF ~~ a611
   + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4060 + a615  /* PPG Xan "O#XAN" */
   + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4061 + a615 /* SHS Faren FHFarenRomanceActive=2 */
   + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4062 + a615  /* RosenRanken Ajantis */
+  + ~InParty("rh#Adrian") Global("rh#AdrianRomanceActive","GLOBAL",2)~ + @13745 + a615 /* SHS Adrian By Rhaella */
+  + ~InParty("Dorn") Global("DornRomanceActive","GLOBAL",2)~ + @13746 + a615 /* Dorn by Beamdog */
+  + ~InParty("Haerdalis") Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ + @13747 + a615 /* SHS HaerDalis Romance by Kaeloree */
+  + ~InParty("Arath") Global("LK#ArathRomanceActive","GLOBAL",2)~ + @13748 + a615 /* Arath by K'aeloree */
+  + ~InParty("SK#Neht") Global("SK#NehtRomanceActive","GLOBAL",2)~ + @13749 + a615 /* Sir Neh’taniel by Skye and Kitanna */
+  + ~InParty("T1Dar") Global("T1DarRomanceActive","GLOBAL",2)~ + @13750 + a615 /* Darian */
+  + ~InParty("Yoshimo") Global("YoshimoRomanceActive","GLOBAL",2)~ + @13751 + a615 /* Yoshimo Romance */
+  ++ @13465 + a610b
   ++ @4067 DO ~SetGlobal("c-aranintimate","GLOBAL",1)~ + a614
 END
 
 IF ~~ a613
   SAY @4068
-  ++ @3993 + a606
+  ++ @3993 + a606a
   + ~RandomNum(3,1)~ + @4069 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1947 /* c-aranshutup41 */
   + ~RandomNum(3,2)~ + @4069 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1948 /* c-aranshutup42 */
   + ~RandomNum(3,3)~ + @4069 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ + a1949 /* c-aranshutup43 */
-  ++ @4070 + a604
-  ++ @4071 + a610
+  ++ @4070 + a604a
+  ++ @4071 + a606a
   ++ @4072 + a616
   ++ @4050 + a615
 END
 
 IF ~~ a614
   SAY @4073
-  ++ @4074 + a615
+  ++ @4074 + a617
   ++ @4075 + a617
-  + ~InParty("ADANGEL") Global("ADAngelRomanceActive","GLOBAL",2)~ + @4076 + a607  /* G3 Angelo "ADANGEL" */
-  + ~InParty("Anomen") Global("AnomenRomanceActive","GLOBAL",2)~ + @4077 + a608  /* BioWare(tm) Anomen "Anomen" */
-  + ~InParty("Edwin") Global("EdwinRomanceActive","GLOBAL",2)~ + @4078 + a608  /* SHS Edwin "Edwin" */
-  + ~InParty("B!Gavin2") OR(2) Global("B!GavRA","GLOBAL",1) Global("B!GavRA","GLOBAL",2)~ + @4079 + a607  /* G3 Gavin in the Future Tense "B!Gavin2" */
-  + ~InParty("J#Kelsey") Global("J#KelseyRomanceActive","GLOBAL",2)~ + @4080 + a607  /* PPG Kelsey "J#Kelsey" */
-  + ~InParty("P#KIVAN") OR(2) Global("P#KivanRomanceActive","GLOBAL",2) Global("P#KivanRomanceActive","GLOBAL",1)~ + @4081 + a607  /* G3 Kivan "P#KIVAN" */
-  + ~OR(2) InParty("SOLAUFEIN") InParty("SOLA") GlobalGT("SolaTalk","GLOBAL",12)~ + @4082 + a608  /* WeiDU.org Solaufein "SOLA" or "SOLAUFEIN" */
-  + ~InParty("TSUJATH") Global("TsujathaRomanceActive","GLOBAL",2)~ + @4083 + a608  /* CoM Tsujatha "TSUJATH" */
-  + ~InParty("Valygar") OR(3) Global("H#ValygarRomanceActive","GLOBAL",2) Global("ValygarRomanceActive","GLOBAL",2) GlobalGT("RE_ValygarRomance","GLOBAL",2)~ + @4084 + a607  /* Valygar from C.Romantique (unhosted) "Valygar" | SHS/BWL TS Valygar "Valygar" | G3 RE Valygar "valygar" */
-  + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4085 + a607  /* PPG Xan "O#XAN" */
-  + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4086 + a607  /* SHS Faren FHFarenRomanceActive=2 */
-  + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4087 + a607  /* RosenRanken Ajantis */
-  ++ @4088 + a616
+  + ~InParty("ADANGEL") Global("ADAngelRomanceActive","GLOBAL",2)~ + @4076 + a610b  /* G3 Angelo "ADANGEL" */
+  + ~InParty("Anomen") Global("AnomenRomanceActive","GLOBAL",2)~ + @4077 + a610b  /* BioWare(tm) Anomen "Anomen" */
+  + ~InParty("Edwin") Global("EdwinRomanceActive","GLOBAL",2)~ + @4078 + a610b  /* SHS Edwin "Edwin" */
+  + ~InParty("B!Gavin2") OR(2) Global("B!GavRA","GLOBAL",1) Global("B!GavRA","GLOBAL",2)~ + @4079 + a610b  /* G3 Gavin in the Future Tense "B!Gavin2" */
+  + ~InParty("J#Kelsey") Global("J#KelseyRomanceActive","GLOBAL",2)~ + @4080 + a610b  /* PPG Kelsey "J#Kelsey" */
+  + ~InParty("P#KIVAN") OR(2) Global("P#KivanRomanceActive","GLOBAL",2) Global("P#KivanRomanceActive","GLOBAL",1)~ + @4081 + a610b  /* G3 Kivan "P#KIVAN" */
+  + ~OR(2) InParty("SOLAUFEIN") InParty("SOLA") GlobalGT("SolaTalk","GLOBAL",12)~ + @4082 + a610b  /* WeiDU.org Solaufein "SOLA" or "SOLAUFEIN" */
+  + ~InParty("TSUJATH") Global("TsujathaRomanceActive","GLOBAL",2)~ + @4083 + a610b  /* CoM Tsujatha "TSUJATH" */
+  + ~InParty("Valygar") OR(3) Global("H#ValygarRomanceActive","GLOBAL",2) Global("ValygarRomanceActive","GLOBAL",2) GlobalGT("RE_ValygarRomance","GLOBAL",2)~ + @4084 + a610b  /* Valygar from C.Romantique (unhosted) "Valygar" | SHS/BWL TS Valygar "Valygar" | G3 RE Valygar "valygar" */
+  + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4085 + a610b  /* PPG Xan "O#XAN" */
+  + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4086 + a610b  /* SHS Faren FHFarenRomanceActive=2 */
+  + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4087 + a610b  /* RosenRanken Ajantis */
+  + ~InParty("rh#Adrian") Global("rh#AdrianRomanceActive","GLOBAL",2)~ + @13752 + a610b /* SHS Adrian By Rhaella */
+  + ~InParty("Dorn") Global("DornRomanceActive","GLOBAL",2)~ + @13753 + a610b /* Dorn by Beamdog */
+  + ~InParty("Haerdalis") Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ + @13754 + a610b /* SHS HaerDalis Romance by Kaeloree */
+  + ~InParty("Arath") Global("LK#ArathRomanceActive","GLOBAL",2)~ + @13755 + a610b /* Arath by K'aeloree */
+  + ~InParty("SK#Neht") Global("SK#NehtRomanceActive","GLOBAL",2)~ + @13756 + a610b /* Sir Neh’taniel by Skye and Kitanna */
+  + ~InParty("T1Dar") Global("T1DarRomanceActive","GLOBAL",2)~ + @13757 + a610b /* Darian */
+  + ~InParty("Yoshimo") Global("YoshimoRomanceActive","GLOBAL",2)~ + @13758 + a610b /* Yoshimo Romance */
+  ++ @4088 + a617
+  ++ @4089 + a617
+  ++ @4090 + a617
+  ++ @13465 + a610b
+END
+
+IF ~~ a604a
+  SAY @13464
+  ++ @13465 + a610b
+  + ~InParty("ADANGEL") Global("ADAngelRomanceActive","GLOBAL",2)~ + @4076 + a610b  /* G3 Angelo "ADANGEL" */
+  + ~InParty("Anomen") Global("AnomenRomanceActive","GLOBAL",2)~ + @4077 + a610b  /* BioWare(tm) Anomen "Anomen" */
+  + ~InParty("Edwin") Global("EdwinRomanceActive","GLOBAL",2)~ + @4078 + a610b  /* SHS Edwin "Edwin" */
+  + ~InParty("B!Gavin2") OR(2) Global("B!GavRA","GLOBAL",1) Global("B!GavRA","GLOBAL",2)~ + @4079 + a610b  /* G3 Gavin in the Future Tense "B!Gavin2" */
+  + ~InParty("J#Kelsey") Global("J#KelseyRomanceActive","GLOBAL",2)~ + @4080 + a610b  /* PPG Kelsey "J#Kelsey" */
+  + ~InParty("P#KIVAN") OR(2) Global("P#KivanRomanceActive","GLOBAL",2) Global("P#KivanRomanceActive","GLOBAL",1)~ + @4081 + a610b  /* G3 Kivan "P#KIVAN" */
+  + ~OR(2) InParty("SOLAUFEIN") InParty("SOLA") GlobalGT("SolaTalk","GLOBAL",12)~ + @4082 + a610b  /* WeiDU.org Solaufein "SOLA" or "SOLAUFEIN" */
+  + ~InParty("TSUJATH") Global("TsujathaRomanceActive","GLOBAL",2)~ + @4083 + a610b  /* CoM Tsujatha "TSUJATH" */
+  + ~InParty("Valygar") OR(3) Global("H#ValygarRomanceActive","GLOBAL",2) Global("ValygarRomanceActive","GLOBAL",2) GlobalGT("RE_ValygarRomance","GLOBAL",2)~ + @4084 + a610b  /* Valygar from C.Romantique (unhosted) "Valygar" | SHS/BWL TS Valygar "Valygar" | G3 RE Valygar "valygar" */
+  + ~InParty("O#XAN") Global("O#XanRomanceActive","GLOBAL",2)~ + @4085 + a610b  /* PPG Xan "O#XAN" */
+  + ~InParty("FHFaren") Global("FHFarenRomanceActive","GLOBAL",2)~ + @4086 + a610b  /* SHS Faren FHFarenRomanceActive=2 */
+  + ~InParty("C#Ajantis") Global("C#AjantisRomanceActive","GLOBAL",2)~ + @4087 + a610b  /* RosenRanken Ajantis */
+  + ~InParty("rh#Adrian") Global("rh#AdrianRomanceActive","GLOBAL",2)~ + @13752 + a610b /* SHS Adrian By Rhaella */
+  + ~InParty("Dorn") Global("DornRomanceActive","GLOBAL",2)~ + @13753 + a610b /* Dorn by Beamdog */
+  + ~InParty("Haerdalis") Global("LS_HaerDalisRomanceActive","GLOBAL",2)~ + @13754 + a610b /* SHS HaerDalis Romance by Kaeloree */
+  + ~InParty("Arath") Global("LK#ArathRomanceActive","GLOBAL",2)~ + @13755 + a610b /* Arath by K'aeloree */
+  + ~InParty("SK#Neht") Global("SK#NehtRomanceActive","GLOBAL",2)~ + @13756 + a610b /* Sir Neh’taniel by Skye and Kitanna */
+  + ~InParty("T1Dar") Global("T1DarRomanceActive","GLOBAL",2)~ + @13757 + a610b /* Darian */
+  + ~InParty("Yoshimo") Global("YoshimoRomanceActive","GLOBAL",2)~ + @13758 + a610b /* Yoshimo Romance */
+  ++ @4088 + a617
   ++ @4089 + a617
   ++ @4090 + a617
 END
 
+IF ~~ a606a
+  SAY @188
+  ++ @4018 + a2321
+  ++ @4088 + a616
+  ++ @4089 + a616
+  ++ @4090 + a616
+  ++ @4049 + a615
+END
+
+IF ~~ a610b SAY @12478 IF ~~ THEN EXIT END
 IF ~~ a615 SAY @4091 IF ~~ THEN EXIT END
 IF ~~ a616 SAY @4092 IF ~~ THEN EXIT END
 IF ~~ a617 SAY @4093 IF ~~ THEN EXIT END
