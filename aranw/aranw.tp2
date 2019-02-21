@@ -18,13 +18,13 @@ ALWAYS
 	INCLUDE ~aranw/lib/regexp.tph~ /* extra regexp vars */
     INCLUDE ~aranw/lib/ids_patching.tph~ /* checks for expected .ids resources */
 	INCLUDE ~aranw/lib/aranw_macros.tph~ /* define all in-project macros */
-	
+	ACTION_IF ((FILE_EXISTS ~dlc/sod-dlc.zip~) OR (FILE_EXISTS ~sod-dlc.zip~)) THEN BEGIN FAIL @30139 END /* Modmerge check */
 	ACTION_IF GAME_IS ~soa tob bgt~ BEGIN
 		INCLUDE ~aranw/lib/tob2soa.tph~ /* checks for expected .ids resources */
 	END
 	
  	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter THEN BEGIN  /* check to make this happen only once per install */
-		ACTION_IF GAME_IS ~eet~ BEGIN
+		ACTION_IF GAME_IS ~eet~ BEGIN /* [BG2EE | EET] Chapter numbering adjusted */
 			OUTER_SET bg2_chapter = 12
 		END ELSE BEGIN
 			OUTER_SET bg2_chapter = 0
@@ -1188,8 +1188,8 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
 BEGIN @30020 DESIGNATED 300 /* ~Aran Whitehand, Mage Dual-Class stats (Tinker)~ */
-	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
-	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+   	SUBCOMPONENT @30025  /* ~Customize Aran Whitehand: Class~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	OUTER_SPRINT aranw_crechoice @30020
 	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
@@ -1221,8 +1221,8 @@ BEGIN @30020 DESIGNATED 300 /* ~Aran Whitehand, Mage Dual-Class stats (Tinker)~ 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 BEGIN @30021 DESIGNATED 310 /* ~Aran Whitehand, Cleric Dual-Class stats (Tailor)~ */
-	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
-	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	SUBCOMPONENT @30025  /* ~Customize Aran Whitehand: Class~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	OUTER_SPRINT aranw_crechoice @30021
 	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
@@ -1244,7 +1244,7 @@ BEGIN @30021 DESIGNATED 310 /* ~Aran Whitehand, Cleric Dual-Class stats (Tailor)
 			WRITE_ASCII 0x248 ~C-ARN25~ #8 /* override script */
 		APPEND ~c-arandebugger01.log~ ~ToB .cre patched~
 	END ELSE BEGIN
-		PRINT @30024 /* ~No version of ToB content detected via GAME_IS; .cre not patched~ */
+		PRINT @30024 /* ~You do not appear to have ToB installed - skipping c-aran13.cre creation~ */
 		OUTER_SPRINT aranw_repcrec @30024
 		APPEND ~c-arandebugger01.log~ ~%aranw_repcrec%~
 	END
@@ -1255,8 +1255,8 @@ BEGIN @30021 DESIGNATED 310 /* ~Aran Whitehand, Cleric Dual-Class stats (Tailor)
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 BEGIN @30019 DESIGNATED 320 /* ~Aran Whitehand, Fighter Single Class Stats, default (Soldier)~ */
-	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
-	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	SUBCOMPONENT @30025  /* ~Customize Aran Whitehand: Class~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	OUTER_SPRINT aranw_crechoice @30019
 	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
@@ -1273,8 +1273,8 @@ BEGIN @30019 DESIGNATED 320 /* ~Aran Whitehand, Fighter Single Class Stats, defa
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 BEGIN @30023 DESIGNATED 330 /* ~Aran Whitehand, Thief Dual-Class stats, (Spy)~ */
-	SUBCOMPONENT @30012 /* ~Change Aran Whitehand's Class ~ */
-	GROUP @30018  /* ~Customize Aran Whitehand: Class~ */
+	SUBCOMPONENT @30025  /* ~Customize Aran Whitehand: Class~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	OUTER_SPRINT aranw_crechoice @30023
 	APPEND ~c-arandebugger01.log~ ~%aranw_crechoice%~
@@ -1315,8 +1315,8 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /* Change sounds via SUBCOMPONENT */
 BEGIN @30013 DESIGNATED 400 /* Replace Guitar Music with Midaevil Music */
-	SUBCOMPONENT @30011 /* Change Audio Files */
-	GROUP @30015  /* ~Customize Aran Whitehand: Music~ */	
+	SUBCOMPONENT @30015  /* ~Customize Aran Whitehand: Music~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
 	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
@@ -1339,8 +1339,8 @@ BEGIN @30013 DESIGNATED 400 /* Replace Guitar Music with Midaevil Music */
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 	
 BEGIN @30014 DESIGNATED 410 /* Replace Guitar Music with Brass Ensemble Music */
-	SUBCOMPONENT @30011 /* Change Audio Files */
-	GROUP @30015  /* ~Customize Aran Whitehand: Music~ */
+	SUBCOMPONENT @30015  /* ~Customize Aran Whitehand: Music~ */ 
+	GROUP @30018 /* ~Customize Aran Whitehand~ */
 	REQUIRE_COMPONENT ~setup-aranw.tp2~ ~0~ @30017
 	/* batch file tools or users who change components overwrite mymod.DEBUG, so we create our own that floats with the component. */
 	APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
@@ -1372,8 +1372,8 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /* Customize Talk And Flirt Timers */
 BEGIN @30043 DESIGNATED 500 /* ~Content Speed: minimum 1 hour real time between dialogues (Default, recommended)~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	PRINT @30106    /* ~Default timers chosen - no change to files necessary.~ */
 		OUTER_SPRINT aranw_deft @30106  
@@ -1388,8 +1388,8 @@ BEGIN @30043 DESIGNATED 500 /* ~Content Speed: minimum 1 hour real time between 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30051 DESIGNATED 510 /* ~Content Speed: minimum 15 minutes real time between dialogues~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	COMPILE ~aranw/dialog/c-arantimers15min.d~
 	PRINT @30051 /* ~Content Speed: minimum 15 minutes real time between dialogues~ */
@@ -1422,8 +1422,8 @@ BEGIN @30051 DESIGNATED 510 /* ~Content Speed: minimum 15 minutes real time betw
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30055 DESIGNATED 520 /* ~Content Speed: minimum 30 minutes real time between dialogues~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	COMPILE ~aranw/dialog/c-arantimers30min.d~
 	PRINT @30055 /* ~Content Speed: minimum 30 minutes real time between dialogues~ */
@@ -1456,8 +1456,8 @@ BEGIN @30055 DESIGNATED 520 /* ~Content Speed: minimum 30 minutes real time betw
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30059 DESIGNATED 530 /* ~Content Speed: minimum 45 minutes real time between dialogues~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	COMPILE ~aranw/dialog/c-arantimers45min.d~
 	PRINT @30059 /* ~Content Speed: minimum 45 minutes real time between dialogues~ */
@@ -1490,8 +1490,8 @@ BEGIN @30059 DESIGNATED 530 /* ~Content Speed: minimum 45 minutes real time betw
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30063 DESIGNATED 540 /* ~Content Speed: minimum 1 hour 30 minutes real time between dialogues~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	COMPILE ~aranw/dialog/c-arantimers1hour30min.d~
 		PRINT @30063 /* ~Content Speed: minimum 1 hour 30 minutes real time between dialogues~ */
@@ -1524,8 +1524,8 @@ BEGIN @30063 DESIGNATED 540 /* ~Content Speed: minimum 1 hour 30 minutes real ti
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30067 DESIGNATED 550 /* ~Content Speed: minimum 2 hours real time between dialogues~ */
-	SUBCOMPONENT @30042  /* Customize Talk And Flirt Timers */
-	GROUP @30049 /* ~Customize Aran Whitehand: Timers~ */
+	SUBCOMPONENT @30049 /* ~Customize Aran Whitehand: Timers~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */ 
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	COMPILE ~aranw/dialog/c-arantimers2hours.d~
 		PRINT @30067 /* ~Content Speed: minimum 2 hours real time between dialogues~ */
@@ -1567,26 +1567,9 @@ APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 /* Portrait Choices component - not needed on any install as the default portrait choices are already in place. */
 
-/* 
-@30107    = ~Nix's "Default" portrait (fair hair, fair complexion)~
-@30108    = ~Pechplum's "Latest" portrait (fair hair, fair complexion)~
-@30109    = ~Berelinde's "Boromir" (dark brown hair, fair complexion)~
-@30110    = ~Berelinde's "Dragon Age" (dark hair, dark complexion)~
-@30111    = ~Berelinde's "Scruffy"(light brown hair, fair complexion)~
-@30112    = ~Macmazey's "Don Pedro" (dark hair, dark complexion)~
-@30113    = ~Macmazey's "Fantasy Photo" (long brown hair, light complexion)~
-@30114    = ~Macmazey's	"Bearded" (dark hair, light complexion)~
-@30115    = ~Macmazey's "No Beard" (dark hair, light complexion)~
-@30116    = ~Macmazey's "Horatio Photo" (dark hair, light complexion)~
-@30117    = ~Peachplum's "Young Fighter" (red hair, fair comlpexion)~
-@30118    = ~piper's "Stalwort Bearded Young" (light brown hair, fair complexion)~
-@30119    = ~piper's "Mature Bearded" (dark brown hair, medium complexion)~
-@30120    = ~piper's "Stalwort Young" (light brown hair, fair complexion)~ 
-*/
-
 BEGIN @30107 DESIGNATED 900 /* Portrait: Nix's "Default" portrait set (fair hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	/* portraits already copied into place as standard resources, so just touch the file to make sure it has the right colors */
 	COPY_EXISTING ~c-aran7.cre~ ~override~
@@ -1614,8 +1597,8 @@ BEGIN @30107 DESIGNATED 900 /* Portrait: Nix's "Default" portrait set (fair hair
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30108 DESIGNATED 905 /* Portrait: Peachplum's "Latest" (dark brown hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1650,8 +1633,8 @@ BEGIN @30108 DESIGNATED 905 /* Portrait: Peachplum's "Latest" (dark brown hair, 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30109 DESIGNATED 910 /* Portrait: berelinde's "Boromir" (dark brown hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1686,8 +1669,8 @@ BEGIN @30109 DESIGNATED 910 /* Portrait: berelinde's "Boromir" (dark brown hair,
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30110 DESIGNATED 915 /* Portrait: berelinde's "Dragon Age" (dark hair, dark complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1722,8 +1705,8 @@ BEGIN @30110 DESIGNATED 915 /* Portrait: berelinde's "Dragon Age" (dark hair, da
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30111 DESIGNATED 920 /* Portrait: berelinde's "Scruffy" (light brown hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1758,8 +1741,8 @@ BEGIN @30111 DESIGNATED 920 /* Portrait: berelinde's "Scruffy" (light brown hair
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30112 DESIGNATED 925 /* Portrait: McMazey's "Don Pedro" (dark hair, dark complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1794,8 +1777,8 @@ BEGIN @30112 DESIGNATED 925 /* Portrait: McMazey's "Don Pedro" (dark hair, dark 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30113 DESIGNATED 930 /* Portrait: McMazey's "Fantasy Photo" (long brown hair, light complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1830,8 +1813,8 @@ BEGIN @30113 DESIGNATED 930 /* Portrait: McMazey's "Fantasy Photo" (long brown h
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30114 DESIGNATED 935 /* Portrait: McMazey's "Bearded" (dark hair, light complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee~ THEN BEGIN
 		PRINT @30029
@@ -1866,8 +1849,8 @@ BEGIN @30114 DESIGNATED 935 /* Portrait: McMazey's "Bearded" (dark hair, light c
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30115 DESIGNATED 940 /* Portrait: McMazey's "No Beard" (dark hair, light complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1902,8 +1885,8 @@ BEGIN @30115 DESIGNATED 940 /* Portrait: McMazey's "No Beard" (dark hair, light 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30116 DESIGNATED 945 /* Portrait: McMazey's "Horatio Photo" (dark hair, light complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1938,8 +1921,8 @@ BEGIN @30116 DESIGNATED 945 /* Portrait: McMazey's "Horatio Photo" (dark hair, l
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30117 DESIGNATED 950 /* Portrait: Peachplums' "Young Fighter" (red hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */	
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -1974,8 +1957,8 @@ BEGIN @30117 DESIGNATED 950 /* Portrait: Peachplums' "Young Fighter" (red hair, 
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30118 DESIGNATED 955 /* Portrait: piperb's "Stalwort Bearded Young" (light brown hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -2010,8 +1993,8 @@ BEGIN @30118 DESIGNATED 955 /* Portrait: piperb's "Stalwort Bearded Young" (ligh
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30119 DESIGNATED 960 /* Portrait: piperb's "Mature Bearded" (dark brown hair, medium complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */  
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029
@@ -2046,8 +2029,8 @@ BEGIN @30119 DESIGNATED 960 /* Portrait: piperb's "Mature Bearded" (dark brown h
 APPEND ~c-arandebugger01.log~ ~%c-aran_logdiv%~
 
 BEGIN @30120 DESIGNATED 965 /* Portrait: piperb's "Stalwort Young" (light brown hair, fair complexion) */
-	SUBCOMPONENT @30137  /* Customize Portraits */
-	GROUP @30050   /* ~Customize Aran Whitehand: Portraits~ */
+	SUBCOMPONENT @30050  /* ~Customize Aran Whitehand: Portraits~ */
+	GROUP @30018 /* ~Customize Aran Whitehand~ */   
 	REQUIRE_COMPONENT ~aranw/setup-aranw.tp2~ 0 @30017 /* ~Aran Whitehand must be installed for this to work.~ */
 	ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 		PRINT @30029

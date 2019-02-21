@@ -1,4 +1,4 @@
-@30001    = ~RC_Amellg 02.20.2019~ 
+@30001    = ~RC_Amellg 02.21.2019~ 
 @30002    = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, BGII:Enhanced Edition, or Enhanced Edition Trilogy. Stopping installation. * * *~
 @30003    = ~WeiDU says that this game has BGII - SoA content.~
 @30004    = ~WeiDU says that this game has BGII - ToB content.~
@@ -8,21 +8,21 @@
 @30008    = ~Weidu defined variables on this install:~
 @30009    = ~* * * * * * * * * * * * * * * *~
 @30010    = ~Install Aran Whitehand for SoA and ToB~
-@30011    = ~Change Audio Files~
-@30012    = ~Change Aran Whitehand's Class~
+// @30011    = ~UNUSED AT THIS TIME~
+// @30012    = ~UNUSED AT THIS TIME~
 @30013    = ~Replace Guitar Music with Midaevil Music~
 @30014    = ~Replace Guitar Music with Brass Ensemble Music~
 @30015    = ~Customize Aran Whitehand: Music~
-@30016    = ~No soundset, music, or voiced lines files are installed.~
+// @30016    = ~UNUSED AT THIS TIME~
 @30017    = ~Aran Whitehand must be installed for this to work.~
-@30018    = ~Customize Aran Whitehand: Class~
+@30018    = ~Customize Aran Whitehand~
 @30019    = ~Aran Whitehand, Fighter Single Class Stats, default (Soldier)~
 @30020    = ~Aran Whitehand, Mage Dual-Class stats (Tinker)~
 @30021    = ~Aran Whitehand, Cleric Dual-Class stats (Tailor)~
 @30022    = ~You already have Aran's Fighter Single Class .cre installed. No action taken.~ 
 @30023    = ~Aran Whitehand, Thief Dual-Class stats, (Spy)~
 @30024    = ~You do not appear to have ToB installed - skipping c-aran13.cre creation~
-@30025    = ~Choose Aran's Portrait~
+@30025    = ~Customize Aran Whitehand: Class~
 @30026    = ~Installing Aran's default settings (Soldier).~
 @30027    = ~BGII:EE or EET detected. Managing journal entries.~
 @30028    = ~BGII:EE content is being installed.~
@@ -39,7 +39,7 @@
 @30039    = ~Installing SoA scripts...~
 @30040    = ~Installing ToB scripts...~
 @30041    = ~ToB file patched to match.~
-@30042    = ~Customize Talk And Flirt Timers~
+// @30042    = ~UNUSED AT THIS TIME~
 @30043    = ~Content Speed: minimum 1 hour real time between dialogues (Default, recommended)~
 @30044    = ~Initial Lovetalk offset by 40 minutes~
 @30045    = ~Initial NPC-Initiated Flirt offset by 20 minutes~
@@ -55,14 +55,8 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30047    = ~Select Aran's Talk timers:~
-@30048    = ~Please choose one of the following:
-	[1] approximately 1 hour real time minimum between friendship dialogues (recommended, default)
-	[2] approximately 15 minutes real time minimum between friendship dialogues
-	[3] approximately 30 minutes real time minimum between friendship dialogues
-	[4] approximately 45 minutes real time minimum between friendship dialogues
-	[5] approximately 1 hour 30 minutes real time minimum friendship between dialogues
-	[6] approximately 2 hours real time minimum between friendship dialogues~
+// @30047    = ~UNUSED AT THIS TIME~
+// @30048    = ~UNUSED AT THIS TIME~
 @30049   = ~Customize Aran Whitehand: Timers~
 @30050   = ~Customize Aran Whitehand: Portraits~
 @30051    = ~Content Speed: minimum 15 minutes real time between dialogues~
@@ -139,11 +133,7 @@ Please note that the timers are not exact, and
 variations within the game may mean 
 bursts of activity followed by long waits...
 especially when you run out of timered content!~
-@30071    = ~Music choices:
-	[1] JSayles unaccompanied guitar, Early Music
-	[2] Renaissance brass
-	[3] Vox Vulgaris (midaevil wih a twist)
-Please type 1, 2, or 3, and press enter.~
+// @30071    = ~UNUSED AT THIS TIME~
 @30072    = ~Default unaccompanied guitar soundtrack chosen~
 @30073    = ~Vox Vulgaris (midaevil wih a twist) soundtrack chosen~
 @30074    = ~Brass soundtrack chosen~
@@ -277,3 +267,4 @@ override/c-arandebugger01.log
 @30136    = ~Portrait installed on c-aran13.cre (ToB)~
 @30137    = ~Customize Portraits~
 @30138    = ~Mod folder as seen by WeiDU - %MOD_FOLDER%~
+@30139    = ~SoD .zip DLC has been detected. Modmerge is required before mods can be installed on this game.~

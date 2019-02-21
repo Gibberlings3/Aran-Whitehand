@@ -10,7 +10,7 @@ CHAIN ~B!GIFT~ c-giftberelinde
 == ~B!GIFT~ @13725
 == C-ARANJ @13726
 END
-++ @13727 DO ~SetGlobal("B!GiftAranw","AR0700",1) GiveItemCreate("c-bkcase","c-aran",0,0,0) TakePartyGold(400) DestroyGold(400)~ EXTERN C-ARANJ c-gift2berelinde 
+++ @13727 DO ~SetGlobal("B!GiftAranw","AR0700",1) GiveItemCreate("c-pqcase","c-aran",0,0,0) TakePartyGold(400) DestroyGold(400)~ EXTERN C-ARANJ c-gift2berelinde 
 ++ @13728 EXTERN ~B!GIFT~ c-giftnottaken
 
 APPEND ~C-ARANJ~ 
