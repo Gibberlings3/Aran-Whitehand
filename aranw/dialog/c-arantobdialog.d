@@ -969,12 +969,12 @@ GlobalGT("ADAngelSarevok","GLOBAL",2)
 /* ToB Plot Talk : Post Wraith Talk(tm)  */
 IF ~Global("c-aranpostwraith","GLOBAL",1)~ THEN BEGIN a2242
   SAY @11482
-  ++ @11483 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2243
-  ++ @11484 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2243
-  ++ @3961 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2244
-  ++ @11485 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2245
-  ++ @11486 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2243
-  ++ @11487 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2)~ + a2243
+  ++ @11483 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2243
+  ++ @11484 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2243
+  ++ @3961 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2244
+  ++ @11485 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2245
+  ++ @11486 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2243
+  ++ @11487 DO ~SetGlobal("c-aranpostwraith","GLOBAL",2) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2243
 END
 
 IF ~~ a2244
@@ -1103,7 +1103,7 @@ IF ~~ a2257
   ++ @11549 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3) ActionOverride("c-aran",GivePartyAllEquipment()) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeArea())~ EXIT
   ++ @11550 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3) ActionOverride("c-aran",GivePartyAllEquipment()) ActionOverride("c-aran",LeaveParty()) ActionOverride("c-aran",EscapeArea())~ EXIT
   ++ @11551 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranrom","GLOBAL",3)~ + a2260
-  ++ @11552 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0) SetGlobal("c-aranpostwraith","GLOBAL",3) SetGlobalTimer("c-aranwraithink","GLOBAL",FOUR_DAYS)~ + a2260 /* don't want a fight to kick this into gear. Needs follow up talk, probably. */
+  ++ @11552 DO ~SetGlobal("c-aranflirtstop","GLOBAL",1) SetGlobal("c-aranfight","GLOBAL",0)~ + a2260 /* don't want a fight to kick this into gear. Needs follow up talk, probably. */
   ++ @11553 + a2260
 END
 
@@ -1113,11 +1113,15 @@ IF ~~ a2260 SAY @3601 IF ~~ THEN EXIT END
 
 
 /* for followup: BCS
-Global("c-aranpostwraith","GLOBAL",3)
+Global("c-aranpostwraith","GLOBAL",2)
 GlobalTimerExpired("c-aranwraithink","GLOBAL",FOUR_DAYS)
-SetGlobal("c-aranpostwraith","GLOBAL",4)
 
-IF ~Global("c-aranpostwraith","GLOBAL",4)~ c_are_we_on_or_are_we_done
+SetGlobal("c-aranpostwraith","GLOBAL",3)
+*/
+
+/*
+
+IF ~Global("c-aranpostwraith","GLOBAL",3)~ c_are_we_on_or_are_we_done
 */
 
 /* ToB Plot Talk : Big End Battle */
@@ -1278,6 +1282,25 @@ IF ~Global("c-aranfriendtob","GLOBAL",11)~ THEN BEGIN a5064
 END
 /* ToB FriendTalk 6 : "Fear and Courage" : goto followup6 */
 
+/* ToB FriendTalk 7 : Inspiration: War stories about summoning saving/ruining the day properly - eric */
+/* Moonshe Axes */
+IF ~Global("c-aranfriendtob","GLOBAL",13)~ THEN BEGIN a5220
+	SAY @13833 /* [ARAN] Did you ever get on th’ wrong side of a summonin’? */
+	++ @13834 /* [PC] A what? */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5221
+	++ @13835 /* [PC] I am not sure. Does picking up a chatterbox of a sellsword on the Promenade of Athlaka count? */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5222
+	+ ~RandomNum(5,5)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3193 /* c-aranshutup60 */
+	+ ~RandomNum(5,4)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3194 /* c-aranshutup61 */
+	+ ~RandomNum(5,3)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3195 /* c-aranshutup62 */
+	+ ~RandomNum(5,2)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3196 /* c-aranshutup63 */
+	+ ~RandomNum(5,1)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3197 /* c-aranshutup64 */		
+	++ @13837 /* [PC] I do not think that I have ever had that experience. */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5225
+	+ ~Class(Player1,MAGE_ALL)~ + @13838 /* [PC] I can tell you from both personal experience and study, it is not something most mages live through. */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5225
+	+ ~!Class(Player1,MAGE_ALL)~ + @13839 /* [PC] I have heard that a miscast summoning is not something most mages live through. */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5225	
+	++ @13840 /* [PC] Yes, I have. */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5225
+	++ @13841 /* [PC] Why talk about ancient history? We are very powerful now. Why bring up the distant past? */ DO ~SetGlobal("c-aranfriendtob","GLOBAL",14) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5236
+END
+/* ToB FriendTalk 7 : miscast summoning : goto followup7 */
+
 /* ToB Love Talks */
 
 /* ToB Love Talk #1 : back in business */
@@ -1300,170 +1323,36 @@ IF ~Global("c-arantobrom","GLOBAL",1)~ THEN BEGIN a4813
   + ~RandomNum(5,1)~ + @11611 DO ~SetGlobal("c-arantobrom","GLOBAL",2) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a3187 /* c-aranshutup54 */
 END
 
-IF ~~ a4814 SAY @11612 IF ~~ THEN GOTO a4824 END
-IF ~~ a4815 SAY @11613 IF ~~ THEN GOTO a4824 END
-IF ~~ a4816 SAY @11614 IF ~~ THEN GOTO a4824 END
-IF ~~ a4817 SAY @11615 IF ~~ THEN GOTO a4824 END
-IF ~~ a4818 SAY @11616 IF ~~ THEN GOTO a4824 END
-IF ~~ a4819 SAY @11617 IF ~~ THEN GOTO a4824 END
-
-IF ~~ a4820
-  SAY @11618
-  ++ @11619 + a4825
-  ++ @11620 + a4826
-  ++ @11621 + a4821
-  ++ @11622 + a4827
-  ++ @11623 + a4822
+/* ToB Love Talk #2 : Aran Romance vs Anomen Romance - Perspectives and Personalities : Global("c-arantobrom","GLOBAL",3) --> Global("c-arantobrom","GLOBAL",4) */
+IF ~Global("c-arantobrom","GLOBAL",3)~ THEN BEGIN a5266
+  SAY  @13929 /* [ARAN] Mayhap this be a bad time, but you know me... always talkin' out o' turn. I need to ask you, though...  */
+  = @13930 /* [ARAN] Any regrets? I mean, so far, you done experienced more trouble than a thousand others what walk Toril. */
+  ++ @13931 /* [PC] No regrets. In the end, I will get things accomplished my way. */ DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a5267
+  ++ @13932 /* [PC] What's the matter, Aran? Are you having regrets about a life of neverending adventure? */ DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a5268
+  ++ @13933 /* [PC] Only one regret, Aran... I regret that I have not had enough time to start building a family with you. */ DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a5269
+  ++ @13934 /* [PC] My only regret is you. I should never have brought you here. */ DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a5274
+  ++ @13935 /* [PC] Well, I always wanted to be an exotic Calishite dancer.... */ DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a5275 
 END
+/* GOTO ToB Love Talk #2 : Perspectives and Personalities : replies */
 
-IF ~~ a4821   SAY @11624   IF ~~ THEN GOTO a4829 END
-
-IF ~~ a4822
-  SAY @11625
-  ++ @11626 + a4824
-  ++ @11627 + a4828
-  ++ @11628 + a4829
-END
-
-IF ~~ a4823
-  SAY @11629
-  ++ @11630 + a4830
-  ++ @11631 + a4826
-  ++ @11632 + a4840
-  ++ @11633 + a4830
-END
-
-IF ~~ a4824
-  SAY @11634
-  + ~Global("c-aransex","GLOBAL",1)~ + @11635 + a4831
-  + ~Global("c-aransex","GLOBAL",2)~ + @11636 + a4831
-  + ~Global("c-aransex","GLOBAL",3)~ + @11637 + a4831
-  + ~Global("c-aransex","GLOBAL",4)~ + @11638 + a4831
-  ++ @11639 + a4832
-  ++ @11640 + a4832
-  ++ @11641 + a4840
-  ++ @11642 + a4833
-END
-
-IF ~~ a4825
-  SAY @11643
-  ++ @11644 + a4824
-  ++ @11645 + a4828
-  ++ @11646 + a4829
-  ++ @11647 + a4833
-END
-
-IF ~~ a4826
-  SAY @11648
-  = @11649
-  = @11650
-  ++ @11651 + a4832
-  ++ @11652 + a4827
-  ++ @11623 + a4838 
-  ++ @11653 + a4834
-END
-
-IF ~~ a4827
-  SAY @11654
-  ++ @11655 + a4828
-  ++ @11656 + a4836
-  ++ @11657 + a4829
-  ++ @11658 + a4830
-  ++ @11659 + a4834
-END
-
-IF ~~ a4828
-  SAY @11660
-  ++ @11661 + a4829
-  ++ @11662 + a4829
-  ++ @11663 + a4829
-  ++ @11664 + a4829
-  ++ @11656 + a4836
-END
-
-IF ~~ a4829
-  SAY @11665
-  ++ @11666 + a4832
-  ++ @11667 + a4830
-  ++ @11668 + a4836
-  ++ @11669 + a4840
-  ++ @11670 + a4833
-  ++ @11671 + a4834
-END
-
-IF ~~ a4830
-  SAY @11672
-  ++ @11673 + a4837
-  ++ @11674 + a4837
-  ++ @11675 + a4837
-  ++ @11676 + a4837
-  ++ @11677 + a4834
-  ++ @11678 + a4834
-END
-
-IF ~~ a4831
-  SAY @11679
-  ++ @11680 + a4832
-  ++ @11681 + a4832
-  ++ @11682 + a4837 
-  ++ @11683 + a4837  
-  ++ @11684 + a4837
-  ++ @11685 + a4836
-  + ~GlobalLT("c-aransex","GLOBAL",3)~ + @11686 + a4832
-  + ~GlobalGT("c-aransex","GLOBAL",2)~ + @11687 + a4836
-END
-
-IF ~~ a4832
-  SAY @11688
-  ++ @11689 + a4837 
-  ++ @11690 + a4834
-  ++ @11691 + a4834
-  ++ @11692 + a4834
-  ++ @11538 + a4834
-  + ~GlobalLT("c-aransex","GLOBAL",3)~ + @11686 + a4832
-  + ~GlobalGT("c-aransex","GLOBAL",2)~ + @11687 + a4836
-END
-
-IF ~~ a4833
-  SAY @11693
-  ++ @11694 + a4835
-  ++ @11695 + a4835
-  ++ @11696 + a4835
-  ++ @11697 + a4834
-  ++ @11698 + a4834
-END
-
-IF ~~ a4834
-  SAY @11699
-  = @11700
-  = @11701
-  IF ~~ THEN EXIT
-END
-
-IF ~~ a4835 SAY @11702 IF ~~ THEN EXIT END
-IF ~~ a4836 SAY @11703 IF ~~ THEN EXIT END
-IF ~~ a4837 SAY @11704 IF ~~ THEN EXIT END
-IF ~~ a4838 SAY @11705 IF ~~ THEN EXIT END
-IF ~~ a4840 SAY @11706 IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",3)~ EXIT END
-  
-/* ToB Love Talk #2 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",4) --> Global("c-arantobrom","GLOBAL",5) */
-IF ~Global("c-arantobrom","GLOBAL",3)~ THEN BEGIN a4716
+/* ToB Love Talk #3 : statement of intent for seriousness : Global("c-arantobrom","GLOBAL",5) --> Global("c-arantobrom","GLOBAL",6) */
+IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN a4716
   SAY @11707 
-  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717
-  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
-  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",4) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11708 DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11709 DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11710 DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4717
+  ++ @11711 DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
+  ++ @11712 DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4718
 END
-/* GOTO ToB Love Talk #2 : statement of intent for seriousness : replies */
+/* GOTO ToB Love Talk #3 : statement of intent for seriousness : replies */
 
-/* ToB Love Talk #3 : ask the big question or not */
+/* ToB Love Talk #4 : ask the big question or not */
 
-IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN c-arantemporary_question
+IF ~Global("c-arantobrom","GLOBAL",7)~ THEN BEGIN c-arantemporary_question
   SAY ~[ARAN] Now, we be supposed to have a big talk here about marriage an' such. But for now, do you think you might marry me someday?~
-  ++ ~[PC] Yes!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
-  ++ ~[PC] No!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
-  ++ ~[PC] Never!!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+  ++ ~[PC] Yes!~ DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+  ++ ~[PC] No!~ DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+  ++ ~[PC] Never!!~ DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
 END
   
 IF ~~ c-aran_exit_temp
@@ -1471,14 +1360,14 @@ IF ~~ c-aran_exit_temp
   IF ~~ THEN EXIT
 END
 
-/* ToB Love Talk #4 :  */
-IF ~Global("c-arantobrom","GLOBAL",7)~ THEN BEGIN a4774
+/* ToB Love Talk #5 :  */
+IF ~Global("c-arantobrom","GLOBAL",9)~ THEN BEGIN a4774
   SAY @11713
-  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
-  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
-  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778
-  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",8) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777
+  ++ @11714 DO ~SetGlobal("c-arantobrom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4775
+  ++ @11715 DO ~SetGlobal("c-arantobrom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
+  ++ @11716 DO ~SetGlobal("c-arantobrom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4776
+  ++ @11717 DO ~SetGlobal("c-arantobrom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4778
+  ++ @11718 DO ~SetGlobal("c-arantobrom","GLOBAL",10) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + a4777
 END
 
 IF ~~ a4775
@@ -1499,7 +1388,6 @@ IF ~~ a4776
   ++ @11728 + a4779
   ++ @11729 + a4778
 END
-
 
 IF ~~ a4777
   SAY @11730
@@ -2923,7 +2811,493 @@ IF ~~ a5094
 END
 
 
-/* ToB Love Talk #2 : statement of intent for seriousness : replies */
+/* ToB FriendTalk 7 : miscast summoning : followup7 */
+IF ~~ a5221
+	SAY @13842 /* [ARAN] Summonin’. You know, bringin’ in an animal or some sort o’ magical bein’ or somethin’ what to attack your foe. */
+	++ @13843 /* [PC] No, I have not been on the wrong side of a summoning. */ + a5225
+	++ @13844 /* [PC] I know what it means. It just isn't something that pops up regularly in idle conversation. */ + a5223
+	++ @13845 /* [PC] Summoning by wand, by ring, by scroll, or by spell? */ + a5224
+	++ @13846 /* [PC] Summ-o-ning. S u m m o n i n g. G. The first syllable is emphasized, and the last 'g' is a hard plosive. */ + a5222
+	+ ~Class(Player1,CLERIC_ALL) Class("c-aran",CLERIC_ALL)~ + @13847 /* [PC] We should both pray together. It will take both of our divine contacts to clean up your speech. */ + a5222
+	+ ~Class(Player1,CLERIC_ALL) !Class("c-aran",CLERIC_ALL)~ + @13848 /* [PC] I will pray for you, Aran. It will take all of my divine powers to clean up your speech. */ + a5222
+	+ ~!Class(Player1,CLERIC_ALL) Class("c-aran",CLERIC_ALL)~ + @13849 /* [PC] You should go pray, Aran. It will take all of your divine contact to clean up your speech. */ + a5222
+	+ ~!Class(Player1,CLERIC_ALL) !Class("c-aran",CLERIC_ALL)~ + @13850 /* [PC] We need to go find a cleric, Aran. It will take someone with strong contact with the divine to clean up your speech. */ + a5222
+	++ @13841 /* [PC] Why talk about ancient history? We are very powerful now. Why bring up the distant past? */ + a5236
+END
+ 
+IF ~~ a5222
+	SAY @13851 /* [ARAN] That be right funny. This be me, laughin'. */
+	= @13852 /* [ARAN] That whole summonin' thing be a right tricky business, an' seein' it go wrong be an experience. */
+	IF ~~ THEN GOTO a5225
+END
+
+IF ~~ a5223
+	SAY @13853 /* That be an interestin' idea, there. Ordinary conversation. Naught that we do be ordinary, in any sense o' th' word. */
+	IF ~~ THEN GOTO a5225
+END
+
+IF ~~ a5224
+	SAY @13854 /* [ARAN] As far as I be knowin', any o' those can fail. But I were talkin' about th' spell. Most times, if it goes wrong, you don't rightly survive th' experience. */
+	IF ~~ THEN GOTO a5225
+END
+	
+IF ~~ a5225	
+	SAY @13855 /* [ARAN] I did once. Serving’ up in Moonshea, we had ourselves a Wand what got ahead of himself an’ tried to help by summonin’ up some support. Intelligent sort o’ mage, but he were not that wise. */
+	++ @13856 /* [PC] An intelligent self-aware wand? Or more tradespeak? */ + a5226
+	++ @13857 /* [PC] Was that really necessary? */ + a5228
+	++ @13858 /* [PC] So you fought off the summoned creatures, saved the day, and then promptly got drunk. */ + a5227
+	++ @13859 /* [PC] Did the spell not work? */ + a5231
+	++ @13860 /* [PC] Dear gods, you are determined to tell this story, aren't you. */ + a5227
+	++ @13841 /* [PC] Why talk about ancient history? We are very powerful now. Why bring up the distant past? */ + a5236
+END
+
+IF ~~ a5226
+	SAY @13861 /* [ARAN] Tradespeak. Th' Wand was castin' a spell, not usin' a wand or staff or naught o' th' sort. */
+	IF ~~ THEN GOTO a5227
+END
+
+IF ~~ a5227
+	SAY @13862 /* [ARAN]	Now, am I goin' to get to tell you th' story, or is this goin' to be one o' those times where you be interruptin' all th' time? */
+	++ @13863 /* [PC] It is going to be one of those times. It is worth it to see your face turn all red and twisty when you are interrupted. */ + a5229
+	++ @13864 /* [PC] Oh, by all means, tell your story. I will listen intently like a good little <PROGIRLBOY>. */ + a5229
+	+ ~RandomNum(5,5)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3193 /* c-aranshutup60 */
+	+ ~RandomNum(5,4)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3194 /* c-aranshutup61 */
+	+ ~RandomNum(5,3)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3195 /* c-aranshutup62 */
+	+ ~RandomNum(5,2)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3196 /* c-aranshutup63 */
+	+ ~RandomNum(5,1)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3197 /* c-aranshutup64 */	
+	++ @13865 /* [PC] *I* am interrupting *you*? Who started this conversation, anyways? */ + a5241
+	++ @13866 /* [PC] Did I ever tell you about the time I single-handedly fought off a few rats in a storeroom at Candlekeep? It sounds about as exciting as this story. */ + a5241
+	++ @13867 /* [PC] Tell the story. I will try not to interrupt. */ + a5229
+END	
+	
+IF ~~ a5229
+	SAY @13868 /* [ARAN] Fine, then. Glad to amuse you. On any account, th' mage were tryin' to summon up some help. */
+	IF ~~ THEN GOTO a5228
+END
+	
+IF ~~ a5228
+	SAY @13869 /* [ARAN] It seemed a right fine idea at th’ time. Unfortunately for us, apparently we were close to some wellmoon, or moonwell, or some sort o’ mystical waters. An’ apparently shadow magic an’ regular summoning’ spells are supposed to be kept separate. */
+	++ @13870 /* [PC] Let me guess. He summoned a dragon, and its shadow showed up and ate it. */ + a5231
+	++ @13871 /* [PC] I am not really interested in hearing more of this story. I call the shots, Aran. Let's move on. */ + a5241
+	++ @13872 /* [PC] I have heard this story at least four times, Aran. Perhaps we could just continue on in silence? */ + a5241
+	++ @13873 /* [PC] What do you know about the Moonwells in Moonshea? */ + a5230
+	++ @13874 /* [PC] It sounds like you were about to get illuminated by a targeting spell. */ + a5231
+END
+
+IF ~~ a5230
+	SAY @13875 /* [ARAN] Naught, or less than naught. An' apparently th' mage what were with us knew less than me, eh? We thought things were on th' path to ruin when th' blighted mage started glowin' a strange bluish color. We were sure he were about to explode. */
+	IF ~~ THEN GOTO a5231
+END
+
+IF ~~ a5231
+	SAY @13876 /* [ARAN] Worse than that. Something’ went wrong right proper, it did. Instead o’ summonin’ help, he brought in a pack o’ dire wolves what decided that we were th’ best looking’ source o’ a snack around. */
+	++ @13877 /* [PC] You are telling me this story, so obviously you found a way to deal with the situation. */ + a5232
+	++ @13878 /* [PC] How did the mage react? Poorly, I suppose. */ + a5232
+	++ @13879 /* [PC] Snacks. I could eat, you know. How about less talk and we have some of these berries. They are tasty... */ + a5241
+	++ @13880 /* [PC] Easy fix - summon some rabbits or any food source, and then run away while the dire wolves feast. I should have been there to fix everything. */ + a5241
+	++ @13881 /* [PC] That sounds.... dangerous. */ + a5232
+END
+
+IF ~~ a5232
+	SAY @13882 /* [ARAN] Aye. Th’ poor lad panicked, an’ summoned again, an’ sure enough another pack showed up right in th’ midst. We scurried up th’ trees right quick, while th’ two packs fought over which one were going’ to eat us.  */
+	++ @13883 /* [PC] So now you are stuck up a tree, you have two packs competing to eat you, and you still have your original enemies. This sounds bad. */ + a5233
+	++ @13884 /* [PC] They killed each other? */ + a5237
+	++ @13872 /* [PC] I have heard this story at least four times, Aran. Perhaps we could just continue on in silence? */ + a5241
+	++ @13885 /* [PC] What about your original enemies? I would think you would attract lots of unwanted attention. */ + a5233
+	++ @13886 /* [PC] You do realize I have heard this before, right? */ + a5234
+END
+
+IF ~~ a5233
+	SAY @13887 /* [ARAN] That be th' whole sum o' it, aye. It did all work out for th' best, though. Our enemies came lookin' to see what all th' noise were about. Two shakes o' a lamb's tail, an' we had front row seats to a grand scrimmage. An when it be over, we just mopped up th' few what were still alive. */
+	++ @13888 /* [PC] Are all these stories you tell me truth, or just tall tales? */ + a5239
+	++ @13889 /* [PC] Let me guess... then Elminster's Army showed up and you defeated them with your curry. */ + a5240
+	++ @13890 /* [PC] I would rather not do any of this, Aran. */ + a5235
+	++ @13891 /* [PC] I can see why you like telling stories. They are just hard to believe. */ + a5239
+	++ @13892 /* [PC] I think we should visit Moonshea some day. It sounds like it was exciting. */ + a5241
+END
+
+IF ~~ a5234
+	SAY @13893 /* [ARAN] What do you be thinkin' happened, then? */
+	++ @13894 /* [PC] Well, if it was anything like the last time you told this, then the mage managed to summon two sets of creatures at once, they ate each other, and you all lived happily ever after. */ + a5237
+	+ ~Class(Player1,MAGE_ALL)~ + @13895 /* [PC] Does it matter? You are telling tall tales anyways. Summoning spells do not interact with the wellsprings on Moonshea. */ + a5239
+	+ ~!Class(Player1,MAGE_ALL)~ + @13896 /* [PC] Does it matter? You are telling tall tales anyways. You could say that Cyric Himself showed up and scared you all away. */ + a5239
+	++ @13897 /* [PC] The mage polymorphed himself into the shape of a squirrel, and the dire wolves ate him. */ + a5243
+	++ @13898 /* [PC] I think the real story is that you fell asleep while on guard duty and had a very vivid dream. */ + a5242
+	++ @13899 /* [PC] I really don't care, because the subject of the story should be me, not you. */ + a5242
+	++ @13890 /* [PC] I would rather not do any of this, Aran. */ + a5235
+END
+
+ IF ~~ a5235 
+ 	SAY @13900 /* [ARAN] Do any o' what, exactly? */ 
+ 	 ++ @13901 /* [PC] Any of this talking. You tell a story, I tell a story... it distracts us from accomplishing our goals. */ + a5241   
+ 	 ++ @13902 /* [PC] I don't want to tell you your story. I don't want to hear you tell it, either. */ + a5242   
+ 	 ++ @13903 /* [PC] Oh, fine... you had trouble with a mage summoning not one but two separate packs of dire wolves, who ate each other and the enemy. You went home victorious. */ + a5244
+ 	 ++ @13904 /* [PC] All of the tasks, all of the fighting, all of the running all over, all of the making decisions. Just tell me what to do and I will do it. */ + a5245
+ 	 ++ @13905 /* [PC] You know me... you tell me. */ + a5245
+END
+ 
+IF ~~ a5236
+	SAY @13906 /* [ARAN] We may be right powerful, but there always be th' need to communicate an' share. Th' ties what bind, an' all. */
+	++ @13907 /* [PC] A philosopher and a sellsword. You never fit into any one category, do you. */ + a5238
+	++ @13908 /* [PC] I do not need any ties to bind me to my fellow travelers. Talking about the past is a waste of time. */ + a5241
+	++ @13909 /* [PC] I see your point. Telling old stories is a way we can all connect to each other. */ + a5238
+	++ @13910 /* [PC] The only "connection" I need is for you to do your job. */ + a5241
+	++ @13911 /* [PC] I can see why you like telling stories. Are all of them true? */ + a5239
+	+ ~RandomNum(5,5)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3193 /* c-aranshutup60 */
+	+ ~RandomNum(5,4)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3194 /* c-aranshutup61 */
+	+ ~RandomNum(5,3)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3195 /* c-aranshutup62 */
+	+ ~RandomNum(5,2)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3196 /* c-aranshutup63 */
+	+ ~RandomNum(5,1)~ + @13836 /* [PC] Not interested. Let's move on, shall we? */ + a3197 /* c-aranshutup64 */	
+END
+	
+IF ~~ a5237
+	SAY @13912 /* [ARAN] Mostly, aye. But it ended up even better, on account o’ our original opponents came over to see what all th’ fuss were about, an’ got eaten for their troubles. We ended up wi’ a nice little victory, an’ all we had to do were finish off th’ stragglers on all sides. */
+	++ @13888 /* [PC] Are all these stories you tell me truth, or just tall tales? */ + a5239
+	++ @13913 /* [PC] That sounds like the best possible outcome for a very bad situation. */ + a2260
+	++ @13914 /* [PC] I wish that you would stop telling stories and just tell me what to do to. */ + a5245
+	++ @13889 /* [PC] Let me guess... then Elminster's Army showed up and you defeated them with your curry. */ + a5240
+    ++ @13890 /* [PC] I would rather not do any of this, Aran. */ + a5235
+END
+
+IF ~~ a5238
+	SAY @13915 /* [ARAN] Well now, I will shorten th' story up a bit. I were up in Moonshea, an' we had a mage what summoned a pack o' dire wolves what looked at us like we be dinner. Then he paniked, an' summoned a second set o' dire wolves. */ 
+	++ @13888 /* [PC] Are all these stories you tell me truth, or just tall tales? */ + a5239
+	++ @13916 /* [PC] Let me guess what happened next... */ + a5234
+	++ @13889 /* [PC] Let me guess... then Elminster's Army showed up and you defeated them with your curry. */ + a5240
+	++ @13899 /* [PC] I really don't care, because the subject of the story should be me, not you. */ + a5242	
+    ++ @13890 /* [PC] I would rather not do any of this, Aran. */ + a5235	
+END
+
+IF ~~ a5239
+	SAY @13917 /* [ARAN] All th’ truth, an’ nothin’ but, on my second sister’s grave. */
+	++ @13918 /* [PC] You only have one sister, Aran, and she is very much alive. */ + a5242
+	++ @13919 /* [PC] You do realize it is very hard to take you seriously when you exaggerate, right? */ + a5241
+	++ @13920 /* [PC] I will take your word for it. */ + a5242
+	++ @13921 /* [PC] Some time I will have to tell you about my adventures cleaning the dust out of Candlekeep's Readers Room. Now *there* is a story worth telling. */ + a5242
+	++ @13922 /* [PC] Riiiiiiight. */ + a5242
+END
+
+IF ~~ a5240
+	SAY @13923 /* [ARAN] Bane's Blood, no... we saw naught o' Elminster. An' an army? Does Elminster have an army? Hey, if he does, where be th' nearest recruitment place? A lad's got to look out for th' future, you know. */
+	IF ~~ THEN EXIT
+END
+	
+IF ~~ a5241
+	SAY @13924 /* [ARAN] You do have a point. */
+	IF ~~ THEN EXIT
+END
+
+IF ~~ a5242
+	SAY @13925 /* [ARAN] Well, fancy that. */
+	IF ~~ THEN EXIT
+END
+
+IF ~~ a5243
+	SAY @13926 /* [ARAN] Hold on a mite bit, an' let me get a pen out o' my gear so's to write that down. That sounds like a better story than th; truth, it do. */
+	IF ~~ THEN EXIT
+END
+
+IF ~~ a5244
+	SAY @13927 /* [ARAN] Bane's Black Heart, I needs must apologise. I must have done told that one to you a dozen times if you know it by heart. */
+	IF ~~ THEN EXIT
+END
+
+IF ~~ a5245
+	SAY @13928 /* [ARAN] On that point, I will say naught. Speak to you, aye, an' often. Speak in support o' you, aye, an' rarely needed. Speak about you, aye. Speak for you, now that be a whole other matter entirely. */
+	IF ~~ THEN EXIT
+END
+/* EXISTING_AYE_STATE found in existing files a2260 for ToB */
+
+/* ToB Love Talk #1 : back in business : replies */
+IF ~~ a4814 SAY @11612 IF ~~ THEN GOTO a4824 END
+IF ~~ a4815 SAY @11613 IF ~~ THEN GOTO a4824 END
+IF ~~ a4816 SAY @11614 IF ~~ THEN GOTO a4824 END
+IF ~~ a4817 SAY @11615 IF ~~ THEN GOTO a4824 END
+IF ~~ a4818 SAY @11616 IF ~~ THEN GOTO a4824 END
+IF ~~ a4819 SAY @11617 IF ~~ THEN GOTO a4824 END
+
+IF ~~ a4820
+  SAY @11618
+  ++ @11619 + a4825
+  ++ @11620 + a4826
+  ++ @11621 + a4821
+  ++ @11622 + a4827
+  ++ @11623 + a4822
+END
+
+IF ~~ a4821 SAY @11624 IF ~~ THEN GOTO a4829 END
+
+IF ~~ a4822
+  SAY @11625
+  ++ @11626 + a4824
+  ++ @11627 + a4828
+  ++ @11628 + a4829
+END
+
+IF ~~ a4823
+  SAY @11629
+  ++ @11630 + a4830
+  ++ @11631 + a4826
+  ++ @11632 + a4840
+  ++ @11633 + a4830
+END
+
+IF ~~ a4824
+  SAY @11634
+  + ~Global("c-aransex","GLOBAL",1)~ + @11635 + a4831
+  + ~Global("c-aransex","GLOBAL",2)~ + @11636 + a4831
+  + ~Global("c-aransex","GLOBAL",3)~ + @11637 + a4831
+  + ~Global("c-aransex","GLOBAL",4)~ + @11638 + a4831
+  ++ @11639 + a4832
+  ++ @11640 + a4832
+  ++ @11641 + a4840
+  ++ @11642 + a4833
+END
+
+IF ~~ a4825
+  SAY @11643
+  ++ @11644 + a4824
+  ++ @11645 + a4828
+  ++ @11646 + a4829
+  ++ @11647 + a4833
+END
+
+IF ~~ a4826
+  SAY @11648
+  = @11649
+  = @11650
+  ++ @11651 + a4832
+  ++ @11652 + a4827
+  ++ @11623 + a4838 
+  ++ @11653 + a4834
+END
+
+IF ~~ a4827
+  SAY @11654
+  ++ @11655 + a4828
+  ++ @11656 + a4836
+  ++ @11657 + a4829
+  ++ @11658 + a4830
+  ++ @11659 + a4834
+END
+
+IF ~~ a4828
+  SAY @11660
+  ++ @11661 + a4829
+  ++ @11662 + a4829
+  ++ @11663 + a4829
+  ++ @11664 + a4829
+  ++ @11656 + a4836
+END
+
+IF ~~ a4829
+  SAY @11665
+  ++ @11666 + a4832
+  ++ @11667 + a4830
+  ++ @11668 + a4836
+  ++ @11669 + a4840
+  ++ @11670 + a4833
+  ++ @11671 + a4834
+END
+
+IF ~~ a4830
+  SAY @11672
+  ++ @11673 + a4837
+  ++ @11674 + a4837
+  ++ @11675 + a4837
+  ++ @11676 + a4837
+  ++ @11677 + a4834
+  ++ @11678 + a4834
+END
+
+IF ~~ a4831
+  SAY @11679
+  ++ @11680 + a4832
+  ++ @11681 + a4832
+  ++ @11682 + a4837 
+  ++ @11683 + a4837  
+  ++ @11684 + a4837
+  ++ @11685 + a4836
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + @11686 + a4832
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + @11687 + a4836
+END
+
+IF ~~ a4832
+  SAY @11688
+  ++ @11689 + a4837 
+  ++ @11690 + a4834
+  ++ @11691 + a4834
+  ++ @11692 + a4834
+  ++ @11538 + a4834
+  + ~GlobalLT("c-aransex","GLOBAL",3)~ + @11686 + a4832
+  + ~GlobalGT("c-aransex","GLOBAL",2)~ + @11687 + a4836
+END
+
+IF ~~ a4833
+  SAY @11693
+  ++ @11694 + a4835
+  ++ @11695 + a4835
+  ++ @11696 + a4835
+  ++ @11697 + a4834
+  ++ @11698 + a4834
+END
+
+IF ~~ a4834
+  SAY @11699
+  = @11700
+  = @11701
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a4835 SAY @11702 IF ~~ THEN EXIT END
+IF ~~ a4836 SAY @11703 IF ~~ THEN EXIT END
+IF ~~ a4837 SAY @11704 IF ~~ THEN EXIT END
+IF ~~ a4838 SAY @11705 IF ~~ THEN EXIT END
+IF ~~ a4840 SAY @11706 IF ~~ THEN DO ~SetGlobal("c-aranrom","GLOBAL",3)~ EXIT END
+
+/* ToB Love Talk #2 : Perspectives and Personalities : replies */
+IF ~~ a5267
+  SAY @13936 /* [ARAN] I don't rightly know whether you be jokin'. Sometimes I feel like th' current sitution be what you love to do. */
+  ++ @13937 /* [PC] Joking, of course. Things never work out quite the way I plan. */ + a5278
+  ++ @13938 /* [PC] Don't be silly. I am strong enough to bend Fate's pathways to my will. I have you, don't I? */ + a5285
+  ++ @13939 /* [PC] Blood, conflict, strife, murder, death, the end of the world as we know it, and I feel fine. Come on, it is exciting, isn't it? */ + a5276
+  ++ @13940 /* [PC] None of the above. But the Fates will not be denied. I am just glad that they included you along the way. */ + a5285
+  ++ @13941 /* [PC] Hey, is this deep conversation just another way of getting me into your bedroll? */ + a5284  
+END
+
+IF ~~ a5268
+  SAY @13942 /* [ARAN] Well, mayhap I do. Accomplishin' great deeds an' becomin' the most known name in this part o' th' world, right up there wi' Elmister an' Blackstaff, that seemed like a great idea at the time, eh? */
+  = @13943 /* [ARAN]But we have already done all that, an' received naught but more trouble for th' pain.  Even worse, it be your name alone what gets out there, really. */
+  + ~CheckStatGT(Player1,12,WIS)~ + @13944 /* [PC] You do not really want that fame for yourself, Aran. You just said it was thankless pain. Does it really hurt you that I am more famous than you? */ + a5278
+  + ~CheckStatGT(Player1,15,INT)~ + @13945 /* [PC] So you feel that you are getting less fame than you deserve? Or do you feel I am getting too much credit? */ + a5278
+  ++ @13946 /* [PC] Fame, fortune, infamy, power, bard's tales and songs... I would give it all up if I could start life over as an exotic Calishite dancer. */ + a5275 
+  + ~Alignment(Player1,MASK_GOOD)~ +  @13947 /* [PC] What is wrong with me being famous? */ + a5271
+  + ~!Alignment(Player1,MASK_GOOD)~ +  @13948 /* [PC] What is wrong with me being famous? Or infamous? */ + a5272
+  ++ @13949 /* [PC] Your name is out there as much as mine. */ + a5270
+  ++ @13950 /* [PC] I did not ask for this. */ + a5270
+  ++ @13951 /* [PC] I deserve every bit of fame. You are useful, but secondary. */ + a5274
+END
+
+IF ~~ a5269
+  SAY @13952 /* [ARAN] Chauntea's Golden Arms. A child, hearth an' home, when you keep gettin' dragged into th' worst parts o' th' god's conflicts? That be an invitation to disaster, eh? But it be a nice dream. */
+  IF ~~ THEN GOTO a5270
+END
+
+IF ~~ a5270
+  SAY @13953 /* [ARAN] You always come out on top, but it be a sure bet that your life will never be what folks call 'ordinary'. */
+  ++ @13954 /* [PC] Does that bother you? */ + a5273
+  ++ @13955 /* [PC] I like it on top. Actually, I like it on the bottom, and in several other very fun variants... */ + a5284
+  ++ @13956 /* [PC] Did you want things to be very different than they are now? */ + a5273
+  ++ @13957 /* [PC] I was never ordinary. You, on the other hand, are very ordinary. One of you on every streetcorner. */ + a5274
+  ++ @13958 /* [PC] I never wanted to be ordinary. */ + a5267
+END
+
+IF ~~ a5271
+  SAY @13959 /* [ARAN] Doin' th' right thing by others seems to be more about th' harp edge o' th' sword an' less about talkin'. That do get a bit tirin' to th' spirit, is all. */
+  IF ~~ THEN GOTO a5278
+END
+
+IF ~~ a5272
+  SAY @13960 /* [ARAN] I mean, I know my place, an' you call th' targets. That be th' right o' it. */
+  IF ~~ THEN GOTO a5278
+END
+
+IF ~~ a5273
+  SAY @13961 /* [ARAN] Sometimes. I wish that the world would remake itself, an' leave you a mite bit o' space for yourself. You know, some o' those ordinary dreams we might be makin' together. */
+  IF ~Alignment(Player1,MASK_GOOD)~ THEN GOTO a5271
+  IF ~!Alignment(Player1,MASK_GOOD)~ THEN GOTO a5272
+END
+
+IF ~~ a5274
+  SAY @13962 /* [ARAN] Well hells, that be right cold o' you. */
+  ++ @13963 /* [PC] Truth is cold. Power is cold. I am cold. I think it is about time you stop talking and warmed me up. */ + a5284
+  ++ @13964 /* [PC] You never really understand when I am teasing you. Perhaps if I said it with a pouty face, like a Calishite dancer? */ + a5275
+  ++ @13965 /* [PC] Try again. You can do better with your compliments. How do you feel when I am here with you? */ + a5281
+  ++ @13966 /* [PC] Truth is cold. Power is cold. Reality is reality, and we can do little to change it. */ + a5282
+  ++ @13967 /* [PC] I am sorry. You mean well. I am just a little on edge. */ + a5278
+END
+
+IF ~~ a5275 
+  SAY @13968 /* [ARAN] Now that be a mental image I am not likely to get out o' my head any time soon! I can just see it now - I'd be a right smart protector. Only I'd want all th' dancin' to be for me, eh? */
+  ++ @13969 /* [PC] Seriously. I would give it all up. I never wanted to be the sharp edge of a blade gods wield about like crazed bandits. I would rather be a Calshite dancer. It amounts to the same thing... being continually used by others for their own pleasure and profit. */ + a5279
+  ++ @13970 /* [PC] And every dance would be for you. Maybe you would even dance for me. Or we could dance together... */ + a5280
+  + ~CheckStatGT(Player1,15,INT)~ + @13971 /* [PC] Ahha! I have successfully distracted you from your deep and dreary introspection! I shall follow up with some sharp satire, a witticism or two, followed by an intensive bought of kissing. */ + a5276
+  + ~CheckStatGT(Player1,12,WIS)~ + @13972 /* [PC] I know you had some important feelings to discuss, Aran, but I need more distraction and less thinking right now. So you have a woman with low willpower in need of a boost of self-esteem, standing right here, loosening her clothing a little... */ + a5284
+  ++ @13973 /* [PC] I was teasing you. Sometimes you are really slow. */ + a5267
+  ++ @13974 /* [PC] So tell me why I am worth all this trouble. */ + a5281
+END
+
+IF ~~ a5276
+  SAY @13975 /* [ARAN] Hey, I be serious here! How is a man supposed to be a right good partner when... */
+  ++ @13976 /* [PC] I know how you feel, Aran. You don't have to tell me all the time. */ + a5277
+  ++ @13977 /* [PC] You can be a good partner by assuring me that you will always be there for me. */ + a5277
+  ++ @13978 /* [PC] I thought we had settled all this long ago. Why does it bother you that you and I have different strengths? */ + a5277
+  ++ @13979 /* [PC] We have one area where we will always be equal. We both love each other very, very much. */ + a5277  
+  ++ @13980 /* [PC] You are still talking. You are wasting my time. */ + a5279
+END
+
+IF ~~ a5277
+  SAY @13981 /* [ARAN] I... Melliki's Wild Whiskers. I think I be a bloody idiot. I didn't realize I was bein' such a fool. You be right, <CHARNAME>. An' the only measure o' accomplishment that I need, anyhow, be your comfort. */
+  ++ @13941 /* [PC] Hey, is this deep conversation just another way of getting me into your bedroll? */ + a5284
+  ++ @13939 /* [PC] Blood, conflict, strife, murder, death, the end of the world as we know it, and I feel fine. Come on, it is exciting, isn't it? */ + a5279
+  ++ @13974 /* [PC] So tell me why I am worth all this trouble. */ + a5281
+  ++ @13982 /* [PC] I agree that you are an idiot. */ + a5278
+  ++ @13983 /* [PC] Well then, you had better get me a really nice set of boots. That would make me more comfortable. */ + a5283
+END
+
+IF ~~ a5278
+  SAY @13984 /* [ARAN] Look... mayhap my words be all wrong for what I be tryin' to say. I want naught more fame, naught more fortune, as long as I can be wi' you. But... */
+  ++ @13985 /* [PC] You don't have to talk to comfort me. You could take action. */ + a5284
+  ++ @13986 /* [PC] But. There is always a "but" with you. I thought you were completely mine. */ + a5285
+  ++ @13987 /* [PC] Your words were wrong, and you are making it worse. */ + a5279
+  ++ @13988 /* [PC] Your words are fine. Your actions are fine. Me, I am not fine. */ + a5285
+  ++ @13989 /* [PC] Dreary, boring, talk talk talk. We need to find something to kill, and quickly. */ + a5284
+END
+
+IF ~~ a5279
+  SAY @13990 /* [ARAN] Aye, now, that be me. Always tryin' to cheer you up a mite bit, an' failin'. */
+  ++ @13991 /* [PC] You succeeded. At least you distracted me for a little while, and I could pretend things were normal. */ + a5280
+  ++ @13992 /* [PC] You are right. Next time, you could try telling me a story, or acting out part of a play, or something. */ + a5280
+  ++ @13993 /* [PC] Next time you want to distract me, you could try something more physical... */ + a5284
+  ++ @13994 /* [PC] I am not sure the distraction worked, but I appreciate you trying. */ + a5285
+  ++ @13995 /* [PC] There are some situations where nothing you can do can provide comfort. */ + a5285
+END
+
+IF ~~ a5280
+  SAY @13996 /* [ARAN]  Well, now, if we be play actin', the least I can do is play along, eh? I done heard o' plays where clothin' be optional, too. Mayhap that would be th' right kind o' distraction to cheer you up. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5281
+  SAY @13997 /* [ARAN] Now, you be a sight for sore eyes, an' just bein' by your side makes me feel like I be ten feet tall. */
+  ++ @13998 /* [PC] So I damage your eyesight and make you puffed up to the size of a giant. Great. I suppose I also make you gassy? */ + a5279
+  ++ @13999 /* [PC] I think you are trying to compliment me... but it is missing the mark. */ + a5278
+  ++ @14000 /* [PC] I could compliment you as well, but it is silly. We have more important things to be focused on. */ + a5279
+  ++ @14001 /* [PC] And you make me feel practically invinceable, supported, and loved. */ + a5284
+  ++ @14002 /* [PC] I know. I have that effect on people. */ + a5285
+END
+
+IF ~~ a5282
+  SAY @14003 /* [ARAN] I believe some o' that, but not all. */
+  IF ~~ THEN GOTO a5285
+END
+
+IF ~~ a5283
+  SAY @14004 /* [ARAN] One decent pair o' boots? That could be done. I will keep a sharp eye out, eh? */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5284
+  SAY @14005 /* [ARAN] Can we skip right to th' part where you tackle me an' start th' kissin'? When you talk like that to me, it gets me right excited, it does! */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5285
+  SAY @14006 /* [ARAN] I done signed a contract wi' you in my heart a while back, <CHARNAME>. Good times an' bad times, I be your shield. Small comfort, but comfort to you, I hope. */
+  IF ~~ THEN EXIT
+END
+
+/* ToB Love Talk #3 : statement of intent for seriousness : replies */
 IF ~~ a4717
   SAY @12192
   IF ~~ THEN GOTO a4718
@@ -10657,11 +11031,11 @@ IF ~~ a3208 /* c-aranshutup75 */ SAY @1385 IF ~~ THEN EXIT END
   // + ~RandomNum(5,2)~ + @11609 + a3176 /* c-aranshutup43 */
   // + ~RandomNum(5,1)~ + @12646 + a3177 /* c-aranshutup44 */
 
-  // + ~RandomNum(5,5)~ + ~[PC] I am trying to think up a random insult to hurl your way, but I'm fresh out of ideas.~ + a3178 /* c-aranshutup45 */
+  // + ~RandomNum(5,5)~ + @13169 + a3178 /* c-aranshutup45 */
   // + ~RandomNum(5,4)~ + @11609 + a3179 /* c-aranshutup46 */
-  // + ~RandomNum(5,3)~ + ~[PC] I would insult you, but I have rules against taking advantage of idiots.~ + a3180 /* c-aranshutup47 */
+  // + ~RandomNum(5,3)~ + @13170 + a3180 /* c-aranshutup47 */
   // + ~RandomNum(5,2)~ + @12630 + a3181 /* c-aranshutup48 */
-  // + ~RandomNum(5,1)~ + ~[PC] To quote a Rashemite insult, thou art a warped ill-nurtured gibberling.~ + a3182 /* c-aranshutup49 */
+  // + ~RandomNum(5,1)~ + @13171 + a3182 /* c-aranshutup49 */
 
   // + ~RandomNum(5,5)~ + @11609 + a3183 /* c-aranshutup50 */
   // + ~RandomNum(5,4)~ + @12629 + a3184 /* c-aranshutup51 */
@@ -10681,7 +11055,7 @@ IF ~~ a3208 /* c-aranshutup75 */ SAY @1385 IF ~~ THEN EXIT END
   // + ~RandomNum(5,2)~ + @12628 + a3201 /* c-aranshutup68 */
   // + ~RandomNum(5,1)~ + @11609 + a3202 /* c-aranshutup69 */
 
-  // + ~RandomNum(5,5)~ + ~[PC] I am trying to think up a random insult to hurl your way, but I'm fresh out of ideas.~ + a3203 /* c-aranshutup70 */
+  // + ~RandomNum(5,5)~ + @13169 + a3203 /* c-aranshutup70 */
   // + ~RandomNum(5,4)~ + @11609 + a3204 /* c-aranshutup71 */
   // + ~RandomNum(5,3)~ + @11609 + a3205 /* c-aranshutup72 */
   // + ~RandomNum(5,2)~ + @12637 + a3206 /* c-aranshutup73 */

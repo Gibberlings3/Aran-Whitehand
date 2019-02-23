@@ -3492,16 +3492,16 @@ END
 /* This block takes the even variables set in dialog, and advances them to the odd */
 IF
 	GlobalGT("c-aranfriendbg2","GLOBAL",26)
-	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",39)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	GlobalGT("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark, and must fire post-losing-soul
-	OR(5) 
+	OR(6) 
 		Global("c-aranfriendbg2","GLOBAL",28) // set up SoA_FT_15
 		Global("c-aranfriendbg2","GLOBAL",30) // set up SoA_FT_16
 		Global("c-aranfriendbg2","GLOBAL",32) // set up SoA_FT_17
 		Global("c-aranfriendbg2","GLOBAL",34) // set up SoA_FT_18
 		Global("c-aranfriendbg2","GLOBAL",36) // set up SoA_FT_19
-	//	Global("c-aranfriendbg2","GLOBAL",38) // set up SoA_FT_20 // not written
+		Global("c-aranfriendbg2","GLOBAL",38) // set up SoA_FT_20
 THEN
 	RESPONSE #100
 		IncrementGlobal("c-aranfriendbg2","GLOBAL",1)	// move up from even to odd
@@ -3510,7 +3510,7 @@ END
 /* Aran's FriendTalks Fire, c-aranfriendbg2, %ARAN_FTT% */
 /* This block takes the odd variables set by the last block, and tries to fire them off.	*/
 IF
-	GlobalLT("c-aranfriendbg2","GLOBAL",38)	// shuts down sequence when finished
+	GlobalLT("c-aranfriendbg2","GLOBAL",40)	// shuts down sequence when finished
 	RealGlobalTimerExpired("c-aranfriendtimer","GLOBAL")	// Timer Expired
 	!Global("Chapter","GLOBAL",%bg2_chapter_5%) // Not in Underdark - specialized talks for that
 	InParty(Myself)						// Aran is here
@@ -3518,7 +3518,7 @@ IF
 	!StateCheck(Player1,CD_STATE_NOTVALID) // Player1 is ok
 	!ActuallyInCombat()
 	!See([ENEMY])	// Can't see any enemies
-	OR(19)
+	OR(20)
 		Global("c-aranfriendbg2","GLOBAL",1)	// fire SoA_FT_1
 		Global("c-aranfriendbg2","GLOBAL",3)	// fire SoA_FT_2
 		Global("c-aranfriendbg2","GLOBAL",5)	// fire SoA_FT_3
@@ -3538,7 +3538,7 @@ IF
 		Global("c-aranfriendbg2","GLOBAL",33)	// fire SoA_FT_17
 		Global("c-aranfriendbg2","GLOBAL",35)	// fire SoA_FT_18
 		Global("c-aranfriendbg2","GLOBAL",37)	// fire SoA_FT_19
-	//	Global("c-aranfriendbg2","GLOBAL",31)	// fire SoA_FT_20 NOT WRITTEN
+		Global("c-aranfriendbg2","GLOBAL",39)	// fire SoA_FT_20
 THEN
 	RESPONSE #100
 		PlaySong(0)	// play a blank reference, stoping the soundtrack

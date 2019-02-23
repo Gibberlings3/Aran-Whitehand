@@ -2458,7 +2458,7 @@ IF ~Global("c-aranzombie","LOCALS",1)~ THEN BEGIN a719
 END
 /* SoA Commentary/Reactions, called from .bcs : Real Great Employer, buddy. Someone pass me the Daystar. */
 IF ~Global("c-aranworkbod","LOCALS",1)~ THEN BEGIN a720
-  SAY ~[ARAN] Look, I be a decent sort o' sellsword, an' I don't question orders most times. In fact, I'm not rightly questionin' them now. All I be sayin' is, wi' an employer like her, we had best keep our eyes open day an' night. Most especially night.~[c-aws057]
+  SAY @13759
   IF ~~ THEN DO ~SetGlobal("c-aranworkbod","LOCALS",2) SetGlobalTimer("c-aransmalltalk","GLOBAL",300)~ EXIT
 END
 /* SoA Commentary/Reactions, called from .bcs : Real Great Employer, buddy. But at least he's not undead. I think. */
@@ -2936,7 +2936,7 @@ END
 
 /* BG2 FriendTalk 15 c-aranfriendbg2 = 29 : "Weapons Practice for Fun and Profit", or, never bet with a Sicilian when death is on the line. */
 /* Setup for evening sparring, 1 version for (non-hitting on) males: c-aranspar 4 -> 5 -> 6, one for (hitting on) females: c-aranspar 1 -> 2 -> 3 */
-IF ~Global("c-aranfriendbg2","GLOBAL",29)~ THEN BEGIN c-friendtalk15start
+IF ~Global("c-aranfriendbg2","GLOBAL",29)~ THEN BEGIN a5219
   SAY @13463 /*~[ARAN] A breathin' space at last. Time to do somethin' about sharpenin' my skills, I be thinkin'.~ */
   IF ~!Class(Player1,MAGE) !Class(Player1,FIGHTER) !Class(Player1,CLERIC) !Class(Player1,THIEF) !Class(Player1,BARD) !Class(Player1,PALADIN) !Class(Player1,FIGHTER_MAGE) !Class(Player1,FIGHTER_CLERIC) !Class(Player1,FIGHTER_THIEF) !Class(Player1,FIGHTER_MAGE_THIEF) !Class(Player1,DRUID) !Class(Player1,RANGER) !Class(Player1,MAGE_THIEF) !Class(Player1,CLERIC_MAGE) !Class(Player1,CLERIC_THIEF) !Class(Player1,FIGHTER_DRUID) !Class(Player1,FIGHTER_MAGE_CLERIC) !Class(Player1,CLERIC_RANGER) !Class(Player1,SORCERER) !Class(Player1,MONK)~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a2894
   IF ~Class(Player1,MONK)~ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",30) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ GOTO a2893
@@ -3054,6 +3054,20 @@ IF ~Global("c-aranfriendbg2","GLOBAL",37)~ THEN BEGIN a2876
   ++ @1287 DO ~SetGlobal("c-aranfriendbg2","GLOBAL",38) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2877
 END
 /* GOTO BG2 FriendTalk 19 c-aranfriendbg2 = 37  : Bonus Round - Simple Word States, Maximum Effect: The Teacher's Workroom. : Replies */
+
+/* BG2 FriendTalk 20 c-aranfriendbg2 = 39  : Tools, Weapons, and Intention */
+IF ~Global("c-aranfriendbg2","GLOBAL",39)~ THEN BEGIN a5246
+  SAY @13760 /* [ARAN] You know, you be a bit more powerful than you seem to realize. */
+  ++ @13761 /* [PC] I don't know. It feels like I am becoming a weapon. */ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",40) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5247
+  ++ @13762 /* [PC] I realize exactly how powerful a weapon I am becoming. */ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",40) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5247
+  ++ @13763 /* [PC] No, I am not. */  DO ~SetGlobal("c-aranfriendbg2","GLOBAL",40) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5248
+  ++ @13764 /* [PC] What about you? You seem to have grown a bit since we first met in that inn room. */ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",40) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5264
+  ++ @13765 /* [PC] This is a bad time to have another one of your deep existential conversations. */ DO ~SetGlobal("c-aranfriendbg2","GLOBAL",40) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a5250
+END
+/* GOTO BG2 FriendTalk 20 c-aranfriendbg2 = 39  : Tools, Weapons, and Intention : Replies */
+
+
+
 
 /* inn dancing/drinking sequence, 4, identical for level 1, 2, and 3 flirts */
 
@@ -9245,6 +9259,155 @@ IF ~~ a2881 SAY @3592 IF ~~ THEN EXIT END
 IF ~~ a2882 SAY @3593 IF ~~ THEN EXIT END
 IF ~~ a2883 SAY @3594 IF ~~ THEN EXIT END
 IF ~~ a2884 SAY @3595 IF ~~ THEN EXIT END
+
+/* BG2 FriendTalk 20 c-aranfriendbg2 = 39  : Tools, Weapons, and Intention : Replies */
+IF ~~ a5248
+  SAY @13766 /* [ARAN] Not what? Not powerful, not realize? */
+  ++ @13767 /* [PC] Not powerful. */ + a5251
+  ++ @13768 /* [PC] I don't think I am any more or less powerful than when I started out. */ + a5251
+  ++ @13769 /* [PC] I seem to have trouble realizing exactly how powerful I have become. */ + a5249
+  ++ @13770 /* [PC] I don't know. I am still figuring out who I really am. */ + a5255
+  ++ @13765 /* [PC] This is a bad time to have another one of your deep existential conversations. */ + a5250
+END
+
+IF ~~ a5249
+  SAY @13771 /* [ARAN] Mayhap it scares you a bit. It scares me, somehow, but more on your account than on mine. */
+  IF ~~ THEN GOTO a5247
+END
+
+IF ~~ a5250
+  SAY @13772 /* [ARAN] Now we have been naught but good companions for a fair while now. Can a lad have a real conversation about all this? */
+  ++ @13773 /* [PC] I don't like talking about all the power I have gained. It feels like I am becoming a weapon. */ + a5247
+  ++ @13774 /* [PC] I do not need to talk about it. I realize exactly how powerful a weapon I am becoming. */ + a5247
+  ++ @13775 /* [PC] I suppose. You know, you seem to have grown a bit since we first met in that inn room. */ + a5264
+  ++ @13776 /* [PC] I did not ask for any of this, Aran. It was forced on me. Talking about it is useless. */ + a5263
+  ++ @13777 /* [PC] Shut up, Aran. */ + a5259
+ END 
+  
+IF ~~ a5251
+  SAY @13778 /* [ARAN] That be th' largest load o' crap I done heard from you, ever. */
+  ++ @13779 /* [PC] Look... it scares me, Aran. Even talking about it scares me. */ + a5252
+  ++ @13780 /* [PC] Well, you were due some retribution for the loads you throw around. What is next, casting me as the future Ruler of Toril? */ + a5258
+  ++ @13781 /* [PC] I may be gaining power, but I do not seem to have any power over my own direction. I get tossed from battle to battle on the wind. */ + a5255
+  ++ @13782 /* [PC] Perhaps your head would look better if it was separated from your body. You have gone way past what I tolerate from you, sellsword. */ + a5259  
+  ++ @13777 /* [PC] Shut up, Aran. */ + a5259
+END
+
+IF ~~ a5264
+  SAY @13783 /* [ARAN] That be a right solid way o' changin' th' subject, but I be serious. This be about you, not me. */
+  ++ @13779 /* [PC] Look... it scares me, Aran. Even talking about it scares me. */ + a5252
+  ++ @13776 /* [PC] I did not ask for any of this, Aran. It was forced on me. Talking about it is useless. */ + a5263  
+  ++ @13784 /* [PC] Is that what you see me as? A weapon? */ + a5247
+  + ~Class(Player1,CLERIC_ALL)~ + @13785 /* [PC] I serve my deity. I am guided by my faith wherever that takes me, and whatever that makes me. */ + a5247
+  + ~Class(Player1,MAGE_ALL)~ + @13786 /* [PC] I study magic. I am guided by my research wherever that takes me, and whatever that makes me.  */ + a5247
+  + ~Class(Player1,FIGHTER_ALL)~ + @13787 /* [PC] I fight. I am guided by my tasks wherever they take me, and however they shape me. */ + a5247
+  + ~Class(Player1,THIEF_ALL)~ + @13788 /* [PC] I do not always choose the job. Wherever the work takes me, and whatever it makes me, I am always looking for opportunity. */ + a5247  
+  ++ @13789 /* [PC] Whatever happened to the good old talks, where you stumbled through silly entertaining things like curry ingredients? You are too serious. */ + a5265
+END
+
+IF ~~ a5252
+  SAY @13790 /* [ARAN] There be naught to be scared about, as long as you be in charge o' yourself. Your power be a sharp weapon, for sure. */
+  IF ~~ THEN GOTO a5247
+END
+
+IF ~~ a5247
+  SAY @13791 /* [ARAN] Weapons be tools, and naught else. It takes a person weildin' th' sword to make th' call, an' direct th' cut or thrust. Otherwise, th' sword be a heavy decoration good for naught but trippin' over, eh? */
+  ++ @13792 /* [PC] I agree. But right now, I have a feeling I am not completely in command of my destiny. Who is really directing me? */ + a5255
+  ++ @13793 /* [PC] That is why all this is important. I have the power to shape things, the strength to control it, and the willingness to direct it where I choose. */ + a5253
+  ++ @13794 /* [PC] That is why all this is important. I have the power to shape things, but I may not have the strength to control it. */ + a5255
+  ++ @13795 /* [PC] I did not ask for any of this, Aran. It was forced on me. */ + a5263
+  ++ @13796 /* [PC] I don't think I want to talk about this any more. We should move on. */ + a5259
+END
+
+IF ~~ a5253
+  SAY @13797 /* [ARAN] I just hope you be th' one really callin' th' shots, an' not some blighted mage or god or some such bein' behind th' scenes. */
+  ++ @13798 /* [PC] If it appears others are dictating my actions, just remember... it is not the one who strikes first who wins the battle. It is the one who strikes last. */ + a5254
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5255
+  ++ @13800 /* [PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along. */ + a5259
+  ++ @13801 /* [PC] The gods mess about on the game board. We just have to take it from them and make it serve our will. */ + a5259
+  ++ @13796 /* [PC] I don't think I want to talk about this any more. We should move on. */ + a5250
+END
+
+IF ~~ a5254
+  SAY @13802 /* [ARAN] I suppose you be right. Only, if th' first strike be powerful enough, sometimes it wins outright, eh? */
+  ++ @13803 /* [PC] Are you questioning my ability to use my power effectively? */ + a5256
+  ++ @13804 /* [PC] This is more than a simple mercenary campaign. It takes time to build power, and sometimes it takes doing what others want in order to get what I want. */ + a5259
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5261
+  ++ @13805 /* [PC] The secret to my overbearing power is eating your curry. It will be my tool for conquest. */ + a5258
+  ++ @13800 /* [PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along. */ + a5259
+  ++ @13801 /* [PC] The gods mess about on the game board. We just have to take it from them and make it serve our will. */ + a5259
+END
+
+IF ~~ a5255
+  SAY @13806 /* [ARAN] Tyr's Eye, I blighted well hope you are th' one directin' yourself. You, I have some understandin' about, an' I put my trust in your judgement. Most others, not so much. */
+  ++ @13807 /* [PC] Then I had better learn how to wield myself effectively. */ + a5256
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5255
+  ++ @13800 /* [PC] The gods call the shots. They interfere, they push, and they own the board. We just have to play along. */ + a5259
+  ++ @13801 /* [PC] The gods mess about on the game board. We just have to take it from them and make it serve our will. */ + a5259
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5261
+END
+
+IF ~~ a5256
+  SAY @13808 /* [ARAN] Effectively be part o' th' matter, I guess. But I were hopin' for more along th' lines o' compassionately. */
+  ++ @13809 /* [PC] I think you had better define what you mean by 'compassionately'. */ + a5257
+  ++ @13810 /* [PC] It takes time to build power, and sometimes it takes doing what others want in order to get what I want. In the end, though, my will is what matters. */ + a5259
+  ++ @13811 /* [PC] I weigh my decisions carefully when I can. But sometimes, people get hurt no matter what I choose. */ + a5259 
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5261
+  ++ @13812 /* [PC] Effectively, compassionately... just words. Sometimes we just have to do what is in front of us and move on. */ + a5259
+END
+
+IF ~~ a5257
+  SAY @13813 /* [ARAN] Hey, now, I hold my own counsel on that. Sometimes people get killed an' things get destroyed on account o' there be no choice. */
+  = @13814 /* [ARAN] It be th' needless actions what might be held off on account o' compassion. */
+  ++ @13815 /* [PC] We agree on that, Aran. We would not be traveling together if we did not. */ + a5259
+  ++ @13799 /* [PC] I might simply choose to become someone else's weapon. You seem to have found it easier to follow than to lead. */ + a5261
+  ++ @13816 /* [PC] I find myself doing no needless actions. Everything I do is designed to build my own power and control my own destiny. */ + a5261
+  ++ @13811 /* [PC] I weigh my decisions carefully when I can. But sometimes, people get hurt no matter what I choose. */ + a5259 
+  ++ @13817 /* [PC] I weigh my decisions carefully when I can. But people getting hurt is their problem, not mine. */ + a5261 
+  ++ @13789 /* [PC] Whatever happened to the good old talks, where you stumbled through silly entertaining things like curry ingredients? You are too serious. */ + a5265
+END
+	
+IF ~~ a5258
+  SAY @13818 /* [ARAN] Aye, now there be a thought. <CHARNAME>, th' Force o' Faerun, Ruler o' All Toril, built up by serial doses o' my famous gut-bustin' fire-breathin' curry. */
+  ++ @13819 /* [PC] Me? Ruler of all that I survey? Now that is a laugh. */ + a5261
+  ++ @13820 /* [PC] Me? Ruler of all I survey? Of course. I shall make you my Chief Wineskin Washer. And Chief Wineskin Emptier, as well. */ + a5260
+  ++ @13821 /* [PC] I think I might be more comfortable if you were in charge. Well, more in danger of bar brawls, but at least I would not be everyone's target. */ + a5261
+  ++ @13822 /* [PC] Laugh all you want, Aran, my boy. I intend to find my own path, even if it means conquering the very Planes themselves to do it. */ + a5262
+  ++ @13823 /* [PC] Dear gods... the curry. Somehow, I knew that was the source of true power. I shall place you in charge of all cooking. And cleaning. */ + a5260
+END
+
+IF ~~ a5259
+  SAY @13824 /* [ARAN] I suppose you be right. But there be plenty o' time ahead to talk. Mayhap we pick this up later. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5260
+  SAY @13825 /* [ARAN] Now that sounds right fine, it does. In fact, here be th' first duty entrusted me, all done already. One wineskin, empty, an' just beggin' for a dip in th' water! */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5261
+  SAY @13826 /* [ARAN] Think about what you just said right careful, there. You already be a fair sight more powerful than I could hope to get. I don't mind bein' your sword, an' even bein' a tool to be used by you. */
+  = @13827 /* [ARAN] Me, I can make a cut here or there, an' mayhap be useful in a limited way. You... you will influence th' whole o' blighted Toril, an' mayhap more. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5262
+  SAY @13828 /* [ARAN] An' I believe you will do just that, too. Mayhap I needs be expandin' my cookin' options. Takes a might large bit o' food to fuel Planar domination. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5263
+  SAY @13829 /* [ARAN] Don't you be worryin' naught about that. You take charge o' your destiny, forced or not, an' I will be right here to make sure things work out for th' best. */
+  IF ~~ THEN EXIT
+END
+
+IF ~~ a5265
+  SAY @13830 /* [ARAN] Well, I can trot out a joke or somethin', if that be th' way you really feel. */
+  = @13831 /* [ARAN] Last market day, I were goin' to be buyin' an invisible sword. I took my coin an' found a smith what dealt wi' them, but... */
+  = @13832 /* [ARAN] ...when I got there , I just couldn't see th' point! */
+  IF ~~ THEN EXIT
+END
 
 /* Plot Talks: The Tree of Life Talk */
 
@@ -29754,19 +29917,3 @@ END
 
 END
 
-
-/* code clips archive */
-/*  LEAT21 Human Flesh +5 evil armor sample code for clipping */
-/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",0)~ THEN GOTO a1799 */
-/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",1) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a1798 */
-/* IF ~HasItemEquiped("LEAT21",Player1) Global("c-arskinarm","LOCALS",2) GlobalTimerExpired("c-aranskin","GLOBAL")~ GOTO a1797 */
-
-/* SoA Story Pool : Multiple References  */
-/*  to use, add the following - friendship only */
-/* ++ @3337 + a1665 */
-/* ++ @4110 + a1665 */
-/* <<WHATEVER_STATE_I_AM_COMING_FROM>> has three replies added- */
-/* + ~!Class("c-aran",BARD_ALL)~ + ~[PC] This is depressing and dark. Come on, Aran, liven things up a bit. Tell me a story.~ + a1672 */
-/* + ~Class("c-aran",BARD_ALL)~ + ~[PC] This is depressing and dark. Come on, Aran, liven things up a bit. Tell me a story.~ + a1671 */
-/* + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1081 + a1673 */
-/* + ~Global("c-aranfistfight","LOCALS",1)~ + ~[PC] Oh no you don't... you stay back here and get those fire arrows ready. You don't want a repeat of that whole Ice troll incident, now do you?~ + a1385  PLACEHOLDER - UNUSED STATE - FIX THIS */
