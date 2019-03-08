@@ -60,22 +60,26 @@ APPEND ~BRASAAD~
 
 IF ~~ a5115
   SAY @13396
-  IF ~!Gender(Player1,FEMALE)~ THEN GOTO a5116
-  IF ~Gender(Player1,FEMALE)~ THEN GOTO a5117
-  IF ~Gender(Player2,FEMALE) !Name("c-aran",Player2) !Name("Viconia",Player2) !Name("Hexxat",Player2)~ THEN GOTO a5118
-  IF ~Gender(Player3,FEMALE) !Name("c-aran",Player3) !Name("Viconia",Player3) !Name("Hexxat",Player3)~ THEN GOTO a5119
-  IF ~Gender(Player4,FEMALE) !Name("c-aran",Player4) !Name("Viconia",Player4) !Name("Hexxat",Player4)~ THEN GOTO a5120
-  IF ~Gender(Player5,FEMALE) !Name("c-aran",Player5) !Name("Viconia",Player5) !Name("Hexxat",Player5)~ THEN GOTO a5121
-  IF ~Gender(Player6,FEMALE) !Name("c-aran",Player6) !Name("Viconia",Player6) !Name("Hexxat",Player6)~ THEN GOTO a5122
+  IF ~!Gender(Player1,FEMALE)~ THEN EXTERN C-ARANB a5116
+  IF ~Gender(Player1,FEMALE)~ THEN EXTERN C-ARANB a5117
+  IF ~Gender(Player2,FEMALE) !Name("c-aran",Player2) !Name("Viconia",Player2) !Name("Hexxat",Player2)~ THEN EXTERN C-ARANB a5118
+  IF ~Gender(Player3,FEMALE) !Name("c-aran",Player3) !Name("Viconia",Player3) !Name("Hexxat",Player3)~ THEN EXTERN C-ARANB a5119
+  IF ~Gender(Player4,FEMALE) !Name("c-aran",Player4) !Name("Viconia",Player4) !Name("Hexxat",Player4)~ THEN EXTERN C-ARANB a5120
+  IF ~Gender(Player5,FEMALE) !Name("c-aran",Player5) !Name("Viconia",Player5) !Name("Hexxat",Player5)~ THEN EXTERN C-ARANB a5121
+  IF ~Gender(Player6,FEMALE) !Name("c-aran",Player6) !Name("Viconia",Player6) !Name("Hexxat",Player6)~ THEN EXTERN C-ARANB a5122
 END
 
-IF ~~ a5116 SAY @13397 IF ~~ THEN GOTO a5123 END
-IF ~~ a5117 SAY @13398 IF ~~ THEN GOTO a5123 END
-IF ~~ a5118 SAY @13399 IF ~~ THEN GOTO a5123 END
-IF ~~ a5119 SAY @13400 IF ~~ THEN GOTO a5123 END 
-IF ~~ a5120 SAY @13401 IF ~~ THEN GOTO a5123 END 
-IF ~~ a5121 SAY @13402 IF ~~ THEN GOTO a5123 END 
-IF ~~ a5122 SAY @13403 IF ~~ THEN GOTO a5123 END 
+END
+
+APPEND ~C-ARANB~ 
+
+IF ~~ a5116 SAY @13397 IF ~~ THEN EXTERN BRASAAD a5123 END
+IF ~~ a5117 SAY @13398 IF ~~ THEN EXTERN BRASAAD a5123 END
+IF ~~ a5118 SAY @13399 IF ~~ THEN EXTERN BRASAAD a5123 END
+IF ~~ a5119 SAY @13400 IF ~~ THEN EXTERN BRASAAD a5123 END 
+IF ~~ a5120 SAY @13401 IF ~~ THEN EXTERN BRASAAD a5123 END 
+IF ~~ a5121 SAY @13402 IF ~~ THEN EXTERN BRASAAD a5123 END 
+IF ~~ a5122 SAY @13403 IF ~~ THEN EXTERN BRASAAD a5123 END 
 
 END // of append
 

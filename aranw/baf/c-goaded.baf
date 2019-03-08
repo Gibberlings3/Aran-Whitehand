@@ -6,7 +6,7 @@ IF
 	!Global("c-aranspar","GLOBAL",4)
 	!Global("c-aranspar","GLOBAL",7)
 	!Global("c-aranspar","GLOBAL",10)
-	!Global("c-arandreamstar","LOCALS",1)
+	!Global("c-arandreamstar","GLOBAL",1)
 	InParty("c-aran")
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 THEN RESPONSE #100
@@ -24,7 +24,7 @@ IF
 	!Global("c-aranspar","GLOBAL",4)
 	!Global("c-aranspar","GLOBAL",7)
 	!Global("c-aranspar","GLOBAL",10)
-	!Global("c-arandreamstar","LOCALS",1)
+	!Global("c-arandreamstar","GLOBAL",1)
 	InParty("c-aran")
 	!StateCheck("c-aran",CD_STATE_NOTVALID)
 THEN RESPONSE #100

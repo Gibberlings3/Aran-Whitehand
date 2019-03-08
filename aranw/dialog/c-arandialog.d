@@ -2688,7 +2688,7 @@ IF ~Global("c-aranfriendud","GLOBAL",7)~ THEN BEGIN a1692
   + ~!Class("c-aran",BARD_ALL)~ + @1118 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1672
   + ~Class("c-aran",BARD_ALL)~ + @1119 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1671
   + ~OR(7) Global("c-arankravitchstory","LOCALS",1) Global("c-arancarbonara","LOCALS",1) Global("c-arancalimport","LOCALS",1) Global("c-arangerris","LOCALS",1) Global("c-arandadtrade","LOCALS",1) Global("c-aranfistfight","LOCALS",1) GlobalGT("c-aranmoonfight","LOCALS",0)~ + @1120 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a1673
-  ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2050
+ // ++ @1115 DO ~SetGlobal("c-aranfriendud","GLOBAL",8) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2050
 END
 /* GOTO SoA UnderDark FriendTalks Replies */
 
@@ -4468,7 +4468,7 @@ END
 
 IF ~~ a3326
   SAY @1911
-  ++ @1912 +  a3323
+  ++ @1912 + a3323
   ++ @1906 + a3322
 END
 
@@ -8726,7 +8726,7 @@ IF ~~ a401
 //  ++ ~[PC] I do not feel any different. I can still sing songs of heroic virtue, as befits a Skald.~ + FINDME PLACEHOLDER
 //  ++ ~[PC] I do not feel any different. They say comedy is built out of sadness and an attempt to avoid the hole in your being, and I am great at comedy, so perhaps I never really had a soul.~ + FINDME PLACEHOLDER
 //  ++ ~[PC] I do not feel any different. I am not sure I truly understand what I am missing.~ + FINDME PLACEHOLDER
-//  ++ ~[PC] I do not feel any different. I have studied the nature of the soul for much of my life, and even I am not sure I truly understand what it is I am missing.~ +  FINDME PLACEHOLDER 
+//  ++ ~[PC] I do not feel any different. I have studied the nature of the soul for much of my life, and even I am not sure I truly understand what it is I am missing.~ + FINDME PLACEHOLDER 
   
 END
 
@@ -8944,7 +8944,7 @@ IF ~~ a413
   + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,FEMALE)~ + @3440 + a418
   + ~Global("c-aranrom","GLOBAL",2) Gender(Player1,MALE)~ + @3440 + a417
   + ~!Global("c-aranrom","GLOBAL",2)~ + @3440 + a425
-  ++ @3437 +  a416
+  ++ @3437 + a416
   ++ @3438 + a416
   ++ @3441 + a411
 END
@@ -10796,20 +10796,35 @@ IF ~~ a640
   ++ @4210 + a641
   ++ @4211 + a642
   ++ @4212 + a655
+  ++ @14007 + a641 /* ~[PC] I envy you.~ */
+  ++ @14008 + a642 /* ~[PC] I do not envy you. You never got to put down roots.~ */ 
 END
 
 IF ~~ a641
   SAY @4213
-  ++ @4214 + a642
-  ++ @4215 + a642
+  ++ @4214 + a5286
+  ++ @4215 + a5286
   ++ @4216 + a655
   + ~Global("c-leavefist","LOCALS",0)~ + @4217 + a643
   + ~Global("c-leavefist","LOCALS",1)~ + @4218 + a656
+  ++ @14009 + a660 /* ~[PC] I can see you as a small boy, whacking at the side of the wagon with a wooden sword, learning how to swear and pestering everyone with questions.~ */
 END
 
 IF ~~ a642
   SAY @4219
-  ++ @4210 + a641
+  ++ @4210 + a660
+  ++ @4220 + a654
+  ++ @4212 + a655
+  + ~Global("c-leavefist","LOCALS",0)~ + @4221 + a643
+  + ~Global("c-leavefist","LOCALS",1)~ + @4218 + a656
+  ++ @14009 + a660
+END
+
+IF ~~ a5286
+  SAY @4219
+  ++ @14010 + a656
+  ++ @14009 + a660
+  ++ @4210 + a660
   ++ @4220 + a654
   ++ @4212 + a655
   + ~Global("c-leavefist","LOCALS",0)~ + @4221 + a643
@@ -10987,7 +11002,7 @@ END
 IF ~~ a672
   SAY @4323
   ++ @4324 + a677
-  ++ @4325 +  a675
+  ++ @4325 + a675
   ++ @4326 + a677
   ++ @4327 + a676
   ++ @4328 + a676
@@ -13033,7 +13048,7 @@ END
 
 IF ~~ a1825
   SAY @5180
-  ++ @5181 +  a1841
+  ++ @5181 + a1841
   ++ @5182 + a1828
   ++ @5183 + a1817
   ++ @5184 + a1827
@@ -13180,7 +13195,7 @@ END
 IF ~~ a1840
   SAY @5262
   ++ @5263 + a1857
-  ++ @5264 +  a1825
+  ++ @5264 + a1825
   ++ @5183 + a1817
   ++ @5265 + a1816
   ++ @5266 + a1809
@@ -13214,7 +13229,7 @@ IF ~~ a1843
   SAY @5285
   ++ @5286 + a1837
   ++ @5287 + a1826
-  ++ @5288 +  a1829
+  ++ @5288 + a1829
   ++ @5289 + a1837
   ++ @5290 + a1835
   ++ @5291 + a1864
@@ -13481,7 +13496,7 @@ END
 IF ~~ a2058 SAY @5384 IF ~~ THEN EXIT END
 
 IF ~~ a2059
-  /* Idea from Berelinde's Gavin BG2 - check for armor. Must make sure it can't e accessed from the PC responses where PC is showing off a dress, so needs some tidying before integration. */
+  /* Idea from Berelinde's Gavin BG2 - check for armor. Must make sure it can't be accessed from the PC responses where PC is showing off a dress, so needs some tidying before integration. */
   SAY @5385
   = @5386
   IF ~OR(20) HasItemEquiped("chan01",Player1) HasItemEquiped("chan02",Player1) HasItemEquiped("chan03",Player1) HasItemEquiped("chan04",Player1) HasItemEquiped("chan05",Player1) HasItemEquiped("chan06",Player1) HasItemEquiped("chan07",Player1) HasItemEquiped("chan08",Player1) HasItemEquiped("chan09",Player1) HasItemEquiped("chan10",Player1) HasItemEquiped("chan11",Player1) HasItemEquiped("chan12",Player1) HasItemEquiped("chan13",Player1) HasItemEquiped("chan14",Player1) HasItemEquiped("chan15",Player1) HasItemEquiped("chan16",Player1) HasItemEquiped("chan17",Player1) HasItemEquiped("chan18",Player1) HasItemEquiped("dwchan01",Player1) HasItemEquiped("dwchan02",Player1) RandomNum(3,1)~ THEN GOTO a2060
@@ -15248,17 +15263,17 @@ APPEND C-ARANJ
 
 /* CONDITIONAL TALKS: THIRD FROM LAST */
 
-IF ~Global("c-arandreamstar","LOCALS",1)~ THEN BEGIN a2193
+IF ~Global("c-arandreamstar","GLOBAL",1)~ THEN BEGIN a2193
   SAY @6248
-  + ~Gender(Player1,MALE)~ + @6249 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4341
-  + ~Gender(Player1,MALE)~ + @6250 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4342
-  + ~Gender(Player1,MALE)~ + @6251 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4343
-  + ~Gender(Player1,MALE)~ + @6252 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4344
-  + ~Gender(Player1,FEMALE)~ + @6249 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4345
-  + ~Gender(Player1,FEMALE)~ + @6250 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4346
-  + ~Gender(Player1,FEMALE)~ + @6253 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4347
-  + ~Gender(Player1,FEMALE)~ + @6254 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4345
-  ++ @6255 DO ~SetGlobal("c-arandreamstar","LOCALS",2)~ + a4348
+  + ~Gender(Player1,MALE)~ + @6249 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4341
+  + ~Gender(Player1,MALE)~ + @6250 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4342
+  + ~Gender(Player1,MALE)~ + @6251 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4343
+  + ~Gender(Player1,MALE)~ + @6252 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4344
+  + ~Gender(Player1,FEMALE)~ + @6249 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4345
+  + ~Gender(Player1,FEMALE)~ + @6250 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4346
+  + ~Gender(Player1,FEMALE)~ + @6253 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4347
+  + ~Gender(Player1,FEMALE)~ + @6254 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4345
+  ++ @6255 DO ~SetGlobal("c-arandreamstar","GLOBAL",2)~ + a4348
 END
 
 IF ~~ a4345 SAY @6256 IF ~~ THEN GOTO a4352 END
@@ -15698,7 +15713,7 @@ IF ~~ a2233 SAY @6470 IF ~~ THEN EXIT END
 
 /* In Watcher's Keep, SoA - both C-ARANJ and C-ARN25J triggered from Global("c-aranwatchkeep","GLOBAL",1) and closed to 2 in dlg */
 
-/* NOT YET SET IN  BCS */
+/* NOT YET SET IN BCS ? RECHECK */
 
 IF ~Global("c-aranwatchkeep","GLOBAL",1)~ THEN BEGIN a963
  SAY @6471
@@ -15715,7 +15730,7 @@ END
 /* Lots of Flirts means Player Wants Action: reply states */
 
 /* Triggered in BCS by lots of flirts */
-IF ~Global("c-aranbedflirt","GLOBAL",1)~ THEN BEGIN a1418
+IF ~Global("c-aranbedflirt","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a1418
   SAY @6478
   ++ @6479 DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a1419
   ++ @6480 DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a1420
@@ -15725,7 +15740,7 @@ IF ~Global("c-aranbedflirt","GLOBAL",1)~ THEN BEGIN a1418
 END
 
 /* NPC Initiated Flirts */
-IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a1314
+IF ~Global("c-aranlightflirt","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a1314
   SAY @6483
  /* NPC Initiated Flirts : Random Light Flirts */
   IF ~RandomNum(32,1)~ THEN GOTO a1315
@@ -15779,7 +15794,7 @@ IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a1314
 END
 
 /* NPC Initiated Flirts : Random Heavy Flirts */
-IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a1350
+IF ~Global("c-aranheavyflirt","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a1350
   SAY @6484
   IF ~RandomNum(36,36)~ THEN GOTO a1351
   IF ~RandomNum(36,35)~ THEN GOTO a1352
@@ -15839,7 +15854,7 @@ IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a1350
 END
 
 /* Scenery Dialog : Aran Apologizes */
-IF ~Global("c-aranapology","GLOBAL",1)~ THEN BEGIN a1706
+IF ~Global("c-aranapology","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a1706
   SAY @6485
   IF ~RandomNum(3,1)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a1707
   IF ~RandomNum(3,2)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a1708
@@ -17136,7 +17151,7 @@ IF ~~ a3771 /* DO_NEXT */
   ++ @5798 + a3770 /* DO_NEXT_FINAL */
   ++ @7111 + a3769 /* WHERE_IDEAS_COME_FROM */
   ++ @7112 + a3769 /* WHERE_IDEAS_COME_FROM */
-  ++ @7113 +  a3769 /* WHERE_IDEAS_COME_FROM */
+  ++ @7113 + a3769 /* WHERE_IDEAS_COME_FROM */
 END
 
 IF ~~ a3770 /* DO_NEXT_FINAL */
@@ -18374,7 +18389,7 @@ END
 IF ~~ a3792 /* KISSING_GENTLY_TIP */
   SAY @7530
   ++ @7531 + a3723 /* HANDS_AND_FINGERS_EVERYWHERE */
-  ++ @7532 +  a3791 /*  GODS_WILL_YOU_LET_ME */
+  ++ @7532 + a3791 /*  GODS_WILL_YOU_LET_ME */
   ++ @7533 + a3686 /* ROM_PULSE_MUTUAL_PLEASURE */
   ++ @7534 + a3389 /* ENDGAME_OF_TEASING */
   ++ @6569 + a3389 /* ENDGAME_OF_TEASING */
@@ -18758,7 +18773,7 @@ IF ~~ a3505 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
   ++ @7651 + a3652 /* ROM_TWO_ACTION_FACE_TO_FACE */
   ++ @7652 + a3652 /* ROM_TWO_ACTION_FACE_TO_FACE */
   ++ @7653 + a3653 /* ROM_BACK_TO_HIS_CHEST */
-  + ~RandomNum(2,1)~ + @7654 +  a3654 /* ROUGH_CHEEK_BARES_PC_BREASTS */
+  + ~RandomNum(2,1)~ + @7654 + a3654 /* ROUGH_CHEEK_BARES_PC_BREASTS */
   + ~RandomNum(2,2)~ + @7655 + a3655 /* SMOOTH_CHEEK_TO_CHEEK_PRESS_CLOSE */
   ++ @7087 + a3698 /* FRONT_TO_ARAN_EXPLORE */
 END
@@ -19754,7 +19769,7 @@ IF ~~ a3699 /* FRONT_TO_ARAN_FINGERS */
   + ~RandomNum(5,3)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3516 /* SOLID_STOP3 */
   + ~RandomNum(5,4)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3517 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(5,5)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3518 /* FIGHT_START */
-  ++ @7907 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ +  a3796  /* WATCH_ME_BE_HAPPY */
+  ++ @7907 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3796  /* WATCH_ME_BE_HAPPY */
   ++ @7908 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a3796  /* WATCH_ME_BE_HAPPY */
   ++ @7909 + a3694 /* FRONT_TO_ARAN_PULSE */
 END
@@ -20019,8 +20034,8 @@ IF ~~ a3682 /* ROM_PULSE_DEEP_ABOVE_ONE */
   ++ @7959 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ @7960 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ @7961 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
-  ++ @7962 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ +  a3695 /* ROM_FINAL_TWO */
-  ++ @7963 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ +  a3695 /* ROM_FINAL_TWO */
+  ++ @7962 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
+  ++ @7963 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
 END
 
 IF ~~ a3798 /* ROM_PULSE_DEEP_ABOVE_TWO */
@@ -20028,7 +20043,7 @@ IF ~~ a3798 /* ROM_PULSE_DEEP_ABOVE_TWO */
   ++ @7965 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ @7960 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
   ++ @7966 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
-  ++ @7967 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ +  a3695 /* ROM_FINAL_TWO */
+  ++ @7967 DO ~SetGlobal("c-aranintimate","GLOBAL",4)~ + a3695 /* ROM_FINAL_TWO */
 END
 
 IF ~~ a3686 /* ROM_PULSE_MUTUAL_PLEASURE */
@@ -25729,7 +25744,7 @@ IF ~~ a1648
 END
 
 /* NPC Management: Post-Joined File : Move It Or lose It. */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0)~ THEN BEGIN a21
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a21
   SAY @10407
   ++ @10408 + a1694
   ++ @10409 DO ~EraseJournalEntry(@1706)
@@ -26111,7 +26126,7 @@ IF ~~ a4286 SAY @10426 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT EN
 IF ~~ a4287 SAY @10427 IF ~~ THEN DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 0  */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",0)~ THEN BEGIN a22
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",0) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a22
   SAY @10428
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",1)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",1)~ GOTO a35
@@ -26121,7 +26136,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 1 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",1)~ THEN BEGIN a4990
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",1) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a4990
   SAY @10429
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",2)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",2)~ GOTO a35
@@ -26131,7 +26146,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 2 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",2)~ THEN BEGIN a4991
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",2) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a4991
   SAY @10430
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",3)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",3)~ GOTO a35
@@ -26141,7 +26156,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 3 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",3)~ THEN BEGIN a4992
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",3) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a4992
   SAY @10431
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",4)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",4)~ GOTO a35
@@ -26151,7 +26166,7 @@ IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvaryki
 END
 
 /* NPC Management: Post-Joined File : Kicked Out, Now I Want Back In : 2 */
-IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",4)~ THEN BEGIN a4993
+IF ~HappinessGT(Myself,-289) Global("KickedOut","LOCALS",1) Global("c-aranvarykick","GLOBAL",4) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN BEGIN a4993
   SAY @10432
   IF ~RandomNum(5,1)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",0)~ GOTO a34
   IF ~RandomNum(5,2)~ THEN DO ~SetGlobal("c-aranvarykick","GLOBAL",0)~ GOTO a35
@@ -26619,7 +26634,7 @@ IF ~~ a2711
   SAY @10523
   ++ @10519 + a2710
   ++ @10524 DO ~SetGlobal("c-aransex","GLOBAL",0)~ + a2710
-  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ +  a2707
+  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ + a2707
   ++ @10526 DO ~SetGlobal("c-aransex","GLOBAL",2)~ + a2707
   ++ @10527 DO ~SetGlobal("c-aransex","GLOBAL",3)~ + a2707
   ++ @10528 DO ~SetGlobal("c-aransex","GLOBAL",4)~ + a2707
@@ -27449,7 +27464,7 @@ IF ~GlobalLT("c-aranrom","GLOBAL",2)~ THEN EXTERN C-ARANP a4307
 /* Situational/Conditional "Flirts". These interfere with the PID, but a player should be able to dismiss it - and setting the real-time timer means there is one crack at this in each inn area in each visit. A player can force the issue by expiring the timer manually if they are on a speed run and want to see lots of content. */
 
 /* Fight or Flight, otherwise known as The Big Valley */
-CHAIN IF ~Global("c-aranmalcer","GLOBAL",2)~ THEN C-MALCER a2930
+CHAIN IF ~Global("c-aranmalcer","GLOBAL",2) GlobalLT("Chapter","GLOBAL",%bg2_chapter_8%)~ THEN C-MALCER a2930
 @10603
 == C-OSKUT @10604
 == C-TAMAN @10605
@@ -28082,7 +28097,7 @@ IF ~True()~ THEN BEGIN a2440
   + ~Global("c-pctavern","C-AR01",0)~ + @10758 + a2456
   + ~Global("c-pctavern","C-AR01",2)~ + @10759 + a2458
   + ~Global("c-pctavern","C-AR01",4)~ + @10760 + a2460
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 + a2463
   + ~OR(2) PartyGoldGT(3000) Global("c-awtavkquest","C-AR01",2)~ + @10762 + a2473
   + ~GlobalLT("c-awtavkquest","C-AR01",2) PartyGoldLT(3001)~ + @10762 + a2443
   + ~RandomNum(5,1)~ + @10737 + a2474
@@ -28151,7 +28166,7 @@ IF ~~ a2443
   + ~RandomNum(5,4)~ + @10778 + a2477
   + ~Global("c-pctavern","C-AR01",0)~ + @10758 + a2456
   + ~Global("c-pctavern","C-AR01",3)~ + @10764 + a2459
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 + a2463
   + ~RandomNum(5,5)~ + @10778 + a2478
   + ~Global("c-pctavern","C-AR01",6)~ + @10766 + a2462
   ++ @10779 + a2452
@@ -28160,7 +28175,7 @@ END
 IF ~~ a2444
   SAY @10780
   + ~Global("c-pctavern","C-AR01",2)~ + @10759 + a2458
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 + a2463
   + ~Global("c-pctavern","C-AR01",3)~ + @10764 + a2459
   + ~Global("c-pctavern","C-AR01",6)~ + @10766 + a2462
   + ~RandomNum(5,2)~ + @10737 + a2475
@@ -28217,7 +28232,7 @@ IF ~~ a2446
   + ~Global("c-pctavern","C-AR01",4)~ + @10760 + a2460
   + ~Global("c-pctavern","C-AR01",5)~ + @10765 + a2461
   + ~Global("c-pctavern","C-AR01",6)~ + @10766 + a2462
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 + a2463
 END
 
 IF ~~ a2447
@@ -28266,7 +28281,7 @@ IF ~~ a2449
   + ~Global("c-pctavern","C-AR01",4)~ + @10760 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2460
   + ~Global("c-pctavern","C-AR01",5)~ + @10765 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2461
   + ~Global("c-pctavern","C-AR01",6)~ + @10766 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2462
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 DO ~SetGlobal("c-araninfo","C-AR01",3)~ +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2463
   + ~OR(2) PartyGoldGT(3000) Global("c-awtavkquest","C-AR01",2)~ + @10762 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2473
   + ~GlobalLT("c-awtavkquest","C-AR01",2) PartyGoldLT(3001)~ + @10762 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2443
   ++ @10791 DO ~SetGlobal("c-araninfo","C-AR01",3)~ + a2451
@@ -28324,7 +28339,7 @@ IF ~~ a2451
   + ~Global("c-pctavern","C-AR01",4)~ + @10760 + a2460
   + ~Global("c-pctavern","C-AR01",5)~ + @10765 + a2461
   + ~Global("c-pctavern","C-AR01",6)~ + @10766 + a2462
-  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 +  a2463
+  + ~GlobalGT("c-pctavern","C-AR01",6)~ + @10761 + a2463
   + ~OR(2) PartyGoldGT(3000) Global("c-awtavkquest","C-AR01",2)~ + @10762 + a2473
   + ~GlobalLT("c-awtavkquest","C-AR01",2) PartyGoldLT(3001)~ + @10762 + a2443
   + ~Global("c-ar01gerald","C-AR01",1) Global("c-ar01geraldor","C-AR01",0)~ + @10742 DO ~SetGlobal("c-ar01geraldor","C-AR01",1)~ + a4982 
@@ -29553,7 +29568,7 @@ IF ~~ a2705
   SAY @10523
   ++ @10519 + a2703
   ++ @10524 DO ~SetGlobal("c-aransex","GLOBAL",0)~ + a2703
-  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ +  a2704
+  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ + a2704
   ++ @10526 DO ~SetGlobal("c-aransex","GLOBAL",2)~ + a2704
   ++ @10527 DO ~SetGlobal("c-aransex","GLOBAL",3)~ + a2704
   ++ @10528 DO ~SetGlobal("c-aransex","GLOBAL",4)~ + a2704
@@ -29625,7 +29640,7 @@ CHAIN IF WEIGHT #-1 ~PartyHasItem("c-awpkg1")~ THEN CIVIL01 a2527
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @11210
 END
 + ~GlobalGT("M#AmberRescue","GLOBAL",3)~ + @11211 + a2528
-++ @11200 DO ~TakePartyItem("c-awpkg1")~ + a2529
+++ @11200 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2529
 ++ @11201 + a2531
 ++ @11202 + a2532
 ++ @11212 + a2535
@@ -29635,9 +29650,9 @@ APPEND CIVIL01
 
 IF ~~ a2528
   SAY @11213
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2530
-  ++ @11215 DO ~TakePartyItem("c-awpkg1")~ +  a2533
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2530
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
+  ++ @11215 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2533
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
   ++ @11217 + a2534
   ++ @11218 + a2531
   ++ @11219 + a2535
@@ -29663,9 +29678,9 @@ END
 
 IF ~~ a2534
   SAY @11226
-  ++ @11227 DO ~TakePartyItem("c-awpkg1")~ + a2530
-  ++ @11228 DO ~TakePartyItem("c-awpkg1")~ +  a2533
-  ++ @11229 DO ~TakePartyItem("c-awpkg1")~ + a2530
+  ++ @11227 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
+  ++ @11228 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2533
+  ++ @11229 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
   ++ @11230 + a2532
   ++ @11212 + a2535
   ++ @11231 + a2530
@@ -29673,9 +29688,9 @@ END
 
 IF ~~ a2535
   SAY @11232
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2530
-  ++ @11215 DO ~TakePartyItem("c-awpkg1")~ +  a2533
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2530
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
+  ++ @11215 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2533
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2530
   ++ @11218 + a2531
 END
 
@@ -29690,7 +29705,7 @@ CHAIN IF WEIGHT #-1 ~PartyHasItem("c-awpkg1")~ THEN CIVIL02 a2536
 == C-ARANJ IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @11238
 END
 + ~GlobalGT("M#AmberRescue","GLOBAL",3)~ + @11239 + a2537
-++ @11200 DO ~TakePartyItem("c-awpkg1")~ + a2538
+++ @11200 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2538
 ++ @11201 + a2540
 ++ @11202 + a2541
 ++ @11219 + a2544
@@ -29700,9 +29715,9 @@ APPEND CIVIL02
 
 IF ~~ a2537
   SAY @11240
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2539
-  ++ @11215 DO ~TakePartyItem("c-awpkg1")~ +  a2542
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2539
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
+  ++ @11215 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2542
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
   ++ @11218 + a2541
   ++ @11219 + a2544
 END
@@ -29727,9 +29742,9 @@ END
 
 IF ~~ a2543
   SAY @11247
-  ++ @11227 DO ~TakePartyItem("c-awpkg1")~ + a2539
-  ++ @11228 DO ~TakePartyItem("c-awpkg1")~ +  a2542
-  ++ @11229 DO ~TakePartyItem("c-awpkg1")~ + a2539
+  ++ @11227 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
+  ++ @11228 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2542
+  ++ @11229 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
   ++ @11230 + a2541
   ++ @11212 + a2544
   ++ @11231 + a2539
@@ -29737,9 +29752,9 @@ END
 
 IF ~~ a2544
   SAY @11248
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2539
-  ++ @11249 DO ~TakePartyItem("c-awpkg1")~ +  a2542
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2539
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
+  ++ @11249 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2542
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2539
   ++ @11218 + a2540
 END
 
@@ -29753,7 +29768,7 @@ CHAIN IF WEIGHT #-1 ~PartyHasItem("c-awpkg1")~ THEN CIVIL03 a2545
 == CIVIL03 IF ~InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @11254
 END
 + ~GlobalGT("M#AmberRescue","GLOBAL",3)~ + @11255 + a2546
-++ @11200 DO ~TakePartyItem("c-awpkg1")~ + a2547
+++ @11200 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2547
 ++ @11201 + a2549
 ++ @11202 + a2550
 ++ @11219 + a2553
@@ -29763,9 +29778,9 @@ APPEND CIVIL03
 
 IF ~~ a2546
   SAY @11256
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2548
-  ++ @11257 DO ~TakePartyItem("c-awpkg1")~ +  a2551
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2548
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
+  ++ @11257 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2551
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
   ++ @11218 + a2550
   ++ @11219 + a2553
 END
@@ -29792,9 +29807,9 @@ END
 
 IF ~~ a2552
   SAY @11266
-  ++ @11227 DO ~TakePartyItem("c-awpkg1")~ + a2548
-  ++ @11228 DO ~TakePartyItem("c-awpkg1")~ +  a2551
-  ++ @11229 DO ~TakePartyItem("c-awpkg1")~ + a2548
+  ++ @11227 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
+  ++ @11228 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2551
+  ++ @11229 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
   ++ @11230 + a2550
   ++ @11212 + a2553
   ++ @11231 + a2548
@@ -29802,9 +29817,9 @@ END
 
 IF ~~ a2553
   SAY @11267
-  ++ @11214 DO ~TakePartyItem("c-awpkg1")~ + a2548
-  ++ @11249 DO ~TakePartyItem("c-awpkg1")~ +  a2551
-  ++ @11216 DO ~TakePartyItem("c-awpkg1")~ + a2548
+  ++ @11214 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
+  ++ @11249 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2551
+  ++ @11216 DO ~TakePartyItem("c-awpkg1") DestroyItem("c-awpkg1")~ + a2548
   ++ @11218 + a2549
 END
 

@@ -248,7 +248,7 @@
 @99   = ~[c-aws030] Sune's sweet cheeks, I heard.~ [c-aws030]
 @100  = ~[c-aws031] On it.~ [c-aws031]
 @101  = ~[c-aws032] Understood.~ [c-aws032]
-@102  = ~[c-aws033] Sune's Bosom, I'm movin', already!.~ [c-aws033]
+@102  = ~[c-aws033] Sune's Bosom, I'm movin', already!~ [c-aws033]
 @103  = ~[c-aws034] Ilmater's Blood. I said I'd do it.~ [c-aws034]
 @104  = ~[c-aws035] Less talk, more action.~ [c-aws035]
 @105  = ~[c-aws036] Watch where you point that thing.~ [c-aws036]
@@ -1827,7 +1827,7 @@ Bodhi has turned Aran into a vampire!  Or... or very nearly.  The process may no
 @1610 = ~[ARAN] I don't rightly feel like doin' that right now. I don't know why I started talkin', anyways. In fact, I feel like doin' nothin' but headin' skyward, right this second.~
 @1611 = ~[PC] You know this is the fifth pointless conversation you have started down here with me, right?~
 @1612 = ~[PC] Well, don't let me stop you.~
-@1613 = ~[PC] I think you should stop thinking about things you can't change and practice hitting things instead. Your combat skills are slipping~
+@1613 = ~[PC] I think you should stop thinking about things you can't change and practice hitting things instead. Your combat skills are slipping.~
 @1614 = ~[ARAN] I do know. I just need to break up th' oppressive feelin', so I be reachin' out a bit, is all.~
 @1615 = ~[ARAN] Right. You are gettin' flip, on account o' you know that just makes me feel so comfortable, eh? Thanks for nothin'.~
 @1616 = ~[ARAN] I guess I was lookin' for a bit o' a pep talk, at that. Thanks.~
@@ -10783,10 +10783,10 @@ Aran has rejoined me. With any luck, I will be able to rely on his talents while
 @10441 = ~[ARAN] There's got to be somethin' I can ferment around here. I'm runnin' short o' ale.~
 @10442 = ~[ARAN] Tymora's Luck - I'd be a mite happier if I was along wi' you. But you call th' shots, so here I stay.~
 @10443 = ~[ARAN] Well, I can try. Where do you be wantin' me to go?~
-@10444 = ~[PC] Head for the Brynlaw docks.~
+@10444 = ~[PC] Head for the Brynnlaw docks.~
 @10445 = ~Whitehand Sailing
 
-I told Aran Whitehand to wait for me at the Brynlaw docks. He did mention that getting there would be a problem, but he would find his way.~
+I told Aran Whitehand to wait for me at the Brynnlaw docks. He did mention that getting there would be a problem, but he would find his way.~
 @10446 = ~[PC] Head for the Athkatla docks.~
 @10447 = ~Whitehand Docked
 
@@ -11698,7 +11698,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @11314 = ~[ARAN] Bloody hells, man, are you tryin' to get me killed? Either that is a glint o' laughter in her eyes, or she's about to kill you or me or both o' us at once. Forget I said anythin', eh? I needs be gettin about findin' a suitable gift to get out o' th' doghouse.~
 @11315 = ~[PC]Bring me Aran Whitehand, the fighter and scribe.~
 @11316 = ~[PC]Bring me my former lover, Aran Whitehand.~
-@11317 = ~[PC]Bring me my love, Aran Whitehand.~
+@11317 = ~[PC]Bring me my lover, Aran Whitehand.~
 @11318 = ~[ARAN] That be a nice sight, there, Aerie. Congratulations. Just watch out where he points that other 'finger', eh? An' I might suggest a bit o' cloth, for when he gets an urge to... heh. Too late.~
 @11319 = ~[ARAN] Ilmater's Mercy, shut up, Korgan. We don't be wantin' to offend th' nice priestess what can help us, now, do we, laddie?~
 @11320 = ~[KORGAN] You never did have any humor, jackass. You can kiss my arse.~
@@ -12559,7 +12559,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12175 = ~[PC] You're going to have to learn to live without me. Even if you make it through all of this, there is no guarantee I will be around.~
 @12176 = ~[PC] I think I would like that. We can sit around and talk about how tough it was, and how adventurers these days have it so easy.~
 @12177 = ~[PC] I rather suspect that the only visiting I will be doing is to stand over your eventual grave.~
-@12178 = ~[ARAN] Aye. 'Back in th' days when REAL adventurin' happened, we had to lug weapons around what shattered in our hands. But did we complain? No, we forged twigs an' branches together an' whacked th' enemy 'til they ran. An' we were happy to do it, to!'~
+@12178 = ~[ARAN] Aye. 'Back in th' days when REAL adventurin' happened, we had to lug weapons around what shattered in our hands. But did we complain? No, we forged twigs an' branches together an' whacked th' enemy 'til they ran. An' we were happy to do it, too!'~
 @12179 = ~[PC] That is a little too close to the truth, given the joys of dealing with Nashkel Iron. On second thought, I do not think I want to remember all of this. Too many have died. I may not even make it through all of this, anyways.~
 @12180 = ~[PC] And I will tell stories about how Aran would start conversations and then not remember what he wanted to say.~
 @12181 = ~[PC] You know, we have been doing this so long that we are starting to repeat our conversations. Gorion was like that. He would tell the same stories, and start the same conversations again and again. Perhaps you are getting old.~
@@ -12925,7 +12925,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12541 = ~[c-aws029] Sune's sweet cheeks, I heard.~ [c-aws029]
 @12542 = ~[c-aws030] On it.~ [c-aws030]
 @12543 = ~[c-aws031] Understood.~ [c-aws031]
-@12544 = ~[c-aws032] Sune's Bosom, I'm movin', already!.~ [c-aws032]
+@12544 = ~[c-aws032] Sune's Bosom, I'm movin', already!~ [c-aws032]
 @12545 = ~[c-aws033] Ilmater's Blood. I said I'd do it.~ [c-aws033]
 @12546 = ~[c-aws034] Less talk, more action.~ [c-aws034]
 @12547 = ~[c-aws035] Watch where you point that thing.~ [c-aws035]
@@ -13033,7 +13033,7 @@ I told Aran Whitehand to wait for me right where he currently stands, singing ba
 @12649 = ~[PC] You know, you impress me. You write very well, considering you look as if you have trouble spelling your name without help.~
 @12650 = ~[ARAN] I'd bloody well fix myself up, if it didn't hurt so much to breathe. Hey, lend a lad a hand, will you? Just get me one o' them nice potions or a spell or somethin'.~
 @12651 = ~[ARAN] It's just a flesh wound. I figure if worst comes to worst, I can distract 'em wi' a mite bit o' blood. Mayhap even scare 'em wi' some of my bruises. But thanks for lookin' in on me, eh?~
-@12652 = ~[ARAN] If that be some kind o' crack about hangin' back in combat, m'<PRO_GIRLBOY>, I go where you be tellin' me an' do what you be tellin' me, so more's th' fault wi' you!.~
+@12652 = ~[ARAN] If that be some kind o' crack about hangin' back in combat, m'<PRO_GIRLBOY>, I go where you be tellin' me an' do what you be tellin' me, so more's th' fault wi' you!~
 @12653 = ~[ARAN] Laugh away, monkey<PRO_GIRLBOY>. I know where you sleep!~
 @12654 = ~[ARAN] I keep askin' an' they keep tossin'. Problem is, it be vegetables, not skirts!~
 @12655 = ~[ARAN] You let me know when you be volunteerin'!~
@@ -14132,21 +14132,21 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @13739 = ~[PC] You had better watch out for Dorn, Aran. He might see your advances as an insult.~
 @13740 = ~[PC] You had better watch out for Haer'Dalis, Aran. He might see your advances as an insult.~
 @13741 = ~[PC] You had better watch out for Arath, Aran. He might see your advances as an insult.~
-@13742 = ~[PC] You had better watch out for Neh’taniel, Aran. He might see your advances as an insult.~
+@13742 = ~[PC] You had better watch out for Neh'taniel, Aran. He might see your advances as an insult.~
 @13743 = ~[PC] You had better watch out for Darian, Aran. He might see your advances as an insult.~
 @13744 = ~[PC] You had better watch out for Yoshimo, Aran. He might see your advances as an insult.~
 @13745 = ~[PC] How would you feel if I said I prefer Adrian?~
 @13746 = ~[PC] How would you feel if I said I prefer Dorn?~
 @13747 = ~[PC] How would you feel if I said I prefer Haer'Dalis?~
 @13748 = ~[PC] How would you feel if I said I prefer Arath?~
-@13749 = ~[PC] How would you feel if I said I prefer Neh’taniel?~
+@13749 = ~[PC] How would you feel if I said I prefer Neh'taniel?~
 @13750 = ~[PC] How would you feel if I said I prefer Darian?~
 @13751 = ~[PC] How would you feel if I said I prefer Yoshimo?~
 @13752 = ~[PC] If you tell Adrian, there will be trouble.~
 @13753 = ~[PC] If you tell Dorn, there will be trouble.~
 @13754 = ~[PC] If you tell Haer'Dalis, there will be trouble.~
 @13755 = ~[PC] If you tell Arath, there will be trouble.~
-@13756 = ~[PC] If you tell Neh’taniel, there will be trouble.~
+@13756 = ~[PC] If you tell Neh'taniel, there will be trouble.~
 @13757 = ~[PC] If you tell Darian, there will be trouble.~
 @13758 = ~[PC] If you tell Yoshimo, there will be trouble.~
 @13759 = ~[ARAN] Look, I be a decent sort o' sellsword, an' I don't question orders most times. In fact, I'm not rightly questionin' them now. All I be sayin' is, wi' an employer like her, we had best keep our eyes open day an' night. Most especially night.~ [c-aws057]
@@ -14397,3 +14397,7 @@ The Broken Sword Inn turned out to be a productive visit. It looks like there ar
 @14004 = ~[ARAN] One decent pair o' boots? That could be done. I will keep a sharp eye out, eh?~
 @14005 = ~[ARAN] Can we skip right to th' part where you tackle me an' start th' kissin'? When you talk like that to me, it gets me right excited, it does!~
 @14006 = ~[ARAN] I done signed a contract wi' you in my heart a while back, <CHARNAME>. Good times an' bad times, I be your shield. Small comfort, but comfort to you, I hope.~
+@14007 = ~[PC] I envy you. ~
+@14008 = ~[PC] I do not envy you. You never got to put down roots.~
+@14009 = ~[PC] I can see you as a small boy, whacking at the side of the wagon with a wooden sword, learning how to swear and pestering everyone with questions.~
+@14010 = ~[PC] I would like to find some stability, and stop all of this whirlwhind around me, but nothing will ever change.~

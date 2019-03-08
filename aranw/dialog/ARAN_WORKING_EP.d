@@ -578,8 +578,9 @@ IF ~~ a4718
   ++ @12196 + a4724 // @12196 = ~[PC] You don't love me. You lust after me. They are two very different things.~
   ++ @12197 + a4721 // @12197 = ~[PC] You have made your feelings very clear. Do you have to speak them out loud? To hear them spoken in return?~
   ++ @12198 + a4724 // @12198 = ~[PC] It would be more romantic if you would hold my hands while saying this, you know.~
+  ++ ~[PC] I... would rather you not say that. It could lead to complications.~ + time_off_relationship
 END
-  
+
 IF ~~ a4719
   SAY @12199   // @12199 = ~[ARAN] So do you have anythin' to say to me?~
   ++ @12200 + a4721 // @12200 = ~[PC] That I love you?~
@@ -587,6 +588,16 @@ IF ~~ a4719
   ++ @12202 + a4720 // @12202 = ~[PC] That you should stop looking at me so seriously, and we should move on?~
   ++ @12203 + a4720 // @12203 = ~[PC] No. What would I have to say to you?~
   ++ @12204 + a4720 // @12204 = ~[PC] That you are making a fool of yourself over a woman who will never return the love you seem to have?~
+  ++ ~[PC] It sounds like you are taking this too seriously. Perhaps we should take some time off of our relationship.~ + time_off_relationship
+END
+
+IF ~~ time_off_relationship
+  SAY ~[ARAN] I want naught in th' way o' that. I thought we were on th' track for makin' things more permanent.~
+  ++ ~[PC] The only permanent thing in life is you stumbling over talking about your feelings.~ + a4720
+  ++ ~[PC] I think you have made a mistake. I was not expecting things to proceed this far.~ + a4720
+  ++ ~[PC] We were on track. Then we were off track. Then on again. Then off again. It is exciting.~ + a4720
+  ++ ~[PC] We were on track. Then we were off track. Then on again. Then off again. It is exhausting.~ + a4720 
+  ++ ~[PC] You think that we have a strong enough attachment to get married? Have children? Settle down?~ + a4721
 END
 
 IF ~~ a4720
@@ -602,81 +613,81 @@ IF ~~ a4721
   SAY @3601 // @3601 = ~[ARAN] Aye.~
   ++ @12208 + a4722 // @12208 = ~[PC] I thought man just wanted that shown.~
   ++ @12211 + a4724 // @12211 = ~[PC] I knew this day would come. Aran, we have a very enjoyable romantic fling. But I don't love you.~
-  ++ @12206 + a4723 //
-  ++ @12212 + a4724 //
-  ++ @12213 + a4722 //
+  ++ @12206 + a4723 // ~[PC] You silly, silly man. Fine. I love you. Go ahead and make a complete fool out of yourself.~
+  ++ @12212 + a4724 // ~[PC] Stop it. I should never have allowed you to think this might become serious.~
+  ++ @12213 + a4722 // ~[PC] Typical. You just want me for my body.~
 END
   
 IF ~~ a4722
-  SAY @12214 //
-  ++ @12201 + a4723 //
-  ++ @12215 + a4724 //
-  ++ @12216 + a4724 // 
-  ++ @12217 + a4724 // 
-  ++ @12218 + a4724 // 
+  SAY @12214 // ~[ARAN] That too.~
+  ++ @12201 + a4723 // ~[PC] I love you.~
+  ++ @12215 + a4724 // ~[PC] I... I am not ready to say the words you want to hear.~
+  ++ @12216 + a4724 // ~[PC] You always throw words at things. Why do you do that? It confuses me.~
+  ++ @12217 + a4724 // ~[PC] You don't really love me. You have no reason to love me.~
+  ++ @12218 + a4724 //  ~[PC] If you can't tell the difference between me allowing you to make a fool of yourself and me making a fool of myself, then you really don't know me.~
 END
 
 IF ~~ a4723
-  SAY @12219 // 
-  ++ @12220 + a4724  // 
-  ++ @12221 + a4724 // 
-  ++ @12222 + a4724 // 
-  ++ @12223 + a4724 // 
-  ++ @12224 + a4724 // 
+  SAY @12219 // ~[ARAN] That be right nice to hear.~
+  ++ @12220 + a4724  //  ~[PC] Aran... tell me why you love me.~
+  ++ @12221 + a4724 // ~[PC] I know why you love me. It is because I torture you mercilessly, drag you on impossible quests, and regularly get you injured or killed. Masochist.~
+  ++ @12222 + a4724 // ~[PC] I think you have the nicest smile. Especially when you look at me that way.~
+  ++ @12223 + a4724 // ~[PC] Just how much have you had to drink? I bet you have been at the wineskins instead of the water, haven't you.~
+  ++ @12224 + a4724 // ~[PC] Now, are you finished? Or are you about to tell me all the reasons you have for loving me?~
 END
 
 IF ~~ a4724
-  SAY @12225  // 
-  ++ @12226 + a4725 // 
-  ++ @12227 + a4725 // 
-  ++ @12228 + a4725 // 
-  ++ @12229 + a4725 // 
-  ++ @12230 + a4725 // 
+  SAY @12225  // ~[ARAN] Well, you be about th' smartest woman I ever did meet.~
+  ++ @12226 + a4725 // ~[PC] There must be more about me to love than just that.~
+  ++ @12227 + a4725 // ~[PC] Stop teasing me. You know I am not that smart.~
+  ++ @12228 + a4725 // ~[PC] And here I never thought you paid much attention to my wardrobe, except perhaps to how you could get it off of my body.~
+  ++ @12229 + a4725 // ~[PC] You know, you can flatter me all you want, but I just don't feel the same way, Aran. You need to find a nice girl and settle down.~
+  ++ @12230 + a4725 // ~[PC] I am, aren't I?~
 END
 
 IF ~~ a4725
-  SAY @12231  // 
-  ++ @12232 + a4726 // 
-  ++ @12233 + a4726 // 
-  ++ @12234 + a4726 // 
-  ++ @12235 + a4726 // 
-  ++ @12236 + a4726 // 
+  SAY @12231  // ~[ARAN] Th' way your neck arches... it drives me right wild, it do.~
+  ++ @12232 + a4726 // ~[PC] So you love me because I have a neck? I'll have to keep you away from every dragon in Faerun, and most of the snakes.~
+  ++ @12233 + a4726 // ~[PC] My neck is ugly.~
+  ++ @12234 + a4726 // ~[PC] I usually notice your eyes drifting a little farther south, you know.~
+  ++ @12235 + a4726 // ~[PC] Your laugh makes me smile. And sometimes it makes me tremble.~
+  ++ @12236 + a4726 // ~[PC] This is very embarrassing.~
 END
 
 IF ~~ a4726
-  SAY @12237  // 
-  ++ @12238 + a4727 // 
-  ++ @12239 + a4727 // 
-  ++ @12240 + a4727  // 
-  ++ @12241 + a4736 // 
-  ++ @12242 + a4727 // 
+  SAY @12237  //  ~[ARAN] Th' way you talk, it just fits right in my ear, an' goes straight from there down to my heart.~
+  ++ @12238 + a4727 // ~[PC] Gods, you really are in blind, stupid love with me, aren't you?~
+  ++ @12239 + a4727 // ~[PC] Your voice and your speech is so crumpled and torn, but it is just so... you.~
+  ++ @12240 + a4727  // ~[PC] It is nice to hear that you listen to me.~
+  ++ @12241 + a4736 // ~[PC] I do not love you, Aran. And I never will. I am sorry you feel so deeply about me, but I can't help that.~
+  ++ @12242 + a4727 //  ~[PC] Someone get me a pail of water, and dump it on his head. Either the man is under a charm spell, or he needs to be sobered up.~
 END
   
 IF ~~ a4727
-  SAY @12243
-  ++ @12244 + a4736  // 
-  ++ @12245 + a4728 // 
-  ++ @12246 + a4728 // 
-  ++ @12247 + a4728 // 
-  ++ @12248 + a4728 // 
+  SAY @12243 // ~[ARAN] Your hair, an' th' way it moves... it be a right beautiful thing, it be.~
+  ++ @12244 + a4736 // ~[PC] This is ridiculous. Aran, stop this at once. It is nice to be loved, but I am not in love with you. You are wasting my time.~
+  ++ @12245 + a4728 // ~[PC] I guess I need to shave my head again. I usually prefer to remain bald.~
+  ++ @12246 + a4728 // ~[PC] I never have figured out how you make yours smell like evergreen, even while we are on the trail.~
+  ++ @12247 + a4728 // ~[PC] I love the way you steal glances at me when you think I am not watching.~
+  ++ @12248 + a4728 // ~[PC] So far you have described me as a smart talker with an archy neck. Basically, a parrot.~
 END
   
 IF ~~ a4728
-  SAY @12249  // 
-  ++ @12250 + a4729 // 
-  ++ @12244 + a4736 // 
-  ++ @12251 + a4729 // 
-  ++ @12252 + a4729 // 
-  ++ @12253 + a4729 //
+  SAY @12249  // ~[ARAN] Your eyes be more than stars. Stars just twinkle an' mesmerize. Yours can look into th' depths o' a man's soul, lift a man to th' heights o' happiness, or crush him wi' nary a word spoken.~
+  ++ @12250 + a4729 // ~[PC] Have you seen yours? The laughter lines crinkle at the corners, and when you look at me, you look with such a hunger that it makes me a little afraid.~
+  ++ @12244 + a4736 // ~[PC] This is ridiculous. Aran, stop this at once. It is nice to be loved, but I am not in love with you. You are wasting my time.~
+  ++ @12251 + a4729 // ~[PC] Now I am a starry-eyed fool? So far, your descriptions are lacking. You have not described my sensuous legs, my ripening lips...~
+  ++ @12252 + a4729 // ~[PC] Speaking of stars, if you don't stop all this I shall make you see some.~
+  ++ @12253 + a4729 // ~[PC] I did not realize you felt this deeply about me.~
 END
   
 IF ~~ a4729
-  SAY @12254 //
-  ++ @12255 + a4730 //
-  ++ @12256 + a4730 //
-  ++ @12257 + a4736 //
-  ++ @12258 + a4730 //
-  ++ @12259 + a4730 //
+  SAY @12254 // ~[ARAN] Your lips be curved just th' right amount, an' no more. They move in graceful arcs, holdin' power an' promise.~
+  ++ @12255 + a4730 // ~[PC] They promise you that all this wind is a waste of your time. They would really like action, instead.~
+  ++ @12256 + a4730 // ~[PC] Your arms are warm and strong. They shield me when I am in danger, and comfort me when I am afraid.~
+  ++ @12257 + a4736 // ~[PC] You are not going to stop, are you. Listen carefully... I am not in love with you. You are wasting my time.~
+  ++ @12258 + a4730 //  ~[PC] If we are going to really say all of this, I think we should find someplace private where we can be doing things other than talking.~
+  ++ @12259 + a4730 // ~[PC] I can't stand here and listen to a good friend profess so much love. But I don't want you to stop. I... I think I am getting more confused by the minute.~
 END
 
 IF ~~ a4730
@@ -728,19 +739,17 @@ IF ~~ a4736 // romance retired
 END
 
 
-/* ToB Love Talk #4 : ask the big question or not */
+/* ToB Love Talk #4 : ask the big question or not << CHANGED _ Clarification Points before asked married */
 
-IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN c-arantemporary_question
-  SAY ~[ARAN] Now, we be supposed to have a big talk here about marriage an' such. But for now, do you think you might marry me someday?~
-  ++ ~[PC] Yes!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
-  ++ ~[PC] No!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
-  ++ ~[PC] Never!!~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + c-aran_exit_temp
+IF ~Global("c-arantobrom","GLOBAL",5)~ THEN BEGIN c-aran_life_question
+  SAY ~[ARAN] I have been thinkin' on what happens next. Or in th' future. Or mayhap only in dreams.~
+  ++ ~[PC] You have been thinking about dreams? Or have you been dreaming dremas?~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + aran_life_choice_point
+  ++ ~[PC] Let me guess... you have decided to set up harems in every town and village on the Sword Coast.~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + aran_life_choice_point
+  ++ ~[PC] Are you talking about our relationship?~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + aran_life_choice_point
+  ++ ~[PC] You think way too much.~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + aran_life_choice_point
+  ++ ~[PC] If you are talking about our future together, I am not making any promises. Neither should you.~ DO ~SetGlobal("c-arantobrom","GLOBAL",6) RealSetGlobalTimer("c-aranromtimer","GLOBAL",%ARAN_LTT%)~ + aran_life_choice_point
 END
-  
-IF ~~ c-aran_exit_temp
-  SAY ~[ARAN] Aye then. That be th' way things will be, then. Until I bring it up in th' next talk, that is.~
-  IF ~~ THEN EXIT
-END
+
 
 /* ToB Love Talk #5 : Friends Getting The Knot Tied */
 
@@ -760,14 +769,15 @@ IF ~~ a4775
   ++ @11722 + a4782 // [PC] Do I have to prompt you for everything?
   ++ @11723 + a4779 // [PC] Think carefully, Aran. And notice the distinct absence of a ring on my finger, symbolizing the eternal circle of love.
   ++ @11724 + a4779 // [PC] Like why we have not talked about getting married.
+  ++ ~[PC] You seem to be hinting about a permanence in our relationship, and i am not interested in that.~ + 
 END
 
 IF ~~ a4776
   SAY @11725 // [ARAN] Oh, just an ol' friend from th' 'Fist. They knew better than to invite those o' us what be on th' campaign, since we might be pressed hard to make it back for th' ceremonies.
   = @11726 // [ARAN] He an' his lady-love be a right fine pair, they do. They has a Helmite marriage, an' then shipped out to Maztica. Apparently, th' food were great, th' drink was strong, an' th' bachelorette party only had three what needed a healer.
   = @11727 // [ARAN] No troubles wi' th' bachelor party, at least ones talked about, on account o' Hera, she be th' jealous type. But they will be happy enough carvin' out a Freehold in th' colony. His axework be strong, an' her swordwork be quick, an' between th' two there be little what can stop 'em.
-  ++ @11717 + a4778 // 
-  ++ @11718 + a4777 //
+  ++ @11717 + a4778 // ~[PC] I like weddings. I like them a lot.~
+  ++ @11718 + a4777 // ~[PC] Why on earth would anyone want to get married?~
   ++ @11728 + a4779 // [PC] They sound like they are well suited to each other. Kind of like you and I are.
   ++ @11729 + a4778 // [PC] So... is there anything you want to ask me?
 END
@@ -852,9 +862,56 @@ END
 
 New Change - use this state to determine marriage state and children state if agreed 
 
-IF ~~ talktomemore_aran
+IF ~~ marriagecheck_aran
+  SAY ~[ARAN] So about th' whole marriage thing, you think it mayhap be in th' future for us?~
+  ++ ~[PC] You are useful, for now. I would not like to be bound to a marriage contract.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck // 0 or 1
+  ++ ~[PC] We will definitely not be married, Aran. I have other interests. But you will always be my lover.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck // 0 or 1
+  ++ ~[PC] I do not like the idea of being married.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck // 0 or 1
+  ++ ~[PC] I like the idea of being married. I think it is likely.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck   // 0 or 1
+  ++ ~[PC] You are so silly. You have my whole heart, and of course I think about marrying you.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck   // 0 or 1
+  ++ ~[PC] You are useful. A marriage contract would be beneficial.~ DO ~SetGlobal("c-aranepiloguemarried","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ + aran_childrencheck   // 0 or 1
+  ++ ~[PC] Are you asking me to marry you?~ + are_you_asking_or_not
+END
+
+IF ~~ are_you_asking_or_not
+  SAY ~[ARAN] I be considerin' it.~
+  ++ ~[PC] Well if you asked me in a romantic place, at the right time, I might say yes.~ +
+  ++ ~[PC] I would not do that.~ + why_not_aran
+  ++ ~[PC] For a man of action, you are so skittish. Aran, will you marry me?~ + 
+  ++ ~[PC] Stop considering it, and ask me directly. I know my answer.~ + yesorno_marriage
+  ++ ~[PC] We have spent so much time together that you should already know my answer.~ + yesorno_marriage
+END
+
+IF ~~ why_not_aran
+  SAY ~[ARAN] Why not? Am I naught in th' way o' a good partner, worthy o' marryin'?~
+  
+  
+END
+
+IF ~~ aran_childrencheck
+  SAY ~[ARAN] Your decision. Well, mayhap both o' us, to some extent. Where does that leave th' whole next generation, an' our part in creatin' it?~
+  ++ ~[PC] If you think I would ever bring another life into this world of pain and suffering, you have not been paying attention.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1	
+  ++ ~[PC] I do not want children, Aran. Married or not, there is too much to do and see in life and having children gets in the way.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1	
+  ++ ~[PC] I... no. No children.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1
+  ++ ~[PC] I... I really want children someday.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1
+  ++ ~[PC] Well, creating them is fun, and taking care of them might be very fun, with the right person.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1
+  ++ ~[PC] Aran. I love you. I want to marry you and carry your children.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",1) SetGlobal("c-aranepiloguemarried","GLOBAL",1)  SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  aran_asked_or_not // 0 or 1
+  ++ ~[PC] Of course. How can my legacy be passed on if there are no children?~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",1) SetGlobal("c-aranepiloguefriend","GLOBAL",0)~ +  // 0 or 1
+  ++ ~[PC] No marriage. No children. We will be lucky if we simply remain lovers.~ DO ~SetGlobal("c-aranepiloguechildren","GLOBAL",0) SetGlobal("c-aranepiloguefriend","GLOBAL",1)~ +  // 0 or 1
+END
 
 
+IF ~~ aran_asked_or_not
+  SAY ~[ARAN] So did you just ask me to marry you?~
+  ++ ~[PC] No. I want you to ask me properly, romantically, and clearly.~ + will_do_it
+  ++ ~[PC] Yes.~ + settled_then
+  ++ ~[PC] Aran Whitehand, will you marry me and become the father of our children?~ +
+  ++ ~[PC] Now you have really made me angry. I throw myself at you, blatantly and directly, and all you do is question me.~ + 
+  ++ ~[PC] Did I ask you? No. I am telling you that you will become my husband and we will raise a family together. Or I shall kill you. At this point, I might do both, and I am not sure in which order.~ + settled_then
+  ++ ~[PC] I was joking, Aran. You should see your face right now.~ + face_confused
+END
+
+IF ~~ face_confused
 
 /* 
  * EPILOGUE VARS if PC does not accept godhood

@@ -1,4 +1,4 @@
-@30001    = ~RC_Amellg 02.22.2019~ 
+@30001    = ~RC_Amellg 03.04.2019~ 
 @30002    = ~* * * This mod is designed for BGII-SoA, BGII-ToB, Baldurs Gate Trilogy, BGII:Enhanced Edition, or Enhanced Edition Trilogy. Stopping installation. * * *~
 @30003    = ~WeiDU says that this game has BGII - SoA content.~
 @30004    = ~WeiDU says that this game has BGII - ToB content.~
@@ -8,8 +8,8 @@
 @30008    = ~Weidu defined variables on this install:~
 @30009    = ~* * * * * * * * * * * * * * * *~
 @30010    = ~Install Aran Whitehand for SoA and ToB~
-// @30011    = ~UNUSED AT THIS TIME~
-// @30012    = ~UNUSED AT THIS TIME~
+@30011    = ~Installing EET Continuous NPC materials...~
+@30012    = ~Installing ToB Fate Spirit Summoning...~
 @30013    = ~Replace Guitar Music with Midaevil Music~
 @30014    = ~Replace Guitar Music with Brass Ensemble Music~
 @30015    = ~Customize Aran Whitehand: Music~

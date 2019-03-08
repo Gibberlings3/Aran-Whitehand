@@ -35,13 +35,9 @@ END
 IF ~~ THEN EXTERN SARVOLO 9
 
 /* Fate Spirit Summons: Three options, by user choice - friend,  ex-lover (broken up) , or still in the relationship */
-EXTEND_TOP FATESP 6 #5
-IF ~!Dead("c-aran") !InMyArea("c-aran") Global("c-aransummoned","GLOBAL",0)~ THEN REPLY @11315 DO ~CreateVisualEffect("SPPORTAL",[1999.1218]) Wait(2) CreateCreature("c-aran13",[1999.1218],0) SetGlobal("c-aransummoned","GLOBAL",1)~ GOTO 8
-IF ~Gender(Player1,FEMALE) !Dead("c-aran") !InMyArea("c-aran") Global("c-aransummoned","GLOBAL",0)~ THEN REPLY @11316 DO ~CreateVisualEffect("SPPORTAL",[1999.1218]) Wait(2) CreateCreature("c-aran13",[1999.1218],0) SetGlobal("c-aransummoned","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",3)~ GOTO 8
-IF ~Gender(Player1,FEMALE) !Dead("c-aran") !InMyArea("c-aran") Global("c-aransummoned","GLOBAL",0)~ THEN REPLY @11317 DO ~CreateVisualEffect("SPPORTAL",[1999.1218]) Wait(2) CreateCreature("c-aran13",[1999.1218],0) SetGlobal("c-aransummoned","GLOBAL",1) SetGlobal("c-aranrom","GLOBAL",2)~ GOTO 8
-END
+/* Moved to separate file for EET Transition compatability */
 
-/* Joinables */
+/* Joinables Interjections */
 
 I_C_T BAERIE25 157 c-arn25bae157 /* It's a boy!  Oh, what a beautiful son we have - look at him wiggle his toes! */
 == C-ARN25J IF ~Global("c-silencearan","GLOBAL",0) InParty("c-aran") InMyArea("c-aran") !StateCheck("c-aran",CD_STATE_NOTVALID)~ THEN @11318
@@ -581,7 +577,7 @@ IF ~~ a2303 SAY @11456 IF ~~ THEN EXIT END
 IF ~~ a2304 SAY @11457 = @11458 IF ~~ THEN EXIT END
 
 /* Scenery Dialog : Aran Apologizes */
-IF ~Global("c-aranapology","GLOBAL",1)~ THEN BEGIN a4999
+IF ~Global("c-aranapology","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a4999
   SAY @6485
   IF ~RandomNum(3,1)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a5000
   IF ~RandomNum(3,2)~ THEN DO ~SetGlobal("c-aranapology","GLOBAL",0)~ GOTO a5001
@@ -898,7 +894,7 @@ IF ~~ a5022
 END
 
 /* NightTalk: Stars, Constancy Thereof */
-IF ~Global("c-tobnightone","GLOBAL",1)~ THEN BEGIN a4249
+IF ~Global("c-tobnightone","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a4249
   SAY @11460
   ++ @11461 DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4250
   ++ @11462 DO ~SetGlobal("c-tobnightone","GLOBAL",2)~ + a4251
@@ -1148,8 +1144,8 @@ END
 /* ToB FriendTalk 1 : "Sisters" */
 IF ~Global("c-aranfriendtob","GLOBAL",1)~ THEN BEGIN a2790
   SAY @11559
-  ++ @11560 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",1) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ +  a2791
-  ++ @11561 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",2) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ +  a2792
+  ++ @11560 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",1) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2791
+  ++ @11561 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",2) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2792
   ++ @11562 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",3) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a2793
   + ~RandomNum(3,3)~ + @11563 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",6) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3204
   + ~RandomNum(3,2)~ + @11563 DO ~SetGlobal("c-ArSisterBranch","GLOBAL",6) SetGlobal("c-aranfriendtob","GLOBAL",2) RealSetGlobalTimer("c-aranfriendtimer","GLOBAL",%ARAN_FTT%)~ + a3205
@@ -1856,7 +1852,7 @@ IF ~~ a2848
   ++ @11964 + a2846
   ++ @11965 + a2849
   ++ @11966 + a2849
-  ++ @11967 +  a2846
+  ++ @11967 + a2846
 END
 
 IF ~~ a2849 SAY @11968 IF ~~ THEN EXIT END
@@ -3171,8 +3167,8 @@ IF ~~ a5268
   + ~CheckStatGT(Player1,12,WIS)~ + @13944 /* [PC] You do not really want that fame for yourself, Aran. You just said it was thankless pain. Does it really hurt you that I am more famous than you? */ + a5278
   + ~CheckStatGT(Player1,15,INT)~ + @13945 /* [PC] So you feel that you are getting less fame than you deserve? Or do you feel I am getting too much credit? */ + a5278
   ++ @13946 /* [PC] Fame, fortune, infamy, power, bard's tales and songs... I would give it all up if I could start life over as an exotic Calishite dancer. */ + a5275 
-  + ~Alignment(Player1,MASK_GOOD)~ +  @13947 /* [PC] What is wrong with me being famous? */ + a5271
-  + ~!Alignment(Player1,MASK_GOOD)~ +  @13948 /* [PC] What is wrong with me being famous? Or infamous? */ + a5272
+  + ~Alignment(Player1,MASK_GOOD)~ + @13947 /* [PC] What is wrong with me being famous? */ + a5271
+  + ~!Alignment(Player1,MASK_GOOD)~ + @13948 /* [PC] What is wrong with me being famous? Or infamous? */ + a5272
   ++ @13949 /* [PC] Your name is out there as much as mine. */ + a5270
   ++ @13950 /* [PC] I did not ask for this. */ + a5270
   ++ @13951 /* [PC] I deserve every bit of fame. You are useful, but secondary. */ + a5274
@@ -3487,7 +3483,7 @@ END
 APPEND C-ARN25P
 
 /* just kicked out via "reform party" button = no global set. */
-IF ~Global("KickedOut","LOCALS",0)~ THEN BEGIN a2753
+IF ~Global("KickedOut","LOCALS",0) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a2753
   SAY @12284
   + ~RandomNum(3,1) !AreaCheck("AR4500")~ + @12285 DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1632
   + ~RandomNum(3,2) !AreaCheck("AR4500")~ + @12285 DO ~SetGlobal("KickedOut","LOCALS",1)~ + a1633
@@ -3508,6 +3504,24 @@ IF ~Global("KickedOut","LOCALS",0)~ THEN BEGIN a2753
 END
 
 /* AR4500 = pocketplane || AR5003 = Saradush Inn || AR5501 = Amkethran Inn */
+
+/* Any Other Area Rejoin */
+IF ~Global("KickedOut","LOCALS",1) !AreaCheck("AR4500") !AreaCheck("AR5003") !AreaCheck("AR5501") GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a1643
+  SAY @12312
+  ++ @12310 DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
+  ++ @10533 + a3223
+  + ~RandomNum(3,1)~ + @12285 + a1632
+  + ~RandomNum(3,2)~ + @12285 + a1633
+  + ~RandomNum(3,3)~ + @12285 + a1640 /* c-aranrejoin2tob */
+  + ~!AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + @12286 + a1639 /* c-aranwaitsaradushtob <<POSSIBLE_TO_LEAVE>> */
+  + ~OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @12286 + a1630 /* c-araninnimpossibletob  <<IMPOSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + @12287 + a1638 /*  c-aranwaitsamkethrantob  <<POSSIBLE_TO_LEAVE>> */
+  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @12287 + a1630 /* c-araninnimpossibletob <<IMPOSSIBLE_TO_LEAVE>> */
+  ++ @12292 DO ~SetGlobal("KickedOut","LOCALS",1)
+  CreateVisualEffectObject("SPDIMNDR",Myself)
+  Wait(2)
+  MoveBetweenAreas("AR4500",[1799.1358],14)~ EXIT
+END
 
 /* Adding a special dialog to the 25P for NPCs sent home from the Pocket Plane */
 IF ~Global("c-aransenthome","GLOBAL",1) Global("KickedOut","LOCALS",1)~ THEN BEGIN a1641
@@ -3552,24 +3566,6 @@ IF ~Global("KickedOut","LOCALS",1) OR(2) AreaCheck("AR5003") AreaCheck("AR5501")
   ++ @12290 DO ~SetGlobal("KickedOut","LOCALS",1)~ EXIT
   + ~!AreaCheck("AR5003")~ + @12286 + a1639 /*  c-aranwaitsaradushtob  <<POSSIBLE_TO_LEAVE>> */  
   + ~!AreaCheck("AR5501")~ + @12287 + a1638 /* c-aranwaitsamkethrantob  <<POSSIBLE_TO_LEAVE>> */
-  ++ @12292 DO ~SetGlobal("KickedOut","LOCALS",1)
-  CreateVisualEffectObject("SPDIMNDR",Myself)
-  Wait(2)
-  MoveBetweenAreas("AR4500",[1799.1358],14)~ EXIT
-END
-
-/* Any Other Area Rejoin */
-IF ~Global("KickedOut","LOCALS",1) !AreaCheck("AR4500") !AreaCheck("AR5003") !AreaCheck("AR5501")~ THEN BEGIN a1643
-  SAY @12312
-  ++ @12310 DO ~SetGlobal("KickedOut","LOCALS",0) JoinParty()~ EXIT
-  ++ @10533 + a3223
-  + ~RandomNum(3,1)~ + @12285 + a1632
-  + ~RandomNum(3,2)~ + @12285 + a1633
-  + ~RandomNum(3,3)~ + @12285 + a1640 /* c-aranrejoin2tob */
-  + ~!AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + @12286 + a1639 /* c-aranwaitsaradushtob <<POSSIBLE_TO_LEAVE>> */
-  + ~OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @12286 + a1630 /* c-araninnimpossibletob  <<IMPOSSIBLE_TO_LEAVE>> */
-  + ~!AreaCheck("AR5501") !AreaCheck("AR0301") !AreaCheck("AR0302") !AreaCheck("AR0303") !AreaCheck("AR0304") !AreaCheck("AR0305") !AreaCheck("AR0306") !AreaCheck("AR0307") !AreaCheck("AR0509") !AreaCheck("AR0510") !AreaCheck("AR0511") !AreaCheck("AR1102") !AreaCheck("AR1107") !AreaCheck("AR0801") !AreaCheck("AR0803") !AreaCheck("AR1300") !AreaCheck("AR1301") !AreaCheck("AR1302") !AreaCheck("AR1303") !AreaCheck("AR0601") !AreaCheck("AR0602") !AreaCheck("AR0603") !AreaCheck("AR0604") !AreaCheck("AR0605") !AreaCheck("AR0606") !AreaCheck("AR3000") !AreaCheck("AR3001") !AreaCheck("AR3003") !AreaCheck("AR3004") !AreaCheck("AR3005") !AreaCheck("AR3006") !AreaCheck("AR3007") !AreaCheck("AR3008") !AreaCheck("AR3009") !AreaCheck("AR3010") !AreaCheck("AR3011") !AreaCheck("AR3012") !AreaCheck("AR3013") !AreaCheck("AR3014") !AreaCheck("AR3015") !AreaCheck("AR3016") !AreaCheck("AR3017") !AreaCheck("AR3018") !AreaCheck("AR3019") !AreaCheck("AR3020") !AreaCheck("AR3021") !AreaCheck("AR3022") !AreaCheck("AR3023") !AreaCheck("AR3024") !AreaCheck("AR3025") !AreaCheck("AR3026") !AreaCheck("AR3027")~ + @12287 + a1638 /*  c-aranwaitsamkethrantob  <<POSSIBLE_TO_LEAVE>> */
-  + ~!AreaCheck("AR5501") OR(51) AreaCheck("AR0301") AreaCheck("AR0302") AreaCheck("AR0303") AreaCheck("AR0304") AreaCheck("AR0305") AreaCheck("AR0306") AreaCheck("AR0307") AreaCheck("AR0509") AreaCheck("AR0510") AreaCheck("AR0511") AreaCheck("AR1102") AreaCheck("AR1107") AreaCheck("AR0801") AreaCheck("AR0803") AreaCheck("AR1300") AreaCheck("AR1301") AreaCheck("AR1302") AreaCheck("AR1303") AreaCheck("AR0601") AreaCheck("AR0602") AreaCheck("AR0603") AreaCheck("AR0604") AreaCheck("AR0605") AreaCheck("AR0606") AreaCheck("AR3000") AreaCheck("AR3001") AreaCheck("AR3003") AreaCheck("AR3004") AreaCheck("AR3005") AreaCheck("AR3006") AreaCheck("AR3007") AreaCheck("AR3008") AreaCheck("AR3009") AreaCheck("AR3010") AreaCheck("AR3011") AreaCheck("AR3012") AreaCheck("AR3013") AreaCheck("AR3014") AreaCheck("AR3015") AreaCheck("AR3016") AreaCheck("AR3017") AreaCheck("AR3018") AreaCheck("AR3019") AreaCheck("AR3020") AreaCheck("AR3021") AreaCheck("AR3022") AreaCheck("AR3023") AreaCheck("AR3024") AreaCheck("AR3025") AreaCheck("AR3026") AreaCheck("AR3027")~ + @12287 + a1630 /* c-araninnimpossibletob <<IMPOSSIBLE_TO_LEAVE>> */
   ++ @12292 DO ~SetGlobal("KickedOut","LOCALS",1)
   CreateVisualEffectObject("SPDIMNDR",Myself)
   Wait(2)
@@ -4474,7 +4470,7 @@ END
 /* Lots of Flirts means Player Wants Action: reply states */
 
 /* Triggered in BCS by lots of flirts */
-IF ~Global("c-aranbedflirt","GLOBAL",1)~ THEN BEGIN a4503
+IF ~Global("c-aranbedflirt","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a4503
   SAY @6478
   ++ @6479 DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4498
   ++ @6480 DO ~SetGlobal("c-aranbedflirt","GLOBAL",2)~ + a4497
@@ -4484,7 +4480,7 @@ IF ~Global("c-aranbedflirt","GLOBAL",1)~ THEN BEGIN a4503
 END
 
 /* NPC Initiated Flirts */
-IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a4376
+IF ~Global("c-aranlightflirt","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a4376
   SAY @6483
  /* NPC Initiated Flirts : Random Light Flirts */
   IF ~RandomNum(32,1)~ THEN GOTO a4377
@@ -4538,7 +4534,7 @@ IF ~Global("c-aranlightflirt","GLOBAL",1)~ THEN BEGIN a4376
 END
 
 /* NPC Initiated Flirts : Random Heavy Flirts */
-IF ~Global("c-aranheavyflirt","GLOBAL",1)~ THEN BEGIN a4459
+IF ~Global("c-aranheavyflirt","GLOBAL",1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a4459
   SAY @6484
   IF ~RandomNum(36,36)~ THEN GOTO a4398
   IF ~RandomNum(36,35)~ THEN GOTO a4399
@@ -6665,7 +6661,7 @@ IF ~~ a4220 /* DO_NEXT */
   ++ @5798 + a4219 /* DO_NEXT_FINAL */
   ++ @7111 + a4218 /* WHERE_IDEAS_COME_FROM */
   ++ @7112 + a4218 /* WHERE_IDEAS_COME_FROM */
-  ++ @7113 +  a4218 /* WHERE_IDEAS_COME_FROM */
+  ++ @7113 + a4218 /* WHERE_IDEAS_COME_FROM */
 END
 
 IF ~~ a4219 /* DO_NEXT_FINAL */
@@ -7880,7 +7876,7 @@ END
 IF ~~ a4241 /* KISSING_GENTLY_TIP */
   SAY @7530
   ++ @7531 + a4172 /* HANDS_AND_FINGERS_EVERYWHERE */
-  ++ @7532 +  a4240 /*  GODS_WILL_YOU_LET_ME */
+  ++ @7532 + a4240 /*  GODS_WILL_YOU_LET_ME */
   ++ @7533 + a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
   ++ @7534 + a3837 /* ENDGAME_OF_TEASING */
   ++ @6569 + a3837 /* ENDGAME_OF_TEASING */
@@ -8264,7 +8260,7 @@ IF ~~ a3954 /* ROM_TWO_LADIE_LIE_ME_DOWN_WITH_YOU */
   ++ @7651 + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
   ++ @7652 + a4101 /* ROM_TWO_ACTION_FACE_TO_FACE */
   ++ @7653 + a4102 /* ROM_BACK_TO_HIS_CHEST */
-  + ~RandomNum(2,1)~ + @7654 +  a4103 /* ROUGH_CHEEK_BARES_PC_BREASTS */
+  + ~RandomNum(2,1)~ + @7654 + a4103 /* ROUGH_CHEEK_BARES_PC_BREASTS */
   + ~RandomNum(2,2)~ + @7655 + a4104 /* SMOOTH_CHEEK_TO_CHEEK_PRESS_CLOSE */
   ++ @7087 + a4147 /* FRONT_TO_ARAN_EXPLORE */
 END
@@ -9262,7 +9258,7 @@ IF ~~ a4148 /* FRONT_TO_ARAN_FINGERS */
   + ~RandomNum(5,3)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3965 /* SOLID_STOP3 */
   + ~RandomNum(5,4)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3966 /* ROM_TWO_HARD_TO_STOP_GENTLEMAN */
   + ~RandomNum(5,5)~ + @7831 DO ~SetGlobal("c-aranintimate","GLOBAL",2)~ + a3967 /* FIGHT_START */
-  ++ @7907 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ +  a4245  /* WATCH_ME_BE_HAPPY */
+  ++ @7907 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4245  /* WATCH_ME_BE_HAPPY */
   ++ @7908 DO ~SetGlobal("c-aranintimate","GLOBAL",3)~ + a4245  /* WATCH_ME_BE_HAPPY */
   ++ @7909 + a4143 /* FRONT_TO_ARAN_PULSE */
 END
@@ -9527,8 +9523,8 @@ IF ~~ a4131 /* ROM_PULSE_DEEP_ABOVE_ONE */
   ++ @7959 + a4144 /* ROM_FINAL_TWO */
   ++ @7960 + a4144 /* ROM_FINAL_TWO */
   ++ @7961 + a4144 /* ROM_FINAL_TWO */
-  ++ @7962 +  a4144 /* ROM_FINAL_TWO */
-  ++ @7963 +  a4144 /* ROM_FINAL_TWO */
+  ++ @7962 + a4144 /* ROM_FINAL_TWO */
+  ++ @7963 + a4144 /* ROM_FINAL_TWO */
 END
 
 IF ~~ a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
@@ -9536,7 +9532,7 @@ IF ~~ a4247 /* ROM_PULSE_DEEP_ABOVE_TWO */
   ++ @7965 + a4144 /* ROM_FINAL_TWO */
   ++ @7960 + a4144 /* ROM_FINAL_TWO */
   ++ @7966 + a4144 /* ROM_FINAL_TWO */
-  ++ @7967 +  a4144 /* ROM_FINAL_TWO */
+  ++ @7967 + a4144 /* ROM_FINAL_TWO */
 END
 
 IF ~~ a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
@@ -9545,7 +9541,7 @@ IF ~~ a4135 /* ROM_PULSE_MUTUAL_PLEASURE */
   ++ @7954 EXIT
   ++ @7970 + a4156 /* ROM_FINAL_ONE */
   ++ @7971 + a4156 /* ROM_FINAL_ONE */
-  ++ @7972 +  a4156 /* ROM_FINAL_ONE */
+  ++ @7972 + a4156 /* ROM_FINAL_ONE */
 END
 
 IF ~~ a4129 /* ROM_PULSE_DEEP_LIFT can be from intercourse or from heavy petting so set intimacy level elsewhere */
@@ -9999,7 +9995,7 @@ END
 
 /* ToB PID Entries - evaluate to last in order */
 
-IF ~!IsGabber(Player1)~ THEN BEGIN a2693
+IF ~!IsGabber(Player1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a2693
   SAY @8409
   IF ~~ THEN GOTO a2674
   IF ~IsGabber("c-aran")~ THEN GOTO a2675
@@ -10041,7 +10037,7 @@ IF ~~ a2680 SAY @8504 IF ~~ THEN EXIT END
 IF ~~ a2681 SAY @8505 IF ~~ THEN EXIT END
 IF ~~ a2692 SAY @8506 IF ~~ THEN EXIT END
 
-IF ~IsGabber(Player1)~ THEN BEGIN a1866 /* tob PID */
+IF ~IsGabber(Player1) GlobalGT("Chapter","GLOBAL",%bg2_chapter_7%)~ THEN BEGIN a1866 /* tob PID */
  SAY @12505
   /* General Options, both Male PC and female PC */
   /* voice/string fixer */
@@ -11150,7 +11146,7 @@ IF ~~ a2695
   SAY @10518
   ++ @10519 + a2697
   ++ @10520 DO ~SetGlobal("c-aransex","GLOBAL",0)~ + a2697
-  ++ @10521 +  a2696
+  ++ @10521 + a2696
   ++ @10522 + a2697
 END
 
@@ -11158,7 +11154,7 @@ IF ~~ a2696
   SAY @10523
   ++ @10519 + a2697
   ++ @10524 DO ~SetGlobal("c-aransex","GLOBAL",0)~ + a2697
-  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ +  a2698
+  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ + a2698
   ++ @10526 DO ~SetGlobal("c-aransex","GLOBAL",2)~ + a2698
   ++ @10527 DO ~SetGlobal("c-aransex","GLOBAL",3)~ + a2698
   ++ @10528 DO ~SetGlobal("c-aransex","GLOBAL",4)~ + a2698
@@ -11315,7 +11311,7 @@ IF ~~ a3222
   SAY @10523
   ++ @10519 + a3221
   ++ @10524 DO ~SetGlobal("c-aransex","GLOBAL",0)~ + a3221
-  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ +  a3218
+  ++ @10525 DO ~SetGlobal("c-aransex","GLOBAL",1)~ + a3218
   ++ @10526 DO ~SetGlobal("c-aransex","GLOBAL",2)~ + a3218
   ++ @10527 DO ~SetGlobal("c-aransex","GLOBAL",3)~ + a3218
   ++ @10528 DO ~SetGlobal("c-aransex","GLOBAL",4)~ + a3218
