@@ -59,6 +59,11 @@ LANGUAGE	~English~
 			~aranw\tra\english\c-aranw.tra~ 
 			~aranw\tra\english\setup.tra~ /* Contains text strings displayed during the installation: TP2, Components, etc., encoded for _win32 (cp1252), _osx (utf-8 no BOM), or _unix (utf-8 no BOM) */ 
 
+LANGUAGE	~Schinese~ 
+			~schinese~ 
+			~aranw\tra\schinese\c-aranw.tra~ 
+			~aranw\tra\schinese\setup.tra~
+
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
